@@ -621,6 +621,49 @@
       color: #4CAF50;
       border-color: #4CAF50;
     }
+
+    /* ── Cross-page navigation buttons ── */
+    .page-nav {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .page-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 11px 22px;
+      border-radius: 3px;
+      transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .page-nav-btn.active {
+      background: rgba(66,206,208,0.08);
+      border: 1px solid rgba(66,206,208,0.25);
+      color: var(--grey);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .page-nav-btn.go {
+      background: rgba(66,206,208,0.08);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+    }
+
+    .page-nav-btn.go:hover {
+      background: rgba(66,206,208,0.18);
+      box-shadow: 0 0 16px rgba(66,206,208,0.2);
+    }
   </style>
 </head>
 <body>
@@ -647,6 +690,10 @@
     </p>
     <div class="guide-count-badge">
       <strong id="totalCount">20</strong> free guides available
+    </div>
+    <div class="page-nav">
+      <a class="page-nav-btn active">📄 Free Guides</a>
+      <a href="presentations.html" class="page-nav-btn go">🎬 Presentations</a>
     </div>
   </header>
 
@@ -977,19 +1024,6 @@
           <div class="card-body">
             <h3>Why Kids Don't Tell Parents (And How to Fix It)</h3>
             <p>The most important conversation you can have. Why children stay silent about online harm, and how to open that door before something goes wrong.</p>
-          </div>
-          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
-        </a>
-
-        <a href="https://drive.google.com/file/d/1FOqfxjjNKU7SM0GjJ31LbD8XGsQ4w39x/view?usp=drive_link" target="_blank" rel="noopener" class="guide-card">
-          <div class="card-img-wrap">
-            <img src="images/CSG_Everyone_else_has_it.png" alt="The "Everyone else has it" problem Guide">
-            <span class="new-badge">NEW</span>
-            <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1FOqfxjjNKU7SM0GjJ31LbD8XGsQ4w39x/view?usp=drive_link')">📋 Copy Link</button>
-          </div>
-          <div class="card-body">
-            <h3>The "Everyone else has it" problem</h3>
-            <p>Kids want what their friends have. It's normal. But "everyone else" isn't always a good reason.</p>
           </div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
