@@ -646,7 +646,7 @@
       Click any guide to open it directly in your browser.
     </p>
     <div class="guide-count-badge">
-      <strong>20</strong> free guides available
+      <strong id="totalCount">20</strong> free guides available
     </div>
   </header>
 
@@ -671,7 +671,7 @@
       <div class="category-header">
         <span class="category-icon">📱</span>
         <h2 class="category-title">Platform Guides</h2>
-        <span class="category-count">10 guides</span>
+        <span class="category-count" id="count-platform-guides">10 guides</span>
       </div>
       <p class="category-desc">The apps and platforms your children are actually using — what the risks are, and what you can do about them.</p>
       <div class="guide-grid">
@@ -816,7 +816,7 @@
       <div class="category-header">
         <span class="category-icon">🧠</span>
         <h2 class="category-title">Understanding Online Risks</h2>
-        <span class="category-count">7 guides</span>
+        <span class="category-count" id="count-online-risks">7 guides</span>
       </div>
       <p class="category-desc">The threats that don't always come with obvious warning signs, explained clearly so you know what to look out for.</p>
       <div class="guide-grid">
@@ -922,7 +922,7 @@
       <div class="category-header">
         <span class="category-icon">🛡️</span>
         <h2 class="category-title">Parental Controls</h2>
-        <span class="category-count">2 guides</span>
+        <span class="category-count" id="count-parental-controls">2 guides</span>
       </div>
       <p class="category-desc">Practical guidance for managing your child's online world at home. More guides coming to this section soon.</p>
       <div class="guide-grid">
@@ -963,7 +963,7 @@
       <div class="category-header">
         <span class="category-icon">📁</span>
         <h2 class="category-title">Further Resources</h2>
-        <span class="category-count">1 guide</span>
+        <span class="category-count" id="count-further-resources">1 guide</span>
       </div>
       <p class="category-desc">Essential reading that doesn't fit neatly into the sections above, but belongs in every parent's and teacher's toolkit.</p>
       <div class="guide-grid">
@@ -979,21 +979,7 @@
             <p>The most important conversation you can have. Why children stay silent about online harm, and how to open that door before something goes wrong.</p>
           </div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
-        </a>        
-        
-        <a href="https://drive.google.com/file/d/1FOqfxjjNKU7SM0GjJ31LbD8XGsQ4w39x/view?usp=drive_link" target="_blank" rel="noopener" class="guide-card">
-          <div class="card-img-wrap">
-            <img src="images/CSG_Everyone_else_has_it.png" alt="The "Everyone else has it" problem Guide">
-            <span class="new-badge">NEW</span>
-            <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1FOqfxjjNKU7SM0GjJ31LbD8XGsQ4w39x/view?usp=drive_link')">📋 Copy Link</button>
-          </div>
-          <div class="card-body">
-            <h3>The "Everyone else has it" problem</h3>
-            <p>Kids want what their friends have. It's normal. But "everyone else" isn't always a good reason.</p>
-          </div>
-          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
-        
 
       </div>
     </section>
@@ -1108,6 +1094,32 @@
         }, 2000);
       });
     }
+  </script>
+
+  <script>
+    // Auto-update guide counts from actual card count
+    (function() {
+      const sections = [
+        { sectionId: 'platform-guides',   countId: 'count-platform-guides' },
+        { sectionId: 'online-risks',      countId: 'count-online-risks' },
+        { sectionId: 'parental-controls', countId: 'count-parental-controls' },
+        { sectionId: 'further-resources', countId: 'count-further-resources' },
+      ];
+
+      let total = 0;
+
+      sections.forEach(function(s) {
+        const section = document.getElementById(s.sectionId);
+        const counter = document.getElementById(s.countId);
+        if (!section || !counter) return;
+        const count = section.querySelectorAll('.guide-card').length;
+        total += count;
+        counter.textContent = count === 1 ? '1 guide' : count + ' guides';
+      });
+
+      const totalEl = document.getElementById('totalCount');
+      if (totalEl) totalEl.textContent = total;
+    })();
   </script>
 </body>
 </html>
