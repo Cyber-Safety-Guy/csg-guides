@@ -453,8 +453,7 @@
       padding: 3px 8px;
     }
 
-    /* Card footer / button */
-    .card-footer { padding: 14px 20px 20px; }
+    .card-footer { padding: 14px 20px 20px; display: flex; flex-direction: column; gap: 8px; }
     .open-btn {
       display: block;
       text-align: center;
@@ -475,6 +474,17 @@
     .pres-card:hover .open-btn {
       background: rgba(66,206,208,0.18);
       box-shadow: 0 0 12px rgba(66,206,208,0.15);
+    }
+    .download-btn {
+      background: transparent;
+      border-color: rgba(66,206,208,0.18);
+      color: var(--grey);
+      font-size: 11px;
+    }
+    .pres-card:hover .download-btn {
+      background: rgba(66,206,208,0.06);
+      color: var(--teal);
+      box-shadow: none;
     }
 
     /* ── Coming soon note ── */
@@ -729,7 +739,8 @@
             </p>
           </div>
           <div class="card-footer">
-            <a href="#" class="open-btn" aria-label="Watch the Parents and Teachers presentation">&#9654;&nbsp; Watch Now</a>
+            <a href="https://youtu.be/3H3qE7CDddw" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Watch the Parents and Teachers presentation on YouTube">&#9654;&nbsp; Watch on YouTube</a>
+            <a href="https://drive.google.com/file/d/1BsQrc9gaazRJ4R-x50px8-9aFCdgTpHw/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="open-btn download-btn" aria-label="Download the Parents and Teachers presentation for offline use">&#8659;&nbsp; Download for Offline Use</a>
           </div>
         </article>
 
@@ -776,7 +787,8 @@
             </p>
           </div>
           <div class="card-footer">
-            <a href="#" class="open-btn" aria-label="Watch the Under-13s presentation">&#9654;&nbsp; Watch Now</a>
+            <a href="https://youtu.be/iaseax3d_5c" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Watch the Under-13s presentation on YouTube">&#9654;&nbsp; Watch on YouTube</a>
+            <a href="https://drive.google.com/file/d/13g4Y_lbhPVJVgtMMmSj0VgzjV3o63ylp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="open-btn download-btn" aria-label="Download the Under-13s presentation for offline use">&#8659;&nbsp; Download for Offline Use</a>
           </div>
         </article>
 
@@ -823,7 +835,8 @@
             </p>
           </div>
           <div class="card-footer">
-            <a href="#" class="open-btn" aria-label="Watch the Teens 13 plus presentation">&#9654;&nbsp; Watch Now</a>
+            <a href="https://youtu.be/XeU_cVRDdcI?si=QZasFNf7imhNVjnX" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Watch the Teens 13 plus presentation on YouTube">&#9654;&nbsp; Watch on YouTube</a>
+            <a href="https://drive.google.com/file/d/1oRbuWwpGySksJIvSp--dmWNmli8Z9LRb/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="open-btn download-btn" aria-label="Download the Teens 13 plus presentation for offline use">&#8659;&nbsp; Download for Offline Use</a>
           </div>
         </article>
 
