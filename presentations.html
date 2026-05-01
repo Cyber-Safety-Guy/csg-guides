@@ -844,7 +844,7 @@
 
       <div class="coming-soon-note">
         <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" style="width:32px;height:32px;border-radius:50%;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(66,206,208,0.4));">
-        <span>More presentations are in development, covering topics including neurodivergent children online, gaming safety, and AI literacy. Check back soon, or <a href="https://www.cybersafetyguy.com" target="_blank" rel="noopener noreferrer" style="color: var(--teal); text-decoration: none;">Subscribe to Cyber Safety Guy</a> to be the first to know.</span>
+        <span>More presentations are in development, covering topics including neurodivergent children online, gaming safety, and AI literacy. Check back soon, or <a href="https://www.cybersafetyguy.com" target="_blank" rel="noopener noreferrer" style="color: var(--teal); text-decoration: none;">Subscribe at Cyber Safety Guy</a> to be the first to know.</span>
       </div>
 
     </section><!-- /school-presentations -->
@@ -893,10 +893,45 @@
     });
     btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+    // ── Dynamic counts ──
+    // Updates the header badge total and each section's count label.
+    // Called on load and after every search filter so numbers are always accurate.
+    function updateCounts() {
+      const sections = document.querySelectorAll('.category-section');
+      let grandTotal = 0;
+
+      sections.forEach(section => {
+        const visibleCards = section.querySelectorAll('.pres-card:not(.hidden)');
+        const count = visibleCards.length;
+        grandTotal += count;
+
+        const countEl = section.querySelector('.category-count');
+        if (countEl) {
+          countEl.textContent = count === 1 ? '1 presentation' : `${count} presentations`;
+        }
+      });
+
+      // Update the header badge
+      const badgeStrong = document.querySelector('.guide-count-badge strong');
+      if (badgeStrong) badgeStrong.textContent = grandTotal;
+
+      const badgeText = document.querySelector('.guide-count-badge');
+      if (badgeText) {
+        const textNode = Array.from(badgeText.childNodes).find(n => n.nodeType === 3);
+        if (textNode) {
+          textNode.textContent = grandTotal === 1
+            ? ' presentation available — more coming soon'
+            : ' presentations available — more coming soon';
+        }
+      }
+    }
+
+    // Run on load
+    updateCounts();
+
     // ── Search ──
     const searchInput = document.getElementById('searchInput');
     const noResults   = document.getElementById('noResults');
-    const cards       = document.querySelectorAll('.pres-card');
     const sections    = document.querySelectorAll('.category-section');
 
     searchInput.addEventListener('input', () => {
@@ -908,10 +943,10 @@
         let sectionVisible = 0;
 
         sectionCards.forEach(card => {
-          const title   = card.querySelector('h3')?.textContent.toLowerCase() || '';
-          const desc    = card.querySelector('p:not(.card-audience):not(.duration-badge)')?.textContent.toLowerCase() || '';
-          const search  = card.dataset.search?.toLowerCase() || '';
-          const chips   = Array.from(card.querySelectorAll('.chip')).map(c => c.textContent.toLowerCase()).join(' ');
+          const title  = card.querySelector('h3')?.textContent.toLowerCase() || '';
+          const desc   = card.querySelector('p:not(.card-audience):not(.duration-badge)')?.textContent.toLowerCase() || '';
+          const search = card.dataset.search?.toLowerCase() || '';
+          const chips  = Array.from(card.querySelectorAll('.chip')).map(c => c.textContent.toLowerCase()).join(' ');
           const matches = !query || title.includes(query) || desc.includes(query) || search.includes(query) || chips.includes(query);
 
           card.classList.toggle('hidden', !matches);
@@ -923,10 +958,10 @@
       });
 
       noResults.style.display = totalVisible === 0 ? 'block' : 'none';
-    });
 
-    // ── Image fallback ──
-    // Handled inline via onerror attributes on each img tag
+      // Keep counts in sync with search results
+      updateCounts();
+    });
   </script>
 
 </body>
