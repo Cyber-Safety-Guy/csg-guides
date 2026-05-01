@@ -226,9 +226,9 @@
 
     /* Fallback shown when image is missing */
     .card-img-fallback {
+      display: none;
       position: absolute;
       inset: 0;
-      display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(135deg, var(--navy-dark) 0%, var(--teal-dark) 100%);
@@ -357,7 +357,8 @@
       }
       .card-body h3    { font-size: 12px; }
       .card-body p     { font-size: 11px; }
-      .card-img-fallback { font-size: 12px; }
+      .card-img-fallback {
+      display: none; font-size: 12px; }
     }
 
     @media (max-width: 360px) {
@@ -399,7 +400,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_BeReal.png" alt="BeReal Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_BeReal.png" alt="BeReal Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">BeReal</div>
           </div>
           <div class="card-body">
@@ -411,7 +412,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Discord.png" alt="Discord Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Discord.png" alt="Discord Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Discord</div>
           </div>
           <div class="card-body">
@@ -423,7 +424,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Instagram.png" alt="Instagram Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Instagram.png" alt="Instagram Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Instagram</div>
           </div>
           <div class="card-body">
@@ -435,7 +436,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Livestreaming.png" alt="Livestreaming Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Livestreaming.png" alt="Livestreaming Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Livestreaming</div>
           </div>
           <div class="card-body">
@@ -447,7 +448,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Roblox.png" alt="Roblox Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Roblox.png" alt="Roblox Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Roblox</div>
           </div>
           <div class="card-body">
@@ -459,7 +460,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Snapchat.png" alt="Snapchat Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Snapchat.png" alt="Snapchat Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Snapchat</div>
           </div>
           <div class="card-body">
@@ -471,7 +472,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_TikTok.png" alt="TikTok Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_TikTok.png" alt="TikTok Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">TikTok</div>
           </div>
           <div class="card-body">
@@ -483,7 +484,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Whatsapp.png" alt="WhatsApp Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Whatsapp.png" alt="WhatsApp Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">WhatsApp</div>
           </div>
           <div class="card-body">
@@ -495,7 +496,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Youtube.png" alt="YouTube Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Youtube.png" alt="YouTube Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">YouTube</div>
           </div>
           <div class="card-body">
@@ -507,7 +508,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_YouTube_Shorts.png" alt="YouTube Shorts Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_YouTube_Shorts.png" alt="YouTube Shorts Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">YouTube Shorts</div>
           </div>
           <div class="card-body">
@@ -534,7 +535,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_AI_Girlfriends_Companions.png" alt="AI Companions Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_AI_Girlfriends_Companions.png" alt="AI Companions Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">AI Companions</div>
           </div>
           <div class="card-body">
@@ -546,7 +547,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_AI_Chatbots_and_Children.png" alt="AI Chatbots Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_AI_Chatbots_and_Children.png" alt="AI Chatbots Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">AI Chatbots</div>
           </div>
           <div class="card-body">
@@ -558,7 +559,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Group_Chats.png" alt="Group Chats Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Group_Chats.png" alt="Group Chats Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Group Chats</div>
           </div>
           <div class="card-body">
@@ -570,7 +571,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Online_Challenges_Trends.png" alt="Online Challenges Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Online_Challenges_Trends.png" alt="Online Challenges Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Online Challenges</div>
           </div>
           <div class="card-body">
@@ -582,7 +583,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Online_Gaming_Voice_Chat.png" alt="Online Gaming Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Online_Gaming_Voice_Chat.png" alt="Online Gaming Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Online Gaming</div>
           </div>
           <div class="card-body">
@@ -594,7 +595,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Sextortion_Image_Based_Abuse.png" alt="Sextortion Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Sextortion_Image_Based_Abuse.png" alt="Sextortion Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Sextortion & Image Abuse</div>
           </div>
           <div class="card-body">
@@ -606,7 +607,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Social_Media_Footprint.png" alt="Social Media Footprint Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Social_Media_Footprint.png" alt="Social Media Footprint Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Social Media Footprint</div>
           </div>
           <div class="card-body">
@@ -633,7 +634,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Screen_Time_Device_Overuse.png" alt="Screen Time Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Screen_Time_Device_Overuse.png" alt="Screen Time Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Screen Time</div>
           </div>
           <div class="card-body">
@@ -645,7 +646,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Sharenting.png" alt="Sharenting Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Sharenting.png" alt="Sharenting Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Sharenting</div>
           </div>
           <div class="card-body">
@@ -672,7 +673,7 @@
 
         <a href="#" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Why_Kids_Dont_Tell.png" alt="Why Kids Don't Tell Guide" onerror="this.style.display='none'">
+            <img src="images/CSG_Why_Kids_Dont_Tell_Parents.png" alt="Why Kids Don't Tell Guide" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="card-img-fallback">Why Kids Don't Tell</div>
           </div>
           <div class="card-body">
