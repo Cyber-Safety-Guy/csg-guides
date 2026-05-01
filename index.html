@@ -364,6 +364,55 @@
     @media (max-width: 360px) {
       .guide-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Search ── */
+    .search-wrap {
+      max-width: 600px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(10,14,20,0.7);
+      border: 1px solid rgba(66,206,208,0.35);
+      border-radius: 4px;
+      color: var(--off-white);
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+      padding: 14px 48px 14px 18px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-input::placeholder { color: var(--grey); }
+
+    .search-input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 16px rgba(66,206,208,0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--grey);
+      font-size: 18px;
+      pointer-events: none;
+    }
+
+    .search-no-results {
+      display: none;
+      text-align: center;
+      color: var(--grey);
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+      padding: 32px 0;
+    }
+
+    .category-section.hidden { display: none; }
+    .guide-card.hidden { display: none; }
   </style>
 </head>
 <body>
@@ -385,6 +434,18 @@
   </header>
 
   <main class="main">
+
+    <div class="search-wrap">
+      <input
+        type="text"
+        class="search-input"
+        id="guideSearch"
+        placeholder="Search guides — try 'TikTok', 'grooming', 'screen time'..."
+        autocomplete="off"
+      >
+      <span class="search-icon">🔍</span>
+    </div>
+    <p class="search-no-results" id="noResults">No guides found. Try a different search term.</p>
 
     <!-- ==============================
          PLATFORM GUIDES
@@ -704,5 +765,41 @@
     Subscription proceeds donated to Childline (NSPCC).
   </div>
 
+
+  <script>
+    const searchInput = document.getElementById('guideSearch');
+    const noResults   = document.getElementById('noResults');
+    const sections    = document.querySelectorAll('.category-section');
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+      let totalVisible = 0;
+
+      sections.forEach(section => {
+        const cards = section.querySelectorAll('.guide-card');
+        let sectionVisible = 0;
+
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          if (!query || text.includes(query)) {
+            card.classList.remove('hidden');
+            sectionVisible++;
+            totalVisible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Hide entire section if no cards match
+        if (sectionVisible === 0 && query) {
+          section.classList.add('hidden');
+        } else {
+          section.classList.remove('hidden');
+        }
+      });
+
+      noResults.style.display = (totalVisible === 0 && query) ? 'block' : 'none';
+    });
+  </script>
 </body>
 </html>
