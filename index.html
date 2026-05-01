@@ -584,6 +584,43 @@
     .childline-number a:hover {
       text-decoration: underline;
     }
+
+    /* ── Share button ── */
+    .card-img-wrap .share-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(10,22,40,0.85);
+      border: 1px solid rgba(66,206,208,0.4);
+      color: var(--teal);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s, transform 0.2s, background 0.2s;
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+
+    .guide-card:hover .share-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .share-btn:hover {
+      background: rgba(66,206,208,0.2);
+    }
+
+    .share-btn.copied {
+      color: #4CAF50;
+      border-color: #4CAF50;
+    }
   </style>
 </head>
 <body>
@@ -643,6 +680,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_BeReal.png" alt="BeReal Guide">
             <div class="card-img-fallback">BeReal</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1j0MpzN_ZuovNT8iSoCuPpa7Hmm52MTAK/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>BeReal</h3>
@@ -655,6 +693,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Discord.png" alt="Discord Guide">
             <div class="card-img-fallback">Discord</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1x5gCeyRca3Veut6BhfS80X_dY-lHNWcS/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Discord</h3>
@@ -667,6 +706,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Instagram.png" alt="Instagram Guide">
             <div class="card-img-fallback">Instagram</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1r7AHJwfLJzy1F3tk5I5858h9d9p-Gxtf/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Instagram</h3>
@@ -679,6 +719,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Livestreaming.png" alt="Livestreaming Guide">
             <div class="card-img-fallback">Livestreaming</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1zZNq2aEU182d7ND6bs7Kk73plE22wFDa/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Livestreaming</h3>
@@ -691,6 +732,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Roblox.png" alt="Roblox Guide">
             <div class="card-img-fallback">Roblox</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1ZPqpFKP49psKJxJnSQsXDB1S7nngibZC/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Roblox</h3>
@@ -703,6 +745,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Snapchat.png" alt="Snapchat Guide">
             <div class="card-img-fallback">Snapchat</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1rCK8acXtV26eoXKd0Ime98ABD-IpbqXs/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Snapchat</h3>
@@ -715,6 +758,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_TikTok.png" alt="TikTok Guide">
             <div class="card-img-fallback">TikTok</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/17wqW_vkzuNlWmGdP57k6_850kDhuxhKF/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>TikTok</h3>
@@ -727,6 +771,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Whatsapp.png" alt="WhatsApp Guide">
             <div class="card-img-fallback">WhatsApp</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1TtIls6sT_qlUGkEVjVBTskFVC6HZE8y4/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>WhatsApp</h3>
@@ -739,6 +784,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Youtube.png" alt="YouTube Guide">
             <div class="card-img-fallback">YouTube</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1Rscw5wIobYOnEPUrkUPNwU7zZtQHUAm4/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>YouTube</h3>
@@ -751,6 +797,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_YouTube_Shorts.png" alt="YouTube Shorts Guide">
             <div class="card-img-fallback">YouTube Shorts</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1Uub5pMmgfE0sFw1Dw4TsI_aJkUpGyf44/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>YouTube Shorts</h3>
@@ -778,6 +825,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_AI_Girlfriends_Companions.png" alt="AI Companions Guide"><span class="new-badge">NEW</span>
             <div class="card-img-fallback">AI Companions</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1zpf2wF1cdM521h6bzFxqgysKtHBabrPX/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>AI "Girlfriends" / Companions</h3>
@@ -790,6 +838,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_AI_Chatbots_and_Children.png" alt="AI Chatbots Guide"><span class="new-badge">NEW</span>
             <div class="card-img-fallback">AI Chatbots</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/16iTAG8gcduU-9BKboS5z6Vb1ylr-4n_M/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>AI Chatbots and Children</h3>
@@ -802,6 +851,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Group_Chats.png" alt="Group Chats Guide">
             <div class="card-img-fallback">Group Chats</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1QlkrUFyFccY3X2gXcVjlqU94XkeeSc_j/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Group Chats</h3>
@@ -814,6 +864,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Online_Challenges_Trends.png" alt="Online Challenges Guide">
             <div class="card-img-fallback">Online Challenges</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1vWZat-G1fTr4sUyp85mhIrwJ2slWnx6c/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Online Challenges & Trends</h3>
@@ -826,6 +877,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Online_Gaming_Voice_Chat.png" alt="Online Gaming Guide">
             <div class="card-img-fallback">Online Gaming</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/11y7EPDydfHDTihDJn8YO1syjOaAczVUL/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Online Gaming & Voice Chat</h3>
@@ -838,6 +890,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Sextortion_Image_Based_Abuse.png" alt="Sextortion Guide">
             <div class="card-img-fallback">Sextortion & Image Abuse</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1nN7T0il7MNBgxRS_5CjXm_dISlfQNzfN/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Sextortion & Image-Based Abuse</h3>
@@ -850,6 +903,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Social_Media_Footprint.png" alt="Social Media Footprint Guide">
             <div class="card-img-fallback">Social Media Footprint</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1706KEQnLDe6L9KVUVmTniA1u26H7h5V2/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Social Media Footprint</h3>
@@ -877,6 +931,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Screen_Time_Device_Overuse.png" alt="Screen Time Guide">
             <div class="card-img-fallback">Screen Time</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/18Rec-AG_JiZ5zMGzqXHptRBSAuo6USAj/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Screen Time & Device Overuse</h3>
@@ -889,6 +944,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Sharenting.png" alt="Sharenting Guide">
             <div class="card-img-fallback">Sharenting</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1uSawSsIDLyrCHnRy4VNpcoBBPA6vuW9R/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Sharenting</h3>
@@ -916,6 +972,7 @@
           <div class="card-img-wrap">
             <img src="images/CSG_Why_Kids_Dont_Tell.png" alt="Why Kids Don't Tell Guide"><span class="new-badge">NEW</span>
             <div class="card-img-fallback">Why Kids Don't Tell</div>
+                    <button class="share-btn" onclick="copyLink(event, 'https://drive.google.com/file/d/1tbiiBLiJZVHehvpxyGWipqmITgtmLV56/view')">📋 Copy Link</button>
           </div>
           <div class="card-body">
             <h3>Why Kids Don't Tell Parents (And How to Fix It)</h3>
@@ -1005,6 +1062,38 @@
         backToTop.classList.remove('visible');
       }
     });
+  </script>
+
+  <script>
+    function copyLink(event, url) {
+      event.preventDefault();
+      event.stopPropagation();
+      const btn = event.currentTarget;
+      navigator.clipboard.writeText(url).then(() => {
+        const original = btn.innerHTML;
+        btn.innerHTML = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(() => {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = url;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const original = btn.innerHTML;
+        btn.innerHTML = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
   </script>
 </body>
 </html>
