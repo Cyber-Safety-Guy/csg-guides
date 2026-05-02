@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Guides — Cyber Safety Guy</title>
+  <link rel="canonical" href="https://guides.cybersafetyguy.com/">
+  <meta name="description" content="Free child online safety guides for parents, teachers and safeguarding professionals. From Cyber Safety Guy.">
+  <meta property="og:title" content="Free Guides — Cyber Safety Guy">
+  <meta property="og:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals. Plain-English advice you can download and share.">
+  <meta property="og:url" content="https://guides.cybersafetyguy.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cyber-safety-guy.github.io/csg-guides/images/CSG_BeReal.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Guides — Cyber Safety Guy">
+  <meta name="twitter:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
+    <span class="jump-nav-label">Jump to</span>
+    <a href="#platform-guides">📱 Platform Guides</a>
+    <a href="#online-risks">🧠 Online Risks</a>
+    <a href="#parental-controls">🛡️ Parental Controls</a>
+    <a href="#further-resources">📁 Further Resources</a>
+  </nav>
+
+  <header class="site-header">
+    <img src="images/CSG_logo.png" alt="Cyber Safety Guy Logo" class="site-logo">
+    <div class="header-badge">Cyber Safety Guy</div>
+    <h1>FREE <span>GUIDES</span></h1>
+    <p class="header-sub">cybersafetyguy.com</p>
+    <p class="header-intro">
+      Every guide on this page is free. No sign-up, no paywall.
+      Practical, plain-English advice for parents, teachers, and safeguarding professionals.
+      Click any guide to open it directly in your browser.
+    </p>
+    <div class="guide-count-badge">
+      <strong id="totalCount">20</strong> free guides available
+    </div>
+    <div class="page-nav">
+      <a class="page-nav-btn active">📄 Free Guides</a>
+      <a href="presentations.html" class="page-nav-btn go">🎬 Presentations</a>
+      <a href="social.html" class="page-nav-btn go">📡 Social</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="search-wrap">
+      <input
+        type="text"
+        class="search-input"
+        id="guideSearch"
+        placeholder="Search guides — try 'TikTok', 'grooming', 'screen time'..."
+        autocomplete="off"
+      >
+      <span class="search-icon">🔍</span>
+    </div>
+    <p class="search-no-results" id="noResults">No guides found. Try a different search term.</p>
+
+    <!-- PLATFORM GUIDES -->
+    <section class="category-section" id="platform-guides">
+      <div class="category-header">
+        <span class="category-icon">📱</span>
+        <h2 class="category-title">Platform Guides</h2>
+        <span class="category-count" id="count-platform-guides">10 guides</span>
+      </div>
+      <p class="category-desc">The apps and platforms your children are actually using — what the risks are, and what you can do about them.</p>
+      <div class="guide-grid">
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_BeReal.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_BeReal.png" alt="BeReal Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_BeReal.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>BeReal</h3><p>What the "real moments" app actually reveals about your child, and what it means for their privacy.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Discord.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Discord.png" alt="Discord Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Discord.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Discord</h3><p>The chat platform millions of children use for gaming. Why the privacy settings matter far more than most parents realise.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Instagram.png" alt="Instagram Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Instagram</h3><p>Beyond filters and followers. What parents need to understand about how Instagram really works.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Livestreaming.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Livestreaming.png" alt="Livestreaming Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Livestreaming.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Livestreaming</h3><p>When your child goes live, so does the risk. A breakdown of TikTok Live, Twitch, and YouTube Live.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Roblox.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Roblox.png" alt="Roblox Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Roblox.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Roblox</h3><p>It looks like a children's game. Some of the risks are very adult. A plain-English guide for parents.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Snapchat.png" alt="Snapchat Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Snapchat</h3><p>Disappearing messages don't disappear the way most children think. Here's what's actually happening.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_TikTok.png" alt="TikTok Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>TikTok</h3><p>The algorithm, the For You page, and why TikTok is one of the most important platforms to understand right now.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Whatsapp.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Whatsapp.png" alt="WhatsApp Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Whatsapp.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>WhatsApp</h3><p>Unknown contacts, group chats, and what parents can genuinely do to reduce the risk.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Youtube.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Youtube.png" alt="YouTube Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Youtube.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>YouTube</h3><p>From rabbit holes to harmful content. Understanding what your child is watching, and why.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Youtube_shorts.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_YouTube_Shorts.png" alt="YouTube Shorts Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Youtube_shorts.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>YouTube Shorts</h3><p>TikTok's main rival carries many of the same risks. Here's what you need to know.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ONLINE RISKS -->
+    <section class="category-section" id="online-risks">
+      <div class="category-header">
+        <span class="category-icon">🧠</span>
+        <h2 class="category-title">Understanding Online Risks</h2>
+        <span class="category-count" id="count-online-risks">7 guides</span>
+      </div>
+      <p class="category-desc">The threats that don't always come with obvious warning signs, explained clearly.</p>
+      <div class="guide-grid">
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_AI_Girlfriends_Companions.png" alt="AI Companions Guide"><span class="new-badge">NEW</span>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>AI "Girlfriends" / Companions</h3><p>AI companions are being marketed directly at young people. Here's what that actually means.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_AI_Chatbots_and_Children.png" alt="AI Chatbots Guide"><span class="new-badge">NEW</span>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>AI Chatbots and Children</h3><p>ChatGPT, Gemini, and the rest. What children are using AI for, and where the risks sit.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Group_Chats.png" alt="Group Chats Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Group Chats</h3><p>The conversations happening in your child's pocket, and why group chats are hard to spot.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Online_challenges_trends.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Online_Challenges_Trends.png" alt="Online Challenges Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Online_challenges_trends.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Online Challenges & Trends</h3><p>How viral challenges spread, why children feel pressure, and the warning signs.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Online_gaming_voice_chat.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Online_Gaming_Voice_Chat.png" alt="Online Gaming Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Online_gaming_voice_chat.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Online Gaming & Voice Chat</h3><p>Real-time voice chat with strangers is built into almost every game. Here's how to manage it.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Sextortion_Image_Based_Abuse.png" alt="Sextortion Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Sextortion & Image-Based Abuse</h3><p>One of the fastest-growing threats to young people online. What it is and how to help.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Social_Media_Footprint.png" alt="Social Media Footprint Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Social Media Footprint</h3><p>What your child's online presence says about them, and how to help them manage it.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- PARENTAL CONTROLS -->
+    <section class="category-section" id="parental-controls">
+      <div class="category-header">
+        <span class="category-icon">🛡️</span>
+        <h2 class="category-title">Parental Controls</h2>
+        <span class="category-count" id="count-parental-controls">2 guides</span>
+      </div>
+      <p class="category-desc">Practical guidance for managing your child's online world at home.</p>
+      <div class="guide-grid">
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Screen_Time_Device_Overuse.png" alt="Screen Time Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Screen Time & Device Overuse</h3><p>Practical steps for managing how long children spend online without the daily battle.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Sharenting.png" alt="Sharenting Guide">
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Sharenting</h3><p>Before you post that photo, read this. Protecting your child's digital identity.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FURTHER RESOURCES -->
+    <section class="category-section" id="further-resources">
+      <div class="category-header">
+        <span class="category-icon">📁</span>
+        <h2 class="category-title">Further Resources</h2>
+        <span class="category-count" id="count-further-resources">2 guides</span>
+      </div>
+      <p class="category-desc">Essential reading that belongs in every parent's and teacher's toolkit.</p>
+      <div class="guide-grid">
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Why_Kids_Dont_Tell.png" alt="Why Kids Don't Tell Guide"><span class="new-badge">NEW</span>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Why Kids Don't Tell Parents</h3><p>The most important conversation you can have. Why children stay silent about online harm.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+        <a href="https://guides.cybersafetyguy.com/guides/CSG_Everyone_else_has_it.pdf" target="_blank" rel="noopener" class="guide-card">
+          <div class="card-img-wrap">
+            <img src="images/CSG_Everyone_else_has_it.png" alt="Everyone Else Has It Guide"><span class="new-badge">NEW</span>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Everyone_else_has_it.pdf')">📋 Copy Link</button>
+          </div>
+          <div class="card-body"><h3>Everyone Else Has It</h3><p>The phrase every parent dreads. Navigating peer pressure around devices and apps.</p></div>
+          <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="childline-footer">
+    <p class="childline-eyebrow">If a child needs support right now</p>
+    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
+    <p class="childline-url">childline.org.uk</p>
+    <p class="childline-desc">Childline is free, confidential, and available 24 hours a day.</p>
+    <div class="partner-logos">
+      <a href="https://www.childline.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/childline-logo.png" alt="Childline">
+        <span class="partner-logo-label">Charity Partner</span>
+      </a>
+      <div class="partner-divider"></div>
+      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/nspcc-logo.png" alt="NSPCC">
+        <span class="partner-logo-label">Part of NSPCC</span>
+      </a>
+    </div>
+  </footer>
+
+  <div class="site-footer-bar">
+    <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
+    &nbsp;—&nbsp;All guides free to download and share.
+  </div>
+
+  <button class="back-to-top" id="backToTop">↑ Top</button>
+
+  <script>
+    // 1. Automatic Counter
+    (function() {
+      const config = [
+        { sectionId: 'platform-guides',   countId: 'count-platform-guides' },
+        { sectionId: 'online-risks',      countId: 'count-online-risks' },
+        { sectionId: 'parental-controls', countId: 'count-parental-controls' },
+        { sectionId: 'further-resources', countId: 'count-further-resources' },
+      ];
+      let total = 0;
+      config.forEach(s => {
+        const section = document.getElementById(s.sectionId);
+        const counter = document.getElementById(s.countId);
+        if (section && counter) {
+          const count = section.querySelectorAll('.guide-card').length;
+          total += count;
+          counter.textContent = count + (count === 1 ? ' guide' : ' guides');
+        }
+      });
+      const totalEl = document.getElementById('totalCount');
+      if (totalEl) totalEl.textContent = total;
+    })();
+
+    // 2. Search
+    const searchInput = document.getElementById('guideSearch');
+    const sections = document.querySelectorAll('.category-section');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      let totalVisible = 0;
+      sections.forEach(section => {
+        let sectionVisible = false;
+        const cards = section.querySelectorAll('.guide-card');
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          if (text.includes(term)) {
+            card.classList.remove('hidden');
+            sectionVisible = true;
+            totalVisible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        section.classList.toggle('hidden', !sectionVisible);
+      });
+      noResults.style.display = (totalVisible === 0 && term !== '') ? 'block' : 'none';
+    });
+
+    // 3. Copy Link
+    function copyLink(event, url) {
+      event.preventDefault();
+      event.stopPropagation();
+      const btn = event.currentTarget;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "✅ Copied!";
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // 4. Back to Top
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) backToTopBtn.classList.add('visible');
+      else backToTopBtn.classList.remove('visible');
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
