@@ -3,26 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social — Cyber Safety Guy</title>
+  <title>Social Media — Cyber Safety Guy</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <h1>SOCIAL <span>CHANNELS</span></h1>
-    <div class="page-nav">
-      <a href="index.html" class="page-nav-btn">📄 Guides</a>
-      <a href="presentations.html" class="page-nav-btn">🎬 Presentations</a>
-      <a class="page-nav-btn active">📡 Social</a>
+  <div class="top-bar"></div>
+  <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24" width="18" style="fill:white; vertical-align:middle;"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home</a>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">📄 Free Guides</a>
+      <a href="presentations.html">🎬 Presentations</a>
+      <a href="social.html" class="active">📡 Social</a>
     </div>
+  </nav>
+
+  <header class="site-header">
+    <img src="images/CSG_logo.png" alt="Logo" class="site-logo">
+    <h1>SOCIAL <span>CHANNELS</span></h1>
+    <p class="header-intro">Follow for child online safety news, resources and research updates.</p>
   </header>
+
   <main class="main">
-    <div class="social-grid">
-      <a href="https://cybersafetyguy.substack.com" class="social-card"><div class="card-content"><h3>Substack</h3><p>In-depth research and safety audits.</p></div></a>
-      <a href="https://instagram.com/cyber_safety_guy" class="social-card"><div class="card-content"><h3>Instagram</h3><p>Daily tips and visual guides.</p></div></a>
-      <a href="https://bsky.app/profile/cybersafetyguy.bsky.social" class="social-card"><div class="card-content"><h3>BlueSky</h3><p>Real-time safety alerts.</p></div></a>
-      <a href="https://linkedin.com/in/cybersafetyguy" class="social-card"><div class="card-content"><h3>LinkedIn</h3><p>Professional safeguarding networking.</p></div></a>
-      <a href="https://youtube.com/@cybersafetyguy" class="social-card"><div class="card-content"><h3>YouTube</h3><p>Video presentations and walkthroughs.</p></div></a>
+    <div class="guide-grid">
+      <a href="https://cybersafetyguy.substack.com" target="_blank" class="guide-card">
+        <div class="card-content" style="padding:25px;">
+          <h3 style="color:var(--teal);">Substack</h3>
+          <p style="font-size:0.9rem; opacity:0.8; margin-top:10px;">In-depth investigations, safety audits, and research updates. Every subscription funds Childline.</p>
+        </div>
+      </a>
+      <a href="https://instagram.com/cyber_safety_guy" target="_blank" class="guide-card">
+        <div class="card-content" style="padding:25px;">
+          <h3 style="color:var(--teal);">Instagram</h3>
+          <p style="font-size:0.9rem; opacity:0.8; margin-top:10px;">Daily tips, quick infographics, and Reels for parents on the go.</p>
+        </div>
+      </a>
+      <a href="https://bsky.app/profile/cybersafetyguy.bsky.social" target="_blank" class="guide-card">
+        <div class="card-content" style="padding:25px;">
+          <h3 style="color:var(--teal);">BlueSky</h3>
+          <p style="font-size:0.9rem; opacity:0.8; margin-top:10px;">Real-time safety alerts and commentary on the latest digital trends.</p>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/cybersafetyguy" target="_blank" class="guide-card">
+        <div class="card-content" style="padding:25px;">
+          <h3 style="color:var(--teal);">LinkedIn</h3>
+          <p style="font-size:0.9rem; opacity:0.8; margin-top:10px;">Professional networking for safeguarding leads and teachers.</p>
+        </div>
+      </a>
+      <a href="https://youtube.com/@cybersafetyguy" target="_blank" class="guide-card">
+        <div class="card-content" style="padding:25px;">
+          <h3 style="color:var(--teal);">YouTube</h3>
+          <p style="font-size:0.9rem; opacity:0.8; margin-top:10px;">Full-length presentation videos and app walkthroughs.</p>
+        </div>
+      </a>
     </div>
   </main>
+  <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }</script>
 </body>
 </html>
