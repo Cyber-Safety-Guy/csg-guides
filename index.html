@@ -21,6 +21,77 @@
   
   <!-- CSS Link -->
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Safety Checker Integrated Styles */
+    .checker-wrap {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      padding: 0 20px;
+    }
+    .checker-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .checker-input {
+      width: 100%;
+      max-width: 500px;
+      padding: 15px;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid #38bdf8;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.1rem;
+      font-family: 'Exo 2', sans-serif;
+      margin-top: 15px;
+      outline: none;
+    }
+    .checker-result {
+      display: none;
+      margin-top: 25px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      animation: slideDown 0.3s ease-out;
+    }
+    .checker-result h2, .checker-result p, .checker-result strong {
+      color: #0f172a !important;
+    }
+    .checker-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .danger-bg { background: #fee2e2; color: #991b1b !important; }
+    .caution-bg { background: #ffedd5; color: #9a3412 !important; }
+    
+    .checker-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: #0f172a;
+      color: #fff !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .checker-btn:hover { opacity: 0.9; }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
@@ -63,6 +134,23 @@
   </header>
 
   <main class="main">
+
+    <!-- INTEGRATED APP SAFETY CHECKER -->
+    <section class="checker-wrap">
+        <div class="checker-card">
+            <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.4rem; margin: 0;">APP SAFETY CHECKER</h2>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Quick-check any app for age ratings and risks</p>
+            <input type="text" id="checkerInput" class="checker-input" placeholder="Type app name (e.g. Roblox, TikTok...)" onkeyup="runChecker()">
+            
+            <div id="checkerResult" class="checker-result">
+                <div id="checkBadge" class="checker-badge"></div>
+                <h2 id="checkName" style="margin: 5px 0;"></h2>
+                <p><strong>Official Age Rating:</strong> <span id="checkAge"></span></p>
+                <p id="checkTip"></p>
+                <a id="checkLink" href="#" class="checker-btn">Open Full Guide →</a>
+            </div>
+        </div>
+    </section>
 
     <div class="search-wrap">
       <input
@@ -183,6 +271,33 @@
       } catch (error) {
         console.error("Error loading guides.json:", error);
       }
+    }
+
+    // Checker Database & Logic
+    const appDb = {
+        "tiktok": { name: "TikTok", age: "13+", status: "danger", tip: "High risk of inappropriate content and grooming via DMs. 'Family Pairing' is essential.", link: "https://www.cybersafetyguy.com/p/twenty-free-guides-no-paywall-no" },
+        "roblox": { name: "Roblox", age: "10+", status: "caution", tip: "Unmoderated user content and in-game currency scams. Check server settings.", link: "https://www.cybersafetyguy.com/p/twenty-free-guides-no-paywall-no" },
+        "snapchat": { name: "Snapchat", age: "13+", status: "danger", tip: "Snap Map location tracking and disappearing messages increase safety risks.", link: "https://www.cybersafetyguy.com/p/twenty-free-guides-no-paywall-no" },
+        "whatsapp": { name: "WhatsApp", age: "13-16+", status: "caution", tip: "End-to-end encryption is good, but group chats with strangers are a risk.", link: "https://www.cybersafetyguy.com/p/twenty-free-guides-no-paywall-no" },
+        "bereal": { name: "BeReal", age: "13+", status: "caution", tip: "Real-time photos can leak your home address or school location easily.", link: "https://www.cybersafetyguy.com/p/twenty-free-guides-no-paywall-no" },
+        "youtube": { name: "YouTube", age: "All Ages", status: "caution", tip: "Algorithms can lead to harmful 'rabbit holes'. Use Restricted Mode.", link: "https://www.cybersafetyguy.com/p/twenty-free-guides-no-paywall-no" },
+        "discord": { name: "Discord", age: "13+", status: "caution", tip: "Public servers often contain adult content. Disable DMs from non-friends.", link: "https://www.cybersafetyguy.com/p/twenty-free-guides-no-paywall-no" }
+    };
+
+    function runChecker() {
+        const val = document.getElementById('checkerInput').value.toLowerCase().trim();
+        const res = document.getElementById('checkerResult');
+        if (appDb[val]) {
+            res.style.display = "block";
+            document.getElementById('checkBadge').innerText = appDb[val].status === 'danger' ? '⚠️ High Risk' : '🟡 Caution';
+            document.getElementById('checkBadge').className = 'checker-badge ' + appDb[val].status + '-bg';
+            document.getElementById('checkName').innerText = appDb[val].name;
+            document.getElementById('checkAge').innerText = appDb[val].age;
+            document.getElementById('checkTip').innerText = appDb[val].tip;
+            document.getElementById('checkLink').href = appDb[val].link;
+        } else {
+            res.style.display = "none";
+        }
     }
 
     // 1. Dynamic Statistics (Counters)
