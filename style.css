@@ -1,0 +1,38 @@
+/* SHARED BRANDING FOR ALL PAGES */
+:root {
+    --teal: #00f2ff;
+    --dark-bg: #0a0b10;
+    --card-bg: #161b22;
+    --text-main: #e6edf3;
+    --text-dim: #8b949e;
+    --glow: 0 0 15px rgba(0, 242, 255, 0.3);
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+/* SHARED HEADER NAVIGATION */
+.top-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+}
+
+.nav-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--teal);
+    text-shadow: var(--glow);
+}
