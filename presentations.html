@@ -5,36 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presentations — Cyber Safety Guy</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <h1>PRESEN<span>TATIONS</span></h1>
-    <div class="page-nav">
-      <a href="index.html" class="page-nav-btn">📄 Guides</a>
-      <a class="page-nav-btn active">🎬 Presentations</a>
-      <a href="social.html" class="page-nav-btn">📡 Social</a>
+  <div class="top-bar"></div>
+  <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24" width="18" style="fill:white; vertical-align:middle;"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home</a>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">📄 Free Guides</a>
+      <a href="presentations.html" class="active">🎬 Presentations</a>
+      <a href="social.html">📡 Social</a>
     </div>
+  </nav>
+
+  <header class="site-header">
+    <img src="images/CSG_logo.png" alt="Logo" class="site-logo">
+    <h1>PRESEN<span>TATIONS</span></h1>
+    <p class="header-intro">Free safety presentations for schools, parents and youth organisations.</p>
+    <div class="guide-count-badge"><strong id="totalCount">0</strong> presentations available</div>
   </header>
+
   <main class="main">
     <div class="pres-grid" id="presGrid"></div>
   </main>
+
   <script>
     async function loadPresentations() {
-      const response = await fetch('presentations.json');
-      const data = await response.json();
-      const grid = document.getElementById('presGrid');
-      data.forEach(p => {
-        grid.insertAdjacentHTML('beforeend', `
-          <div class="pres-card">
-            <div class="card-img-wrap"><img src="images/${p.image}"></div>
-            <div class="card-content">
-              <h3>${p.title}</h3>
-              <p>${p.desc}</p>
-              <a href="${p.link}" class="page-nav-btn go" style="display:block; margin-top:10px; text-align:center;">Watch Video</a>
+      try {
+        const response = await fetch('presentations.json');
+        const data = await response.json();
+        const grid = document.getElementById('presGrid');
+        
+        data.forEach(pres => {
+          const card = document.createElement('div');
+          card.className = 'guide-card'; // Using your grid styles
+          card.innerHTML = `
+            <div class="card-img-wrap"><img src="images/${pres.image}" alt="${pres.title}"></div>
+            <div class="card-content" style="padding:20px;">
+              <h3 style="margin-bottom:10px;">${pres.title}</h3>
+              <p style="font-size:0.9rem; margin-bottom:15px; opacity:0.8;">${pres.desc}</p>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <a href="${pres.link}" target="_blank" class="page-nav-btn go" style="text-align:center; width:100%; text-decoration:none;">▶ Watch on YouTube</a>
+                <a href="${pres.download}" target="_blank" class="page-nav-btn" style="text-align:center; width:100%; text-decoration:none; border-color:rgba(66,206,208,0.3); color:rgba(255,255,255,0.7);">⇓ Download Slides</a>
+              </div>
             </div>
-          </div>`);
-      });
+          `;
+          grid.appendChild(card);
+        });
+        document.getElementById('totalCount').textContent = data.length;
+      } catch (e) { console.error("Error loading presentations:", e); }
     }
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
     loadPresentations();
   </script>
 </body>
