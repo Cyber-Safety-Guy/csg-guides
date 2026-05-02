@@ -40,6 +40,13 @@
     <div class="header-badge">Cyber Safety Guy</div>
     <h1>FREE <span>GUIDES</span></h1>
     <p class="header-sub">cybersafetyguy.com</p>
+    
+    <!-- Verification Badge -->
+    <div class="verification-badge">
+      <span class="badge-icon">🛡️</span>
+      <div class="badge-text">Privacy Verified: <span>No Tracking • No Sign-up</span></div>
+    </div>
+
     <p class="header-intro">
       Every guide on this page is free. No sign-up, no paywall.
       Practical, plain-English advice for parents, teachers, and safeguarding professionals.
@@ -139,8 +146,15 @@
   </div>
 
   <button class="back-to-top" id="backToTop">↑ Top</button>
+  <button class="quick-exit" onclick="quickExit()">Quick Exit</button>
 
   <script>
+    // Quick Exit Logic
+    function quickExit() {
+      window.location.replace("https://www.google.com");
+      window.open("https://www.bbc.co.uk/weather", "_newtab");
+    }
+
     // THE ENGINE: This fetches your guides.json and builds the page
     async function loadGuides() {
       try {
