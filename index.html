@@ -15,7 +15,7 @@
     .checker-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 10px; }
     .danger-bg { background: #fee2e2; color: #991b1b !important; }
     .caution-bg { background: #ffedd5; color: #9a3412 !important; }
-    .request-section { background: rgba(56, 189, 248, 0.05); padding: 60px 20px; text-align: center; margin-top: 50px; border-radius: 16px; }
+    .request-section { background: rgba(56, 189, 248, 0.05); padding: 60px 20px; text-align: center; margin-top: 50px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); }
   </style>
 </head>
 <body>
@@ -35,7 +35,11 @@
   <header class="site-header">
     <img src="images/CSG_logo.png" alt="Logo" class="site-logo">
     <h1>FREE <span>GUIDES</span></h1>
-    <div class="guide-count-badge"><strong id="totalCount">0</strong> free guides</div>
+    <div class="verification-badge">
+      <span class="badge-icon">🛡️</span>
+      <div class="badge-text">Privacy Verified: <span>No Tracking • No Sign-up</span></div>
+    </div>
+    <div class="guide-count-badge"><strong id="totalCount">0</strong> free guides available</div>
     <div class="page-nav">
       <a class="page-nav-btn active">📄 Free Guides</a>
       <a href="presentations.html" class="page-nav-btn go">🎬 Presentations</a>
@@ -46,14 +50,14 @@
   <main class="main">
     <section class="checker-wrap">
         <div class="checker-card">
-            <h2>APP SAFETY CHECKER</h2>
-            <input type="text" id="checkerInput" class="checker-input" placeholder="Type app name..." onkeyup="runChecker()">
+            <h2 style="font-family: 'Orbitron', sans-serif;">APP SAFETY CHECKER</h2>
+            <input type="text" id="checkerInput" class="checker-input" placeholder="Type app name (e.g. TikTok)..." onkeyup="runChecker()">
             <div id="checkerResult" class="checker-result">
                 <div id="checkBadge" class="checker-badge"></div>
                 <h2 id="checkName"></h2>
                 <p><strong>Age Rating:</strong> <span id="checkAge"></span></p>
                 <p id="checkTip"></p>
-                <button id="checkLink" class="checker-btn">View Guide ↓</button>
+                <button id="checkLink" style="padding:10px 20px; background:#0f172a; color:#fff; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">View Guide ↓</button>
             </div>
         </div>
     </section>
@@ -69,24 +73,31 @@
     </section>
 
     <section class="request-section" id="request-guide">
-        <form action="https://formspree.io/f/YOUR_ID" method="POST">
-            <input type="text" name="app" placeholder="App Name" required>
-            <button type="submit">SEND REQUEST</button>
+        <h2>REQUEST A NEW GUIDE</h2>
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" style="max-width:400px; margin: 20px auto; display:flex; flex-direction:column; gap:10px;">
+            <input type="text" name="app" placeholder="App or Topic Name" required style="padding:12px; border-radius:5px; border:1px solid #ccc;">
+            <button type="submit" style="padding:12px; background:#38bdf8; border:none; font-weight:bold; cursor:pointer;">SEND REQUEST</button>
         </form>
     </section>
   </main>
 
   <script>
     async function loadGuides() {
-      const response = await fetch('guides.json');
-      const guides = await response.json();
-      guides.forEach(guide => {
-        const grid = document.getElementById(`grid-${guide.id}`);
-        if (grid) {
-          grid.insertAdjacentHTML('beforeend', `<a href="${guide.link}" class="guide-card"><div class="card-img-wrap"><img src="images/${guide.image}"></div><h3>${guide.title}</h3></a>`);
-        }
-      });
-      updateStats();
+      try {
+        const response = await fetch('guides.json');
+        const guides = await response.json();
+        guides.forEach(guide => {
+          const grid = document.getElementById(`grid-${guide.id}`);
+          if (grid) {
+            grid.insertAdjacentHTML('beforeend', `
+              <a href="${guide.link}" class="guide-card">
+                <div class="card-img-wrap"><img src="images/${guide.image}" alt="${guide.title}"></div>
+                <div style="padding:15px;"><h3>${guide.title}</h3></div>
+              </a>`);
+          }
+        });
+        updateStats();
+      } catch (e) { console.error("Error loading guides", e); }
     }
 
     function updateStats() {
@@ -97,7 +108,7 @@
         if (grid) {
           const count = grid.children.length;
           total += count;
-          document.getElementById(`count-${id}`).textContent = count + ' guides';
+          document.getElementById(`count-${id}`).textContent = count + (count === 1 ? ' guide' : ' guides');
         }
       });
       document.getElementById('totalCount').textContent = total;
