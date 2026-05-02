@@ -5,41 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presentations — Cyber Safety Guy</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    .pres-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-    .pres-card { background: var(--navy-card); border: 1px solid rgba(66,206,208,0.2); border-radius: 8px; padding: 20px; }
-    .pres-btn { display: block; text-align: center; padding: 10px; margin-top: 10px; border-radius: 4px; text-decoration: none; font-weight: bold; }
-    .watch-btn { background: #ff0000; color: #fff; }
-    .download-btn { border: 1px solid var(--teal); color: var(--teal); }
-  </style>
 </head>
 <body>
-  <div class="top-bar"></div>
-  <nav class="jump-nav">
-    <a href="https://www.cybersafetyguy.com" class="jump-nav-home">Home</a>
-    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">📄 Free Guides</a>
-      <a href="presentations.html" class="active">🎬 Presentations</a>
-      <a href="social.html">📡 Social</a>
-    </div>
-  </nav>
-
   <header class="site-header">
-    <img src="images/CSG_logo.png" alt="Logo" class="site-logo">
     <h1>PRESEN<span>TATIONS</span></h1>
-    <div class="guide-count-badge"><strong>0</strong> presentations available</div>
+    <div class="page-nav">
+      <a href="index.html" class="page-nav-btn">📄 Guides</a>
+      <a class="page-nav-btn active">🎬 Presentations</a>
+      <a href="social.html" class="page-nav-btn">📡 Social</a>
+    </div>
   </header>
-
   <main class="main">
-    <div class="pres-grid" id="presGrid">
-        </div>
+    <div class="pres-grid" id="presGrid"></div>
   </main>
-
   <script>
-    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
-    // Add your loadPresentations() JS logic here as per original
+    async function loadPresentations() {
+      const response = await fetch('presentations.json');
+      const data = await response.json();
+      const grid = document.getElementById('presGrid');
+      data.forEach(p => {
+        grid.insertAdjacentHTML('beforeend', `
+          <div class="pres-card">
+            <div class="card-img-wrap"><img src="images/${p.image}"></div>
+            <div class="card-content">
+              <h3>${p.title}</h3>
+              <p>${p.desc}</p>
+              <a href="${p.link}" class="page-nav-btn go" style="display:block; margin-top:10px; text-align:center;">Watch Video</a>
+            </div>
+          </div>`);
+      });
+    }
+    loadPresentations();
   </script>
 </body>
 </html>
