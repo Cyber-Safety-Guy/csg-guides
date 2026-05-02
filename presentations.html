@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presentations — Cyber Safety Guy</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="top-bar"></div>
   <nav class="jump-nav">
-    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24" width="18" style="fill:white; vertical-align:middle;"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home</a>
-    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24" width="18" style="fill:white; vertical-align:middle; margin-right:5px;"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
     <div class="nav-links" id="navLinks">
       <a href="index.html">📄 Free Guides</a>
       <a href="presentations.html" class="active">🎬 Presentations</a>
@@ -22,12 +21,17 @@
   <header class="site-header">
     <img src="images/CSG_logo.png" alt="Logo" class="site-logo">
     <h1>PRESEN<span>TATIONS</span></h1>
-    <p class="header-intro">Free safety presentations for schools, parents and youth organisations.</p>
     <div class="guide-count-badge"><strong id="totalCount">0</strong> presentations available</div>
   </header>
 
   <main class="main">
-    <div class="pres-grid" id="presGrid"></div>
+    <section class="category-section">
+      <div class="category-header">
+        <h2 class="category-title">Cyber Safety Guy Presentations</h2>
+        <span class="category-count" id="categoryCount">0 presentations</span>
+      </div>
+      <div class="guide-grid" id="presGrid"></div>
+    </section>
   </main>
 
   <script>
@@ -39,24 +43,29 @@
         
         data.forEach(pres => {
           const card = document.createElement('div');
-          card.className = 'guide-card'; // Using your grid styles
+          card.className = 'guide-card';
           card.innerHTML = `
             <div class="card-img-wrap"><img src="images/${pres.image}" alt="${pres.title}"></div>
-            <div class="card-content" style="padding:20px;">
-              <h3 style="margin-bottom:10px;">${pres.title}</h3>
-              <p style="font-size:0.9rem; margin-bottom:15px; opacity:0.8;">${pres.desc}</p>
-              <div style="display:flex; flex-direction:column; gap:10px;">
-                <a href="${pres.link}" target="_blank" class="page-nav-btn go" style="text-align:center; width:100%; text-decoration:none;">▶ Watch on YouTube</a>
-                <a href="${pres.download}" target="_blank" class="page-nav-btn" style="text-align:center; width:100%; text-decoration:none; border-color:rgba(66,206,208,0.3); color:rgba(255,255,255,0.7);">⇓ Download Slides</a>
-              </div>
+            <div class="card-body">
+              <h3>${pres.title}</h3>
+              <p>${pres.desc}</p>
+            </div>
+            <div class="card-footer" style="display:flex; flex-direction:column; gap:8px;">
+              <a href="${pres.link}" target="_blank" class="open-btn" style="background:var(--teal); color:var(--navy-dark);">▶ Watch on YouTube</a>
+              <a href="${pres.download}" target="_blank" class="open-btn">⇓ Download Slides</a>
             </div>
           `;
           grid.appendChild(card);
         });
+
+        // Update the counters
         document.getElementById('totalCount').textContent = data.length;
-      } catch (e) { console.error("Error loading presentations:", e); }
+        document.getElementById('categoryCount').textContent = `${data.length} presentations`;
+        
+      } catch (e) {
+        console.error("Error loading presentations:", e);
+      }
     }
-    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
     loadPresentations();
   </script>
 </body>
