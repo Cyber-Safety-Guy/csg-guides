@@ -20,6 +20,7 @@
   { "id": "parental-controls", "type": "guide", "title": "Sharenting", "desc": "Before you post that photo, read this. Protecting your child's digital identity.", "image": "CSG_Sharenting.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf", "isNew": false },
   { "id": "further-resources", "type": "guide", "title": "Why Kids Don't Tell Parents", "desc": "The most important conversation you can have. Why children stay silent about online harm.", "image": "CSG_Why_Kids_Dont_Tell.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf", "isNew": true },
   { "id": "further-resources", "type": "guide", "title": "Everyone Else Has It", "desc": "The phrase every parent dreads. Navigating peer pressure around devices and apps.", "image": "CSG_Everyone_else_has_it.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Everyone_else_has_it.pdf", "isNew": true },
+  { "id": "online-risks", "type": "guide", "title": "How Online Grooming Actually Starts", "desc": "Grooming is when someone builds a relationship with a child online to gain their trust and manipulate, exploit or harm them", "image": "CSG_How_grooming_starts.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_How_grooming_starts.pdf", "isNew": true },
   {
     "id": "school-presentations",
     "type": "presentation",
