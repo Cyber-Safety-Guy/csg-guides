@@ -287,14 +287,47 @@
     function runChecker() {
         const val = document.getElementById('checkerInput').value.toLowerCase().trim();
         const res = document.getElementById('checkerResult');
+        const openBtn = document.getElementById('checkLink');
+
         if (appDb[val]) {
             res.style.display = "block";
-            document.getElementById('checkBadge').innerText = appDb[val].status === 'danger' ? '⚠️ High Risk' : '🟡 Caution';
-            document.getElementById('checkBadge').className = 'checker-badge ' + appDb[val].status + '-bg';
-            document.getElementById('checkName').innerText = appDb[val].name;
-            document.getElementById('checkAge').innerText = appDb[val].age;
-            document.getElementById('checkTip').innerText = appDb[val].tip;
-            document.getElementById('checkLink').href = appDb[val].link;
+            const app = appDb[val];
+            
+            document.getElementById('checkBadge').innerText = app.status === 'danger' ? '⚠️ High Risk' : '🟡 Caution';
+            document.getElementById('checkBadge').className = 'checker-badge ' + app.status + '-bg';
+            document.getElementById('checkName').innerText = app.name;
+            document.getElementById('checkAge').innerText = app.age;
+            document.getElementById('checkTip').innerText = app.tip;
+
+            // SMART SCROLL LOGIC
+            // Look for all guide cards on the page
+            const cards = document.querySelectorAll('.guide-card');
+            let matchedCard = null;
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(val)) {
+                    matchedCard = card;
+                }
+            });
+
+            if (matchedCard) {
+                // If we found a matching tile on this page, scroll to it
+                openBtn.innerText = "View Guide Below ↓";
+                openBtn.onclick = (e) => {
+                    e.preventDefault();
+                    matchedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Give it a brief flash effect so the user sees which one it is
+                    matchedCard.style.outline = "4px solid #38bdf8";
+                    setTimeout(() => { matchedCard.style.outline = "none"; }, 2000);
+                };
+            } else {
+                // Otherwise, link to Substack as a fallback
+                openBtn.innerText = "Open Full Guide →";
+                openBtn.href = app.link;
+                openBtn.onclick = null; // Reset click handler
+            }
+
         } else {
             res.style.display = "none";
         }
