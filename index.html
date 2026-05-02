@@ -14,687 +14,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Guides — Cyber Safety Guy">
   <meta name="twitter:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals.">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Link -->
   <link rel="stylesheet" href="style.css">
-  <style>
-    :root {
-      --navy:          #142A46;
-      --navy-dark:     #0A1628;
-      --navy-card:     #0F1E35;
-      --navy-hover:    #0D1A2E;
-      --teal:          #42CED0;
-      --teal-dim:      #2A8F92;
-      --teal-dark:     #1A5C5F;
-      --off-white:     #E8F4F5;
-      --grey:          #7B9EA0;
-      --childline-red: #C0392B;
-      --gold:          #D4A843;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--navy);
-      background-image:
-        linear-gradient(rgba(66,206,208,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(66,206,208,0.025) 1px, transparent 1px);
-      background-size: 44px 44px;
-      color: var(--off-white);
-      font-family: 'IBM Plex Sans', sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* ── Top accent bar ── */
-    .top-bar {
-      height: 4px;
-      background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--teal-dark));
-    }
-
-    /* ── Site header ── */
-    .site-header {
-      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
-      border-bottom: 2px solid var(--teal);
-      padding: 52px 24px 44px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .site-header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% -10%, rgba(66,206,208,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .header-badge {
-      display: inline-block;
-      background: rgba(26,92,95,0.5);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border: 1px solid var(--teal-dim);
-      border-radius: 2px;
-      margin-bottom: 22px;
-    }
-
-    .site-header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(30px, 6vw, 58px);
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 3px;
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .site-header h1 span {
-      color: var(--teal);
-      text-shadow: 0 0 24px rgba(66,206,208,0.55);
-    }
-
-    .header-sub {
-      font-family: 'Exo 2', sans-serif;
-      color: var(--grey);
-      font-size: 13px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      margin-bottom: 26px;
-    }
-
-    .header-intro {
-      max-width: 600px;
-      margin: 0 auto 28px;
-      color: var(--off-white);
-      font-size: 16px;
-      opacity: 0.82;
-    }
-
-    .guide-count-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(66,206,208,0.08);
-      border: 1px solid rgba(66,206,208,0.3);
-      border-radius: 4px;
-      padding: 10px 22px;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 14px;
-      color: var(--teal);
-    }
-
-    .guide-count-badge strong {
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    /* ── Main layout ── */
-    .main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 52px 24px 80px;
-    }
-
-    /* ── Category section ── */
-    .category-section {
-      margin-bottom: 68px;
-    }
-
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(66,206,208,0.2);
-      margin-bottom: 10px;
-    }
-
-    .category-icon { font-size: 26px; line-height: 1; }
-
-    .category-title {
-      font-family: 'Exo 2', sans-serif;
-      font-size: clamp(17px, 3vw, 24px);
-      font-weight: 700;
-      color: var(--teal);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .category-count {
-      margin-left: auto;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 12px;
-      color: var(--grey);
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
-    .category-desc {
-      color: var(--grey);
-      font-size: 14px;
-      margin-bottom: 28px;
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    /* ── Guide grid ── */
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 18px;
-    }
-
-    /* ── Guide card ── */
-    .guide-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--navy-card);
-      border: 1px solid rgba(66,206,208,0.12);
-      border-top: 3px solid var(--teal);
-      border-radius: 6px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .guide-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 36px rgba(66,206,208,0.18);
-      border-color: rgba(66,206,208,0.35);
-    }
-
-    /* Image area */
-    .card-img-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      overflow: hidden;
-      background: var(--navy-dark);
-    }
-
-    .card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .guide-card:hover .card-img-wrap img {
-      transform: scale(1.03);
-    }
-
-    /* Fallback shown when image is missing */
-    .card-img-fallback {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--teal-dark) 100%);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      text-align: center;
-      padding: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.4;
-    }
-
-    /* Card body */
-    .card-body {
-      padding: 14px 16px 8px;
-      flex: 1;
-    }
-
-    .card-body h3 {
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: #fff;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .card-body p {
-      font-size: 12px;
-      color: var(--grey);
-      line-height: 1.55;
-    }
-
-    /* Card footer / button */
-    .card-footer {
-      padding: 10px 16px 16px;
-    }
-
-    .open-btn {
-      display: block;
-      text-align: center;
-      background: rgba(66,206,208,0.08);
-      border: 1px solid rgba(66,206,208,0.35);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 9px 12px;
-      border-radius: 3px;
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-
-    .guide-card:hover .open-btn {
-      background: rgba(66,206,208,0.18);
-      box-shadow: 0 0 12px rgba(66,206,208,0.15);
-    }
-
-    /* ── Childline footer ── */
-    .childline-footer {
-      background: var(--navy-dark);
-      border-top: 3px solid var(--childline-red);
-      padding: 40px 24px 36px;
-      text-align: center;
-    }
-
-    .childline-eyebrow {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 12px;
-    }
-
-    .childline-number {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(28px, 5vw, 44px);
-      font-weight: 900;
-      color: var(--childline-red);
-      margin-bottom: 4px;
-      letter-spacing: 2px;
-    }
-
-    .childline-url {
-      font-family: 'Exo 2', sans-serif;
-      color: var(--grey);
-      font-size: 15px;
-      margin-bottom: 14px;
-    }
-
-    .childline-desc {
-      color: var(--grey);
-      font-size: 13px;
-      max-width: 380px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    /* ── Site footer bar ── */
-    .site-footer-bar {
-      background: #060E1C;
-      padding: 16px 24px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--grey);
-      font-family: 'Exo 2', sans-serif;
-      letter-spacing: 0.5px;
-    }
-
-    .site-footer-bar a {
-      color: var(--teal);
-      text-decoration: none;
-    }
-
-    .site-footer-bar a:hover { text-decoration: underline; }
-
-    /* ── Responsive ── */
-    @media (max-width: 580px) {
-      .guide-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-      .card-body h3    { font-size: 12px; }
-      .card-body p     { font-size: 11px; }
-      .card-img-fallback {
-      display: none; font-size: 12px; }
-    }
-
-    @media (max-width: 360px) {
-      .guide-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── Search ── */
-    .search-wrap {
-      max-width: 600px;
-      margin: 0 auto 48px;
-      position: relative;
-    }
-
-    .search-input {
-      width: 100%;
-      background: rgba(10,14,20,0.7);
-      border: 1px solid rgba(66,206,208,0.35);
-      border-radius: 4px;
-      color: var(--off-white);
-      font-family: 'Exo 2', sans-serif;
-      font-size: 15px;
-      padding: 14px 48px 14px 18px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .search-input::placeholder { color: var(--grey); }
-
-    .search-input:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 16px rgba(66,206,208,0.15);
-    }
-
-    .search-icon {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--grey);
-      font-size: 18px;
-      pointer-events: none;
-    }
-
-    .search-no-results {
-      display: none;
-      text-align: center;
-      color: var(--grey);
-      font-family: 'Exo 2', sans-serif;
-      font-size: 15px;
-      padding: 32px 0;
-    }
-
-    .category-section.hidden { display: none; }
-    .guide-card.hidden { display: none; }
-
-    /* ── Logo ── */
-    .site-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: block;
-      filter: drop-shadow(0 0 12px rgba(66,206,208,0.5));
-    }
-
-    /* ── Partner logos ── */
-    .partner-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-
-    .partner-logo-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      opacity: 0.85;
-      transition: opacity 0.2s;
-    }
-
-    .partner-logo-link:hover { opacity: 1; }
-
-    .partner-logo-link img {
-      height: 52px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .partner-logo-label {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-    }
-
-    .partner-divider {
-      width: 1px;
-      height: 52px;
-      background: rgba(66,206,208,0.2);
-    }
-
-    /* ── Jump navigation ── */
-    .jump-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,22,40,0.96);
-      border-bottom: 1px solid rgba(66,206,208,0.2);
-      backdrop-filter: blur(8px);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      gap: 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .jump-nav::-webkit-scrollbar { display: none; }
-
-    .jump-nav-label {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-      white-space: nowrap;
-      padding: 12px 16px 12px 0;
-      border-right: 1px solid rgba(66,206,208,0.15);
-      margin-right: 8px;
-    }
-
-    .jump-nav a {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--grey);
-      text-decoration: none;
-      white-space: nowrap;
-      padding: 14px 14px;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-      border-bottom: 2px solid transparent;
-    }
-
-    .jump-nav a:hover {
-      color: var(--teal);
-      border-bottom-color: var(--teal);
-    }
-
-    /* ── NEW badge ── */
-    .new-badge {
-      display: inline-block;
-      background: var(--teal);
-      color: #0A1628;
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 900;
-      font-size: 9px;
-      letter-spacing: 1.5px;
-      padding: 2px 7px;
-      border-radius: 2px;
-      margin-left: 8px;
-      vertical-align: middle;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    .card-img-wrap { position: relative; }
-
-    /* ── Back to top button ── */
-    .back-to-top {
-      position: fixed;
-      bottom: 28px;
-      right: 24px;
-      z-index: 200;
-      background: var(--teal);
-      color: #0A1628;
-      border: none;
-      border-radius: 4px;
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1px;
-      padding: 10px 14px;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.25s, transform 0.25s;
-      pointer-events: none;
-      text-transform: uppercase;
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .back-to-top:hover {
-      background: #5ADFE1;
-    }
-
-    /* ── Childline tel link ── */
-    .childline-number a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .childline-number a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Share button ── */
-    .card-img-wrap .share-btn {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(10,22,40,0.85);
-      border: 1px solid rgba(66,206,208,0.4);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 6px 10px;
-      border-radius: 3px;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 0.2s, transform 0.2s, background 0.2s;
-      backdrop-filter: blur(4px);
-      white-space: nowrap;
-    }
-
-    .guide-card:hover .share-btn {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .share-btn:hover {
-      background: rgba(66,206,208,0.2);
-    }
-
-    .share-btn.copied {
-      color: #4CAF50;
-      border-color: #4CAF50;
-    }
-
-    /* ── Cross-page navigation buttons ── */
-    .page-nav {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-
-    .page-nav-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 11px 22px;
-      border-radius: 3px;
-      transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
-    }
-
-    .page-nav-btn.active {
-      background: rgba(66,206,208,0.08);
-      border: 1px solid rgba(66,206,208,0.25);
-      color: var(--grey);
-      cursor: default;
-      pointer-events: none;
-    }
-
-    .page-nav-btn.go {
-      background: rgba(66,206,208,0.08);
-      border: 1px solid var(--teal);
-      color: var(--teal);
-    }
-
-    .page-nav-btn.go:hover {
-      background: rgba(66,206,208,0.18);
-      box-shadow: 0 0 16px rgba(66,206,208,0.2);
-    }
-
-    /* ── Home link in nav ── */
-    .jump-nav-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--grey);
-      padding: 14px 14px 14px 0;
-      margin-right: 4px;
-      border-right: 1px solid rgba(66,206,208,0.15);
-      white-space: nowrap;
-      transition: color 0.2s;
-    }
-
-    .jump-nav-home:hover { color: var(--teal); }
-
-    .jump-nav-home svg {
-      width: 13px;
-      height: 13px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-  </style>
 </head>
 <body>
 
@@ -743,9 +69,7 @@
     </div>
     <p class="search-no-results" id="noResults">No guides found. Try a different search term.</p>
 
-    <!-- ==============================
-         PLATFORM GUIDES
-    ============================== -->
+    <!-- PLATFORM GUIDES -->
     <section class="category-section" id="platform-guides">
       <div class="category-header">
         <span class="category-icon">📱</span>
@@ -754,337 +78,236 @@
       </div>
       <p class="category-desc">The apps and platforms your children are actually using — what the risks are, and what you can do about them.</p>
       <div class="guide-grid">
-
         <a href="https://guides.cybersafetyguy.com/guides/CSG_BeReal.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_BeReal.png" alt="BeReal Guide">
-            <div class="card-img-fallback">BeReal</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_BeReal.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_BeReal.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>BeReal</h3>
-            <p>What the "real moments" app actually reveals about your child, and what it means for their privacy.</p>
-          </div>
+          <div class="card-body"><h3>BeReal</h3><p>What the "real moments" app actually reveals about your child, and what it means for their privacy.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Discord.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Discord.png" alt="Discord Guide">
-            <div class="card-img-fallback">Discord</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Discord.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Discord.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Discord</h3>
-            <p>The chat platform millions of children use for gaming. Why the privacy settings matter far more than most parents realise.</p>
-          </div>
+          <div class="card-body"><h3>Discord</h3><p>The chat platform millions of children use for gaming. Why the privacy settings matter far more than most parents realise.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Instagram.png" alt="Instagram Guide">
-            <div class="card-img-fallback">Instagram</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Instagram</h3>
-            <p>Beyond filters and followers. What parents need to understand about how Instagram really works.</p>
-          </div>
+          <div class="card-body"><h3>Instagram</h3><p>Beyond filters and followers. What parents need to understand about how Instagram really works.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Livestreaming.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Livestreaming.png" alt="Livestreaming Guide">
-            <div class="card-img-fallback">Livestreaming</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Livestreaming.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Livestreaming.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Livestreaming</h3>
-            <p>When your child goes live, so does the risk. A breakdown of TikTok Live, Twitch, and YouTube Live.</p>
-          </div>
+          <div class="card-body"><h3>Livestreaming</h3><p>When your child goes live, so does the risk. A breakdown of TikTok Live, Twitch, and YouTube Live.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Roblox.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Roblox.png" alt="Roblox Guide">
-            <div class="card-img-fallback">Roblox</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Roblox.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Roblox.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Roblox</h3>
-            <p>It looks like a children's game. Some of the risks are very adult. A plain-English guide for parents.</p>
-          </div>
+          <div class="card-body"><h3>Roblox</h3><p>It looks like a children's game. Some of the risks are very adult. A plain-English guide for parents.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Snapchat.png" alt="Snapchat Guide">
-            <div class="card-img-fallback">Snapchat</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Snapchat</h3>
-            <p>Disappearing messages don't disappear the way most children think. Here's what's actually happening.</p>
-          </div>
+          <div class="card-body"><h3>Snapchat</h3><p>Disappearing messages don't disappear the way most children think. Here's what's actually happening.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_TikTok.png" alt="TikTok Guide">
-            <div class="card-img-fallback">TikTok</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>TikTok</h3>
-            <p>The algorithm, the For You page, and why TikTok is one of the most important platforms to understand right now.</p>
-          </div>
+          <div class="card-body"><h3>TikTok</h3><p>The algorithm, the For You page, and why TikTok is one of the most important platforms to understand right now.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Whatsapp.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Whatsapp.png" alt="WhatsApp Guide">
-            <div class="card-img-fallback">WhatsApp</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Whatsapp.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Whatsapp.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>WhatsApp</h3>
-            <p>Unknown contacts, group chats, and what parents can genuinely do to reduce the risk.</p>
-          </div>
+          <div class="card-body"><h3>WhatsApp</h3><p>Unknown contacts, group chats, and what parents can genuinely do to reduce the risk.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Youtube.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Youtube.png" alt="YouTube Guide">
-            <div class="card-img-fallback">YouTube</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Youtube.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Youtube.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>YouTube</h3>
-            <p>From rabbit holes to harmful content. Understanding what your child is watching, and why.</p>
-          </div>
+          <div class="card-body"><h3>YouTube</h3><p>From rabbit holes to harmful content. Understanding what your child is watching, and why.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Youtube_shorts.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_YouTube_Shorts.png" alt="YouTube Shorts Guide">
-            <div class="card-img-fallback">YouTube Shorts</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Youtube_shorts.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Youtube_shorts.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>YouTube Shorts</h3>
-            <p>TikTok's main rival carries many of the same risks. Here's what you need to know.</p>
-          </div>
+          <div class="card-body"><h3>YouTube Shorts</h3><p>TikTok's main rival carries many of the same risks. Here's what you need to know.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
-
       </div>
     </section>
 
-    <!-- ==============================
-         UNDERSTANDING ONLINE RISKS
-    ============================== -->
+    <!-- ONLINE RISKS -->
     <section class="category-section" id="online-risks">
       <div class="category-header">
         <span class="category-icon">🧠</span>
         <h2 class="category-title">Understanding Online Risks</h2>
         <span class="category-count" id="count-online-risks">7 guides</span>
       </div>
-      <p class="category-desc">The threats that don't always come with obvious warning signs, explained clearly so you know what to look out for.</p>
+      <p class="category-desc">The threats that don't always come with obvious warning signs, explained clearly.</p>
       <div class="guide-grid">
-
         <a href="https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_AI_Girlfriends_Companions.png" alt="AI Companions Guide"><span class="new-badge">NEW</span>
-            <div class="card-img-fallback">AI Companions</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>AI "Girlfriends" / Companions</h3>
-            <p>AI companions are being marketed directly at young people. Here's what that actually means for your child.</p>
-          </div>
+          <div class="card-body"><h3>AI "Girlfriends" / Companions</h3><p>AI companions are being marketed directly at young people. Here's what that actually means.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_AI_Chatbots_and_Children.png" alt="AI Chatbots Guide"><span class="new-badge">NEW</span>
-            <div class="card-img-fallback">AI Chatbots</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>AI Chatbots and Children</h3>
-            <p>ChatGPT, Gemini, and the rest. What children are using AI for, and where the risks sit.</p>
-          </div>
+          <div class="card-body"><h3>AI Chatbots and Children</h3><p>ChatGPT, Gemini, and the rest. What children are using AI for, and where the risks sit.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Group_Chats.png" alt="Group Chats Guide">
-            <div class="card-img-fallback">Group Chats</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Group Chats</h3>
-            <p>The conversations happening in your child's pocket, and why group chats are one of the hardest risks to spot.</p>
-          </div>
+          <div class="card-body"><h3>Group Chats</h3><p>The conversations happening in your child's pocket, and why group chats are hard to spot.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Online_challenges_trends.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Online_Challenges_Trends.png" alt="Online Challenges Guide">
-            <div class="card-img-fallback">Online Challenges</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Online_challenges_trends.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Online_challenges_trends.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Online Challenges & Trends</h3>
-            <p>How viral challenges spread, why children feel pressure to join in, and the warning signs to look for.</p>
-          </div>
+          <div class="card-body"><h3>Online Challenges & Trends</h3><p>How viral challenges spread, why children feel pressure, and the warning signs.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Online_gaming_voice_chat.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Online_Gaming_Voice_Chat.png" alt="Online Gaming Guide">
-            <div class="card-img-fallback">Online Gaming</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Online_gaming_voice_chat.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Online_gaming_voice_chat.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Online Gaming & Voice Chat</h3>
-            <p>Real-time voice chat with strangers is built into almost every online game. Here's how to manage it.</p>
-          </div>
+          <div class="card-body"><h3>Online Gaming & Voice Chat</h3><p>Real-time voice chat with strangers is built into almost every game. Here's how to manage it.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Sextortion_Image_Based_Abuse.png" alt="Sextortion Guide">
-            <div class="card-img-fallback">Sextortion & Image Abuse</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Sextortion & Image-Based Abuse</h3>
-            <p>One of the fastest-growing threats to young people online. What it is, how it starts, and what to do.</p>
-          </div>
+          <div class="card-body"><h3>Sextortion & Image-Based Abuse</h3><p>One of the fastest-growing threats to young people online. What it is and how to help.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Social_Media_Footprint.png" alt="Social Media Footprint Guide">
-            <div class="card-img-fallback">Social Media Footprint</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Social Media Footprint</h3>
-            <p>What your child's online presence says about them, and how to help them manage it before it causes harm.</p>
-          </div>
+          <div class="card-body"><h3>Social Media Footprint</h3><p>What your child's online presence says about them, and how to help them manage it.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
-
       </div>
     </section>
 
-    <!-- ==============================
-         PARENTAL CONTROLS
-    ============================== -->
+    <!-- PARENTAL CONTROLS -->
     <section class="category-section" id="parental-controls">
       <div class="category-header">
         <span class="category-icon">🛡️</span>
         <h2 class="category-title">Parental Controls</h2>
         <span class="category-count" id="count-parental-controls">2 guides</span>
       </div>
-      <p class="category-desc">Practical guidance for managing your child's online world at home. More guides coming to this section soon.</p>
+      <p class="category-desc">Practical guidance for managing your child's online world at home.</p>
       <div class="guide-grid">
-
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Screen_Time_Device_Overuse.png" alt="Screen Time Guide">
-            <div class="card-img-fallback">Screen Time</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Screen Time & Device Overuse</h3>
-            <p>Practical steps for managing how long children spend online, without it turning into a daily battle.</p>
-          </div>
+          <div class="card-body"><h3>Screen Time & Device Overuse</h3><p>Practical steps for managing how long children spend online without the daily battle.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
 
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Sharenting.png" alt="Sharenting Guide">
-            <div class="card-img-fallback">Sharenting</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Sharenting</h3>
-            <p>Before you post that photo, read this. Protecting your child's digital identity from the very start.</p>
-          </div>
+          <div class="card-body"><h3>Sharenting</h3><p>Before you post that photo, read this. Protecting your child's digital identity.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
-
       </div>
     </section>
 
-    <!-- ==============================
-         FURTHER RESOURCES
-    ============================== -->
+    <!-- FURTHER RESOURCES -->
     <section class="category-section" id="further-resources">
       <div class="category-header">
         <span class="category-icon">📁</span>
         <h2 class="category-title">Further Resources</h2>
-        <span class="category-count" id="count-further-resources">1 guide</span>
+        <span class="category-count" id="count-further-resources">2 guides</span>
       </div>
-      <p class="category-desc">Essential reading that doesn't fit neatly into the sections above, but belongs in every parent's and teacher's toolkit.</p>
+      <p class="category-desc">Essential reading that belongs in every parent's and teacher's toolkit.</p>
       <div class="guide-grid">
-
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
             <img src="images/CSG_Why_Kids_Dont_Tell.png" alt="Why Kids Don't Tell Guide"><span class="new-badge">NEW</span>
-            <div class="card-img-fallback">Why Kids Don't Tell</div>
-                    <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf')">📋 Copy Link</button>
+            <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Why Kids Don't Tell Parents (And How to Fix It)</h3>
-            <p>The most important conversation you can have. Why children stay silent about online harm, and how to open that door before something goes wrong.</p>
-          </div>
+          <div class="card-body"><h3>Why Kids Don't Tell Parents</h3><p>The most important conversation you can have. Why children stay silent about online harm.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
         <a href="https://guides.cybersafetyguy.com/guides/CSG_Everyone_else_has_it.pdf" target="_blank" rel="noopener" class="guide-card">
           <div class="card-img-wrap">
-            <img src="images/CSG_Everyone_else_has_it.png" alt="Everyone Else Has It Guide">
-            <span class="new-badge">NEW</span>
+            <img src="images/CSG_Everyone_else_has_it.png" alt="Everyone Else Has It Guide"><span class="new-badge">NEW</span>
             <button class="share-btn" onclick="copyLink(event, 'https://guides.cybersafetyguy.com/guides/CSG_Everyone_else_has_it.pdf')">📋 Copy Link</button>
           </div>
-          <div class="card-body">
-            <h3>Everyone Else Has It</h3>
-            <p>The phrase every parent dreads. Why peer pressure around devices and apps is harder than ever to navigate, and how to hold the line without losing the conversation.</p>
-          </div>
+          <div class="card-body"><h3>Everyone Else Has It</h3><p>The phrase every parent dreads. Navigating peer pressure around devices and apps.</p></div>
           <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
         </a>
-
       </div>
     </section>
 
   </main>
 
-  <!-- ==============================
-       CHILDLINE FOOTER
-  ============================== -->
   <footer class="childline-footer">
     <p class="childline-eyebrow">If a child needs support right now</p>
     <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
     <p class="childline-url">childline.org.uk</p>
-    <p class="childline-desc">Childline is free, confidential, and available 24 hours a day, every day of the year.</p>
+    <p class="childline-desc">Childline is free, confidential, and available 24 hours a day.</p>
     <div class="partner-logos">
       <a href="https://www.childline.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
         <img src="images/childline-logo.png" alt="Childline">
@@ -1101,116 +324,82 @@
   <div class="site-footer-bar">
     <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
     &nbsp;—&nbsp;All guides free to download and share.
-    Subscription proceeds donated to Childline (NSPCC).
   </div>
 
+  <button class="back-to-top" id="backToTop">↑ Top</button>
 
   <script>
-    const searchInput = document.getElementById('guideSearch');
-    const noResults   = document.getElementById('noResults');
-    const sections    = document.querySelectorAll('.category-section');
-
-    searchInput.addEventListener('input', function () {
-      const query = this.value.trim().toLowerCase();
-      let totalVisible = 0;
-
-      sections.forEach(section => {
-        const cards = section.querySelectorAll('.guide-card');
-        let sectionVisible = 0;
-
-        cards.forEach(card => {
-          const text = card.innerText.toLowerCase();
-          if (!query || text.includes(query)) {
-            card.classList.remove('hidden');
-            sectionVisible++;
-            totalVisible++;
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-
-        // Hide entire section if no cards match
-        if (sectionVisible === 0 && query) {
-          section.classList.add('hidden');
-        } else {
-          section.classList.remove('hidden');
-        }
-      });
-
-      noResults.style.display = (totalVisible === 0 && query) ? 'block' : 'none';
-    });
-  </script>
-
-  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
-
-  <script>
-    // Back to top visibility
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 400) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-  </script>
-
-  <script>
-    function copyLink(event, url) {
-      event.preventDefault();
-      event.stopPropagation();
-      const btn = event.currentTarget;
-      navigator.clipboard.writeText(url).then(() => {
-        const original = btn.innerHTML;
-        btn.innerHTML = '✓ Copied!';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.innerHTML = original;
-          btn.classList.remove('copied');
-        }, 2000);
-      }).catch(() => {
-        // Fallback for older browsers
-        const ta = document.createElement('textarea');
-        ta.value = url;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        const original = btn.innerHTML;
-        btn.innerHTML = '✓ Copied!';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.innerHTML = original;
-          btn.classList.remove('copied');
-        }, 2000);
-      });
-    }
-  </script>
-
-  <script>
-    // Auto-update guide counts from actual card count
+    // 1. Automatic Counter
     (function() {
-      const sections = [
+      const config = [
         { sectionId: 'platform-guides',   countId: 'count-platform-guides' },
         { sectionId: 'online-risks',      countId: 'count-online-risks' },
         { sectionId: 'parental-controls', countId: 'count-parental-controls' },
         { sectionId: 'further-resources', countId: 'count-further-resources' },
       ];
-
       let total = 0;
-
-      sections.forEach(function(s) {
+      config.forEach(s => {
         const section = document.getElementById(s.sectionId);
         const counter = document.getElementById(s.countId);
-        if (!section || !counter) return;
-        const count = section.querySelectorAll('.guide-card').length;
-        total += count;
-        counter.textContent = count === 1 ? '1 guide' : count + ' guides';
+        if (section && counter) {
+          const count = section.querySelectorAll('.guide-card').length;
+          total += count;
+          counter.textContent = count + (count === 1 ? ' guide' : ' guides');
+        }
       });
-
       const totalEl = document.getElementById('totalCount');
       if (totalEl) totalEl.textContent = total;
     })();
+
+    // 2. Search
+    const searchInput = document.getElementById('guideSearch');
+    const sections = document.querySelectorAll('.category-section');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      let totalVisible = 0;
+      sections.forEach(section => {
+        let sectionVisible = false;
+        const cards = section.querySelectorAll('.guide-card');
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          if (text.includes(term)) {
+            card.classList.remove('hidden');
+            sectionVisible = true;
+            totalVisible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        section.classList.toggle('hidden', !sectionVisible);
+      });
+      noResults.style.display = (totalVisible === 0 && term !== '') ? 'block' : 'none';
+    });
+
+    // 3. Copy Link
+    function copyLink(event, url) {
+      event.preventDefault();
+      event.stopPropagation();
+      const btn = event.currentTarget;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "✅ Copied!";
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // 4. Back to Top
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) backToTopBtn.classList.add('visible');
+      else backToTopBtn.classList.remove('visible');
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
