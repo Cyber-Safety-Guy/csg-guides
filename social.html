@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
   <style>
     :root {
       --navy:         #142A46;
@@ -33,6 +33,7 @@
       --bluesky:      #0085FF;
       --linkedin:     #0A66C2;
       --substack:     #FF6719;
+      --youtube:     #FF0000;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -182,12 +183,14 @@
     /* ── Social grid ── */
     .social-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 460px));
+      justify-content: center;
       gap: 20px;
     }
 
     /* ── Social card ── */
     .social-card {
+      width: 100%;
       display: flex;
       align-items: stretch;
       background: var(--navy-card);
@@ -213,6 +216,7 @@
     .social-card.bluesky    .card-accent { background: var(--bluesky); }
     .social-card.linkedin   .card-accent { background: var(--linkedin); }
     .social-card.substack   .card-accent { background: var(--substack); }
+    .social-card.youtube    .card-accent { background: var(--youtube); }
 
     .card-inner {
       display: flex;
@@ -236,6 +240,7 @@
     .social-card.bluesky    .platform-icon { background: rgba(0,133,255,0.12); }
     .social-card.linkedin   .platform-icon { background: rgba(10,102,194,0.12); }
     .social-card.substack   .platform-icon { background: rgba(255,103,25,0.12); }
+    .social-card.youtube    .platform-icon { background: rgba(255,0,0,0.12); }
 
     .platform-icon svg {
       width: 26px;
@@ -245,6 +250,7 @@
     .social-card.bluesky    .platform-icon svg { fill: var(--bluesky); }
     .social-card.linkedin   .platform-icon svg { fill: var(--linkedin); }
     .social-card.substack   .platform-icon svg { fill: var(--substack); }
+    .social-card.youtube    .platform-icon svg { fill: var(--youtube); }
 
     .card-text { flex: 1; min-width: 0; }
 
@@ -419,6 +425,12 @@
       fill: currentColor;
       flex-shrink: 0;
     }
+
+    .social-card.youtube {
+      grid-column: 1 / -1;
+      max-width: 460px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 
@@ -519,6 +531,25 @@
             <p class="platform-name">LinkedIn</p>
             <p class="platform-handle">dale-mcgleenon</p>
             <p class="platform-desc">Professional insights, longer-form posts and content for educators, safeguarding leads and professionals.</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">›</span>
+        </div>
+      </a>
+
+
+      <a href="https://www.youtube.com/@cybersafetyguy3085" target="_blank" rel="noopener noreferrer" class="social-card youtube" aria-label="Cyber Safety Guy on YouTube">
+        <div class="card-accent"></div>
+        <div class="card-inner">
+          <div class="platform-icon">
+            <!-- YouTube icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="card-text">
+            <p class="platform-name">YouTube</p>
+            <p class="platform-handle">@cybersafetyguy3085</p>
+            <p class="platform-desc">School presentations, safety guides and video content for parents, teachers and young people.</p>
           </div>
           <span class="card-arrow" aria-hidden="true">›</span>
         </div>
