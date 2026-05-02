@@ -44,6 +44,7 @@
     <a href="#platform-guides">📱 Platform Guides</a>
     <a href="#online-risks">🧠 Online Risks</a>
     <a href="#parental-controls">🛡️ Parental Controls</a>
+    <a href="#further-resources">📁 Further Resources</a>
     <a href="#request-guide">📩 Request New</a>
   </nav>
 
@@ -101,27 +102,35 @@
     </div>
     <p class="search-no-results" id="noResults">No guides found. Try a different search term.</p>
 
-    <!-- GUIDES SECTIONS -->
+    <!-- PLATFORM GUIDES -->
     <section class="category-section" id="platform-guides">
       <div class="category-header"><span class="category-icon">📱</span><h2 class="category-title">Platform Guides</h2><span class="category-count" id="count-platform-guides">0 guides</span></div>
       <div class="guide-grid" id="grid-platform-guides"></div>
     </section>
 
+    <!-- ONLINE RISKS -->
     <section class="category-section" id="online-risks">
       <div class="category-header"><span class="category-icon">🧠</span><h2 class="category-title">Online Risks</h2><span class="category-count" id="count-online-risks">0 guides</span></div>
       <div class="guide-grid" id="grid-online-risks"></div>
     </section>
 
+    <!-- PARENTAL CONTROLS -->
     <section class="category-section" id="parental-controls">
       <div class="category-header"><span class="category-icon">🛡️</span><h2 class="category-title">Parental Controls</h2><span class="category-count" id="count-parental-controls">0 guides</span></div>
       <div class="guide-grid" id="grid-parental-controls"></div>
+    </section>
+
+    <!-- FURTHER RESOURCES -->
+    <section class="category-section" id="further-resources">
+      <div class="category-header"><span class="category-icon">📁</span><h2 class="category-title">Further Resources</h2><span class="category-count" id="count-further-resources">0 guides</span></div>
+      <div class="guide-grid" id="grid-further-resources"></div>
     </section>
 
     <!-- REQUEST SECTION -->
     <section class="request-section" id="request-guide">
         <h2 style="font-family: 'Orbitron', sans-serif;">MISSING AN APP?</h2>
         <p>Tell me which app or online risk I should audit next.</p>
-        <form action="https://formspree.io/f/meeneedd" method="POST" class="request-form">
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="request-form">
             <input type="text" name="app_name" class="form-input" placeholder="App Name (e.g. Lemon8, BeReal)" required>
             <input type="email" name="email" class="form-input" placeholder="Your Email (Optional)">
             <button type="submit" class="submit-btn">SEND REQUEST</button>
@@ -158,12 +167,15 @@
 
     // 2. COUNTERS
     function updateStats() {
-      const config = ['platform-guides', 'online-risks', 'parental-controls'];
+      const config = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
       let total = 0;
       config.forEach(id => {
-        const count = document.getElementById(`grid-${id}`).children.length;
-        total += count;
-        document.getElementById(`count-${id}`).textContent = count + (count === 1 ? ' guide' : ' guides');
+        const grid = document.getElementById(`grid-${id}`);
+        if(grid) {
+            const count = grid.children.length;
+            total += count;
+            document.getElementById(`count-${id}`).textContent = count + (count === 1 ? ' guide' : ' guides');
+        }
       });
       document.getElementById('totalCount').textContent = total;
     }
@@ -207,7 +219,7 @@
                     setTimeout(() => { matchedCard.style.outline = "none"; }, 2000);
                 };
             } else {
-                openBtn.innerText = "Check Full Archive →";
+                openBtn.innerText = "Browse Category ↓";
                 openBtn.onclick = () => window.location.hash = "platform-guides";
             }
         } else {
