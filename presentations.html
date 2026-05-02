@@ -4,205 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presentations — Cyber Safety Guy</title>
-  <link rel="canonical" href="https://guides.cybersafetyguy.com/presentations.html">
-  <meta name="description" content="Free child online safety presentations for schools, parents and youth organisations. From Cyber Safety Guy.">
-  <meta property="og:title" content="Presentations — Cyber Safety Guy">
-  <meta property="og:description" content="Free child online safety presentations for schools and youth organisations. Age-appropriate, evidence-informed, and ready to use — from Cyber Safety Guy.">
-  <meta property="og:url" content="https://guides.cybersafetyguy.com/presentations.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://cyber-safety-guy.github.io/csg-guides/images/CSG_logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Presentations — Cyber Safety Guy">
-  <meta name="twitter:description" content="Free child online safety presentations for schools and youth organisations.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div class="top-bar"></div>
-
   <nav class="jump-nav">
-    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
-    <span class="jump-nav-label">Jump to</span>
-    <a href="#school-presentations">🎤 Cyber Safety Guy Presentations</a>
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home">Home</a>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu ☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">📄 Free Guides</a>
+      <a href="presentations.html">🎤 Presentations</a>
+      <a href="social.html">📡 Social</a>
+    </div>
   </nav>
 
   <header class="site-header">
-    <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" class="site-logo">
-    <div class="header-badge">Cyber Safety Guy</div>
+    <img src="images/CSG_logo.png" alt="Logo" class="site-logo">
     <h1>PRESEN<span>TATIONS</span></h1>
-    
-    <!-- Verification Badge -->
-    <div class="verification-badge">
-      <span class="badge-icon">🛡️</span>
-      <div class="badge-text">Privacy Verified: <span>No Tracking • No Sign-up</span></div>
-    </div>
-
-    <p class="header-sub">For Schools &amp; Youth Organisations</p>
-    <p class="header-intro">
-      Age-appropriate, evidence-informed presentations you can use in school assemblies, parent evenings, and safeguarding sessions.
-    </p>
-    <div class="guide-count-badge">
-      <strong>0</strong> presentations available — more coming soon
-    </div>
-    <div class="hub-nav">
-      <a href="https://guides.cybersafetyguy.com/">📄 Free Guides</a>
-      <a href="presentations.html" class="active">🎤 Presentations</a>
-      <a href="social.html">📡 Social</a>
-    </div>
   </header>
 
   <main class="main">
-    <div class="search-wrap">
-      <input type="text" class="search-input" placeholder="Search presentations..." id="searchInput" aria-label="Search presentations" autocomplete="off">
-      <span class="search-icon" aria-hidden="true">⌕</span>
-    </div>
-    <p class="search-no-results" id="noResults">No presentations found matching your search.</p>
-
-    <section class="category-section" id="school-presentations">
-      <div class="category-header">
-        <span class="category-icon">🎤</span>
-        <h2 class="category-title">Cyber Safety Guy Presentations</h2>
-        <span class="category-count">0 presentations</span>
-      </div>
-      <p class="category-desc">
-        Ready-to-use presentations for schools and youth organisations. Each is tailored to a specific audience and can be delivered by a teacher, safeguarding lead, or invited speaker.
-      </p>
-
-      <div class="pres-grid" id="presGrid"></div>
-
-      <div class="coming-soon-note">
-        <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" style="width:32px;height:32px;border-radius:50%;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(66,206,208,0.4));">
-        <span>More presentations are in development, covering topics including neurodivergent children online, gaming safety, and AI literacy. Check back soon, or <a href="https://www.cybersafetyguy.com" target="_blank" rel="noopener noreferrer" style="color: var(--teal); text-decoration: none;">Subscribe at Cyber Safety Guy</a> to be the first to know.</span>
-      </div>
-    </section>
+    <div class="pres-grid" id="presGrid"></div>
   </main>
-
-  <footer class="childline-footer">
-    <p class="childline-eyebrow">If a child needs help right now</p>
-    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
-    <p class="childline-url">childline.org.uk</p>
-    <p class="childline-desc">
-      Childline is free, confidential, and available 24 hours a day, 7 days a week.
-      100% of Cyber Safety Guy subscription income is donated to Childline.
-    </p>
-    <div class="partner-logos">
-      <a href="https://www.childline.org.uk" target="_blank" rel="noopener noreferrer" class="partner-logo-link" aria-label="Childline website">
-        <img src="images/childline-logo.png" alt="Childline logo">
-        <span class="partner-logo-label">Childline</span>
-      </a>
-      <div class="partner-divider" aria-hidden="true"></div>
-      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener noreferrer" class="partner-logo-link" aria-label="NSPCC website">
-        <img src="images/nspcc-logo.png" alt="NSPCC logo">
-        <span class="partner-logo-label">NSPCC</span>
-      </a>
-    </div>
-  </footer>
-
-  <div class="site-footer-bar">
-    &copy; <span id="year"></span> Cyber Safety Guy &mdash;
-    <a href="https://cybersafetyguy.substack.com" target="_blank" rel="noopener noreferrer">Substack</a> &bull;
-    <a href="https://guides.cybersafetyguy.com/">Free Guides</a>
-  </div>
-
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593; Top</button>
-  <button class="quick-exit" onclick="quickExit()">Quick Exit</button>
-
+  
   <script>
-    function quickExit() {
-      window.location.replace("https://www.google.com");
-      window.open("https://www.bbc.co.uk/weather", "_newtab");
-    }
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const btt = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btt.classList.toggle('visible', window.scrollY > 400);
-    });
-    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    async function loadPresentations() {
-      try {
-        const response = await fetch('guides.json');
-        const allData = await response.json();
-        const presentations = allData.filter(item => item.type === 'presentation');
-        const grid = document.getElementById('presGrid');
-        
-        presentations.forEach(pres => {
-          const card = document.createElement('article');
-          card.className = 'pres-card';
-          card.setAttribute('data-search', `${pres.title} ${pres.audience} ${pres.topics.join(' ')} ${pres.desc}`.toLowerCase());
-          
-          const topicsHtml = pres.topics.map(t => `<span class="chip">${t}</span>`).join('');
-          
-          card.innerHTML = `
-            <div class="card-img-wrap">
-              <img src="images/${pres.image}" alt="${pres.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="card-img-fallback" style="display:none;">
-                <span class="fallback-icon">🎬</span>
-                ${pres.title}
-              </div>
-              <div class="play-overlay" aria-hidden="true">
-                <div class="play-circle">
-                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-audience">${pres.audience}</p>
-              <h3>${pres.title}</h3>
-              <p>${pres.desc}</p>
-              <div class="topic-chips">${topicsHtml}</div>
-              <p class="duration-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-                ${pres.duration}
-              </p>
-            </div>
-            <div class="card-footer">
-              <a href="${pres.link}" target="_blank" class="open-btn">▶&nbsp; Watch on YouTube</a>
-              <a href="${pres.download}" target="_blank" class="open-btn download-btn">⇓&nbsp; Download for Offline Use</a>
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-        updateCounts();
-      } catch (error) {
-        console.error("Error loading presentations:", error);
-      }
-    }
-
-    function updateCounts() {
-      const section = document.querySelector('.category-section');
-      const visibleCards = section.querySelectorAll('.pres-card:not(.hidden)');
-      const count = visibleCards.length;
-
-      const countEl = section.querySelector('.category-count');
-      if (countEl) countEl.textContent = count === 1 ? '1 presentation' : `${count} presentations`;
-
-      const badgeStrong = document.querySelector('.guide-count-badge strong');
-      if (badgeStrong) badgeStrong.textContent = count;
-    }
-
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
-      const cards = document.querySelectorAll('.pres-card');
-      let found = 0;
-
-      cards.forEach(card => {
-        const match = card.getAttribute('data-search').includes(query);
-        card.classList.toggle('hidden', !match);
-        if (match) found++;
-      });
-
-      document.getElementById('noResults').style.display = found === 0 ? 'block' : 'none';
-      updateCounts();
-    });
-
-    loadPresentations();
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
   </script>
 </body>
 </html>
