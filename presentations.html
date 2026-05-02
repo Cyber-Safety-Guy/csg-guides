@@ -48,13 +48,11 @@
       min-height: 100vh;
     }
 
-    /* ── Top accent bar ── */
     .top-bar {
       height: 4px;
       background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--teal-dark));
     }
 
-    /* ── Jump navigation ── */
     .jump-nav {
       position: sticky;
       top: 0;
@@ -99,7 +97,6 @@
       border-bottom-color: var(--teal);
     }
 
-    /* ── Site header ── */
     .site-header {
       background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
       border-bottom: 2px solid var(--teal);
@@ -182,7 +179,6 @@
     }
     .guide-count-badge strong { font-size: 22px; font-weight: 700; }
 
-    /* ── Nav link to guides hub ── */
     .hub-nav {
       display: flex;
       justify-content: center;
@@ -206,14 +202,12 @@
     .hub-nav a:hover { color: var(--teal); border-color: rgba(66,206,208,0.4); }
     .hub-nav a.active { color: var(--teal); border-color: var(--teal-dim); background: rgba(66,206,208,0.06); }
 
-    /* ── Main layout ── */
     .main {
       max-width: 1200px;
       margin: 0 auto;
       padding: 52px 24px 80px;
     }
 
-    /* ── Search ── */
     .search-wrap {
       max-width: 600px;
       margin: 0 auto 48px;
@@ -254,7 +248,6 @@
       padding: 32px 0;
     }
 
-    /* ── Category section ── */
     .category-section { margin-bottom: 68px; }
     .category-section.hidden { display: none; }
 
@@ -291,14 +284,12 @@
       font-style: italic;
     }
 
-    /* ── Presentation card grid (wider columns for 16:9 thumbnails) ── */
     .pres-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 24px;
     }
 
-    /* ── Presentation card ── */
     .pres-card {
       display: flex;
       flex-direction: column;
@@ -318,7 +309,6 @@
     }
     .pres-card.hidden { display: none; }
 
-    /* Thumbnail: 16:9 for presentation slides */
     .card-img-wrap {
       position: relative;
       width: 100%;
@@ -335,7 +325,6 @@
     }
     .pres-card:hover .card-img-wrap img { transform: scale(1.03); }
 
-    /* Play button overlay */
     .play-overlay {
       position: absolute;
       inset: 0;
@@ -364,7 +353,6 @@
       margin-left: 3px;
     }
 
-    /* Fallback shown when image is missing */
     .card-img-fallback {
       position: absolute;
       inset: 0;
@@ -386,7 +374,6 @@
     }
     .fallback-icon { font-size: 36px; opacity: 0.7; }
 
-    /* Card body */
     .card-body {
       padding: 18px 20px 10px;
       flex: 1;
@@ -414,7 +401,6 @@
       line-height: 1.6;
     }
 
-    /* Duration badge */
     .duration-badge {
       display: inline-flex;
       align-items: center;
@@ -435,7 +421,6 @@
       stroke-linecap: round;
     }
 
-    /* Topics chips */
     .topic-chips {
       display: flex;
       flex-wrap: wrap;
@@ -488,7 +473,6 @@
       box-shadow: none;
     }
 
-    /* ── Coming soon note ── */
     .coming-soon-note {
       display: flex;
       align-items: center;
@@ -503,9 +487,7 @@
       color: var(--grey);
       letter-spacing: 0.5px;
     }
-    .coming-soon-note span:first-child { font-size: 20px; flex-shrink: 0; }
 
-    /* ── Childline footer ── */
     .childline-footer {
       background: var(--navy-dark);
       border-top: 3px solid var(--childline-red);
@@ -544,7 +526,6 @@
       line-height: 1.6;
     }
 
-    /* Partner logos */
     .partner-logos {
       display: flex;
       align-items: center;
@@ -581,7 +562,6 @@
       background: rgba(66,206,208,0.2);
     }
 
-    /* ── Site footer bar ── */
     .site-footer-bar {
       background: #060E1C;
       padding: 16px 24px;
@@ -594,7 +574,6 @@
     .site-footer-bar a { color: var(--teal); text-decoration: none; }
     .site-footer-bar a:hover { text-decoration: underline; }
 
-    /* ── Back to top ── */
     .back-to-top {
       position: fixed;
       bottom: 28px;
@@ -623,18 +602,11 @@
     }
     .back-to-top:hover { background: #5ADFE1; }
 
-    /* ── Responsive ── */
     @media (max-width: 680px) {
-      .pres-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
+      .pres-grid { grid-template-columns: 1fr; gap: 16px; }
     }
-    @media (max-width: 420px) {
-      .card-body h3 { font-size: 15px; }
-    }
+    @media (max-width: 420px) { .card-body h3 { font-size: 15px; } }
 
-    /* ── Home link in nav ── */
     .jump-nav-home {
       display: inline-flex;
       align-items: center;
@@ -652,30 +624,20 @@
       white-space: nowrap;
       transition: color 0.2s;
     }
-
     .jump-nav-home:hover { color: var(--teal); }
-
-    .jump-nav-home svg {
-      width: 13px;
-      height: 13px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
+    .jump-nav-home svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
   </style>
 </head>
 
 <body>
-
   <div class="top-bar"></div>
 
-  <!-- Jump navigation -->
   <nav class="jump-nav">
     <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
     <span class="jump-nav-label">Jump to</span>
     <a href="#school-presentations">🎤 Cyber Safety Guy Presentations</a>
   </nav>
 
-  <!-- Site header -->
   <header class="site-header">
     <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" class="site-logo">
     <div class="header-badge">Cyber Safety Guy</div>
@@ -683,12 +645,10 @@
     <p class="header-sub">For Schools &amp; Youth Organisations</p>
     <p class="header-intro">
       Age-appropriate, evidence-informed presentations you can use in school assemblies, parent evenings, and safeguarding sessions.
-      Each one has been built from years of real investigative experience and shaped by the conversations that matter most.
     </p>
     <div class="guide-count-badge">
-      <strong>3</strong> presentations available — more coming soon
+      <strong>0</strong> presentations available — more coming soon
     </div>
-    <!-- Cross-site navigation -->
     <div class="hub-nav">
       <a href="https://guides.cybersafetyguy.com/">📄 Free Guides</a>
       <a href="presentations.html" class="active">🎤 Presentations</a>
@@ -696,193 +656,32 @@
     </div>
   </header>
 
-  <!-- Main content -->
   <main class="main">
-
-    <!-- Search -->
     <div class="search-wrap">
-      <input
-        type="text"
-        class="search-input"
-        placeholder="Search presentations..."
-        id="searchInput"
-        aria-label="Search presentations"
-        autocomplete="off"
-      >
+      <input type="text" class="search-input" placeholder="Search presentations..." id="searchInput" aria-label="Search presentations" autocomplete="off">
       <span class="search-icon" aria-hidden="true">⌕</span>
     </div>
     <p class="search-no-results" id="noResults">No presentations found matching your search.</p>
 
-    <!-- School Presentations category -->
     <section class="category-section" id="school-presentations">
       <div class="category-header">
         <span class="category-icon">🎤</span>
         <h2 class="category-title">Cyber Safety Guy Presentations</h2>
-        <span class="category-count">3 presentations</span>
+        <span class="category-count">0 presentations</span>
       </div>
       <p class="category-desc">
-        Ready-to-use presentations for schools and youth organisations. Each is tailored to a specific audience
-        and can be delivered by a teacher, safeguarding lead, or invited speaker.
+        Ready-to-use presentations for schools and youth organisations. Each is tailored to a specific audience and can be delivered by a teacher, safeguarding lead, or invited speaker.
       </p>
 
-      <div class="pres-grid">
-
-        <!-- Card 1: Parents & Teachers -->
-        <article class="pres-card" data-search="parents teachers adults platform risks grooming tactics conversation">
-          <div class="card-img-wrap">
-            <img
-              src="images/pres-parents.png"
-              alt="Thumbnail for Parents and Teachers presentation"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="card-img-fallback" style="display:none;">
-              <span class="fallback-icon">🛡️</span>
-              Parents &amp; Teachers
-            </div>
-            <div class="play-overlay" aria-hidden="true">
-              <div class="play-circle">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="5,3 19,12 5,21"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="card-audience">For Adults</p>
-            <h3>For Parents &amp; Teachers</h3>
-            <p>
-              A frank, practical session covering the real risks children face online today,
-              from grooming tactics and predator behaviour to platform dangers and how to have
-              the conversations that could keep a child safe.
-            </p>
-            <div class="topic-chips">
-              <span class="chip">Platform Risks</span>
-              <span class="chip">Grooming Tactics</span>
-              <span class="chip">Starting the Conversation</span>
-              <span class="chip">Parental Controls</span>
-            </div>
-            <p class="duration-badge">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12,6 12,12 16,14"/>
-              </svg>
-              Approx. 30 minutes
-            </p>
-          </div>
-          <div class="card-footer">
-            <a href="https://youtu.be/3H3qE7CDddw" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Watch the Parents and Teachers presentation on YouTube">&#9654;&nbsp; Watch on YouTube</a>
-            <a href="https://drive.google.com/file/d/1BsQrc9gaazRJ4R-x50px8-9aFCdgTpHw/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="open-btn download-btn" aria-label="Download the Parents and Teachers presentation for offline use">&#8659;&nbsp; Download for Offline Use</a>
-          </div>
-        </article>
-
-        <!-- Card 2: Under-13s -->
-        <article class="pres-card" data-search="under 13 children younger kids staying safe who to trust what to do wrong">
-          <div class="card-img-wrap">
-            <img
-              src="images/pres-under13.png"
-              alt="Thumbnail for Under-13s presentation"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="card-img-fallback" style="display:none;">
-              <span class="fallback-icon">🌐</span>
-              For Under-13s
-            </div>
-            <div class="play-overlay" aria-hidden="true">
-              <div class="play-circle">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="5,3 19,12 5,21"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="card-audience">For Children Under 13</p>
-            <h3>For Under-13s</h3>
-            <p>
-              An age-appropriate session designed for younger children — covering how to stay safe
-              online, who to trust, what to do if something feels wrong, and how to ask for help
-              without fear or embarrassment.
-            </p>
-            <div class="topic-chips">
-              <span class="chip">Staying Safe Online</span>
-              <span class="chip">Who to Trust</span>
-              <span class="chip">Asking for Help</span>
-              <span class="chip">What to Do</span>
-            </div>
-            <p class="duration-badge">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12,6 12,12 16,14"/>
-              </svg>
-              Approx. 28 minutes
-            </p>
-          </div>
-          <div class="card-footer">
-            <a href="https://youtu.be/iaseax3d_5c" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Watch the Under-13s presentation on YouTube">&#9654;&nbsp; Watch on YouTube</a>
-            <a href="https://drive.google.com/file/d/13g4Y_lbhPVJVgtMMmSj0VgzjV3o63ylp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="open-btn download-btn" aria-label="Download the Under-13s presentation for offline use">&#8659;&nbsp; Download for Offline Use</a>
-          </div>
-        </article>
-
-        <!-- Card 3: Teens 13+ -->
-        <article class="pres-card" data-search="teens teenagers 13 older image abuse deepfakes AI digital footprint mental health">
-          <div class="card-img-wrap">
-            <img
-              src="images/pres-teens.png"
-              alt="Thumbnail for Teens 13 plus presentation"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="card-img-fallback" style="display:none;">
-              <span class="fallback-icon">📱</span>
-              For Teens 13+
-            </div>
-            <div class="play-overlay" aria-hidden="true">
-              <div class="play-circle">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="5,3 19,12 5,21"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="card-audience">For Teens Aged 13 and Over</p>
-            <h3>For Teens 13+</h3>
-            <p>
-              An honest, no-filter session for older young people — covering image-based abuse,
-              the real risks of AI and deepfakes, your digital footprint, and the link between
-              heavy social media use and mental health.
-            </p>
-            <div class="topic-chips">
-              <span class="chip">Image-Based Abuse</span>
-              <span class="chip">AI &amp; Deepfakes</span>
-              <span class="chip">Digital Footprint</span>
-              <span class="chip">Mental Health Online</span>
-            </div>
-            <p class="duration-badge">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12,6 12,12 16,14"/>
-              </svg>
-              Approx. 33 minutes
-            </p>
-          </div>
-          <div class="card-footer">
-            <a href="https://youtu.be/XeU_cVRDdcI?si=QZasFNf7imhNVjnX" target="_blank" rel="noopener noreferrer" class="open-btn" aria-label="Watch the Teens 13 plus presentation on YouTube">&#9654;&nbsp; Watch on YouTube</a>
-            <a href="https://drive.google.com/file/d/1oRbuWwpGySksJIvSp--dmWNmli8Z9LRb/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="open-btn download-btn" aria-label="Download the Teens 13 plus presentation for offline use">&#8659;&nbsp; Download for Offline Use</a>
-          </div>
-        </article>
-
-      </div><!-- /pres-grid -->
+      <div class="pres-grid" id="presGrid"></div>
 
       <div class="coming-soon-note">
         <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" style="width:32px;height:32px;border-radius:50%;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(66,206,208,0.4));">
         <span>More presentations are in development, covering topics including neurodivergent children online, gaming safety, and AI literacy. Check back soon, or <a href="https://www.cybersafetyguy.com" target="_blank" rel="noopener noreferrer" style="color: var(--teal); text-decoration: none;">Subscribe at Cyber Safety Guy</a> to be the first to know.</span>
       </div>
-
-    </section><!-- /school-presentations -->
-
+    </section>
   </main>
 
-  <!-- Childline footer -->
   <footer class="childline-footer">
     <p class="childline-eyebrow">If a child needs help right now</p>
     <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
@@ -910,90 +709,96 @@
     <a href="https://guides.cybersafetyguy.com/">Free Guides</a>
   </div>
 
-  <!-- Back to top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593; Top</button>
 
   <script>
-    // ── Year ──
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ── Back to top ──
     const btt = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       btt.classList.toggle('visible', window.scrollY > 400);
     });
     btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // ── Dynamic counts ──
-    // Updates the header badge total and each section's count label.
-    // Called on load and after every search filter so numbers are always accurate.
-    function updateCounts() {
-      const sections = document.querySelectorAll('.category-section');
-      let grandTotal = 0;
-
-      sections.forEach(section => {
-        const visibleCards = section.querySelectorAll('.pres-card:not(.hidden)');
-        const count = visibleCards.length;
-        grandTotal += count;
-
-        const countEl = section.querySelector('.category-count');
-        if (countEl) {
-          countEl.textContent = count === 1 ? '1 presentation' : `${count} presentations`;
-        }
-      });
-
-      // Update the header badge
-      const badgeStrong = document.querySelector('.guide-count-badge strong');
-      if (badgeStrong) badgeStrong.textContent = grandTotal;
-
-      const badgeText = document.querySelector('.guide-count-badge');
-      if (badgeText) {
-        const textNode = Array.from(badgeText.childNodes).find(n => n.nodeType === 3);
-        if (textNode) {
-          textNode.textContent = grandTotal === 1
-            ? ' presentation available — more coming soon'
-            : ' presentations available — more coming soon';
-        }
+    async function loadPresentations() {
+      try {
+        const response = await fetch('guides.json');
+        const allData = await response.json();
+        const presentations = allData.filter(item => item.type === 'presentation');
+        const grid = document.getElementById('presGrid');
+        
+        presentations.forEach(pres => {
+          const card = document.createElement('article');
+          card.className = 'pres-card';
+          card.setAttribute('data-search', `${pres.title} ${pres.audience} ${pres.topics.join(' ')} ${pres.desc}`.toLowerCase());
+          
+          const topicsHtml = pres.topics.map(t => `<span class="chip">${t}</span>`).join('');
+          
+          card.innerHTML = `
+            <div class="card-img-wrap">
+              <img src="images/${pres.image}" alt="${pres.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="card-img-fallback" style="display:none;">
+                <span class="fallback-icon">🎬</span>
+                ${pres.title}
+              </div>
+              <div class="play-overlay" aria-hidden="true">
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-audience">${pres.audience}</p>
+              <h3>${pres.title}</h3>
+              <p>${pres.desc}</p>
+              <div class="topic-chips">${topicsHtml}</div>
+              <p class="duration-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                ${pres.duration}
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="${pres.link}" target="_blank" class="open-btn">▶&nbsp; Watch on YouTube</a>
+              <a href="${pres.download}" target="_blank" class="open-btn download-btn">⇓&nbsp; Download for Offline Use</a>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+        updateCounts();
+      } catch (error) {
+        console.error("Error loading presentations:", error);
       }
     }
 
-    // Run on load
-    updateCounts();
+    function updateCounts() {
+      const section = document.querySelector('.category-section');
+      const visibleCards = section.querySelectorAll('.pres-card:not(.hidden)');
+      const count = visibleCards.length;
 
-    // ── Search ──
+      const countEl = section.querySelector('.category-count');
+      if (countEl) countEl.textContent = count === 1 ? '1 presentation' : `${count} presentations`;
+
+      const badgeStrong = document.querySelector('.guide-count-badge strong');
+      if (badgeStrong) badgeStrong.textContent = count;
+    }
+
     const searchInput = document.getElementById('searchInput');
-    const noResults   = document.getElementById('noResults');
-    const sections    = document.querySelectorAll('.category-section');
-
     searchInput.addEventListener('input', () => {
-      const query = searchInput.value.trim().toLowerCase();
-      let totalVisible = 0;
+      const query = searchInput.value.toLowerCase();
+      const cards = document.querySelectorAll('.pres-card');
+      let found = 0;
 
-      sections.forEach(section => {
-        const sectionCards = section.querySelectorAll('.pres-card');
-        let sectionVisible = 0;
-
-        sectionCards.forEach(card => {
-          const title  = card.querySelector('h3')?.textContent.toLowerCase() || '';
-          const desc   = card.querySelector('p:not(.card-audience):not(.duration-badge)')?.textContent.toLowerCase() || '';
-          const search = card.dataset.search?.toLowerCase() || '';
-          const chips  = Array.from(card.querySelectorAll('.chip')).map(c => c.textContent.toLowerCase()).join(' ');
-          const matches = !query || title.includes(query) || desc.includes(query) || search.includes(query) || chips.includes(query);
-
-          card.classList.toggle('hidden', !matches);
-          if (matches) sectionVisible++;
-        });
-
-        section.classList.toggle('hidden', sectionVisible === 0);
-        totalVisible += sectionVisible;
+      cards.forEach(card => {
+        const match = card.getAttribute('data-search').includes(query);
+        card.classList.toggle('hidden', !match);
+        if (match) found++;
       });
 
-      noResults.style.display = totalVisible === 0 ? 'block' : 'none';
-
-      // Keep counts in sync with search results
+      document.getElementById('noResults').style.display = found === 0 ? 'block' : 'none';
       updateCounts();
     });
-  </script>
 
+    loadPresentations();
+  </script>
 </body>
 </html>
