@@ -388,6 +388,36 @@
       .social-grid { grid-template-columns: 1fr; }
       .platform-name { font-size: 15px; }
     }
+
+    /* ── Home link ── */
+    .hub-nav-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--grey);
+      padding: 10px 16px;
+      border: 1px solid rgba(66,206,208,0.2);
+      border-radius: 3px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .hub-nav-home:hover {
+      color: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .hub-nav-home svg {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
@@ -404,6 +434,7 @@
       Everything I publish is free. Every subscription goes straight to Childline.
     </p>
     <div class="hub-nav">
+      <a href="https://www.cybersafetyguy.com" class="hub-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
       <a href="https://guides.cybersafetyguy.com/">📄 Free Guides</a>
       <a href="presentations.html">🎤 Presentations</a>
       <a href="social.html" class="active">📡 Social</a>

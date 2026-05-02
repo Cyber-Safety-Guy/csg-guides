@@ -632,6 +632,34 @@
     @media (max-width: 420px) {
       .card-body h3 { font-size: 15px; }
     }
+
+    /* ── Home link in nav ── */
+    .jump-nav-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--grey);
+      padding: 14px 14px 14px 0;
+      margin-right: 4px;
+      border-right: 1px solid rgba(66,206,208,0.15);
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .jump-nav-home:hover { color: var(--teal); }
+
+    .jump-nav-home svg {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
@@ -641,6 +669,7 @@
 
   <!-- Jump navigation -->
   <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
     <span class="jump-nav-label">Jump to</span>
     <a href="#school-presentations">🎤 Cyber Safety Guy Presentations</a>
   </nav>
