@@ -139,12 +139,16 @@
 
   </main>
 
-  <script>
-    // 1. THE ENGINE: Fetches guides.json
+    <script>
+    // 1. THE ENGINE: Fetches guides.json and filters for guides only
     async function loadGuides() {
       try {
         const response = await fetch('guides.json');
-        const guides = await response.json();
+        const allItems = await response.json();
+        
+        // Filter out presentations - we only want items with type "guide" on this page
+        const guides = allItems.filter(item => item.type === "guide");
+
         guides.forEach(guide => {
           const grid = document.getElementById(`grid-${guide.id}`);
           if (grid) {
@@ -161,15 +165,20 @@
             grid.insertAdjacentHTML('beforeend', cardHtml);
           }
         });
+        
+        // Update counters after the items are added to the DOM
         updateStats();
-      } catch (e) { console.error("Error loading guides:", e); }
+      } catch (e) { 
+        console.error("Error loading guides:", e); 
+      }
     }
 
-    // 2. COUNTERS
+    // 2. COUNTERS: Strictly count the elements currently in the grids
     function updateStats() {
-      const config = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
+      const categories = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
       let total = 0;
-      config.forEach(id => {
+      
+      categories.forEach(id => {
         const grid = document.getElementById(`grid-${id}`);
         if(grid) {
             const count = grid.children.length;
@@ -239,5 +248,6 @@
     // START
     loadGuides();
   </script>
+
 </body>
 </html>
