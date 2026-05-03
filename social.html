@@ -26,7 +26,6 @@
       --off-white:    #E8F4F5;
       --grey:         #7B9EA0;
       --childline-red:#C0392B;
-      --gold:         #D4A843;
       --instagram:    #E1306C;
       --bluesky:      #0085FF;
       --linkedin:     #0A66C2;
@@ -49,10 +48,7 @@
       min-height: 100vh;
     }
 
-    .top-bar {
-      height: 4px;
-      background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--teal-dark));
-    }
+    .top-bar { height: 4px; background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--teal-dark)); }
 
     .site-header {
       background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
@@ -70,133 +66,28 @@
       pointer-events: none;
     }
 
-    .site-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: block;
-      filter: drop-shadow(0 0 12px rgba(66,206,208,0.5));
-    }
+    .site-logo { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; filter: drop-shadow(0 0 12px rgba(66,206,208,0.5)); }
+    .header-badge { display: inline-block; background: rgba(26,92,95,0.5); color: var(--teal); font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; padding: 6px 18px; border: 1px solid var(--teal-dim); border-radius: 2px; margin-bottom: 22px; }
 
-    .header-badge {
-      display: inline-block;
-      background: rgba(26,92,95,0.5);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border: 1px solid var(--teal-dim);
-      border-radius: 2px;
-      margin-bottom: 22px;
-    }
+    .site-header h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(28px, 5.5vw, 52px); font-weight: 900; color: #fff; letter-spacing: 3px; line-height: 1.1; margin-bottom: 6px; }
+    .site-header h1 span { color: var(--teal); text-shadow: 0 0 24px rgba(66,206,208,0.55); }
 
-    .site-header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(28px, 5.5vw, 52px);
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 3px;
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-    .site-header h1 span {
-      color: var(--teal);
-      text-shadow: 0 0 24px rgba(66,206,208,0.55);
-    }
+    .header-sub { font-family: 'Exo 2', sans-serif; color: var(--grey); font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 20px; }
+    .header-intro { max-width: 540px; margin: 0 auto 28px; color: var(--off-white); font-size: 16px; opacity: 0.82; }
 
-    .header-sub {
-      font-family: 'Exo 2', sans-serif;
-      color: var(--grey);
-      font-size: 13px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .header-intro {
-      max-width: 540px;
-      margin: 0 auto 28px;
-      color: var(--off-white);
-      font-size: 16px;
-      opacity: 0.82;
-    }
-
-    .hub-nav {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 4px;
-    }
-    .hub-nav a {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--grey);
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border: 1px solid rgba(66,206,208,0.15);
-      border-radius: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
+    .hub-nav { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 4px; }
+    .hub-nav a { font-family: 'Exo 2', sans-serif; font-size: 12px; font-weight: 600; color: var(--grey); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; padding: 6px 14px; border: 1px solid rgba(66,206,208,0.15); border-radius: 2px; transition: color 0.2s, border-color 0.2s; }
     .hub-nav a:hover { color: var(--teal); border-color: rgba(66,206,208,0.4); }
     .hub-nav a.active { color: var(--teal); border-color: var(--teal-dim); background: rgba(66,206,208,0.06); }
 
-    .main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-    }
+    .main { max-width: 860px; margin: 0 auto; padding: 56px 24px 80px; }
 
-    .section-label {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: rgba(66,206,208,0.15);
-    }
+    .section-label { font-family: 'Exo 2', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(66,206,208,0.15); }
 
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 460px));
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .social-card {
-      width: 100%;
-      display: flex;
-      align-items: stretch;
-      background: var(--navy-card);
-      border: 1px solid rgba(66,206,208,0.1);
-      border-radius: 6px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-    .social-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 32px rgba(0,0,0,0.3);
-      border-color: rgba(66,206,208,0.25);
-    }
+    .social-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 460px)); justify-content: center; gap: 20px; }
+    .social-card { width: 100%; display: flex; align-items: stretch; background: var(--navy-card); border: 1px solid rgba(66,206,208,0.1); border-radius: 6px; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+    .social-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(0,0,0,0.3); border-color: rgba(66,206,208,0.25); }
 
     .card-accent { width: 4px; flex-shrink: 0; }
     .social-card.instagram .card-accent { background: var(--instagram); }
@@ -205,23 +96,8 @@
     .social-card.substack   .card-accent { background: var(--substack); }
     .social-card.youtube    .card-accent { background: var(--youtube); }
 
-    .card-inner {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 24px 24px 24px 20px;
-      flex: 1;
-    }
-
-    .platform-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+    .card-inner { display: flex; align-items: center; gap: 20px; padding: 24px 24px 24px 20px; flex: 1; }
+    .platform-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .social-card.instagram .platform-icon { background: rgba(225,48,108,0.12); }
     .social-card.bluesky    .platform-icon { background: rgba(0,133,255,0.12); }
     .social-card.linkedin   .platform-icon { background: rgba(10,102,194,0.12); }
@@ -243,46 +119,30 @@
     .card-arrow { font-size: 20px; color: var(--grey); flex-shrink: 0; transition: color 0.2s, transform 0.2s; margin-left: 8px; }
     .social-card:hover .card-arrow { color: var(--teal); transform: translateX(4px); }
 
-    .note-strip {
-      margin-top: 36px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      background: rgba(66,206,208,0.04);
-      border: 1px solid rgba(66,206,208,0.12);
-      border-radius: 4px;
-      padding: 18px 22px;
-      font-size: 14px;
-      color: var(--grey);
-      line-height: 1.6;
-    }
-    .note-strip img { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; filter: drop-shadow(0 0 5px rgba(66,206,208,0.3)); margin-top: 2px; }
+    .note-strip { margin-top: 36px; display: flex; align-items: flex-start; gap: 14px; background: rgba(66,206,208,0.04); border: 1px solid rgba(66,206,208,0.12); border-radius: 4px; padding: 18px 22px; font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .note-strip img { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; }
 
     .childline-footer { background: var(--navy-dark); border-top: 3px solid var(--childline-red); padding: 40px 24px 36px; text-align: center; }
     .childline-eyebrow { font-family: 'Exo 2', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); margin-bottom: 12px; }
-    .childline-number { font-family: 'Orbitron', sans-serif; font-size: clamp(28px, 5vw, 44px); font-weight: 900; color: var(--childline-red); margin-bottom: 4px; letter-spacing: 2px; }
+    .childline-number { font-family: 'Orbitron', sans-serif; font-size: clamp(28px, 5vw, 44px); font-weight: 900; color: var(--childline-red); margin-bottom: 4px; }
     .childline-number a { color: inherit; text-decoration: none; }
     .childline-url { font-family: 'Exo 2', sans-serif; color: var(--grey); font-size: 15px; margin-bottom: 14px; }
     .childline-desc { color: var(--grey); font-size: 13px; max-width: 380px; margin: 0 auto; line-height: 1.6; }
 
     .partner-logos { display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 28px; flex-wrap: wrap; }
     .partner-logo-link { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; opacity: 0.85; transition: opacity 0.2s; }
-    .partner-logo-link:hover { opacity: 1; }
     .partner-logo-link img { height: 52px; width: auto; object-fit: contain; }
     .partner-logo-label { font-family: 'Exo 2', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); }
     .partner-divider { width: 1px; height: 52px; background: rgba(66,206,208,0.2); }
 
-    .site-footer-bar { background: #060E1C; padding: 16px 24px; text-align: center; font-size: 12px; color: var(--grey); font-family: 'Exo 2', sans-serif; }
+    .site-footer-bar { background: #060E1C; padding: 16px 24px; text-align: center; font-size: 12px; color: var(--grey); }
     .site-footer-bar a { color: var(--teal); text-decoration: none; }
 
-    @media (max-width: 500px) {
-      .social-grid { grid-template-columns: 1fr; }
-      .platform-name { font-size: 15px; }
-    }
+    @media (max-width: 500px) { .social-grid { grid-template-columns: 1fr; } .social-card.youtube { grid-column: auto; } }
 
     .hub-nav-home { display: inline-flex; align-items: center; gap: 6px; font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; color: var(--grey); padding: 10px 16px; border: 1px solid rgba(66,206,208,0.2); border-radius: 3px; transition: color 0.2s, border-color 0.2s; }
     .hub-nav-home:hover { color: var(--teal); border-color: var(--teal); }
-    .hub-nav-home svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+    .hub-nav-home svg { width: 13px; height: 13px; fill: currentColor; }
     .social-card.youtube { grid-column: 1 / -1; max-width: 460px; margin: 0 auto; }
   </style>
 </head>
@@ -295,6 +155,10 @@
     <div class="header-badge">Cyber Safety Guy</div>
     <h1>FIND ME<br><span>ON SOCIAL</span></h1>
     <p class="header-sub">Follow &bull; Connect &bull; Share</p>
+    <p class="header-intro">
+      Keep up with the latest child online safety news, research and resources.
+      Everything I publish is free. Every subscription goes straight to Childline.
+    </p>
     <div class="hub-nav">
       <a href="https://www.cybersafetyguy.com" class="hub-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
       <a href="index.html">📄 Online Safety Guides</a>
@@ -306,23 +170,25 @@
   <main class="main">
     <p class="section-label">Where to find me</p>
     <div class="social-grid">
+      <!-- Substack -->
       <a href="https://cybersafetyguy.substack.com" target="_blank" rel="noopener noreferrer" class="social-card substack">
         <div class="card-accent"></div>
         <div class="card-inner">
-          <div class="platform-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></div>
+          <div class="platform-icon"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></div>
           <div class="card-text">
             <p class="platform-name">Substack</p>
             <p class="platform-handle">cybersafetyguy.substack.com</p>
-            <p class="platform-desc">In-depth research and platform investigations. Every subscription funds Childline.</p>
+            <p class="platform-desc">In-depth articles and research. Every subscription funds Childline.</p>
           </div>
           <span class="card-arrow">›</span>
         </div>
       </a>
 
+      <!-- Instagram -->
       <a href="https://www.instagram.com/cyber_safety_guy" target="_blank" rel="noopener noreferrer" class="social-card instagram">
         <div class="card-accent"></div>
         <div class="card-inner">
-          <div class="platform-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></div>
+          <div class="platform-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></div>
           <div class="card-text">
             <p class="platform-name">Instagram</p>
             <p class="platform-handle">@cyber_safety_guy</p>
@@ -331,7 +197,53 @@
           <span class="card-arrow">›</span>
         </div>
       </a>
-      <!-- Add other cards as needed -->
+
+      <!-- BlueSky -->
+      <a href="https://bsky.app/profile/cybersafetyguy.com" target="_blank" rel="noopener noreferrer" class="social-card bluesky">
+        <div class="card-accent"></div>
+        <div class="card-inner">
+          <div class="platform-icon"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 01-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.204-.659-.299-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg></div>
+          <div class="card-text">
+            <p class="platform-name">BlueSky</p>
+            <p class="platform-handle">cybersafetyguy.com</p>
+            <p class="platform-desc">Quick takes and breaking platform news.</p>
+          </div>
+          <span class="card-arrow">›</span>
+        </div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/dale-mcgleenon" target="_blank" rel="noopener noreferrer" class="social-card linkedin">
+        <div class="card-accent"></div>
+        <div class="card-inner">
+          <div class="platform-icon"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></div>
+          <div class="card-text">
+            <p class="platform-name">LinkedIn</p>
+            <p class="platform-handle">dale-mcgleenon</p>
+            <p class="platform-desc">Professional insights for educators and safeguarding leads.</p>
+          </div>
+          <span class="card-arrow">›</span>
+        </div>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@cybersafetyguy3085" target="_blank" rel="noopener noreferrer" class="social-card youtube">
+        <div class="card-accent"></div>
+        <div class="card-inner">
+          <div class="platform-icon"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+          <div class="card-text">
+            <p class="platform-name">YouTube</p>
+            <p class="platform-handle">@cybersafetyguy3085</p>
+            <p class="platform-desc">School presentations and safety video guides.</p>
+          </div>
+          <span class="card-arrow">›</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="note-strip">
+      <img src="images/CSG_logo.png" alt="CSG logo">
+      <span>I left X (formerly Twitter) in 2020. If you see an account there, it is not me.</span>
     </div>
   </main>
 
@@ -343,6 +255,11 @@
       <a href="https://www.childline.org.uk" target="_blank" rel="noopener noreferrer" class="partner-logo-link">
         <img src="images/childline-logo.png" alt="Childline logo">
         <span class="partner-logo-label">Childline</span>
+      </a>
+      <div class="partner-divider"></div>
+      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener noreferrer" class="partner-logo-link">
+        <img src="images/nspcc-logo.png" alt="NSPCC logo">
+        <span class="partner-logo-label">NSPCC</span>
       </a>
     </div>
   </footer>
