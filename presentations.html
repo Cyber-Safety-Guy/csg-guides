@@ -5,15 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presentations — Cyber Safety Guy</title>
   <link rel="canonical" href="https://guides.cybersafetyguy.com/presentations.html">
-  <meta name="description" content="Free child online safety presentations for schools, parents and youth organisations. From Cyber Safety Guy.">
+  <meta name="description" content="Free child online safety presentations for schools, parents and youth organisations.">
   <meta property="og:title" content="Presentations — Cyber Safety Guy">
-  <meta property="og:description" content="Free child online safety presentations for schools and youth organisations. Age-appropriate, evidence-informed, and ready to use — from Cyber Safety Guy.">
-  <meta property="og:url" content="https://guides.cybersafetyguy.com/presentations.html">
-  <meta property="og:type" content="website">
   <meta property="og:image" content="https://cyber-safety-guy.github.io/csg-guides/images/CSG_logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Presentations — Cyber Safety Guy">
-  <meta name="twitter:description" content="Free child online safety presentations for schools and youth organisations.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -23,14 +17,12 @@
       --navy:         #142A46;
       --navy-dark:    #0A1628;
       --navy-card:    #0F1E35;
-      --navy-hover:   #0D1A2E;
       --teal:         #42CED0;
       --teal-dim:     #2A8F92;
       --teal-dark:    #1A5C5F;
       --off-white:    #E8F4F5;
       --grey:         #7B9EA0;
       --childline-red:#C0392B;
-      --gold:         #D4A843;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,584 +40,70 @@
       min-height: 100vh;
     }
 
-    .top-bar {
-      height: 4px;
-      background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--teal-dark));
-    }
+    .top-bar { height: 4px; background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--teal-dark)); }
 
     .jump-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,22,40,0.96);
-      border-bottom: 1px solid rgba(66,206,208,0.2);
-      backdrop-filter: blur(8px);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      gap: 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .jump-nav::-webkit-scrollbar { display: none; }
-
-    .jump-nav-label {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-      white-space: nowrap;
-      padding: 12px 16px 12px 0;
-      border-right: 1px solid rgba(66,206,208,0.15);
-      margin-right: 8px;
-    }
-    .jump-nav a {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--grey);
-      text-decoration: none;
-      white-space: nowrap;
-      padding: 14px 14px;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-      border-bottom: 2px solid transparent;
-    }
-    .jump-nav a:hover {
-      color: var(--teal);
-      border-bottom-color: var(--teal);
+      position: sticky; top: 0; z-index: 100; background: rgba(10,22,40,0.96);
+      border-bottom: 1px solid rgba(66,206,208,0.2); backdrop-filter: blur(8px);
+      padding: 0 24px; display: flex; align-items: center; gap: 0; overflow-x: auto;
     }
 
-    .site-header {
-      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
-      border-bottom: 2px solid var(--teal);
-      padding: 52px 24px 44px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .site-header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% -10%, rgba(66,206,208,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
+    .jump-nav-home { display: inline-flex; align-items: center; gap: 6px; font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; color: var(--grey); padding: 14px 14px 14px 0; border-right: 1px solid rgba(66,206,208,0.15); transition: color 0.2s; }
+    .jump-nav-home:hover { color: var(--teal); }
+    .jump-nav-home svg { width: 13px; height: 13px; fill: currentColor; }
 
-    .site-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: block;
-      filter: drop-shadow(0 0 12px rgba(66,206,208,0.5));
-    }
+    .jump-nav-label { font-family: 'Exo 2', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); padding: 12px 16px 12px 0; border-right: 1px solid rgba(66,206,208,0.15); margin-right: 8px; }
+    .jump-nav a { font-family: 'Exo 2', sans-serif; font-size: 12px; font-weight: 600; color: var(--grey); text-decoration: none; padding: 14px 14px; transition: color 0.2s; border-bottom: 2px solid transparent; }
+    .jump-nav a:hover { color: var(--teal); border-bottom-color: var(--teal); }
 
-    .header-badge {
-      display: inline-block;
-      background: rgba(26,92,95,0.5);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border: 1px solid var(--teal-dim);
-      border-radius: 2px;
-      margin-bottom: 22px;
-    }
+    .site-header { background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%); border-bottom: 2px solid var(--teal); padding: 52px 24px 44px; text-align: center; position: relative; }
+    .site-logo { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; filter: drop-shadow(0 0 12px rgba(66,206,208,0.5)); }
+    .header-badge { display: inline-block; background: rgba(26,92,95,0.5); color: var(--teal); font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; padding: 6px 18px; border: 1px solid var(--teal-dim); border-radius: 2px; margin-bottom: 22px; }
 
-    .site-header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(30px, 6vw, 58px);
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 3px;
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
+    .site-header h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(30px, 6vw, 58px); font-weight: 900; color: #fff; letter-spacing: 3px; line-height: 1.1; margin-bottom: 6px; }
     .site-header h1 span { color: var(--teal); text-shadow: 0 0 24px rgba(66,206,208,0.55); }
 
-    .header-sub {
-      font-family: 'Exo 2', sans-serif;
-      color: var(--grey);
-      font-size: 13px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      margin-bottom: 26px;
-    }
-
-    .header-intro {
-      max-width: 620px;
-      margin: 0 auto 28px;
-      color: var(--off-white);
-      font-size: 16px;
-      opacity: 0.82;
-    }
-
-    .guide-count-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(66,206,208,0.08);
-      border: 1px solid rgba(66,206,208,0.3);
-      border-radius: 4px;
-      padding: 10px 22px;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 14px;
-      color: var(--teal);
-    }
+    .guide-count-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(66,206,208,0.08); border: 1px solid rgba(66,206,208,0.3); border-radius: 4px; padding: 10px 22px; font-family: 'Exo 2', sans-serif; font-size: 14px; color: var(--teal); margin-top: 15px; }
     .guide-count-badge strong { font-size: 22px; font-weight: 700; }
 
-    .hub-nav {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-    .hub-nav a {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--grey);
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border: 1px solid rgba(66,206,208,0.15);
-      border-radius: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
+    .hub-nav { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 22px; }
+    .hub-nav a { font-family: 'Exo 2', sans-serif; font-size: 12px; font-weight: 600; color: var(--grey); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; padding: 6px 14px; border: 1px solid rgba(66,206,208,0.15); border-radius: 2px; transition: 0.2s; }
     .hub-nav a:hover { color: var(--teal); border-color: rgba(66,206,208,0.4); }
     .hub-nav a.active { color: var(--teal); border-color: var(--teal-dim); background: rgba(66,206,208,0.06); }
 
-    .main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 52px 24px 80px;
-    }
+    .main { max-width: 1200px; margin: 0 auto; padding: 52px 24px 80px; }
+    .search-wrap { max-width: 600px; margin: 0 auto 48px; position: relative; }
+    .search-input { width: 100%; background: rgba(10,14,20,0.7); border: 1px solid rgba(66,206,208,0.35); border-radius: 4px; color: var(--off-white); font-family: 'Exo 2', sans-serif; padding: 14px 18px; outline: none; }
 
-    .search-wrap {
-      max-width: 600px;
-      margin: 0 auto 48px;
-      position: relative;
-    }
-    .search-input {
-      width: 100%;
-      background: rgba(10,14,20,0.7);
-      border: 1px solid rgba(66,206,208,0.35);
-      border-radius: 4px;
-      color: var(--off-white);
-      font-family: 'Exo 2', sans-serif;
-      font-size: 15px;
-      padding: 14px 48px 14px 18px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .search-input::placeholder { color: var(--grey); }
-    .search-input:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 16px rgba(66,206,208,0.15);
-    }
-    .search-icon {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--grey);
-      font-size: 18px;
-      pointer-events: none;
-    }
-    .search-no-results {
-      display: none;
-      text-align: center;
-      color: var(--grey);
-      font-family: 'Exo 2', sans-serif;
-      font-size: 15px;
-      padding: 32px 0;
-    }
-
-    .category-section { margin-bottom: 68px; }
-    .category-section.hidden { display: none; }
-
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(66,206,208,0.2);
-      margin-bottom: 10px;
-    }
-    .category-icon { font-size: 26px; line-height: 1; }
-    .category-title {
-      font-family: 'Exo 2', sans-serif;
-      font-size: clamp(17px, 3vw, 24px);
-      font-weight: 700;
-      color: var(--teal);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-    .category-count {
-      margin-left: auto;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 12px;
-      color: var(--grey);
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-    .category-desc {
-      color: var(--grey);
-      font-size: 14px;
-      margin-bottom: 28px;
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    .pres-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .pres-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--navy-card);
-      border: 1px solid rgba(66,206,208,0.12);
-      border-top: 3px solid var(--teal);
-      border-radius: 6px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-    .pres-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 36px rgba(66,206,208,0.18);
-      border-color: rgba(66,206,208,0.35);
-    }
+    .pres-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .pres-card { display: flex; flex-direction: column; background: var(--navy-card); border: 1px solid rgba(66,206,208,0.12); border-top: 3px solid var(--teal); border-radius: 6px; overflow: hidden; text-decoration: none; color: inherit; transition: 0.2s ease; }
+    .pres-card:hover { transform: translateY(-5px); box-shadow: 0 10px 36px rgba(66,206,208,0.18); }
     .pres-card.hidden { display: none; }
 
-    .card-img-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: var(--navy-dark);
-    }
-    .card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .pres-card:hover .card-img-wrap img { transform: scale(1.03); }
-
-    .play-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(10,22,40,0.35);
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
+    .card-img-wrap { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--navy-dark); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(10,22,40,0.35); opacity: 0; transition: 0.25s; }
     .pres-card:hover .play-overlay { opacity: 1; }
-    .play-circle {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(66,206,208,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 24px rgba(66,206,208,0.5);
-    }
-    .play-circle svg {
-      width: 22px;
-      height: 22px;
-      fill: #0A1628;
-      margin-left: 3px;
-    }
+    .play-circle { width: 56px; height: 56px; border-radius: 50%; background: rgba(66,206,208,0.9); display: flex; align-items: center; justify-content: center; }
 
-    .card-img-fallback {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--teal-dark) 100%);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      text-align: center;
-      padding: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.5;
-      gap: 12px;
-    }
-    .fallback-icon { font-size: 36px; opacity: 0.7; }
+    .card-body { padding: 18px 20px 10px; flex: 1; }
+    .card-audience { font-family: 'Exo 2', sans-serif; font-size: 10px; font-weight: 700; color: var(--teal-dim); text-transform: uppercase; margin-bottom: 8px; }
+    .card-body h3 { font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 17px; color: #fff; margin-bottom: 10px; }
+    .card-body p { font-size: 14px; color: var(--grey); }
 
-    .card-body {
-      padding: 18px 20px 10px;
-      flex: 1;
-    }
-    .card-audience {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--teal-dim);
-      margin-bottom: 8px;
-    }
-    .card-body h3 {
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 17px;
-      color: #fff;
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-    .card-body p {
-      font-size: 14px;
-      color: var(--grey);
-      line-height: 1.6;
-    }
-
-    .duration-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: var(--grey);
-      margin-top: 12px;
-    }
-    .duration-badge svg {
-      width: 13px;
-      height: 13px;
-      fill: none;
-      stroke: var(--grey);
-      stroke-width: 2;
-      stroke-linecap: round;
-    }
-
-    .topic-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 14px;
-    }
-    .chip {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: var(--teal-dim);
-      background: rgba(66,206,208,0.07);
-      border: 1px solid rgba(66,206,208,0.18);
-      border-radius: 2px;
-      padding: 3px 8px;
-    }
+    .duration-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: var(--grey); margin-top: 12px; }
+    .topic-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .chip { font-size: 10px; color: var(--teal-dim); background: rgba(66,206,208,0.07); border: 1px solid rgba(66,206,208,0.18); padding: 3px 8px; border-radius: 2px; }
 
     .card-footer { padding: 14px 20px 20px; display: flex; flex-direction: column; gap: 8px; }
-    .open-btn {
-      display: block;
-      text-align: center;
-      background: rgba(66,206,208,0.08);
-      border: 1px solid rgba(66,206,208,0.35);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 11px 12px;
-      border-radius: 3px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-    .pres-card:hover .open-btn {
-      background: rgba(66,206,208,0.18);
-      box-shadow: 0 0 12px rgba(66,206,208,0.15);
-    }
-    .download-btn {
-      background: transparent;
-      border-color: rgba(66,206,208,0.18);
-      color: var(--grey);
-      font-size: 11px;
-    }
-    .pres-card:hover .download-btn {
-      background: rgba(66,206,208,0.06);
-      color: var(--teal);
-      box-shadow: none;
-    }
+    .open-btn { display: block; text-align: center; border: 1px solid rgba(66,206,208,0.35); color: var(--teal); font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 12px; padding: 11px 12px; text-transform: uppercase; text-decoration: none; transition: 0.2s; }
+    .open-btn.download-btn { color: var(--grey); border-color: rgba(66,206,208,0.18); font-size: 11px; }
 
-    .coming-soon-note {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(66,206,208,0.04);
-      border: 1px solid rgba(66,206,208,0.14);
-      border-radius: 4px;
-      padding: 16px 20px;
-      margin-top: 36px;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 13px;
-      color: var(--grey);
-      letter-spacing: 0.5px;
-    }
-
-    .childline-footer {
-      background: var(--navy-dark);
-      border-top: 3px solid var(--childline-red);
-      padding: 40px 24px 36px;
-      text-align: center;
-    }
-    .childline-eyebrow {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 12px;
-    }
-    .childline-number {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(28px, 5vw, 44px);
-      font-weight: 900;
-      color: var(--childline-red);
-      margin-bottom: 4px;
-      letter-spacing: 2px;
-    }
-    .childline-number a { color: inherit; text-decoration: none; }
-    .childline-number a:hover { text-decoration: underline; }
-    .childline-url {
-      font-family: 'Exo 2', sans-serif;
-      color: var(--grey);
-      font-size: 15px;
-      margin-bottom: 14px;
-    }
-    .childline-desc {
-      color: var(--grey);
-      font-size: 13px;
-      max-width: 380px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .partner-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-    .partner-logo-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      opacity: 0.85;
-      transition: opacity 0.2s;
-    }
-    .partner-logo-link:hover { opacity: 1; }
-    .partner-logo-link img {
-      height: 52px;
-      width: auto;
-      object-fit: contain;
-    }
-    .partner-logo-label {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-    }
-    .partner-divider {
-      width: 1px;
-      height: 52px;
-      background: rgba(66,206,208,0.2);
-    }
-
-    .site-footer-bar {
-      background: #060E1C;
-      padding: 16px 24px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--grey);
-      font-family: 'Exo 2', sans-serif;
-      letter-spacing: 0.5px;
-    }
-    .site-footer-bar a { color: var(--teal); text-decoration: none; }
-    .site-footer-bar a:hover { text-decoration: underline; }
-
-    .back-to-top {
-      position: fixed;
-      bottom: 28px;
-      right: 24px;
-      z-index: 200;
-      background: var(--teal);
-      color: #0A1628;
-      border: none;
-      border-radius: 4px;
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1px;
-      padding: 10px 14px;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.25s, transform 0.25s;
-      pointer-events: none;
-      text-transform: uppercase;
-    }
-    .back-to-top.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    .back-to-top:hover { background: #5ADFE1; }
-
-    @media (max-width: 680px) {
-      .pres-grid { grid-template-columns: 1fr; gap: 16px; }
-    }
-    @media (max-width: 420px) { .card-body h3 { font-size: 15px; } }
-
-    .jump-nav-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--grey);
-      padding: 14px 14px 14px 0;
-      margin-right: 4px;
-      border-right: 1px solid rgba(66,206,208,0.15);
-      white-space: nowrap;
-      transition: color 0.2s;
-    }
-    .jump-nav-home:hover { color: var(--teal); }
-    .jump-nav-home svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+    .childline-footer { background: var(--navy-dark); border-top: 3px solid var(--childline-red); padding: 40px 24px 36px; text-align: center; }
+    .childline-number { font-family: 'Orbitron', sans-serif; font-size: clamp(28px, 5vw, 44px); color: var(--childline-red); margin-bottom: 4px; }
+    .site-footer-bar { background: #060E1C; padding: 16px 24px; text-align: center; font-size: 12px; color: var(--grey); }
+    .back-to-top { position: fixed; bottom: 28px; right: 24px; background: var(--teal); color: #0A1628; border: none; padding: 10px 14px; border-radius: 4px; cursor: pointer; opacity: 0; transition: 0.25s; }
+    .back-to-top.visible { opacity: 1; }
   </style>
 </head>
 
@@ -635,22 +113,18 @@
   <nav class="jump-nav">
     <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
     <span class="jump-nav-label">Jump to</span>
-    <a href="#school-presentations">🎤 Cyber Safety Guy Presentations</a>
+    <a href="#school-presentations">🎤 Presentations</a>
   </nav>
 
   <header class="site-header">
     <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" class="site-logo">
     <div class="header-badge">Cyber Safety Guy</div>
     <h1>PRESEN<span>TATIONS</span></h1>
-    <p class="header-sub">For Schools &amp; Youth Organisations</p>
-    <p class="header-intro">
-      Age-appropriate, evidence-informed presentations you can use in school assemblies, parent evenings, and safeguarding sessions.
-    </p>
     <div class="guide-count-badge">
-      <strong>0</strong> presentations available — more coming soon
+      <strong id="totalPresCount">0</strong> presentations available
     </div>
     <div class="hub-nav">
-      <a href="https://guides.cybersafetyguy.com/">📄 Free Guides</a>
+      <a href="index.html">📄 Online Safety Guides</a>
       <a href="presentations.html" class="active">🎤 Presentations</a>
       <a href="social.html">📡 Social</a>
     </div>
@@ -658,66 +132,31 @@
 
   <main class="main">
     <div class="search-wrap">
-      <input type="text" class="search-input" placeholder="Search presentations..." id="searchInput" aria-label="Search presentations" autocomplete="off">
-      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input type="text" class="search-input" placeholder="Search presentations..." id="searchInput" autocomplete="off">
     </div>
-    <p class="search-no-results" id="noResults">No presentations found matching your search.</p>
+    <p class="search-no-results" id="noResults" style="display:none; text-align:center;">No presentations found.</p>
 
     <section class="category-section" id="school-presentations">
-      <div class="category-header">
-        <span class="category-icon">🎤</span>
-        <h2 class="category-title">Cyber Safety Guy Presentations</h2>
-        <span class="category-count">0 presentations</span>
-      </div>
-      <p class="category-desc">
-        Ready-to-use presentations for schools and youth organisations. Each is tailored to a specific audience and can be delivered by a teacher, safeguarding lead, or invited speaker.
-      </p>
-
       <div class="pres-grid" id="presGrid"></div>
-
-      <div class="coming-soon-note">
-        <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" style="width:32px;height:32px;border-radius:50%;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(66,206,208,0.4));">
-        <span>More presentations are in development, covering topics including neurodivergent children online, gaming safety, and AI literacy. Check back soon, or <a href="https://www.cybersafetyguy.com" target="_blank" rel="noopener noreferrer" style="color: var(--teal); text-decoration: none;">Subscribe at Cyber Safety Guy</a> to be the first to know.</span>
-      </div>
     </section>
   </main>
 
   <footer class="childline-footer">
-    <p class="childline-eyebrow">If a child needs help right now</p>
-    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
-    <p class="childline-url">childline.org.uk</p>
-    <p class="childline-desc">
-      Childline is free, confidential, and available 24 hours a day, 7 days a week.
-      100% of Cyber Safety Guy subscription income is donated to Childline.
-    </p>
-    <div class="partner-logos">
-      <a href="https://www.childline.org.uk" target="_blank" rel="noopener noreferrer" class="partner-logo-link" aria-label="Childline website">
-        <img src="images/childline-logo.png" alt="Childline logo">
-        <span class="partner-logo-label">Childline</span>
-      </a>
-      <div class="partner-divider" aria-hidden="true"></div>
-      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener noreferrer" class="partner-logo-link" aria-label="NSPCC website">
-        <img src="images/nspcc-logo.png" alt="NSPCC logo">
-        <span class="partner-logo-label">NSPCC</span>
-      </a>
-    </div>
+    <p class="childline-number"><a href="tel:08001111" style="color:inherit; text-decoration:none;">0800 1111</a></p>
+    <p style="color:var(--grey); margin-bottom:14px;">childline.org.uk</p>
   </footer>
 
   <div class="site-footer-bar">
     &copy; <span id="year"></span> Cyber Safety Guy &mdash;
-    <a href="https://cybersafetyguy.substack.com" target="_blank" rel="noopener noreferrer">Substack</a> &bull;
-    <a href="https://guides.cybersafetyguy.com/">Free Guides</a>
+    <a href="index.html">Online Safety Guides</a> &bull; <a href="social.html">Social</a>
   </div>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593; Top</button>
+  <button class="back-to-top" id="backToTop">↑ Top</button>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const btt = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btt.classList.toggle('visible', window.scrollY > 400);
-    });
+    window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400));
     btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     async function loadPresentations() {
@@ -730,72 +169,39 @@
         presentations.forEach(pres => {
           const card = document.createElement('article');
           card.className = 'pres-card';
-          card.setAttribute('data-search', `${pres.title} ${pres.audience} ${pres.topics.join(' ')} ${pres.desc}`.toLowerCase());
-          
-          const topicsHtml = pres.topics.map(t => `<span class="chip">${t}</span>`).join('');
-          
+          card.setAttribute('data-search', `${pres.title} ${pres.audience} ${pres.desc}`.toLowerCase());
           card.innerHTML = `
             <div class="card-img-wrap">
-              <img src="images/${pres.image}" alt="${pres.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="card-img-fallback" style="display:none;">
-                <span class="fallback-icon">🎬</span>
-                ${pres.title}
-              </div>
-              <div class="play-overlay" aria-hidden="true">
-                <div class="play-circle">
-                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                </div>
-              </div>
+              <img src="images/${pres.image}" alt="${pres.title}" onerror="this.src='images/CSG_logo.png'">
+              <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24" width="22" height="22" fill="#0A1628"><polygon points="5,3 19,12 5,21"/></svg></div></div>
             </div>
             <div class="card-body">
               <p class="card-audience">${pres.audience}</p>
               <h3>${pres.title}</h3>
               <p>${pres.desc}</p>
-              <div class="topic-chips">${topicsHtml}</div>
-              <p class="duration-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-                ${pres.duration}
-              </p>
+              <div class="topic-chips">${pres.topics.map(t => `<span class="chip">${t}</span>`).join('')}</div>
+              <p class="duration-badge">⏱ ${pres.duration}</p>
             </div>
             <div class="card-footer">
-              <a href="${pres.link}" target="_blank" class="open-btn">▶&nbsp; Watch on YouTube</a>
-              <a href="${pres.download}" target="_blank" class="open-btn download-btn">⇓&nbsp; Download for Offline Use</a>
-            </div>
-          `;
+              <a href="${pres.link}" target="_blank" class="open-btn">▶ Watch on YouTube</a>
+              <a href="${pres.download}" target="_blank" class="open-btn download-btn">⇓ Download Slides</a>
+            </div>`;
           grid.appendChild(card);
         });
-        updateCounts();
-      } catch (error) {
-        console.error("Error loading presentations:", error);
-      }
-    }
-
-    function updateCounts() {
-      const section = document.querySelector('.category-section');
-      const visibleCards = section.querySelectorAll('.pres-card:not(.hidden)');
-      const count = visibleCards.length;
-
-      const countEl = section.querySelector('.category-count');
-      if (countEl) countEl.textContent = count === 1 ? '1 presentation' : `${count} presentations`;
-
-      const badgeStrong = document.querySelector('.guide-count-badge strong');
-      if (badgeStrong) badgeStrong.textContent = count;
+        document.getElementById('totalPresCount').textContent = presentations.length;
+      } catch (e) { console.error(e); }
     }
 
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
-      const cards = document.querySelectorAll('.pres-card');
+      const q = searchInput.value.toLowerCase();
       let found = 0;
-
-      cards.forEach(card => {
-        const match = card.getAttribute('data-search').includes(query);
-        card.classList.toggle('hidden', !match);
+      document.querySelectorAll('.pres-card').forEach(c => {
+        const match = c.getAttribute('data-search').includes(q);
+        c.classList.toggle('hidden', !match);
         if (match) found++;
       });
-
       document.getElementById('noResults').style.display = found === 0 ? 'block' : 'none';
-      updateCounts();
     });
 
     loadPresentations();
