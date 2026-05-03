@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Safety Guides — Cyber Safety Guy</title>
+  <link rel="canonical" href="https://guides.cybersafetyguy.com/">
+  <meta name="description" content="Free child online safety guides for parents, teachers and safeguarding professionals. From Cyber Safety Guy.">
+  <meta property="og:title" content="Online Safety Guides — Cyber Safety Guy">
+  <meta property="og:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals. Plain-English advice you can download and share.">
+  <meta property="og:url" content="https://guides.cybersafetyguy.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://guides.cybersafetyguy.com/images/CSG_logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
+    <span class="jump-nav-label">Jump to</span>
+    <a href="#platform-guides">📱 Platform Guides</a>
+    <a href="#online-risks">🧠 Online Risks</a>
+    <a href="#parental-controls">🛡️ Parental Controls</a>
+    <a href="#further-resources">📁 Further Resources</a>
+  </nav>
+
+  <header class="site-header">
+    <img src="images/CSG_logo.png" alt="Cyber Safety Guy Logo" class="site-logo">
+    <div class="header-badge">Cyber Safety Guy</div>
+    <h1>ONLINE <span>SAFETY GUIDES</span></h1>
+    <p class="header-sub">cybersafetyguy.com</p>
+    <p class="header-intro">
+      Every guide on this page is free. No sign-up, no paywall.
+      Practical, plain-English advice for parents, teachers, and safeguarding professionals.
+      Click any guide to open it directly in your browser.
+    </p>
+    <div class="guide-count-badge">
+      <strong id="totalCount">0</strong> safety guides available
+    </div>
+    <div class="page-nav">
+      <a class="page-nav-btn active">📄 Online Safety Guides</a>
+      <a href="presentations.html" class="page-nav-btn go">🎬 Presentations</a>
+      <a href="social.html" class="page-nav-btn go">📡 Social</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="guideSearch" placeholder="Search guides — try 'TikTok', 'grooming', 'screen time'..." autocomplete="off">
+      <span class="search-icon">🔍</span>
+    </div>
+    <p class="search-no-results" id="noResults">No guides found. Try a different search term.</p>
+
+    <section class="category-section" id="platform-guides">
+      <div class="category-header">
+        <span class="category-icon">📱</span>
+        <h2 class="category-title">Platform Guides</h2>
+        <span class="category-count" id="count-platform-guides">0 guides</span>
+      </div>
+      <p class="category-desc">The apps and platforms your children are actually using — what the risks are, and what you can do about them.</p>
+      <div class="guide-grid" id="grid-platform-guides"></div>
+    </section>
+
+    <section class="category-section" id="online-risks">
+      <div class="category-header">
+        <span class="category-icon">🧠</span>
+        <h2 class="category-title">Understanding Online Risks</h2>
+        <span class="category-count" id="count-online-risks">0 guides</span>
+      </div>
+      <p class="category-desc">The threats that don't always come with obvious warning signs, explained clearly.</p>
+      <div class="guide-grid" id="grid-online-risks"></div>
+    </section>
+
+    <section class="category-section" id="parental-controls">
+      <div class="category-header">
+        <span class="category-icon">🛡️</span>
+        <h2 class="category-title">Parental Controls</h2>
+        <span class="category-count" id="count-parental-controls">0 guides</span>
+      </div>
+      <p class="category-desc">Practical guidance for managing your child's online world at home.</p>
+      <div class="guide-grid" id="grid-parental-controls"></div>
+    </section>
+
+    <section class="category-section" id="further-resources">
+      <div class="category-header">
+        <span class="category-icon">📁</span>
+        <h2 class="category-title">Further Resources</h2>
+        <span class="category-count" id="count-further-resources">0 guides</span>
+      </div>
+      <p class="category-desc">Essential reading that belongs in every parent's and teacher's toolkit.</p>
+      <div class="guide-grid" id="grid-further-resources"></div>
+    </section>
+  </main>
+
+    <footer class="childline-footer">
+    <p class="childline-eyebrow">If a child needs support right now</p>
+    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
+    <p class="childline-url">childline.org.uk</p>
+    <p class="childline-desc">Childline is free, confidential, and available 24 hours a day, every day of the year.</p>
+    <div class="partner-logos">
+      <a href="https://www.childline.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/childline-logo.png" alt="Childline">
+        <span class="partner-logo-label">Charity Partner</span>
+      </a>
+      <div class="partner-divider"></div>
+      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/nspcc-logo.png" alt="NSPCC">
+        <span class="partner-logo-label">Part of NSPCC</span>
+      </a>
+    </div>
+  </footer>
+
+    <div class="site-footer-bar">
+    <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
+    &nbsp;—&nbsp;All content free to access and share. Subscription proceeds donated to Childline (NSPCC).
+  </div>
+
+  <button class="back-to-top" id="backToTop">↑ Top</button>
+
+  <script>
+    async function loadGuides() {
+      try {
+        const response = await fetch('guides.json');
+        const guides = await response.json();
+        
+        const guideItems = guides.filter(item => item.type === 'guide');
+        
+        guideItems.forEach(guide => {
+          const grid = document.getElementById(`grid-${guide.id}`);
+          if (grid) {
+            const badge = guide.isNew ? '<span class="new-badge">NEW</span>' : '';
+            const cardHtml = `
+              <a href="${guide.link}" target="_blank" rel="noopener" class="guide-card">
+                <div class="card-img-wrap">
+                  <img src="images/${guide.image}" alt="${guide.title}">
+                  ${badge}
+                  <button class="share-btn" onclick="copyLink(event, '${guide.link}')">📋 Copy Link</button>
+                </div>
+                <div class="card-body"><h3>${guide.title}</h3><p>${guide.desc}</p></div>
+                <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+              </a>`;
+            grid.insertAdjacentHTML('beforeend', cardHtml);
+          }
+        });
+        updateStats();
+      } catch (error) {
+        console.error("Error loading guides.json:", error);
+      }
+    }
+
+    function updateStats() {
+      const config = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
+      let total = 0;
+      config.forEach(id => {
+        const grid = document.getElementById(`grid-${id}`);
+        const counter = document.getElementById(`count-${id}`);
+        if (grid && counter) {
+          const count = grid.children.length;
+          total += count;
+          counter.textContent = count + (count === 1 ? ' guide' : ' guides');
+        }
+      });
+      const totalEl = document.getElementById('totalCount');
+      if (totalEl) totalEl.textContent = total;
+    }
+
+    const searchInput = document.getElementById('guideSearch');
+    const sections = document.querySelectorAll('.category-section');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      let totalVisible = 0;
+      sections.forEach(section => {
+        let sectionVisible = false;
+        const cards = section.querySelectorAll('.guide-card');
+        cards.forEach(card => {
+          if (card.innerText.toLowerCase().includes(term)) {
+            card.style.display = 'flex';
+            sectionVisible = true;
+            totalVisible++;
+          } else { card.style.display = 'none'; }
+        });
+        section.style.display = sectionVisible ? 'block' : 'none';
+      });
+      noResults.style.display = (totalVisible === 0 && term !== '') ? 'block' : 'none';
+    });
+
+    function copyLink(event, url) {
+      event.preventDefault(); 
+      event.stopPropagation();
+      const btn = event.currentTarget;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "✅ Copied!";
+        setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+      });
+    }
+
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('visible', window.scrollY > 500);
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    loadGuides();
+  </script>
+</body>
+</html>
