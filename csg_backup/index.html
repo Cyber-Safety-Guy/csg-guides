@@ -15,6 +15,260 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── App Safety Checker ── */
+    .checker-section {
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+      border-bottom: 1px solid rgba(66,206,208,0.15);
+      padding: 48px 24px 52px;
+    }
+
+    .checker-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .checker-eyebrow {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .checker-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .checker-subtitle {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 28px;
+      font-family: 'Exo 2', sans-serif;
+    }
+
+    .checker-form {
+      display: flex;
+      gap: 10px;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    .checker-input {
+      flex: 1;
+      background: rgba(10,14,20,0.8);
+      border: 1px solid rgba(66,206,208,0.4);
+      border-radius: 4px;
+      color: var(--off-white);
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .checker-input::placeholder { color: var(--grey); }
+
+    .checker-input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 16px rgba(66,206,208,0.15);
+    }
+
+    .checker-btn {
+      background: var(--teal);
+      color: #0A1628;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+
+    .checker-btn:hover {
+      background: #5ADFE1;
+      box-shadow: 0 0 16px rgba(66,206,208,0.3);
+    }
+
+    /* Result card */
+    .checker-result {
+      display: none;
+      background: var(--navy-card);
+      border: 1px solid rgba(66,206,208,0.25);
+      border-top: 3px solid var(--teal);
+      border-radius: 6px;
+      padding: 24px;
+      text-align: left;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .checker-result.visible { display: block; }
+
+    .result-found .result-label {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .result-found h3 {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .result-found p {
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .result-open-btn {
+      display: inline-block;
+      background: rgba(66,206,208,0.08);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .result-open-btn:hover { background: rgba(66,206,208,0.18); }
+
+    /* Not found / request */
+    .result-notfound .notfound-label {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 8px;
+    }
+
+    .result-notfound h3 {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .result-notfound p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .request-form input[type="text"] {
+      display: none;
+    }
+
+    .request-btn {
+      background: rgba(66,206,208,0.06);
+      border: 1px solid rgba(66,206,208,0.3);
+      color: var(--teal);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .request-btn:hover { background: rgba(66,206,208,0.14); }
+
+    .request-sent {
+      display: none;
+      color: #4CAF50;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 10px 0;
+    }
+
+    .request-sent.visible { display: block; }
+
+    @media (max-width: 520px) {
+      .checker-form { flex-direction: column; }
+      .checker-btn { width: 100%; }
+    }
+
+    .result-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .result-age-badge {
+      display: inline-block;
+      background: rgba(212,168,67,0.12);
+      border: 1px solid rgba(212,168,67,0.4);
+      color: #D4A843;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+
+    .result-risks {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .result-risks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--off-white);
+      line-height: 1.5;
+    }
+
+    .result-risks li::before {
+      content: '⚠';
+      color: #D4A843;
+      flex-shrink: 0;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+  </style>
 </head>
 <body>
 
@@ -48,6 +302,43 @@
       <a href="social.html" class="page-nav-btn go">📡 Social</a>
     </div>
   </header>
+
+  <section class="checker-section">
+    <div class="checker-inner">
+      <p class="checker-eyebrow">App Safety Checker</p>
+      <h2 class="checker-title">CHECK ANY APP IN SECONDS</h2>
+      <p class="checker-subtitle">Type an app name to get the real risks and my full guide, free.</p>
+      <div class="checker-form">
+        <input type="text" class="checker-input" id="checkerInput" placeholder="e.g. TikTok, Roblox, Snapchat..." autocomplete="off">
+        <button class="checker-btn" onclick="runChecker()">Check App</button>
+      </div>
+
+      <!-- Result: Found -->
+      <div class="checker-result result-found" id="resultFound">
+        <p class="result-label">✓ Guide Available</p>
+        <h3 id="resultTitle"></h3>
+        <div class="result-meta">
+          <span class="result-age-badge" id="resultAge"></span>
+        </div>
+        <ul class="result-risks" id="resultRisks"></ul>
+        <p id="resultDesc"></p>
+        <a href="#" target="_blank" rel="noopener" class="result-open-btn" id="resultLink">Open Full Guide →</a>
+      </div>
+
+      <!-- Result: Not Found -->
+      <div class="checker-result result-notfound" id="resultNotFound">
+        <p class="notfound-label">Not yet covered</p>
+        <h3 id="notFoundTitle"></h3>
+        <p>I haven't published a guide for this app yet. Request one below and I'll prioritise it.</p>
+        <form class="request-form" id="requestForm" action="https://formspree.io/f/meeneedd" method="POST">
+          <input type="hidden" name="app_name" id="requestAppName">
+          <input type="hidden" name="_subject" id="requestSubject" value="Guide Request">
+          <button type="submit" class="request-btn">📩 Request a Guide for This App</button>
+        </form>
+        <p class="request-sent" id="requestSent">✓ Request sent — thank you! I'll add this to the list.</p>
+      </div>
+    </div>
+  </section>
 
   <main class="main">
     <div class="search-wrap">
@@ -129,6 +420,7 @@
         const guides = await response.json();
         
         const guideItems = guides.filter(item => item.type === 'guide');
+        allGuides = guideItems; // Store for checker
         
         guideItems.forEach(guide => {
           const grid = document.getElementById(`grid-${guide.id}`);
@@ -209,6 +501,83 @@
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     loadGuides();
+
+    // ── App Safety Checker ──
+    let allGuides = [];
+
+    function runChecker() {
+      const query = document.getElementById('checkerInput').value.trim().toLowerCase();
+      if (!query) return;
+
+      const resultFound    = document.getElementById('resultFound');
+      const resultNotFound = document.getElementById('resultNotFound');
+      const requestSent    = document.getElementById('requestSent');
+
+      // Hide previous results
+      resultFound.classList.remove('visible');
+      resultNotFound.classList.remove('visible');
+      requestSent.classList.remove('visible');
+
+      // Search loaded guides
+      const match = allGuides.find(g =>
+        g.title.toLowerCase().includes(query) ||
+        query.includes(g.title.toLowerCase().replace(/[^a-z0-9]/g, ''))
+      );
+
+      if (match) {
+        document.getElementById('resultTitle').textContent = match.title;
+        document.getElementById('resultDesc').textContent = match.desc;
+        document.getElementById('resultLink').href = match.link;
+
+        // Age rating badge
+        const ageBadge = document.getElementById('resultAge');
+        ageBadge.textContent = match.ageRating ? 'Age rating: ' + match.ageRating : '';
+
+        // Risks list
+        const risksList = document.getElementById('resultRisks');
+        risksList.innerHTML = '';
+        if (match.risks && match.risks.length) {
+          match.risks.forEach(risk => {
+            const li = document.createElement('li');
+            li.textContent = risk;
+            risksList.appendChild(li);
+          });
+        }
+
+        resultFound.classList.add('visible');
+      } else {
+        const appName = document.getElementById('checkerInput').value.trim();
+        document.getElementById('notFoundTitle').textContent = appName;
+        document.getElementById('requestAppName').value = appName;
+        document.getElementById('requestSubject').value = `Guide Request: ${appName}`;
+        resultNotFound.classList.add('visible');
+      }
+    }
+
+    // Allow Enter key to trigger checker
+    document.getElementById('checkerInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') runChecker();
+    });
+
+    // Handle Formspree request form submission
+    document.getElementById('requestForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(res => {
+        if (res.ok) {
+          document.getElementById('requestForm').style.display = 'none';
+          document.getElementById('requestSent').classList.add('visible');
+        }
+      }).catch(() => {
+        document.getElementById('requestSent').textContent = 'Something went wrong — please try again.';
+        document.getElementById('requestSent').classList.add('visible');
+      });
+    });
+
   </script>
 </body>
 </html>

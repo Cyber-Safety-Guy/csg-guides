@@ -1,27 +1,349 @@
 [
-  { "id": "platform-guides", "type": "guide", "title": "BeReal", "desc": "What the 'real moments' app actually reveals about your child, and what it means for their privacy.", "image": "CSG_BeReal.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_BeReal.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "Discord", "desc": "The chat platform millions of children use for gaming. Why the privacy settings matter far more than most parents realise.", "image": "CSG_Discord.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Discord.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "Instagram", "desc": "Beyond filters and followers. What parents need to understand about how Instagram really works.", "image": "CSG_Instagram.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "Livestreaming", "desc": "When your child goes live, so does the risk. A breakdown of TikTok Live, Twitch, and YouTube Live.", "image": "CSG_Livestreaming.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Livestreaming.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "Roblox", "desc": "It looks like a children's game. Some of the risks are very adult. A plain-English guide for parents.", "image": "CSG_Roblox.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Roblox.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "Snapchat", "desc": "Disappearing messages don't disappear the way most children think. Here's what's actually happening.", "image": "CSG_Snapchat.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "TikTok", "desc": "The algorithm, the For You page, and why TikTok is one of the most important platforms to understand right now.", "image": "CSG_TikTok.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "WhatsApp", "desc": "Unknown contacts, group chats, and what parents can genuinely do to reduce the risk.", "image": "CSG_Whatsapp.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Whatsapp.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "YouTube", "desc": "From rabbit holes to harmful content. Understanding what your child is watching, and why.", "image": "CSG_Youtube.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Youtube.pdf", "isNew": false },
-  { "id": "platform-guides", "type": "guide", "title": "YouTube Shorts", "desc": "TikTok's main rival carries many of the same risks. Here's what you need to know.", "image": "CSG_YouTube_Shorts.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Youtube_shorts.pdf", "isNew": false },
-  { "id": "online-risks", "type": "guide", "title": "AI \"Girlfriends\" / Companions", "desc": "AI companions are being marketed directly at young people. Here's what that actually means.", "image": "CSG_AI_Girlfriends_Companions.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf", "isNew": true },
-  { "id": "online-risks", "type": "guide", "title": "AI Chatbots and Children", "desc": "ChatGPT, Gemini, and the rest. What children are using AI for, and where the risks sit.", "image": "CSG_AI_Chatbots_and_Children.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf", "isNew": true },
-  { "id": "online-risks", "type": "guide", "title": "Group Chats", "desc": "The conversations happening in your child's pocket, and why group chats are hard to spot.", "image": "CSG_Group_Chats.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf", "isNew": false },
-  { "id": "online-risks", "type": "guide", "title": "Online Challenges & Trends", "desc": "How viral challenges spread, why children feel pressure, and the warning signs.", "image": "CSG_Online_Challenges_Trends.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Online_challenges_trends.pdf", "isNew": false },
-  { "id": "online-risks", "type": "guide", "title": "Online Gaming & Voice Chat", "desc": "Real-time voice chat with strangers is built into almost every game. Here's how to manage it.", "image": "CSG_Online_Gaming_Voice_Chat.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Online_gaming_voice_chat.pdf", "isNew": false },
-  { "id": "online-risks", "type": "guide", "title": "Sextortion & Image-Based Abuse", "desc": "One of the fastest-growing threats to young people online. What it is and how to help.", "image": "CSG_Sextortion_Image_Based_Abuse.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf", "isNew": false },
-  { "id": "online-risks", "type": "guide", "title": "Social Media Footprint", "desc": "What your child's online presence says about them, and how to help them manage it.", "image": "CSG_Social_Media_Footprint.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf", "isNew": false },
-  { "id": "parental-controls", "type": "guide", "title": "Screen Time & Device Overuse", "desc": "Practical steps for managing how long children spend online without the daily battle.", "image": "CSG_Screen_Time_Device_Overuse.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf", "isNew": false },
-  { "id": "parental-controls", "type": "guide", "title": "Sharenting", "desc": "Before you post that photo, read this. Protecting your child's digital identity.", "image": "CSG_Sharenting.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf", "isNew": false },
-  { "id": "further-resources", "type": "guide", "title": "Why Kids Don't Tell Parents", "desc": "The most important conversation you can have. Why children stay silent about online harm.", "image": "CSG_Why_Kids_Dont_Tell.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf", "isNew": true },
-  { "id": "further-resources", "type": "guide", "title": "Everyone Else Has It", "desc": "The phrase every parent dreads. Navigating peer pressure around devices and apps.", "image": "CSG_Everyone_else_has_it.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Everyone_else_has_it.pdf", "isNew": true },
-  { "id": "online-risks", "type": "guide", "title": "How Online Grooming Actually Starts", "desc": "Grooming is when someone builds a relationship with a child online to gain their trust and manipulate, exploit or harm them", "image": "CSG_How_grooming_starts.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_How_grooming_starts.pdf", "isNew": true },
-  { "id": "online-risks", "type": "guide", "title": "The Platforms Your Child Is Using", "desc": "Most children are not using just one app, they are moving between multiple platforms every day. Messaging, video, gaming, and Al tools all overlap.", "image": "CSG_Platforms_your_child_uses.png", "link": "https://guides.cybersafetyguy.com/guides/CSG_Platforms_your_child_uses.pdf", "isNew": true },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "BeReal",
+    "desc": "What the 'real moments' app actually reveals about your child, and what it means for their privacy.",
+    "image": "CSG_BeReal.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_BeReal.pdf",
+    "isNew": false,
+    "ageRating": "13+",
+    "risks": [
+      "Location exposure via backgrounds",
+      "Daily posting pressure",
+      "False sense of authenticity"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Discord",
+    "desc": "The chat platform millions of children use for gaming. Why the privacy settings matter far more than most parents realise.",
+    "image": "CSG_Discord.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Discord.pdf",
+    "isNew": false,
+    "ageRating": "13+",
+    "risks": [
+      "Unmoderated private servers",
+      "Direct messaging from strangers",
+      "Voice chat with unknown adults"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Instagram",
+    "desc": "Beyond filters and followers. What parents need to understand about how Instagram really works.",
+    "image": "CSG_Instagram.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf",
+    "isNew": false,
+    "ageRating": "13+",
+    "risks": [
+      "Algorithm-driven harmful content",
+      "Direct messages from strangers",
+      "Body image and comparison"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Livestreaming",
+    "desc": "When your child goes live, so does the risk. A breakdown of TikTok Live, Twitch, and YouTube Live.",
+    "image": "CSG_Livestreaming.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Livestreaming.pdf",
+    "isNew": false,
+    "ageRating": "13+ (varies by platform)",
+    "risks": [
+      "Real-time contact with strangers",
+      "Grooming through gifts and donations",
+      "Location revealed via background"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Roblox",
+    "desc": "It looks like a children's game. Some of the risks are very adult. A plain-English guide for parents.",
+    "image": "CSG_Roblox.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Roblox.pdf",
+    "isNew": false,
+    "ageRating": "All ages (risks from age 7+)",
+    "risks": [
+      "In-game chat with strangers",
+      "Inappropriate user-created content",
+      "Virtual currency exploitation"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Snapchat",
+    "desc": "Disappearing messages don't disappear the way most children think. Here's what's actually happening.",
+    "image": "CSG_Snapchat.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf",
+    "isNew": false,
+    "ageRating": "13+",
+    "risks": [
+      "Snap Map reveals real-time location",
+      "False belief that messages disappear",
+      "My Eyes Only misuse"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "TikTok",
+    "desc": "The algorithm, the For You page, and why TikTok is one of the most important platforms to understand right now.",
+    "image": "CSG_TikTok.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf",
+    "isNew": false,
+    "ageRating": "13+",
+    "risks": [
+      "Algorithm amplifies harmful content",
+      "Duet and stitch features enable contact",
+      "Live gifting used for grooming"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "WhatsApp",
+    "desc": "Unknown contacts, group chats, and what parents can genuinely do to reduce the risk.",
+    "image": "CSG_Whatsapp.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Whatsapp.pdf",
+    "isNew": false,
+    "ageRating": "16+ (often ignored)",
+    "risks": [
+      "Unknown contacts via group adds",
+      "End-to-end encryption hides content",
+      "Image and video sharing risks"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "YouTube",
+    "desc": "From rabbit holes to harmful content. Understanding what your child is watching, and why.",
+    "image": "CSG_Youtube.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Youtube.pdf",
+    "isNew": false,
+    "ageRating": "13+ (YouTube Kids for under 13s)",
+    "risks": [
+      "Rabbit hole algorithm",
+      "Comments from strangers",
+      "Age-inappropriate content in recommendations"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "YouTube Shorts",
+    "desc": "TikTok's main rival carries many of the same risks. Here's what you need to know.",
+    "image": "CSG_YouTube_Shorts.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Youtube_shorts.pdf",
+    "isNew": false,
+    "ageRating": "13+",
+    "risks": [
+      "Autoplay of unvetted content",
+      "Similar algorithm risks to TikTok",
+      "No meaningful parental controls"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "AI \"Girlfriends\" / Companions",
+    "desc": "AI companions are being marketed directly at young people. Here's what that actually means.",
+    "image": "CSG_AI_Girlfriends_Companions.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf",
+    "isNew": true,
+    "ageRating": "18+ (rarely enforced)",
+    "risks": [
+      "Emotional dependency and isolation",
+      "Sexualised AI content marketed at teens",
+      "Blurred reality and relationships"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "AI Chatbots and Children",
+    "desc": "ChatGPT, Gemini, and the rest. What children are using AI for, and where the risks sit.",
+    "image": "CSG_AI_Chatbots_and_Children.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf",
+    "isNew": true,
+    "ageRating": "13+ (varies by tool)",
+    "risks": [
+      "Harmful or inaccurate advice",
+      "Manipulation and emotional attachment",
+      "Privacy — conversations may be stored"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "Group Chats",
+    "desc": "The conversations happening in your child's pocket, and why group chats are hard to spot.",
+    "image": "CSG_Group_Chats.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf",
+    "isNew": false,
+    "ageRating": "Varies by platform",
+    "risks": [
+      "Peer pressure and exclusion",
+      "Sharing of inappropriate content",
+      "Adult infiltration of child groups"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "Online Challenges & Trends",
+    "desc": "How viral challenges spread, why children feel pressure, and the warning signs.",
+    "image": "CSG_Online_Challenges_Trends.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Online_challenges_trends.pdf",
+    "isNew": false,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Physical harm from dangerous challenges",
+      "Social pressure to participate",
+      "Rapid viral spread before moderation"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "Online Gaming & Voice Chat",
+    "desc": "Real-time voice chat with strangers is built into almost every game. Here's how to manage it.",
+    "image": "CSG_Online_Gaming_Voice_Chat.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Online_gaming_voice_chat.pdf",
+    "isNew": false,
+    "ageRating": "Varies (many 18+ games played by children)",
+    "risks": [
+      "Real-time voice contact with strangers",
+      "Grooming disguised as gaming friendship",
+      "In-game purchases and manipulation"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "Sextortion & Image-Based Abuse",
+    "desc": "One of the fastest-growing threats to young people online. What it is and how to help.",
+    "image": "CSG_Sextortion_Image_Based_Abuse.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf",
+    "isNew": false,
+    "ageRating": "Affects all ages",
+    "risks": [
+      "Financial and emotional blackmail",
+      "Rapid escalation from first contact",
+      "Long-term psychological harm"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "Social Media Footprint",
+    "desc": "What your child's online presence says about them, and how to help them manage it.",
+    "image": "CSG_Social_Media_Footprint.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf",
+    "isNew": false,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Permanent digital trail",
+      "Future employment and relationship impact",
+      "Data harvested by third parties"
+    ]
+  },
+  {
+    "id": "parental-controls",
+    "type": "guide",
+    "title": "Screen Time & Device Overuse",
+    "desc": "Practical steps for managing how long children spend online without the daily battle.",
+    "image": "CSG_Screen_Time_Device_Overuse.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf",
+    "isNew": false,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Sleep disruption and mental health impact",
+      "Compulsive use patterns",
+      "Displacement of face-to-face relationships"
+    ]
+  },
+  {
+    "id": "parental-controls",
+    "type": "guide",
+    "title": "Sharenting",
+    "desc": "Before you post that photo, read this. Protecting your child's digital identity.",
+    "image": "CSG_Sharenting.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf",
+    "isNew": false,
+    "ageRating": "Parents — affects children of all ages",
+    "risks": [
+      "Child's digital identity created without consent",
+      "Photos used by predators",
+      "Future privacy violations"
+    ]
+  },
+  {
+    "id": "further-resources",
+    "type": "guide",
+    "title": "Why Kids Don't Tell Parents",
+    "desc": "The most important conversation you can have. Why children stay silent about online harm.",
+    "image": "CSG_Why_Kids_Dont_Tell.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Fear of device removal",
+      "Shame and self-blame",
+      "Not knowing abuse is happening"
+    ]
+  },
+  {
+    "id": "further-resources",
+    "type": "guide",
+    "title": "Everyone Else Has It",
+    "desc": "The phrase every parent dreads. Navigating peer pressure around devices and apps.",
+    "image": "CSG_Everyone_else_has_it.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Everyone_else_has_it.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Peer pressure overrides parental boundaries",
+      "FOMO exploited by platforms and peers",
+      "Parents undermined by other adults"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "How Online Grooming Actually Starts",
+    "desc": "Grooming is when someone builds a relationship with a child online to gain their trust and manipulate, exploit or harm them",
+    "image": "CSG_How_grooming_starts.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_How_grooming_starts.pdf",
+    "isNew": true,
+    "ageRating": "All ages at risk",
+    "risks": [
+      "Gradual trust-building disguised as friendship",
+      "Secrecy and isolation from parents",
+      "Escalation from compliments to exploitation"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
+    "title": "The Platforms Your Child Is Using",
+    "desc": "Most children are not using just one app, they are moving between multiple platforms every day. Messaging, video, gaming, and Al tools all overlap.",
+    "image": "CSG_Platforms_your_child_uses.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Platforms_your_child_uses.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Multiple simultaneous platform risks",
+      "Cross-platform grooming and contact",
+      "Parents unaware of full digital activity"
+    ]
+  },
   {
     "id": "school-presentations",
     "type": "presentation",
@@ -32,7 +354,12 @@
     "link": "https://youtu.be/3H3qE7CDddw",
     "download": "https://drive.google.com/file/d/1BsQrc9gaazRJ4R-x50px8-9aFCdgTpHw/view?usp=drive_link",
     "duration": "Approx. 30 minutes",
-    "topics": ["Platform Risks", "Grooming Tactics", "Starting the Conversation", "Parental Controls"],
+    "topics": [
+      "Platform Risks",
+      "Grooming Tactics",
+      "Starting the Conversation",
+      "Parental Controls"
+    ],
     "isNew": false
   },
   {
@@ -45,7 +372,12 @@
     "link": "https://youtu.be/iaseax3d_5c",
     "download": "https://drive.google.com/file/d/13g4Y_lbhPVJVgtMMmSj0VgzjV3o63ylp/view?usp=drive_link",
     "duration": "Approx. 28 minutes",
-    "topics": ["Staying Safe Online", "Who to Trust", "Asking for Help", "What to Do"],
+    "topics": [
+      "Staying Safe Online",
+      "Who to Trust",
+      "Asking for Help",
+      "What to Do"
+    ],
     "isNew": false
   },
   {
@@ -58,7 +390,12 @@
     "link": "https://youtu.be/XeU_cVRDdcI?si=QZasFNf7imhNVjnX",
     "download": "https://drive.google.com/file/d/1oRbuWwpGySksJIvSp--dmWNmli8Z9LRb/view?usp=drive_link",
     "duration": "Approx. 33 minutes",
-    "topics": ["Image-Based Abuse", "AI & Deepfakes", "Digital Footprint", "Mental Health Online"],
+    "topics": [
+      "Image-Based Abuse",
+      "AI & Deepfakes",
+      "Digital Footprint",
+      "Mental Health Online"
+    ],
     "isNew": false
   }
 ]

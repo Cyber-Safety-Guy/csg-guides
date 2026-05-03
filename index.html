@@ -268,6 +268,99 @@
       font-size: 12px;
       margin-top: 2px;
     }
+
+    /* ── Request a Guide section ── */
+    .request-section {
+      margin-top: 32px;
+      background: rgba(10,14,20,0.5);
+      border: 1px solid rgba(66,206,208,0.15);
+      border-left: 3px solid var(--teal);
+      border-radius: 4px;
+      padding: 32px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+    }
+
+    .request-section-eyebrow {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .request-section h3 {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .request-section p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .request-section-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .request-section-input {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(10,14,20,0.8);
+      border: 1px solid rgba(66,206,208,0.3);
+      border-radius: 4px;
+      color: var(--off-white);
+      font-family: 'Exo 2', sans-serif;
+      font-size: 14px;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .request-section-input:focus {
+      border-color: var(--teal);
+    }
+
+    .request-section-input::placeholder { color: var(--grey); }
+
+    .request-section-btn {
+      background: rgba(66,206,208,0.08);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .request-section-btn:hover { background: rgba(66,206,208,0.18); }
+
+    .request-section-confirm {
+      display: none;
+      color: #4CAF50;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .request-section-confirm.visible { display: block; }
   </style>
 </head>
 <body>
@@ -341,12 +434,6 @@
   </section>
 
   <main class="main">
-    <div class="search-wrap">
-      <input type="text" class="search-input" id="guideSearch" placeholder="Search guides — try 'TikTok', 'grooming', 'screen time'..." autocomplete="off">
-      <span class="search-icon">🔍</span>
-    </div>
-    <p class="search-no-results" id="noResults">No guides found. Try a different search term.</p>
-
     <section class="category-section" id="platform-guides">
       <div class="category-header">
         <span class="category-icon">📱</span>
@@ -386,6 +473,19 @@
       <p class="category-desc">Essential reading that belongs in every parent's and teacher's toolkit.</p>
       <div class="guide-grid" id="grid-further-resources"></div>
     </section>
+
+    <div class="request-section">
+      <p class="request-section-eyebrow">📩 Can't find what you're looking for?</p>
+      <h3>Request a Guide</h3>
+      <p>If an app isn't covered yet, let me know. I prioritise guides based on what parents and teachers are actually asking about.</p>
+      <form class="request-section-form" id="standaloneRequestForm" action="https://formspree.io/f/meeneedd" method="POST">
+        <input type="text" name="app_name" class="request-section-input" id="standaloneAppInput" placeholder="e.g. Kick, Discord, Yubo..." required>
+        <input type="hidden" name="_subject" value="Guide Request from Guides Page">
+        <button type="submit" class="request-section-btn">📩 Request a Guide</button>
+      </form>
+      <p class="request-section-confirm" id="standaloneConfirm">✓ Request sent — thank you! I'll prioritise it.</p>
+    </div>
+
   </main>
 
     <footer class="childline-footer">
@@ -461,28 +561,6 @@
       if (totalEl) totalEl.textContent = total;
     }
 
-    const searchInput = document.getElementById('guideSearch');
-    const sections = document.querySelectorAll('.category-section');
-    const noResults = document.getElementById('noResults');
-
-    searchInput.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      let totalVisible = 0;
-      sections.forEach(section => {
-        let sectionVisible = false;
-        const cards = section.querySelectorAll('.guide-card');
-        cards.forEach(card => {
-          if (card.innerText.toLowerCase().includes(term)) {
-            card.style.display = 'flex';
-            sectionVisible = true;
-            totalVisible++;
-          } else { card.style.display = 'none'; }
-        });
-        section.style.display = sectionVisible ? 'block' : 'none';
-      });
-      noResults.style.display = (totalVisible === 0 && term !== '') ? 'block' : 'none';
-    });
-
     function copyLink(event, url) {
       event.preventDefault(); 
       event.stopPropagation();
@@ -501,6 +579,25 @@
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     loadGuides();
+
+    // Standalone Request a Guide form
+    document.getElementById('standaloneRequestForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      }).then(res => {
+        if (res.ok) {
+          this.style.display = 'none';
+          document.getElementById('standaloneConfirm').classList.add('visible');
+        }
+      }).catch(() => {
+        document.getElementById('standaloneConfirm').textContent = 'Something went wrong — please try again.';
+        document.getElementById('standaloneConfirm').classList.add('visible');
+      });
+    });
+
 
     // ── App Safety Checker ──
     let allGuides = [];
