@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media — Cyber Safety Guy</title>
   <link rel="canonical" href="https://guides.cybersafetyguy.com/social.html">
-  <meta name="description" content="Find Cyber Safety Guy on social media. Follow for child online safety news, resources and updates.">
+  <meta name="description" content="Find Cyber Safety Guy on social media. Follow for child online safety news, research and resources.">
   <meta property="og:title" content="Social Media — Cyber Safety Guy">
   <meta property="og:description" content="Find Cyber Safety Guy on Instagram, BlueSky, LinkedIn and Substack.">
   <meta property="og:url" content="https://guides.cybersafetyguy.com/social.html">
@@ -39,8 +39,9 @@
     body {
       background-color: var(--navy);
       background-image:
-        linear-gradient(rgba(66,206,208,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(66,206,208,0.025) 1px, transparent 1px);
+        /* Updated to 0.015 to match presentations.html */
+        linear-gradient(rgba(66,206,208,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66,206,208,0.015) 1px, transparent 1px);
       background-size: 44px 44px;
       color: var(--off-white);
       font-family: 'IBM Plex Sans', sans-serif;
@@ -50,7 +51,7 @@
 
     .top-bar { height: 4px; background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--teal-dark)); }
 
-    /* Restoration of the Jump Nav Styles */
+    /* Sticky Top Bar / Jump Nav */
     .jump-nav {
       position: sticky; top: 0; z-index: 100; background: rgba(10,22,40,0.96);
       border-bottom: 1px solid rgba(66,206,208,0.2); backdrop-filter: blur(8px);
@@ -128,12 +129,13 @@
 <body>
   <div class="top-bar"></div>
 
-  <!-- RESTORED TOP BAR -->
+  <!-- STICKY TOP BAR -->
   <nav class="jump-nav">
     <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
-    <span class="jump-nav-label">Jump to</span>
-    <a href="index.html">📄 Online Safety Guides</a>
-    <a href="presentations.html">🎤 Presentations</a>
+    <span class="jump-nav-label">Follow Me</span>
+    <a href="https://cybersafetyguy.substack.com" target="_blank">📰 Substack</a>
+    <a href="https://www.instagram.com/cyber_safety_guy" target="_blank">📸 Instagram</a>
+    <a href="https://bsky.app/profile/cybersafetyguy.com" target="_blank">🦋 BlueSky</a>
   </nav>
 
   <header class="site-header">
