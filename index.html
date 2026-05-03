@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Safety Guides — Cyber Safety Guy</title>
+  <title>Free Guides — Cyber Safety Guy</title>
   <link rel="canonical" href="https://guides.cybersafetyguy.com/">
+  <meta name="description" content="Free child online safety guides for parents, teachers and safeguarding professionals. From Cyber Safety Guy.">
+  <meta property="og:title" content="Free Guides — Cyber Safety Guy">
+  <meta property="og:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals. Plain-English advice you can download and share.">
+  <meta property="og:url" content="https://guides.cybersafetyguy.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cyber-safety-guy.github.io/csg-guides/images/CSG_BeReal.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Guides — Cyber Safety Guy">
+  <meta name="twitter:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   
+  <!-- CSS Link -->
   <link rel="stylesheet" href="style.css">
-
-  <style>
-   <link rel="stylesheet" href="style.css">
-  </style>
 </head>
 <body>
 
@@ -27,7 +33,6 @@
     <a href="#online-risks">🧠 Online Risks</a>
     <a href="#parental-controls">🛡️ Parental Controls</a>
     <a href="#further-resources">📁 Further Resources</a>
-    <a href="#request-guide">📩 Request New</a>
   </nav>
 
   <header class="site-header">
@@ -35,21 +40,16 @@
     <div class="header-badge">Cyber Safety Guy</div>
     <h1>FREE <span>GUIDES</span></h1>
     <p class="header-sub">cybersafetyguy.com</p>
-    
-    <div class="verification-badge">
-      <span class="badge-icon">🛡️</span>
-      <div class="badge-text">Privacy Verified: <span>No Tracking • No Sign-up</span></div>
-    </div>
-
     <p class="header-intro">
       Every guide on this page is free. No sign-up, no paywall.
       Practical, plain-English advice for parents, teachers, and safeguarding professionals.
+      Click any guide to open it directly in your browser.
     </p>
     <div class="guide-count-badge">
       <strong id="totalCount">0</strong> free guides available
     </div>
     <div class="page-nav">
-      <a class="page-nav-btn active">📄 Online Safety Guides</a>
+      <a class="page-nav-btn active">📄 Free Guides</a>
       <a href="presentations.html" class="page-nav-btn go">🎬 Presentations</a>
       <a href="social.html" class="page-nav-btn go">📡 Social</a>
     </div>
@@ -57,80 +57,96 @@
 
   <main class="main">
 
-    <!-- APP SAFETY CHECKER -->
-    <section class="checker-wrap">
-        <div class="checker-card">
-            <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.4rem; margin: 0;">APP SAFETY CHECKER</h2>
-            <p style="font-size: 0.9rem; opacity: 0.8;">Quick-check any app for age ratings and risks</p>
-            <input type="text" id="checkerInput" class="checker-input" placeholder="Type app name (e.g. Roblox, TikTok...)" onkeyup="runChecker()">
-            
-            <div id="checkerResult" class="checker-result">
-                <div id="checkBadge" class="checker-badge"></div>
-                <h2 id="checkName" style="margin: 5px 0;"></h2>
-                <p><strong>Official Age Rating:</strong> <span id="checkAge"></span></p>
-                <p id="checkTip"></p>
-                <button id="checkLink" class="checker-btn">View Guide Below ↓</button>
-            </div>
-
-            <p id="noCheckResult" style="display:none; margin-top:20px; font-size:0.9rem;">
-                Don't see that app? <a href="#request-guide" style="color:#38bdf8;">Request a guide here →</a>
-            </p>
-        </div>
-    </section>
-
     <div class="search-wrap">
-      <input type="text" class="search-input" id="guideSearch" placeholder="Search guides — try 'TikTok', 'grooming'..." autocomplete="off">
+      <input
+        type="text"
+        class="search-input"
+        id="guideSearch"
+        placeholder="Search guides — try 'TikTok', 'grooming', 'screen time'..."
+        autocomplete="off"
+      >
       <span class="search-icon">🔍</span>
     </div>
     <p class="search-no-results" id="noResults">No guides found. Try a different search term.</p>
 
     <!-- PLATFORM GUIDES -->
     <section class="category-section" id="platform-guides">
-      <div class="category-header"><span class="category-icon">📱</span><h2 class="category-title">Platform Guides</h2><span class="category-count" id="count-platform-guides">0 guides</span></div>
+      <div class="category-header">
+        <span class="category-icon">📱</span>
+        <h2 class="category-title">Platform Guides</h2>
+        <span class="category-count" id="count-platform-guides">0 guides</span>
+      </div>
+      <p class="category-desc">The apps and platforms your children are actually using — what the risks are, and what you can do about them.</p>
       <div class="guide-grid" id="grid-platform-guides"></div>
     </section>
 
     <!-- ONLINE RISKS -->
     <section class="category-section" id="online-risks">
-      <div class="category-header"><span class="category-icon">🧠</span><h2 class="category-title">Online Risks</h2><span class="category-count" id="count-online-risks">0 guides</span></div>
+      <div class="category-header">
+        <span class="category-icon">🧠</span>
+        <h2 class="category-title">Understanding Online Risks</h2>
+        <span class="category-count" id="count-online-risks">0 guides</span>
+      </div>
+      <p class="category-desc">The threats that don't always come with obvious warning signs, explained clearly.</p>
       <div class="guide-grid" id="grid-online-risks"></div>
     </section>
 
     <!-- PARENTAL CONTROLS -->
     <section class="category-section" id="parental-controls">
-      <div class="category-header"><span class="category-icon">🛡️</span><h2 class="category-title">Parental Controls</h2><span class="category-count" id="count-parental-controls">0 guides</span></div>
+      <div class="category-header">
+        <span class="category-icon">🛡️</span>
+        <h2 class="category-title">Parental Controls</h2>
+        <span class="category-count" id="count-parental-controls">0 guides</span>
+      </div>
+      <p class="category-desc">Practical guidance for managing your child's online world at home.</p>
       <div class="guide-grid" id="grid-parental-controls"></div>
     </section>
 
     <!-- FURTHER RESOURCES -->
     <section class="category-section" id="further-resources">
-      <div class="category-header"><span class="category-icon">📁</span><h2 class="category-title">Further Resources</h2><span class="category-count" id="count-further-resources">0 guides</span></div>
+      <div class="category-header">
+        <span class="category-icon">📁</span>
+        <h2 class="category-title">Further Resources</h2>
+        <span class="category-count" id="count-further-resources">0 guides</span>
+      </div>
+      <p class="category-desc">Essential reading that belongs in every parent's and teacher's toolkit.</p>
       <div class="guide-grid" id="grid-further-resources"></div>
-    </section>
-
-    <!-- REQUEST SECTION -->
-    <section class="request-section" id="request-guide">
-        <h2 style="font-family: 'Orbitron', sans-serif;">MISSING AN APP?</h2>
-        <p>Tell me which app or online risk I should audit next.</p>
-        <form action="https://formspree.io/f/meeneedd" method="POST" class="request-form">
-            <input type="text" name="app_name" class="form-input" placeholder="App Name (e.g. Lemon8, BeReal)" required>
-            <input type="email" name="email" class="form-input" placeholder="Your Email (Optional)">
-            <button type="submit" class="submit-btn">SEND REQUEST</button>
-        </form>
     </section>
 
   </main>
 
-    <script>
-    // 1. THE ENGINE: Fetches guides.json and filters for guides only
+  <footer class="childline-footer">
+    <p class="childline-eyebrow">If a child needs support right now</p>
+    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
+    <p class="childline-url">childline.org.uk</p>
+    <p class="childline-desc">Childline is free, confidential, and available 24 hours a day.</p>
+    <div class="partner-logos">
+      <a href="https://www.childline.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/childline-logo.png" alt="Childline">
+        <span class="partner-logo-label">Charity Partner</span>
+      </a>
+      <div class="partner-divider"></div>
+      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/nspcc-logo.png" alt="NSPCC">
+        <span class="partner-logo-label">Part of NSPCC</span>
+      </a>
+    </div>
+  </footer>
+
+  <div class="site-footer-bar">
+    <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
+    &nbsp;—&nbsp;All guides free to download and share.
+  </div>
+
+  <button class="back-to-top" id="backToTop">↑ Top</button>
+
+  <script>
+    // THE ENGINE: This fetches your guides.json and builds the page
     async function loadGuides() {
       try {
         const response = await fetch('guides.json');
-        const allItems = await response.json();
+        const guides = await response.json();
         
-        // Filter out presentations - we only want items with type "guide" on this page
-        const guides = allItems.filter(item => item.type === "guide");
-
         guides.forEach(guide => {
           const grid = document.getElementById(`grid-${guide.id}`);
           if (grid) {
@@ -140,6 +156,7 @@
                 <div class="card-img-wrap">
                   <img src="images/${guide.image}" alt="${guide.title}">
                   ${badge}
+                  <button class="share-btn" onclick="copyLink(event, '${guide.link}')">📋 Copy Link</button>
                 </div>
                 <div class="card-body"><h3>${guide.title}</h3><p>${guide.desc}</p></div>
                 <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
@@ -148,88 +165,87 @@
           }
         });
         
-        // Update counters after the items are added to the DOM
-        updateStats();
-      } catch (e) { 
-        console.error("Error loading guides:", e); 
+        updateStats(); // Refresh counters after loading
+      } catch (error) {
+        console.error("Error loading guides.json:", error);
       }
     }
 
-    // 2. COUNTERS: Strictly count the elements currently in the grids
+    // 1. Dynamic Statistics (Counters)
     function updateStats() {
-      const categories = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
+      const config = [
+        { sectionId: 'platform-guides',   countId: 'count-platform-guides' },
+        { sectionId: 'online-risks',      countId: 'count-online-risks' },
+        { sectionId: 'parental-controls', countId: 'count-parental-controls' },
+        { sectionId: 'further-resources', countId: 'count-further-resources' },
+      ];
       let total = 0;
-      
-      categories.forEach(id => {
-        const grid = document.getElementById(`grid-${id}`);
-        if(grid) {
-            const count = grid.children.length;
-            total += count;
-            document.getElementById(`count-${id}`).textContent = count + (count === 1 ? ' guide' : ' guides');
+      config.forEach(s => {
+        const grid = document.getElementById(`grid-${s.sectionId}`);
+        const counter = document.getElementById(s.countId);
+        if (grid && counter) {
+          const count = grid.children.length;
+          total += count;
+          counter.textContent = count + (count === 1 ? ' guide' : ' guides');
         }
       });
-      document.getElementById('totalCount').textContent = total;
+      const totalEl = document.getElementById('totalCount');
+      if (totalEl) totalEl.textContent = total;
     }
 
-    // 3. CHECKER LOGIC
-    const appDb = {
-        "tiktok": { name: "TikTok", age: "13+", status: "danger", tip: "High risk of inappropriate content. Use 'Family Pairing'." },
-        "roblox": { name: "Roblox", age: "10+", status: "caution", tip: "Unmoderated user content and in-game scams." },
-        "snapchat": { name: "Snapchat", age: "13+", status: "danger", tip: "Snap Map location tracking is a major risk." },
-        "whatsapp": { name: "WhatsApp", age: "16+", status: "caution", tip: "Group chats with strangers are a potential risk." }
-    };
+    // 2. Search Logic
+    const searchInput = document.getElementById('guideSearch');
+    const sections = document.querySelectorAll('.category-section');
+    const noResults = document.getElementById('noResults');
 
-    function runChecker() {
-        const val = document.getElementById('checkerInput').value.toLowerCase().trim();
-        const res = document.getElementById('checkerResult');
-        const noRes = document.getElementById('noCheckResult');
-        if (val === "") { res.style.display = "none"; noRes.style.display = "none"; return; }
-
-        if (appDb[val]) {
-            res.style.display = "block";
-            noRes.style.display = "none";
-            const app = appDb[val];
-            document.getElementById('checkBadge').innerText = app.status === 'danger' ? '⚠️ High Risk' : '🟡 Caution';
-            document.getElementById('checkBadge').className = 'checker-badge ' + app.status + '-bg';
-            document.getElementById('checkName').innerText = app.name;
-            document.getElementById('checkAge').innerText = app.age;
-            document.getElementById('checkTip').innerText = app.tip;
-
-            const cards = document.querySelectorAll('.guide-card');
-            let matchedCard = null;
-            cards.forEach(card => {
-                if (card.querySelector('h3').innerText.toLowerCase().includes(val)) matchedCard = card;
-            });
-
-            const openBtn = document.getElementById('checkLink');
-            if (matchedCard) {
-                openBtn.innerText = "View Guide Below ↓";
-                openBtn.onclick = () => {
-                    matchedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    matchedCard.style.outline = "4px solid #38bdf8";
-                    setTimeout(() => { matchedCard.style.outline = "none"; }, 2000);
-                };
-            } else {
-                openBtn.innerText = "Browse Category ↓";
-                openBtn.onclick = () => window.location.hash = "platform-guides";
-            }
-        } else {
-            res.style.display = "none";
-            noRes.style.display = "block";
-        }
-    }
-
-    // 4. SEARCH
-    document.getElementById('guideSearch').addEventListener('input', (e) => {
+    searchInput.addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
-      document.querySelectorAll('.guide-card').forEach(card => {
-        card.style.display = card.innerText.toLowerCase().includes(term) ? 'flex' : 'none';
+      let totalVisible = 0;
+      
+      sections.forEach(section => {
+        let sectionVisible = false;
+        const cards = section.querySelectorAll('.guide-card');
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          if (text.includes(term)) {
+            card.style.display = 'flex';
+            sectionVisible = true;
+            totalVisible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        section.style.display = sectionVisible ? 'block' : 'none';
       });
+      noResults.style.display = (totalVisible === 0 && term !== '') ? 'block' : 'none';
     });
 
-    // START
+    // 3. Copy Link Function
+    function copyLink(event, url) {
+      event.preventDefault();
+      event.stopPropagation();
+      const btn = event.currentTarget;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "✅ Copied!";
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // 4. Back to Top
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) backToTopBtn.classList.add('visible');
+      else backToTopBtn.classList.remove('visible');
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Start everything!
     loadGuides();
   </script>
-
 </body>
 </html>
