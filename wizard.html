@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parental Controls Wizard — Cyber Safety Guy</title>
+  <link rel="canonical" href="https://guides.cybersafetyguy.com/wizard.html">
+  <meta name="description" content="Not sure where to start with parental controls? Answer four questions and get a step-by-step guide for your child's device and apps.">
+  <meta property="og:title" content="Parental Controls Setup Wizard — Cyber Safety Guy">
+  <meta property="og:description" content="Answer four questions. Get a personalised, step-by-step parental controls guide for any device or platform.">
+  <meta property="og:url" content="https://guides.cybersafetyguy.com/wizard.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://guides.cybersafetyguy.com/images/CSG_logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── Wizard-specific styles ── */
+    .wizard-section {
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+      border-bottom: 1px solid rgba(66,206,208,0.15);
+      padding: 52px 24px 60px;
+    }
+    .wizard-inner { max-width: 760px; margin: 0 auto; }
+    .wizard-eyebrow {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 10px; text-align: center;
+    }
+    .wizard-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(20px, 4vw, 32px); font-weight: 700;
+      color: #fff; letter-spacing: 2px; text-align: center; margin-bottom: 8px;
+    }
+    .wizard-subtitle {
+      color: var(--grey); font-size: 15px; text-align: center;
+      margin-bottom: 36px; font-family: 'Exo 2', sans-serif;
+    }
+
+    /* Progress */
+    .wizard-progress {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; margin-bottom: 36px;
+    }
+    .progress-step {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    }
+    .progress-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 2px solid rgba(66,206,208,0.25);
+      background: transparent; color: var(--grey);
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 12px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s;
+    }
+    .progress-dot.active { border-color: var(--teal); color: var(--teal); background: rgba(66,206,208,0.08); }
+    .progress-dot.done { border-color: var(--teal); background: var(--teal); color: #0A1628; }
+    .progress-label {
+      font-family: 'Exo 2', sans-serif; font-size: 9px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--grey); white-space: nowrap;
+    }
+    .progress-step.active .progress-label { color: var(--teal); }
+    .progress-line {
+      flex: 1; height: 1px; background: rgba(66,206,208,0.15);
+      max-width: 60px; margin-bottom: 16px;
+    }
+
+    /* Question card */
+    .wizard-card {
+      background: var(--navy-card); border: 1px solid rgba(66,206,208,0.15);
+      border-top: 3px solid var(--teal); border-radius: 6px; padding: 32px 28px;
+      display: none;
+    }
+    .wizard-card.active { display: block; }
+    .wizard-q-label {
+      font-family: 'Exo 2', sans-serif; font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 10px;
+    }
+    .wizard-q {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 20px;
+      color: #fff; margin-bottom: 24px; line-height: 1.3;
+    }
+    .wizard-options { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 10px; }
+    .wizard-opt {
+      background: rgba(10,14,20,0.5); border: 1px solid rgba(66,206,208,0.2);
+      border-radius: 5px; padding: 14px 16px; cursor: pointer;
+      font-family: 'Exo 2', sans-serif; font-weight: 600; font-size: 13px;
+      color: var(--off-white); text-align: left; transition: all 0.2s;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .wizard-opt:hover { border-color: var(--teal); background: rgba(66,206,208,0.06); color: #fff; }
+    .wizard-opt.selected { border-color: var(--teal); background: rgba(66,206,208,0.12); color: #fff; }
+    .wizard-opt .opt-icon { font-size: 20px; flex-shrink: 0; line-height: 1.2; }
+    .wizard-opt .opt-text { display: flex; flex-direction: column; gap: 2px; }
+    .wizard-opt .opt-label { font-size: 13px; font-weight: 700; }
+    .wizard-opt .opt-sub { font-size: 11px; color: var(--grey); font-weight: 400; }
+    .wizard-opt.selected .opt-sub { color: rgba(66,206,208,0.7); }
+
+    .wizard-actions {
+      display: flex; align-items: center; gap: 12px; margin-top: 24px; flex-wrap: wrap;
+    }
+    .wizard-btn {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 12px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 11px 22px; border-radius: 3px; cursor: pointer;
+      transition: all 0.2s; border: none;
+    }
+    .wizard-btn-next {
+      background: var(--teal); color: #0A1628;
+      display: none;
+    }
+    .wizard-btn-next.visible { display: inline-flex; align-items: center; gap: 6px; }
+    .wizard-btn-next:hover { background: #5ADFE1; box-shadow: 0 0 16px rgba(66,206,208,0.3); }
+    .wizard-btn-back {
+      background: transparent; color: var(--grey);
+      border: 1px solid rgba(66,206,208,0.2); display: none;
+    }
+    .wizard-btn-back.visible { display: inline-block; }
+    .wizard-btn-back:hover { color: var(--teal); border-color: rgba(66,206,208,0.4); }
+    .wizard-skip {
+      font-family: 'Exo 2', sans-serif; font-size: 12px; color: var(--grey);
+      background: none; border: none; cursor: pointer; padding: 0;
+      transition: color 0.2s; margin-left: auto; letter-spacing: 0.5px;
+      display: none;
+    }
+    .wizard-skip.visible { display: inline-block; }
+    .wizard-skip:hover { color: var(--teal); }
+
+    /* ── Results ── */
+    .wizard-results { display: none; }
+    .wizard-results.active { display: block; }
+    .results-intro {
+      background: rgba(26,92,95,0.25); border: 1px solid rgba(66,206,208,0.25);
+      border-left: 4px solid var(--teal); border-radius: 4px;
+      padding: 14px 18px; margin-bottom: 28px;
+      font-family: 'Exo 2', sans-serif; font-size: 14px;
+      color: var(--off-white); line-height: 1.6;
+    }
+    .results-section { margin-bottom: 32px; }
+    .results-section-head {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--teal);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .results-section-head::after {
+      content: ''; flex: 1; height: 1px; background: rgba(66,206,208,0.2);
+    }
+
+    /* Step list */
+    .step-list { list-style: none; padding: 0; margin: 0 0 16px; }
+    .step-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 10px 0; border-bottom: 1px solid rgba(66,206,208,0.07);
+      font-size: 14px; color: var(--off-white); line-height: 1.55;
+    }
+    .step-list li:last-child { border-bottom: none; }
+    .step-num {
+      min-width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(66,206,208,0.12); border: 1px solid rgba(66,206,208,0.4);
+      color: var(--teal); font-family: 'Exo 2', sans-serif;
+      font-weight: 700; font-size: 12px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .step-arrow { color: var(--teal); font-weight: 700; }
+    .step-tip {
+      background: rgba(26,92,95,0.2); border-left: 3px solid var(--teal-dim);
+      border-radius: 3px; padding: 10px 14px; margin-top: 8px;
+      font-size: 13px; color: var(--grey); line-height: 1.55;
+    }
+    .step-tip strong { color: var(--teal); }
+
+    /* Guide card in results */
+    .result-guide-card {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--navy-card); border: 1px solid rgba(66,206,208,0.2);
+      border-top: 3px solid var(--teal); border-radius: 5px;
+      padding: 14px 18px; margin-bottom: 12px; text-decoration: none;
+      color: inherit; transition: all 0.2s;
+    }
+    .result-guide-card:hover { border-color: rgba(66,206,208,0.45); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(66,206,208,0.12); }
+    .result-guide-card .guide-thumb {
+      width: 46px; height: 58px; object-fit: cover; border-radius: 3px;
+      background: var(--navy-dark); flex-shrink: 0;
+    }
+    .result-guide-card .guide-info { flex: 1; }
+    .result-guide-card .guide-info .guide-tag {
+      font-family: 'Exo 2', sans-serif; font-size: 9px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 4px;
+    }
+    .result-guide-card .guide-info h4 {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 14px;
+      color: #fff; margin-bottom: 4px;
+    }
+    .result-guide-card .guide-info p { font-size: 12px; color: var(--grey); line-height: 1.4; }
+    .result-guide-card .guide-arrow { color: var(--teal); font-size: 18px; flex-shrink: 0; }
+
+    /* Platform chips */
+    .platform-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 20px; }
+    .platform-chip {
+      font-family: 'Exo 2', sans-serif; font-size: 12px; font-weight: 600;
+      color: var(--teal); border: 1px solid rgba(66,206,208,0.35);
+      background: rgba(66,206,208,0.06); border-radius: 3px;
+      padding: 7px 14px; cursor: pointer; transition: all 0.2s;
+      text-decoration: none; display: inline-block; letter-spacing: 0.5px;
+    }
+    .platform-chip:hover { background: rgba(66,206,208,0.15); border-color: var(--teal); }
+
+    /* Accordion for C6 */
+    .acc-item {
+      border: 1px solid rgba(66,206,208,0.12); border-radius: 5px;
+      margin-bottom: 8px; overflow: hidden;
+    }
+    .acc-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px; cursor: pointer; background: var(--navy-card);
+      transition: background 0.2s;
+    }
+    .acc-head:hover { background: rgba(66,206,208,0.05); }
+    .acc-head-left { display: flex; align-items: center; gap: 10px; }
+    .acc-head-icon { font-size: 18px; }
+    .acc-head-title {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 14px; color: #fff;
+    }
+    .acc-arrow {
+      color: var(--teal); font-size: 18px; transition: transform 0.25s; flex-shrink: 0;
+    }
+    .acc-item.open .acc-arrow { transform: rotate(180deg); }
+    .acc-body { display: none; padding: 0 18px 16px; background: var(--navy-card); }
+    .acc-item.open .acc-body { display: block; }
+
+    /* Contextual guides */
+    .read-next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 12px; margin-top: 12px; }
+    .read-next-card {
+      background: var(--navy-card); border: 1px solid rgba(66,206,208,0.1);
+      border-top: 2px solid var(--teal-dim); border-radius: 5px;
+      padding: 14px; text-decoration: none; color: inherit; transition: all 0.2s;
+    }
+    .read-next-card:hover { border-top-color: var(--teal); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(66,206,208,0.1); }
+    .read-next-card .rn-title {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 12px;
+      color: #fff; margin-bottom: 6px; line-height: 1.3;
+    }
+    .read-next-card .rn-desc { font-size: 11px; color: var(--grey); line-height: 1.4; }
+
+    /* Email capture */
+    .wizard-email-section {
+      background: var(--navy-dark); border: 1px solid rgba(66,206,208,0.15);
+      border-top: 3px solid var(--teal); border-radius: 6px;
+      padding: 28px; margin-bottom: 24px; text-align: center;
+    }
+    .wizard-email-eyebrow {
+      font-family: 'Exo 2', sans-serif; font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 10px;
+    }
+    .wizard-email-title {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 17px;
+      color: #fff; margin-bottom: 8px;
+    }
+    .wizard-email-desc { color: var(--grey); font-size: 13px; margin-bottom: 20px; line-height: 1.6; }
+    .substack-embed-wrap iframe {
+      max-width: 480px; width: 100%; border: none; background: transparent;
+    }
+
+    /* Results actions */
+    .results-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn-restart {
+      font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 12px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 11px 22px; border-radius: 3px; cursor: pointer;
+      background: transparent; border: 1px solid rgba(66,206,208,0.3);
+      color: var(--grey); transition: all 0.2s;
+    }
+    .btn-restart:hover { color: var(--teal); border-color: rgba(66,206,208,0.5); }
+
+    /* Selections summary */
+    .selections-bar {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+    }
+    .sel-chip {
+      font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.5px; color: #0A1628; background: var(--teal);
+      padding: 4px 10px; border-radius: 2px;
+    }
+    .sel-chip.secondary {
+      background: rgba(66,206,208,0.12); border: 1px solid rgba(66,206,208,0.3);
+      color: var(--teal);
+    }
+
+    /* Library section below wizard */
+    .library-section {
+      max-width: 1200px; margin: 0 auto; padding: 52px 24px 24px;
+    }
+    .library-head {
+      display: flex; align-items: center; gap: 14px;
+      padding-bottom: 16px; border-bottom: 1px solid rgba(66,206,208,0.2);
+      margin-bottom: 24px;
+    }
+    .library-head h2 {
+      font-family: 'Exo 2', sans-serif; font-size: clamp(17px,3vw,24px);
+      font-weight: 700; color: var(--teal); letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .wizard-options { grid-template-columns: 1fr 1fr; }
+      .wizard-card { padding: 22px 18px; }
+      .progress-label { display: none; }
+      .read-next-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 380px) {
+      .wizard-options { grid-template-columns: 1fr; }
+    }
+    .hub-nav {
+      display: flex; justify-content: center; gap: 10px;
+      margin-top: 22px; flex-wrap: wrap;
+    }
+    .hub-nav a {
+      font-family: 'Exo 2', sans-serif; font-size: 12px; font-weight: 600;
+      color: var(--grey); text-decoration: none; letter-spacing: 1px;
+      text-transform: uppercase; padding: 6px 14px;
+      border: 1px solid rgba(66,206,208,0.15); border-radius: 2px;
+      transition: 0.2s;
+    }
+    .hub-nav a:hover { color: var(--teal); border-color: rgba(66,206,208,0.4); }
+    .hub-nav a.active { color: var(--teal); border-color: var(--teal-dim); background: rgba(66,206,208,0.06); }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar"></div>
+
+  <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home
+    </a>
+    <span class="jump-nav-label">Jump to</span>
+    <a href="#wizard">🛠️ Wizard</a>
+    <a href="#guide-library">📂 All Guides</a>
+  </nav>
+
+  <header class="site-header">
+    <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" class="site-logo">
+    <div class="header-badge">Cyber Safety Guy</div>
+    <h1>PARENTAL <span>CONTROLS</span></h1>
+    <p class="header-sub">Setup Wizard + Full Guide Library</p>
+    <p class="header-intro">Not sure where to start? Answer four questions and get a step-by-step setup guide for your child's exact device and apps.</p>
+    <div class="hub-nav">
+      <a href="index.html">📄 Online Safety Guides</a>
+      <a href="presentations.html">🎤 Presentations</a>
+      <a href="social.html">📡 Social</a>
+      <a href="csg_threat_radar.html">🚨 Threat Radar</a>
+      <a href="wizard.html" class="active">🛠️ Setup Wizard</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ WIZARD ═══════════════════════════ -->
+  <section class="wizard-section" id="wizard">
+    <div class="wizard-inner">
+      <p class="wizard-eyebrow">Parental Controls Setup Wizard</p>
+      <h2 class="wizard-title">FIND THE RIGHT SETTINGS</h2>
+      <p class="wizard-subtitle">Answer four quick questions. Get a personalised, plain-English setup guide.</p>
+
+      <!-- Progress -->
+      <div class="wizard-progress" id="wizardProgress">
+        <div class="progress-step active" id="prog-0">
+          <div class="progress-dot active" id="pdot-0">1</div>
+          <span class="progress-label">Child's age</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" id="prog-1">
+          <div class="progress-dot" id="pdot-1">2</div>
+          <span class="progress-label">Device</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" id="prog-2">
+          <div class="progress-dot" id="pdot-2">3</div>
+          <span class="progress-label">Platform</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" id="prog-3">
+          <div class="progress-dot" id="pdot-3">4</div>
+          <span class="progress-label">Concern</span>
+        </div>
+      </div>
+
+      <!-- Step 0: Age -->
+      <div class="wizard-card active" id="card-0">
+        <p class="wizard-q-label">Question 1 of 4</p>
+        <h3 class="wizard-q">How old is your child?</h3>
+        <div class="wizard-options">
+          <button class="wizard-opt" data-step="0" data-val="A1">
+            <span class="opt-icon">🧒</span>
+            <span class="opt-text"><span class="opt-label">Under 10</span><span class="opt-sub">Primary school age</span></span>
+          </button>
+          <button class="wizard-opt" data-step="0" data-val="A2">
+            <span class="opt-icon">👦</span>
+            <span class="opt-text"><span class="opt-label">10 to 12</span><span class="opt-sub">Upper primary / early secondary</span></span>
+          </button>
+          <button class="wizard-opt" data-step="0" data-val="A3">
+            <span class="opt-icon">👧</span>
+            <span class="opt-text"><span class="opt-label">13 to 16</span><span class="opt-sub">Secondary school</span></span>
+          </button>
+          <button class="wizard-opt" data-step="0" data-val="A4">
+            <span class="opt-icon">🧑</span>
+            <span class="opt-text"><span class="opt-label">17 or 18</span><span class="opt-sub">Sixth form / college</span></span>
+          </button>
+        </div>
+        <div class="wizard-actions">
+          <button class="wizard-btn wizard-btn-next" id="next-0">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 1: Device -->
+      <div class="wizard-card" id="card-1">
+        <p class="wizard-q-label">Question 2 of 4</p>
+        <h3 class="wizard-q">What device does your child use?</h3>
+        <div class="wizard-options">
+          <button class="wizard-opt" data-step="1" data-val="D1">
+            <span class="opt-icon">📱</span>
+            <span class="opt-text"><span class="opt-label">iPhone or iPad</span><span class="opt-sub">iOS Screen Time</span></span>
+          </button>
+          <button class="wizard-opt" data-step="1" data-val="D2">
+            <span class="opt-icon">🤖</span>
+            <span class="opt-text"><span class="opt-label">Android phone or tablet</span><span class="opt-sub">Google Family Link</span></span>
+          </button>
+          <button class="wizard-opt" data-step="1" data-val="D3">
+            <span class="opt-icon">💻</span>
+            <span class="opt-text"><span class="opt-label">Windows PC or laptop</span><span class="opt-sub">Microsoft Family Safety</span></span>
+          </button>
+          <button class="wizard-opt" data-step="1" data-val="D4">
+            <span class="opt-icon">🍎</span>
+            <span class="opt-text"><span class="opt-label">Mac or MacBook</span><span class="opt-sub">macOS Screen Time</span></span>
+          </button>
+          <button class="wizard-opt" data-step="1" data-val="D5">
+            <span class="opt-icon">🎮</span>
+            <span class="opt-text"><span class="opt-label">Xbox</span><span class="opt-sub">Xbox Family Settings</span></span>
+          </button>
+          <button class="wizard-opt" data-step="1" data-val="D6">
+            <span class="opt-icon">🕹️</span>
+            <span class="opt-text"><span class="opt-label">PlayStation</span><span class="opt-sub">PlayStation Family Management</span></span>
+          </button>
+          <button class="wizard-opt" data-step="1" data-val="D7">
+            <span class="opt-icon">🎯</span>
+            <span class="opt-text"><span class="opt-label">Nintendo Switch</span><span class="opt-sub">Nintendo Parental Controls</span></span>
+          </button>
+        </div>
+        <div class="wizard-actions">
+          <button class="wizard-btn wizard-btn-back visible" id="back-1">← Back</button>
+          <button class="wizard-btn wizard-btn-next" id="next-1">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Platform -->
+      <div class="wizard-card" id="card-2">
+        <p class="wizard-q-label">Question 3 of 4</p>
+        <h3 class="wizard-q">Which app or platform are you most concerned about?</h3>
+        <div class="wizard-options" id="platform-opts">
+          <button class="wizard-opt" data-step="2" data-val="P0">
+            <span class="opt-icon">🛡️</span>
+            <span class="opt-text"><span class="opt-label">All platforms</span><span class="opt-sub">Just show me device-level settings</span></span>
+          </button>
+          <button class="wizard-opt" data-step="2" data-val="P1">
+            <span class="opt-icon" style="color:#E1306C">📸</span>
+            <span class="opt-text"><span class="opt-label">Instagram</span><span class="opt-sub">Has Family Centre</span></span>
+          </button>
+          <button class="wizard-opt" data-step="2" data-val="P2">
+            <span class="opt-icon">👻</span>
+            <span class="opt-text"><span class="opt-label">Snapchat</span><span class="opt-sub">Has Family Centre</span></span>
+          </button>
+          <button class="wizard-opt" data-step="2" data-val="P3">
+            <span class="opt-icon" style="color:#ff0050">🎵</span>
+            <span class="opt-text"><span class="opt-label">TikTok</span><span class="opt-sub">Has Family Pairing</span></span>
+          </button>
+          <button class="wizard-opt" data-step="2" data-val="P4">
+            <span class="opt-icon" style="color:#25D366">💬</span>
+            <span class="opt-text"><span class="opt-label">WhatsApp</span><span class="opt-sub">No parental controls</span></span>
+          </button>
+          <button class="wizard-opt" data-step="2" data-val="P5">
+            <span class="opt-icon" style="color:#5865F2">🎙️</span>
+            <span class="opt-text"><span class="opt-label">Discord</span><span class="opt-sub">Very limited controls</span></span>
+          </button>
+          <button class="wizard-opt" data-step="2" data-val="P6">
+            <span class="opt-icon">🧱</span>
+            <span class="opt-text"><span class="opt-label">Roblox</span><span class="opt-sub">Has parental PIN</span></span>
+          </button>
+          <button class="wizard-opt" data-step="2" data-val="P7">
+            <span class="opt-icon" style="color:#FF0000">▶️</span>
+            <span class="opt-text"><span class="opt-label">YouTube</span><span class="opt-sub">YouTube Kids for under-13s</span></span>
+          </button>
+        </div>
+        <div class="wizard-actions">
+          <button class="wizard-btn wizard-btn-back visible" id="back-2">← Back</button>
+          <button class="wizard-btn wizard-btn-next" id="next-2">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Concern -->
+      <div class="wizard-card" id="card-3">
+        <p class="wizard-q-label">Question 4 of 4</p>
+        <h3 class="wizard-q">What's your main concern?</h3>
+        <div class="wizard-options">
+          <button class="wizard-opt" data-step="3" data-val="C1">
+            <span class="opt-icon">⏱️</span>
+            <span class="opt-text"><span class="opt-label">Screen time</span><span class="opt-sub">How long they spend online</span></span>
+          </button>
+          <button class="wizard-opt" data-step="3" data-val="C2">
+            <span class="opt-icon">🔞</span>
+            <span class="opt-text"><span class="opt-label">Explicit content</span><span class="opt-sub">What they can see</span></span>
+          </button>
+          <button class="wizard-opt" data-step="3" data-val="C3">
+            <span class="opt-icon">💬</span>
+            <span class="opt-text"><span class="opt-label">Who they talk to</span><span class="opt-sub">Strangers, DMs, group chats</span></span>
+          </button>
+          <button class="wizard-opt" data-step="3" data-val="C4">
+            <span class="opt-icon">📍</span>
+            <span class="opt-text"><span class="opt-label">Location sharing</span><span class="opt-sub">Who can see where they are</span></span>
+          </button>
+          <button class="wizard-opt" data-step="3" data-val="C5">
+            <span class="opt-icon">💳</span>
+            <span class="opt-text"><span class="opt-label">In-app purchases</span><span class="opt-sub">Spending without your knowledge</span></span>
+          </button>
+          <button class="wizard-opt" data-step="3" data-val="C6">
+            <span class="opt-icon">🛡️</span>
+            <span class="opt-text"><span class="opt-label">All of the above</span><span class="opt-sub">Show me everything</span></span>
+          </button>
+        </div>
+        <div class="wizard-actions">
+          <button class="wizard-btn wizard-btn-back visible" id="back-3">← Back</button>
+          <button class="wizard-btn wizard-btn-next" id="next-3">Show my results →</button>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="wizard-results" id="wizardResults">
+        <!-- Injected by JS -->
+      </div>
+
+    </div><!-- /wizard-inner -->
+  </section>
+
+  <!-- ═══════════════════════════ GUIDE LIBRARY ═══════════════════════════ -->
+  <div class="library-section" id="guide-library">
+    <div class="library-head">
+      <span style="font-size:26px">🛡️</span>
+      <h2>Parental Controls Guides</h2>
+    </div>
+    <div class="guide-grid" id="grid-parental-controls"></div>
+  </div>
+
+  <footer class="childline-footer">
+    <p class="childline-eyebrow">If a child needs support right now</p>
+    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
+    <p class="childline-url">childline.org.uk</p>
+    <p class="childline-desc">Childline is free, confidential, and available 24 hours a day, every day of the year.</p>
+    <div class="partner-logos">
+      <a href="https://www.childline.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/childline-logo.png" alt="Childline">
+        <span class="partner-logo-label">Charity Partner</span>
+      </a>
+      <div class="partner-divider"></div>
+      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/nspcc-logo.png" alt="NSPCC">
+        <span class="partner-logo-label">Part of NSPCC</span>
+      </a>
+    </div>
+  </footer>
+
+  <div class="site-footer-bar">
+    <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
+    &nbsp;—&nbsp;All content free to access and share. Subscription proceeds donated to Childline (NSPCC).
+  </div>
+
+  <button class="back-to-top" id="backToTop">↑ Top</button>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// CONTENT DATA
+// ═══════════════════════════════════════════════════════════════════
+const BASE = 'https://guides.cybersafetyguy.com/guides/';
+
+const AGE_LABELS = { A1:'Under 10', A2:'10–12', A3:'13–16', A4:'17–18' };
+const DEVICE_LABELS = { D1:'iPhone / iPad', D2:'Android', D3:'Windows PC', D4:'Mac', D5:'Xbox', D6:'PlayStation', D7:'Nintendo Switch' };
+const PLATFORM_LABELS = { P0:'All platforms', P1:'Instagram', P2:'Snapchat', P3:'TikTok', P4:'WhatsApp', P5:'Discord', P6:'Roblox', P7:'YouTube' };
+const CONCERN_LABELS = { C1:'Screen time', C2:'Explicit content', C3:'Who they talk to', C4:'Location sharing', C5:'In-app purchases', C6:'All concerns' };
+const CONCERN_ICONS = { C1:'⏱️', C2:'🔞', C3:'💬', C4:'📍', C5:'💳' };
+
+// Age-specific intro lines
+const AGE_INTRO = {
+  A1: 'For a child under 10, the priority is time limits, content filtering and keeping the device out of the bedroom at night. Most social platforms are off-limits by age — focus on the device settings first.',
+  A2: 'For a 10–12 year old, screen time and content controls are the starting point. Social platforms are starting to appear at this age — pay close attention to the communication and contact settings.',
+  A3: 'For a 13–16 year old, the risk profile shifts. Platforms are in full use, and the most important settings are around who they can talk to, location sharing and stranger contact. Conversation matters as much as settings.',
+  A4: 'For a 17–18 year old, hard restrictions are less effective — this is primarily a conversation age. Focus on the specific concern you selected and use the settings as a starting point for discussion.'
+};
+
+// Device guides
+const DEVICE_GUIDE = {
+  D1: { title:'iPhone & iPad Parental Controls', file:'CSG_iPhone_iPad_parental_controls.pdf', img:'CSG_Ios.png', desc:'iOS Screen Time — the complete parent guide' },
+  D2: { title:'Android Parental Controls', file:'CSG_Android_parental_controls.pdf', img:'CSG_Android.png', desc:'Google Family Link — the complete parent guide' },
+  D3: { title:'Android Parental Controls', file:'CSG_Android_parental_controls.pdf', img:'CSG_Android.png', desc:'Microsoft Family Safety — coming soon. Use device-level steps below.' },
+  D4: { title:'Android Parental Controls', file:'CSG_Android_parental_controls.pdf', img:'CSG_Android.png', desc:'macOS Screen Time — coming soon. Use device-level steps below.' },
+  D5: { title:'Online Gaming & Voice Chat', file:'CSG_Online_gaming_voice_chat.pdf', img:'CSG_Online_Gaming_Voice_Chat.png', desc:'Understand the risks before diving into settings' },
+  D6: { title:'Online Gaming & Voice Chat', file:'CSG_Online_gaming_voice_chat.pdf', img:'CSG_Online_Gaming_Voice_Chat.png', desc:'Understand the risks before diving into settings' },
+  D7: { title:'Online Gaming & Voice Chat', file:'CSG_Online_gaming_voice_chat.pdf', img:'CSG_Online_Gaming_Voice_Chat.png', desc:'Understand the risks before diving into settings' },
+};
+
+// Platform guides
+const PLATFORM_GUIDE = {
+  P1: { title:'Instagram', file:'CSG_Instagram.pdf', img:'CSG_Instagram.png', desc:'Beyond filters and followers — what parents need to know' },
+  P2: { title:'Snapchat', file:'CSG_Snapchat.pdf', img:'CSG_Snapchat.png', desc:'Disappearing messages don\'t disappear the way most children think' },
+  P3: { title:'TikTok', file:'CSG_Tiktok_and_your_child.pdf', img:'CSG_TikTok.png', desc:'The algorithm, the For You page, and why this matters now' },
+  P4: { title:'WhatsApp', file:'CSG_Whatsapp.pdf', img:'CSG_Whatsapp.png', desc:'Unknown contacts, group chats, and what parents can actually do' },
+  P5: { title:'Discord', file:'CSG_Discord.pdf', img:'CSG_Discord.png', desc:'The chat platform millions of children use for gaming' },
+  P6: { title:'Roblox', file:'CSG_Roblox.pdf', img:'CSG_Roblox.png', desc:'It looks like a children\'s game. Some of the risks are very adult.' },
+  P7: { title:'YouTube', file:'CSG_Youtube.pdf', img:'CSG_Youtube.png', desc:'From rabbit holes to harmful content — what your child is watching' },
+};
+
+// Platform chips for P0 (all platforms)
+const PLATFORM_CHIPS = [
+  { id:'P1', label:'Instagram', url:'?platform=P1' },
+  { id:'P2', label:'Snapchat', url:'?platform=P2' },
+  { id:'P3', label:'TikTok', url:'?platform=P3' },
+  { id:'P4', label:'WhatsApp', url:'?platform=P4' },
+  { id:'P5', label:'Discord', url:'?platform=P5' },
+  { id:'P6', label:'Roblox', url:'?platform=P6' },
+  { id:'P7', label:'YouTube', url:'?platform=P7' },
+];
+
+// ── Device-level steps: DEVICE_STEPS[device][concern] ──
+const DEVICE_STEPS = {
+  D1: { // iPhone/iPad
+    C1: {
+      steps:[
+        'Settings → Screen Time → Turn On Screen Time → tap <strong>This is My Child\'s iPhone</strong>',
+        'When prompted, set a <strong>Screen Time Passcode</strong> — make it different from the device passcode. Without this, your child can turn Screen Time off.',
+        'Screen Time → <strong>Downtime</strong> → toggle on → set start and end time (e.g. 9pm–7am). Only Always Allowed apps work during Downtime.',
+        'Screen Time → <strong>App Limits</strong> → Add Limit → select Social Networking or Games → set daily time limit.',
+        'Screen Time → <strong>Always Allowed</strong> → remove any apps you don\'t want accessible during Downtime.'
+      ],
+      tip:'The Screen Time passcode is the single most important step. Without it, a child can go to Settings → Screen Time → Turn Off Screen Time in seconds.'
+    },
+    C2: {
+      steps:[
+        'Screen Time → <strong>Content & Privacy Restrictions</strong> → toggle on.',
+        'Content Restrictions → <strong>Web Content</strong> → Limit Adult Websites (auto-filter) or Allowed Websites Only (whitelist — best for under-10s).',
+        'Content Restrictions → <strong>Apps</strong> → set maximum age rating (e.g. 9+, 12+).',
+        'Content Restrictions → <strong>Explicit Language</strong> → Don\'t Allow (limits Siri and dictation).',
+        'Content Restrictions → Music, Podcasts & News → <strong>Explicit → Off</strong>.'
+      ],
+      tip:'Web content filters only apply to Safari. If your child uses Chrome or another browser on the device, block it via App Limits.'
+    },
+    C3: {
+      steps:[
+        'Screen Time → <strong>Communication Limits</strong> → During Screen Time → Contacts Only.',
+        'During Downtime → set to <strong>Specific Contacts</strong> or No One.',
+        'Settings → Messages → <strong>Filter Unknown Senders</strong> → On (unknown numbers go to a separate tab).',
+        'Screen Time → <strong>Communication Safety</strong> → verify it is active (on by default for under-18s in a Family Sharing group — blurs nudity in Messages).'
+      ],
+      tip:'Communication Limits apply to Apple\'s apps only — Phone, Messages, FaceTime. For Instagram, Snapchat, WhatsApp and Discord, see the platform guide below.'
+    },
+    C4: {
+      steps:[
+        'Set up Family Sharing: Settings → your name → <strong>Family Sharing</strong> → Add Member (child\'s Apple ID).',
+        'Child\'s device → <strong>Find My</strong> → Share My Location → select parent\'s Apple ID.',
+        'Settings → Privacy & Security → <strong>Location Services</strong> → review each social app → set to Never or While Using.'
+      ],
+      tip:'Talk to your child before switching location on. Children who know they\'re located are more likely to speak up if something feels wrong — not less.'
+    },
+    C5: {
+      steps:[
+        'Content & Privacy Restrictions → iTunes & App Store Purchases → <strong>In-App Purchases → Don\'t Allow</strong>.',
+        'Content & Privacy Restrictions → Installing Apps → <strong>Don\'t Allow</strong> (every new install requires your Apple ID).',
+        'Settings → your name → Payment & Shipping → set <strong>Require Password → Always</strong> for all purchases.'
+      ],
+      tip:'Even free app downloads can lead to paid subscriptions. Setting \'Always\' for password means every download, paid or free, needs your approval.'
+    }
+  },
+  D2: { // Android
+    C1: {
+      steps:[
+        'Download <strong>Google Family Link</strong> (free) on your phone from the App Store or Google Play.',
+        'Open Family Link → Get Started → link your child\'s Google account. Under-13s get a supervised account.',
+        'Family Link → child\'s name → <strong>Daily Activity</strong> → tap any app to set a daily time limit.',
+        'Tap <strong>Daily Limit</strong> → set total daily screen time cap.',
+        'Tap <strong>Bedtime</strong> → schedule hours when the device locks automatically. Set separately for school nights and weekends.',
+        'Family Link → Manage → <strong>Apps</strong> → block unapproved apps or mark Always Allowed.'
+      ],
+      tip:'The default is no screen time limit at all. Setting a bedtime lock and daily cap is the most useful single action — do this before anything else.'
+    },
+    C2: {
+      steps:[
+        'Google Play Store → Settings → <strong>Parental Controls</strong> → set a PIN → select content rating (9+, 12+, 16+).',
+        'Family Link → Manage → <strong>Google Search</strong> → turn on SafeSearch.',
+        'Family Link → Manage → <strong>Chrome</strong> → set to approved sites only or block Chrome entirely.'
+      ],
+      tip:'If your child uses any browser other than Chrome — Firefox, Brave, Opera — block it in Family Link Apps. Content filters don\'t apply to other browsers.'
+    },
+    C3: {
+      steps:[
+        'Family Link → Manage → <strong>App Permissions</strong> → Contacts → revoke access for unapproved messaging apps.',
+        'Android has no built-in communication limits. Your main control is which messaging apps are installed.',
+        'Family Link → Manage → Apps → <strong>block any messaging apps</strong> you haven\'t approved.'
+      ],
+      tip:'Approve every new app before it downloads. That single step does more than any individual platform setting.'
+    },
+    C4: {
+      steps:[
+        'Family Link → child\'s name → <strong>Location</strong> → toggle on. Your child receives a notification — this is intentional.',
+        'Child\'s device → Settings → Location → <strong>App Permissions</strong> → set social apps (Instagram, Snapchat, TikTok) to Denied.'
+      ],
+      tip:'Talk to your child before switching location on. Children who understand why they\'re being located are more likely to cooperate — and more likely to tell you if something feels wrong.'
+    },
+    C5: {
+      steps:[
+        'Family Link → Manage → Google Play → <strong>Purchases and Downloads → Require approval</strong> for all purchases.',
+        'Child\'s device → Play Store → Profile → Settings → <strong>Purchase Authentication → Always</strong>.',
+        'Remove saved payment cards from child\'s Google account.'
+      ],
+      tip:'Talk to your child about what in-app purchases actually cost in real money. Many children don\'t connect spending virtual coins with spending real pounds.'
+    }
+  },
+  D3: { // Windows PC
+    C1: {
+      steps:[
+        '<strong>Critical first step:</strong> Check your child signs into Windows with a <strong>Microsoft account</strong>, not a local account. Settings → Accounts → Your info.',
+        'Download <strong>Microsoft Family Safety</strong> (free) on your phone → add child\'s Microsoft account.',
+        'Family Safety → child\'s name → <strong>Screen Time</strong> → set daily schedule. Set differently for school days and weekends.',
+        'Family Safety → child\'s name → <strong>Apps and Games</strong> → view usage and set limits per app.'
+      ],
+      tip:'If your child uses a local Windows account, Family Safety does nothing — their device has zero parental controls applied. The Microsoft account setup is non-negotiable.'
+    },
+    C2: {
+      steps:[
+        'Family Safety → <strong>Content Filters</strong> → Web browsing → toggle on.',
+        'Filter inappropriate websites and searches → On.',
+        'Only use allowed websites → strictest setting — you build a whitelist of approved sites.',
+        'Family Safety → Apps and Games → <strong>block non-Edge browsers</strong> (Chrome, Firefox, Brave).'
+      ],
+      tip:'A content filter on Edge is useless if Chrome is still installed. Blocking other browsers is the step parents most commonly miss.'
+    },
+    C3: {
+      steps:[
+        'Windows has no built-in communication controls.',
+        'Control which messaging apps are installed via <strong>Family Safety → Apps and Games</strong>.',
+        'For Discord: this is the highest-risk platform on a Windows PC. Download the CSG Discord guide below.'
+      ],
+      tip:'Most stranger contact risk on Windows comes from Discord and gaming platforms, not Windows itself. The Discord guide is the most important companion resource for PC users.'
+    },
+    C4: {
+      steps:[
+        'Family Safety → child\'s name → <strong>Location</strong> → toggle on (requires Location Services enabled on the device).',
+        'Settings → Privacy → Location → Location Services → On → Microsoft apps can access location.',
+        'For social app location: manage at app level — see platform steps below.'
+      ],
+      tip:'Location is only available on laptops and tablets with GPS hardware. Desktop PCs do not have location capability.'
+    },
+    C5: {
+      steps:[
+        'Family Safety → child\'s name → <strong>Spending</strong> → set monthly limit.',
+        'Toggle: <strong>Needs parent approval to buy things</strong>.',
+        'Child receives an approval request screen — you approve via the app.',
+        'Microsoft Store: Settings → require <strong>Microsoft account password</strong> for every purchase.',
+        'Remove stored payment cards from child\'s Microsoft account.'
+      ],
+      tip:'Set up the monthly spending limit even if you plan to approve everything — it gives you a cap if anything slips through.'
+    }
+  },
+  D4: { // Mac
+    C1: {
+      steps:[
+        'System Settings → <strong>Screen Time</strong> → select child\'s account (if Family Sharing is set up) → turn on.',
+        'Options → <strong>Use Screen Time Passcode</strong> → set a passcode different from the Mac login password.',
+        'Screen Time → <strong>Downtime</strong> → toggle on → set hours the Mac is locked.',
+        'Screen Time → <strong>App Limits</strong> → Add Limit → select categories or specific apps → set daily time.'
+      ],
+      tip:'The Screen Time passcode is separate from the Mac login password. Without it, your child can go to System Settings → Screen Time and turn it off.'
+    },
+    C2: {
+      steps:[
+        'Screen Time → <strong>Content & Privacy Restrictions</strong> → toggle on.',
+        'Web Content → <strong>Limit Adult Websites</strong> or Allowed Websites Only (whitelist — best for under-10s).',
+        'Apps → set maximum age rating.',
+        'Explicit Language → Don\'t Allow. Music, Movies → Explicit → Off.',
+        'App Limits → <strong>block Chrome</strong> and other non-Safari browsers.'
+      ],
+      tip:'Web content filters apply to Safari only. If your child uses Chrome on their Mac, block it via App Limits — otherwise the filter is bypassed.'
+    },
+    C3: {
+      steps:[
+        'Screen Time → <strong>Communication Limits</strong> → Contacts Only.',
+        'Applies to FaceTime and Messages on Mac.',
+        'For Discord, WhatsApp Web, Instagram — manage at platform level using the guide below.'
+      ],
+      tip:'Communication Limits on Mac apply to Apple apps only. For third-party apps, platform-level settings are your main tool.'
+    },
+    C4: {
+      steps:[
+        'Set up Family Sharing: System Settings → your name → Family Sharing → Add Member.',
+        '<strong>Find My</strong>: child shares location with parent via findmy.apple.com.',
+        'System Settings → Privacy & Security → Location Services → review per-app for social apps.'
+      ],
+      tip:'MacBooks with Location Services enabled will appear in Find My. iMac and Mac Mini desktop computers do not have GPS and will not show location.'
+    },
+    C5: {
+      steps:[
+        'Screen Time → Content & Privacy Restrictions → App Store Purchases → <strong>In-App Purchases → Don\'t Allow</strong>.',
+        'Installing Apps → Don\'t Allow (every new install requires your Apple ID).',
+        'Require Password → Always for all purchases.',
+        'Family Sharing: child\'s purchase requests come to you for approval via notification.'
+      ],
+      tip:'Even free app downloads can lead to recurring subscriptions. The \'Always\' password setting means you see every single download.'
+    }
+  },
+  D5: { // Xbox
+    C1: {
+      steps:[
+        'Download <strong>Xbox Family Settings</strong> app (free) on your phone. Sign in with your Microsoft account.',
+        'In the app → add child\'s Xbox/Microsoft account.',
+        'Family Settings → child\'s name → <strong>Screen time</strong> → set daily limit.',
+        'Set <strong>different limits</strong> for school days vs weekends.',
+        'When limit is reached, your child is signed out automatically.'
+      ],
+      tip:'Your child\'s Xbox account must be set up as a child account under your Microsoft family. An independent adult account cannot have parental controls applied.'
+    },
+    C2: {
+      steps:[
+        'Family Settings → child\'s name → <strong>Content</strong> → Content restrictions.',
+        'Set age rating to appropriate PEGI level (PEGI 7, 12, 16).',
+        'Also restrict: apps, TV and film content.',
+        'Web browsing on Xbox: Family Settings → <strong>Web filtering</strong> → set restriction level.'
+      ],
+      tip:'PEGI ratings only restrict game purchases. Check user-created content settings in individual games — some games allow custom maps and mods that bypass age ratings.'
+    },
+    C3: {
+      steps:[
+        'Family Settings → child\'s name → Privacy → <strong>Communication and multiplayer</strong>.',
+        'Set \'Others can communicate via voice, text or invites\' → <strong>Friends only</strong> or Block.',
+        'Multiplayer → set to Friends only (prevents unknown players joining).',
+        'Review child\'s Friends list regularly in Family Settings.'
+      ],
+      tip:'Voice chat with strangers is one of the primary grooming risks on Xbox. The Friends Only communication setting is the single most important control on this console.'
+    },
+    C4: {
+      steps:[
+        'Xbox consoles do not share location data.',
+        'No action required on console for location.',
+        'If child uses the Xbox app on a phone: check phone-level location settings for that app.'
+      ],
+      tip:'Location risk on Xbox is indirect — conversations in voice chat or game profiles can reveal personal information. The communication settings above are your primary protection.'
+    },
+    C5: {
+      steps:[
+        'Family Settings → child\'s name → <strong>Spending</strong> → Monthly spending limit.',
+        'Toggle: <strong>Needs parent approval for purchases</strong>.',
+        'Remove stored payment cards from child\'s Xbox account.',
+        'Microsoft Store: require Microsoft account password for all purchases.'
+      ],
+      tip:'Microsoft Points and in-game currencies (like Fortnite V-Bucks) are purchased separately from game purchases. Set up approval for both.'
+    }
+  },
+  D6: { // PlayStation
+    C1: {
+      steps:[
+        '<strong>Critical first step:</strong> Go to <strong>account.sonyinteractive.com</strong> → Family Management → Create Family → add child\'s account as a <strong>sub-account</strong>. Controls do not work on independent accounts.',
+        'Download the <strong>PlayStation App</strong> (free) on your phone.',
+        'App → Family Management → child\'s account → <strong>Play Time Settings</strong> → set daily limit and restriction hours.',
+        'Set hours when the console locks automatically.'
+      ],
+      tip:'If your child already has an independent PlayStation account, you cannot move it to a sub-account. A new child sub-account will need to be created.'
+    },
+    C2: {
+      steps:[
+        'Family Management → child\'s account → <strong>Parental Controls</strong> → Content Rating Restriction.',
+        'Set to appropriate PEGI level.',
+        'Also restrict: PS Store content and internet browser access.'
+      ],
+      tip:'PEGI rating restrictions apply to new purchases and downloads. They do not remove games already in the library.'
+    },
+    C3: {
+      steps:[
+        'Family Management → child\'s account → Privacy Settings → <strong>Communication and User Generated Content</strong>.',
+        'Set to <strong>Restrict</strong> — prevents messaging and chat with non-friends.',
+        'Review child\'s Friends list regularly in Family Management.',
+        'Voice chat in games: Restrict setting also affects party chat.'
+      ],
+      tip:'Voice chat and party chat are the main vectors for stranger contact on PlayStation. The Restrict setting is the most important control on this console.'
+    },
+    C4: {
+      steps:[
+        'PlayStation consoles do not share live location data.',
+        'No action required on console for location.',
+        'Profile visibility: Family Management → Privacy Settings → set profile to Friends Only or No One.'
+      ],
+      tip:'Location risk on PlayStation is indirect — profile information, voice chat, and in-game conversations can reveal personal details. Privacy settings and communication controls are your primary protection.'
+    },
+    C5: {
+      steps:[
+        'Family Management → child\'s account → <strong>Spending Controls</strong> → set monthly limit.',
+        'Child must request wallet top-up from you — you receive a notification to approve.',
+        'Remove stored payment cards from child\'s PSN account.'
+      ],
+      tip:'PlayStation Store purchases and PlayStation Plus subscriptions are separate. Check both are set to require approval.'
+    }
+  },
+  D7: { // Nintendo Switch
+    C1: {
+      steps:[
+        'Download <strong>Nintendo Switch Parental Controls</strong> app (free) on your phone.',
+        'On console: System Settings → Parental Controls → Use this app → <strong>scan QR code</strong> with your phone.',
+        'In app: set <strong>Play Time Limit</strong> (daily hours).',
+        'Set <strong>Bedtime Alarm</strong> → the console displays a warning and then a lock screen.',
+        'Note: changes require the console to be physically present to re-pair if PIN is changed.'
+      ],
+      tip:'Nintendo Switch has the strongest default protections of any major console. The main risk increases when online play is enabled.'
+    },
+    C2: {
+      steps:[
+        'Parental Controls app → <strong>Restriction Level</strong> → select Child (PEGI 3), Pre-teen (PEGI 7/12), or Teen (PEGI 16).',
+        'Custom Settings → Software Rating → restrict specific PEGI levels.',
+        'Custom Settings → restrict: internet browser, local wireless, social media posting.'
+      ],
+      tip:'Nintendo\'s curated online environment is considerably safer than PlayStation or Xbox by default. Focus on online play controls rather than content restrictions.'
+    },
+    C3: {
+      steps:[
+        'Custom Settings → <strong>Online Play → Restrict</strong> (blocks all internet multiplayer).',
+        'Custom Settings → <strong>Friend Codes → Restrict</strong> sharing (prevents strangers adding your child).',
+        'Nintendo Switch does not have built-in voice chat — voice typically runs through the Nintendo Switch Online app on a separate phone. Manage this at phone level.'
+      ],
+      tip:'If your child uses Discord or another app for voice chat during gaming sessions, manage that at the phone level using the CSG Discord guide.'
+    },
+    C4: {
+      steps:[
+        'Nintendo Switch does not share location data.',
+        'No action required on console for location.'
+      ],
+      tip:'Location risk on Nintendo Switch is indirect — user profiles and online conversations can reveal personal information. Restricting friend codes is your primary control.'
+    },
+    C5: {
+      steps:[
+        'Set a <strong>Parental Controls PIN</strong> in the app — all eShop purchases require this PIN on the console.',
+        'The PIN must be entered on the console for every purchase.',
+        'Nintendo eShop → Parental Controls → Restrict purchases → toggle on.',
+        'Do not store a payment card in the eShop without PIN protection active.'
+      ],
+      tip:'The Nintendo PIN must be entered physically on the console — it cannot be bypassed remotely. This is one of the more robust purchase controls of any gaming platform.'
+    }
+  }
+};
+
+// ── Platform-level steps: PLATFORM_STEPS[platform][concern] ──
+const PLATFORM_STEPS = {
+  P1: { // Instagram
+    intro:'Instagram has a built-in parent supervision tool called <strong>Family Centre</strong>. Set this up first: your profile → ☰ → Settings & privacy → Supervision → Invite a parent.',
+    C1: {
+      steps:[
+        'Instagram → profile → ☰ → Settings & privacy → <strong>Your time on Instagram</strong> → Set daily time limit.',
+        'Turn on <strong>Remind me to take breaks</strong> → set reminder interval.',
+        'Family Centre (from your account): you can set time limits remotely from your phone.'
+      ],
+      tip:'Instagram has no way to enforce a time limit — your child can dismiss the reminder. Device-level app limits (see above) are more effective.'
+    },
+    C2: {
+      steps:[
+        'Profile → Settings & privacy → <strong>Content preferences</strong> → Sensitive content control → Standard (filters more sensitive content).',
+        'Settings & privacy → <strong>Hidden words</strong> → add words to filter from comments and DMs.',
+        'Block accounts: Profile → search for account → Block → choose to block related accounts.'
+      ],
+      tip:'Instagram\'s algorithm is not reliable enough on its own. These settings reduce exposure but do not eliminate it. Regular check-ins matter more than any setting.'
+    },
+    C3: {
+      steps:[
+        'Profile → Settings & privacy → Privacy → Messages → <strong>Who can send you messages → People you follow</strong> (prevents cold contact from strangers).',
+        'Settings & privacy → Privacy → Followers → switch to <strong>Private Account</strong>.',
+        'Settings & privacy → Privacy → <strong>Tags</strong> → Who can tag you → People you follow.',
+        'Family Centre: parent can see time spent and be alerted to new unknown contacts.'
+      ],
+      tip:'Family Centre does not let parents read message content — it shows who your child is talking to and how long they spend on the app. This is intentional and protects your child\'s privacy while keeping you informed.'
+    },
+    C4: {
+      steps:[
+        'When posting: <strong>never add a location tag</strong> to photos or Stories.',
+        'Phone level: Settings → Privacy → Location Services → Instagram → <strong>set to Never</strong>.',
+        'Stories: location stickers reveal where your child is in real time — discuss removing this habit.'
+      ],
+      tip:'Existing posts can have location tags. Check older posts in the profile and remove any tags that reveal home, school or regular locations.'
+    },
+    C5: {
+      steps:[
+        'Standard Instagram accounts have no in-app purchases.',
+        'If Instagram Subscriptions or Shopping is active: Profile → Settings & privacy → <strong>Payments</strong> → remove any payment methods.',
+        'Manage at device level for App Store / Google Play purchases — see device steps above.'
+      ],
+      tip:'Instagram\'s main financial risk for young people is time spent, not money spent. Subscriptions to creators are the only direct payment feature to watch for.'
+    }
+  },
+  P2: { // Snapchat
+    intro:'Snapchat has a Family Centre that lets you see who your child is talking to (not message content) and manage their friend list. Set this up first: your child\'s Snapchat → ⚙️ Settings → Family Centre → Invite a parent.',
+    C1: {
+      steps:[
+        'Snapchat has no native screen time controls.',
+        'Use <strong>device-level app limits</strong> (see above) to set a daily timer for Snapchat.',
+        'Family Centre does not include screen time management — device level is your only option here.'
+      ],
+      tip:'Device-level limits are your only tool for Snapchat screen time. Set these in your device settings using the steps above.'
+    },
+    C2: {
+      steps:[
+        'Family Centre → child\'s account → <strong>Content controls</strong> → Restrict sensitive content.',
+        'This limits exposure to sensitive Discover content.',
+        'Snapchat Stories and snaps from friends are not filtered by this setting.'
+      ],
+      tip:'Content restriction applies to Discover only — not to messages, stories from friends or snaps received. The conversation is the most important safeguard for Snapchat content.'
+    },
+    C3: {
+      steps:[
+        'Profile → ⚙️ → Privacy Controls → <strong>Contact Me → My Friends</strong> (prevents strangers snapping).',
+        '⚙️ → Privacy Controls → View My Story → My Friends.',
+        '⚙️ → Privacy Controls → <strong>See Me in Quick Add → toggle off</strong> (stops strangers finding your child).',
+        'Family Centre: parent can see full friend list and be alerted to new unknown contacts.'
+      ],
+      tip:'Quick Add is how most stranger contact starts on Snapchat. Turning it off is the single most important step — more than any other privacy setting.'
+    },
+    C4: {
+      steps:[
+        'Open Snap Map (pinch on camera screen or swipe to Map) → ⚙️ top right → select <strong>Ghost Mode</strong>.',
+        'Ghost Mode stops your location being visible to anyone.',
+        'Even in Ghost Mode, your child can still see other people\'s locations.'
+      ],
+      tip:'Snap Map is one of the most significant location risks for young people. Ghost Mode should be the default, not optional. Check this setting regularly — it can be changed by your child without notice.'
+    },
+    C5: {
+      steps:[
+        'Snapchat+ (paid subscription): ⚙️ → Snapchat+ → <strong>Cancel Subscription</strong> if active.',
+        'Manage purchases at device level — see device steps above.',
+        'Standard Snapchat has no other in-app purchases.'
+      ],
+      tip:'Snapchat+ is the only paid feature on Snapchat. If your child has it active and you didn\'t approve it, check your linked payment method at device level.'
+    }
+  },
+  P3: { // TikTok
+    intro:'TikTok\'s Family Pairing links your account to your child\'s so you can manage settings remotely. Set this up first: parent downloads TikTok → ☰ → Settings → Family Pairing → Parent. Child: ☰ → Settings → Family Pairing → Teen → scan QR code.',
+    C1: {
+      steps:[
+        'Profile → ☰ → Settings → <strong>Screen Time</strong> → Daily Screen Time → set limit.',
+        'Family Pairing (from your account): Screen Time Management → toggle on → set limit remotely.',
+        'Screen Time Management also <strong>prevents your child from changing the limit</strong> without parent approval.'
+      ],
+      tip:'Family Pairing gives you remote control of the screen time limit so your child cannot override it. This is the most important reason to set up Family Pairing first.'
+    },
+    C2: {
+      steps:[
+        'Family Pairing → <strong>Restricted Mode</strong> → turn on (filters content not appropriate for younger viewers).',
+        'Profile → Settings → Content preferences → <strong>Filter video keywords</strong> → add terms to block.',
+        'Under-16 accounts have DMs turned off by default — but age is self-reported. Verify this manually.'
+      ],
+      tip:'TikTok\'s algorithm learns from watch history. Short watch times and skipping sends a signal, but it takes time to recalibrate. Restricted Mode is the fastest way to reduce exposure.'
+    },
+    C3: {
+      steps:[
+        'Profile → Settings → Privacy → <strong>Direct Messages → No one</strong> (recommended for under-16) or Friends only.',
+        'Privacy → <strong>Suggest your account to others → toggle off</strong>.',
+        'Privacy → Who can see your followers list → Only me.',
+        'Privacy → Who can Duet / Stitch with your videos → Friends or Off.',
+        'Family Pairing: you can manage DM settings remotely from your account.'
+      ],
+      tip:'Accounts under 16 have DMs turned off by default on TikTok — but age is self-reported at signup. Check this setting manually regardless of the age they entered.'
+    },
+    C4: {
+      steps:[
+        'TikTok does not share live location data.',
+        'Risk is indirect: content can reveal location via school uniform, local landmarks or backgrounds.',
+        'Phone level: Settings → Location → TikTok → set to <strong>Never</strong>.',
+        'Discuss: not filming or posting near home, school or regular routes.'
+      ],
+      tip:'TikTok\'s location risk is almost entirely through what\'s visible in video content, not the app sharing location data. The conversation about what\'s in the background matters as much as the settings.'
+    },
+    C5: {
+      steps:[
+        'Under-18 accounts cannot purchase TikTok Coins by default — verify this is applied.',
+        'Profile → ☰ → Settings → Balance → if coins are present, contact TikTok support.',
+        'LIVE gifts: under-18s cannot send gifts on LIVE — verify this is applied.',
+        'Manage at device level: remove payment methods from App Store / Google Play.'
+      ],
+      tip:'TikTok Coins are used to send gifts to creators during LIVE. Verify the under-18 restriction is active on your child\'s account — age is self-reported at signup.'
+    }
+  },
+  P4: { // WhatsApp
+    intro:'<strong>WhatsApp does not have parental controls.</strong> The settings below are privacy controls that reduce stranger contact — but the most important safeguard on WhatsApp is a conversation with your child about who they talk to and what they share.',
+    C1: {
+      steps:[
+        'WhatsApp has no in-app screen time controls.',
+        'Use <strong>device-level app limits</strong> to set a daily time cap — see device steps above.'
+      ],
+      tip:'Device-level limits are your only tool for WhatsApp screen time.'
+    },
+    C2: {
+      steps:[
+        'WhatsApp has no content filtering — messages are end-to-end encrypted.',
+        'The platform cannot scan message content.',
+        'Report a contact: tap contact name → Report → WhatsApp reviews the account.'
+      ],
+      tip:'WhatsApp\'s encryption means no content filtering is possible. Group chats are the most common route for harmful content — the who-they-talk-to settings below are your most effective control.'
+    },
+    C3: {
+      steps:[
+        'Settings → Privacy → Last Seen and Online → <strong>My Contacts</strong>.',
+        'Settings → Privacy → Profile Photo → My Contacts.',
+        'Settings → Privacy → <strong>Groups → Who can add me to groups → My Contacts</strong> (critical — stops strangers adding your child to group chats without permission).',
+        'Settings → Privacy → Calls → <strong>Silence unknown callers → On</strong>.'
+      ],
+      tip:'The Groups privacy setting is the most important one. Anyone with your child\'s phone number can add them to a group chat by default. Changing this to My Contacts stops that.'
+    },
+    C4: {
+      steps:[
+        'Within a chat: the paperclip / + icon → Location — advise <strong>never sharing live location</strong>.',
+        'Live Location shares real-time GPS position for up to 8 hours.',
+        'Phone level: Settings → Location → WhatsApp → set to <strong>Never or While Using</strong>.',
+        'Photos sent via WhatsApp can contain GPS metadata — turn off location in the camera app settings.'
+      ],
+      tip:'WhatsApp Live Location is a significant risk — once shared, the recipient can track your child\'s position for up to 8 hours. Make sure your child understands what this feature actually does.'
+    },
+    C5: {
+      steps:[
+        'WhatsApp has no in-app purchases for standard users.',
+        'WhatsApp Business payment features are not widely used by young people in the UK.',
+        'No action required.'
+      ],
+      tip:'WhatsApp\'s main risk is not financial. The communication and privacy settings above are where to focus.'
+    }
+  },
+  P5: { // Discord
+    intro:'<strong>Discord has very limited parental controls</strong> — there is no Family Centre or parent supervision tool. Age verification is self-reported. The settings below reduce risk but cannot eliminate it. For children under 16, the safest approach is to discuss which servers they are in and review them together.',
+    C1: {
+      steps:[
+        'Discord has no in-app screen time controls.',
+        'Use <strong>device-level app limits</strong> to set a daily timer — see device steps above.'
+      ],
+      tip:'Device-level limits are your only tool for Discord screen time. Set these before anything else.'
+    },
+    C2: {
+      steps:[
+        'Settings (gear icon, bottom left) → Privacy & Safety → <strong>Safe Direct Messaging → Keep me safe</strong> (scans DMs and auto-deletes flagged content).',
+        'Settings → Privacy & Safety → <strong>Allow direct messages from server members → Off</strong>.',
+        'In any server: right-click the server name → Privacy Settings → turn off DMs from server members.'
+      ],
+      tip:'Discord servers marked NSFW require age verification — but this is self-reported. A 12-year-old can click through it. The server-level DM setting is the most practical content control.'
+    },
+    C3: {
+      steps:[
+        'Settings → Privacy & Safety → <strong>Who can add you as a Friend → Friends of Friends</strong> or Manual (not Everyone).',
+        'Settings → Privacy & Safety → <strong>Allow direct messages from server members → Off</strong>.',
+        'Settings → Privacy & Safety → Allow friend requests from → Off (if appropriate).',
+        'Review which servers your child is in: Settings → Connections → view server list.'
+      ],
+      tip:'The servers your child is in matter more than individual privacy settings. An unmoderated server with hundreds of unknown adults is a higher risk than any individual DM setting. Know which servers they use.'
+    },
+    C4: {
+      steps:[
+        'Discord does not share live location data.',
+        'Phone level: Settings → Location → Discord → set to <strong>Never</strong>.',
+        'Risk is indirect: voice channel names, conversation content and backgrounds can reveal location.'
+      ],
+      tip:'Location risk on Discord is primarily through conversation content and voice chat, not the app sharing location data.'
+    },
+    C5: {
+      steps:[
+        'Settings → Subscriptions → check if <strong>Discord Nitro</strong> is active — cancel if not wanted.',
+        'Discord Nitro requires a payment card — remove from account if present.',
+        'Manage at device level to prevent new subscription purchases — see device steps above.'
+      ],
+      tip:'Discord Nitro is the only paid feature on standard Discord. Server-specific Nitro boosts are an additional cost. Check both in Settings → Subscriptions.'
+    }
+  },
+  P6: { // Roblox
+    intro:'Roblox has a <strong>Parental PIN system</strong> that locks settings so your child cannot change them. Set this up first: roblox.com → Settings → Security → Parental Controls → set PIN.',
+    C1: {
+      steps:[
+        'Roblox has no in-app screen time controls.',
+        'Use <strong>device-level app limits</strong> to set a daily time cap — see device steps above.',
+        'Monthly spend reports are available in roblox.com → Settings → Billing — but time reporting requires device level.'
+      ],
+      tip:'Device-level limits are your only tool for Roblox screen time.'
+    },
+    C2: {
+      steps:[
+        'roblox.com → Settings → Privacy → <strong>Account Restrictions → toggle On</strong>.',
+        'Account Restrictions limit your child to Roblox-curated games only (not all user-created content).',
+        'Chat filtering: under-13 accounts have a stricter automatic chat filter — verify your child\'s registered age is correct.'
+      ],
+      tip:'Roblox is user-generated content at scale. Account Restrictions is the most effective single content control — but it does significantly limit the games available. Discuss this with your child before switching it on.'
+    },
+    C3: {
+      steps:[
+        'roblox.com → Settings → Privacy → <strong>Who can message me → Friends</strong> (or No one).',
+        'Settings → Privacy → <strong>Who can chat with me in experiences → Friends</strong> (or No one).',
+        'Settings → Privacy → Who can invite me to private servers → Friends.',
+        'Settings → Privacy → <strong>Who can follow me into experiences → No one</strong>.',
+        'Roblox in-game <strong>voice chat is not available</strong> to under-13 accounts by default — verify this.'
+      ],
+      tip:'Roblox\'s chat filter is not foolproof — users regularly find ways around it. The friends-only communication settings reduce but do not eliminate stranger contact.'
+    },
+    C4: {
+      steps:[
+        'Roblox does not share live location data.',
+        'In-game worlds do not reveal real-world location.',
+        'Risk is indirect: voice chat or in-game conversations can reveal personal information.'
+      ],
+      tip:'Location risk on Roblox comes through conversation content, not the app sharing location data. Communication settings above are your primary protection.'
+    },
+    C5: {
+      steps:[
+        'roblox.com → Settings → Billing → set a <strong>monthly Robux spending limit</strong>.',
+        'Parental PIN must be set first (see above) — this locks billing settings.',
+        'Remove payment card from Roblox account if purchases should require your approval.',
+        '<strong>Device-level purchase controls</strong> (App Store / Google Play) as a secondary barrier — see device steps above.'
+      ],
+      tip:'Robux is Roblox\'s virtual currency. Children often do not connect spending Robux with spending real money. A conversation about this matters as much as the settings.'
+    }
+  },
+  P7: { // YouTube
+    intro:'If your child is <strong>under 13, use YouTube Kids</strong> instead of standard YouTube — it is a separate app with properly curated content and parental controls. The settings below apply to standard YouTube for older children.',
+    C1: {
+      steps:[
+        'YouTube app → Profile → ☰ → <strong>Your time on YouTube</strong> → Set daily reminder → choose time.',
+        'For stronger limits: use <strong>device-level app timer</strong> — see device steps above.',
+        'YouTube Kids app (under 13): parent settings → <strong>Screen time timer</strong> → set daily limit.'
+      ],
+      tip:'YouTube\'s in-app reminder is dismissible — your child can ignore it. Device-level limits are more effective for actual time control.'
+    },
+    C2: {
+      steps:[
+        'YouTube app → Profile → Settings → General → <strong>Restricted Mode → toggle On</strong>.',
+        'Restricted Mode filters most adult content — not absolute but significantly reduces exposure.',
+        'Lock Restricted Mode: when turned on, tap <strong>Lock Restricted Mode on this browser</strong> → requires Google account password to turn off.',
+        'YouTube Kids app: Settings → choose content level (Preschool / Younger / Older).'
+      ],
+      tip:'Restricted Mode is not a complete filter. YouTube\'s algorithm learns from watch history — short watch times and skipping sends a signal over time, but it takes time to recalibrate.'
+    },
+    C3: {
+      steps:[
+        'YouTube does not have direct messaging between users.',
+        'Comment sections on videos can expose children to inappropriate contact.',
+        'If your child has their own channel: YouTube Studio → Settings → Community → <strong>turn off comments</strong>.',
+        'Advise: never reply to comments from strangers, never share personal information in comments.'
+      ],
+      tip:'The main risk on YouTube is content exposure and comment sections, not direct messaging. If your child creates content, the channel settings matter more than the viewer settings.'
+    },
+    C4: {
+      steps:[
+        'YouTube does not share live location data.',
+        'Risk is indirect: content your child uploads can reveal location via landmarks, school uniform or home interior.',
+        'If your child has a channel: <strong>review videos before publishing</strong> for identifiable location details.'
+      ],
+      tip:'For children who watch only, location risk on YouTube is minimal. For children who create and upload content, the location risk is significant — what\'s in the background matters.'
+    },
+    C5: {
+      steps:[
+        'YouTube Premium: Profile → Purchases and memberships → <strong>cancel if active</strong>.',
+        'Super Chat and Super Thanks (for channels): only available on monetised accounts — unlikely to apply to children\'s accounts.',
+        'Manage at device level to prevent subscription purchases — see device steps above.'
+      ],
+      tip:'YouTube\'s main financial risk is YouTube Premium subscriptions and, for content creators, Super Chat payments. Standard viewing has no cost.'
+    }
+  }
+};
+
+// ── Contextual (Read Next) guides by concern ──
+const CONTEXTUAL_GUIDES = {
+  C1: [
+    { title:'Screen Time & Device Overuse', file:'CSG_Screen_time_device_overuse.pdf', img:'CSG_Screen_Time_Device_Overuse.png', desc:'Practical steps without the daily battle' },
+    { title:'Why Kids Don\'t Tell Parents', file:'CSG_Why_kids_dont_tell_parents.pdf', img:'CSG_Why_Kids_Dont_Tell.png', desc:'The most important conversation' }
+  ],
+  C2: [
+    { title:'Online Challenges & Trends', file:'CSG_Online_challenges_trends.pdf', img:'CSG_Online_Challenges_Trends.png', desc:'How viral challenges spread and why children feel pressure' },
+    { title:'The Platforms Your Child Uses', file:'CSG_Platforms_your_child_uses.pdf', img:'CSG_Platforms_your_child_uses.png', desc:'Most children use multiple platforms every day' }
+  ],
+  C3: [
+    { title:'How Online Grooming Starts', file:'CSG_How_grooming_starts.pdf', img:'CSG_How_grooming_starts.png', desc:'Gradual trust-building disguised as friendship' },
+    { title:'Group Chats', file:'CSG_Group_chats.pdf', img:'CSG_Group_Chats.png', desc:'The conversations happening in your child\'s pocket' }
+  ],
+  C4: [
+    { title:'Social Media Footprint', file:'CSG_Social_media_footprint.pdf', img:'CSG_Social_Media_Footprint.png', desc:'What your child\'s online presence says about them' },
+    { title:'Sharenting', file:'CSG_Sharenting.pdf', img:'CSG_Sharenting.png', desc:'Before you post that photo, read this' }
+  ],
+  C5: [
+    { title:'The Platforms Your Child Uses', file:'CSG_Platforms_your_child_uses.pdf', img:'CSG_Platforms_your_child_uses.png', desc:'Most children use multiple platforms every day' },
+    { title:'Online Gaming & Voice Chat', file:'CSG_Online_gaming_voice_chat.pdf', img:'CSG_Online_Gaming_Voice_Chat.png', desc:'Real-time voice chat with strangers is built into almost every game' }
+  ]
+};
+
+// ═══════════════════════════════════════════════════════════════════
+// WIZARD STATE
+// ═══════════════════════════════════════════════════════════════════
+const state = { A:null, D:null, P:null, C:null };
+
+function selectOpt(btn) {
+  const step = parseInt(btn.dataset.step);
+  const val = btn.dataset.val;
+  // Deselect siblings
+  btn.closest('.wizard-options').querySelectorAll('.wizard-opt').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const keys = ['A','D','P','C'];
+  state[keys[step]] = val;
+  // Show next button
+  const nextBtn = document.getElementById('next-' + step);
+  if (nextBtn) nextBtn.classList.add('visible');
+  // Show skip for platform step
+  if (step === 2) {
+    const skip = document.getElementById('skip-platform');
+    if (skip) skip.classList.add('visible');
+  }
+}
+
+function goNext(step) {
+  if (step < 3) {
+    showCard(step + 1);
+  } else {
+    showResults();
+  }
+}
+
+function goBack(step) { showCard(step - 1); }
+
+function showCard(n) {
+  document.querySelectorAll('.wizard-card').forEach((c,i) => {
+    c.classList.toggle('active', i === n);
+  });
+  document.getElementById('wizardResults').classList.remove('active');
+  updateProgress(n);
+  window.scrollTo({ top: document.getElementById('wizard').offsetTop - 60, behavior: 'smooth' });
+}
+
+function updateProgress(active) {
+  [0,1,2,3].forEach(i => {
+    const dot = document.getElementById('pdot-' + i);
+    const prog = document.getElementById('prog-' + i);
+    dot.classList.remove('active','done');
+    prog.classList.remove('active');
+    if (i < active) { dot.classList.add('done'); dot.textContent = '✓'; }
+    else if (i === active) { dot.classList.add('active'); dot.textContent = i+1; prog.classList.add('active'); }
+    else { dot.textContent = i+1; }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// BUILD RESULTS
+// ═══════════════════════════════════════════════════════════════════
+function showResults() {
+  document.querySelectorAll('.wizard-card').forEach(c => c.classList.remove('active'));
+  updateProgress(4);
+  const el = document.getElementById('wizardResults');
+  el.innerHTML = buildResults();
+  el.classList.add('active');
+  // Accordion listeners
+  el.querySelectorAll('.acc-head').forEach(h => {
+    h.addEventListener('click', () => {
+      h.closest('.acc-item').classList.toggle('open');
+    });
+  });
+  window.scrollTo({ top: document.getElementById('wizard').offsetTop - 60, behavior: 'smooth' });
+}
+
+function buildResults() {
+  const { A, D, P, C } = state;
+  const isAllConcerns = C === 'C6';
+  const isAllPlatforms = P === 'P0';
+  const concerns = isAllConcerns ? ['C1','C2','C3','C4','C5'] : [C];
+
+  let html = '';
+
+  // Selections bar
+  html += `<div class="selections-bar">
+    <span class="sel-chip">${AGE_LABELS[A]}</span>
+    <span class="sel-chip">${DEVICE_LABELS[D]}</span>
+    <span class="sel-chip">${PLATFORM_LABELS[P]}</span>
+    <span class="sel-chip">${CONCERN_LABELS[C]}</span>
+  </div>`;
+
+  // Age intro
+  html += `<div class="results-intro">${AGE_INTRO[A]}</div>`;
+
+  // ── C6: Accordion mode ──
+  if (isAllConcerns) {
+    // Device section
+    html += `<div class="results-section">
+      <p class="results-section-head">📱 ${DEVICE_LABELS[D]} — Device Settings</p>`;
+
+    concerns.forEach(c => {
+      const data = DEVICE_STEPS[D] && DEVICE_STEPS[D][c];
+      if (!data) return;
+      html += `<div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-head-left">
+            <span class="acc-head-icon">${CONCERN_ICONS[c]}</span>
+            <span class="acc-head-title">${CONCERN_LABELS[c]}</span>
+          </div>
+          <span class="acc-arrow">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="step-list">${data.steps.map((s,i) => `<li><span class="step-num">${i+1}</span><span>${s}</span></li>`).join('')}</ul>
+          <div class="step-tip"><strong>Tip:</strong> ${data.tip}</div>
+        </div>
+      </div>`;
+    });
+
+    // Device guide card
+    const dg = DEVICE_GUIDE[D];
+    if (dg && dg.file && !dg.desc.includes('coming soon')) {
+      html += guideCard('CSG Guide', dg.title, dg.desc, dg.file, dg.img);
+    }
+    html += `</div>`;
+
+    // Platform section
+    if (!isAllPlatforms && PLATFORM_STEPS[P]) {
+      const pd = PLATFORM_STEPS[P];
+      html += `<div class="results-section">
+        <p class="results-section-head">📲 ${PLATFORM_LABELS[P]} — App Settings</p>
+        <div class="step-tip" style="margin-bottom:16px"><strong>Before you start:</strong> ${pd.intro}</div>`;
+
+      concerns.forEach(c => {
+        const data = pd[c];
+        if (!data) return;
+        html += `<div class="acc-item">
+          <div class="acc-head">
+            <div class="acc-head-left">
+              <span class="acc-head-icon">${CONCERN_ICONS[c]}</span>
+              <span class="acc-head-title">${CONCERN_LABELS[c]}</span>
+            </div>
+            <span class="acc-arrow">▾</span>
+          </div>
+          <div class="acc-body">
+            <ul class="step-list">${data.steps.map((s,i) => `<li><span class="step-num">${i+1}</span><span>${s}</span></li>`).join('')}</ul>
+            <div class="step-tip"><strong>Tip:</strong> ${data.tip}</div>
+          </div>
+        </div>`;
+      });
+
+      const pg = PLATFORM_GUIDE[P];
+      if (pg) html += guideCard('CSG Platform Guide', pg.title, pg.desc, pg.file, pg.img);
+      html += `</div>`;
+    }
+
+    // Platform chips for P0
+    if (isAllPlatforms) {
+      html += `<div class="results-section">
+        <p class="results-section-head">📲 Want platform-specific settings too?</p>
+        <p style="color:var(--grey);font-size:14px;margin-bottom:12px">Pick an app and get the in-app steps for each concern.</p>
+        <div class="platform-chips">${PLATFORM_CHIPS.map(pc => `<a href="wizard.html" class="platform-chip" onclick="selectPlatformFromChip('${pc.id}');return false;">${pc.label}</a>`).join('')}</div>
+      </div>`;
+    }
+
+  // ── Single concern mode ──
+  } else {
+    const devData = DEVICE_STEPS[D] && DEVICE_STEPS[D][C];
+    const platData = PLATFORM_STEPS[P] && PLATFORM_STEPS[P][C];
+
+    // Device steps
+    html += `<div class="results-section">
+      <p class="results-section-head">📱 ${DEVICE_LABELS[D]} — Device Settings</p>`;
+    if (devData) {
+      html += `<ul class="step-list">${devData.steps.map((s,i) => `<li><span class="step-num">${i+1}</span><span>${s}</span></li>`).join('')}</ul>
+        <div class="step-tip"><strong>Tip:</strong> ${devData.tip}</div>`;
+    } else {
+      html += `<p style="color:var(--grey);font-size:14px">No additional device-level steps for this concern on this platform.</p>`;
+    }
+    const dg = DEVICE_GUIDE[D];
+    if (dg && dg.file && !dg.desc.includes('coming soon')) {
+      html += guideCard('CSG Guide', dg.title, dg.desc, dg.file, dg.img);
+    }
+    html += `</div>`;
+
+    // Platform steps
+    if (!isAllPlatforms) {
+      html += `<div class="results-section">
+        <p class="results-section-head">📲 ${PLATFORM_LABELS[P]} — App Settings</p>`;
+      if (PLATFORM_STEPS[P]) {
+        html += `<div class="step-tip" style="margin-bottom:16px"><strong>Before you start:</strong> ${PLATFORM_STEPS[P].intro}</div>`;
+      }
+      if (platData) {
+        html += `<ul class="step-list">${platData.steps.map((s,i) => `<li><span class="step-num">${i+1}</span><span>${s}</span></li>`).join('')}</ul>
+          <div class="step-tip"><strong>Tip:</strong> ${platData.tip}</div>`;
+      } else {
+        html += `<p style="color:var(--grey);font-size:14px">No in-app controls available for this platform and concern. Device-level settings above are your most effective option.</p>`;
+      }
+      const pg = PLATFORM_GUIDE[P];
+      if (pg) html += guideCard('CSG Platform Guide', pg.title, pg.desc, pg.file, pg.img);
+      html += `</div>`;
+    }
+
+    // Platform chips for P0
+    if (isAllPlatforms) {
+      html += `<div class="results-section">
+        <p class="results-section-head">📲 Want platform-specific settings too?</p>
+        <p style="color:var(--grey);font-size:14px;margin-bottom:12px">Pick an app to get the in-app steps for <strong>${CONCERN_LABELS[C]}</strong>.</p>
+        <div class="platform-chips">${PLATFORM_CHIPS.map(pc => `<a href="wizard.html" class="platform-chip" onclick="selectPlatformFromChip('${pc.id}');return false;">${pc.label}</a>`).join('')}</div>
+      </div>`;
+    }
+  }
+
+  // Read Next
+  const contextual = isAllConcerns
+    ? [...new Set([...CONTEXTUAL_GUIDES.C3, ...CONTEXTUAL_GUIDES.C1])]
+    : (CONTEXTUAL_GUIDES[C] || []);
+  if (contextual.length) {
+    html += `<div class="results-section">
+      <p class="results-section-head">📖 Read Next</p>
+      <div class="read-next-grid">${contextual.map(g => `
+        <a href="${BASE}${g.file}" target="_blank" rel="noopener" class="read-next-card">
+          <p class="rn-title">${g.title}</p>
+          <p class="rn-desc">${g.desc}</p>
+        </a>`).join('')}</div>
+    </div>`;
+  }
+
+  // Email capture
+  html += `<div class="wizard-email-section">
+    <p class="wizard-email-eyebrow">Stay up to date</p>
+    <h3 class="wizard-email-title">Platform settings change without warning</h3>
+    <p class="wizard-email-desc">When they do, we'll let you know. Every subscription goes to Childline.</p>
+    <div style="display:flex;justify-content:center;margin-top:4px;">
+      <iframe src="https://www.cybersafetyguy.com/embed" width="480" height="320" style="border:1px solid #EEE;background:white;max-width:100%;border-radius:4px;" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>`;
+
+  // Restart
+  html += `<div class="results-actions">
+    <button class="btn-restart" onclick="restartWizard()">↺ Start over</button>
+  </div>`;
+
+  return html;
+}
+
+function guideCard(tag, title, desc, file, img) {
+  return `<a href="${BASE}${file}" target="_blank" rel="noopener" class="result-guide-card">
+    <img src="images/${img}" alt="${title}" class="guide-thumb" onerror="this.style.display='none'">
+    <div class="guide-info">
+      <p class="guide-tag">${tag}</p>
+      <h4>${title}</h4>
+      <p>${desc}</p>
+    </div>
+    <span class="guide-arrow">→</span>
+  </a>`;
+}
+
+function selectPlatformFromChip(platformId) {
+  state.P = platformId;
+  showResults();
+}
+
+function restartWizard() {
+  state.A = null; state.D = null; state.P = null; state.C = null;
+  document.querySelectorAll('.wizard-opt').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('.wizard-btn-next').forEach(b => b.classList.remove('visible'));
+  document.getElementById('wizardResults').classList.remove('active');
+  showCard(0);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// EVENT LISTENERS
+// ═══════════════════════════════════════════════════════════════════
+document.querySelectorAll('.wizard-opt').forEach(btn => {
+  btn.addEventListener('click', () => selectOpt(btn));
+});
+[0,1,2,3].forEach(i => {
+  const nextBtn = document.getElementById('next-' + i);
+  if (nextBtn) nextBtn.addEventListener('click', () => { if (state[['A','D','P','C'][i]]) goNext(i); });
+  const backBtn = document.getElementById('back-' + i);
+  if (backBtn) backBtn.addEventListener('click', () => goBack(i));
+});
+
+// ═══════════════════════════════════════════════════════════════════
+// LOAD GUIDE LIBRARY (parental-controls category)
+// ═══════════════════════════════════════════════════════════════════
+async function loadLibrary() {
+  try {
+    const res = await fetch('guides.json');
+    const guides = await res.json();
+    const grid = document.getElementById('grid-parental-controls');
+    guides.filter(g => g.type === 'guide' && (g.id === 'parental-controls' || g.id === 'platform-guides' && (g.title.toLowerCase().includes('parental') || g.title.toLowerCase().includes('android') || g.title.toLowerCase().includes('iphone'))))
+      .forEach(g => {
+        const badge = g.isNew ? '<span class="new-badge">NEW</span>' : '';
+        grid.insertAdjacentHTML('beforeend', `
+          <a href="${g.link}" target="_blank" rel="noopener" class="guide-card">
+            <div class="card-img-wrap">
+              <img src="images/${g.image}" alt="${g.title}">
+              ${badge}
+            </div>
+            <div class="card-body"><h3>${g.title}</h3><p>${g.desc}</p></div>
+            <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+          </a>`);
+      });
+  } catch(e) { console.error('Guide library load error:', e); }
+}
+
+// Back to top
+const btt = document.getElementById('backToTop');
+window.addEventListener('scroll', () => btt.classList.toggle('visible', scrollY > 500));
+btt.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+loadLibrary();
+</script>
+</body>
+</html>
