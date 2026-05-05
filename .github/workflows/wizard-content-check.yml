@@ -1,0 +1,71 @@
+name: Wizard Content Freshness Check
+
+on:
+  # Run on the 1st of every month at 8am UK time (UTC+1 in summer, UTC in winter)
+  schedule:
+    - cron: '0 7 1 * *'
+
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+    inputs:
+      days_threshold:
+        description: 'How many days back to search for recent results'
+        required: false
+        default: '35'
+      dry_run:
+        description: 'Dry run — print output only, do not create issue'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  check-content:
+    name: Check wizard content freshness
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run freshness check
+        id: check
+        env:
+          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
+          GOOGLE_CSE_ID:      ${{ secrets.GOOGLE_CSE_ID }}
+          DAYS_THRESHOLD:     ${{ github.event.inputs.days_threshold || '35' }}
+          DRY_RUN:            ${{ github.event.inputs.dry_run || 'false' }}
+          META_FILE:          wizard-sections-meta.json
+        run: python scripts/check_wizard_content.py
+
+      - name: Create GitHub issue (flagged sections)
+        if: steps.check.outputs.has_flags == 'true' && github.event.inputs.dry_run != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `${{ steps.check.outputs.issue_title }}`;
+            const body  = `${{ steps.check.outputs.issue_body }}`;
+            await github.rest.issues.create({
+              owner:  context.repo.owner,
+              repo:   context.repo.repo,
+              title:  title,
+              body:   body,
+              labels: ['content-review', 'wizard'],
+            });
+            core.notice(`Issue created: ${title}`);
+
+      - name: Log clean result (no flags)
+        if: steps.check.outputs.has_flags == 'false'
+        run: |
+          echo "✅ All wizard sections look up to date. No issue created."
+          echo "Flagged: ${{ steps.check.outputs.flagged_count }} sections"
