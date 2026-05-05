@@ -1,9 +1,24 @@
 {
-  "_comment": "Tracks last-verified dates and search queries for each wizard section. Update last_verified when you confirm steps are accurate.",
+  "_comment": "Tracks last-verified dates and search queries for each wizard section. Update last_verified when you confirm steps are accurate. Search queries are scoped to official platform help domains added to the CSG Wizard Checker search engine.",
   "meta": {
-    "version": "1.0",
+    "version": "1.1",
     "last_full_review": "2026-05-05",
-    "review_frequency_days": 30
+    "review_frequency_days": 30,
+    "cse_domains": [
+      "support.apple.com/*",
+      "support.google.com/*",
+      "support.microsoft.com/*",
+      "xbox.com/*",
+      "playstation.com/*",
+      "nintendo.co.uk/*",
+      "help.instagram.com/*",
+      "values.snap.com/*",
+      "support.tiktok.com/*",
+      "faq.whatsapp.com/*",
+      "discord.com/safety/*",
+      "en.help.roblox.com/*",
+      "support.google.com/youtube/*"
+    ]
   },
   "sections": [
     {
@@ -13,9 +28,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://support.apple.com/en-gb/105120",
       "search_queries": [
-        "iOS Screen Time parental controls update 2026",
-        "iPhone Screen Time settings changed site:support.apple.com",
-        "Apple Screen Time new features"
+        "Screen Time parental controls",
+        "Screen Time Communication Limits",
+        "Screen Time Content Privacy Restrictions",
+        "Communication Safety Messages"
       ]
     },
     {
@@ -25,9 +41,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://support.google.com/families",
       "search_queries": [
-        "Google Family Link update 2026",
-        "Family Link new features site:support.google.com",
-        "Google Family Link parental controls changed"
+        "Family Link screen time limits",
+        "Family Link app controls",
+        "Family Link location sharing",
+        "Family Link purchase approval"
       ]
     },
     {
@@ -37,9 +54,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://support.microsoft.com/en-gb/topic/family-safety",
       "search_queries": [
-        "Microsoft Family Safety update 2026",
-        "Windows parental controls changed site:support.microsoft.com",
-        "Microsoft Family Safety new features"
+        "Family Safety screen time",
+        "Family Safety content filters",
+        "Family Safety spending limits",
+        "Microsoft account child parental controls"
       ]
     },
     {
@@ -49,9 +67,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://support.apple.com/en-gb/guide/mac-help/mchledf09187",
       "search_queries": [
-        "macOS Screen Time parental controls update 2026",
-        "Mac Screen Time settings changed site:support.apple.com",
-        "macOS parental controls new features"
+        "Screen Time Mac parental controls",
+        "Screen Time downtime app limits Mac",
+        "Screen Time content privacy Mac",
+        "Family Sharing Mac location"
       ]
     },
     {
@@ -61,9 +80,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://www.xbox.com/en-GB/apps/family-settings-app",
       "search_queries": [
-        "Xbox Family Settings update 2026",
-        "Xbox parental controls changed site:support.xbox.com",
-        "Xbox Family Settings new features"
+        "Xbox Family Settings screen time",
+        "Xbox parental controls content rating",
+        "Xbox Family Settings communication multiplayer",
+        "Xbox Family Settings spending"
       ]
     },
     {
@@ -73,9 +93,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://www.playstation.com/en-gb/support/account/psn-family-management",
       "search_queries": [
-        "PlayStation Family Management update 2026",
-        "PlayStation parental controls changed site:playstation.com",
-        "PSN family management new features"
+        "PlayStation Family Management play time",
+        "PlayStation parental controls content rating",
+        "PlayStation Family Management communication",
+        "PlayStation spending controls wallet"
       ]
     },
     {
@@ -85,9 +106,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://www.nintendo.co.uk/Hardware/Nintendo-Switch-Parental-Controls",
       "search_queries": [
-        "Nintendo Switch Parental Controls update 2026",
-        "Nintendo parental controls changed site:nintendo.co.uk",
-        "Switch parental controls app new features"
+        "Nintendo Switch Parental Controls app play time",
+        "Nintendo Switch restriction level content",
+        "Nintendo Switch online play friend codes",
+        "Nintendo eShop PIN purchase restriction"
       ]
     },
     {
@@ -97,9 +119,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://help.instagram.com/families",
       "search_queries": [
-        "Instagram Family Centre update 2026",
-        "Instagram parental controls privacy settings changed",
-        "Instagram safety features update site:about.instagram.com"
+        "Instagram Family Centre supervision",
+        "Instagram privacy settings messages",
+        "Instagram sensitive content control",
+        "Instagram hidden words location"
       ]
     },
     {
@@ -109,10 +132,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://values.snap.com/en-GB/privacy/transparency/family-center",
       "search_queries": [
-        "Snapchat Family Centre update 2026",
-        "Snapchat parental controls settings changed",
-        "Snap Map Ghost Mode update",
-        "Snapchat safety features 2026"
+        "Snapchat Family Centre parental supervision",
+        "Snapchat privacy contact me Quick Add",
+        "Snap Map Ghost Mode location",
+        "Snapchat content controls restrict"
       ]
     },
     {
@@ -122,10 +145,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://support.tiktok.com/en/account-and-privacy/account-privacy-settings/family-pairing",
       "search_queries": [
-        "TikTok Family Pairing update 2026",
-        "TikTok parental controls settings changed",
-        "TikTok Screen Time management update",
-        "TikTok safety features 2026"
+        "TikTok Family Pairing screen time",
+        "TikTok restricted mode content",
+        "TikTok direct messages privacy under 16",
+        "TikTok coins purchases under 18"
       ]
     },
     {
@@ -135,9 +158,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://faq.whatsapp.com/general/security-and-privacy",
       "search_queries": [
-        "WhatsApp privacy settings update 2026",
-        "WhatsApp group chat privacy changed",
-        "WhatsApp safety settings 2026"
+        "WhatsApp privacy settings last seen",
+        "WhatsApp group privacy who can add",
+        "WhatsApp silence unknown callers",
+        "WhatsApp live location sharing"
       ]
     },
     {
@@ -147,10 +171,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://discord.com/safety/parents",
       "search_queries": [
-        "Discord parental controls update 2026",
-        "Discord safety settings changed",
-        "Discord Safe Direct Messaging update",
-        "Discord teen safety features 2026"
+        "Discord safe direct messaging privacy",
+        "Discord friend requests server members",
+        "Discord parental controls teen safety",
+        "Discord Nitro subscription"
       ]
     },
     {
@@ -160,10 +184,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://en.help.roblox.com/hc/en-us/articles/203313380",
       "search_queries": [
-        "Roblox parental controls update 2026",
-        "Roblox Account Restrictions changed",
-        "Roblox safety settings 2026",
-        "Roblox parent PIN update"
+        "Roblox account restrictions privacy",
+        "Roblox parental controls PIN",
+        "Roblox communication settings chat",
+        "Roblox Robux spending limit"
       ]
     },
     {
@@ -173,10 +197,10 @@
       "last_verified": "2026-05-05",
       "help_url": "https://support.google.com/youtube/answer/174084",
       "search_queries": [
-        "YouTube Restricted Mode update 2026",
-        "YouTube parental controls changed",
-        "YouTube Kids settings 2026",
-        "YouTube safety features update"
+        "YouTube Restricted Mode lock settings",
+        "YouTube Kids content level parental",
+        "YouTube channel comments settings",
+        "YouTube Premium subscription"
       ]
     }
   ]
