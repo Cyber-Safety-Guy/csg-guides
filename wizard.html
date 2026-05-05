@@ -344,21 +344,21 @@
     <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" class="site-logo">
     <div class="header-badge">Cyber Safety Guy</div>
     <h1>PARENTAL <span>CONTROLS</span></h1>
-    <p class="header-sub">Parental Controls Wizard + Full Guide Library</p>
+    <p class="header-sub">Setup Wizard + Full Guide Library</p>
     <p class="header-intro">Not sure where to start? Answer four questions and get a step-by-step setup guide for your child's exact device and apps.</p>
     <div class="hub-nav">
       <a href="index.html" target="_self">📄 Online Safety Guides</a>
       <a href="presentations.html" target="_self">🎤 Presentations</a>
       <a href="social.html" target="_self">📡 Social</a>
       <a href="csg_threat_radar.html" target="_self">🚨 Threat Radar</a>
-      <a href="wizard.html" target="_self" class="active">🛠️ Parental Controls Wizard</a>
+      <a href="wizard.html" target="_self" class="active">🛠️ Setup Wizard</a>
     </div>
   </header>
 
   <!-- ═══════════════════════════ WIZARD ═══════════════════════════ -->
   <section class="wizard-section" id="wizard">
     <div class="wizard-inner">
-      <p class="wizard-eyebrow">Parental Controls Wizard</p>
+      <p class="wizard-eyebrow">Parental Controls Setup Wizard</p>
       <h2 class="wizard-title">FIND THE RIGHT SETTINGS</h2>
       <p class="wizard-subtitle">Answer four quick questions. Get a personalised, plain-English setup guide.</p>
 
@@ -544,7 +544,10 @@
   <div class="library-section" id="guide-library">
     <div class="library-head">
       <span style="font-size:26px">🛡️</span>
-      <h2>Parental Controls Guides</h2>
+      <div>
+        <h2 id="libraryTitle">Parental Controls Guides</h2>
+        <p id="librarySubtitle" style="font-family:'Exo 2',sans-serif;font-size:13px;color:var(--grey);margin-top:4px;display:none;">Showing guides most relevant to your selection first.</p>
+      </div>
     </div>
     <div class="guide-grid" id="grid-parental-controls"></div>
   </div>
@@ -1359,6 +1362,8 @@ function showResults() {
       h.closest('.acc-item').classList.toggle('open');
     });
   });
+  // Update library to highlight guides relevant to the current selection
+  renderLibrary(state.D, state.P !== 'P0' ? state.P : null);
   window.scrollTo({ top: document.getElementById('wizard').offsetTop - 60, behavior: 'smooth' });
 }
 
@@ -1554,6 +1559,8 @@ function restartWizard() {
   document.querySelectorAll('.wizard-opt').forEach(b => b.classList.remove('selected'));
   document.querySelectorAll('.wizard-btn-next').forEach(b => b.classList.remove('visible'));
   document.getElementById('wizardResults').classList.remove('active');
+  // Reset library to default (no highlights)
+  renderLibrary(null, null);
   showCard(0);
 }
 
@@ -1571,27 +1578,105 @@ document.querySelectorAll('.wizard-opt').forEach(btn => {
 });
 
 // ═══════════════════════════════════════════════════════════════════
-// LOAD GUIDE LIBRARY (parental-controls category)
+// LOAD GUIDE LIBRARY — cache all guides, render dynamically
 // ═══════════════════════════════════════════════════════════════════
+
+let allGuides = []; // cached on first load
+
+// File-name keywords that identify parental controls guides
+const PARENTAL_KEYWORDS = [
+  'parental', 'android', 'iphone', 'ipad', 'screen_time', 'screen time',
+  'family_link', 'family link', 'xbox', 'playstation', 'nintendo', 'windows',
+  'mac', 'gaming'
+];
+
+// Map wizard device/platform IDs to filename fragments for smart matching
+const DEVICE_FILE_MAP = {
+  D1: ['iphone', 'ipad', 'ios'],
+  D2: ['android'],
+  D3: ['windows'],
+  D4: ['mac'],
+  D5: ['xbox', 'gaming'],
+  D6: ['playstation', 'gaming'],
+  D7: ['nintendo', 'gaming'],
+};
+const PLATFORM_FILE_MAP = {
+  P1: ['instagram'],
+  P2: ['snapchat'],
+  P3: ['tiktok'],
+  P4: ['whatsapp'],
+  P5: ['discord'],
+  P6: ['roblox'],
+  P7: ['youtube'],
+};
+
+function guideMatchesKeywords(g, keywords) {
+  const haystack = ((g.title || '') + ' ' + (g.file || '') + ' ' + (g.image || '') + ' ' + (g.desc || '')).toLowerCase();
+  return keywords.some(k => haystack.includes(k));
+}
+
+function isParentalGuide(g) {
+  return g.type === 'guide' && (
+    (g.category || '').toLowerCase().includes('parental') ||
+    guideMatchesKeywords(g, PARENTAL_KEYWORDS)
+  );
+}
+
+function renderGuideCard(g, highlight = false) {
+  const badge = g.isNew ? '<span class="new-badge">NEW</span>' : '';
+  const highlightStyle = highlight
+    ? 'border-top-color:var(--teal);box-shadow:0 0 0 1px rgba(66,206,208,0.3);'
+    : '';
+  const relevantBadge = highlight
+    ? '<span style="position:absolute;top:10px;left:10px;background:var(--teal);color:#0A1628;font-family:\'Exo 2\',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;">Relevant</span>'
+    : '';
+  return `
+    <a href="${g.link}" target="_blank" rel="noopener" class="guide-card" style="${highlightStyle}">
+      <div class="card-img-wrap" style="position:relative;">
+        <img src="images/${g.image}" alt="${g.title}">
+        ${badge}${relevantBadge}
+      </div>
+      <div class="card-body"><h3>${g.title}</h3><p>${g.desc}</p></div>
+      <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
+    </a>`;
+}
+
 async function loadLibrary() {
   try {
     const res = await fetch('guides.json');
-    const guides = await res.json();
-    const grid = document.getElementById('grid-parental-controls');
-    guides.filter(g => g.type === 'guide' && (g.id === 'parental-controls' || g.id === 'platform-guides' && (g.title.toLowerCase().includes('parental') || g.title.toLowerCase().includes('android') || g.title.toLowerCase().includes('iphone'))))
-      .forEach(g => {
-        const badge = g.isNew ? '<span class="new-badge">NEW</span>' : '';
-        grid.insertAdjacentHTML('beforeend', `
-          <a href="${g.link}" target="_blank" rel="noopener" class="guide-card">
-            <div class="card-img-wrap">
-              <img src="images/${g.image}" alt="${g.title}">
-              ${badge}
-            </div>
-            <div class="card-body"><h3>${g.title}</h3><p>${g.desc}</p></div>
-            <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
-          </a>`);
-      });
+    allGuides = await res.json();
+    renderLibrary(null, null); // default — show all parental guides, no highlights
   } catch(e) { console.error('Guide library load error:', e); }
+}
+
+function renderLibrary(deviceId, platformId) {
+  const grid = document.getElementById('grid-parental-controls');
+  const subtitle = document.getElementById('librarySubtitle');
+  if (!grid) return;
+  grid.innerHTML = '';
+
+  const parental = allGuides.filter(g => isParentalGuide(g));
+  if (!parental.length) return;
+
+  const hasSelection = deviceId || platformId;
+  subtitle.style.display = hasSelection ? 'block' : 'none';
+
+  if (!hasSelection) {
+    // Default — render all parental guides, no highlights
+    parental.forEach(g => grid.insertAdjacentHTML('beforeend', renderGuideCard(g, false)));
+    return;
+  }
+
+  // Split into: highlighted (matches device or platform) and rest
+  const deviceKeywords  = DEVICE_FILE_MAP[deviceId]   || [];
+  const platformKeywords = PLATFORM_FILE_MAP[platformId] || [];
+  const allRelevant = [...deviceKeywords, ...platformKeywords];
+
+  const highlighted = parental.filter(g => guideMatchesKeywords(g, allRelevant));
+  const rest        = parental.filter(g => !guideMatchesKeywords(g, allRelevant));
+
+  highlighted.forEach(g => grid.insertAdjacentHTML('beforeend', renderGuideCard(g, true)));
+  rest.forEach(g        => grid.insertAdjacentHTML('beforeend', renderGuideCard(g, false)));
 }
 
 // Back to top
