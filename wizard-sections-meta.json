@@ -1,0 +1,183 @@
+{
+  "_comment": "Tracks last-verified dates and search queries for each wizard section. Update last_verified when you confirm steps are accurate.",
+  "meta": {
+    "version": "1.0",
+    "last_full_review": "2026-05-05",
+    "review_frequency_days": 30
+  },
+  "sections": [
+    {
+      "id": "D1",
+      "label": "iPhone & iPad",
+      "tool": "iOS Screen Time",
+      "last_verified": "2026-05-05",
+      "help_url": "https://support.apple.com/en-gb/105120",
+      "search_queries": [
+        "iOS Screen Time parental controls update 2026",
+        "iPhone Screen Time settings changed site:support.apple.com",
+        "Apple Screen Time new features"
+      ]
+    },
+    {
+      "id": "D2",
+      "label": "Android",
+      "tool": "Google Family Link",
+      "last_verified": "2026-05-05",
+      "help_url": "https://support.google.com/families",
+      "search_queries": [
+        "Google Family Link update 2026",
+        "Family Link new features site:support.google.com",
+        "Google Family Link parental controls changed"
+      ]
+    },
+    {
+      "id": "D3",
+      "label": "Windows PC",
+      "tool": "Microsoft Family Safety",
+      "last_verified": "2026-05-05",
+      "help_url": "https://support.microsoft.com/en-gb/topic/family-safety",
+      "search_queries": [
+        "Microsoft Family Safety update 2026",
+        "Windows parental controls changed site:support.microsoft.com",
+        "Microsoft Family Safety new features"
+      ]
+    },
+    {
+      "id": "D4",
+      "label": "Mac",
+      "tool": "macOS Screen Time",
+      "last_verified": "2026-05-05",
+      "help_url": "https://support.apple.com/en-gb/guide/mac-help/mchledf09187",
+      "search_queries": [
+        "macOS Screen Time parental controls update 2026",
+        "Mac Screen Time settings changed site:support.apple.com",
+        "macOS parental controls new features"
+      ]
+    },
+    {
+      "id": "D5",
+      "label": "Xbox",
+      "tool": "Xbox Family Settings",
+      "last_verified": "2026-05-05",
+      "help_url": "https://www.xbox.com/en-GB/apps/family-settings-app",
+      "search_queries": [
+        "Xbox Family Settings update 2026",
+        "Xbox parental controls changed site:support.xbox.com",
+        "Xbox Family Settings new features"
+      ]
+    },
+    {
+      "id": "D6",
+      "label": "PlayStation",
+      "tool": "PlayStation Family Management",
+      "last_verified": "2026-05-05",
+      "help_url": "https://www.playstation.com/en-gb/support/account/psn-family-management",
+      "search_queries": [
+        "PlayStation Family Management update 2026",
+        "PlayStation parental controls changed site:playstation.com",
+        "PSN family management new features"
+      ]
+    },
+    {
+      "id": "D7",
+      "label": "Nintendo Switch",
+      "tool": "Nintendo Switch Parental Controls",
+      "last_verified": "2026-05-05",
+      "help_url": "https://www.nintendo.co.uk/Hardware/Nintendo-Switch-Parental-Controls",
+      "search_queries": [
+        "Nintendo Switch Parental Controls update 2026",
+        "Nintendo parental controls changed site:nintendo.co.uk",
+        "Switch parental controls app new features"
+      ]
+    },
+    {
+      "id": "P1",
+      "label": "Instagram",
+      "tool": "Instagram Family Centre",
+      "last_verified": "2026-05-05",
+      "help_url": "https://help.instagram.com/families",
+      "search_queries": [
+        "Instagram Family Centre update 2026",
+        "Instagram parental controls privacy settings changed",
+        "Instagram safety features update site:about.instagram.com"
+      ]
+    },
+    {
+      "id": "P2",
+      "label": "Snapchat",
+      "tool": "Snapchat Family Centre",
+      "last_verified": "2026-05-05",
+      "help_url": "https://values.snap.com/en-GB/privacy/transparency/family-center",
+      "search_queries": [
+        "Snapchat Family Centre update 2026",
+        "Snapchat parental controls settings changed",
+        "Snap Map Ghost Mode update",
+        "Snapchat safety features 2026"
+      ]
+    },
+    {
+      "id": "P3",
+      "label": "TikTok",
+      "tool": "TikTok Family Pairing",
+      "last_verified": "2026-05-05",
+      "help_url": "https://support.tiktok.com/en/account-and-privacy/account-privacy-settings/family-pairing",
+      "search_queries": [
+        "TikTok Family Pairing update 2026",
+        "TikTok parental controls settings changed",
+        "TikTok Screen Time management update",
+        "TikTok safety features 2026"
+      ]
+    },
+    {
+      "id": "P4",
+      "label": "WhatsApp",
+      "tool": "WhatsApp Privacy Settings",
+      "last_verified": "2026-05-05",
+      "help_url": "https://faq.whatsapp.com/general/security-and-privacy",
+      "search_queries": [
+        "WhatsApp privacy settings update 2026",
+        "WhatsApp group chat privacy changed",
+        "WhatsApp safety settings 2026"
+      ]
+    },
+    {
+      "id": "P5",
+      "label": "Discord",
+      "tool": "Discord Safety Settings",
+      "last_verified": "2026-05-05",
+      "help_url": "https://discord.com/safety/parents",
+      "search_queries": [
+        "Discord parental controls update 2026",
+        "Discord safety settings changed",
+        "Discord Safe Direct Messaging update",
+        "Discord teen safety features 2026"
+      ]
+    },
+    {
+      "id": "P6",
+      "label": "Roblox",
+      "tool": "Roblox Parental Controls",
+      "last_verified": "2026-05-05",
+      "help_url": "https://en.help.roblox.com/hc/en-us/articles/203313380",
+      "search_queries": [
+        "Roblox parental controls update 2026",
+        "Roblox Account Restrictions changed",
+        "Roblox safety settings 2026",
+        "Roblox parent PIN update"
+      ]
+    },
+    {
+      "id": "P7",
+      "label": "YouTube",
+      "tool": "YouTube Restricted Mode",
+      "last_verified": "2026-05-05",
+      "help_url": "https://support.google.com/youtube/answer/174084",
+      "search_queries": [
+        "YouTube Restricted Mode update 2026",
+        "YouTube parental controls changed",
+        "YouTube Kids settings 2026",
+        "YouTube safety features update"
+      ]
+    }
+  ]
+}
