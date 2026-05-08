@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Safety Guides — Cyber Safety Guy</title>
+<<<<<<< HEAD
   <link rel="canonical" href="https://guides.cybersafetyguy.com/">
   <meta name="description" content="Free child online safety guides for parents, teachers and safeguarding professionals. From Cyber Safety Guy.">
   <meta property="og:title" content="Online Safety Guides — Cyber Safety Guy">
@@ -363,6 +364,11 @@
     .request-section-confirm.visible { display: block; }
 }    
   </style>
+=======
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+>>>>>>> 644ab0af551fc443557d35d0382dbc9d313a2568
 </head>
 <body>
 
@@ -370,6 +376,7 @@
 
   <nav class="jump-nav">
     <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
+<<<<<<< HEAD
     <span class="jump-nav-label">Jump to</span>
     <a href="#platform-guides">📱 Platform Guides</a>
     <a href="#online-risks">🧠 Online Risks</a>
@@ -512,11 +519,57 @@
     <div class="site-footer-bar">
     <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
     &nbsp;—&nbsp;All content free to access and share. Subscription proceeds donated to Childline (NSPCC).
+=======
+    <span class="jump-nav-label">Navigate</span>
+    <a href="#content-section">📁 Resources</a>
+  </nav>
+
+  <header class="site-header">
+    <img src="images/CSG_logo.png" alt="Logo" class="site-logo">
+    <div class="header-badge">Cyber Safety Guy</div>
+    <h1>BRAND <span>TITLE HERE</span></h1>
+    <p class="header-sub">cybersafetyguy.com</p>
+    <p class="header-intro">
+      Your clean canvas is ready. Use this space to introduce your primary mission or latest update.
+    </p>
+    
+    <div class="page-nav">
+      <a class="page-nav-btn active">📄 Current Page</a>
+      <a href="#" class="page-nav-btn go">🎬 Link Two</a>
+      <a href="#" class="page-nav-btn go">🚨 Link Three</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="category-section" id="content-section">
+      <div class="category-header">
+        <span class="category-icon">📁</span>
+        <h2 class="category-title">Section Title</h2>
+        <span class="category-count">0 items</span>
+      </div>
+      <p class="category-desc">Describe what will appear in this modular grid below.</p>
+      
+      <div class="guide-grid" id="main-grid">
+        </div>
+    </section>
+  </main>
+
+  <footer class="childline-footer">
+    <p class="childline-eyebrow">Support Resources</p>
+    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
+    <p class="childline-url">childline.org.uk</p>
+  </footer>
+
+  <div class="site-footer-bar">
+    <a href="https://cybersafetyguy.com">cybersafetyguy.com</a>
+    &nbsp;—&nbsp;Framework v2.0
+>>>>>>> 644ab0af551fc443557d35d0382dbc9d313a2568
   </div>
 
   <button class="back-to-top" id="backToTop">↑ Top</button>
 
   <script>
+<<<<<<< HEAD
     async function loadGuides() {
       try {
         const response = await fetch('guides.json');
@@ -575,11 +628,15 @@
       });
     }
 
+=======
+    // Minimal Framework Logic
+>>>>>>> 644ab0af551fc443557d35d0382dbc9d313a2568
     const backToTopBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       backToTopBtn.classList.toggle('visible', window.scrollY > 500);
     });
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+<<<<<<< HEAD
 
     loadGuides();
 
@@ -684,3 +741,8 @@
 </script>
 </body>
 </html>
+=======
+  </script>
+</body>
+</html>
+>>>>>>> 644ab0af551fc443557d35d0382dbc9d313a2568
