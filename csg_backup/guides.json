@@ -345,6 +345,36 @@
     ]
   },
   {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Android Parental Controls",
+    "desc": "Google Family Link is a free app that gives parents genuine control over what their child does on an Android phone or tablet.",
+    "image": "CSG_Android.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Android_parental_controls.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Multiple simultaneous platform risks",
+      "Cross-platform grooming and contact",
+      "Parents unaware of full digital activity"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "iPhone ipad Parental Controls",
+    "desc": "Screen Time is Apple’s built-in parental controls system — no separate app needed",
+    "image": "CSG_Ios.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_iPhone_iPad_parental_controls.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Multiple simultaneous platform risks",
+      "Cross-platform grooming and contact",
+      "Parents unaware of full digital activity"
+    ]
+  },
+  {
     "id": "school-presentations",
     "type": "presentation",
     "title": "For Parents & Teachers",

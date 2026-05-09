@@ -3,493 +3,619 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Safety Guides — Cyber Safety Guy</title>
+  <title>Cyber Safety Guy - Free Resources for Parents, Teachers &amp; Safeguarding Professionals</title>
   <link rel="canonical" href="https://guides.cybersafetyguy.com/">
-  <meta name="description" content="Free child online safety guides for parents, teachers and safeguarding professionals. From Cyber Safety Guy.">
-  <meta property="og:title" content="Online Safety Guides — Cyber Safety Guy">
-  <meta property="og:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals. Plain-English advice you can download and share.">
+  <meta name="description" content="Free child online safety guides, parental controls setup, live threat intelligence and school presentations. From Cyber Safety Guy.">
+  <meta property="og:title" content="Cyber Safety Guy - Free Online Safety Resources">
+  <meta property="og:description" content="Free child online safety guides, parental controls wizard, live threat radar and school presentations. Education and conversation, not fear.">
   <meta property="og:url" content="https://guides.cybersafetyguy.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://guides.cybersafetyguy.com/images/CSG_logo.png">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ── App Safety Checker ── */
-    .checker-section {
+    /* ── LANDING PAGE SPECIFIC STYLES ── */
+
+    /* Hero overrides — taller, more breathing room */
+    .hero {
       background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
-      border-bottom: 1px solid rgba(66,206,208,0.15);
-      padding: 48px 24px 52px;
-    }
-
-    .checker-inner {
-      max-width: 700px;
-      margin: 0 auto;
+      border-bottom: 2px solid var(--teal);
+      padding: 64px 24px 56px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .checker-eyebrow {
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% -10%, rgba(66,206,208,0.14) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-mission {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--off-white);
+      line-height: 1.7;
+      opacity: 0.9;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .hero-mission em {
+      color: var(--teal);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .hero-attribution {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(66,206,208,0.06);
+      border: 1px solid rgba(66,206,208,0.2);
+      border-radius: 4px;
+      padding: 14px 22px;
+      margin-bottom: 36px;
+      max-width: 680px;
+    }
+
+    .hero-attribution img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1px solid rgba(66,206,208,0.3);
+    }
+
+    .attribution-text {
+      text-align: left;
+    }
+
+    .attribution-name {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .attribution-bio {
+      font-size: 12px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid rgba(66,206,208,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 120px;
+      padding: 14px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(66,206,208,0.15);
+      background: rgba(66,206,208,0.04);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
       font-family: 'Exo 2', sans-serif;
       font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    /* ── FEATURE GRID ── */
+    .features-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 24px 24px;
+    }
+
+    .section-eyebrow {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--teal);
-      margin-bottom: 10px;
-    }
-
-    .checker-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(18px, 3vw, 26px);
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 8px;
-      letter-spacing: 2px;
-    }
-
-    .checker-subtitle {
-      color: var(--grey);
-      font-size: 14px;
       margin-bottom: 28px;
-      font-family: 'Exo 2', sans-serif;
-    }
-
-    .checker-form {
       display: flex;
-      gap: 10px;
-      max-width: 560px;
-      margin: 0 auto 32px;
+      align-items: center;
+      gap: 12px;
     }
 
-    .checker-input {
+    .section-eyebrow::after {
+      content: '';
       flex: 1;
-      background: rgba(10,14,20,0.8);
-      border: 1px solid rgba(66,206,208,0.4);
-      border-radius: 4px;
-      color: var(--off-white);
-      font-family: 'Exo 2', sans-serif;
-      font-size: 15px;
-      padding: 14px 18px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      height: 1px;
+      background: rgba(66,206,208,0.15);
     }
 
-    .checker-input::placeholder { color: var(--grey); }
-
-    .checker-input:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 16px rgba(66,206,208,0.15);
-    }
-
-    .checker-btn {
-      background: var(--teal);
-      color: #0A1628;
-      border: none;
-      border-radius: 4px;
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 14px 22px;
-      cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s;
-      white-space: nowrap;
-    }
-
-    .checker-btn:hover {
-      background: #5ADFE1;
-      box-shadow: 0 0 16px rgba(66,206,208,0.3);
-    }
-
-    /* Result card */
-    .checker-result {
-      display: none;
-      background: var(--navy-card);
-      border: 1px solid rgba(66,206,208,0.25);
-      border-top: 3px solid var(--teal);
-      border-radius: 6px;
-      padding: 24px;
-      text-align: left;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .checker-result.visible { display: block; }
-
-    .result-found .result-label {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 8px;
-    }
-
-    .result-found h3 {
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .result-found p {
-      color: var(--grey);
-      font-size: 14px;
-      line-height: 1.6;
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
       margin-bottom: 20px;
     }
 
-    .result-open-btn {
-      display: inline-block;
-      background: rgba(66,206,208,0.08);
-      border: 1px solid var(--teal);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 10px 20px;
-      border-radius: 3px;
+    /* Feature card */
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--navy-card);
+      border: 1px solid rgba(66,206,208,0.12);
+      border-top: 3px solid var(--teal);
+      border-radius: 6px;
+      overflow: hidden;
       text-decoration: none;
-      transition: background 0.2s;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .result-open-btn:hover { background: rgba(66,206,208,0.18); }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      border-color: rgba(66,206,208,0.35);
+    }
 
-    /* Not found / request */
-    .result-notfound .notfound-label {
+    .feature-card.coming-soon {
+      border-top-color: var(--grey);
+      opacity: 0.7;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .feature-card.coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .card-inner {
+      padding: 24px 24px 16px;
+      flex: 1;
+    }
+
+    .card-icon-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .card-icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .card-count-badge {
       font-family: 'Exo 2', sans-serif;
       font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 8px;
-    }
-
-    .result-notfound h3 {
-      font-family: 'Exo 2', sans-serif;
       font-weight: 700;
-      font-size: 17px;
-      color: #fff;
-      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(66,206,208,0.08);
+      border: 1px solid rgba(66,206,208,0.25);
+      padding: 4px 10px;
+      border-radius: 2px;
+      white-space: nowrap;
     }
 
-    .result-notfound p {
+    .card-count-badge.live {
+      color: #C0392B;
+      background: rgba(192,57,43,0.08);
+      border-color: rgba(192,57,43,0.3);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #C0392B;
+      animation: ldot 1.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes ldot {
+      0%,100% { opacity: 1; box-shadow: 0 0 4px #C0392B; }
+      50% { opacity: 0.2; box-shadow: none; }
+    }
+
+    .card-count-badge.coming {
       color: var(--grey);
+      background: rgba(123,158,160,0.06);
+      border-color: rgba(123,158,160,0.2);
+    }
+
+    .card-title {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 800;
+      font-size: 19px;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .card-desc {
       font-size: 14px;
+      color: var(--grey);
+      line-height: 1.65;
       margin-bottom: 18px;
     }
 
-    .request-form input[type="text"] {
-      display: none;
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
     }
 
-    .request-btn {
-      background: rgba(66,206,208,0.06);
-      border: 1px solid rgba(66,206,208,0.3);
-      color: var(--teal);
+    .card-tag {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: rgba(66,206,208,0.7);
+      border: 1px solid rgba(66,206,208,0.18);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .card-tag.grey-tag {
+      color: rgba(123,158,160,0.6);
+      border-color: rgba(123,158,160,0.15);
+    }
+
+    .card-cta {
+      border-top: 1px solid rgba(66,206,208,0.1);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cta-label {
       font-family: 'Exo 2', sans-serif;
       font-weight: 700;
       font-size: 12px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 10px 20px;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: background 0.2s;
+      color: var(--teal);
     }
 
-    .request-btn:hover { background: rgba(66,206,208,0.14); }
+    .cta-label.grey-label { color: var(--grey); }
 
-    .request-sent {
-      display: none;
-      color: #4CAF50;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      padding: 10px 0;
+    .cta-arrow {
+      font-size: 16px;
+      color: var(--teal);
+      transition: transform 0.2s;
     }
 
-    .request-sent.visible { display: block; }
+    .cta-arrow.grey-arrow { color: var(--grey); }
 
-    @media (max-width: 520px) {
-      .checker-form { flex-direction: column; }
-      .checker-btn { width: 100%; }
+    .feature-card:hover .cta-arrow { transform: translateX(4px); }
+
+    /* ── DONATION STRIP ── */
+    .donation-strip {
+      max-width: 1200px;
+      margin: 0 auto 0;
+      padding: 0 24px 56px;
     }
 
-    .result-meta {
+    .donation-inner {
+      background: var(--navy-card);
+      border: 1px solid rgba(192,57,43,0.25);
+      border-left: 4px solid var(--childline-red);
+      border-radius: 4px;
+      padding: 20px 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .result-age-badge {
-      display: inline-block;
-      background: rgba(212,168,67,0.12);
-      border: 1px solid rgba(212,168,67,0.4);
-      color: #D4A843;
+    .donation-icon { font-size: 22px; flex-shrink: 0; }
+
+    .donation-text {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .donation-title {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+
+    .donation-desc {
+      font-size: 13px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    .donation-cta {
       font-family: 'Exo 2', sans-serif;
       font-weight: 700;
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 4px 10px;
+      color: var(--childline-red);
+      border: 1px solid rgba(192,57,43,0.4);
+      background: rgba(192,57,43,0.06);
+      padding: 10px 18px;
       border-radius: 3px;
-    }
-
-    .result-risks {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .result-risks li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--off-white);
-      line-height: 1.5;
-    }
-
-    .result-risks li::before {
-      content: '⚠';
-      color: #D4A843;
-      flex-shrink: 0;
-      font-size: 12px;
-      margin-top: 2px;
-    }
-
-    /* ── Request a Guide section ── */
-    .request-section {
-      margin-top: 32px;
-      background: rgba(10,14,20,0.5);
-      border: 1px solid rgba(66,206,208,0.15);
-      border-left: 3px solid var(--teal);
-      border-radius: 4px;
-      padding: 32px;
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 0;
-    }
-
-    .request-section-eyebrow {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 8px;
-    }
-
-    .request-section h3 {
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .request-section p {
-      color: var(--grey);
-      font-size: 14px;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .request-section-form {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .request-section-input {
-      flex: 1;
-      min-width: 200px;
-      background: rgba(10,14,20,0.8);
-      border: 1px solid rgba(66,206,208,0.3);
-      border-radius: 4px;
-      color: var(--off-white);
-      font-family: 'Exo 2', sans-serif;
-      font-size: 14px;
-      padding: 12px 16px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .request-section-input:focus {
-      border-color: var(--teal);
-    }
-
-    .request-section-input::placeholder { color: var(--grey); }
-
-    .request-section-btn {
-      background: rgba(66,206,208,0.08);
-      border: 1px solid var(--teal);
-      color: var(--teal);
-      font-family: 'Exo 2', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 12px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.2s;
+      text-decoration: none;
       white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
     }
 
-    .request-section-btn:hover { background: rgba(66,206,208,0.18); }
+    .donation-cta:hover { background: rgba(192,57,43,0.14); }
 
-    .request-section-confirm {
-      display: none;
-      color: #4CAF50;
-      font-family: 'Exo 2', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      margin-top: 12px;
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .stats-strip { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(66,206,208,0.1); }
+      .stat-item:last-child { border-bottom: none; }
+      .hero-attribution { flex-direction: column; text-align: center; }
+      .attribution-text { text-align: center; }
     }
-
-    .request-section-confirm.visible { display: block; }
   </style>
 </head>
-<body>
 
+<body>
   <div class="top-bar"></div>
 
   <nav class="jump-nav">
-    <a href="https://www.cybersafetyguy.com" class="jump-nav-home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
-    <span class="jump-nav-label">Jump to</span>
-    <a href="#platform-guides">📱 Platform Guides</a>
-    <a href="#online-risks">🧠 Online Risks</a>
-    <a href="#parental-controls">🛡️ Parental Controls</a>
-    <a href="#further-resources">📁 Further Resources</a>
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      CSG
+    </a>
+    <span class="jump-nav-label">Tools</span>
+    <a href="guides.html">📄 Guides</a>
+    <a href="wizard.html">🛠️ Controls Wizard</a>
+    <a href="csg_threat_radar.html">🚨 Threat Radar</a>
+    <a href="presentations.html">🎤 Presentations</a>
+    <a href="social.html">📡 Social</a>
   </nav>
 
-  <header class="site-header">
-    <img src="images/CSG_logo.png" alt="Cyber Safety Guy Logo" class="site-logo">
+  <!-- ═══ HERO ═══ -->
+  <header class="hero">
+    <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo" class="site-logo">
     <div class="header-badge">Cyber Safety Guy</div>
-    <h1>ONLINE <span>SAFETY GUIDES</span></h1>
-    <p class="header-sub">cybersafetyguy.com</p>
-    <p class="header-intro">
-      Every guide on this page is free. No sign-up, no paywall.
-      Practical, plain-English advice for parents, teachers, and safeguarding professionals.
-      Click any guide to open it directly in your browser.
+    <h1 style="font-family:'Orbitron',sans-serif;font-size:clamp(28px,5.5vw,52px);font-weight:900;color:#fff;letter-spacing:3px;line-height:1.1;margin-bottom:8px;">
+      FREE TOOLS <span style="color:var(--teal);text-shadow:0 0 24px rgba(66,206,208,0.55);">FOR PARENTS</span>
+    </h1>
+    <p style="font-family:'Exo 2',sans-serif;color:var(--grey);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:28px;">
+      Guides &nbsp;|&nbsp; Parental Controls &nbsp;|&nbsp; Live Intelligence &nbsp;|&nbsp; Presentations
     </p>
-    <div class="guide-count-badge">
-      <strong id="totalCount">0</strong> safety guides available
+
+    <p class="hero-mission">
+      The majority of online harm to children is preventable -
+      <em>not through spying or fear, but through education and conversation.</em>
+      Everything on this site exists to make sure you're never caught off guard.
+    </p>
+
+    <div class="hero-attribution">
+      <img src="images/CSG_logo.png" alt="Dale - Cyber Safety Guy">
+      <div class="attribution-text">
+        <p class="attribution-name">Dale - Aka Cyber Safety Guy</p>
+        <p class="attribution-bio">RAF Police &amp; digital forensics background &nbsp;|&nbsp; Writing about online child safety for over a decade &nbsp;|&nbsp; All subscription proceeds donated to Childline</p>
+      </div>
     </div>
-    <div class="page-nav">
-      <a class="page-nav-btn active">📄 Online Safety Guides</a>
-      <a href="presentations.html" target="_self" class="page-nav-btn go">🎬 Presentations</a>
-      <a href="social.html" target="_self" class="page-nav-btn go">📡 Social</a>
-      <a href="csg_threat_radar.html" target="_self" class="page-nav-btn go">🚨 Threat Radar</a>
+
+    <div class="stats-strip" id="statsStrip">
+      <div class="stat-item">
+        <div class="stat-num" id="statGuides">—</div>
+        <div class="stat-label">Free Guides</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="statPres">—</div>
+        <div class="stat-label">Presentations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">11</div>
+        <div class="stat-label">Live Sources</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">£0</div>
+        <div class="stat-label">Cost to Access</div>
+      </div>
     </div>
   </header>
 
-  <section class="checker-section">
-    <div class="checker-inner">
-      <p class="checker-eyebrow">App Safety Checker</p>
-      <h2 class="checker-title">CHECK ANY APP IN SECONDS</h2>
-      <p class="checker-subtitle">Type an app name to get the real risks and my full guide, free.</p>
-      <div class="checker-form">
-        <input type="text" class="checker-input" id="checkerInput" placeholder="e.g. TikTok, Roblox, Snapchat..." autocomplete="off">
-        <button class="checker-btn" onclick="runChecker()">Check App</button>
-      </div>
+  <!-- ═══ FEATURE GRID ═══ -->
+  <section class="features-section">
+    <p class="section-eyebrow">Available now</p>
 
-      <!-- Result: Found -->
-      <div class="checker-result result-found" id="resultFound">
-        <p class="result-label">✓ Guide Available</p>
-        <h3 id="resultTitle"></h3>
-        <div class="result-meta">
-          <span class="result-age-badge" id="resultAge"></span>
+    <div class="feature-grid">
+
+      <!-- Online Safety Guides -->
+      <a href="guides.html" class="feature-card">
+        <div class="card-inner">
+          <div class="card-icon-row">
+            <span class="card-icon">📄</span>
+            <span class="card-count-badge" id="guidesCount">Loading…</span>
+          </div>
+          <h2 class="card-title">Online Safety Guides</h2>
+          <p class="card-desc">Free, plain-English guides covering the platforms your children are actually using - what the risks are and what to do about them. No sign-up, no paywall.</p>
+          <div class="card-tags">
+            <span class="card-tag">TikTok</span>
+            <span class="card-tag">Snapchat</span>
+            <span class="card-tag">Roblox</span>
+            <span class="card-tag">Grooming</span>
+            <span class="card-tag">AI Risks</span>
+            <span class="card-tag">Sextortion</span>
+          </div>
         </div>
-        <ul class="result-risks" id="resultRisks"></ul>
-        <p id="resultDesc"></p>
-        <a href="#" target="_blank" rel="noopener" class="result-open-btn" id="resultLink">Open Full Guide →</a>
+        <div class="card-cta">
+          <span class="cta-label">Browse Guides</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Parental Controls Wizard -->
+      <a href="wizard.html" class="feature-card">
+        <div class="card-inner">
+          <div class="card-icon-row">
+            <span class="card-icon">🛠️</span>
+            <span class="card-count-badge">Step-by-step</span>
+          </div>
+          <h2 class="card-title">Parental Controls Wizard</h2>
+          <p class="card-desc">Answer four questions - child's age, device, app, concern - and get a personalised, plain-English setup guide. Every major device and platform covered.</p>
+          <div class="card-tags">
+            <span class="card-tag">iPhone</span>
+            <span class="card-tag">Android</span>
+            <span class="card-tag">Xbox</span>
+            <span class="card-tag">PlayStation</span>
+            <span class="card-tag">Windows</span>
+            <span class="card-tag">Nintendo</span>
+          </div>
+        </div>
+        <div class="card-cta">
+          <span class="cta-label">Start Wizard</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Threat Radar -->
+      <a href="csg_threat_radar.html" class="feature-card">
+        <div class="card-inner">
+          <div class="card-icon-row">
+            <span class="card-icon">🚨</span>
+            <span class="card-count-badge live"><span class="live-dot"></span>Live Feed</span>
+          </div>
+          <h2 class="card-title">CSG Threat Radar</h2>
+          <p class="card-desc">Live stories pulled from 11 confirmed sources - BBC, The Guardian, Gov.uk, Safer Internet Centre, Childnet, EU Digital Strategy, Europol and more. Filtered automatically for child online safety relevance.</p>
+          <div class="card-tags">
+            <span class="card-tag">News Intelligence</span>
+            <span class="card-tag">11 Sources</span>
+            <span class="card-tag">Auto-classified</span>
+          </div>
+        </div>
+        <div class="card-cta">
+          <span class="cta-label">Scan for Threats</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Presentations -->
+      <a href="presentations.html" class="feature-card">
+        <div class="card-inner">
+          <div class="card-icon-row">
+            <span class="card-icon">🎤</span>
+            <span class="card-count-badge" id="presCount">Loading…</span>
+          </div>
+          <h2 class="card-title">School Presentations</h2>
+          <p class="card-desc">Free, ready-to-use presentations for schools, youth organisations and parent evenings. Separate versions for parents and teachers, under-13s, and teens aged 13+.</p>
+          <div class="card-tags">
+            <span class="card-tag">Parents &amp; Teachers</span>
+            <span class="card-tag">Under 13s</span>
+            <span class="card-tag">Teens 13+</span>
+          </div>
+        </div>
+        <div class="card-cta">
+          <span class="cta-label">View Presentations</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Social -->
+      <a href="social.html" class="feature-card">
+        <div class="card-inner">
+          <div class="card-icon-row">
+            <span class="card-icon">📡</span>
+            <span class="card-count-badge">6 Channels</span>
+          </div>
+          <h2 class="card-title">Find Me on Social</h2>
+          <p class="card-desc">Follow on Substack, Instagram, LinkedIn, BlueSky and YouTube for news, guides and updates. Or reach out directly by email - schools, media and safeguarding enquiries welcome.</p>
+          <div class="card-tags">
+            <span class="card-tag">Substack</span>
+            <span class="card-tag">Instagram</span>
+            <span class="card-tag">LinkedIn</span>
+            <span class="card-tag">BlueSky</span>
+          </div>
+        </div>
+        <div class="card-cta">
+          <span class="cta-label">Follow &amp; Connect</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Resource Library — Coming Soon -->
+      <div class="feature-card coming-soon">
+        <div class="card-inner">
+          <div class="card-icon-row">
+            <span class="card-icon">📦</span>
+            <span class="card-count-badge coming">Coming Soon</span>
+          </div>
+          <h2 class="card-title">Resource Library</h2>
+          <p class="card-desc">A curated, downloadable library of CSG resources - printable guides, posters, conversation starter cards and school handouts. All free to download and share.</p>
+          <div class="card-tags">
+            <span class="card-tag grey-tag">Printables</span>
+            <span class="card-tag grey-tag">Posters</span>
+            <span class="card-tag grey-tag">Conversation Cards</span>
+            <span class="card-tag grey-tag">School Handouts</span>
+          </div>
+        </div>
+        <div class="card-cta">
+          <span class="cta-label grey-label">In Development</span>
+          <span class="cta-arrow grey-arrow">—</span>
+        </div>
       </div>
 
-      <!-- Result: Not Found -->
-      <div class="checker-result result-notfound" id="resultNotFound">
-        <p class="notfound-label">Not yet covered</p>
-        <h3 id="notFoundTitle"></h3>
-        <p>I haven't published a guide for this app yet. Request one below and I'll prioritise it.</p>
-        <form class="request-form" id="requestForm" action="https://formspree.io/f/meeneedd" method="POST">
-          <input type="hidden" name="app_name" id="requestAppName">
-          <input type="hidden" name="_subject" id="requestSubject" value="Guide Request">
-          <button type="submit" class="request-btn">📩 Request a Guide for This App</button>
-        </form>
-        <p class="request-sent" id="requestSent">✓ Request sent — thank you! I'll add this to the list.</p>
-      </div>
     </div>
   </section>
 
-  <main class="main">
-    <section class="category-section" id="platform-guides">
-      <div class="category-header">
-        <span class="category-icon">📱</span>
-        <h2 class="category-title">Platform Guides</h2>
-        <span class="category-count" id="count-platform-guides">0 guides</span>
+  <!-- ═══ DONATION STRIP ═══ -->
+  <div class="donation-strip">
+    <div class="donation-inner">
+      <span class="donation-icon">❤️</span>
+      <div class="donation-text">
+        <p class="donation-title">Every subscription goes directly to Childline</p>
+        <p class="donation-desc">All income from Cyber Safety Guy Substack subscriptions is donated to Childline. If this site has been useful to you, a subscription is the most direct way to support the work - and a child.</p>
       </div>
-      <p class="category-desc">The apps and platforms your children are actually using — what the risks are, and what you can do about them.</p>
-      <div class="guide-grid" id="grid-platform-guides"></div>
-    </section>
-
-    <section class="category-section" id="online-risks">
-      <div class="category-header">
-        <span class="category-icon">🧠</span>
-        <h2 class="category-title">Understanding Online Risks</h2>
-        <span class="category-count" id="count-online-risks">0 guides</span>
-      </div>
-      <p class="category-desc">The threats that don't always come with obvious warning signs, explained clearly.</p>
-      <div class="guide-grid" id="grid-online-risks"></div>
-    </section>
-
-    <section class="category-section" id="parental-controls">
-      <div class="category-header">
-        <span class="category-icon">🛡️</span>
-        <h2 class="category-title">Parental Controls</h2>
-        <span class="category-count" id="count-parental-controls">0 guides</span>
-      </div>
-      <p class="category-desc">Practical guidance for managing your child's online world at home.</p>
-      <div class="guide-grid" id="grid-parental-controls"></div>
-    </section>
-
-    <section class="category-section" id="further-resources">
-      <div class="category-header">
-        <span class="category-icon">📁</span>
-        <h2 class="category-title">Further Resources</h2>
-        <span class="category-count" id="count-further-resources">0 guides</span>
-      </div>
-      <p class="category-desc">Essential reading that belongs in every parent's and teacher's toolkit.</p>
-      <div class="guide-grid" id="grid-further-resources"></div>
-    </section>
-
-    <div class="request-section">
-      <p class="request-section-eyebrow">📩 Can't find what you're looking for?</p>
-      <h3>Request a Guide</h3>
-      <p>If an app isn't covered yet, let me know. I prioritise guides based on what parents and teachers are actually asking about.</p>
-      <form class="request-section-form" id="standaloneRequestForm" action="https://formspree.io/f/meeneedd" method="POST">
-        <input type="text" name="app_name" class="request-section-input" id="standaloneAppInput" placeholder="e.g. Kick, Discord, Yubo..." required>
-        <input type="hidden" name="_subject" value="Guide Request from Guides Page">
-        <button type="submit" class="request-section-btn">📩 Request a Guide</button>
-      </form>
-      <p class="request-section-confirm" id="standaloneConfirm">✓ Request sent — thank you! I'll prioritise it.</p>
+      <a href="https://cybersafetyguy.substack.com/subscribe" target="_blank" rel="noopener" class="donation-cta">Subscribe on Substack</a>
     </div>
+  </div>
 
-  </main>
-
-    <footer class="childline-footer">
+  <!-- ═══ CHILDLINE FOOTER ═══ -->
+  <footer class="childline-footer">
     <p class="childline-eyebrow">If a child needs support right now</p>
     <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
     <p class="childline-url">childline.org.uk</p>
@@ -507,175 +633,41 @@
     </div>
   </footer>
 
-    <div class="site-footer-bar">
+  <div class="site-footer-bar">
     <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
-    &nbsp;—&nbsp;All content free to access and share. Subscription proceeds donated to Childline (NSPCC).
+    &nbsp;-&nbsp;All content free to access and share. Subscription proceeds donated to Childline (NSPCC).
   </div>
 
   <button class="back-to-top" id="backToTop">↑ Top</button>
 
   <script>
-    async function loadGuides() {
+    // ── Live counts from guides.json ──
+    async function loadStats() {
       try {
-        const response = await fetch('guides.json');
-        const guides = await response.json();
-        
-        const guideItems = guides.filter(item => item.type === 'guide');
-        allGuides = guideItems; // Store for checker
-        
-        guideItems.forEach(guide => {
-          const grid = document.getElementById(`grid-${guide.id}`);
-          if (grid) {
-            const badge = guide.isNew ? '<span class="new-badge">NEW</span>' : '';
-            const cardHtml = `
-              <a href="${guide.link}" target="_blank" rel="noopener" class="guide-card">
-                <div class="card-img-wrap">
-                  <img src="images/${guide.image}" alt="${guide.title}">
-                  ${badge}
-                  <button class="share-btn" onclick="copyLink(event, '${guide.link}')">📋 Copy Link</button>
-                </div>
-                <div class="card-body"><h3>${guide.title}</h3><p>${guide.desc}</p></div>
-                <div class="card-footer"><span class="open-btn">Open Guide →</span></div>
-              </a>`;
-            grid.insertAdjacentHTML('beforeend', cardHtml);
-          }
-        });
-        updateStats();
-      } catch (error) {
-        console.error("Error loading guides.json:", error);
+        const res = await fetch('guides.json');
+        const data = await res.json();
+        const guides = data.filter(i => i.type === 'guide').length;
+        const pres   = data.filter(i => i.type === 'presentation').length;
+        document.getElementById('statGuides').textContent  = guides;
+        document.getElementById('statPres').textContent    = pres;
+        document.getElementById('guidesCount').textContent = guides + ' free guides';
+        document.getElementById('presCount').textContent   = pres + ' presentations';
+      } catch(e) {
+        document.getElementById('guidesCount').textContent = 'Free guides';
+        document.getElementById('presCount').textContent   = 'Free presentations';
       }
     }
 
-    function updateStats() {
-      const config = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
-      let total = 0;
-      config.forEach(id => {
-        const grid = document.getElementById(`grid-${id}`);
-        const counter = document.getElementById(`count-${id}`);
-        if (grid && counter) {
-          const count = grid.children.length;
-          total += count;
-          counter.textContent = count + (count === 1 ? ' guide' : ' guides');
-        }
-      });
-      const totalEl = document.getElementById('totalCount');
-      if (totalEl) totalEl.textContent = total;
-    }
+    // ── Back to top ──
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => btt.classList.toggle('visible', scrollY > 400));
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    function copyLink(event, url) {
-      event.preventDefault(); 
-      event.stopPropagation();
-      const btn = event.currentTarget;
-      navigator.clipboard.writeText(url).then(() => {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = "✅ Copied!";
-        setTimeout(() => { btn.innerHTML = originalText; }, 2000);
-      });
-    }
+    loadStats();
+  </script>
 
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      backToTopBtn.classList.toggle('visible', window.scrollY > 500);
-    });
-    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    loadGuides();
-
-    // Standalone Request a Guide form
-    document.getElementById('standaloneRequestForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-        headers: { 'Accept': 'application/json' }
-      }).then(res => {
-        if (res.ok) {
-          this.style.display = 'none';
-          document.getElementById('standaloneConfirm').classList.add('visible');
-        }
-      }).catch(() => {
-        document.getElementById('standaloneConfirm').textContent = 'Something went wrong — please try again.';
-        document.getElementById('standaloneConfirm').classList.add('visible');
-      });
-    });
-
-
-    // ── App Safety Checker ──
-    let allGuides = [];
-
-    function runChecker() {
-      const query = document.getElementById('checkerInput').value.trim().toLowerCase();
-      if (!query) return;
-
-      const resultFound    = document.getElementById('resultFound');
-      const resultNotFound = document.getElementById('resultNotFound');
-      const requestSent    = document.getElementById('requestSent');
-
-      // Hide previous results
-      resultFound.classList.remove('visible');
-      resultNotFound.classList.remove('visible');
-      requestSent.classList.remove('visible');
-
-      // Search loaded guides
-      const match = allGuides.find(g =>
-        g.title.toLowerCase().includes(query) ||
-        query.includes(g.title.toLowerCase().replace(/[^a-z0-9]/g, ''))
-      );
-
-      if (match) {
-        document.getElementById('resultTitle').textContent = match.title;
-        document.getElementById('resultDesc').textContent = match.desc;
-        document.getElementById('resultLink').href = match.link;
-
-        // Age rating badge
-        const ageBadge = document.getElementById('resultAge');
-        ageBadge.textContent = match.ageRating ? 'Age rating: ' + match.ageRating : '';
-
-        // Risks list
-        const risksList = document.getElementById('resultRisks');
-        risksList.innerHTML = '';
-        if (match.risks && match.risks.length) {
-          match.risks.forEach(risk => {
-            const li = document.createElement('li');
-            li.textContent = risk;
-            risksList.appendChild(li);
-          });
-        }
-
-        resultFound.classList.add('visible');
-      } else {
-        const appName = document.getElementById('checkerInput').value.trim();
-        document.getElementById('notFoundTitle').textContent = appName;
-        document.getElementById('requestAppName').value = appName;
-        document.getElementById('requestSubject').value = `Guide Request: ${appName}`;
-        resultNotFound.classList.add('visible');
-      }
-    }
-
-    // Allow Enter key to trigger checker
-    document.getElementById('checkerInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') runChecker();
-    });
-
-    // Handle Formspree request form submission
-    document.getElementById('requestForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = this;
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(res => {
-        if (res.ok) {
-          document.getElementById('requestForm').style.display = 'none';
-          document.getElementById('requestSent').classList.add('visible');
-        }
-      }).catch(() => {
-        document.getElementById('requestSent').textContent = 'Something went wrong — please try again.';
-        document.getElementById('requestSent').classList.add('visible');
-      });
-    });
-
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EVeKWTNol5i5dJ5s6-Eq5";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
   </script>
 </body>
 </html>

@@ -565,7 +565,7 @@ body {
 .back-to-top {
   position: fixed;
   bottom: 28px;
-  right: 24px;
+  left: 24px;
   z-index: 200;
   background: var(--teal);
   color: #0A1628;
