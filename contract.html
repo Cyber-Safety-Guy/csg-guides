@@ -427,35 +427,48 @@
 
     /* ── PRINT STYLES ── */
     @media print {
-      body {
+      @page { margin: 1.5cm; }
+
+      *, *::before, *::after {
         background: #fff !important;
         color: #000 !important;
-        font-size: 13px;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
-      .top-bar, .jump-nav, .contract-intro > p:last-child,
-      .name-inputs, .tier-tabs, .contract-actions,
-      .back-to-top, .childline-footer, .site-footer-bar { display: none !important; }
+      .top-bar, .jump-nav, .site-header,
+      .contract-intro, .name-inputs, .tier-tabs,
+      .contract-actions, .back-to-top,
+      .childline-footer, .site-footer-bar { display: none !important; }
 
-      .contract-doc { display: block !important; border: 1px solid #ccc; }
-      .contract-doc:not(.active) { display: none !important; }
+      iframe, [id*="chatbase"], [class*="chatbase"] { display: none !important; }
 
-      .doc-header { background: #f0f0f0 !important; }
-      .doc-title { color: #000 !important; font-size: 20px !important; }
-      .doc-classification { color: #555 !important; }
+      .contract-wrap { padding: 0 !important; margin: 0 !important; }
+      .contract-doc { display: none !important; border: 1px solid #ccc !important; }
+      .contract-doc.active { display: block !important; }
+
+      .doc-header { background: #f4f4f4 !important; border-bottom: 1px solid #ccc !important; }
+      .doc-classification { color: #444 !important; }
+      .doc-classification::before { background: #444 !important; box-shadow: none !important; }
+      .doc-party { background: #fff !important; border: 1px solid #ccc !important; }
+      .doc-party-label { color: #666 !important; }
       .doc-party-name { color: #000 !important; }
-      .doc-preamble { color: #444 !important; }
+      .doc-preamble { color: #444 !important; border-bottom-color: #ddd !important; }
+      .doc-section-header { border-bottom-color: #ddd !important; }
       .section-title { color: #000 !important; }
       .clause-item { color: #000 !important; }
-      .clause-num { background: #eee !important; border-color: #ccc !important; color: #000 !important; }
-      .clause-num.parent-num { background: #fff8e1 !important; color: #000 !important; }
-      .breach-box { border-color: #999 !important; background: #fff5f5 !important; }
+      .clause-num { background: #eee !important; border: 1px solid #bbb !important; color: #000 !important; }
+      .clause-num.parent-num { background: #fef9e7 !important; border-color: #bbb !important; color: #000 !important; }
+      .breach-box { background: #fff8f8 !important; border: 1px solid #ccc !important; border-left: 3px solid #999 !important; }
       .breach-box p { color: #000 !important; }
-      .sig-line { border-bottom-color: #000 !important; }
-      .sig-label { color: #555 !important; }
-
-      .contract-intro { padding-top: 20px !important; }
-      .contract-wrap { padding-bottom: 20px !important; }
+      .sig-block { border-top-color: #ccc !important; }
+      .sig-title { color: #666 !important; }
+      .sig-line { border-bottom: 1px solid #000 !important; }
+      .sig-label { color: #666 !important; }
+      .doc-section { page-break-inside: avoid; }
+      .sig-block { page-break-inside: avoid; }
     }
   </style>
 </head>
