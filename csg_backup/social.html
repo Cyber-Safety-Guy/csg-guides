@@ -130,6 +130,12 @@
       width: auto;
       object-fit: contain;
     }
+
+    .page-nav { display: flex; justify-content: center; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+    .page-nav-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 3px; transition: background 0.2s, box-shadow 0.2s; }
+    .page-nav-btn.active { background: rgba(66,206,208,0.08); border: 1px solid rgba(66,206,208,0.25); color: var(--grey); cursor: default; pointer-events: none; }
+    .page-nav-btn.go { background: rgba(66,206,208,0.08); border: 1px solid var(--teal); color: var(--teal); }
+    .page-nav-btn.go:hover { background: rgba(66,206,208,0.18); box-shadow: 0 0 16px rgba(66,206,208,0.2); }
   </style>
 </head>
 
@@ -151,12 +157,10 @@
     <h1>FIND ME<br><span>ON SOCIAL</span></h1>
     <p class="header-sub">Follow &bull; Connect &bull; Share</p>
     
-    <div class="hub-nav">
-      <a href="index.html" target="_self">📄 Online Safety Guides</a>
-      <a href="presentations.html" target="_self">🎤 Presentations</a>
-      <a href="social.html" target="_self" class="active">📡 Social</a>
-      <a href="csg_threat_radar.html" target="_self">🚨 Threat Radar</a>
-      <a href="wizard.html" target="_self">🛠️ Parental Controls Wizard</a>
+    <div class="page-nav">
+      <a href="https://www.cybersafetyguy.com" target="_blank" class="page-nav-btn go">📰 Blog</a>
+      <a href="index.html" target="_self" class="page-nav-btn go">🏠 CSG Hub</a>
+      <a class="page-nav-btn active">📡 Social</a>
     </div>
   </header>
 
