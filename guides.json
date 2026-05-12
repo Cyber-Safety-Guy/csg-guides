@@ -381,7 +381,7 @@
     "desc": "A 'mogging' arena where users 1v1 strangers in AI-powered beauty contests to climb a competitive ELO leaderboard.",
     "image": "CSG_Omoggle.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Omoggle.pdf",
-    "isNew": True,
+    "isNew": true,
     "ageRating": "13+",
     "risks": [
       "Biometric data and facial scanning privacy concerns",
