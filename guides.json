@@ -374,6 +374,21 @@
       "Parents unaware of full digital activity"
     ]
   },
+{
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Omoggle",
+    "desc": "A 'mogging' arena where users 1v1 strangers in AI-powered beauty contests to climb a competitive ELO leaderboard.",
+    "image": "CSG_Omoggle.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Omoggle.pdf",
+    "isNew": True,
+    "ageRating": "13+",
+    "risks": [
+      "Biometric data and facial scanning privacy concerns",
+      "Reinforces toxic 'looksmaxxing' and body dysmorphia",
+      "Live video matching allows exposure to inappropriate content"
+    ]
+  },
   {
     "id": "school-presentations",
     "type": "presentation",
