@@ -94,8 +94,14 @@
       overflow: hidden;
       transition: border-color 0.2s;
     }
-    .step-block.active { border-color: rgba(66,206,208,0.35); }
+    .step-block.active { 
+      border-color: rgba(66,206,208,0.5); 
+      box-shadow: 0 0 0 1px rgba(66,206,208,0.15);
+    }
+    .step-block.active .step-body { display: block; }
+    .step-block.done .step-body { display: none; }
     .step-block.locked { opacity: 0.45; pointer-events: none; }
+    .step-block.locked .step-body { display: none; }
 
     .step-header {
       display: flex;
@@ -103,7 +109,9 @@
       gap: 14px;
       padding: 18px 22px;
       cursor: pointer;
+      user-select: none;
     }
+    .step-block.locked .step-header { cursor: default; }
     .step-num {
       width: 28px;
       height: 28px;
@@ -127,6 +135,15 @@
       border-color: var(--teal);
       color: var(--navy-dark);
     }
+    .step-block.done:hover { border-color: rgba(66,206,208,0.4); cursor: pointer; }
+    .step-change-hint {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 0.5px;
+      margin-left: 4px;
+    }
+    .step-block.done:hover .step-change-hint { color: var(--teal); }
     .step-title {
       font-family: 'Exo 2', sans-serif;
       font-weight: 700;
@@ -482,6 +499,7 @@
           <div class="step-num">1</div>
           <div class="step-title">Your role</div>
           <div class="step-chosen" id="chosen1" style="display:none"></div>
+          <span class="step-change-hint">change</span>
         </div>
         <div class="step-body">
           <div class="option-grid">
@@ -1073,7 +1091,7 @@ const C = {
           "Is there anyone else who knows what's been happening?"
         ]
       }
-    ],
+    },
     whatNotToSay: [
       "'Just ignore it', it doesn't work and dismisses the reality of what they're experiencing",
       "'Stay off your phone then', social exclusion is often the point; taking the device away punishes the victim",
@@ -1481,7 +1499,7 @@ const C = {
           "Is there anything that's getting in the way of getting support?"
         ]
       }
-    ],
+    },
     whatNotToSay: [
       "'Why would you do that to yourself?', shaming language that closes the conversation",
       "'Think about what this is doing to the family', guilt and deflection, not support",
@@ -1619,7 +1637,7 @@ const C = {
           "Where do you go to verify whether something is real?"
         ]
       }
-    ],
+    },
     whatNotToSay: [
       "'Just don't use those apps', too vague to be actionable",
       "'You can tell it's fake', increasingly, you cannot, and that's the entire point",
@@ -1750,7 +1768,7 @@ const C = {
           "Are you aware of what your public digital footprint looks like to a complete stranger?"
         ]
       }
-    ],
+    },
     whatNotToSay: [
       "'Why did you reply?', implies fault for natural curiosity or politeness",
       "'Don't talk to anyone online you don't know', too absolute and unworkable in practice",
@@ -1883,7 +1901,7 @@ const C = {
           "Do you know how to report content you suspect features under-18s?"
         ]
       }
-    ],
+    },
     whatNotToSay: [
       "'That's disgusting, why were you looking at that?', shame is deeply counterproductive here",
       "'I'm going to take the internet away', prevents all future disclosures",
@@ -1921,9 +1939,13 @@ function choose(step, value, displayLabel) {
   const block = document.getElementById('step' + step);
   block.classList.remove('active');
   block.classList.add('done');
-  block.querySelectorAll('.opt-btn, .disc-btn').forEach(b => b.classList.remove('selected'));
-  block.querySelectorAll('.opt-btn, .disc-btn').forEach(b => {
-    if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + value + "'")) {
+  block.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+  block.querySelectorAll('.disc-btn').forEach(b => b.classList.remove('selected'));
+  // Mark selected button
+  const allBtns = block.querySelectorAll('.opt-btn, .disc-btn');
+  allBtns.forEach(b => {
+    const oc = b.getAttribute('onclick') || '';
+    if (oc.includes("'" + value + "'") || oc.includes('"' + value + '"')) {
       b.classList.add('selected');
     }
   });
@@ -1945,6 +1967,29 @@ function choose(step, value, displayLabel) {
 function toggleStep(n) {
   const block = document.getElementById('step' + n);
   if (block.classList.contains('locked')) return;
+  if (block.classList.contains('done')) {
+    // Re-open this step, lock all subsequent steps
+    block.classList.remove('done');
+    block.classList.add('active');
+    block.querySelector('.step-body').style.display = '';
+    for (let i = n + 1; i <= 5; i++) {
+      const next = document.getElementById('step' + i);
+      if (next) {
+        next.classList.remove('active', 'done');
+        next.classList.add('locked');
+      }
+    }
+    // Clear state from this step onwards
+    const keys = [null,'role','age','platform','concern','disclosure'];
+    for (let i = n; i <= 5; i++) {
+      state[keys[i]] = null;
+      labels[keys[i]] = null;
+      const badge = document.getElementById('chosen' + i);
+      if (badge) badge.style.display = 'none';
+    }
+    document.getElementById('generateBtn').disabled = true;
+    document.getElementById('output').style.display = 'none';
+  }
 }
 
 function renderList(ulId, items) {
