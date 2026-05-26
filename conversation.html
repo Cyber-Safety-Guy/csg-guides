@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversation Guide Generator | Cyber Safety Guy</title>
+  <meta name="description" content="Get a personalised conversation guide for talking to a child about online safety. Choose their age, the platform, the concern, and your role. Free, plain English, no sign-up.">
+  <link rel="canonical" href="https://guides.cybersafetyguy.com/conversation.html">
+  <meta property="og:title" content="Conversation Guide Generator | Cyber Safety Guy">
+  <meta property="og:description" content="A free tool to help parents, teachers and DSLs have the right online safety conversation with the right child at the right time.">
+  <meta property="og:url" content="https://guides.cybersafetyguy.com/conversation.html">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── WIZARD LAYOUT ── */
+    .wizard-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── PROGRESS ── */
+    .progress-bar {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 44px;
+      padding: 0 4px;
+    }
+    .progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      position: relative;
+    }
+    .progress-step::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: calc(50% + 15px);
+      right: calc(-50% + 15px);
+      height: 2px;
+      background: rgba(66,206,208,0.2);
+    }
+    .progress-step:last-child::after { display: none; }
+    .progress-step.done::after { background: var(--teal); }
+    .progress-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid rgba(66,206,208,0.25);
+      background: var(--navy-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--grey);
+      transition: all 0.2s;
+      z-index: 1;
+    }
+    .progress-step.active .progress-dot {
+      border-color: var(--teal);
+      background: rgba(66,206,208,0.12);
+      color: var(--teal);
+    }
+    .progress-step.done .progress-dot {
+      border-color: var(--teal);
+      background: var(--teal);
+      color: var(--navy-dark);
+    }
+    .progress-label {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .progress-step.active .progress-label { color: var(--teal); }
+
+    /* ── STEP BLOCKS ── */
+    .step-block {
+      background: var(--navy-card);
+      border: 1px solid rgba(66,206,208,0.12);
+      border-radius: 6px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .step-block.active { border-color: rgba(66,206,208,0.35); }
+    .step-block.locked { opacity: 0.45; pointer-events: none; }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      cursor: pointer;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(66,206,208,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--grey);
+      flex-shrink: 0;
+    }
+    .step-block.active .step-num {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .step-block.done .step-num {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--navy-dark);
+    }
+    .step-title {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--off-white);
+      flex: 1;
+    }
+    .step-chosen {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 12px;
+      color: var(--teal);
+      font-weight: 600;
+      background: rgba(66,206,208,0.1);
+      border: 1px solid rgba(66,206,208,0.25);
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+    .step-body { padding: 0 22px 22px; }
+
+    /* ── OPTION BUTTONS ── */
+    .option-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .option-grid.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .option-grid.cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 540px) {
+      .option-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .opt-btn {
+      padding: 10px 18px;
+      background: rgba(66,206,208,0.05);
+      border: 1px solid rgba(66,206,208,0.2);
+      border-radius: 4px;
+      color: var(--off-white);
+      font-family: 'Exo 2', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .opt-btn:hover {
+      background: rgba(66,206,208,0.12);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .opt-btn.selected {
+      background: rgba(66,206,208,0.18);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    /* Disclosure toggle */
+    .disclosure-toggle {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .disc-btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 4px;
+      border: 2px solid rgba(66,206,208,0.2);
+      background: rgba(66,206,208,0.04);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+    }
+    .disc-btn:hover { border-color: var(--teal); }
+    .disc-btn.selected { border-color: var(--teal); background: rgba(66,206,208,0.12); }
+    .disc-btn-label {
+      display: block;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--off-white);
+      margin-bottom: 4px;
+    }
+    .disc-btn.selected .disc-btn-label { color: var(--teal); }
+    .disc-btn-sub {
+      display: block;
+      font-size: 12px;
+      color: var(--grey);
+      line-height: 1.4;
+    }
+
+    /* ── GENERATE BUTTON ── */
+    .generate-wrap {
+      text-align: center;
+      margin-top: 28px;
+    }
+    .generate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--teal);
+      color: var(--navy-dark);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .generate-btn:hover { background: #5ae0e2; transform: translateY(-2px); }
+    .generate-btn:disabled { background: var(--grey); cursor: not-allowed; transform: none; opacity: 0.6; }
+
+    /* ── OUTPUT ── */
+    #output { display: none; margin-top: 40px; }
+
+    .output-meta {
+      background: var(--navy-dark);
+      border: 1px solid rgba(66,206,208,0.2);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .meta-badge {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+      background: rgba(66,206,208,0.1);
+      border: 1px solid rgba(66,206,208,0.25);
+      color: var(--teal);
+    }
+    .meta-badge.red { background: rgba(192,57,43,0.1); border-color: rgba(192,57,43,0.3); color: #e55a4a; }
+    .output-title {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    .output-section {
+      background: var(--navy-card);
+      border: 1px solid rgba(66,206,208,0.12);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 6px 6px 0;
+      padding: 24px 26px;
+      margin-bottom: 16px;
+    }
+    .output-section.warn { border-left-color: #e55a4a; }
+    .output-section.gold { border-left-color: var(--gold); }
+
+    .section-heading {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .output-section.warn .section-heading { color: #e55a4a; }
+    .output-section.gold .section-heading { color: var(--gold); }
+
+    .opening-text {
+      background: rgba(66,206,208,0.06);
+      border: 1px solid rgba(66,206,208,0.18);
+      border-radius: 4px;
+      padding: 18px 20px;
+      font-size: 15px;
+      color: var(--off-white);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .output-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .output-list li {
+      padding: 8px 0 8px 20px;
+      position: relative;
+      font-size: 14px;
+      color: var(--off-white);
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(66,206,208,0.06);
+    }
+    .output-list li:last-child { border-bottom: none; }
+    .output-list li::before {
+      content: '›';
+      position: absolute;
+      left: 4px;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .output-section.warn .output-list li::before { color: #e55a4a; }
+    .output-section.gold .output-list li::before { color: var(--gold); }
+
+    /* ── CHILDLINE OUTPUT BOX ── */
+    .childline-out-box {
+      background: rgba(192,57,43,0.08);
+      border: 1px solid rgba(192,57,43,0.3);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .childline-out-box p {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 6px;
+    }
+    .childline-out-box .cl-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--childline-red);
+    }
+    .childline-out-box .cl-url {
+      font-size: 13px;
+      color: var(--grey);
+      margin-top: 4px;
+    }
+
+    /* ── ACTIONS BAR ── */
+    .actions-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(66,206,208,0.15);
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 4px;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-decoration: none;
+      border: none;
+    }
+    .action-btn.primary {
+      background: var(--teal);
+      color: var(--navy-dark);
+    }
+    .action-btn.primary:hover { background: #5ae0e2; }
+    .action-btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(66,206,208,0.35);
+      color: var(--teal);
+    }
+    .action-btn.secondary:hover { background: rgba(66,206,208,0.1); }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      body { background: #fff !important; color: #111 !important; }
+      .top-bar, .jump-nav, .site-header, .wizard-steps,
+      .generate-wrap, .actions-bar, .childline-footer,
+      #wizard-form { display: none !important; }
+      #output { display: block !important; }
+      .output-section {
+        border: 1px solid #ccc !important;
+        border-left: 4px solid #42CED0 !important;
+        background: #fff !important;
+        break-inside: avoid;
+        margin-bottom: 14px;
+      }
+      .output-section.warn { border-left-color: #C0392B !important; }
+      .section-heading { color: #1A5C5F !important; }
+      .output-section.warn .section-heading { color: #C0392B !important; }
+      .opening-text { background: #f0fafa !important; border-color: #42CED0 !important; color: #111 !important; }
+      .output-list li { color: #111 !important; border-bottom-color: #eee !important; }
+      .output-meta { background: #f5f5f5 !important; border-color: #ccc !important; }
+      .meta-badge { background: #e0f7f7 !important; border-color: #42CED0 !important; color: #1A5C5F !important; }
+      .output-title { color: #555 !important; }
+      .print-header { display: block !important; }
+      .childline-out-box { background: #fff5f5 !important; border-color: #C0392B !important; }
+      .childline-out-box .cl-num { color: #C0392B !important; }
+    }
+    .print-header { display: none; }
+    @media print {
+      .print-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #42CED0;
+        margin-bottom: 20px;
+      }
+      .print-header-title {
+        font-family: 'Exo 2', sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        color: #142A46;
+      }
+      .print-header-sub {
+        font-size: 12px;
+        color: #555;
+        margin-top: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Blog</a>
+    <a href="/">🏠 CSG Hub</a>
+    <a href="https://schools.cybersafetyguy.com" target="_blank">🏫 Schools Hub</a>
+    <a class="active">💬 Conversation Guide</a>
+  </nav>
+
+  <header class="site-header">
+    <span class="header-badge">Free Tool</span>
+    <h1>HAVE THE <span>CONVERSATION</span></h1>
+    <p class="header-sub">Conversation Guide Generator</p>
+    <p class="header-intro">Pick the role, age, platform and concern. Get a plain-English guide you can use straight away, or print and keep.</p>
+  </header>
+
+  <div class="wizard-wrap">
+
+    <!-- ── WIZARD FORM ── -->
+    <div id="wizard-form">
+
+      <!-- Step 1: Role -->
+      <div class="step-block active" id="step1">
+        <div class="step-header" onclick="toggleStep(1)">
+          <div class="step-num">1</div>
+          <div class="step-title">Your role</div>
+          <div class="step-chosen" id="chosen1" style="display:none"></div>
+        </div>
+        <div class="step-body">
+          <div class="option-grid">
+            <button class="opt-btn" onclick="choose(1,'parent','Parent')">Parent / Carer</button>
+            <button class="opt-btn" onclick="choose(1,'teacherDsl','Teacher')">Teacher</button>
+            <button class="opt-btn" onclick="choose(1,'teacherDsl','DSL')">DSL / Safeguarding Lead</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Age -->
+      <div class="step-block locked" id="step2">
+        <div class="step-header" onclick="toggleStep(2)">
+          <div class="step-num">2</div>
+          <div class="step-title">Child's age or key stage</div>
+          <div class="step-chosen" id="chosen2" style="display:none"></div>
+        </div>
+        <div class="step-body">
+          <div class="option-grid">
+            <button class="opt-btn" onclick="choose(2,'under8','Under 8')">Under 8</button>
+            <button class="opt-btn" onclick="choose(2,'8to10','8 to 10')">8 to 10</button>
+            <button class="opt-btn" onclick="choose(2,'11to13','11 to 13 (KS3)')">11 to 13</button>
+            <button class="opt-btn" onclick="choose(2,'14to16','14 to 16 (KS4)')">14 to 16</button>
+            <button class="opt-btn" onclick="choose(2,'17to18','17 to 18 (KS5)')">17 to 18</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Platform -->
+      <div class="step-block locked" id="step3">
+        <div class="step-header" onclick="toggleStep(3)">
+          <div class="step-num">3</div>
+          <div class="step-title">Platform or app</div>
+          <div class="step-chosen" id="chosen3" style="display:none"></div>
+        </div>
+        <div class="step-body">
+          <div class="option-grid cols-3">
+            <button class="opt-btn" onclick="choose(3,'TikTok','TikTok')">TikTok</button>
+            <button class="opt-btn" onclick="choose(3,'Roblox','Roblox')">Roblox</button>
+            <button class="opt-btn" onclick="choose(3,'Instagram','Instagram')">Instagram</button>
+            <button class="opt-btn" onclick="choose(3,'Snapchat','Snapchat')">Snapchat</button>
+            <button class="opt-btn" onclick="choose(3,'WhatsApp','WhatsApp')">WhatsApp</button>
+            <button class="opt-btn" onclick="choose(3,'Discord','Discord')">Discord</button>
+            <button class="opt-btn" onclick="choose(3,'YouTube','YouTube')">YouTube</button>
+            <button class="opt-btn" onclick="choose(3,'Gaming','Gaming (general)')">Gaming</button>
+            <button class="opt-btn" onclick="choose(3,'Online','Online (general)')">Online generally</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Concern -->
+      <div class="step-block locked" id="step4">
+        <div class="step-header" onclick="toggleStep(4)">
+          <div class="step-num">4</div>
+          <div class="step-title">What's the concern?</div>
+          <div class="step-chosen" id="chosen4" style="display:none"></div>
+        </div>
+        <div class="step-body">
+          <div class="option-grid cols-3">
+            <button class="opt-btn" onclick="choose(4,'grooming','Grooming')">Grooming</button>
+            <button class="opt-btn" onclick="choose(4,'sextortion','Sextortion / images')">Sextortion</button>
+            <button class="opt-btn" onclick="choose(4,'cyberbullying','Cyberbullying')">Cyberbullying</button>
+            <button class="opt-btn" onclick="choose(4,'screentime','Screen time')">Screen time</button>
+            <button class="opt-btn" onclick="choose(4,'radicalisation','Radicalisation')">Radicalisation</button>
+            <button class="opt-btn" onclick="choose(4,'selfharm','Self-harm online')">Self-harm online</button>
+            <button class="opt-btn" onclick="choose(4,'airisks','AI risks')">AI risks</button>
+            <button class="opt-btn" onclick="choose(4,'strangercontact','Stranger contact')">Stranger contact</button>
+            <button class="opt-btn" onclick="choose(4,'explicitcontent','Explicit content')">Explicit content</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Disclosure -->
+      <div class="step-block locked" id="step5">
+        <div class="step-header" onclick="toggleStep(5)">
+          <div class="step-num">5</div>
+          <div class="step-title">Has a disclosure already happened?</div>
+          <div class="step-chosen" id="chosen5" style="display:none"></div>
+        </div>
+        <div class="step-body">
+          <div class="disclosure-toggle">
+            <div class="disc-btn" onclick="choose(5,'no','No, starting a new conversation')">
+              <span class="disc-btn-label">No</span>
+              <span class="disc-btn-sub">I want to start a conversation before something happens</span>
+            </div>
+            <div class="disc-btn" onclick="choose(5,'yes','Yes, a disclosure has happened')">
+              <span class="disc-btn-label">Yes</span>
+              <span class="disc-btn-sub">Something has already happened or been shared with me</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Generate -->
+      <div class="generate-wrap">
+        <button class="generate-btn" id="generateBtn" onclick="generate()" disabled>
+          <span>Generate My Guide</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </div><!-- /wizard-form -->
+
+    <!-- ── OUTPUT ── -->
+    <div id="output">
+
+      <div class="print-header">
+        <div>
+          <div class="print-header-title">Cyber Safety Guy: Conversation Guide</div>
+          <div class="print-header-sub">guides.cybersafetyguy.com</div>
+        </div>
+      </div>
+
+      <div class="output-meta" id="outputMeta"></div>
+
+      <div class="output-section" id="secOpen">
+        <div class="section-heading">How to open the conversation</div>
+        <div class="opening-text" id="openText"></div>
+      </div>
+
+      <div class="output-section" id="secLang">
+        <div class="section-heading">Language guidance for this age group</div>
+        <ul class="output-list" id="langList"></ul>
+      </div>
+
+      <div class="output-section warn" id="secNot">
+        <div class="section-heading">What not to say</div>
+        <ul class="output-list" id="notList"></ul>
+      </div>
+
+      <div class="output-section gold" id="secQ">
+        <div class="section-heading">Questions to ask</div>
+        <ul class="output-list" id="qList"></ul>
+      </div>
+
+      <div class="output-section" id="secAfter">
+        <div class="section-heading">What to do after the conversation</div>
+        <ul class="output-list" id="afterList"></ul>
+      </div>
+
+      <div class="output-section" id="secFollow">
+        <div class="section-heading">If they shut down: how to follow up</div>
+        <ul class="output-list" id="followList"></ul>
+      </div>
+
+      <div class="childline-out-box">
+        <p>If a child needs support right now</p>
+        <div class="cl-num">0800 1111</div>
+        <div class="cl-url">childline.org.uk, free, confidential, available every day of the year</div>
+      </div>
+
+      <div class="actions-bar">
+        <button class="action-btn primary" onclick="window.print()">🖨 Print / Save as PDF</button>
+        <button class="action-btn secondary" onclick="resetForm()">← Start over</button>
+      </div>
+
+    </div><!-- /output -->
+
+  </div><!-- /wizard-wrap -->
+
+  <footer class="childline-footer">
+    <p class="childline-eyebrow">If a child needs support right now</p>
+    <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
+    <p class="childline-url">childline.org.uk</p>
+    <p class="childline-desc">Childline is free, confidential, and available 24 hours a day, every day of the year.</p>
+    <div class="partner-logos">
+      <a href="https://www.childline.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/childline-logo.png" alt="Childline">
+        <span class="partner-logo-label">Charity Partner</span>
+      </a>
+      <div class="partner-divider"></div>
+      <a href="https://www.nspcc.org.uk" target="_blank" rel="noopener" class="partner-logo-link">
+        <img src="images/nspcc-logo.png" alt="NSPCC">
+        <span class="partner-logo-label">Part of NSPCC</span>
+      </a>
+    </div>
+  </footer>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────────────
+const state = { role: null, age: null, platform: null, concern: null, disclosure: null };
+const labels = { role: null, age: null, platform: null, concern: null, disclosure: null };
+
+// ── CONTENT DATA ───────────────────────────────────────────────────────────
+const C = {
+  grooming: {
+    label: 'Grooming',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "I want to have a quick chat about staying safe online. You know how we have rules about strangers in real life? It works the same way online. Sometimes people online are not who they say they are, and I want you to know that if anyone ever makes you feel funny or uncomfortable, you can always tell me. No matter what.",
+          teacherDsl: "We're going to talk today about staying safe online. Just like we have rules about strangers in real life, we have rules online too. If anyone online ever makes you feel uncomfortable or asks you to do something that doesn't feel right, that's always something you tell a trusted adult about."
+        },
+        openDisc: {
+          parent: "Thank you so much for telling me. That was really brave. You haven't done anything wrong at all, and I'm really glad you came to me. Can you tell me a little bit about what happened?",
+          teacherDsl: "Thank you for telling me. You've done exactly the right thing. I'm going to make sure the right people help sort this out. You are not in any trouble at all."
+        },
+        language: [
+          "Use 'safe and unsafe feelings' rather than grooming, abuse or exploitation, those words are too abstract for under-8s",
+          "If they've been taught the NSPCC Pants Rule at school, this is a natural connection to make",
+          "'Private parts' and 'your body belongs to you' are the right body safety anchors",
+          "'Trusted adults' is better than 'tell the police', keep it close and concrete",
+          "Avoid: predator, abuse, criminal, frightening and abstract at this age"
+        ],
+        questions: [
+          "Has anyone online ever asked you to keep a secret from me?",
+          "Has anyone online ever made you feel uncomfortable or a bit funny?",
+          "If something happened online that didn't feel right, do you know what you'd do?",
+          "Who are your trusted adults? Who would you tell if something worried you?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "Can we have a quick chat about being safe online? You're not in trouble, and neither is anyone else. I just want to make sure we're on the same page. Sometimes people online try to become friends with children, and they're not always who they say they are. I want to talk about what that looks like.",
+          teacherDsl: "Today I want to talk about online friendships and how to stay safe. This isn't because anyone is in trouble. At your age you're using lots of different apps, and I want to make sure you know what to do if something online doesn't feel right."
+        },
+        openDisc: {
+          parent: "I'm really glad you told me. It took real courage, and you have done absolutely nothing wrong. I want to understand what happened properly so we can sort this out together. Can you start from the beginning?",
+          teacherDsl: "Thank you for being so brave and telling me. You've done exactly the right thing. I'm going to make sure this gets sorted out properly and that you're completely safe. You are not in trouble."
+        },
+        language: [
+          "'Online stranger' is understood at this age and is the right phrase to use",
+          "'Secrets that feel wrong' versus 'good secrets' like surprises is a useful distinction",
+          "Can introduce 'grooming' briefly: 'when an adult tries to become a child's best friend online so they can ask them to do things they shouldn't'",
+          "Use concrete analogies they understand: 'a bit like when someone offers sweets to get you to go somewhere with them'",
+          "Avoid clinical language, keep it grounded and practical"
+        ],
+        questions: [
+          "Has anyone online been really, really friendly to you, more than normal?",
+          "Has anyone online ever asked you to keep your friendship a secret?",
+          "Has anyone ever asked you to do something online that felt a bit wrong?",
+          "If someone online sent you something that felt weird, would you know what to do?",
+          "Do you know you can always come to me, even if you think you've done something wrong?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I know you're online a lot, and I trust you. But I want to have a proper chat about something that affects kids your age more than most people realise. Some adults deliberately try to build friendships with young people online, and it doesn't always look like what you'd expect. I'd rather you knew about it from me.",
+          teacherDsl: "I want to talk to you today about something that matters for people your age. Not a lecture. Just real information. It's about how some people online try to build trust with young people in order to take advantage of them. It's called grooming, and I want you to know what it actually looks like."
+        },
+        openDisc: {
+          parent: "I'm really glad you felt you could tell me. What you've said is serious, and I want you to know straight away, this is not your fault. Whatever happened, the responsibility is with the adult, not with you. Can we go through it together so I can understand properly?",
+          teacherDsl: "Thank you for telling me. You've been very brave. What you've described is a safeguarding concern and I need to make sure the right people know, so we can get you the right support. Everything will be done carefully and respectfully. You are not in trouble."
+        },
+        language: [
+          "'Grooming' is the right word to use and worth explaining: 'when someone builds trust slowly to take advantage of a young person'",
+          "'Manipulation' and 'testing your boundaries' are both understood at this age",
+          "Explain the pattern: attention, flattery, gifts, moving to private chat, then pushing limits",
+          "Acknowledge it can feel nice at first, that's how it's designed to work, not a reflection on them",
+          "Avoid: 'you should have known better', 'why did you keep talking to them', these shut down disclosure immediately"
+        ],
+        questions: [
+          "Have you ever had someone online be really friendly really quickly, unusually so?",
+          "Has anyone ever tried to move a conversation somewhere more private?",
+          "Has anyone ever asked you to keep your online friendship a secret from me or other adults?",
+          "Do you know what grooming means? Can you tell me in your own words?",
+          "What would you do if something like this happened to you or a friend?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "I want to talk to you about something and I'm not checking up on you. I just want to make sure you've got the right information. At your age, the approaches people make online can get pretty sophisticated. I'd rather you could spot the warning signs than find out the hard way.",
+          teacherDsl: "I want to have a proper, adult conversation with you about something. You're at an age where you're online constantly, and some of the contact you receive is deliberately designed to seem legitimate. I want to make sure you've got the tools to recognise when something's off."
+        },
+        openDisc: {
+          parent: "What you've told me takes real courage. I'm not angry, and I'm not blaming you for anything. We are going to deal with this together. First thing I need you to hear, whatever happened, the responsibility lies with that person, not with you. Full stop.",
+          teacherDsl: "Thank you for trusting me with this. I know that wasn't easy. What you've described needs to go through our safeguarding process, but that process exists to support you, not cause you trouble. Can you tell me everything so I can make sure you get the right help?"
+        },
+        language: [
+          "Direct language is right at this age, grooming, coercion, exploitation are all fine to use",
+          "'Consent' and 'boundaries' resonate strongly here",
+          "Acknowledge the emotional complexity, it can feel like a genuine relationship, and that's exactly how it's designed",
+          "Don't minimise: 'it's just online' is not helpful, the harm is real whether or not it stays digital",
+          "Treat them as capable of understanding the full picture, they are"
+        ],
+        questions: [
+          "Have you ever had someone push against your boundaries online, keep asking after you've already said no?",
+          "Has anyone you've met online ever tried to move to a platform where it's harder to screenshot or report things?",
+          "Do any of your friends talk about situations like this? Do you know what to do if they told you something had happened?",
+          "Do you know how to report someone on {platform}?",
+          "Is there anything that would make it hard to come to me if something wasn't right?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "I know you're nearly an adult and I respect that completely. But I want to have an honest conversation, grooming and coercive behaviour online don't stop being a risk at 18. At your age it can look very different to what people expect. I'm not lecturing. I just want to make sure you've got the full picture.",
+          teacherDsl: "I want to have a direct adult conversation about something that affects people right across your age group. Coercive behaviour and manipulation online don't stop at 18, and at your age they often look like professional networking, mentoring, or genuine friendship. I want to make sure you've got the tools to recognise the signs."
+        },
+        openDisc: {
+          parent: "Thank you for trusting me with this. I know that wasn't easy. Before anything else, you have done nothing wrong. We'll work out the right next steps together, at whatever pace you need.",
+          teacherDsl: "I'm grateful you've come to me. What you've described is serious and you absolutely did the right thing. Let's talk through what's happened properly, and I'll make sure you get the right support."
+        },
+        language: [
+          "Full adult register throughout, treat them as an equal",
+          "Peer support framing works well here: 'what would you tell a friend in this situation?'",
+          "Legal context is appropriate where relevant, coercion, digital evidence, reporting options",
+          "Avoid being paternalistic, they may know more about the platform than you do",
+          "Acknowledge their autonomy while being clear about the seriousness"
+        ],
+        questions: [
+          "Do you know what coercive behaviour looks like online and how it tends to escalate?",
+          "Is this something that comes up among your friends, have you talked about it?",
+          "What would you do if you realised something wasn't right, for yourself or someone you know?",
+          "Is there anything that would make it harder or easier to come to me if something was going on?",
+          "Do you know your rights and reporting options in a situation like this?"
+        ]
+      }
+    },
+    whatNotToSay: [
+      "'Why didn't you tell me sooner?', places blame on the child for not disclosing",
+      "'What were you doing talking to them in the first place?', implies fault",
+      "'I told you so' or 'This is why I said no screens', makes it about your rules, not their safety",
+      "'Are you sure you didn't misunderstand?', invalidates their experience and makes them doubt themselves",
+      "'Don't tell anyone else about this', mirrors the secrecy that grooming depends on",
+      "Avoid visible shock or distress, especially with younger children, it teaches them their disclosure hurts you, making future disclosures less likely"
+    ],
+    afterConversation: [
+      "Don't immediately remove devices, it can feel like punishment and will reduce future disclosures",
+      "If there is an active safeguarding concern, contact CEOP at ceop.police.uk",
+      "Check back in within 24 to 48 hours, one conversation is never enough",
+      "Keep the lines open: 'you can always come back to me with anything else'",
+      "For your own support as an adult: NSPCC helpline 0808 800 5000",
+      "School staff: follow your safeguarding policy, this is a referral to your DSL"
+    ],
+    followUp: [
+      "Don't push for more in the same sitting, give space, but don't drop it entirely",
+      "Try again in a different setting: a car journey, a walk, somewhere side-by-side rather than face-to-face works better for a lot of people",
+      "Leave the door explicitly open: 'I'm not going anywhere. Whenever you're ready.'",
+      "A written note or message can sometimes work better than a spoken conversation",
+      "If shutdown is persistent and the concern is serious, seek professional guidance, NSPCC 0808 800 5000"
+    ]
+  },
+
+  sextortion: {
+    label: 'Sextortion / Image-Based Abuse',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "I want to talk to you about something important. Sometimes people online might ask you to send them photos, of you, or of your body. This is never okay, no matter who asks or how friendly they seem. If anyone ever asks you to do that, I need you to tell me straight away. You won't be in any trouble.",
+          teacherDsl: "Today I want to talk about keeping our bodies safe online. Just like no one is allowed to take photos of your body without permission, that rule applies online too. If anyone ever asks you to send photos of yourself, that's always something you tell a trusted adult about straight away."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. That was really brave. You haven't done anything wrong at all, you've done exactly the right thing by coming to me. Can you show me or tell me what happened?",
+          teacherDsl: "Thank you for coming to me. You've been very brave and you've done the right thing. I'm going to make sure the right people help sort this out and that you're safe."
+        },
+        language: [
+          "'Private parts' and 'no photos of your body' is the right framing at this age",
+          "'Your body belongs to you' connects to PSHE content they'll already know",
+          "Avoid: abuse, exploitation, blackmail, too complex and frightening for under-8s",
+          "'Tell a trusted adult immediately' is the core action message",
+          "Keep the emphasis firmly on: not your fault, you won't be in trouble"
+        ],
+        questions: [
+          "Has anyone online ever asked you to send photos of yourself?",
+          "Has anyone ever asked you to do something on camera that felt wrong or uncomfortable?",
+          "If someone asked you to take a photo of your private parts, what would you do?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "I want to talk to you about photos online. Sometimes people online, even people who seem really nice, might ask for photos of you. It might start with a normal photo, then ask for more. I want to make sure you know this is never okay, and you can always come to me no matter what.",
+          teacherDsl: "We're going to talk about something important today, staying safe when it comes to photos and cameras online. Some people online might ask children to take photos of themselves. No matter how nice that person seems, it's never okay, and it's always something you tell an adult about."
+        },
+        openDisc: {
+          parent: "I'm really glad you told me. What you're describing happens to lots of children and it is completely not your fault. We are going to sort this out together, and you are not in any trouble.",
+          teacherDsl: "You've done exactly the right thing by telling me. I'm going to make sure this is dealt with properly and that you have the right support. You are not in trouble at all."
+        },
+        language: [
+          "Can introduce 'blackmail' simply: 'when someone threatens to show others something unless you do what they want'",
+          "'Photo pressure' is a useful plain-English phrase at this age",
+          "Keep the emphasis on: it is not your fault, you will not be in trouble, even if you already sent something",
+          "Avoid any language that implies the child was naive or should have known better"
+        ],
+        questions: [
+          "Has anyone online ever asked you to send photos of yourself?",
+          "Has anyone ever said they'd share something about you if you didn't do what they wanted?",
+          "If someone online was pressuring you about photos, would you know what to do?",
+          "Do you know you won't be in trouble if you come to me, even if you've already sent something?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I want to talk to you about something that's becoming more common for people your age. It's called sextortion, where someone gets an image and then threatens to share it. It often starts with what looks like a normal online friendship. I'd rather we talk about it now than after.",
+          teacherDsl: "Today I want to talk about something called sextortion. It's happening more and more to people your age, and it's important you understand what it looks like and what to do. There's nothing embarrassing about this conversation, it's just information you need to have."
+        },
+        openDisc: {
+          parent: "Thank you for coming to me. This takes real courage. What's happening to you is not your fault, this is a form of blackmail, and the responsibility lies entirely with the person doing it. We're going to deal with this together.",
+          teacherDsl: "I'm really glad you told me. What you've described is serious, and you've done exactly the right thing. I need to follow our safeguarding process to make sure you get the right support, and that process is there to help you, not get you into trouble."
+        },
+        language: [
+          "'Sextortion' is a term they may have heard, use it and explain it clearly",
+          "Explain the pattern: friendship and trust-building, image request, escalation, threat",
+          "The IWF Report Remove tool exists for under-18s, image removal without police involvement",
+          "Police take this seriously and protect victims, not prosecute them",
+          "Avoid: 'why did you send it', this shuts everything down immediately"
+        ],
+        questions: [
+          "Do you know what sextortion means?",
+          "Has anyone online ever pressured you to share photos or videos?",
+          "Do you know what to do if someone threatened to share an image of you?",
+          "Do you know you can report this and get the image removed without involving the police if you'd prefer?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "I want to have a straight conversation about image-based abuse. At your age, the pressure to share images online, through relationships, group chats, or strangers, is real. I want to make sure you know your rights, what your options are, and what to do if something goes wrong.",
+          teacherDsl: "I want to talk to you today about something that affects a significant number of people your age, image-based abuse and sextortion. You have rights in this area, and I want to make sure you know them."
+        },
+        openDisc: {
+          parent: "I'm not going to panic and I'm not going to blame you. What's happening is illegal, sharing or threatening to share intimate images without consent is a criminal offence in the UK. We're going to stop this, and I'm going to help you.",
+          teacherDsl: "I'm glad you've come to me. What you've described is a criminal matter and you are protected under UK law. We're going to go through this carefully together and make sure you've got the right support."
+        },
+        language: [
+          "Direct, adult language is right here, this is a criminal matter",
+          "'Intimate image abuse' is the legal framing under the Online Safety Act 2023",
+          "Creating or sharing intimate images without consent is illegal in the UK, victims are protected, not criminalised",
+          "IWF Report Remove (reportremove.iwf.org.uk), CEOP, and the Revenge Porn Helpline (0345 600 0459) are all specific and real options",
+          "Never say 'you should have known better', even once"
+        ],
+        questions: [
+          "Do you know that sharing intimate images without consent is a criminal offence in the UK?",
+          "Has anyone ever pressured you to share images, or threatened to share something of you?",
+          "Do you know about the IWF Report Remove tool and how fast image takedowns can happen?",
+          "If this was happening to a friend, what would you tell them to do?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "I want to talk to you about image-based abuse, not because I think something specific is happening, but because at your age it affects people around you and you should know your rights.",
+          teacherDsl: "I want to make sure you're all aware of your rights when it comes to image-based abuse, because it's more common in your age group than most people realise, and the law is clear on where you stand."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. I want you to know straight away that what's happening to you is a crime. There is specific, practical help available, and we are going to get it. Tell me everything.",
+          teacherDsl: "I'm grateful you've come to me with this. What you've described is a criminal matter and you have real legal protections. Let's talk through what's happened and make sure you know all your options."
+        },
+        language: [
+          "Full adult peer register, this is an equal conversation",
+          "Victims' rights under the Online Safety Act 2023, they have real power here",
+          "IWF image removal, Revenge Porn Helpline, CEOP, all specific and actionable",
+          "Platform takedown processes can be rapid for intimate imagery involving under-18s",
+          "Peer support framing, they may be supporting friends through this at the same time"
+        ],
+        questions: [
+          "Do you know about the IWF Report Remove tool and how quickly takedowns can happen?",
+          "Is this something that's come up in your peer group? Do you know how to support someone in this situation?",
+          "What would you need from me to feel supported through this?",
+          "Do you know your legal rights if someone threatens to share an image of you?"
+        ]
+      }
+    },
+    whatNotToSay: [
+      "'Why did you send it?', this is victim-blaming and closes the conversation immediately",
+      "'What did you expect?', same effect, same harm",
+      "'Everyone's going to see it', catastrophising, not helpful or accurate",
+      "'Delete everything', evidence needs to be preserved, do not delete anything",
+      "'We can't go to the police', you can, and for under-18s, police protect victims",
+      "Avoid expressing visible shame or disgust, it teaches the child that the fault was theirs"
+    ],
+    afterConversation: [
+      "Do NOT delete anything yet, screenshots and chat logs are evidence",
+      "Report on the platform, most have rapid response for intimate imagery involving under-18s",
+      "IWF Report Remove: reportremove.iwf.org.uk, image removal for under-18s without police involvement",
+      "CEOP: ceop.police.uk, if a child under 18 is involved",
+      "Revenge Porn Helpline: 0345 600 0459, for over-18s, also helpful for parents navigating this",
+      "Reassure consistently that they did nothing wrong and are not in trouble"
+    ],
+    followUp: [
+      "Check in the next day, not just about the immediate situation but how they're feeling",
+      "Shame is the dominant emotion after this kind of experience, actively and repeatedly counter it",
+      "The threat often stops when they don't comply, but they need support through that period",
+      "Consider professional counselling if the experience has been traumatic",
+      "NSPCC helpline for your own support as an adult: 0808 800 5000"
+    ]
+  },
+
+  cyberbullying: {
+    label: 'Cyberbullying',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "I want to talk to you about being kind online. Just like we have rules about being kind to people at school and in real life, the same rules apply when we're using screens. Has anyone ever been mean to you when you've been playing games or talking to friends online?",
+          teacherDsl: "Today we're going to talk about being kind online, because the same rules that apply in our classroom apply online too. Has anyone ever had someone be unkind to them when they were using a screen?"
+        },
+        openDisc: {
+          parent: "I'm really glad you told me. What those children are doing is not okay, and it is absolutely not your fault. Let's look at what happened together.",
+          teacherDsl: "Thank you for telling me. What you've described is not okay, and you've done exactly the right thing by coming to me. We're going to sort this out."
+        },
+        language: [
+          "'Being mean online' is clearer than 'cyberbullying' for under-8s",
+          "'Kind and unkind' is the primary framework they understand",
+          "'It's not your fault' is essential, repeat it",
+          "'Block and tell' is the core action at this age",
+          "Avoid technical terms and platform jargon"
+        ],
+        questions: [
+          "Has anyone ever said something mean to you online?",
+          "Have any of your friends been mean to each other online?",
+          "If someone was unkind to you online, what do you think you'd do?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "Can we have a chat about what happens if someone's mean to you online? It's more common than most people realise, and I want to make sure you know it's okay to tell me, you won't be in trouble and it won't make things worse.",
+          teacherDsl: "Today we're going to talk about cyberbullying. Not because anyone is in trouble, but because it happens a lot and I want to make sure everyone knows what to do if it happens to them or a friend."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. What's happening is not okay and it is not your fault. Let's look at it together and work out what to do.",
+          teacherDsl: "I'm glad you came to me. What you've described sounds really difficult, and you were right to tell someone. Let's look at what's been happening together."
+        },
+        language: [
+          "'Cyberbullying' is widely understood at this age, fine to use",
+          "Distinguish: one-off unkindness versus sustained and deliberate targeting",
+          "'Block and tell' are both important, both steps matter",
+          "Avoid: 'just ignore it', it doesn't work and dismisses their experience"
+        ],
+        questions: [
+          "Has anyone been saying mean things to you online, or leaving you out on purpose?",
+          "Has this happened more than once?",
+          "Have you told anyone else about this?",
+          "Do you know how to block someone on {platform}?",
+          "Has anything moved from being online to happening at school too?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I want to talk about something that's really common at your age and barely gets talked about properly. Online bullying, the deliberate, sustained kind, is happening across every platform. I want to know you've got the tools to deal with it if it happens.",
+          teacherDsl: "I want to have a proper conversation about cyberbullying today. Not the watered-down version. The real one. Because what I see happening online for people your age is significantly worse than what gets covered in assemblies."
+        },
+        openDisc: {
+          parent: "I'm glad you came to me. What's happening to you is serious, and you don't have to deal with it alone. Let's go through everything properly.",
+          teacherDsl: "Thank you for telling me. What you've described needs to be taken seriously, and I'm going to make sure it is. Can you tell me exactly what's been happening?"
+        },
+        language: [
+          "'Cyberbullying' and 'online harassment' both work at this age",
+          "Help them identify the type: group chat exclusion, screenshot and mock, direct harassment, impersonation accounts",
+          "Platforms have reporting tools, they may not know how to use them",
+          "Avoid: 'just stay off your phone', this is social exclusion, not a device problem"
+        ],
+        questions: [
+          "Has anyone been targeting you online deliberately, not just once, but repeatedly?",
+          "Has anything been shared about you without your permission?",
+          "Is anyone at school involved, or is it strangers?",
+          "Have you blocked them? Have you reported it on the platform?",
+          "How is this making you feel? Is it affecting school or your sleep?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "Online harassment at your age often looks very different to what adults imagine. Screenshots shared in group chats, accounts set up in your name, pile-ons that seem to start from nowhere. I want to make sure you know I'm here and that you know what to do.",
+          teacherDsl: "I want to talk to you about online harassment, not bullying as a general concept, but the specific, targeted, sustained harassment that's common for people your age. You have rights here, and I want to make sure you know them."
+        },
+        openDisc: {
+          parent: "What's happening to you is serious and it qualifies as harassment. I'm not going to minimise it. Let's look at the evidence, work out who's involved, and talk through your options.",
+          teacherDsl: "What you've described is serious, and you've done the right thing by coming to me. We're going to go through this carefully and make sure you get the right support and the right outcome."
+        },
+        language: [
+          "Online harassment and malicious communications are worth naming as legal concepts here",
+          "The Online Safety Act 2023 has specific provisions, false communications, pile-ons",
+          "Preserve evidence before blocking, screenshot everything first",
+          "Avoid: 'why is this person doing this to you?', puts the burden on the victim to explain"
+        ],
+        questions: [
+          "Do you know that sustained online harassment can be a criminal matter in the UK?",
+          "Have you kept screenshots as evidence?",
+          "Is this connected to school, or people you don't know in person?",
+          "Is this affecting you outside the online space, your mental health, your sleep, your friendships?",
+          "Who else knows about this?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "Cyberbullying at your age often becomes harassment, and you have legal rights. I want to make sure you know them, and that you know I'm here if anything's going on.",
+          teacherDsl: "Online harassment affecting people your age is often underreported because people don't realise they have legal options. I want to make sure you know your rights and what support is available."
+        },
+        openDisc: {
+          parent: "What you're describing is harassment. You have rights here, and there are real options. Let's talk through what's happened and work out the right next steps for you.",
+          teacherDsl: "What you've described is serious and you have real legal protections available to you. Let's talk through it properly and work out what you need."
+        },
+        language: [
+          "Full legal register, harassment, malicious communications, online stalking",
+          "Online Safety Act 2023 protections are significant here",
+          "University or workplace reporting routes may be relevant depending on context",
+          "Peer support framing, they may be supporting friends in this situation simultaneously"
+        ],
+        questions: [
+          "Do you know your rights under UK law in this kind of situation?",
+          "Have you documented and preserved evidence?",
+          "What outcome would feel right to you, and what support do you need from me?",
+          "Is there anyone else who knows what's been happening?"
+        ]
+      }
+    ],
+    whatNotToSay: [
+      "'Just ignore it', it doesn't work and dismisses the reality of what they're experiencing",
+      "'Stay off your phone then', social exclusion is often the point; taking the device away punishes the victim",
+      "'What did you do to cause this?', victim-blaming, however unintentional",
+      "'It's just online, it's not real', it is real, and research is clear on the psychological harm",
+      "'I'll sort this out for you' without their agreement, removes their agency and can make things worse"
+    ],
+    afterConversation: [
+      "Preserve evidence before blocking, screenshots of all content first",
+      "Report on the platform using the reporting tools",
+      "If school-connected, involve the school, they have duties under the Online Safety Act 2023",
+      "For serious or sustained harassment, contact police on 101 or via the school's DSL",
+      "Monitor mental health, cyberbullying has well-documented links to anxiety and depression"
+    ],
+    followUp: [
+      "Check in daily for the first week, not interrogating, just: 'how are things today?'",
+      "Keep an eye on signs of withdrawal, sleep changes, school avoidance",
+      "Consider the school's pastoral support or a counsellor if it's clearly affecting wellbeing",
+      "Reinforce: coming to you was the right thing, and they can keep doing it"
+    ]
+  },
+
+  screentime: {
+    label: 'Screen Time',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "I want to have a quick chat about screen time. Not to tell you off, I just want to make sure your brain and your body are getting everything they need. Screens can make that tricky if we're not careful about balance.",
+          teacherDsl: "Today we're going to talk about screens and balance. Screens are brilliant for lots of things, but our brains also need time away from them. Let's talk about why that matters."
+        },
+        openDisc: {
+          parent: "I've noticed you seem a bit frustrated when it's time to put the screen down. I'm not cross, I just want to talk about it so we can make it easier for both of us.",
+          teacherDsl: "I've noticed that some of us find it hard when it's time to put screens away. That's really normal, and it's something we can talk about and get better at together."
+        },
+        language: [
+          "'Time for other things' is better than 'too much screen time'",
+          "Avoid: 'screens are bad', they're not; balance is the concept to focus on",
+          "'Your brain needs sleep, play and movement too' is a positive framing",
+          "Reinforce what's being missed, not just what screens are causing"
+        ],
+        questions: [
+          "What's your favourite thing to do that doesn't involve a screen?",
+          "When you have to stop, how does that feel? What's hard about it?",
+          "Do you sometimes feel tired or a bit grumpy after a long time on a screen?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "I want to have a chat about how much time we're spending on screens at the moment. I'm not banning anything, I just think we need an honest conversation about what's working and what isn't.",
+          teacherDsl: "We're going to talk about screens and balance today. Not to say screens are bad, they're not, but because understanding how much time we spend on them is an important skill to develop."
+        },
+        openDisc: {
+          parent: "I've noticed some patterns around screen time that I want to talk about. I'm not cross, I just think we need a proper conversation and to work something out together.",
+          teacherDsl: "It's clear that some of us are finding it tough to find balance with screens. That's something lots of adults struggle with too. Let's talk about what helps."
+        },
+        language: [
+          "'Balance' is a concept they understand well at this age",
+          "Involve them in the solution, they're more likely to keep rules they helped make",
+          "'Sleep science' can be introduced here: screens before bed affect sleep quality",
+          "Avoid framing any part of this as punishment"
+        ],
+        questions: [
+          "Do you ever feel like you can't stop even when you want to?",
+          "Does it feel different after a long session, better or worse?",
+          "What would you be doing if screens weren't an option?",
+          "Would you be up for working out some rules together?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I want to have an honest chat about screen time, not to lecture you, but because at your age it's worth understanding what it actually does to your brain. Not in a scary way. Just the facts.",
+          teacherDsl: "I want to talk about something that affects all of us, how platforms are deliberately designed to keep you on them as long as possible. This is intentional, it's built into the technology, and understanding it is actually useful."
+        },
+        openDisc: {
+          parent: "I've been paying attention to some patterns and I want to talk about them. I'm not here to lecture. I want to understand what's going on and figure something out together.",
+          teacherDsl: "Some of you seem to be finding balance with screens quite difficult at the moment. That's not a criticism, it's hard. Let's talk about why, and what actually helps."
+        },
+        language: [
+          "Can introduce dopamine, sleep science, and the concept of designed engagement at this age",
+          "'Platforms are built to keep you scrolling' removes blame from the child and puts it where it belongs",
+          "Validate that it's hard to stop, it's specifically engineered to be",
+          "Avoid moralising or comparing to how things used to be"
+        ],
+        questions: [
+          "Do you ever feel like you've spent longer on something than you meant to?",
+          "How do you feel after a long scroll versus after you've been outside or done something physical?",
+          "Have you ever tried to put a screen down and found it harder than you expected?",
+          "Is there anything you've stopped doing because screens have got in the way?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "I want to have a proper conversation about screen time, not a lecture. Because the research on what excessive social media does to mental health at your age is pretty significant, and you deserve to know what it actually says.",
+          teacherDsl: "I want to share some of the research with you on social media use and mental health, because it's relevant to you right now, and because I think you're capable of taking it seriously and making your own decisions based on it."
+        },
+        openDisc: {
+          parent: "I've noticed some things I want to have an honest conversation about. I'm not coming in with a list of new rules, I want to understand what's going on from your perspective first.",
+          teacherDsl: "I want to check in with some of you about how you're managing screen time at the moment, because I'm noticing some things that concern me and I'd rather talk about it openly."
+        },
+        language: [
+          "Respect their autonomy while being honest about what the research shows",
+          "'Designed engagement loops' removes moral blame from the user",
+          "Avoid making 'put the phone down' the sum total of the conversation",
+          "Reference research without catastrophising, the evidence is significant but doesn't mean permanent harm"
+        ],
+        questions: [
+          "Have you ever tried to cut back on something and found it harder than expected?",
+          "Do you notice any correlation between heavy use and how you feel the next day?",
+          "What would you want your relationship with your phone to actually look like?",
+          "Is there anything screens are getting in the way of that you actually care about?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "I'm not going to tell you what to do with your phone, you're nearly an adult. But I do want to share some of what I know about what heavy social media use is doing to people your age, because I think you'd want to know.",
+          teacherDsl: "I want to share some information about digital wellbeing, not as a lecture, but because the tools for managing your own screen habits are worth having as you move into adult life."
+        },
+        openDisc: {
+          parent: "I want to have a proper conversation, not to impose anything, but because I'm concerned about some patterns I've been noticing and I think it's worth talking about.",
+          teacherDsl: "I want to check in with some of you. I'm not policing anything, I just think it's worth having an honest conversation about where things are with screens and what's actually working."
+        },
+        language: [
+          "Peer register, information sharing, not instruction",
+          "Digital wellness as a skill worth developing deliberately",
+          "Introduce practical tools: screen time reports, app limits, intentional use",
+          "Autonomy and self-regulation framing throughout"
+        ],
+        questions: [
+          "Do you feel like your phone relationship is what you'd actually want it to be?",
+          "What would you do with an extra hour a day that wasn't on a screen?",
+          "Do you know how much time you're actually spending on different apps?",
+          "What gets in the way when you try to cut back?"
+        ]
+      }
+    },
+    whatNotToSay: [
+      "'You're addicted to that thing', stigmatising and not helpful",
+      "'In my day we didn't need screens', irrelevant and alienating",
+      "'That's it, I'm taking it away' said in anger, escalates and solves nothing",
+      "'You're rotting your brain', alarmist and inaccurate",
+      "Comparing to siblings or other children, creates resentment, not change"
+    ],
+    afterConversation: [
+      "Co-create the rules wherever possible, children who contribute to agreements keep them better",
+      "Make changes gradual and realistic, drastic overnight restrictions rarely stick",
+      "Use parental controls as scaffolding, not surveillance, CSG Parental Controls Wizard for specifics",
+      "Look at underlying needs: is screen time filling a gap such as boredom, social anxiety, or loneliness?",
+      "Review agreements together after a week, not to catch them out, but to see what's working"
+    ],
+    followUp: [
+      "Acknowledge when they do well, positive reinforcement works better than sanctions",
+      "If the behaviour feels compulsive or is masking something deeper, consider a GP conversation",
+      "Return to the rules as a joint project, not a compliance check"
+    ]
+  },
+
+  radicalisation: {
+    label: 'Radicalisation',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "I want to talk to you about something. Sometimes when you're online, you might see things that seem exciting but say unkind things about groups of people, or say that hurting people is okay. If you ever see anything like that, or anything that makes you feel confused or worried, come and tell me straight away.",
+          teacherDsl: "Today we're going to talk about something important. Some content online tries to say that certain groups of people are bad, or that hurting people is okay. Those things are never true, and if you ever see anything like that, you tell a trusted adult."
+        },
+        openDisc: {
+          parent: "Thank you for showing me this. You did exactly the right thing by coming to me. Some of what you found wasn't true, and I want to help you understand why.",
+          teacherDsl: "Thank you for coming to me. You've done exactly the right thing. Let's look at this together and I'll help you understand what it is."
+        },
+        language: [
+          "'Unkind ideas about groups of people' is the right level for this age",
+          "'Exciting promises that aren't true' for recruitment-style content",
+          "No need to name extremism, terrorism or specific ideologies at this age",
+          "'If something says it's okay to hurt people, always tell me' is the core message"
+        ],
+        questions: [
+          "Have you seen anything online that felt scary or confusing?",
+          "Has anyone online told you that some groups of people are bad or dangerous?",
+          "Has anyone invited you to be part of a special group online?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "I want to talk about something important. Some content online tries to make people believe things that aren't true, about other groups of people, or that doing something harmful could be a good thing. I want to make sure you can spot when something's trying to change what you think.",
+          teacherDsl: "We're going to talk today about something called propaganda, which is when information is used to try to make you think or feel a certain way about groups of people. Can anyone give me an example of something online that might try to do that?"
+        },
+        openDisc: {
+          parent: "I'm glad you told me about this. What you've found is the kind of thing we need to look at together. You were right to bring it to me.",
+          teacherDsl: "Thank you for bringing this to me. You did the right thing. This is something I need to look at properly, and I want you to know you're not in any trouble."
+        },
+        language: [
+          "Can introduce 'propaganda' simply: 'when information is used to make you think or feel a certain way'",
+          "'Hate' as a concept, targeting groups for who they are",
+          "'Some people online try to recruit children', frame it as a safety issue like stranger contact",
+          "Avoid naming specific groups in a way that inadvertently reinforces the ideas"
+        ],
+        questions: [
+          "Has anyone online ever said certain groups of people are dangerous or bad?",
+          "Has anyone ever tried to get you to join a group or cause online?",
+          "What would you do if you saw something online that said it was okay to hurt people?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I want to talk about radicalisation, not because I think you're at risk, but because at your age you're seeing a lot of content online that's trying to influence how you think. Some of it is obvious. Some of it is really well disguised. I think you should know what to look for.",
+          teacherDsl: "Today I want to talk about radicalisation. The word sounds dramatic, but the reality is often very gradual and very subtle. I want to make sure you understand what it actually looks like, because the early stages rarely announce themselves."
+        },
+        openDisc: {
+          parent: "Thank you for coming to me with this. What you've described is a real concern and I want to understand exactly what you've been seeing. You did the right thing.",
+          teacherDsl: "Thank you for telling me. This is something I take seriously and I'm going to make sure it's handled properly, in a way that supports you, not gets you into trouble."
+        },
+        language: [
+          "'Radicalisation' is an appropriate term, explain it as 'when someone's views become gradually more extreme, often without them realising'",
+          "'Extremism' exists across the political and religious spectrum, never single out one community",
+          "The gradual drift model is important: it rarely starts with obviously extreme content",
+          "Curiosity and exposure are not the same as being radicalised, avoid treating them as already committed",
+          "School staff: PREVENT is the referral pathway, know your duty"
+        ],
+        questions: [
+          "Do you know what radicalisation means?",
+          "Have you ever seen content online that made a group of people seem really dangerous, or made violence seem justified?",
+          "Has anyone online tried to make you feel like you belong to a special group that understands the truth?",
+          "Have you noticed your views on anything shifting after spending a lot of time online? That's not wrong to explore, just worth talking about."
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "I want to have a proper conversation about something that's difficult to discuss well. Online radicalisation is real, it's increasing, and it doesn't just affect one type of person or ideology. I think you're capable of having this conversation seriously.",
+          teacherDsl: "I want to have a frank conversation about radicalisation today, not the version from assemblies, but the real version. Because the content that radicalises people your age is sophisticated, tailored to your interests, and designed to feel like the truth everyone else is hiding."
+        },
+        openDisc: {
+          parent: "What you've told me is significant and I want to understand it fully. I'm not going to panic and I'm not going to judge you. I need to know more.",
+          teacherDsl: "Thank you for being honest with me. What you've described is something I need to take seriously. I'm going to handle this carefully and make sure you get the right support, not punishment."
+        },
+        language: [
+          "Direct, honest, non-alarmist throughout",
+          "Acknowledge the full spectrum: far-right, Islamist extremism, incel ideology, eco-extremism",
+          "The PREVENT duty applies, school staff need to know when referral is needed",
+          "Channel programme is voluntary support, not punitive",
+          "Avoid treating the young person as already radicalised, curiosity is not commitment"
+        ],
+        questions: [
+          "Have you ever found yourself going down a rabbit hole of content that started to feel quite extreme?",
+          "Have you noticed content getting more and more intense the more you engage with it?",
+          "Do you know about the PREVENT programme and what it actually does?",
+          "Is there a specific ideology or group you've come across online that you want to understand better? I'd rather we talk about it."
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "I want to talk to you about radicalisation properly, not the way it usually gets discussed. Because at your age you're in environments where ideas across the full spectrum are available, and the manipulation techniques used to recruit people are sophisticated.",
+          teacherDsl: "I want to have a serious conversation about radicalisation today. At your age you're encountering a full range of ideological content, political, religious, social. I want to make sure you have the critical tools to assess it, and that you know what support looks like if you ever need it."
+        },
+        openDisc: {
+          parent: "I'm grateful you've come to me. What you've described needs careful attention. Let's talk through everything properly, without rushing to conclusions.",
+          teacherDsl: "I'm grateful you've told me about this. I'm going to handle it carefully, and my priority is making sure you get the right support. Can you tell me everything?"
+        },
+        language: [
+          "Full adult register, this is a conversation that can handle complexity and degree",
+          "Legal context: support via Channel is voluntary; criminality requires action, not just holding extreme beliefs",
+          "Critical thinking and media literacy as the primary long-term defence",
+          "Avoid treating all extreme content as equivalent, context and degree both matter"
+        ],
+        questions: [
+          "Where are you encountering this content, gaming, social media, forums?",
+          "How long has this been going on?",
+          "What's drawing you, or the person you're concerned about, toward this content?",
+          "Do you understand the difference between engaging with extreme ideas and being at risk of acting on them?"
+        ]
+      }
+    },
+    whatNotToSay: [
+      "'You're going to end up on a list', shuts down the conversation immediately and creates fear",
+      "'That's disgusting', makes further conversation impossible",
+      "'I'm going to report you', unless there is imminent risk of violence, this destroys trust",
+      "Targeting one ideology or religion exclusively, radicalisation crosses every boundary",
+      "'How could you believe that?', they may not believe it yet; curiosity is not commitment"
+    ],
+    afterConversation: [
+      "If you believe there is imminent risk of violence, contact police immediately on 999",
+      "For concerns without immediate risk: PREVENT Referral Line 0800 011 3764, free, confidential",
+      "Channel programme referral (voluntary support) via the same route",
+      "Do not confront the content or the person providing it directly, specialist support is far better equipped",
+      "School staff: DSL must be informed and PREVENT duties apply"
+    ],
+    followUp: [
+      "Keep the conversation going, pulling away creates more vulnerability, not less",
+      "Try to understand the underlying need being met by the content: belonging, purpose, identity, grievance",
+      "Engage with the ideas critically, not dismissively, 'tell me more about that' is often more effective than 'that's wrong'",
+      "Seek specialist support via Channel if concerns persist"
+    ]
+  },
+
+  selfharm: {
+    label: 'Self-Harm Online',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "Sometimes when people are online they might see things that are upsetting, pictures or videos of people hurting themselves. If you ever see something like that, you can always come and tell me. You won't be in trouble at all.",
+          teacherDsl: "Sometimes children come across things online that are upsetting or confusing. If any of you ever see pictures or videos of someone hurting themselves, that's something you tell a trusted adult about straight away. You won't be in trouble."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. Some of what you saw was very upsetting, and it's completely okay to feel confused or scared. You did the right thing by coming to me.",
+          teacherDsl: "Thank you for coming to me. You did exactly the right thing. This is something I need to deal with carefully, and I'm going to make sure you're properly looked after."
+        },
+        language: [
+          "'Hurting themselves' is the appropriate language at this age, no detail about methods",
+          "Reinforce: that content exists online, it is not your fault if you saw it, you can tell an adult",
+          "Focus on feelings: 'it's okay to feel upset or confused after seeing something like that'",
+          "Keep your response calm and matter-of-fact, visible distress teaches them the fault was theirs"
+        ],
+        questions: [
+          "Are you okay? How are you feeling after seeing that?",
+          "Do you know you can always come to me if you see something online that upsets you?",
+          "What do you do when you feel really upset about something?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "I want to talk to you about something that's on a lot of platforms. Sometimes people share things about hurting themselves when they're very sad or struggling. If you ever see anything like that, I want you to come to me. And if you ever feel that way yourself, I really want to know.",
+          teacherDsl: "We're going to talk about something that can come up online. Some content shows people hurting themselves when they're very sad. If you ever see that, or if you ever feel very sad yourself in a way that worries you, I want you to tell me or another trusted adult."
+        },
+        openDisc: {
+          parent: "Thank you so much for telling me. That took real courage. I want to understand how you're feeling and I'm not going to react badly. Can you tell me more about what's been going on?",
+          teacherDsl: "Thank you for coming to me. That took courage. I want to make sure you get exactly the right support. Can I ask a few gentle questions so I understand properly?"
+        },
+        language: [
+          "Gentle, non-reactive tone is critical, visible alarm can shut down disclosure",
+          "Do NOT ask about methods if a child discloses self-harm",
+          "Focus on emotional state and connection, not behaviour",
+          "Childline 0800 1111 is specifically designed for this age group and is available 24/7"
+        ],
+        questions: [
+          "How long have you been feeling this way?",
+          "Is there something specific that has been happening?",
+          "Is there anything that helps when it gets really bad?",
+          "What would help me to support you right now?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I want to talk about something that comes up on social media a lot, content about self-harm. It can be really hard to avoid, and I want you to know that if you ever see it, or if you ever feel that way yourself, I'm here and I won't freak out. I promise.",
+          teacherDsl: "Today I want to talk about self-harm content online. It's on more platforms than most adults realise, and it can be hard to avoid. I want you to know that if you ever see it, or if you ever feel that way yourself, there are people, including me, who you can talk to without it turning into a big drama."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. I'm not panicking and I'm not angry. I just want to understand what's going on for you. You are not in trouble. You are loved. And we are going to get through this.",
+          teacherDsl: "I'm really glad you told me. This takes courage. I'm going to make sure you get exactly the right support, and I'm going to handle this as carefully as possible. You're not in trouble and you're not alone in this."
+        },
+        language: [
+          "'Self-harm' is appropriate to name directly, no need to euphemise with older children",
+          "Do NOT ask about methods or look at injuries",
+          "Validate the emotional pain without validating the behaviour",
+          "Childline 0800 1111 is specifically designed for this age group and available 24/7",
+          "Social media algorithms actively amplify self-harm content, worth noting gently"
+        ],
+        questions: [
+          "How long have you been feeling this way?",
+          "Have you talked to anyone else about this?",
+          "Is there anything that helps when things feel really bad?",
+          "Would you be open to talking to someone who specialises in this, not instead of me, but as well as?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "I want to have an honest conversation about self-harm. Not a lecture. I know it's more common than people talk about at your age, and I want you to know that if you or anyone you know is struggling, this is a safe space.",
+          teacherDsl: "I want to have an honest conversation today about self-harm. Not the version that gets skimmed over in PSHE. The real version, because it affects a significant number of people your age and you deserve proper information about it."
+        },
+        openDisc: {
+          parent: "Thank you for trusting me with this. I'm not going to overreact, and I'm not going to make this about me. Tell me what's been happening.",
+          teacherDsl: "I'm grateful you felt you could tell me. I'm going to make sure you get the right support, and I'm going to handle this sensitively. You're not in trouble, and you've done the right thing."
+        },
+        language: [
+          "Direct and non-shaming throughout, shame drives self-harm underground",
+          "Childline 0800 1111, Young Minds youngminds.org.uk, Shout, text SHOUT to 85258",
+          "Do NOT discuss methods, do NOT make agreements about secrecy",
+          "If there is active and imminent risk, seek emergency help immediately",
+          "Treat them as capable of engaging with their own wellbeing, they often are"
+        ],
+        questions: [
+          "How long has this been going on?",
+          "Is there a pattern to when it gets worse?",
+          "Who else knows? Is there anyone at school you trust?",
+          "What do you need from me right now?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "I want to check in with you properly. Mental health at your age is under real pressure, and I want to make sure you know I'm here if things ever get hard.",
+          teacherDsl: "I want to check in about something that affects a significant number of people your age, mental health, self-harm, and the kind of content that can make those feelings worse. Not as a lecture, just an open conversation."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. That took courage. I want to help you get the right support, and I want to understand what you need from me first.",
+          teacherDsl: "I'm grateful you've come to me. I want to handle this carefully and make sure you get proper support. Can you tell me a bit more about what's been happening?"
+        },
+        language: [
+          "Adult peer register, equal conversation",
+          "NHS pathways: GP is the right first step for formal support",
+          "Samaritans 116 123 (24/7, free), Shout 85258 (text), Young Minds",
+          "'This is treatable and help works', hope matters here",
+          "Avoid moving to solutions too quickly or comparing to others' problems"
+        ],
+        questions: [
+          "How long has this been going on?",
+          "Have you spoken to a GP or any professional about this?",
+          "What would feel like help to you right now?",
+          "Is there anything that's getting in the way of getting support?"
+        ]
+      }
+    ],
+    whatNotToSay: [
+      "'Why would you do that to yourself?', shaming language that closes the conversation",
+      "'Think about what this is doing to the family', guilt and deflection, not support",
+      "'Promise me you'll never do it again', promises create shame cycles, not safety",
+      "'Other people have it much worse', minimising and deeply unhelpful",
+      "'I'm going to tell everyone', threatens the relationship that is the protective factor",
+      "'Pull yourself together', shows a fundamental misunderstanding of the experience"
+    ],
+    afterConversation: [
+      "Seek professional support as soon as possible, GP is the right first step for formal pathways",
+      "Do not search devices or check browsing history, this destroys trust without adding safety",
+      "Childline 0800 1111 (under 19, free, 24/7), can also advise parents and carers",
+      "Young Minds Parents Helpline: 0808 802 5544",
+      "Take care of yourself, supporting someone through this is hard and you need your own support too",
+      "IMPORTANT: If you believe someone is in immediate danger, call 999 or take them to A&E"
+    ],
+    followUp: [
+      "Check in gently and regularly, presence matters more than any specific words",
+      "Watch for signs of increasing risk: talking about being a burden, giving things away, increasing isolation",
+      "If things deteriorate, escalate to professional support without delay",
+      "Celebrate small steps without making the behaviour the focus of every conversation"
+    ]
+  },
+
+  airisks: {
+    label: 'AI Risks',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "I want to talk to you about something clever but a bit tricky. Computers can now make pictures and videos that look completely real but are actually made up. Have you ever seen a picture or video online that seemed a bit strange or too perfect?",
+          teacherDsl: "Today we're going to talk about something quite amazing but also a bit tricky, computers can now make pictures and videos that look completely real, even though they're not. We're going to learn how to spot when something might not be real."
+        },
+        openDisc: {
+          parent: "Thank you for showing me this. You were right to come to me. What you found is made by a computer to look real, it's called a deepfake. It isn't a real photo or video even though it looks like one.",
+          teacherDsl: "Good thinking to bring this to me. What you found is a great example of something computers can make that looks real but isn't. Let's have a look at it together."
+        },
+        language: [
+          "'Not real pictures that look real' is the key concept at this age",
+          "'Computers can make up photos and videos', simple and accurate",
+          "No detail about how deepfakes are used maliciously at this age",
+          "'If it seems strange, come and tell me' is the action message"
+        ],
+        questions: [
+          "Have you ever seen a picture or video that seemed a bit weird or too perfect?",
+          "Do you know that computers can make pictures that look real but aren't?",
+          "If you saw something online that seemed strange, what would you do?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "I want to talk to you about AI, the kind that's changing what we see online. Computers can now make really convincing fake photos and videos of real people. It's important to know that not everything you see is real.",
+          teacherDsl: "Today we're going to learn about something called deepfakes. Has anyone heard that word? It's when computers use AI to make photos or videos that look completely real, even when they aren't. It's impressive technology, but it also means we need to be careful about what we believe online."
+        },
+        openDisc: {
+          parent: "Thanks for coming to me with this. What you've found is a really good example of why we can't always trust what we see online. Let's look at it together.",
+          teacherDsl: "Good thinking to bring this to me. This is a great example of AI-generated content, let's use it to talk about how we check whether something is real."
+        },
+        language: [
+          "'Deepfake' is a term they may have heard, fine to introduce and explain simply",
+          "'AI can pretend to be a person' is useful for chatbot safety too",
+          "Critical thinking: 'how do we check if something is real?'",
+          "Avoid making them feel foolish for being deceived, these are designed to deceive"
+        ],
+        questions: [
+          "Do you know what a deepfake is?",
+          "How do you check if something you see online is real?",
+          "Has anyone ever shown you a picture or video and you weren't sure if it was real?",
+          "Do you know the difference between a real person and an AI chatbot?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "AI is moving really fast, and I want to make sure you understand what it can actually do, because some of it is significant for your safety online. Things like deepfakes, AI voices that sound real, and chatbots that seem like actual people.",
+          teacherDsl: "I want to talk to you about AI today, specifically the parts that are most relevant to staying safe online. Deepfakes, AI companions, voice cloning. This isn't science fiction, it's what's already out there right now."
+        },
+        openDisc: {
+          parent: "What you've described is a real concern and you were right to come to me. Let's look at it properly together.",
+          teacherDsl: "Thank you for bringing this to me. Let's look at it carefully together."
+        },
+        language: [
+          "'Deepfake' and 'AI-generated content' are both fine to use",
+          "AI companions, explain the emotional dependency risk without moralising",
+          "'Voice cloning', someone can make convincing fake audio of anyone, including people they know",
+          "Critical thinking tools: reverse image search, cross-checking sources",
+          "Avoid making it feel hopeless, there are always ways to verify"
+        ],
+        questions: [
+          "Do you know what a deepfake is and how convincing they've become?",
+          "Have you come across any AI companions or chatbots that try to form emotional relationships?",
+          "What do you think the risks are of getting emotionally close to an AI?",
+          "How do you check if something you see online is real?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "I want to have a proper conversation about AI, specifically the things that are happening to people your age right now. Deepfakes used for blackmail, AI companions designed to feel real, chatbots that can impersonate people you know. It's changing fast.",
+          teacherDsl: "I want to have a direct conversation about AI risks, not the general hype, but the specific things that affect people your age. Deepfake intimate imagery, AI companions, and manipulation techniques that use AI to seem more credible."
+        },
+        openDisc: {
+          parent: "What you've described is significant. Let's go through it carefully together.",
+          teacherDsl: "Thank you for bringing this to me. This matters. Let's look at it together."
+        },
+        language: [
+          "Creating or sharing deepfake intimate imagery is illegal under the Online Safety Act 2023",
+          "AI companions, dependency, data privacy, the commercial model behind them",
+          "'These platforms profit from your emotional engagement and your data'",
+          "Full AI literacy conversation is appropriate at this age"
+        ],
+        questions: [
+          "Do you know that creating deepfake intimate images is now a criminal offence in the UK?",
+          "Have you or any of your friends come across AI companion apps?",
+          "What would you do if someone sent you something that looked like a video of you but wasn't?",
+          "How much do you trust what you see online? What's your process for checking?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "AI is changing things pretty fundamentally. I want to have a proper adult conversation about what that means, not just personally, but for how we all consume information and form connections online.",
+          teacherDsl: "I want to have a serious conversation about AI and what it means for your generation. Not the jobs conversation, the safety, consent, and information integrity conversation. These are things you'll need to navigate from here on."
+        },
+        openDisc: {
+          parent: "What you've described is something that's happening to more people than you might think, and there is real legal recourse. Let's talk through it properly.",
+          teacherDsl: "I'm glad you brought this to me. Let's go through it carefully and make sure you know all your options."
+        },
+        language: [
+          "Full adult conversation, digital literacy, legal rights, AI policy",
+          "Deepfake laws under the Online Safety Act 2023, specific protections exist",
+          "AI misinformation, broader social context worth raising",
+          "Critical media literacy as a lifelong skill"
+        ],
+        questions: [
+          "How are you thinking about AI in your day-to-day online life?",
+          "What would change if you assumed a significant proportion of what you see online is AI-generated?",
+          "Do you know your rights if deepfake content featuring you appears online?",
+          "Where do you go to verify whether something is real?"
+        ]
+      }
+    ],
+    whatNotToSay: [
+      "'Just don't use those apps', too vague to be actionable",
+      "'You can tell it's fake', increasingly, you cannot, and that's the entire point",
+      "'AI is the future, don't be scared of it', dismisses legitimate and current risks",
+      "'That would never happen to you', it does happen, and optimism is not protection"
+    ],
+    afterConversation: [
+      "If deepfake intimate imagery is involved: IWF Report Remove at reportremove.iwf.org.uk, CEOP",
+      "If AI companion dependency is the concern, consider whether underlying loneliness or social anxiety needs addressing",
+      "Screen time and parental controls can limit access to specific apps, CSG Parental Controls Wizard",
+      "Keep AI literacy as an ongoing conversation, this changes faster than any single guide can track"
+    ],
+    followUp: [
+      "Share credible updates as they arise, Ofcom, NSPCC, BBC Tech are good sources",
+      "If emotional dependency on AI is evident and persistent, consider professional support",
+      "Revisit as new tools emerge, this is not a one-time conversation"
+    ]
+  },
+
+  strangercontact: {
+    label: 'Stranger Contact',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "I want to talk about people we don't know online. Just like we have rules about strangers in real life, we have rules online too. Has anyone ever sent you a message online that you didn't expect?",
+          teacherDsl: "Today we're going to talk about online strangers. Just like we have rules about strangers in real life, there are rules when we're online too. Can anyone tell me what we do if a stranger tries to talk to us?"
+        },
+        openDisc: {
+          parent: "Thank you for telling me. You did exactly the right thing. People online aren't always who they say they are, and I'm glad you came to me.",
+          teacherDsl: "Thank you for coming to me. You've done exactly the right thing. Let's look at what happened together."
+        },
+        language: [
+          "'Online strangers', same rules as real-life strangers",
+          "'People online aren't always who they say they are'",
+          "'Don't reply, tell a trusted adult' is the core action",
+          "Avoid creating general fear of the internet, frame it as a specific rule"
+        ],
+        questions: [
+          "Has anyone you don't know sent you a message online?",
+          "Do you know what to do if a stranger messages you?",
+          "What would you do if someone online wanted to be your friend but you didn't know who they were?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "Can we talk about messages from people you don't know? It can feel exciting when someone new wants to be your friend, but online it's worth being careful, because you can't always see who's really on the other side.",
+          teacherDsl: "Today we're going to talk about what to do when someone you don't know tries to contact you online. It happens more than people realise, and I want to make sure you know exactly what to do."
+        },
+        openDisc: {
+          parent: "You were really sensible to come and tell me about this. Let's look at what happened together.",
+          teacherDsl: "You've done the right thing by coming to me. Let's look at this together and make sure you know what to do next."
+        },
+        language: [
+          "'Online stranger danger' is widely understood at this age",
+          "The concept that someone might pretend to be a child is important to introduce",
+          "'Check with an adult before replying to anyone you don't know in real life'",
+          "Avoid making all online interaction seem dangerous"
+        ],
+        questions: [
+          "Has anyone you don't know in real life sent you a message or friend request?",
+          "Do you know that someone online might pretend to be a child when they're actually an adult?",
+          "What's your rule for who you talk to online?",
+          "If someone seemed really friendly but you didn't know them, what would you do?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I want to talk about stranger contact online, not in a scary way, but practically. At your age, you're using platforms where strangers can reach you pretty easily. I want to make sure you know how to manage that.",
+          teacherDsl: "Today I want to talk about privacy settings and stranger contact. Most of you are on platforms where, depending on your settings, anyone in the world can contact you. Let's look at what that means and what you can do about it."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. Let's look at what's been happening and work out the right response together.",
+          teacherDsl: "Thank you for coming to me. Let's go through this properly together."
+        },
+        language: [
+          "'Unsolicited contact' is fine to use at this age",
+          "Platform privacy settings can significantly reduce exposure",
+          "'If you can't verify who someone is, treat them as a stranger regardless of what they say'",
+          "CSG platform guides have relevant privacy setting steps"
+        ],
+        questions: [
+          "Do you know which of your accounts are public? Have you actually checked?",
+          "Has anyone you don't know tried to contact you or follow you recently?",
+          "What's your process for deciding whether to accept a follow or friend request?",
+          "Do you know how to restrict who can message you on {platform}?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "At your age, stranger contact online changes shape. It's often not obviously strange, it can look like networking, flattery, or genuine interest. I want to talk about how to navigate that.",
+          teacherDsl: "I want to talk about how stranger contact looks at your age, because it's very different to what most adults imagine. It's often sophisticated, complimentary, and designed to seem legitimate. Let's talk about how to recognise the tactics."
+        },
+        openDisc: {
+          parent: "Let's look at what's happened properly. Can you talk me through the conversation?",
+          teacherDsl: "Can you talk me through what's been happening? I want to understand the full picture before we decide on next steps."
+        },
+        language: [
+          "'Love bombing', intense flattery from someone you don't know, is worth naming",
+          "'Verify before you trust', cross-platform verification is a real skill",
+          "Privacy settings matter more at this age because accounts are typically more public",
+          "Avoid: 'don't talk to anyone online you don't know', too absolute and unworkable"
+        ],
+        questions: [
+          "Are you aware of which of your accounts are public versus private?",
+          "Have you had anyone be really intensely friendly or complimentary that you didn't know?",
+          "What's your process when someone you don't know tries to connect with you?",
+          "Do you know how to check someone's identity across platforms if you're unsure about them?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "Stranger contact looks completely different at your age. I want to make sure you're thinking about it in the right way, especially on platforms where professional and social contexts overlap.",
+          teacherDsl: "Online contact at your age spans social, professional, and academic contexts. I want to make sure you've got the right framework for assessing who to trust and when, because the tactics used to manipulate are sophisticated."
+        },
+        openDisc: {
+          parent: "Let's go through what's happened carefully. What do you know about this person?",
+          teacherDsl: "Can you walk me through what's been happening? I want to understand the full picture."
+        },
+        language: [
+          "Adult register, professional networks, social platforms, dating apps all in scope",
+          "Social engineering and pretexting, professional context carries its own risks",
+          "Trust but verify, checking digital footprint across platforms",
+          "Safety planning if meeting someone known only online is relevant here"
+        ],
+        questions: [
+          "Have you had anyone contact you recently that felt off in some way?",
+          "How do you verify someone's identity before deciding to trust them?",
+          "Are you aware of what your public digital footprint looks like to a complete stranger?"
+        ]
+      }
+    ],
+    whatNotToSay: [
+      "'Why did you reply?', implies fault for natural curiosity or politeness",
+      "'Don't talk to anyone online you don't know', too absolute and unworkable in practice",
+      "'I told you not to have public accounts', about control, not safety",
+      "'How many times have I said this?', makes it about past conversations, not the current situation"
+    ],
+    afterConversation: [
+      "Block and report on the platform using the appropriate reporting tools",
+      "If the contact escalated to explicit requests, threats, or imagery: CEOP at ceop.police.uk",
+      "Screenshot and preserve before blocking if any escalation has occurred",
+      "Check and update privacy settings together, CSG Parental Controls Wizard for platform specifics"
+    ],
+    followUp: [
+      "Review privacy settings together a week later, as a joint task, not a check",
+      "Check in: 'has anything else come through?'",
+      "Use it as a prompt to talk about what personal information is publicly visible on their accounts"
+    ]
+  },
+
+  explicitcontent: {
+    label: 'Explicit Content',
+    ages: {
+      under8: {
+        openPrev: {
+          parent: "Sometimes when you're online, you might accidentally see pictures or videos that are for grown-ups, not for children. If that ever happens, I want you to close the screen and come and tell me. You won't be in any trouble at all, it's not your fault if it happens.",
+          teacherDsl: "Sometimes children accidentally see things online that are only meant for grown-ups. If that ever happens to any of you, I want you to close it straight away and tell a trusted adult. You won't be in trouble. It's not your fault."
+        },
+        openDisc: {
+          parent: "Thank you for telling me. You did the right thing. You're not in trouble at all, this happens to lots of children and it is not your fault.",
+          teacherDsl: "Thank you for telling me. You've done exactly the right thing. You are not in trouble at all."
+        },
+        language: [
+          "'Grown-up content not for children' is the right framing at this age",
+          "'Close and tell' is the core action",
+          "Avoid visible shock or disgust, it teaches them it was their fault for seeing it",
+          "No detail or description needed in your response"
+        ],
+        questions: [
+          "Have you ever seen something online that made you feel uncomfortable or confused?",
+          "If you saw something online that seemed like it was for grown-ups, what would you do?",
+          "Do you know you can always tell me if something like that happens?"
+        ]
+      },
+      "8to10": {
+        openPrev: {
+          parent: "I want to talk about something that comes up online sometimes. There's content online that's only meant for adults, and sometimes it appears even when nobody was looking for it. If you've seen anything like that, or if you ever do, you can always come to me.",
+          teacherDsl: "Today I want to talk about something that can come up online, content that's only meant for adults. Sometimes it appears even when you're not looking for it. If that ever happens, you know what to do, close it and tell a trusted adult."
+        },
+        openDisc: {
+          parent: "I'm glad you told me. You've done nothing wrong. Let's have a proper chat about what you saw and how you're feeling about it.",
+          teacherDsl: "Thank you for coming to me. You've done the right thing. Let's talk about what happened."
+        },
+        language: [
+          "Can introduce 'pornography' if developmentally appropriate, 'sexual content made for adults'",
+          "Normalise: this happens to most children, it is not because of anything they did",
+          "'Not what real relationships look like' is an important early message worth planting",
+          "Avoid asking what specifically they saw in any detail"
+        ],
+        questions: [
+          "Have you seen anything online that was a bit confusing or that seemed like it was for grown-ups?",
+          "How did it make you feel?",
+          "Did you look for it, or did it just appear?",
+          "Do you have any questions about what you saw?"
+        ]
+      },
+      "11to13": {
+        openPrev: {
+          parent: "I want to have an honest conversation about pornography. I know you've probably come across it by now, whether you looked for it or not. And I'd rather you had some proper context from me than figured it out alone.",
+          teacherDsl: "I want to have a direct conversation today about pornography. Not to embarrass anyone, but because it's something most of you will have encountered online by now, and you deserve proper context rather than silence."
+        },
+        openDisc: {
+          parent: "I'm glad you felt you could tell me. Let's talk about it properly.",
+          teacherDsl: "Thank you for being honest with me. Let's talk about it without any drama."
+        },
+        language: [
+          "Direct and non-shaming, shame is counterproductive here",
+          "'Most of what's in pornography is performance, not reality', say this clearly",
+          "Age verification is being rolled out under the Online Safety Act, worth mentioning",
+          "Compulsive use can develop quickly, mentioned as practical information, not to frighten",
+          "Avoid making them feel abnormal for being curious or for having encountered it"
+        ],
+        questions: [
+          "How long have you been coming across this?",
+          "Did you look for it or was it recommended to you?",
+          "Do you have any questions about what you've seen? Nothing's off-limits as a question.",
+          "Do you know what healthy relationships actually look like compared to what pornography shows?"
+        ]
+      },
+      "14to16": {
+        openPrev: {
+          parent: "I want to talk about pornography properly, not to lecture you, but because what young people are seeing online now is very different from what previous generations encountered, and the research on its impact is significant.",
+          teacherDsl: "I want to talk directly about pornography today, specifically what the research says it does to expectations around relationships and consent. You deserve honest information, not silence or panic."
+        },
+        openDisc: {
+          parent: "Let's have an honest conversation about this. I'm not shocked and I'm not going to make you feel bad.",
+          teacherDsl: "Let's talk about it directly. I'm not here to judge anyone."
+        },
+        language: [
+          "Direct adult conversation, they are likely already consumers",
+          "Research on adolescent brain development and pornography without catastrophising",
+          "'Consent, respect, and realistic expectations in relationships' as the framing",
+          "Age verification under the Online Safety Act is changing, mention this",
+          "Compulsive use patterns, how to recognise them and what to do"
+        ],
+        questions: [
+          "What do you think of what you've seen? Does it seem realistic?",
+          "Do you know what it might be doing in terms of expectations in real relationships?",
+          "Have you ever felt like you've been using it more than you'd want to?",
+          "What do you think a healthy relationship actually looks like?"
+        ]
+      },
+      "17to18": {
+        openPrev: {
+          parent: "I want to check in about something that affects a lot of people your age, pornography consumption and what it does to expectations around relationships and consent. Not a lecture, just a conversation.",
+          teacherDsl: "I want to cover something directly today, pornography literacy. At your age this is relevant to how you think about consent, relationships, and what you encounter online. It's worth having the conversation properly."
+        },
+        openDisc: {
+          parent: "I appreciate you telling me. Let's have a proper conversation about what's going on.",
+          teacherDsl: "Let's talk about it directly and without drama."
+        },
+        language: [
+          "Full adult conversation, consent, relationships, pornography literacy",
+          "Legal context: if anything suggests content involving under-18s, report to IWF",
+          "Compulsive use patterns and where to get support",
+          "Relationship skills and realistic expectations as an active topic"
+        ],
+        questions: [
+          "What's your thinking around pornography and how it shapes expectations?",
+          "Have you ever felt like your use was getting to a place you weren't comfortable with?",
+          "Do you know how to report content you suspect features under-18s?"
+        ]
+      }
+    ],
+    whatNotToSay: [
+      "'That's disgusting, why were you looking at that?', shame is deeply counterproductive here",
+      "'I'm going to take the internet away', prevents all future disclosures",
+      "'You're too young to be thinking about that', denies normal development and curiosity",
+      "'Why didn't you just close it?', assumes more control than children actually have over what appears",
+      "Never interrogate what specifically they saw, this is not helpful and can cause harm"
+    ],
+    afterConversation: [
+      "Check and update parental controls, SafeSearch, content filters, screen time settings via CSG Wizard",
+      "Age verification under the Online Safety Act is being implemented, platforms will be required to enforce it",
+      "Consider whether Relationships, Sex and Health Education at school is covering this well",
+      "If compulsive or concerning use is suspected: NSPCC 0808 800 5000 or GP for formal support"
+    ],
+    followUp: [
+      "Keep the conversation going, one conversation is not enough and shouldn't pretend to be",
+      "Frame it as an ongoing topic, not a resolved crisis",
+      "Pornography literacy conversations, real relationships versus performance, are worth returning to",
+      "For compulsive use concerns, seek professional support sooner rather than later"
+    ]
+  }
+};
+
+// ── UI LOGIC ───────────────────────────────────────────────────────────────
+function choose(step, value, displayLabel) {
+  const keys = [null,'role','age','platform','concern','disclosure'];
+  state[keys[step]] = value;
+  labels[keys[step]] = displayLabel;
+
+  // Update chosen badge
+  const badge = document.getElementById('chosen' + step);
+  badge.textContent = displayLabel;
+  badge.style.display = 'block';
+
+  // Mark step done
+  const block = document.getElementById('step' + step);
+  block.classList.remove('active');
+  block.classList.add('done');
+  block.querySelectorAll('.opt-btn, .disc-btn').forEach(b => b.classList.remove('selected'));
+  block.querySelectorAll('.opt-btn, .disc-btn').forEach(b => {
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + value + "'")) {
+      b.classList.add('selected');
+    }
+  });
+
+  // Activate next step
+  const next = document.getElementById('step' + (step + 1));
+  if (next) {
+    next.classList.remove('locked');
+    next.classList.add('active');
+    next.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Enable generate if all done
+  if (state.role && state.age && state.platform && state.concern && state.disclosure) {
+    document.getElementById('generateBtn').disabled = false;
+  }
+}
+
+function toggleStep(n) {
+  const block = document.getElementById('step' + n);
+  if (block.classList.contains('locked')) return;
+}
+
+function renderList(ulId, items) {
+  const ul = document.getElementById(ulId);
+  ul.innerHTML = '';
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item.replace(/\{platform\}/g, state.platform);
+    ul.appendChild(li);
+  });
+}
+
+function generate() {
+  const concern = C[state.concern];
+  const ageData = concern.ages[state.age];
+  const roleKey = state.role;
+  const discKey = state.disclosure === 'yes' ? 'openDisc' : 'openPrev';
+
+  // Opening text
+  let opening = ageData[discKey][roleKey];
+  opening = opening.replace(/\{platform\}/g, state.platform);
+  document.getElementById('openText').textContent = opening;
+
+  // Language
+  renderList('langList', ageData.language);
+
+  // What not to say
+  renderList('notList', concern.whatNotToSay);
+
+  // Questions
+  renderList('qList', ageData.questions);
+
+  // After
+  renderList('afterList', concern.afterConversation);
+
+  // Follow up
+  renderList('followList', concern.followUp);
+
+  // Meta badges
+  const meta = document.getElementById('outputMeta');
+  meta.innerHTML = `
+    <div class="output-title">Your personalised conversation guide</div>
+    <span class="meta-badge">${labels.role}</span>
+    <span class="meta-badge">${labels.age}</span>
+    <span class="meta-badge">${labels.platform}</span>
+    <span class="meta-badge">${concern.label}</span>
+    ${state.disclosure === 'yes' ? '<span class="meta-badge red">Disclosure has happened</span>' : '<span class="meta-badge">Preventative conversation</span>'}
+  `;
+
+  // Show output
+  document.getElementById('output').style.display = 'block';
+  document.getElementById('output').scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetForm() {
+  state.role = state.age = state.platform = state.concern = state.disclosure = null;
+  labels.role = labels.age = labels.platform = labels.concern = labels.disclosure = null;
+  document.getElementById('output').style.display = 'none';
+  document.getElementById('generateBtn').disabled = true;
+
+  for (let i = 1; i <= 5; i++) {
+    const block = document.getElementById('step' + i);
+    block.classList.remove('done', 'active', 'locked');
+    block.classList.add(i === 1 ? 'active' : 'locked');
+    const badge = document.getElementById('chosen' + i);
+    badge.style.display = 'none';
+    block.querySelectorAll('.opt-btn, .disc-btn').forEach(b => b.classList.remove('selected'));
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
