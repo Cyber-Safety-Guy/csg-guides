@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media — Cyber Safety Guy</title>
-  <meta name="description" content="Follow Cyber Safety Guy on Substack, Instagram, LinkedIn, BlueSky and YouTube. Online child safety news, guides and resources for parents and teachers.">
   <link rel="canonical" href="https://guides.cybersafetyguy.com/social.html">
   <meta name="description" content="Find Cyber Safety Guy on social media. Follow for child online safety news, research and resources.">
   <meta property="og:title" content="Social Media — Cyber Safety Guy">
@@ -33,6 +32,7 @@
       --substack:     #FF6719;
       --youtube:      #FF0000;
       --gmail:       #34A853;
+      --x:           #000000;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -101,6 +101,7 @@
     .social-card.substack   .card-accent { background: var(--substack); }
     .social-card.youtube    .card-accent { background: var(--youtube); }
     .social-card.email      .card-accent { background: var(--gmail); }
+    .social-card.x          .card-accent { background: var(--x); }
 
     .card-inner { display: flex; align-items: center; gap: 20px; padding: 24px 24px 24px 20px; flex: 1; }
     .platform-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -131,30 +132,7 @@
       width: auto;
       object-fit: contain;
     }
-
-    .page-nav { display: flex; justify-content: center; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
-    .page-nav-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 3px; transition: background 0.2s, box-shadow 0.2s; }
-    .page-nav-btn.active { background: rgba(66,206,208,0.08); border: 1px solid rgba(66,206,208,0.25); color: var(--grey); cursor: default; pointer-events: none; }
-    .page-nav-btn.go { background: rgba(66,206,208,0.08); border: 1px solid var(--teal); color: var(--teal); }
-    .page-nav-btn.go:hover { background: rgba(66,206,208,0.18); box-shadow: 0 0 16px rgba(66,206,208,0.2); }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dale",
-  "alternateName": "Cyber Safety Guy",
-  "jobTitle": "Child Online Safety Educator",
-  "url": "https://guides.cybersafetyguy.com",
-  "sameAs": [
-    "https://www.cybersafetyguy.com",
-    "https://www.linkedin.com/in/cybersafetyguy",
-    "https://bsky.app/profile/cybersafetyguy.bsky.social"
-  ],
-  "description": "22-year RAF Police veteran and DFIR specialist. Online child safety educator and founder of Cyber Safety Guy."
-}
-</script>
-
 </head>
 
 <body>
@@ -175,10 +153,12 @@
     <h1>FIND ME<br><span>ON SOCIAL</span></h1>
     <p class="header-sub">Follow &bull; Connect &bull; Share</p>
     
-    <div class="page-nav">
-      <a href="https://www.cybersafetyguy.com" target="_blank" class="page-nav-btn go">📰 Blog</a>
-      <a href="index.html" target="_self" class="page-nav-btn go">🏠 CSG Hub</a>
-      <a class="page-nav-btn active">📡 Social</a>
+    <div class="hub-nav">
+      <a href="index.html" target="_self">📄 Online Safety Guides</a>
+      <a href="presentations.html" target="_self">🎤 Presentations</a>
+      <a href="social.html" target="_self" class="active">📡 Social</a>
+      <a href="csg_threat_radar.html" target="_self">🚨 Threat Radar</a>
+      <a href="wizard.html" target="_self">🛠️ Parental Controls Wizard</a>
     </div>
   </header>
 
@@ -273,12 +253,21 @@
           <span class="card-arrow">›</span>
         </div>
       </a>
+      <!-- X / Twitter -->
+      <a href="https://x.com/CyberSafetyGuy_" target="_blank" rel="noopener noreferrer" class="social-card x">
+        <div class="card-accent"></div>
+        <div class="card-inner">
+          <div class="platform-icon"><svg viewBox="0 0 24 24" fill="#ffffff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.629L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></div>
+          <div class="card-text">
+            <p class="platform-name">X</p>
+            <p class="platform-handle">@CyberSafetyGuy_</p>
+            <p class="platform-desc">News, updates and online safety commentary.</p>
+          </div>
+          <span class="card-arrow">›</span>
+        </div>
+      </a>
     </div>
 
-    <div class="note-strip">
-      <img src="images/CSG_logo.png" alt="CSG logo">
-      <span>I left X (formerly Twitter) in 2020. If you see an account there, it is not me.</span>
-    </div>
   </main>
 
     <footer class="childline-footer">
