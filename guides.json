@@ -392,6 +392,21 @@
    {
     "id": "platform-guides",
     "type": "guide",
+    "title": "Chat Hour",
+    "desc": "An anonymous stranger chat app with no parental controls and a well-documented history of misuse. What parents need to know before their child finds it.",
+    "image": "CSG_Chat_hour.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Chat_hour.pdf",
+    "isNew": true,
+    "ageRating": "18+ (rarely enforced)",
+    "risks": [
+      "Anonymous chat with strangers — no age verification",
+      "Public chat rooms expose children to unknown adults",
+      "No parental controls or reporting safeguards"
+    ]
+  },
+   {
+    "id": "platform-guides",
+    "type": "guide",
     "title": "Kik",
     "desc": "An anonymous messaging app with no parental controls and a well-documented history of grooming. What parents need to know before their child finds it.",
     "image": "CSG_Kik.png",
