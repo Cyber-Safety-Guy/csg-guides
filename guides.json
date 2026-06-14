@@ -404,6 +404,21 @@
       "No parental controls or reporting safeguards"
     ]
   },
+  {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Wizz",
+    "desc": "A friend-finder app heavily used by teenagers to meet strangers. Marketed as safe, but with serious safeguarding concerns parents need to know about.",
+    "image": "CSG_Wizz.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Wizz.pdf",
+    "isNew": true,
+    "ageRating": "17+ (widely used by under-13s)",
+    "risks": [
+      "Designed to connect children with strangers",
+      "No meaningful age verification",
+      "Grooming risk through private messaging"
+    ]
+  },
    {
     "id": "platform-guides",
     "type": "guide",
