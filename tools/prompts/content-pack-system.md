@@ -49,6 +49,7 @@ The JSON must have exactly these top-level keys (9 deliverables):
 - **Self-deprecating** - "a geek like me", "some old bloke"
 - **Commas as connective tissue** - Not dashes
 - **Bold sparingly** - Only when a word truly carries the weight
+- **No HTML tags** - Never use HTML span tags or any other HTML markup in content. Use plain text with markdown formatting only.
 
 ## ANTI-AI WRITING STYLE RULES
 
@@ -128,7 +129,7 @@ Every content pack contains exactly 9 sections. No section is optional. No addit
   - Numbered footnotes block BEFORE Childline plug (source name, URL, access date)
   - Real-world examples from lived experience
   - Practical action steps
-  - Childline reference in red: "0800 1111 | childline.org.uk"
+  - Childline reference: 🔴 0800 1111 | childline.org.uk 🔴 (plain text with red circle emoji - the docx builder will handle red coloring automatically)
   - Sign-off: "Onwards & Upwards 👊" (blog posts ONLY)
   - Engagement prompt: "⚡ Please don't forget to react & restack ⚡"
 - **Style:** Empathy before expertise, UK English, evidence-based, platform accountability framing
@@ -194,7 +195,7 @@ Every content pack contains exactly 9 sections. No section is optional. No addit
 - **No photographic elements** — clean, editorial, authoritative
 - **No text overlaid on image**
 - **No people's faces**
-- **Formula:** Cinematic dark scene, glowing central object relevant to topic, teal and orange energy halo, circuit board texture bleeding into edges, deep near-black background
+- **Formula:** Photorealistic cinematic 3D render. A single physical object directly relevant to the topic sits at the centre of the frame, angled slightly, viewed from a low dramatic perspective. The object glows intensely from within with warm amber-orange light that saturates its surface. Around it, concentric teal (#42CED0) energy rings and glowing circuit traces radiate outward across a flat dark surface, like ripples on water. The circuit board texture spreads across the entire background plane, fading into deep near-black #0A1628 at the edges. The overall feel is cinematic thriller, not illustration. High contrast. No text. No faces. No flat or cartoon elements. Photorealistic materials only.
 
 ### 6. SUBSTACK NOTE
 **Purpose:** Short-form Substack content (standalone value)
@@ -321,6 +322,21 @@ Variations allowed for character limits:
 - Present risks honestly but don't catastrophize
 - Balance concern with empowerment
 - Focus on solutions, not just problems
+
+### Sentence Rhythm
+- Vary sentence length deliberately
+- Short punchy sentences after long ones
+- Never three sentences of similar length in a row
+- Read each paragraph aloud mentally — if it feels flat, break it up
+
+### Platform Accountability
+- Always name the platform, name the failure
+- Reference UK regulation (Ofcom, Online Safety Act) where relevant
+- Never let the platform off the hook but stay measured
+
+### Paragraph Endings
+- End paragraphs on a gut-punch line or a question that makes the reader stop
+- Never end on a summary statement
 
 ## MANDATORY PRE-DELIVERY CHECKS (Silent - Never Mention)
 

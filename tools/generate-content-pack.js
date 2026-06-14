@@ -14,7 +14,6 @@ const OpenAI = require('openai');
 const https = require('https');
 const { validateAll } = require('./lib/char-validator');
 const { build: buildDocx } = require('./lib/docx-builder');
-const { uploadDocx, uploadImage } = require('./lib/drive-uploader');
 
 /**
  * Download image from URL to buffer
@@ -106,7 +105,17 @@ async function main() {
       contentPack = JSON.parse(cleanedResponse);
     } catch (parseError) {
       console.error('❌ Failed to parse JSON response');
-      console.error('Response preview:', cleanedResponse.substring(0, 500));
+      console.error('Parse error:', parseError.message);
+      console.error('\nResponse preview (first 1000 chars):');
+      console.error(cleanedResponse.substring(0, 1000));
+      console.error('\n...truncated...\n');
+      
+      // Save full response to file for debugging
+      const debugPath = path.join(__dirname, 'output', 'debug-response.txt');
+      await fs.mkdir(path.join(__dirname, 'output'), { recursive: true });
+      await fs.writeFile(debugPath, cleanedResponse);
+      console.error(`Full response saved to: ${debugPath}\n`);
+      
       throw new Error(`JSON parse error: ${parseError.message}`);
     }
     
@@ -152,33 +161,32 @@ async function main() {
       model: 'gpt-image-1',
       prompt: contentPack.image_prompt,
       n: 1,
-      size: '1792x1024',
-      output_format: 'png'
+      size: '1536x1024'
     });
     
-    const imageUrl = imageResponse.data[0].url;
-    const imageBuffer = await downloadImage(imageUrl);
+    const imageBuffer = Buffer.from(imageResponse.data[0].b64_json, 'base64');
     console.log('✓ Image generated\n');
     
-    // 9. Upload DOCX to Google Drive
-    console.log('☁️  Uploading DOCX to Google Drive...');
-    const docxFilename = `CSG_${slug}.docx`;
-    const docxDriveUrl = await uploadDocx(docxPath, docxFilename);
-    console.log(`✓ DOCX uploaded: ${docxDriveUrl}\n`);
+    // 8. Save files to local output directory
+    const outputDir = path.join(__dirname, 'output');
+    await fs.mkdir(outputDir, { recursive: true });
     
-    // 10. Upload image to Google Drive
-    console.log('☁️  Uploading image to Google Drive...');
-    const imageFilename = `${slug}-header.png`;
-    const imageDriveUrl = await uploadImage(imageBuffer, imageFilename);
-    console.log(`✓ Image uploaded: ${imageDriveUrl}\n`);
+    const outputDocxPath = path.join(outputDir, `${slug}.docx`);
+    const outputImagePath = path.join(outputDir, `${slug}-header.png`);
     
-    // 11. Success summary
+    // Copy DOCX to output directory
+    await fs.copyFile(docxPath, outputDocxPath);
+    
+    // Save image to output directory
+    await fs.writeFile(outputImagePath, imageBuffer);
+    
+    // 9. Success summary
     console.log('✅ Content pack generation complete!\n');
     console.log('📦 Results:');
     console.log(`   Topic: ${topic}`);
-    console.log(`   DOCX: ${docxDriveUrl}`);
-    console.log(`   Image: ${imageDriveUrl}`);
-    console.log('');
+    console.log(`   ✓ DOCX saved: ${outputDocxPath}`);
+    console.log(`   ✓ Image saved: ${outputImagePath}`);
+    console.log('   ✓ Done\n');
     
   } catch (error) {
     console.error('\n❌ Error:', error.message);

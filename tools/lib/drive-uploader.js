@@ -26,7 +26,7 @@ async function createDriveClient() {
   
   const auth = new google.auth.GoogleAuth({
     credentials,
-    scopes: ['https://www.googleapis.com/auth/drive.file']
+    scopes: ['https://www.googleapis.com/auth/drive']
   });
   
   const authClient = await auth.getClient();
@@ -68,7 +68,8 @@ async function uploadDocx(filePath, filename) {
     const response = await drive.files.create({
       requestBody: fileMetadata,
       media: media,
-      fields: 'id'
+      fields: 'id',
+      supportsAllDrives: true
     });
     
     const fileId = response.data.id;
@@ -79,7 +80,8 @@ async function uploadDocx(filePath, filename) {
       requestBody: {
         role: 'reader',
         type: 'anyone'
-      }
+      },
+      supportsAllDrives: true
     });
     
     return `https://drive.google.com/file/d/${fileId}/view`;
@@ -136,7 +138,8 @@ async function uploadImage(imageBuffer, filename) {
     const response = await drive.files.create({
       requestBody: fileMetadata,
       media: media,
-      fields: 'id'
+      fields: 'id',
+      supportsAllDrives: true
     });
     
     const fileId = response.data.id;
@@ -147,7 +150,8 @@ async function uploadImage(imageBuffer, filename) {
       requestBody: {
         role: 'reader',
         type: 'anyone'
-      }
+      },
+      supportsAllDrives: true
     });
     
     return `https://drive.google.com/file/d/${fileId}/view`;
