@@ -62,3 +62,34 @@ Fonts: **Orbitron** (headings/numbers), **Exo 2** (UI labels, cards), **IBM Plex
 ## Sitemap
 
 `sitemap.xml` is maintained manually. Update it when adding new pages.
+
+## Content Pack Pipeline
+
+Generates complete CSG content packs from a single topic string.
+
+**Usage (from anywhere on the NUC):**
+```bash
+csg-pack "Your topic here"
+```
+
+**What it produces** (saved to `tools/output/`):
+- `[slug].docx` — fully formatted Word document with all 9 sections
+- `[slug]-header.png` — blog header image (1536x1024)
+
+**Components:**
+- `tools/generate-content-pack.js` — main orchestrator
+- `tools/lib/docx-builder.js` — brand-formatted Word doc builder
+- `tools/lib/char-validator.js` — BlueSky/X character limit validator
+- `tools/lib/drive-uploader.js` — Google Drive uploader (reserved for future use)
+- `tools/prompts/content-pack-system.md` — system prompt with Dale's full voice and brand rules
+- `tools/prompts/requirements.md` — full content pack requirements reference
+
+**Dependencies:**
+- `ANTHROPIC_API_KEY` — content generation (claude-sonnet-4-6)
+- `OPENAI_API_KEY` — blog header image (gpt-image-1)
+- `tools/.env` — all secrets stored here, never committed
+- `tools/credentials/` — Google service account JSON, never committed
+
+**Output folder** `tools/output/` is gitignored. Files accessible on Windows at `Z:\csg-guides\tools\output\`.
+
+**Global command** installed at `/usr/local/bin/csg-pack`.
