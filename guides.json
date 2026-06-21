@@ -407,6 +407,21 @@
   {
     "id": "platform-guides",
     "type": "guide",
+    "title": "Character.AI",
+    "desc": "An AI chatbot platform where children create and talk to fictional characters. What starts as harmless roleplay can quickly become something else.",
+    "image": "CSG_Characterai.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Characterai.pdf",
+    "isNew": true,
+    "ageRating": "13+ (widely used by younger children)",
+    "risks": [
+      "Emotional attachment to AI characters",
+      "Inappropriate or sexualised AI responses",
+      "Privacy concerns — conversations may be stored and analysed"
+    ]
+  },
+  {
+    "id": "platform-guides",
+    "type": "guide",
     "title": "Wizz",
     "desc": "A friend-finder app heavily used by teenagers to meet strangers. Marketed as safe, but with serious safeguarding concerns parents need to know about.",
     "image": "CSG_Wizz.png",
