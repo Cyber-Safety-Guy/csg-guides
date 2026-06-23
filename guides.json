@@ -227,6 +227,21 @@
   {
     "id": "online-risks",
     "type": "guide",
+    "title": "PimEyes",
+    "desc": "A facial recognition search engine that lets anyone upload a photo and search the internet to find other images of the same face.",
+    "image": "CSG_Pimeyes.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Pimeyes.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Privacy invasion — anyone can search for your child's face",
+      "Stalking and harassment through online tracking",
+      "Images can be used for fake profiles, scams or grooming"
+    ]
+  },
+  {
+    "id": "online-risks",
+    "type": "guide",
     "title": "Sextortion & Image-Based Abuse",
     "desc": "One of the fastest-growing threats to young people online. What it is and how to help.",
     "image": "CSG_Sextortion_Image_Based_Abuse.png",
