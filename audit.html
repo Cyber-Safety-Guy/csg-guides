@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Digital Safety Audit | Cyber Safety Guy × Cybersecurity Parents</title>
+  <meta name="description" content="15 honest questions to find out how safe your family really is online. Free UK-focused audit from Cyber Safety Guy and Cybersecurity Parents LLC.">
+  <meta property="og:title" content="Family Digital Safety Audit | Cyber Safety Guy × Cybersecurity Parents">
+  <meta property="og:description" content="15 honest questions. 4 risk tiers. Practical next steps. Built for UK parents.">
+  <meta property="og:image" content="https://guides.cybersafetyguy.com/images/CSG_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── CSS CUSTOM PROPERTIES (standalone fallback) ── */
+    :root {
+      --teal: #42CED0;
+      --teal-dark: #1A5C5F;
+      --navy: #142A46;
+      --off-white: #E8F4F5;
+      --grey: #7B9EA0;
+      --childline-red: #C0392B;
+    }
+
+    body {
+      background: #0A1628;
+      color: #E8F4F5;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── AUDIT PAGE STYLES ── */
+
+    .audit-hero {
+      background: linear-gradient(180deg, #0A1628 0%, #142A46 100%);
+      padding: 52px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(66,206,208,0.15);
+    }
+
+    .collab-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .collab-logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .collab-logo-wrap img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .collab-logo-name {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .collab-x {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: rgba(66,206,208,0.4);
+    }
+
+    .csp-shield {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #1E3A5F, #2E5B8A);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    .audit-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(22px, 5vw, 40px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .audit-hero h1 span { color: var(--teal); text-shadow: 0 0 24px rgba(66,206,208,0.5); }
+
+    .audit-hero-sub {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 20px;
+    }
+
+    .audit-hero-intro {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: clamp(15px, 2vw, 17px);
+      color: var(--off-white);
+      max-width: 640px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .tier-strip {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    .tier-pill {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+
+    .tier-pill.at-risk   { color: #E74C3C; border-color: #E74C3C; background: rgba(231,76,60,0.1); }
+    .tier-pill.getting   { color: #F39C12; border-color: #F39C12; background: rgba(243,156,18,0.1); }
+    .tier-pill.good      { color: #42CED0; border-color: #42CED0; background: rgba(66,206,208,0.1); }
+    .tier-pill.strong    { color: #2ECC71; border-color: #2ECC71; background: rgba(46,204,113,0.1); }
+
+    /* ── AUDIT FORM ── */
+
+    .audit-shell {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .audit-progress-bar {
+      background: rgba(66,206,208,0.12);
+      border-radius: 4px;
+      height: 6px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .audit-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal-dark), var(--teal));
+      border-radius: 4px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    .audit-progress-label {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-align: right;
+      margin-bottom: 8px;
+    }
+
+    .section-block {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(66,206,208,0.15);
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(66,206,208,0.1);
+      border: 1px solid rgba(66,206,208,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .section-title-wrap {}
+
+    .section-label {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 2px;
+    }
+
+    .section-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--off-white);
+    }
+
+    /* ── QUESTION CARD ── */
+
+    .q-card {
+      background: #0F1E35;
+      border: 1px solid rgba(66,206,208,0.12);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .q-card.answered-yes  { border-color: rgba(46,204,113,0.4); }
+    .q-card.answered-no   { border-color: rgba(231,76,60,0.35); }
+
+    .q-number {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .q-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--off-white);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .q-why {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 12px;
+      color: var(--grey);
+      font-style: italic;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .q-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .q-btn {
+      flex: 1;
+      padding: 10px 0;
+      border-radius: 8px;
+      border: 1px solid rgba(66,206,208,0.25);
+      background: transparent;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .q-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+    .q-btn.selected-yes {
+      background: rgba(46,204,113,0.15);
+      border-color: #2ECC71;
+      color: #2ECC71;
+    }
+
+    .q-btn.selected-no {
+      background: rgba(231,76,60,0.12);
+      border-color: #E74C3C;
+      color: #E74C3C;
+    }
+
+    /* ── SUBMIT ── */
+
+    .audit-submit-wrap {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .audit-submit-btn {
+      display: inline-block;
+      padding: 16px 44px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      border: none;
+      border-radius: 10px;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #0A1628;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .audit-submit-btn.ready {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .audit-submit-btn.ready:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .submit-hint {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 12px;
+      color: var(--grey);
+      margin-top: 10px;
+    }
+
+    /* ── RESULTS ── */
+
+    #audit-results {
+      display: none;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .result-card {
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      border: 1px solid;
+      text-align: center;
+    }
+
+    .result-card.at-risk  { background: rgba(231,76,60,0.08);  border-color: rgba(231,76,60,0.4); }
+    .result-card.getting  { background: rgba(243,156,18,0.08); border-color: rgba(243,156,18,0.4); }
+    .result-card.good     { background: rgba(66,206,208,0.07); border-color: rgba(66,206,208,0.3); }
+    .result-card.strong   { background: rgba(46,204,113,0.08); border-color: rgba(46,204,113,0.35); }
+
+    .result-tier-label {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .at-risk  .result-tier-label { color: #E74C3C; }
+    .getting  .result-tier-label { color: #F39C12; }
+    .good     .result-tier-label { color: #42CED0; }
+    .strong   .result-tier-label { color: #2ECC71; }
+
+    .result-score {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(42px, 10vw, 68px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .at-risk  .result-score { color: #E74C3C; }
+    .getting  .result-score { color: #F39C12; }
+    .good     .result-score { color: #42CED0; }
+    .strong   .result-score { color: #2ECC71; }
+
+    .result-score-sub {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .result-headline {
+      font-family: 'Exo 2', sans-serif;
+      font-size: clamp(16px, 3vw, 22px);
+      font-weight: 800;
+      color: var(--off-white);
+      margin-bottom: 12px;
+    }
+
+    .result-message {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 15px;
+      color: var(--off-white);
+      opacity: 0.85;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Section breakdown */
+
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .breakdown-card {
+      background: #0F1E35;
+      border: 1px solid rgba(66,206,208,0.12);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .breakdown-section-name {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 6px;
+    }
+
+    .breakdown-score {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .breakdown-score.full  { color: #2ECC71; }
+    .breakdown-score.good  { color: #42CED0; }
+    .breakdown-score.mid   { color: #F39C12; }
+    .breakdown-score.low   { color: #E74C3C; }
+
+    .breakdown-bar-wrap {
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      height: 4px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .breakdown-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.6s ease;
+    }
+
+    .breakdown-bar-fill.full  { background: #2ECC71; }
+    .breakdown-bar-fill.good  { background: #42CED0; }
+    .breakdown-bar-fill.mid   { background: #F39C12; }
+    .breakdown-bar-fill.low   { background: #E74C3C; }
+
+    .breakdown-recs {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 12px;
+      color: var(--grey);
+      line-height: 1.55;
+    }
+
+    /* Recommendations panel */
+
+    .recs-panel {
+      background: #0F1E35;
+      border: 1px solid rgba(66,206,208,0.15);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .recs-panel-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 18px;
+    }
+
+    .rec-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(66,206,208,0.08);
+    }
+
+    .rec-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .rec-bullet {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: rgba(66,206,208,0.1);
+      border: 1px solid rgba(66,206,208,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .rec-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      color: var(--off-white);
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .rec-text strong {
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    /* Childline block */
+
+    .childline-block {
+      background: rgba(192,57,43,0.1);
+      border: 1px solid rgba(192,57,43,0.35);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .childline-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .childline-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      color: var(--off-white);
+      line-height: 1.6;
+    }
+
+    .childline-text strong {
+      color: #E74C3C;
+    }
+
+    .childline-text a {
+      color: #E74C3C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .childline-text a:hover { text-decoration: underline; }
+
+    /* Reset button */
+
+    .reset-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: transparent;
+      border: 1px solid rgba(66,206,208,0.3);
+      border-radius: 8px;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.15s;
+      margin-top: 8px;
+    }
+
+    .reset-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* Co-brand footer */
+
+    .collab-footer {
+      background: #0A1628;
+      border-top: 1px solid rgba(66,206,208,0.12);
+      padding: 36px 24px;
+      text-align: center;
+    }
+
+    .collab-footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .collab-footer-logos img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      opacity: 0.8;
+    }
+
+    .collab-footer-csp-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1E3A5F, #2E5B8A);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    .collab-footer-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 12px;
+      color: var(--grey);
+      line-height: 1.6;
+    }
+
+    .collab-footer-text a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .collab-footer-text a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .q-card { padding: 16px; }
+      .recs-panel { padding: 20px; }
+      .result-card { padding: 24px 18px; }
+      .breakdown-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <nav class="jump-nav">
+    <a href="https://www.cybersafetyguy.com" class="jump-nav-home" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Blog
+    </a>
+    <a href="https://guides.cybersafetyguy.com">🏠 CSG Hub</a>
+    <a href="https://guides.cybersafetyguy.com/guides.html">📚 Guides</a>
+    <a href="https://guides.cybersafetyguy.com/wizard.html">🛡 Wizard</a>
+    <a class="active">✅ Audit</a>
+    <a href="https://schools.cybersafetyguy.com" target="_blank">🏫 Schools Hub</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="audit-hero">
+    <div class="collab-logos">
+      <div class="collab-logo-wrap">
+        <img src="images/CSG_logo.png" alt="Cyber Safety Guy logo">
+        <span class="collab-logo-name">Cyber Safety Guy</span>
+      </div>
+      <div class="collab-x">×</div>
+      <div class="collab-logo-wrap">
+        <div class="csp-shield">🛡</div>
+        <span class="collab-logo-name">Cybersecurity Parents</span>
+      </div>
+    </div>
+
+    <h1>FAMILY DIGITAL <span>SAFETY AUDIT</span></h1>
+    <p class="audit-hero-sub">UK Edition &nbsp;|&nbsp; 15 Questions &nbsp;|&nbsp; Takes 3 Minutes</p>
+
+    <p class="audit-hero-intro">
+      Most parents I speak to assume their family is safer online than they actually are.
+      This isn't a catch-out. It's a quick, honest check, because the gaps between what we
+      <em>think</em> we've covered and what we <em>have</em> covered is exactly where the
+      risks hide. Answer each question as honestly as you can.
+    </p>
+
+    <div class="tier-strip">
+      <span class="tier-pill at-risk">At Risk</span>
+      <span class="tier-pill getting">Getting There</span>
+      <span class="tier-pill good">Good Foundation</span>
+      <span class="tier-pill strong">Cyber Safety Strong</span>
+    </div>
+  </header>
+
+  <!-- AUDIT FORM -->
+  <div class="audit-shell" id="audit-form">
+
+    <div class="audit-progress-label" id="progress-label">0 of 15 answered</div>
+    <div class="audit-progress-bar">
+      <div class="audit-progress-fill" id="progress-fill"></div>
+    </div>
+
+    <!-- SECTION 1: Online Communication & Contact -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-icon">💬</div>
+        <div class="section-title-wrap">
+          <div class="section-label">Section 1 of 5</div>
+          <div class="section-title">Online Communication & Contact</div>
+        </div>
+      </div>
+
+      <div class="q-card" id="q1">
+        <div class="q-number">Question 1</div>
+        <div class="q-text">Does your child know they should never share personal details online, including their real name, school, location, or phone number?</div>
+        <div class="q-why">Why this matters: A predator doesn't need much. A school name and a first name is often enough to find a child in real life.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(1, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(1, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q2">
+        <div class="q-number">Question 2</div>
+        <div class="q-text">Do you know who your child is talking to online, across all the platforms and games they use?</div>
+        <div class="q-why">Why this matters: Most grooming starts in the comment sections of games and apps, not on dedicated chat platforms. You will never know who they are really talking to, even if they think they do.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(2, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(2, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q3">
+        <div class="q-number">Question 3</div>
+        <div class="q-text">Has your child been taught what to do if someone online makes them feel uncomfortable, pressured, or scared?</div>
+        <div class="q-why">Why this matters: Children who don't have a plan, and permission to come to you without fear of punishment, are far less likely to tell someone when something goes wrong.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(3, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(3, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Platform & App Safety -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-icon">📱</div>
+        <div class="section-title-wrap">
+          <div class="section-label">Section 2 of 5</div>
+          <div class="section-title">Platform & App Safety</div>
+        </div>
+      </div>
+
+      <div class="q-card" id="q4">
+        <div class="q-number">Question 4</div>
+        <div class="q-text">Are your child's social media profiles set to private, so only approved followers can see their content?</div>
+        <div class="q-why">Why this matters: A public profile is a public advertisement. Under the Online Safety Act, platforms must now offer stronger defaults for under-18s, but they don't always apply them automatically.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(4, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(4, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q5">
+        <div class="q-number">Question 5</div>
+        <div class="q-text">Do you know the actual age requirements for the platforms and apps your child uses, and whether they meet them?</div>
+        <div class="q-why">Why this matters: TikTok, Instagram, and Snapchat all require users to be 13 or over. Many children lie about their age to access them, and the platform content is not designed with younger children in mind.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(5, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(5, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q6">
+        <div class="q-number">Question 6</div>
+        <div class="q-text">Have you checked and adjusted the privacy and safety settings in the apps and games your child uses most?</div>
+        <div class="q-why">Why this matters: Default settings are rarely the safest settings. Direct messaging, location sharing, and public profiles are often switched on by default.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(6, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(6, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Device & Account Security -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-icon">🔐</div>
+        <div class="section-title-wrap">
+          <div class="section-label">Section 3 of 5</div>
+          <div class="section-title">Device & Account Security</div>
+        </div>
+      </div>
+
+      <div class="q-card" id="q7">
+        <div class="q-number">Question 7</div>
+        <div class="q-text">Have you set up parental controls on your child's devices, including phones, tablets, gaming consoles, and smart TVs?</div>
+        <div class="q-why">Why this matters: Parental controls aren't surveillance. They're guardrails, particularly important for younger children who haven't yet developed the judgment to navigate everything the internet contains.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(7, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(7, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q8">
+        <div class="q-number">Question 8</div>
+        <div class="q-text">Do family devices have screen locks, and does your child have a unique password for their important accounts?</div>
+        <div class="q-why">Why this matters: An unlocked device in the wrong hands, or a reused password after a data breach, can open the door to a lot of harm very quickly.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(8, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(8, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q9">
+        <div class="q-number">Question 9</div>
+        <div class="q-text">Do devices charge outside your child's bedroom at night?</div>
+        <div class="q-why">Why this matters: Unsupervised late-night screen time is one of the biggest risk factors for both poor sleep and exposure to harmful content. It's one of the simplest safeguards, and one of the most effective.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(9, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(9, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: Content & Critical Thinking -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-icon">🧠</div>
+        <div class="section-title-wrap">
+          <div class="section-label">Section 4 of 5</div>
+          <div class="section-title">Content & Critical Thinking</div>
+        </div>
+      </div>
+
+      <div class="q-card" id="q10">
+        <div class="q-number">Question 10</div>
+        <div class="q-text">Has your child been taught how to spot fake profiles, manipulative messages, and phishing attempts?</div>
+        <div class="q-why">Why this matters: AI now makes it possible to generate a convincing fake person, complete with photos, voice, and video. Children need to know that what they see online is not always real.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(10, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(10, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q11">
+        <div class="q-number">Question 11</div>
+        <div class="q-text">Have you talked with your child about deepfakes, AI-generated images, and how realistic fake content can be?</div>
+        <div class="q-why">Why this matters: Non-consensual intimate image abuse, including AI-generated images, is now a criminal offence under UK law. Children need to understand both the risks to themselves and the legal consequences of sharing such content.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(11, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(11, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q12">
+        <div class="q-number">Question 12</div>
+        <div class="q-text">Does your child know how to report harmful content or block someone who is making them feel unsafe online?</div>
+        <div class="q-why">Why this matters: Knowing how to remove themselves from a threatening situation, and report it, gives children real agency. That confidence is one of the most protective things you can give them.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(12, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(12, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: Family Rules & Open Conversation -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-icon">🏠</div>
+        <div class="section-title-wrap">
+          <div class="section-label">Section 5 of 5</div>
+          <div class="section-title">Family Rules & Open Conversation</div>
+        </div>
+      </div>
+
+      <div class="q-card" id="q13">
+        <div class="q-number">Question 13</div>
+        <div class="q-text">Does your family have clear, agreed rules around screen time, which apps can be used, and what is and isn't acceptable online?</div>
+        <div class="q-why">Why this matters: Clear expectations remove ambiguity. Children are much less likely to push into unsafe territory when they understand the boundaries and why they exist.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(13, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(13, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q14">
+        <div class="q-number">Question 14</div>
+        <div class="q-text">Do you review your child's online activity together at least monthly, not as a check-up, but as an open conversation?</div>
+        <div class="q-why">Why this matters: Regular, non-judgemental check-ins build trust. When children know they won't be punished for telling you something difficult, they are far more likely to come to you before a situation escalates.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(14, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(14, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+
+      <div class="q-card" id="q15">
+        <div class="q-number">Question 15</div>
+        <div class="q-text">Does your child feel genuinely comfortable coming to you if something goes wrong or upsets them online, without fear of having their device taken away?</div>
+        <div class="q-why">Why this matters: This is the most important question on this whole list. Open, honest, non-judgemental communication is the single most protective thing a parent can build. Everything else on here matters, but this matters most.</div>
+        <div class="q-buttons">
+          <button class="q-btn" onclick="answer(15, true, this)">✓ Yes</button>
+          <button class="q-btn" onclick="answer(15, false, this)">✗ No / Not Sure</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="audit-submit-wrap">
+      <button class="audit-submit-btn" id="submit-btn" onclick="showResults()">See My Results</button>
+      <p class="submit-hint" id="submit-hint">Answer all 15 questions to unlock your results</p>
+    </div>
+
+  </div>
+
+  <!-- RESULTS PANEL -->
+  <div id="audit-results">
+
+    <div id="result-card-wrap"></div>
+
+    <div style="max-width:760px;margin:0 auto;padding:0 20px;">
+
+      <div class="breakdown-grid" id="breakdown-grid"></div>
+
+      <div class="recs-panel" id="recs-panel">
+        <div class="recs-panel-title">Your Priority Actions</div>
+        <div id="recs-list"></div>
+      </div>
+
+      <div class="childline-block">
+        <div class="childline-icon">📞</div>
+        <div class="childline-text">
+          <strong>If your child needs to talk to someone right now:</strong> Childline is free, confidential, and available 24/7.
+          Children can call <a href="tel:08001111"><strong>0800 1111</strong></a> or chat online at
+          <a href="https://www.childline.org.uk" target="_blank" rel="noopener">childline.org.uk</a>.
+          They don't need to be in immediate danger to reach out. Childline is there whenever something feels wrong.
+          <br><br>
+          <em style="color:var(--grey);font-size:12px;">All CSG Substack subscription income is donated to Childline (NSPCC). If this audit helped you, consider subscribing at <a href="https://www.cybersafetyguy.com" target="_blank">cybersafetyguy.com</a>.</em>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-bottom:24px;">
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--grey);margin-bottom:12px;">
+          Share this audit with another parent or teacher who might need it.
+        </p>
+        <button class="reset-btn" onclick="resetAudit()">↩ Start Again</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CO-BRAND FOOTER -->
+  <footer class="collab-footer">
+    <div class="collab-footer-logos">
+      <img src="images/CSG_logo.png" alt="Cyber Safety Guy">
+      <div class="collab-footer-csp-logo">🛡</div>
+    </div>
+    <div class="collab-footer-text">
+      Built in partnership by <a href="https://www.cybersafetyguy.com" target="_blank">Cyber Safety Guy</a>
+      (UK) and <a href="https://cybersecurityparents.com" target="_blank">Cybersecurity Parents LLC</a> (US).
+      <br>Keeping families safer, on both sides of the Atlantic.
+    </div>
+  </footer>
+
+  <script>
+    const answers = {};
+    const TOTAL = 15;
+
+    const sections = [
+      {
+        name: "Online Communication & Contact",
+        questions: [1, 2, 3],
+        icon: "💬"
+      },
+      {
+        name: "Platform & App Safety",
+        questions: [4, 5, 6],
+        icon: "📱"
+      },
+      {
+        name: "Device & Account Security",
+        questions: [7, 8, 9],
+        icon: "🔐"
+      },
+      {
+        name: "Content & Critical Thinking",
+        questions: [10, 11, 12],
+        icon: "🧠"
+      },
+      {
+        name: "Family Rules & Open Conversation",
+        questions: [13, 14, 15],
+        icon: "🏠"
+      }
+    ];
+
+    const sectionRecs = {
+      "Online Communication & Contact": {
+        perfect: "Communication foundations are solid. Keep the conversation going regularly as your child gets older and their online world grows.",
+        partial: "Start a relaxed conversation about the 'what would you do if...' scenarios. No lecture, just chat. Children are more receptive than we often expect.",
+        poor:    "This is the most urgent area to address. Have a calm, non-judgemental conversation about who your child talks to online and what they'd do if something felt wrong. Childline has guides at childline.org.uk to help you start that conversation."
+      },
+      "Platform & App Safety": {
+        perfect: "Well done for staying on top of this. Apps update their settings regularly, so a quarterly check is worth building into your routine.",
+        partial: "Check the privacy settings on the two or three platforms your child uses most. The CSG guides at guides.cybersafetyguy.com have step-by-step instructions for the major platforms.",
+        poor:    "This needs attention. Public profiles and unrestricted messaging are among the most common routes to harm. Use the free platform guides at guides.cybersafetyguy.com to work through the settings together."
+      },
+      "Device & Account Security": {
+        perfect: "Good foundations in place. Consider a device-free bedroom policy if you haven't already, it makes a real difference.",
+        partial: "Devices charging outside the bedroom is the single easiest win here. One conversation tonight could change the habit tomorrow.",
+        poor:    "Start with the simplest change first: devices out of bedrooms at night. Then use the CSG Parental Controls Wizard at guides.cybersafetyguy.com/wizard.html to work through the rest at your own pace."
+      },
+      "Content & Critical Thinking": {
+        perfect: "Your child has strong critical thinking foundations online. Keep reinforcing these as AI-generated content becomes increasingly convincing.",
+        partial: "A good starting point is asking your child to show you something on their phone they think might be fake, and working through it together. It turns a lesson into a shared activity.",
+        poor:    "AI-generated fake images, voices, and profiles are a growing and serious risk. The free CSG guides on deepfakes and AI chatbots at guides.cybersafetyguy.com are a good place to start."
+      },
+      "Family Rules & Open Conversation": {
+        perfect: "You've built something genuinely protective here. The open door you've created is the most valuable safety net your child has.",
+        partial: "Consider a simple family agreement, not a list of rules, but a shared understanding. The free Digital Safety Contract at guides.cybersafetyguy.com/contract.html can help you build one together.",
+        poor:    "This is the most important section of the whole audit. If your child can't come to you without fear of losing their device, the other safeguards are weakened. Start by making it clear that telling you something difficult will never result in punishment. That one shift changes everything."
+      }
+    };
+
+    const priorityRecs = [
+      { q: 15, text: "<strong>Open the door:</strong> Tell your child explicitly that if something goes wrong online, coming to you will never mean losing their device. That one conversation is worth more than any parental control setting." },
+      { q: 3,  text: "<strong>Give them a plan:</strong> Walk through the 'what would you do if...' scenarios together. Who would they tell? How would they block someone? Where can they get help? Children who have a plan use it." },
+      { q: 2,  text: "<strong>Talk about who they talk to:</strong> Ask about the people in their online world, in their games, their group chats. Not as an interrogation. Just as genuine interest in their life." },
+      { q: 6,  text: "<strong>Check the settings:</strong> Spend 20 minutes going through the privacy settings on the apps your child uses most. The CSG platform guides at guides.cybersafetyguy.com walk you through each one." },
+      { q: 9,  text: "<strong>Devices out of bedrooms at night:</strong> This is the single highest-impact, lowest-effort change on this list. A charging station outside the bedroom removes late-night risk almost entirely." },
+      { q: 13, text: "<strong>Write it down together:</strong> A simple family digital agreement removes ambiguity. The free Digital Safety Contract generator at guides.cybersafetyguy.com/contract.html builds one in minutes." },
+      { q: 4,  text: "<strong>Set profiles to private:</strong> Check that every account your child has is set to private. Not just the ones you know about. Ask them to show you." },
+      { q: 11, text: "<strong>Talk about deepfakes:</strong> AI can now generate convincing fake images, voices, and video of anyone. Your child needs to understand this is possible, and that it's not their fault if it happens to them." },
+      { q: 10, text: "<strong>Teach them to question what they see:</strong> A simple rule: if someone online seems too good, too understanding, or too interested in them, that's worth talking to a trusted adult about." },
+      { q: 7,  text: "<strong>Set up parental controls:</strong> The CSG Parental Controls Wizard at guides.cybersafetyguy.com/wizard.html gives you step-by-step guidance for every major device and platform." },
+      { q: 5,  text: "<strong>Know the age limits:</strong> Check which platforms your child is using and whether they meet the minimum age requirements. If they don't, have an honest conversation about why those limits exist." },
+      { q: 14, text: "<strong>Make check-ins a habit:</strong> A monthly 10-minute conversation about what's happening in their online world builds more trust than any monitoring tool." },
+      { q: 8,  text: "<strong>Secure the basics:</strong> Screen locks and unique passwords are the baseline. Help your child set up a strong password for their most important accounts." },
+      { q: 1,  text: "<strong>Revisit the personal information conversation:</strong> As children grow, they often need reminding. Make it specific: school name, address, phone number, last name. All of it stays private." },
+      { q: 12, text: "<strong>Practice the report button:</strong> Show your child where the block and report functions are on the platforms they use. Familiarity with these tools means they'll actually use them." }
+    ];
+
+    function answer(qNum, isYes, btn) {
+      answers[qNum] = isYes;
+      const card = document.getElementById('q' + qNum);
+      const buttons = card.querySelectorAll('.q-btn');
+      buttons.forEach(b => {
+        b.classList.remove('selected-yes', 'selected-no');
+      });
+      btn.classList.add(isYes ? 'selected-yes' : 'selected-no');
+      card.classList.remove('answered-yes', 'answered-no');
+      card.classList.add(isYes ? 'answered-yes' : 'answered-no');
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const count = Object.keys(answers).length;
+      const pct = (count / TOTAL) * 100;
+      document.getElementById('progress-fill').style.width = pct + '%';
+      document.getElementById('progress-label').textContent = count + ' of ' + TOTAL + ' answered';
+      const submitBtn = document.getElementById('submit-btn');
+      const submitHint = document.getElementById('submit-hint');
+      if (count === TOTAL) {
+        submitBtn.classList.add('ready');
+        submitHint.textContent = 'All questions answered. Ready to see your results.';
+      } else {
+        submitBtn.classList.remove('ready');
+        submitHint.textContent = 'Answer all 15 questions to unlock your results';
+      }
+    }
+
+    function getTier(score) {
+      if (score <= 5)  return 'at-risk';
+      if (score <= 9)  return 'getting';
+      if (score <= 12) return 'good';
+      return 'strong';
+    }
+
+    function getTierData(tier) {
+      const data = {
+        'at-risk': {
+          label: 'At Risk',
+          headline: "There are some important gaps to address.",
+          message: "I know that can feel daunting to read. But the fact you've taken this audit means you're already thinking about this, and that matters. None of the gaps here are unfixable. Start with the recommendations below, pick the one that feels most manageable, and go from there. You don't have to get it all right at once."
+        },
+        'getting': {
+          label: 'Getting There',
+          headline: "You've made a start. There's more to build on.",
+          message: "You've got some good foundations in place, and there are some clear areas where a bit more work will make a real difference. The recommendations below are in priority order. Focus on the top two or three first, and work down the list at a pace that feels manageable."
+        },
+        'good': {
+          label: 'Good Foundation',
+          headline: "You're in a stronger position than most.",
+          message: "This is genuinely reassuring to see. You've built solid foundations. The remaining gaps are worth addressing, particularly around the conversation side of things, because the most protective thing any parent can build is a home where children feel safe enough to tell you when something goes wrong."
+        },
+        'strong': {
+          label: 'Cyber Safety Strong',
+          headline: "You're doing this right.",
+          message: "Seriously, well done. This isn't easy to get right, and you've covered the areas that matter most. Keep the conversations going as your child grows, because the risks evolve with them. And if you know another parent who might benefit from this audit, share it with them."
+        }
+      };
+      return data[tier];
+    }
+
+    function getSectionClass(sectionScore) {
+      if (sectionScore === 3)  return 'full';
+      if (sectionScore === 2)  return 'good';
+      if (sectionScore === 1)  return 'mid';
+      return 'low';
+    }
+
+    function getSectionRec(sectionName, sectionScore) {
+      const recs = sectionRecs[sectionName];
+      if (sectionScore === 3) return recs.perfect;
+      if (sectionScore >= 1)  return recs.partial;
+      return recs.poor;
+    }
+
+    function showResults() {
+      if (Object.keys(answers).length < TOTAL) return;
+
+      const yesCount = Object.values(answers).filter(Boolean).length;
+      const tier = getTier(yesCount);
+      const tierData = getTierData(tier);
+
+      // Build result card
+      const cardWrap = document.getElementById('result-card-wrap');
+      cardWrap.innerHTML = `
+        <div style="max-width:760px;margin:0 auto;padding:32px 20px 24px;">
+          <div class="result-card ${tier}">
+            <div class="result-tier-label">${tierData.label}</div>
+            <div class="result-score">${yesCount}<span style="font-size:0.45em;opacity:0.6;">/15</span></div>
+            <div class="result-score-sub">Questions where your family is protected</div>
+            <div class="result-headline">${tierData.headline}</div>
+            <div class="result-message">${tierData.message}</div>
+          </div>
+        </div>
+      `;
+
+      // Build breakdown grid
+      const grid = document.getElementById('breakdown-grid');
+      grid.innerHTML = sections.map(section => {
+        const sectionScore = section.questions.filter(q => answers[q] === true).length;
+        const cls = getSectionClass(sectionScore);
+        const pct = (sectionScore / 3) * 100;
+        const rec = getSectionRec(section.name, sectionScore);
+        return `
+          <div class="breakdown-card">
+            <div class="breakdown-section-name">${section.icon} ${section.name}</div>
+            <div class="breakdown-score ${cls}">${sectionScore}/3</div>
+            <div class="breakdown-bar-wrap">
+              <div class="breakdown-bar-fill ${cls}" style="width:${pct}%"></div>
+            </div>
+            <div class="breakdown-recs">${rec}</div>
+          </div>
+        `;
+      }).join('');
+
+      // Build priority recs (only show questions answered No)
+      const recsList = document.getElementById('recs-list');
+      const failedRecs = priorityRecs.filter(r => answers[r.q] === false);
+
+      if (failedRecs.length === 0) {
+        recsList.innerHTML = '<div class="rec-item"><div class="rec-bullet">⭐</div><div class="rec-text">You\'ve covered all 15 areas. Keep the conversations going and revisit this audit in six months to make sure nothing has slipped.</div></div>';
+      } else {
+        recsList.innerHTML = failedRecs.slice(0, 6).map(r => `
+          <div class="rec-item">
+            <div class="rec-bullet">→</div>
+            <div class="rec-text">${r.text}</div>
+          </div>
+        `).join('');
+      }
+
+      // Show results, hide form
+      document.getElementById('audit-form').style.display = 'none';
+      document.getElementById('audit-results').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetAudit() {
+      Object.keys(answers).forEach(k => delete answers[k]);
+      document.querySelectorAll('.q-btn').forEach(btn => {
+        btn.classList.remove('selected-yes', 'selected-no');
+      });
+      document.querySelectorAll('.q-card').forEach(card => {
+        card.classList.remove('answered-yes', 'answered-no');
+      });
+      document.getElementById('progress-fill').style.width = '0%';
+      document.getElementById('progress-label').textContent = '0 of 15 answered';
+      document.getElementById('submit-btn').classList.remove('ready');
+      document.getElementById('submit-hint').textContent = 'Answer all 15 questions to unlock your results';
+      document.getElementById('audit-form').style.display = 'block';
+      document.getElementById('audit-results').style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
