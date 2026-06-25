@@ -535,6 +535,19 @@
       font-weight: 500;
     }
 
+    .rec-text a {
+      color: #42CED0;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .rec-text a:hover {
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+
     /* Childline block */
 
     .childline-block {
@@ -1030,21 +1043,21 @@
     };
 
     const priorityRecs = [
-      { q: 15, text: "<strong>Open the door:</strong> Tell your child explicitly that if something goes wrong online, coming to you will never mean losing their device. That one conversation is worth more than any parental control setting." },
-      { q: 3,  text: "<strong>Give them a plan:</strong> Walk through the 'what would you do if...' scenarios together. Who would they tell? How would they block someone? Where can they get help? Children who have a plan use it." },
-      { q: 2,  text: "<strong>Talk about who they talk to:</strong> Ask about the people in their online world, in their games, their group chats. Not as an interrogation. Just as genuine interest in their life." },
-      { q: 6,  text: "<strong>Check the settings:</strong> Spend 20 minutes going through the privacy settings on the apps your child uses most. The CSG platform guides at guides.cybersafetyguy.com walk you through each one." },
-      { q: 9,  text: "<strong>Devices out of bedrooms at night:</strong> This is the single highest-impact, lowest-effort change on this list. A charging station outside the bedroom removes late-night risk almost entirely." },
-      { q: 13, text: "<strong>Write it down together:</strong> A simple family digital agreement removes ambiguity. The free Digital Safety Contract generator at guides.cybersafetyguy.com/contract.html builds one in minutes." },
-      { q: 4,  text: "<strong>Set profiles to private:</strong> Check that every account your child has is set to private. Not just the ones you know about. Ask them to show you." },
-      { q: 11, text: "<strong>Talk about deepfakes:</strong> AI can now generate convincing fake images, voices, and video of anyone. Your child needs to understand this is possible, and that it's not their fault if it happens to them." },
-      { q: 10, text: "<strong>Teach them to question what they see:</strong> A simple rule: if someone online seems too good, too understanding, or too interested in them, that's worth talking to a trusted adult about." },
-      { q: 7,  text: "<strong>Set up parental controls:</strong> The CSG Parental Controls Wizard at guides.cybersafetyguy.com/wizard.html gives you step-by-step guidance for every major device and platform." },
-      { q: 5,  text: "<strong>Know the age limits:</strong> Check which platforms your child is using and whether they meet the minimum age requirements. If they don't, have an honest conversation about why those limits exist." },
-      { q: 14, text: "<strong>Make check-ins a habit:</strong> A monthly 10-minute conversation about what's happening in their online world builds more trust than any monitoring tool." },
-      { q: 8,  text: "<strong>Secure the basics:</strong> Screen locks and unique passwords are the baseline. Help your child set up a strong password for their most important accounts." },
-      { q: 1,  text: "<strong>Revisit the personal information conversation:</strong> As children grow, they often need reminding. Make it specific: school name, address, phone number, last name. All of it stays private." },
-      { q: 12, text: "<strong>Practice the report button:</strong> Show your child where the block and report functions are on the platforms they use. Familiarity with these tools means they'll actually use them." }
+      { q: 15, text: "<strong>Open the door:</strong> Tell your child explicitly that if something goes wrong online, coming to you will never mean losing their device. That one conversation is worth more than any parental control setting. <a href='https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf' target='_blank' rel='noopener'>Read: Why Kids Don't Tell Parents →</a>" },
+      { q: 3,  text: "<strong>Give them a plan:</strong> Walk through the 'what would you do if...' scenarios together. Who would they tell? How would they block someone? Where can they get help? Children who have a plan use it. <a href='https://guides.cybersafetyguy.com/guides/CSG_How_grooming_starts.pdf' target='_blank' rel='noopener'>Read: How Online Grooming Actually Starts →</a>" },
+      { q: 2,  text: "<strong>Talk about who they talk to:</strong> Ask about the people in their online world, in their games, their group chats. Not as an interrogation. Just as genuine interest in their life. <a href='https://guides.cybersafetyguy.com/guides/CSG_Platforms_your_child_uses.pdf' target='_blank' rel='noopener'>Read: The Platforms Your Child Is Using →</a>" },
+      { q: 6,  text: "<strong>Check the settings:</strong> Spend 20 minutes going through the privacy settings on the apps your child uses most. <a href='https://guides.cybersafetyguy.com/guides/CSG_iPhone_iPad_parental_controls.pdf' target='_blank' rel='noopener'>iPhone/iPad controls →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_Android_parental_controls.pdf' target='_blank' rel='noopener'>Android controls →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/wizard.html' target='_blank' rel='noopener'>Parental Controls Wizard →</a>" },
+      { q: 9,  text: "<strong>Devices out of bedrooms at night:</strong> This is the single highest-impact, lowest-effort change on this list. A charging station outside the bedroom removes late-night risk almost entirely. <a href='https://guides.cybersafetyguy.com/guides/CSG_Screen_time_device_overuse.pdf' target='_blank' rel='noopener'>Read: Screen Time & Device Overuse →</a>" },
+      { q: 13, text: "<strong>Write it down together:</strong> A simple family digital agreement removes ambiguity. The free Digital Safety Contract generator builds one in minutes. <a href='https://guides.cybersafetyguy.com/contract.html' target='_blank' rel='noopener'>Build your Digital Safety Contract →</a>" },
+      { q: 4,  text: "<strong>Set profiles to private:</strong> Check that every account your child has is set to private. Not just the ones you know about. Ask them to show you. <a href='https://guides.cybersafetyguy.com/guides/CSG_Instagram.pdf' target='_blank' rel='noopener'>Instagram →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_Snapchat.pdf' target='_blank' rel='noopener'>Snapchat →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_Tiktok_and_your_child.pdf' target='_blank' rel='noopener'>TikTok →</a>" },
+      { q: 11, text: "<strong>Talk about deepfakes:</strong> AI can now generate convincing fake images, voices, and video of anyone. Your child needs to understand this is possible, and that it's not their fault if it happens to them. <a href='https://guides.cybersafetyguy.com/guides/CSG_Sextortion.pdf' target='_blank' rel='noopener'>Read: Sextortion & Image-Based Abuse →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf' target='_blank' rel='noopener'>Read: AI Chatbots and Children →</a>" },
+      { q: 10, text: "<strong>Teach them to question what they see:</strong> A simple rule: if someone online seems too good, too understanding, or too interested in them, that's worth talking to a trusted adult about. <a href='https://guides.cybersafetyguy.com/guides/CSG_How_grooming_starts.pdf' target='_blank' rel='noopener'>Read: How Online Grooming Actually Starts →</a>" },
+      { q: 7,  text: "<strong>Set up parental controls:</strong> Step-by-step guidance for every major device and platform. <a href='https://guides.cybersafetyguy.com/wizard.html' target='_blank' rel='noopener'>Parental Controls Wizard →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_iPhone_iPad_parental_controls.pdf' target='_blank' rel='noopener'>iPhone/iPad →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_Android_parental_controls.pdf' target='_blank' rel='noopener'>Android →</a>" },
+      { q: 5,  text: "<strong>Know the age limits:</strong> Check which platforms your child is using and whether they meet the minimum age requirements. If they don't, have an honest conversation about why those limits exist. <a href='https://guides.cybersafetyguy.com/guides/CSG_Platforms_your_child_uses.pdf' target='_blank' rel='noopener'>Read: The Platforms Your Child Is Using →</a>" },
+      { q: 14, text: "<strong>Make check-ins a habit:</strong> A monthly 10-minute conversation about what's happening in their online world builds more trust than any monitoring tool. <a href='https://guides.cybersafetyguy.com/guides/CSG_Why_kids_dont_tell_parents.pdf' target='_blank' rel='noopener'>Read: Why Kids Don't Tell Parents →</a>" },
+      { q: 8,  text: "<strong>Secure the basics:</strong> Screen locks and unique passwords are the baseline. Help your child set up a strong password for their most important accounts. <a href='https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf' target='_blank' rel='noopener'>Read: Social Media Footprint →</a>" },
+      { q: 1,  text: "<strong>Revisit the personal information conversation:</strong> As children grow, they often need reminding. Make it specific: school name, address, phone number, last name. All of it stays private. <a href='https://guides.cybersafetyguy.com/guides/CSG_Sharenting.pdf' target='_blank' rel='noopener'>Read: Sharenting →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_Social_media_footprint.pdf' target='_blank' rel='noopener'>Read: Social Media Footprint →</a>" },
+      { q: 12, text: "<strong>Practice the report button:</strong> Show your child where the block and report functions are on the platforms they use. Familiarity means they'll actually use them. <a href='https://guides.cybersafetyguy.com/guides/CSG_Group_chats.pdf' target='_blank' rel='noopener'>Read: Group Chats →</a> &nbsp;|&nbsp; <a href='https://guides.cybersafetyguy.com/guides/CSG_Platforms_your_child_uses.pdf' target='_blank' rel='noopener'>Read: The Platforms Your Child Is Using →</a>" }
     ];
 
     function answer(qNum, isYes, btn) {
