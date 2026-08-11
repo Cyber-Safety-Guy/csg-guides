@@ -411,7 +411,7 @@
     "desc": "An anonymous stranger chat app with no parental controls and a well-documented history of misuse. What parents need to know before their child finds it.",
     "image": "CSG_Chat_hour.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Chat_hour.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "18+ (rarely enforced)",
     "risks": [
       "Anonymous chat with strangers — no age verification",
@@ -426,7 +426,7 @@
     "desc": "An AI chatbot platform where children create and talk to fictional characters. What starts as harmless roleplay can quickly become something else.",
     "image": "CSG_Characterai.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Characterai.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "13+ (widely used by younger children)",
     "risks": [
       "Emotional attachment to AI characters",
@@ -441,7 +441,7 @@
     "desc": "A friend-finder app heavily used by teenagers to meet strangers. Marketed as safe, but with serious safeguarding concerns parents need to know about.",
     "image": "CSG_Wizz.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Wizz.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "17+ (widely used by under-13s)",
     "risks": [
       "Designed to connect children with strangers",
@@ -456,7 +456,7 @@
     "desc": "An anonymous messaging app with no parental controls and a well-documented history of grooming. What parents need to know before their child finds it.",
     "image": "CSG_Kik.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Kik.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "18+ (rarely enforced)",
     "risks": [
       "Full anonymity — no phone number required to sign up",
@@ -464,7 +464,22 @@
       "Public group chats expose children to strangers and explicit content"
     ]
   },
-  {
+   {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Locket Widget",
+    "desc": "Photos sent straight to your child's home screen, no feed, no algorithm, no strangers. Lower risk than most apps, but the privacy small print is worth reading.",
+    "image": "CSG_Locket_widget.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Locket_widget.pdf",
+    "isNew": true,
+    "ageRating": "13+ (no age verification)",
+    "risks": [
+      "Explicit photos appear instantly on screen — no preview, no undo",
+      "Terms of service grant broad rights to all photos shared on the app",
+      "No parental controls or content moderation built in"
+    ]
+  },
+   {
     "id": "school-presentations",
     "type": "presentation",
     "title": "For Parents & Teachers",
