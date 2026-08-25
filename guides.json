@@ -480,6 +480,21 @@
     ]
   },
    {
+    "id": "parental-controls",
+    "type": "guide",
+    "title": "Apple Watch Parental Controls",
+    "desc": "Apple Watch is increasingly a child's first connected device. Family Sharing gives parents real control — but the settings are scattered and easy to miss.",
+    "image": "CSG_Apple_watch.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Apple_watch.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "Messaging and calls with unknown contacts if communication limits aren't set",
+      "Location sharing requires Family Sharing to be configured correctly",
+      "Parental controls are spread across multiple apps and easy to misconfigure"
+    ]
+  }, 
+   {
     "id": "school-presentations",
     "type": "presentation",
     "title": "For Parents & Teachers",
