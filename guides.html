@@ -363,22 +363,6 @@
     .request-section-confirm.visible { display: block; }
 }    
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dale",
-  "alternateName": "Cyber Safety Guy",
-  "jobTitle": "Child Online Safety Educator",
-  "url": "https://guides.cybersafetyguy.com",
-  "sameAs": [
-    "https://www.cybersafetyguy.com",
-    "https://www.linkedin.com/in/cybersafetyguy"
-  ],
-  "description": "22-year RAF Police veteran and DFIR specialist. Online child safety educator and founder of Cyber Safety Guy."
-}
-</script>
-
 </head>
 <body>
 
@@ -632,14 +616,10 @@
       requestSent.classList.remove('visible');
 
       // Search loaded guides
-      const match = allGuides.find(g => {
-        const title = g.title.toLowerCase().replace(/[^a-z0-9]/g, '');
-        const q = query.replace(/[^a-z0-9]/g, '');
-        return title === q ||
-               title.startsWith(q) ||
-               g.title.toLowerCase() === query;
-               title.includes(q) && q.length >= 4;
-      });
+      const match = allGuides.find(g =>
+        g.title.toLowerCase().includes(query) ||
+        query.includes(g.title.toLowerCase().replace(/[^a-z0-9]/g, ''))
+      );
 
       if (match) {
         document.getElementById('resultTitle').textContent = match.title;
@@ -693,6 +673,29 @@
         document.getElementById('requestSent').textContent = 'Something went wrong — please try again.';
         document.getElementById('requestSent').classList.add('visible');
       });
+    });
+
+
+    // ── Download interstitial — intercept all PDF guide clicks ──
+    document.addEventListener('click', function(e) {
+      const card = e.target.closest('a.guide-card');
+      if (!card) return;
+
+      const href = card.getAttribute('href');
+      if (!href || !href.toLowerCase().endsWith('.pdf')) return;
+
+      // Share button handles its own click — don't intercept
+      if (e.target.closest('.share-btn')) return;
+
+      e.preventDefault();
+
+      // Pull the guide title from the card heading
+      const titleEl = card.querySelector('.card-body h3') || card.querySelector('h3');
+      const title = titleEl ? titleEl.textContent.trim() : 'Online Safety Guide';
+
+      // Redirect to interstitial
+      const params = new URLSearchParams({ file: href, name: title });
+      window.open('download.html?' + params.toString(), '_blank');
     });
 
   </script>
