@@ -471,7 +471,7 @@
     "desc": "Photos sent straight to your child's home screen, no feed, no algorithm, no strangers. Lower risk than most apps, but the privacy small print is worth reading.",
     "image": "CSG_Locket_widget.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Locket_widget.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "13+ (no age verification)",
     "risks": [
       "Explicit photos appear instantly on screen — no preview, no undo",
@@ -486,7 +486,7 @@
     "desc": "Apple Watch is increasingly a child's first connected device. Family Sharing gives parents real control — but the settings are scattered and easy to miss.",
     "image": "CSG_Apple_watch.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Apple_watch.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "All ages affected",
     "risks": [
       "Messaging and calls with unknown contacts if communication limits aren't set",
@@ -494,6 +494,21 @@
       "Parental controls are spread across multiple apps and easy to misconfigure"
     ]
   }, 
+   {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "X (formerly Twitter)",
+    "desc": "Rebranded but not made safer. X algorithmically serves explicit content to teen accounts and is under Ofcom scrutiny for failing to comply with the Online Safety Act.",
+    "image": "CSG_X.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_X.pdf",
+    "isNew": true,
+    "ageRating": "13+ (rated 17+ on app stores)",
+    "risks": [
+      "Explicit and pornographic content pushed to teen accounts via the algorithm",
+      "Removal of safety features since rebrand — Trust and Safety Council disbanded",
+      "Direct messaging from strangers with no meaningful parental controls"
+    ]
+  },
    {
     "id": "school-presentations",
     "type": "presentation",
