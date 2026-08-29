@@ -632,10 +632,14 @@
       requestSent.classList.remove('visible');
 
       // Search loaded guides
-      const match = allGuides.find(g =>
-        g.title.toLowerCase().includes(query) ||
-        query.includes(g.title.toLowerCase().replace(/[^a-z0-9]/g, ''))
-      );
+      const match = allGuides.find(g => {
+        const title = g.title.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const q = query.replace(/[^a-z0-9]/g, '');
+        return title === q ||
+               title.startsWith(q) ||
+               g.title.toLowerCase() === query;
+               title.includes(q) && q.length >= 4;
+      });
 
       if (match) {
         document.getElementById('resultTitle').textContent = match.title;
