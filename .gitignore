@@ -1,3 +1,7 @@
 tools/.env
 tools/credentials/
 tools/node_modules/
+content-studio/.env
+content-studio/node_modules/
+content-studio/drive-credentials.json
+content-studio/oauth-credentials.json

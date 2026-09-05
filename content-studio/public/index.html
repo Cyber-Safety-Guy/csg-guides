@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSG Content Studio</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":                  "#65eaec",
+            "primary-fixed":            "#72f6f8",
+            "primary-container":        "#42ced0",
+            "on-primary":               "#003738",
+            "on-primary-container":     "#005455",
+            "secondary":                "#94d1d4",
+            "secondary-container":      "#085154",
+            "on-secondary":             "#003739",
+            "on-secondary-container":   "#86c3c6",
+            "tertiary":                 "#ffcea7",
+            "tertiary-container":       "#ffa85a",
+            "surface":                  "#0e1414",
+            "surface-dim":              "#0e1414",
+            "surface-bright":           "#343a3a",
+            "surface-container-lowest": "#090f0f",
+            "surface-container-low":    "#171d1d",
+            "surface-container":        "#1b2121",
+            "surface-container-high":   "#252b2b",
+            "surface-container-highest":"#303636",
+            "on-surface":               "#dee4e3",
+            "on-surface-variant":       "#bbc9c9",
+            "outline":                  "#869393",
+            "outline-variant":          "#3c4949",
+            "background":               "#0e1414",
+            "on-background":            "#dee4e3",
+            "error":                    "#ffb4ab",
+            "error-container":          "#93000a",
+            "on-error":                 "#690005",
+            "inverse-surface":          "#dee4e3",
+            "inverse-on-surface":       "#2b3231",
+            "inverse-primary":          "#00696b",
+          },
+          fontFamily: {
+            sans: ["Hanken Grotesk", "sans-serif"],
+          },
+          fontSize: {
+            "label-sm":   ["12px", { lineHeight: "16px",  fontWeight: "500" }],
+            "label-md":   ["14px", { lineHeight: "20px",  letterSpacing: "0.05em", fontWeight: "500" }],
+            "body-md":    ["16px", { lineHeight: "24px",  fontWeight: "400" }],
+            "body-lg":    ["18px", { lineHeight: "28px",  fontWeight: "400" }],
+            "headline-md":["24px", { lineHeight: "32px",  letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg":["32px", { lineHeight: "40px",  letterSpacing: "-0.02em", fontWeight: "700" }],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Chip styles */
+    .chip-active  { border: 2px solid #42CED0; background-color: #0d1e36; }
+    .chip-inactive { border: 1px solid #1A5C5F; background-color: transparent; }
+    .chip-inactive:hover { border-color: #42CED0; }
+
+    /* Custom scrollbar */
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #0e1414; border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #3c4949; border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #869393; }
+
+    /* Select arrow */
+    select {
+      background-color: #0d1e36;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%2342CED0' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 18px;
+      padding-right: 44px;
+    }
+  </style>
+</head>
+<body class="bg-[#0A1628] text-on-background min-h-screen flex flex-col font-sans antialiased pb-20 md:pb-0">
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       PHASE 1 — INPUT
+       ══════════════════════════════════════════════════════════ -->
+  <div id="phase-input">
+    <header class="flex justify-between items-center max-w-[680px] mx-auto px-3 py-4 w-full">
+      <h1 class="text-headline-md font-bold text-primary-container">CSG Content Studio</h1>
+      <button class="text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined">account_circle</span>
+      </button>
+    </header>
+
+    <main class="max-w-[680px] mx-auto px-3 pb-8 flex flex-col gap-6">
+      <p class="text-body-md text-on-surface-variant -mt-2">Configure your multi-channel content pack.</p>
+
+      <!-- Topic -->
+      <div class="flex flex-col gap-2">
+        <label class="text-label-md text-on-surface" for="topic">Topic or brief</label>
+        <div class="relative">
+          <textarea id="topic" rows="5" maxlength="1000"
+            class="w-full bg-[#0d1e36] border border-[#1A5C5F] rounded-xl p-4 text-body-md text-on-surface
+                   focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container
+                   transition-colors placeholder:text-outline resize-y"
+            placeholder="Describe what you want to write about..."
+            oninput="updateCounter('topic','topic-count',1000)"></textarea>
+          <span id="topic-count" class="absolute bottom-3 right-3 text-label-sm text-primary-container pointer-events-none">0/1000</span>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="flex flex-col gap-2">
+        <label class="text-label-md text-on-surface" for="notes">Additional notes (optional)</label>
+        <div class="relative">
+          <textarea id="notes" rows="3" maxlength="500"
+            class="w-full bg-[#0d1e36] border border-[#1A5C5F] rounded-xl p-4 text-body-md text-on-surface
+                   focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container
+                   transition-colors placeholder:text-outline resize-y"
+            placeholder="Tone of voice, key takeaways, audience details..."
+            oninput="updateCounter('notes','notes-count',500)"></textarea>
+          <span id="notes-count" class="absolute bottom-3 right-3 text-label-sm text-primary-container pointer-events-none">0/500</span>
+        </div>
+      </div>
+
+      <!-- LinkedIn mode -->
+      <div class="flex flex-col gap-2">
+        <label class="text-label-md text-on-surface" for="linkedin_mode">LinkedIn mode</label>
+        <select id="linkedin_mode"
+          class="w-full border border-[#1A5C5F] rounded-xl px-4 py-3 text-body-md text-on-surface
+                 focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container transition-colors">
+          <option value="auto">Auto — let Claude decide</option>
+          <option value="Mode 1">Mode 1 — Nine-Block (news / stats / accountability)</option>
+          <option value="Mode 2">Mode 2 — Narrative Hook (emotional / personal)</option>
+        </select>
+      </div>
+
+      <!-- Deliverables -->
+      <div class="flex flex-col gap-4">
+        <h2 class="text-headline-md font-semibold text-on-surface">Deliverables</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+          <button id="chip-blog" onclick="toggleOutput('blog')"
+            class="chip-active rounded-xl p-4 flex flex-col items-start text-left transition-all">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">Blog post</span>
+              <span class="material-symbols-outlined text-primary-container text-lg chip-icon" style="font-variation-settings:'FILL' 1">check_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">Long-form article + Word doc</span>
+          </button>
+
+          <button id="chip-linkedin" onclick="toggleOutput('linkedin')"
+            class="chip-active rounded-xl p-4 flex flex-col items-start text-left transition-all">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">LinkedIn</span>
+              <span class="material-symbols-outlined text-primary-container text-lg chip-icon" style="font-variation-settings:'FILL' 1">check_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">Post + teaser</span>
+          </button>
+
+          <button id="chip-substack" onclick="toggleOutput('substack')"
+            class="chip-active rounded-xl p-4 flex flex-col items-start text-left transition-all">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">Substack Note</span>
+              <span class="material-symbols-outlined text-primary-container text-lg chip-icon" style="font-variation-settings:'FILL' 1">check_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">Short-form newsletter update</span>
+          </button>
+
+          <button id="chip-instagram_post" onclick="toggleOutput('instagram_post')"
+            class="chip-active rounded-xl p-4 flex flex-col items-start text-left transition-all">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">Instagram post</span>
+              <span class="material-symbols-outlined text-primary-container text-lg chip-icon" style="font-variation-settings:'FILL' 1">check_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">Single image caption</span>
+          </button>
+
+          <button id="chip-carousel" onclick="toggleOutput('carousel')"
+            class="chip-active rounded-xl p-4 flex flex-col items-start text-left transition-all">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">Carousel</span>
+              <span class="material-symbols-outlined text-primary-container text-lg chip-icon" style="font-variation-settings:'FILL' 1">check_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">8-slide ZIP</span>
+          </button>
+
+          <button id="chip-reel" onclick="toggleOutput('reel')"
+            class="chip-active rounded-xl p-4 flex flex-col items-start text-left transition-all">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">Reel + Shorts</span>
+              <span class="material-symbols-outlined text-primary-container text-lg chip-icon" style="font-variation-settings:'FILL' 1">check_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">Script + YouTube metadata</span>
+          </button>
+        </div>
+
+        <!-- Socials divider -->
+        <div class="flex items-center gap-4 my-1">
+          <div class="h-px bg-[#1A5C5F] flex-grow"></div>
+          <span class="text-label-sm text-outline uppercase tracking-wider">Socials</span>
+          <div class="h-px bg-[#1A5C5F] flex-grow"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button id="chip-bluesky" onclick="toggleOutput('bluesky')"
+            class="chip-inactive rounded-xl p-4 flex flex-col items-start text-left transition-all group">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">Bluesky</span>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors text-lg chip-icon">add_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">Thread (300 chars/post)</span>
+          </button>
+
+          <button id="chip-x_post" onclick="toggleOutput('x_post')"
+            class="chip-inactive rounded-xl p-4 flex flex-col items-start text-left transition-all group">
+            <div class="flex items-center justify-between w-full mb-1">
+              <span class="text-label-md font-bold text-on-surface">X post</span>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors text-lg chip-icon">add_circle</span>
+            </div>
+            <span class="text-label-sm text-outline">280-char post</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Action button -->
+      <div class="mt-2 mb-4">
+        <button id="action-btn" onclick="startInterview()"
+          class="w-full bg-primary-container text-[#0A1628] font-bold text-body-md py-4 rounded-xl
+                 flex items-center justify-center gap-2 hover:bg-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
+          <span class="material-symbols-outlined">auto_awesome</span>
+          <span id="action-btn-text">Research &amp; Interview</span>
+        </button>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       PHASE 2 — INTERVIEW
+       ══════════════════════════════════════════════════════════ -->
+  <div id="phase-interview" style="display:none" class="flex flex-col min-h-screen">
+    <!-- Thin top progress bar -->
+    <div class="w-full h-1 bg-surface-container-highest">
+      <div id="interview-progress-bar"
+        class="h-full bg-primary-container transition-all duration-300 ease-in-out" style="width:0%"></div>
+    </div>
+
+    <header class="flex justify-between items-center max-w-[680px] mx-auto px-3 py-4 w-full">
+      <h1 class="text-headline-md font-bold text-primary-container">CSG Content Studio</h1>
+      <button onclick="backToInput()" aria-label="Close interview"
+        class="text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0">close</span>
+      </button>
+    </header>
+
+    <main class="flex-grow max-w-[680px] mx-auto px-3 py-6 w-full flex flex-col gap-6">
+      <section class="flex flex-col gap-2">
+        <h2 class="text-headline-lg font-bold text-on-background">Voice Interview</h2>
+        <p class="text-body-md text-on-surface-variant">Your words go into the pack. Rough phrasing is fine.</p>
+      </section>
+
+      <!-- Research Context panel -->
+      <section class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant flex flex-col gap-3">
+        <div class="flex items-center gap-2 text-on-surface-variant">
+          <span class="material-symbols-outlined" style="font-size:18px">info</span>
+          <span class="text-label-sm uppercase tracking-wider">Research Context</span>
+        </div>
+        <div id="research-text"
+          class="max-h-32 overflow-y-auto pr-2 custom-scrollbar text-body-md text-on-surface leading-relaxed"></div>
+      </section>
+
+      <!-- Question card — populated by renderQuestion() -->
+      <section id="question-container"
+        class="bg-surface-container rounded-xl p-6 border border-outline-variant flex flex-col gap-4 relative mt-2">
+      </section>
+
+      <!-- Nav buttons -->
+      <section class="flex flex-col items-center gap-3">
+        <div class="flex w-full gap-3">
+          <button id="prev-btn" onclick="prevQuestion()" style="display:none"
+            class="flex-1 bg-secondary-container text-on-surface py-3 rounded-lg text-body-md font-bold
+                   border border-secondary-container hover:bg-surface-container-highest transition-colors
+                   flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">arrow_back</span> Back
+          </button>
+          <button id="next-btn" onclick="nextQuestion()"
+            class="flex-1 bg-primary-container text-[#0A1628] py-3 rounded-lg text-body-md font-bold
+                   hover:bg-primary transition-colors flex items-center justify-center gap-2">
+            Next <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+        <p class="text-label-sm text-outline text-center">
+          Leave a box blank to skip — Claude will draft that section without your input.
+        </p>
+      </section>
+    </main>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       PHASE 3 — PROGRESS / GENERATION
+       ══════════════════════════════════════════════════════════ -->
+  <div id="phase-progress" style="display:none">
+    <header class="flex justify-between items-center max-w-[680px] mx-auto px-3 py-4 w-full">
+      <h1 class="text-headline-md font-bold text-primary-container">CSG Content Studio</h1>
+      <button class="text-on-surface-variant">
+        <span class="material-symbols-outlined">account_circle</span>
+      </button>
+    </header>
+
+    <main class="max-w-[680px] mx-auto px-3 py-6 flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <h2 class="text-headline-lg font-bold text-on-surface">Compiling Strategy</h2>
+        <p class="text-body-md text-on-surface-variant">Please wait while the engine builds your content pack.</p>
+      </div>
+
+      <!-- Status feed panel -->
+      <div class="bg-surface-container rounded-xl p-6 border-l-4 border-primary-container flex flex-col gap-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent pointer-events-none"></div>
+
+        <div class="flex items-center justify-between z-10">
+          <span class="text-label-md text-primary tracking-widest uppercase">Process Status</span>
+          <div class="flex items-center gap-2 text-label-sm text-on-surface-variant">
+            <span id="progress-dot" class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-container"></span>
+            </span>
+            <span id="progress-status-label">In Progress</span>
+          </div>
+        </div>
+
+        <!-- Status lines injected here -->
+        <div id="status-feed" class="flex flex-col gap-3 font-mono text-sm z-10 mt-1"></div>
+
+        <!-- Progress bar -->
+        <div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-2 z-10 overflow-hidden">
+          <div id="gen-progress-bar"
+            class="bg-primary-container h-1.5 rounded-full transition-all duration-1000 ease-out" style="width:5%"></div>
+        </div>
+      </div>
+
+      <!-- Error box (hidden until error) -->
+      <div id="error-box" style="display:none"
+        class="bg-[#2a0a0a] border-l-4 border-error rounded-xl p-5">
+        <p id="error-text" class="text-error text-body-md"></p>
+      </div>
+
+      <div class="flex justify-end">
+        <button onclick="resetApp()"
+          class="px-6 py-3 bg-transparent border border-outline-variant text-on-surface rounded-xl
+                 text-label-md hover:bg-surface-container-high transition-colors focus:outline-none">
+          Cancel
+        </button>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       PHASE 4 — RESULTS
+       ══════════════════════════════════════════════════════════ -->
+  <div id="phase-results" style="display:none">
+    <header class="flex justify-between items-center max-w-[680px] mx-auto px-3 py-4 w-full">
+      <h1 class="text-headline-md font-bold text-primary-container">CSG Content Studio</h1>
+      <button class="text-on-surface-variant">
+        <span class="material-symbols-outlined">account_circle</span>
+      </button>
+    </header>
+
+    <main class="max-w-[680px] mx-auto px-3 py-6 flex flex-col gap-6 pb-24 md:pb-8">
+
+      <!-- Success hero -->
+      <section class="flex flex-col items-center text-center gap-4 mb-2">
+        <span class="material-symbols-outlined text-primary" style="font-size:64px;font-variation-settings:'FILL' 1">check_circle</span>
+        <h2 class="text-headline-lg font-bold text-on-background">Content Pack Ready</h2>
+        <p class="text-body-lg text-on-surface-variant">Your content has been successfully generated and formatted.</p>
+      </section>
+
+      <!-- Drive / ZIP links -->
+      <section class="flex flex-col gap-4">
+        <a id="drive-link" href="#" target="_blank" style="display:none"
+          class="bg-primary-container text-[#0A1628] font-bold text-body-md px-6 py-4 rounded-xl w-full
+                 flex justify-center items-center gap-2 hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined">description</span>
+          View in Google Drive (Word doc)
+        </a>
+        <a id="zip-link" href="#" target="_blank" style="display:none"
+          class="bg-[#1A5C5F] text-on-background text-body-md px-6 py-4 rounded-xl w-full
+                 flex justify-center items-center gap-2 hover:bg-secondary-container transition-colors
+                 border border-primary-container/20">
+          <span class="material-symbols-outlined">folder_zip</span>
+          Download Carousel ZIP
+        </a>
+      </section>
+
+      <!-- Platform Validation -->
+      <section id="validation-section" style="display:none"
+        class="bg-[#102336] p-6 rounded-xl border border-[#1A5C5F] flex flex-col gap-4">
+        <h3 class="text-headline-md font-semibold text-on-background border-b border-[#1A5C5F] pb-2">
+          Platform Validation
+        </h3>
+        <div id="validation-items" class="flex flex-col gap-3"></div>
+      </section>
+
+      <!-- Image Prompt -->
+      <section id="image-prompt-section" style="display:none"
+        class="bg-[#102336] p-6 rounded-xl border border-[#1A5C5F] flex flex-col gap-4">
+        <div class="flex justify-between items-center">
+          <h3 class="text-headline-md font-semibold text-on-background">Image Prompt Text</h3>
+          <button onclick="copyPrompt()"
+            class="text-primary-container hover:text-primary transition-colors flex items-center justify-center
+                   p-2 rounded-full hover:bg-[#1A5C5F]">
+            <span class="material-symbols-outlined" style="font-size:20px">content_copy</span>
+          </button>
+        </div>
+        <div id="image-prompt"
+          class="bg-[#0A1628] p-4 rounded-lg border border-[#1A5C5F] text-body-md text-on-surface-variant leading-relaxed"></div>
+      </section>
+
+      <!-- New pack -->
+      <section class="mt-2">
+        <button onclick="resetApp()"
+          class="bg-[#1A5C5F] text-on-background text-body-md px-6 py-4 rounded-xl w-full
+                 flex justify-center items-center gap-2 hover:bg-secondary-container transition-colors
+                 border border-primary-container/20">
+          <span class="material-symbols-outlined">add</span>
+          Start new pack
+        </button>
+      </section>
+    </main>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       MOBILE BOTTOM NAV (visual only)
+       ══════════════════════════════════════════════════════════ -->
+  <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4
+              bg-surface-container border-t border-outline-variant">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 flex-1" href="#">
+      <span class="material-symbols-outlined mb-0.5">edit_note</span>
+      <span class="text-label-sm">Editor</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 flex-1" href="#">
+      <span class="material-symbols-outlined mb-0.5">insights</span>
+      <span class="text-label-sm">Strategy</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 flex-1" href="#">
+      <span class="material-symbols-outlined mb-0.5">folder_open</span>
+      <span class="text-label-sm">Library</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 flex-1" href="#">
+      <span class="material-symbols-outlined mb-0.5">settings</span>
+      <span class="text-label-sm">Settings</span>
+    </a>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       JAVASCRIPT
+       ══════════════════════════════════════════════════════════ -->
+  <script>
+    // ── State ──────────────────────────────────────────────────────────────────
+    let state = {
+      topic: '', notes: '', linkedinMode: '',
+      research: '', questions: [], answers: [],
+      currentQ: 0,
+      outputs: ['blog', 'linkedin', 'substack', 'instagram_post', 'carousel', 'reel'],
+      progressStep: 0
+    };
+
+    const PROGRESS_STEPS = [5, 18, 35, 52, 67, 80, 92];
+
+    // ── Utility ────────────────────────────────────────────────────────────────
+    function showPhase(id) {
+      ['phase-input', 'phase-interview', 'phase-progress', 'phase-results'].forEach(p => {
+        document.getElementById(p).style.display = (p === id) ? '' : 'none';
+      });
+      window.scrollTo(0, 0);
+    }
+
+    function updateCounter(textareaId, countId, max) {
+      const len = document.getElementById(textareaId).value.length;
+      document.getElementById(countId).textContent = `${len}/${max}`;
+    }
+
+    // ── Chip toggle ────────────────────────────────────────────────────────────
+    function toggleOutput(id) {
+      const btn  = document.getElementById('chip-' + id);
+      const icon = btn.querySelector('.chip-icon');
+
+      if (state.outputs.includes(id)) {
+        state.outputs = state.outputs.filter(o => o !== id);
+        btn.classList.remove('chip-active');
+        btn.classList.add('chip-inactive');
+        icon.textContent = 'add_circle';
+        icon.style.removeProperty('font-variation-settings');
+      } else {
+        state.outputs.push(id);
+        btn.classList.remove('chip-inactive');
+        btn.classList.add('chip-active');
+        icon.textContent = 'check_circle';
+        icon.style.setProperty('font-variation-settings', "'FILL' 1");
+      }
+      updateActionButton();
+    }
+
+    function updateActionButton() {
+      document.getElementById('action-btn-text').textContent =
+        state.outputs.includes('blog') ? 'Research & Interview' : 'Generate';
+    }
+
+    // ── Status feed ────────────────────────────────────────────────────────────
+    function addStatus(msg) {
+      const feed = document.getElementById('status-feed');
+      const line = document.createElement('div');
+      line.className = 'flex items-start gap-3';
+      line.innerHTML = `
+        <span class="text-primary-container shrink-0 mt-0.5 select-none">-&gt;</span>
+        <p class="text-on-surface">${msg}</p>`;
+      feed.appendChild(line);
+      // advance progress bar
+      state.progressStep = Math.min(state.progressStep + 1, PROGRESS_STEPS.length - 1);
+      document.getElementById('gen-progress-bar').style.width = PROGRESS_STEPS[state.progressStep] + '%';
+    }
+
+    function showError(msg) {
+      document.getElementById('error-box').style.display = 'block';
+      document.getElementById('error-text').textContent = msg;
+      document.getElementById('progress-dot').innerHTML =
+        `<span class="relative inline-flex rounded-full h-3 w-3 bg-error"></span>`;
+      document.getElementById('progress-status-label').textContent = 'Failed';
+    }
+
+    function resetProgressPanel() {
+      state.progressStep = 0;
+      document.getElementById('status-feed').innerHTML = '';
+      document.getElementById('error-box').style.display = 'none';
+      document.getElementById('gen-progress-bar').style.width = '5%';
+      document.getElementById('progress-status-label').textContent = 'In Progress';
+      document.getElementById('progress-dot').innerHTML = `
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-container"></span>`;
+    }
+
+    // ── Phase 1 → Interview or direct generation ───────────────────────────────
+    async function startInterview() {
+      const topic = document.getElementById('topic').value.trim();
+      if (!topic) { alert('Please enter a topic.'); return; }
+      if (state.outputs.length === 0) { alert('Please select at least one output.'); return; }
+
+      state.topic    = topic;
+      state.notes    = document.getElementById('notes').value.trim();
+      state.linkedinMode = document.getElementById('linkedin_mode').value;
+
+      // No blog → skip interview, go straight to generation
+      if (!state.outputs.includes('blog')) {
+        state.research = '';
+        state.questions = [];
+        state.answers   = [];
+        startGeneration();
+        return;
+      }
+
+      // Blog selected → research phase (shown in progress panel) → interview
+      document.getElementById('action-btn').disabled = true;
+      resetProgressPanel();
+      showPhase('phase-progress');
+
+      try {
+        const res = await fetch('/interview', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic, notes: state.notes })
+        });
+
+        const reader  = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '', event = null;
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop();
+
+          for (const line of lines) {
+            if (line.startsWith('event: ')) { event = line.slice(7); continue; }
+            if (line.startsWith('data: ') && event) {
+              const data = JSON.parse(line.slice(6));
+              if (event === 'status') addStatus(data.message);
+              if (event === 'error') {
+                showError(data.message);
+                document.getElementById('action-btn').disabled = false;
+                return;
+              }
+              if (event === 'ready') {
+                state.research  = data.research;
+                state.questions = data.questions;
+                state.answers   = data.questions.map(() => '');
+                state.currentQ  = 0;
+                showInterviewPhase();
+              }
+              event = null;
+            }
+          }
+        }
+      } catch (err) {
+        showPhase('phase-progress');
+        showError(err.message);
+        document.getElementById('action-btn').disabled = false;
+      }
+    }
+
+    function showInterviewPhase() {
+      showPhase('phase-interview');
+      document.getElementById('research-text').textContent = state.research;
+      renderQuestion();
+    }
+
+    function backToInput() {
+      document.getElementById('action-btn').disabled = false;
+      updateActionButton();
+      showPhase('phase-input');
+    }
+
+    // ── Interview rendering ────────────────────────────────────────────────────
+    function renderQuestion() {
+      const q     = state.questions[state.currentQ];
+      const total = state.questions.length;
+      const pct   = ((state.currentQ + 1) / total) * 100;
+
+      document.getElementById('interview-progress-bar').style.width = pct + '%';
+
+      const saved = state.answers[state.currentQ] || '';
+      const isLast = state.currentQ === total - 1;
+
+      document.getElementById('question-container').innerHTML = `
+        <div class="absolute -top-3 left-6 bg-[#0A1628] px-2 text-primary-container text-label-sm uppercase tracking-wider font-bold">
+          Question ${state.currentQ + 1} of ${total}
+        </div>
+        <h3 class="text-headline-md font-semibold text-on-background mt-2">${q.question}</h3>
+        <div class="relative mt-2">
+          <textarea id="answer-input" rows="5" maxlength="1000"
+            class="w-full bg-surface-container-low border border-secondary-container text-on-background
+                   rounded-lg p-3 focus:outline-none focus:border-primary-container focus:ring-1
+                   focus:ring-primary-container transition-colors resize-y text-body-md placeholder:text-outline"
+            placeholder="Your words here — rough is fine..."
+            oninput="updateCounter('answer-input','answer-count',1000)">${saved}</textarea>
+          <span id="answer-count" class="absolute bottom-3 right-3 text-label-sm text-primary-container pointer-events-none">${saved.length}/1000</span>
+        </div>
+      `;
+
+      setTimeout(() => {
+        const el = document.getElementById('answer-input');
+        if (el) el.focus();
+      }, 50);
+
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      prevBtn.style.display = state.currentQ > 0 ? 'flex' : 'none';
+      nextBtn.innerHTML = isLast
+        ? `Generate Pack <span class="material-symbols-outlined">auto_awesome</span>`
+        : `Next <span class="material-symbols-outlined">arrow_forward</span>`;
+    }
+
+    function saveCurrentAnswer() {
+      const input = document.getElementById('answer-input');
+      if (input) state.answers[state.currentQ] = input.value.trim();
+    }
+
+    function nextQuestion() {
+      saveCurrentAnswer();
+      if (state.currentQ < state.questions.length - 1) {
+        state.currentQ++;
+        renderQuestion();
+      } else {
+        startGeneration();
+      }
+    }
+
+    function prevQuestion() {
+      saveCurrentAnswer();
+      if (state.currentQ > 0) {
+        state.currentQ--;
+        renderQuestion();
+      }
+    }
+
+    // ── Phase 3: Generation ────────────────────────────────────────────────────
+    async function startGeneration() {
+      resetProgressPanel();
+      showPhase('phase-progress');
+
+      const answers = state.questions
+        .map((q, i) => ({ id: q.id, section: q.section, question: q.question, answer: state.answers[i] }))
+        .filter(a => a.answer);
+
+      try {
+        const res = await fetch('/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topic:        state.topic,
+            notes:        state.notes,
+            linkedin_mode: state.linkedinMode,
+            research:     state.research,
+            answers,
+            outputs:      state.outputs
+          })
+        });
+
+        const reader  = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '', event = null;
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop();
+
+          for (const line of lines) {
+            if (line.startsWith('event: ')) { event = line.slice(7); continue; }
+            if (line.startsWith('data: ') && event) {
+              const data = JSON.parse(line.slice(6));
+              if (event === 'status')   addStatus(data.message);
+              if (event === 'error')    showError(data.message);
+              if (event === 'complete') {
+                document.getElementById('gen-progress-bar').style.width = '100%';
+                setTimeout(() => showResults(data), 700);
+              }
+              event = null;
+            }
+          }
+        }
+      } catch (err) {
+        showError(err.message);
+      }
+    }
+
+    // ── Phase 4: Results ───────────────────────────────────────────────────────
+    function showResults(data) {
+      showPhase('phase-results');
+
+      if (data.drive_link) {
+        const el = document.getElementById('drive-link');
+        el.href = data.drive_link;
+        el.style.display = 'flex';
+      }
+
+      if (data.zip_drive_link) {
+        const el = document.getElementById('zip-link');
+        el.href = data.zip_drive_link;
+        el.style.display = 'flex';
+      }
+
+      // Platform validation rows
+      const rows = [];
+      if (data.bluesky_lengths && data.bluesky_lengths.length) {
+        data.bluesky_lengths.forEach((len, i) => {
+          rows.push({ label: `Bluesky post ${i + 1}`, icon: 'record_voice_over', val: len, max: 300, ok: len <= 300 });
+        });
+      }
+      if (data.x_length) {
+        rows.push({ label: 'X post', icon: 'flutter_dash', val: data.x_length, max: 280, ok: data.x_length <= 280 });
+      }
+
+      if (rows.length) {
+        document.getElementById('validation-section').style.display = 'block';
+        document.getElementById('validation-items').innerHTML = rows.map(r => `
+          <div class="flex justify-between items-center bg-[#0A1628] p-4 rounded-lg">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-on-surface-variant">${r.icon}</span>
+              <span class="text-body-md text-on-background">${r.label}</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-label-md ${r.ok ? 'text-primary-container' : 'text-error'}">${r.val}/${r.max}</span>
+              <span class="material-symbols-outlined ${r.ok ? 'text-primary-container' : 'text-error'}"
+                style="font-variation-settings:'FILL' 1">${r.ok ? 'check_circle' : 'error'}</span>
+            </div>
+          </div>`).join('');
+      }
+
+      if (data.image_prompt) {
+        document.getElementById('image-prompt-section').style.display = 'block';
+        document.getElementById('image-prompt').textContent = data.image_prompt;
+      }
+    }
+
+    function copyPrompt() {
+      navigator.clipboard.writeText(document.getElementById('image-prompt').textContent)
+        .then(() => {
+          const btn = document.querySelector('#image-prompt-section button span.material-symbols-outlined');
+          if (btn) {
+            btn.textContent = 'check';
+            setTimeout(() => { btn.textContent = 'content_copy'; }, 1500);
+          }
+        });
+    }
+
+    // ── Reset ──────────────────────────────────────────────────────────────────
+    function resetApp() {
+      state = {
+        topic: '', notes: '', linkedinMode: '', research: '', questions: [], answers: [],
+        currentQ: 0,
+        outputs: ['blog', 'linkedin', 'substack', 'instagram_post', 'carousel', 'reel'],
+        progressStep: 0
+      };
+
+      // Reset chips
+      ['blog', 'linkedin', 'substack', 'instagram_post', 'carousel', 'reel'].forEach(id => {
+        const btn  = document.getElementById('chip-' + id);
+        const icon = btn.querySelector('.chip-icon');
+        btn.classList.remove('chip-inactive');
+        btn.classList.add('chip-active');
+        icon.textContent = 'check_circle';
+        icon.style.setProperty('font-variation-settings', "'FILL' 1");
+      });
+      ['bluesky', 'x_post'].forEach(id => {
+        const btn  = document.getElementById('chip-' + id);
+        const icon = btn.querySelector('.chip-icon');
+        btn.classList.remove('chip-active');
+        btn.classList.add('chip-inactive');
+        icon.textContent = 'add_circle';
+        icon.style.removeProperty('font-variation-settings');
+      });
+
+      // Reset form
+      document.getElementById('topic').value  = '';
+      document.getElementById('notes').value  = '';
+      document.getElementById('topic-count').textContent = '0/1000';
+      document.getElementById('notes-count').textContent = '0/500';
+
+      // Reset results
+      document.getElementById('drive-link').style.display         = 'none';
+      document.getElementById('zip-link').style.display           = 'none';
+      document.getElementById('validation-section').style.display = 'none';
+      document.getElementById('image-prompt-section').style.display = 'none';
+
+      document.getElementById('action-btn').disabled = false;
+      updateActionButton();
+      showPhase('phase-input');
+    }
+  </script>
+</body>
+</html>
