@@ -1,0 +1,6 @@
+node_modules
+.env
+drive-credentials.json
+oauth-credentials.json
+.git
+*.log
