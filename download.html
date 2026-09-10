@@ -227,6 +227,9 @@
       .card { padding: 36px 24px; }
     }
   </style>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "053baca80f24458fba7b11f505d4f7a1"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 
@@ -319,6 +322,14 @@
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+
+      // Fire Cloudflare Web Analytics custom event
+      if (window.__cfBeacon && window.__cfBeacon.sendEvent) {
+        window.__cfBeacon.sendEvent({
+          type: 'guide_download',
+          name: decodeURIComponent(fileName)
+        });
+      }
 
       // Swap to done state after another 1s
       setTimeout(() => {
