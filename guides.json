@@ -302,6 +302,21 @@
     ]
   },
   {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Pinterest",
+    "desc": "Most parents consider it harmless. A digital scrapbook for recipes and interiors. But Pinterest has a direct messaging feature most parents don't know exists — and an algorithm that doesn't always stay family-friendly.",
+    "image": "CSG_Pinterest.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Pinterest.pdf",
+    "isNew": true,
+    "ageRating": "13+",
+    "risks": [
+      "Hidden direct messaging feature — most parents don't know it exists",
+      "Algorithm can surface self-harm and body image content via innocent searches",
+      "External links in pins can lead to inappropriate or harmful websites"
+    ]
+  },
+  {
     "id": "online-risks",
     "type": "guide",
     "title": "AI \"Girlfriends\" / Companions",
@@ -570,7 +585,7 @@
     "desc": "An honest, no-filter session covering image-based abuse, AI, deepfakes, and digital footprints.",
     "image": "pres-teens.png",
     "link": "https://youtu.be/XeU_cVRDdcI?si=QZasFNf7imhNVjnX",
-    "download": "https://drive.google.com/file/d/1oRbuWwpGySksJIvSp--dmWNmli8Z9LRb/view?usp=drive_link",
+    "download": "https://drive.google.com/file/d/1oRbuWwpGySksJIvSp--dmWNmla8Z9LRb/view?usp=drive_link",
     "duration": "Approx. 33 minutes",
     "topics": [
       "Image-Based Abuse",
