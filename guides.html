@@ -598,6 +598,7 @@
         <form class="request-form" id="requestForm" action="https://formspree.io/f/meeneedd" method="POST">
           <input type="hidden" name="app_name" id="requestAppName">
           <input type="hidden" name="_subject" id="requestSubject" value="Guide Request">
+          <input type="email" name="email" class="request-section-input" placeholder="Your email (optional — if you'd like an update when it's published)" style="width:100%;margin-bottom:10px;">
           <button type="submit" class="request-btn">📩 Request a Guide for This App</button>
         </form>
         <p class="request-sent" id="requestSent">✓ Request sent — thank you! I'll add this to the list.</p>
@@ -611,10 +612,22 @@
       <div class="category-header">
         <span class="category-icon">📘</span>
         <h2 class="category-title">The Complete Parent's Guide</h2>
-        <span class="category-count" id="count-complete-guide">0 guides</span>
+        <span class="category-count">1 guide</span>
       </div>
       <p class="category-desc">The full CSG resource — every platform, every risk, every practical step — in a single downloadable guide.</p>
-      <div class="guide-grid" id="grid-complete-guide"></div>
+      <div class="complete-guide-card">
+        <div class="cgc-img">
+          <img src="images/CSG_Complete_Parents_Guide_Dark.png" alt="CSG Complete Parent's Guide">
+        </div>
+        <div class="cgc-body">
+          <h3>CSG Complete Parent's Guide</h3>
+          <p>Platform guides for Instagram, Snapchat, TikTok, WhatsApp, Discord, Roblox and YouTube. Online risks including grooming, sextortion, deepfakes and screen time. Parental controls for every major device. All in one place, free to download and share.</p>
+          <div class="cgc-btns">
+            <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Dark.pdf&name=CSG+Complete+Parents+Guide+(Screen)" class="cgc-btn dark">⇓ Screen Version</a>
+            <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Light.pdf&name=CSG+Complete+Parents+Guide+(Print)" class="cgc-btn light">⇓ Print Version</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="category-section" id="platform-guides">
@@ -663,6 +676,7 @@
       <p>If an app isn't covered yet, let me know. I prioritise guides based on what parents and teachers are actually asking about.</p>
       <form class="request-section-form" id="standaloneRequestForm" action="https://formspree.io/f/meeneedd" method="POST">
         <input type="text" name="app_name" class="request-section-input" id="standaloneAppInput" placeholder="e.g. Kick, Discord, Yubo..." required>
+        <input type="email" name="email" class="request-section-input" placeholder="Your email (optional — notify me when it's published)">
         <input type="hidden" name="_subject" value="Guide Request from Guides Page">
         <button type="submit" class="request-section-btn">📩 Request a Guide</button>
       </form>
@@ -729,7 +743,7 @@
     }
 
     function updateStats() {
-      const config = ['complete-guide', 'platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
+      const config = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
       let total = 0;
       config.forEach(id => {
         const grid = document.getElementById(`grid-${id}`);
