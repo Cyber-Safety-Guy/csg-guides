@@ -293,7 +293,7 @@
     "desc": "Rebranded but not made safer. X algorithmically serves explicit content to teen accounts and is under Ofcom scrutiny for failing to comply with the Online Safety Act.",
     "image": "CSG_X.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_X.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "13+ (rated 17+ on app stores)",
     "risks": [
       "Explicit and pornographic content pushed to teen accounts via the algorithm",
@@ -308,7 +308,7 @@
     "desc": "Most parents consider it harmless. A digital scrapbook for recipes and interiors. But Pinterest has a direct messaging feature most parents don't know exists — and an algorithm that doesn't always stay family-friendly.",
     "image": "CSG_Pinterest.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Pinterest.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "13+",
     "risks": [
       "Hidden direct messaging feature — most parents don't know it exists",
@@ -323,7 +323,7 @@
     "desc": "AI companions are being marketed directly at young people. Here's what that actually means.",
     "image": "CSG_AI_Girlfriends_Companions.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_AI_girlfriend_companion.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "18+ (rarely enforced)",
     "risks": [
       "Emotional dependency and isolation",
@@ -338,7 +338,7 @@
     "desc": "ChatGPT, Gemini, and the rest. What children are using AI for, and where the risks sit.",
     "image": "CSG_AI_Chatbots_and_Children.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_AI_chatbots_children.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "13+ (varies by tool)",
     "risks": [
       "Harmful or inaccurate advice",
@@ -398,7 +398,7 @@
     "desc": "A facial recognition search engine that lets anyone upload a photo and search the internet to find other images of the same face.",
     "image": "CSG_Pimeyes.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_Pimeyes.pdf",
-    "isNew": true,
+    "isNew": false,
     "ageRating": "All ages affected",
     "risks": [
       "Privacy invasion — anyone can search for your child's face",
