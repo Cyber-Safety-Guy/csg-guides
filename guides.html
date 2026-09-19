@@ -872,6 +872,28 @@
       });
     });
 
+    // ── Download interstitial — intercept all PDF guide clicks ──
+    document.addEventListener('click', function(e) {
+      const card = e.target.closest('a.guide-card');
+      if (!card) return;
+
+      const href = card.getAttribute('href');
+      if (!href || !href.toLowerCase().endsWith('.pdf')) return;
+
+      // Share button handles its own click — don't intercept
+      if (e.target.closest('.share-btn')) return;
+
+      e.preventDefault();
+
+      // Pull the guide title from the card heading
+      const titleEl = card.querySelector('.card-body h3') || card.querySelector('h3');
+      const title = titleEl ? titleEl.textContent.trim() : 'Online Safety Guide';
+
+      // Redirect to interstitial
+      const params = new URLSearchParams({ file: href, name: title });
+      window.open('download.html?' + params.toString(), '_blank');
+    });
+
   </script>
   <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EVeKWTNol5i5dJ5s6-Eq5";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
