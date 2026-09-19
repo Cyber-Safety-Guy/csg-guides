@@ -512,6 +512,21 @@
     ]
   },
   {
+    "id": "parental-controls",
+    "type": "guide",
+    "title": "iOS 27 Parental Controls",
+    "desc": "Apple's biggest overhaul of parental controls in years. Five new features worth setting up now — including contact approval, ask-to-browse, and expanded communication safety.",
+    "image": "CSG_iOS27.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_iOS27.pdf",
+    "isNew": true,
+    "ageRating": "All ages affected",
+    "risks": [
+      "New controls are not enabled by default — parents need to switch them on",
+      "Contact approval and ask-to-browse require all family devices to be updated first",
+      "Communication safety now covers FaceTime — most parents don't know this exists"
+    ]
+  },
+  {
     "id": "further-resources",
     "type": "guide",
     "title": "Why Kids Don't Tell Parents",
