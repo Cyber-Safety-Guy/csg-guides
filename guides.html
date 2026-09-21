@@ -449,6 +449,13 @@
     .featured-btn.secondary:hover {
       background: rgba(66,206,208,0.1); border-color: var(--teal);
     }
+    .featured-btn.accessible {
+      background: transparent; color: #D4A843;
+      border: 1px solid rgba(212,168,67,0.5);
+    }
+    .featured-btn.accessible:hover {
+      background: rgba(212,168,67,0.1); border-color: #D4A843;
+    }
     .featured-meta {
       display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;
     }
@@ -504,6 +511,8 @@
     .cgc-btn.dark:hover { background: #5ADFE1; box-shadow: 0 0 16px rgba(66,206,208,0.35); }
     .cgc-btn.light { background: transparent; color: var(--teal); border: 1px solid rgba(66,206,208,0.4); }
     .cgc-btn.light:hover { background: rgba(66,206,208,0.1); }
+    .cgc-btn.accessible { background: transparent; color: #D4A843; border: 1px solid rgba(212,168,67,0.5); }
+    .cgc-btn.accessible:hover { background: rgba(212,168,67,0.1); border-color: #D4A843; }
     @media (max-width: 520px) {
       .complete-guide-card { flex-direction: column; }
       .cgc-img { width: 80px; }
@@ -563,6 +572,7 @@
         <div class="featured-btns">
           <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Dark.pdf&name=CSG+Complete+Parents+Guide+(Screen)" class="featured-btn primary">⇓ Download — Screen Version</a>
           <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Light.pdf&name=CSG+Complete+Parents+Guide+(Print)" class="featured-btn secondary">⇓ Download — Print Version</a>
+          <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Dyslexic.pdf&name=CSG+Complete+Parents+Guide+(Dyslexia-Friendly)" class="featured-btn accessible">⇓ Download — Dyslexia Friendly</a>
         </div>
       </div>
     </div>
@@ -625,6 +635,7 @@
           <div class="cgc-btns">
             <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Dark.pdf&name=CSG+Complete+Parents+Guide+(Screen)" class="cgc-btn dark">⇓ Screen Version</a>
             <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Light.pdf&name=CSG+Complete+Parents+Guide+(Print)" class="cgc-btn light">⇓ Print Version</a>
+            <a href="download.html?file=guides/CSG_Complete_Parents_Guide_Dyslexic.pdf&name=CSG+Complete+Parents+Guide+(Dyslexia-Friendly)" class="cgc-btn accessible">⇓ Dyslexia Friendly</a>
           </div>
         </div>
       </div>
