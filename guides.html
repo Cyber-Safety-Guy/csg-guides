@@ -7,11 +7,11 @@
   <link rel="canonical" href="https://guides.cybersafetyguy.com/">
   <meta name="description" content="Free child online safety guides for parents, teachers and safeguarding professionals. From Cyber Safety Guy.">
   <meta property="og:title" content="Online Safety Guides — Cyber Safety Guy">
-  <meta property="og:description" content="20 free child online safety guides for parents, teachers and safeguarding professionals. Plain-English advice you can download and share.">
+  <meta property="og:description" content="37 free child online safety guides for parents, teachers and safeguarding professionals. Plain-English advice you can download and share.">
   <meta property="og:url" content="https://guides.cybersafetyguy.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://guides.cybersafetyguy.com/images/CSG_logo.png">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -361,7 +361,6 @@
     }
 
     .request-section-confirm.visible { display: block; }
-}    
 
     /* ── Featured Guide Hero ── */
     .featured-guide {
@@ -696,7 +695,7 @@
 
   </main>
 
-    <footer class="childline-footer">
+  <footer class="childline-footer">
     <p class="childline-eyebrow">If a child needs support right now</p>
     <p class="childline-number"><a href="tel:08001111">0800 1111</a></p>
     <p class="childline-url">childline.org.uk</p>
@@ -714,7 +713,7 @@
     </div>
   </footer>
 
-    <div class="site-footer-bar">
+  <div class="site-footer-bar">
     <a href="https://cybersafetyguy.com" target="_blank" rel="noopener">cybersafetyguy.com</a>
     &nbsp;—&nbsp;All content free to access and share. Subscription proceeds donated to Childline (NSPCC).
   </div>
@@ -722,14 +721,23 @@
   <button class="back-to-top" id="backToTop">↑ Top</button>
 
   <script>
+    // allGuides stored here for the App Safety Checker
+    let allGuides = [];
+
     async function loadGuides() {
       try {
         const response = await fetch('guides.json');
         const guides = await response.json();
-        
+
         const guideItems = guides.filter(item => item.type === 'guide');
         allGuides = guideItems; // Store for checker
-        
+
+        // Set totalCount directly from the JSON array length — this includes ALL guides
+        // (e.g. the Complete Parent's Guide with id "complete-guide" which has no
+        // matching grid div and therefore never gets counted by updateStats())
+        const totalEl = document.getElementById('totalCount');
+        if (totalEl) totalEl.textContent = guideItems.length;
+
         guideItems.forEach(guide => {
           const grid = document.getElementById(`grid-${guide.id}`);
           if (grid) {
@@ -754,23 +762,20 @@
     }
 
     function updateStats() {
+      // Updates per-category counts only — totalCount is already set from JSON in loadGuides()
       const config = ['platform-guides', 'online-risks', 'parental-controls', 'further-resources'];
-      let total = 0;
       config.forEach(id => {
         const grid = document.getElementById(`grid-${id}`);
         const counter = document.getElementById(`count-${id}`);
         if (grid && counter) {
           const count = grid.children.length;
-          total += count;
           counter.textContent = count + (count === 1 ? ' guide' : ' guides');
         }
       });
-      const totalEl = document.getElementById('totalCount');
-      if (totalEl) totalEl.textContent = total;
     }
 
     function copyLink(event, url) {
-      event.preventDefault(); 
+      event.preventDefault();
       event.stopPropagation();
       const btn = event.currentTarget;
       navigator.clipboard.writeText(url).then(() => {
@@ -806,10 +811,7 @@
       });
     });
 
-
     // ── App Safety Checker ──
-    let allGuides = [];
-
     function runChecker() {
       const query = document.getElementById('checkerInput').value.trim().toLowerCase();
       if (!query) return;
