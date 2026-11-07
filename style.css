@@ -493,12 +493,11 @@ body {
 
 /* ── Logo ── */
 .site-logo {
-  width: 80px;
+  /* Photo logo (portrait, transparent): fixed height, auto width so it is never cropped or stretched. */
   height: 80px;
-  border-radius: 50%;
+  width: auto;
   margin: 0 auto 20px;
   display: block;
-  filter: drop-shadow(0 0 12px rgba(66,206,208,0.5));
 }
 
 /* ── Partner logos ── */
