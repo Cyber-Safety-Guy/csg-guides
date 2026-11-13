@@ -7,12 +7,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" href="/favicon-180.png">
-  <title>Parental Controls Wizard — Cyber Safety Guy</title>
-  <meta name="description" content="Step-by-step parental controls guide. Answer four questions and get the exact settings for your child's device and app. Free, no sign-up.">
+  <title>Parental Controls Setup Wizard for Every Device | Cyber Safety Guy</title>
   <link rel="canonical" href="https://guides.cybersafetyguy.com/wizard">
-  <meta name="description" content="Not sure where to start with parental controls? Answer four questions and get a step-by-step guide for your child's device and apps.">
-  <meta property="og:title" content="Parental Controls Setup Wizard — Cyber Safety Guy">
-  <meta property="og:description" content="Answer four questions. Get a personalised, step-by-step parental controls guide for any device or platform.">
+  <meta name="description" content="Answer four questions and get step-by-step parental controls for your child&#x27;s iPhone, Android, Xbox, PlayStation, Nintendo or PC, and the apps they use. Free.">
+  <meta property="og:title" content="Parental Controls Setup Wizard for Every Device | Cyber Safety Guy">
+  <meta property="og:description" content="Answer four questions and get step-by-step parental controls for your child&#x27;s iPhone, Android, Xbox, PlayStation, Nintendo or PC, and the apps they use. Free.">
   <meta property="og:url" content="https://guides.cybersafetyguy.com/wizard">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://guides.cybersafetyguy.com/assets/brand/og-share-1200x630.png">
@@ -1552,7 +1551,7 @@ function buildResults() {
 
 function guideCard(tag, title, desc, file, img) {
   return `<a href="${BASE}${file}" target="_blank" rel="noopener" class="result-guide-card">
-    <img src="images/${img}" alt="${title}" class="guide-thumb" onerror="this.style.display='none'">
+    <img src="/images/thumbs/${String(img).replace(/\.[a-z]+$/i, '.webp')}" alt="${title}" class="guide-thumb" onerror="this.style.display='none'">
     <div class="guide-info">
       <p class="guide-tag">${tag}</p>
       <h4>${title}</h4>
@@ -1646,7 +1645,7 @@ function renderGuideCard(g, highlight = false) {
   return `
     <a href="${g.link}" target="_blank" rel="noopener" class="guide-card" style="${highlightStyle}">
       <div class="card-img-wrap" style="position:relative;">
-        <img src="images/${g.image}" alt="${g.title}">
+        <img src="/images/thumbs/${g.image.replace(/\.[a-z]+$/i, '.webp')}" alt="${g.title}">
         ${badge}${relevantBadge}
       </div>
       <div class="card-body"><h3>${g.title}</h3><p>${g.desc}</p></div>

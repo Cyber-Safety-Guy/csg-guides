@@ -34,7 +34,7 @@
     var art = el("article", { "class": "card guide" });
     var imgWrap = el("div", { "class": "guide-img" });
     if (g.image) {
-      var img = el("img", { src: "/images/" + g.image, alt: "", loading: "lazy", width: "1024", height: "1536" });
+      var img = el("img", { src: "/images/thumbs/" + g.image.replace(/\.[a-z]+$/i, ".webp"), alt: "", loading: "lazy", width: "560", height: "840" });
       imgWrap.appendChild(img);
     }
     if (g.isNew) imgWrap.appendChild(el("span", { "class": "pill pill-new" }, "New"));
@@ -128,6 +128,7 @@
       guides.forEach(function (g) {
         var grid = $("grid-" + g.id);
         if (!grid) return;   // e.g. the Complete Parent's Guide, shown as the featured card
+        if (!grid.dataset.fresh) { grid.textContent = ""; grid.dataset.fresh = "1"; }  // replace the build-time cards
         var c = card(g);
         grid.appendChild(c);
         cards.push({ el: c, cat: g.id, key: normalise(g.title).replace(/ /g, ""),
