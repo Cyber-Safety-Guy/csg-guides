@@ -8,7 +8,7 @@ A static website hosted at `guides.cybersafetyguy.com` — a free resource hub f
 
 ## Deployment
 
-The site is deployed automatically via GitHub Pages on every push to `main`. The `CNAME` file routes the custom domain. There is no staging environment.
+Cloudflare Pages (project `csg-guides`, since 13 Nov 2026) builds every push to `main` with `bash build.sh` and publishes `_site/` to guides.cybersafetyguy.com. Pull requests get a preview link from Cloudflare. `build.sh` copies only the website (pages, guides/, images/, a few root files); repo internals are never published, so add any new kind of file the site needs to it. Security headers live in `_headers`. Never push to `main`: branch and PR.
 
 ## Site structure
 
