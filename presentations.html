@@ -7,12 +7,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" href="/favicon-180.png">
-  <title>Presentations — Cyber Safety Guy</title>
-  <meta name="description" content="Free online safety presentations for schools and parent evenings. Age-specific versions for under-13s, teens and adults. Download free.">
+  <title>Free Online Safety Presentations for Schools | Cyber Safety Guy</title>
   <link rel="canonical" href="https://guides.cybersafetyguy.com/presentations">
-  <meta name="description" content="Free child online safety presentations for schools, parents and youth organisations.">
-  <meta property="og:title" content="Presentations — Cyber Safety Guy">
-  <meta property="og:description" content="Free child online safety presentations for schools, parents and youth organisations. From Cyber Safety Guy.">
+  <meta name="description" content="Free, ready-to-use online safety talks for parents&#x27; evenings, under-13s and teens, from a former RAF Police digital forensics specialist. For schools and youth groups.">
+  <meta property="og:title" content="Free Online Safety Presentations for Schools | Cyber Safety Guy">
+  <meta property="og:description" content="Free, ready-to-use online safety talks for parents&#x27; evenings, under-13s and teens, from a former RAF Police digital forensics specialist. For schools and youth groups.">
   <meta property="og:url" content="https://guides.cybersafetyguy.com/presentations">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://guides.cybersafetyguy.com/assets/brand/og-share-1200x630.png">
@@ -280,7 +279,7 @@
           card.setAttribute('data-search', `${pres.title} ${pres.audience} ${pres.desc}`.toLowerCase());
           card.innerHTML = `
             <div class="card-img-wrap">
-              <img src="images/${pres.image}" alt="${pres.title}" onerror="this.src='images/CSG_logo.png'">
+              <img src="/images/thumbs/${pres.image.replace(/\.[a-z]+$/i, '.webp')}" alt="${pres.title}" onerror="this.src='/assets/brand/csg-logo-photo-720.png'">
               <div class="play-overlay"><div class="play-circle"><svg viewBox="0 0 24 24" width="22" height="22" fill="#0A1628"><polygon points="5,3 19,12 5,21"/></svg></div></div>
             </div>
             <div class="card-body">

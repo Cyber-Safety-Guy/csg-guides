@@ -8,6 +8,7 @@
 set -euo pipefail
 rm -rf _site
 mkdir _site
-cp *.html guides.json sitemap.xml CNAME .nojekyll _headers _redirects favicon* _site/
+cp *.html guides.json sitemap.xml robots.txt CNAME .nojekyll _headers _redirects favicon* _site/
 cp -r guides images assets _site/
+python3 scripts/prerender_guides.py _site/guides.html || echo "Guide prerender skipped: the library still renders in the browser"
 echo "Built _site: $(find _site -type f | wc -l) files"
