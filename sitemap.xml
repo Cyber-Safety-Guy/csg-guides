@@ -12,41 +12,41 @@
   <lastmod>2026-05-12T10:56:44+00:00</lastmod>
   <priority>1.00</priority>
 </url>
-<url>
-  <loc>https://guides.cybersafetyguy.com/guides.html</loc>
+  <url>
+  <loc>https://guides.cybersafetyguy.com/guides</loc>
   <lastmod>2026-05-12T10:56:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://guides.cybersafetyguy.com/wizard.html</loc>
+  <url>
+  <loc>https://guides.cybersafetyguy.com/wizard</loc>
   <lastmod>2026-05-12T10:56:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://guides.cybersafetyguy.com/csg_threat_radar.html</loc>
+  <url>
+  <loc>https://guides.cybersafetyguy.com/csg_threat_radar</loc>
   <lastmod>2026-05-12T10:56:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://guides.cybersafetyguy.com/presentations.html</loc>
+  <url>
+  <loc>https://guides.cybersafetyguy.com/presentations</loc>
   <lastmod>2026-05-12T10:56:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://guides.cybersafetyguy.com/social.html</loc>
+  <url>
+  <loc>https://guides.cybersafetyguy.com/social</loc>
   <lastmod>2026-05-12T10:56:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://guides.cybersafetyguy.com/contract.html</loc>
+  <url>
+  <loc>https://guides.cybersafetyguy.com/contract</loc>
   <lastmod>2026-05-12T10:56:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://guides.cybersafetyguy.com/index.html</loc>
-  <lastmod>2026-05-12T10:56:44+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+  <url>
+    <loc>https://guides.cybersafetyguy.com/conversation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 
 </urlset>

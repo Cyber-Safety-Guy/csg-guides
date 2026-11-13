@@ -1,6 +1,10 @@
 # Cloudflare Pages headers for guides.cybersafetyguy.com (ignored by GitHub Pages).
-# A Content-Security-Policy comes with the restyle, once third-party scripts are gone.
+# Content-Security-Policy (restyle, Nov 2026): only this site's own files, plus the three services the
+# tools need: rss2json (threat radar feeds), Formspree (guide requests) and the Substack signup embed on
+# www.cybersafetyguy.com (wizard). Inline scripts are still allowed because the tool pages use them.
 /*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.rss2json.com https://formspree.io; frame-src https://www.cybersafetyguy.com; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
@@ -10,6 +14,14 @@
   Cache-Control: public, max-age=86400
 /images/*
   Cache-Control: public, max-age=86400
+/assets/fonts/*
+  Cache-Control: public, max-age=604800
+/assets/brand/*
+  Cache-Control: public, max-age=604800
+/assets/*.css
+  Cache-Control: public, max-age=300
+/assets/*.js
+  Cache-Control: public, max-age=300
 
 # Keep the pages.dev addresses (production and pull request previews) out of search results.
 https://:project.pages.dev/*

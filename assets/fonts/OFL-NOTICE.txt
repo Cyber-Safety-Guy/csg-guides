@@ -1,0 +1,8 @@
+Fonts in this folder are used under the SIL Open Font License, Version 1.1 (https://openfontlicense.org).
+
+Inter (c) The Inter Project Authors (https://github.com/rsms/inter)
+Space Grotesk (c) The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
+Caveat (c) The Caveat Project Authors (https://github.com/googlefonts/caveat)
+
+Latin subsets, downloaded as WOFF2 from Google Fonts on 8 November 2026 and served from this site
+so that no page loads anything from a third party.
