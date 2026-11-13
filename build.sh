@@ -9,5 +9,5 @@ set -euo pipefail
 rm -rf _site
 mkdir _site
 cp *.html guides.json style.css sitemap.xml CNAME .nojekyll _headers _redirects favicon* _site/
-cp -r guides images _site/
+cp -r guides images assets _site/
 echo "Built _site: $(find _site -type f | wc -l) files"
