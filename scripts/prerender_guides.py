@@ -28,10 +28,17 @@ def card(g):
     img = f'<img src="{e(thumb(g["image"]))}" alt="" loading="lazy" width="560" height="840">' if g.get("image") else ""
     new = '<span class="pill pill-new">New</span>' if g.get("isNew") else ""
     age = f'<div class="tags"><span class="pill">Age rating {e(g["ageRating"])}</span></div>' if g.get("ageRating") else ""
+    if g.get("page"):
+        title = f'<a href="{e(g["page"])}">{e(g["title"])}</a>'
+        actions = (f'<a class="btn btn-primary btn-small" href="{e(g["page"])}" aria-label="Read the {e(g["title"])} guide">Read the guide</a>'
+                   f'<a class="copy-btn" href="{e(href)}" target="_blank" rel="noopener" aria-label="Download the {e(g["title"])} PDF" '
+                   f'style="display:inline-flex;align-items:center;text-decoration:none">PDF</a>')
+    else:
+        title = f'<a href="{e(href)}" target="_blank" rel="noopener">{e(g["title"])}</a>'
+        actions = (f'<a class="btn btn-primary btn-small" href="{e(href)}" target="_blank" rel="noopener" '
+                   f'aria-label="Open the {e(g["title"])} guide">Open the guide</a>')
     return (f'<article class="card guide"><div class="guide-img">{img}{new}</div><div class="guide-body">'
-            f'<h3><a href="{e(href)}" target="_blank" rel="noopener">{e(g["title"])}</a></h3>{age}<p>{e(g.get("desc"))}</p>'
-            f'<div class="guide-actions"><a class="btn btn-primary btn-small" href="{e(href)}" target="_blank" rel="noopener" '
-            f'aria-label="Open the {e(g["title"])} guide">Open the guide</a></div></div></article>')
+            f'<h3>{title}</h3>{age}<p>{e(g.get("desc"))}</p><div class="guide-actions">{actions}</div></div></article>')
 
 
 s = open(page, encoding="utf-8").read()

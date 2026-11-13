@@ -31,6 +31,7 @@ All pages share `style.css` and load Google Fonts. Each HTML page is self-contai
 - `isNew` — boolean, controls a "New" badge on the card
 - `link` — direct URL to the PDF (hosted at `guides.cybersafetyguy.com/guides/`)
 - `risks` — array of 3 strings shown as bullet points on the card
+- `page` (optional) — the guide's own web page, e.g. `/guides/omoggle` (a file `guides/omoggle.html`). When set, the library card opens the page and offers the PDF as a second button. Add the page to `sitemap.xml` too.
 
 To add a new guide: add its PDF to `guides/`, add its thumbnail image to `images/`, then add a new entry to `guides.json`.
 
