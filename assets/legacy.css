@@ -19,7 +19,7 @@
 [data-theme="light"] { --gold: #8A6512; --childline-red: #A93226; }
 
 /* Tool pages: page heading block (replaces the old Orbitron hero) */
-.tool-head { padding: 40px 0 8px; }
+.tool-head { padding-top: 40px; padding-bottom: 8px; }
 .tool-head h1 { font-size: clamp(34px, 5vw, 48px); margin: 8px 0 12px; letter-spacing: 0; text-transform: none; }
 .tool-head .lead { margin-bottom: 0; }
 
