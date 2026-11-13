@@ -1,9 +1,9 @@
 # Cloudflare Pages headers for guides.cybersafetyguy.com (ignored by GitHub Pages).
-# Content-Security-Policy (restyle, Nov 2026): only this site's own files, plus the three services the
-# tools need: rss2json (threat radar feeds), Formspree (guide requests) and the Substack signup embed on
-# www.cybersafetyguy.com (wizard). Inline scripts are still allowed because the tool pages use them.
+# Content-Security-Policy (restyle, Nov 2026): only this site's own files, plus the two services the
+# tools need: rss2json (threat radar feeds) and Formspree (guide requests). No frames are allowed.
+# Inline scripts are still allowed because the tool pages use them.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.rss2json.com https://formspree.io; frame-src https://www.cybersafetyguy.com; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.rss2json.com https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
