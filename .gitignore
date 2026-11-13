@@ -5,3 +5,4 @@ content-studio/.env
 content-studio/node_modules/
 content-studio/drive-credentials.json
 content-studio/oauth-credentials.json
+_site/
