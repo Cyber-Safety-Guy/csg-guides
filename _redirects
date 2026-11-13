@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects for guides.cybersafetyguy.com
+# The family audit page was removed (Dale, 13 Nov 2026); old links go to the home page.
+/audit       /  301
+/audit.html  /  301
