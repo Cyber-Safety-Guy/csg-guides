@@ -42,7 +42,8 @@
 
     var body = el("div", { "class": "guide-body" });
     var h = el("h3");
-    var a = el("a", { href: downloadHref(g), target: "_blank", rel: "noopener" }, g.title);
+    // Guides with their own web page (guides.json "page") open it; the PDF is one click away
+    var a = g.page ? el("a", { href: g.page }, g.title) : el("a", { href: downloadHref(g), target: "_blank", rel: "noopener" }, g.title);
     h.appendChild(a);
     body.appendChild(h);
     if (g.ageRating) {
@@ -52,7 +53,12 @@
     }
     body.appendChild(el("p", {}, g.desc || ""));
     var actions = el("div", { "class": "guide-actions" });
-    actions.appendChild(el("a", { "class": "btn btn-primary btn-small", href: downloadHref(g), target: "_blank", rel: "noopener", "aria-label": "Open the " + g.title + " guide" }, "Open the guide"));
+    if (g.page) {
+      actions.appendChild(el("a", { "class": "btn btn-primary btn-small", href: g.page, "aria-label": "Read the " + g.title + " guide" }, "Read the guide"));
+      actions.appendChild(el("a", { "class": "copy-btn", href: downloadHref(g), target: "_blank", rel: "noopener", "aria-label": "Download the " + g.title + " PDF", style: "display:inline-flex;align-items:center;text-decoration:none" }, "PDF"));
+    } else {
+      actions.appendChild(el("a", { "class": "btn btn-primary btn-small", href: downloadHref(g), target: "_blank", rel: "noopener", "aria-label": "Open the " + g.title + " guide" }, "Open the guide"));
+    }
     var copy = el("button", { type: "button", "class": "copy-btn", "aria-label": "Copy the link to the " + g.title + " guide" }, "Copy link");
     copy.addEventListener("click", function () {
       var url = absoluteLink(g);
