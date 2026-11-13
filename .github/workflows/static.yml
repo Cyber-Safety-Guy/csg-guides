@@ -33,11 +33,21 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Collect the public site
+        # Only the website itself is published. Repo internals (content-studio/, tools/, scripts/,
+        # CLAUDE.md, README.md, wizard-sections-meta.json, .github/) stay in the repo but are not served.
+        # A new top-level page (*.html) or a file in guides/ or images/ is picked up automatically;
+        # anything else the site needs must be added to this list.
+        run: |
+          mkdir _site
+          cp *.html guides.json style.css sitemap.xml CNAME .nojekyll favicon* _site/
+          cp -r guides images _site/
+          rm -f _site/README.html
+          ls -R _site | head -200
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
