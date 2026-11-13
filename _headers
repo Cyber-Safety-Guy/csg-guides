@@ -1,0 +1,18 @@
+# Cloudflare Pages headers for guides.cybersafetyguy.com (ignored by GitHub Pages).
+# A Content-Security-Policy comes with the restyle, once third-party scripts are gone.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000
+
+/guides/*
+  Cache-Control: public, max-age=86400
+/images/*
+  Cache-Control: public, max-age=86400
+
+# Keep the pages.dev addresses (production and pull request previews) out of search results.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
