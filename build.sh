@@ -10,5 +10,7 @@ rm -rf _site
 mkdir _site
 cp *.html guides.json sitemap.xml robots.txt CNAME .nojekyll _headers _redirects favicon* _site/
 cp -r guides images assets _site/
+python3 scripts/build_pages.py _site            # guide pages from pages/*.json, library links, sitemap
 python3 scripts/prerender_guides.py _site/guides.html || echo "Guide prerender skipped: the library still renders in the browser"
+python3 scripts/check_site.py _site             # stops the publish if anything is missing
 echo "Built _site: $(find _site -type f | wc -l) files"

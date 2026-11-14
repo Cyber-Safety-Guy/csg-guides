@@ -47,16 +47,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-
-  <url>
-    <loc>https://guides.cybersafetyguy.com/guides/omoggle</loc>
-    <lastmod>2026-11-14</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://guides.cybersafetyguy.com/guides/locket-widget</loc>
-    <lastmod>2026-11-14</lastmod>
-    <priority>0.8</priority>
-  </url>
   </urlset>

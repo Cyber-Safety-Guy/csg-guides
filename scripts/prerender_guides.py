@@ -6,10 +6,12 @@ import html
 import json
 import re
 import sys
+from pathlib import Path
 from urllib.parse import urlencode
 
 page = sys.argv[1]
-guides = [g for g in json.load(open("guides.json", encoding="utf-8")) if g.get("type") == "guide"]
+built = Path(page).parent / "guides.json"  # written by build_pages.py, with "page" links
+guides = [g for g in json.load(open(built if built.exists() else "guides.json", encoding="utf-8")) if g.get("type") == "guide"]
 
 
 def pdf_path(link):
