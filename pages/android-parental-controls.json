@@ -1,0 +1,123 @@
+{
+  "slug": "android-parental-controls",
+  "name": "Android parental controls",
+  "eyebrow": "Settings guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "How to Set Up Android Parental Controls (2026)",
+  "seo_description": "Set up Google Family Link on your child's Android phone or tablet: screen time limits, app approval, content filters, location and purchases, step by step.",
+  "h1": "How to set up parental controls on an Android phone",
+  "lead": "Android's parental controls come through Google Family Link, a free app you run on your own phone. Here's how to set it up and what each setting is for.",
+  "answer_question": "Does Android have parental controls?",
+  "answer": "Yes. Google Family Link lets you set screen time limits, approve or block apps, filter content, see your child's location and control purchases, all from your own phone. Nothing is limited until you set it up.",
+  "sections": [
+    {
+      "heading": "Setting up Family Link",
+      "list": [
+        "Download the free Google Family Link app on your own phone (it works on iPhone or Android)",
+        "Create a Google Account for your child if they're under 13, or add supervision to the account they already have",
+        "On your child's Android device, sign in to their account and accept supervision when asked",
+        "Their device now appears in Family Link, ready to set up"
+      ],
+      "after": [
+        "You need to be 18 or over and live in the same country as your child. Family Link supervises Android phones and tablets, Chromebooks and some Fitbit devices, but not iPhones or iPads."
+      ]
+    },
+    {
+      "heading": "Screen time",
+      "body": [
+        "In Family Link, choose your child, then Screen time, then Time limits. Turn on Daily limit and use Weekly schedule to set a limit for each day, or apply the same limit to every day. You can also give bonus time when it's earned.",
+        "Bedtime locks the device overnight, and a School Time schedule can limit what the phone does during school hours."
+      ]
+    },
+    {
+      "heading": "Apps",
+      "body": [
+        "Under Screen time, then Time limits, then App limits, you can set an app to Allowed or Blocked. Blocks reach every Android device and Chromebook your child uses within about five minutes. You can also require your approval before they download anything from Google Play."
+      ]
+    },
+    {
+      "heading": "Content filters",
+      "body": [
+        "Set content ratings for apps and games in Google Play, turn on SafeSearch for Google Search, and manage which websites Chrome can open. Content filters only apply in Chrome, so block other browsers if you're filtering websites."
+      ]
+    },
+    {
+      "heading": "Location",
+      "body": [
+        "Tap Location, then Set up location, choose your child and turn it on. Your child is told that their location is shared. That honesty matters: children who know are more likely to come to you when something's wrong."
+      ]
+    },
+    {
+      "heading": "Purchases",
+      "body": [
+        "Require your approval for purchases made through Google Play, and remove any saved payment cards from your child's account. Approval only covers purchases that go through Google Play's own billing."
+      ]
+    },
+    {
+      "heading": "When your child turns 13",
+      "body": [
+        "Google emails you and your child about updating the account, but supervision settings stay the same unless you change them. Children need a parent's approval to stop supervision until they're 18, and you're both notified if it stops."
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Talk to your child before you switch things on, and agree the rules together. Use the weekly activity report as a starting point for a chat, not a weapon. As they get older, loosen the limits and keep the conversation going."
+      ],
+      "list": [
+        "\"What do you think is a fair amount of screen time on a school night?\"",
+        "\"If an app asks for something odd, check with me first.\"",
+        "\"If anything online upsets you, tell me. You won't lose your phone for it.\""
+      ]
+    }
+  ],
+  "teachers": "School-managed Chromebooks and tablets are usually controlled by your IT team, so Family Link may not apply to them. For parents' evenings, the key messages are: install Family Link on your own phone, link your child's account, set app approval and screen time, and keep talking.",
+  "faq": [
+    {
+      "q": "Is Google Family Link free?",
+      "a": "Yes. Family Link is free on both Android and iPhone, with no subscription."
+    },
+    {
+      "q": "Can Family Link control an iPhone?",
+      "a": "No. Family Link supervises Android phones and tablets, Chromebooks and some Fitbit devices. For iPhones and iPads, use Apple's built-in controls."
+    },
+    {
+      "q": "Can my child turn off Family Link at 13?",
+      "a": "Not on their own. Children need a parent's approval to stop supervision until they're 18, and you're both notified if it stops."
+    },
+    {
+      "q": "Does Family Link stop strangers messaging my child?",
+      "a": "Not on its own. It controls which apps they can use, so check the privacy settings inside messaging and social apps too."
+    }
+  ],
+  "help": "Worried about something your child has seen or been sent? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Google Family Link Help, \"Manage your child's Google Account and devices\" (setup, screen time, app limits, location), accessed November 2026",
+    "Google Family Link Help, supervision when a child turns 13 and stopping supervision, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Android_parental_controls.pdf",
+  "image": "CSG_Android",
+  "related": [
+    {
+      "title": "Parental controls wizard",
+      "text": "Settings for your child's devices and apps",
+      "href": "/wizard"
+    },
+    {
+      "title": "iPhone parental controls",
+      "text": "Apple's controls in iOS 27",
+      "href": "/guides/iphone-parental-controls"
+    },
+    {
+      "title": "Screen time and overuse",
+      "text": "Sleep, habits and balance",
+      "href": "/download?file=guides/CSG_Screen_time_device_overuse.pdf&name=Screen+Time+and+Device+Overuse"
+    },
+    {
+      "title": "Everyone else has it",
+      "text": "Handling peer pressure about phones",
+      "href": "/download?file=guides/CSG_Everyone_else_has_it.pdf&name=Everyone+Else+Has+It"
+    }
+  ]
+}

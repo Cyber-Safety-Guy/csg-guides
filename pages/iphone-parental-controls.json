@@ -1,0 +1,135 @@
+{
+  "slug": "iphone-parental-controls",
+  "name": "iPhone parental controls",
+  "eyebrow": "Settings guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "How to Set Up iPhone Parental Controls (2026)",
+  "seo_description": "Step-by-step iPhone and iPad parental controls for iOS 27: Ask to Buy, Ask to Browse, time allowances, schedules, contacts and Communication Safety.",
+  "h1": "How to set up parental controls on an iPhone or iPad",
+  "lead": "Apple's parental controls are built into every iPhone and iPad, with nothing to download. They were redesigned for iOS 27, so here's what each setting does now and the order I'd set them up in.",
+  "answer_question": "Do iPhones have parental controls?",
+  "answer": "Yes, and they're good, but almost nothing is switched on until you set it up. You manage them from your own iPhone through Family Sharing: what apps and websites your child can use, how long, who can contact them and what they can buy.",
+  "sections": [
+    {
+      "heading": "Before you start",
+      "list": [
+        "Set up Family Sharing with a child account for your child, so they aren't using your Apple Account",
+        "Update every device in your family group to iOS 27 (or iPadOS 27, macOS 27, watchOS 27). Devices that can't update keep the older iOS 26 controls under Settings, then Screen Time",
+        "Add yourself to your child's contacts, so their requests reach you"
+      ],
+      "after": [
+        "Everything below is on your own iPhone, under Settings, then Family, then your child's name."
+      ]
+    },
+    {
+      "heading": "Apps, purchases and downloads",
+      "subsections": [
+        {
+          "heading": "Ask to Buy",
+          "body": [
+            "Go to Apps & Websites, then Restrictions, then Ask to Buy, and turn on Require Purchase Approval. Your child then sends you a request for every download and purchase, which you approve or decline. For under-18s in some regions it's on by default."
+          ]
+        },
+        {
+          "heading": "Block an app",
+          "body": [
+            "In Apps & Websites, pick an app and tap Block App. It isn't deleted, just greyed out on their Home Screen."
+          ]
+        },
+        {
+          "heading": "Age ratings",
+          "body": [
+            "In Content & Privacy Restrictions, set the maximum age rating for apps, films, TV and music."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Websites: Ask to Browse",
+      "body": [
+        "In Apps & Websites, then Restrictions, then Filtering, choose Approved Websites Only. Your child then has to ask before visiting a new website in Safari and other supported browsers. It's on by default for under-13s, and Limit Adult Websites is on by default for under-18s."
+      ]
+    },
+    {
+      "heading": "Screen time limits and schedules",
+      "body": [
+        "Time Allowances replace the old App Limits. Tap Time Allowances, then Add, to set daily limits for categories such as Games, Social Media and Entertainment, plus an overall daily budget.",
+        "Screen Time Schedule sets which apps work at different times, with separate weekday and weekend routines. It's ideal for bedtime and school hours. Your child can ask you for more time, which you can approve from your phone."
+      ]
+    },
+    {
+      "heading": "Who can contact them",
+      "body": [
+        "In Allowed Contacts, then During Screen Time, choose Contacts Only, Contacts and Groups with at Least One Contact, or Everyone. Turn on Manage Contacts to choose approved contacts yourself: messages from anyone new stay hidden until you approve them. Leave Allow Contact Editing off if you want your child to ask before adding people.",
+        "These limits cover Apple's Phone, Messages and FaceTime. Apps such as WhatsApp, Snapchat and Instagram have their own settings."
+      ]
+    },
+    {
+      "heading": "Communication Safety",
+      "body": [
+        "Turn on Communication Safety. On your child's device, it blurs or warns about photos and videos showing nudity, gore or violence, including in Messages and FaceTime. Apple says the checking happens on the device itself."
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Set the controls up with your child, not behind their back, and explain why. Start tighter for younger children and loosen things as they show they're ready. For teens, time allowances by category are usually fairer than locking the whole phone.",
+        "The settings are a safety net, not a replacement for talking. The most protective thing you can do is make sure your child knows they can come to you when something goes wrong."
+      ],
+      "list": [
+        "\"What apps do you think are fair to have time limits on?\"",
+        "\"If you need more time for homework, ask me and I'll sort it.\"",
+        "\"If someone you don't know messages you, show me. You won't be in trouble.\""
+      ]
+    }
+  ],
+  "teachers": "If school-issued iPads are managed by your IT team, these family settings may not apply to them. For parents' evenings, the key messages are: set up Family Sharing with a child account, update devices to iOS 27, turn on Ask to Buy and Communication Safety, and keep talking.",
+  "faq": [
+    {
+      "q": "Where are parental controls on iPhone in iOS 27?",
+      "a": "On your own iPhone, in Settings, then Family, then your child's name. Older devices that can't update still use Settings, then Screen Time."
+    },
+    {
+      "q": "Can my child turn off Screen Time?",
+      "a": "Not if it's managed from your device through Family Sharing with a child account. Changes need your approval or your Screen Time passcode."
+    },
+    {
+      "q": "Do iPhone parental controls work on WhatsApp and Snapchat?",
+      "a": "Time limits, app blocking and age ratings do. Contact limits only cover Apple's Phone, Messages and FaceTime, so use each app's own privacy settings too."
+    },
+    {
+      "q": "What is Ask to Browse?",
+      "a": "A setting that makes your child ask your permission before visiting a new website. It's on by default for children under 13 in iOS 27."
+    }
+  ],
+  "help": "Worried about something your child has seen or been sent? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Apple Support, \"Set up parental controls to manage your child's iPhone or iPad\" (iOS 27 menu paths and defaults), accessed November 2026",
+    "Apple Support, Ask to Browse and Communication Safety pages, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_iPhone_iPad_parental_controls.pdf",
+  "image": "CSG_Ios",
+  "related": [
+    {
+      "title": "iOS 27 parental controls",
+      "text": "The five new controls on one page",
+      "href": "/download?file=guides/CSG_iOS27.pdf&name=iOS+27+Parental+Controls"
+    },
+    {
+      "title": "Parental controls wizard",
+      "text": "Settings for your child's devices and apps",
+      "href": "/wizard"
+    },
+    {
+      "title": "Android parental controls",
+      "text": "Google Family Link, step by step",
+      "href": "/guides/android-parental-controls"
+    },
+    {
+      "title": "Screen time and overuse",
+      "text": "Sleep, habits and balance",
+      "href": "/download?file=guides/CSG_Screen_time_device_overuse.pdf&name=Screen+Time+and+Device+Overuse"
+    }
+  ]
+}

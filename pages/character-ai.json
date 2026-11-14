@@ -1,0 +1,146 @@
+{
+  "slug": "character-ai",
+  "name": "Character.AI",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "What Is Character.AI? Is It Safe for Kids?",
+  "seo_description": "Character.AI lets children chat with AI characters that feel like friends. What it is, what changed for under-18s, the risks and what parents can do.",
+  "h1": "Character.AI: what parents need to know",
+  "lead": "If your child has mentioned Character.AI, c.ai or talking to an AI character, this page explains what it is, what's changed for teenagers, and what I'd do as a parent.",
+  "answer_question": "Is Character.AI safe for children?",
+  "answer": "Not for open-ended chatting, and the company now agrees: since November 2025 under-18s can't hold free conversations with its characters. Teens can still use some creative features, and age checks can be got round, so it's worth knowing what your child is doing on it and talking about why AI companions can feel so real.",
+  "sections": [
+    {
+      "heading": "What is Character.AI?",
+      "body": [
+        "Character.AI (you'll also see c.ai or char.ai) is an AI chatbot app and website. Users chat with AI characters based on film and game favourites, celebrities, historical figures or completely original creations. Millions of characters are made by other users, and some can talk back by voice.",
+        "The whole point is that the character feels responsive, personal and alive. That's what makes it fun, and it's also what makes it risky for a young person."
+      ]
+    },
+    {
+      "heading": "What changed for under-18s",
+      "body": [
+        "After lawsuits and sustained public pressure, Character.AI announced in October 2025 that under-18s would lose the ability to have open-ended chats with its characters. It phased chat out for teens, ending on 25 November 2025.",
+        "It checks ages using its own tool that looks at how an account behaves, plus third-party checks such as a selfie or ID through a company called Persona. Teens who are identified as under 18 can still use creative tools, such as building stories and making images, but not free chat.",
+        "From my perspective, this came too late. It followed the deaths of teenagers in the US who had formed intense relationships with its chatbots, and the families' legal action. Age checks also aren't perfect, so don't assume the change means your child can't be chatting."
+      ]
+    },
+    {
+      "heading": "Why children are drawn to it",
+      "list": [
+        "Characters that never get tired, busy or judgemental",
+        "Talking to characters from the shows, games and books they love",
+        "A space to roleplay and tell stories",
+        "Comfort when they feel anxious, lonely or misunderstood",
+        "Curiosity about how AI works"
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Emotional dependency",
+          "body": [
+            "An AI companion is always available and always agrees. For a child who is struggling, that can quietly replace real friendships and the adults who could actually help."
+          ]
+        },
+        {
+          "heading": "Harmful and sexual conversations",
+          "body": [
+            "Researchers and journalists have found chatbots on the platform that brought up self-harm unprompted, encouraged disordered eating and had sexual conversations with users who said they were children."
+          ]
+        },
+        {
+          "heading": "Characters based on real people",
+          "body": [
+            "In 2024, chatbots imitating Brianna Ghey and Molly Russell were found on the platform. Ofcom has since confirmed that chatbots like these fall under the Online Safety Act."
+          ]
+        },
+        {
+          "heading": "Wrong or dangerous advice",
+          "body": [
+            "The AI predicts what to say next. It doesn't understand or care, and it can be confidently wrong about health, relationships and safety."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Preferring the AI to real friends",
+        "Believing a character is real, conscious or in love with them",
+        "Distress or anger when they can't get on the app",
+        "Hiding conversations or being secretive about their use",
+        "Changes in mood, sleep or how much they want to be with family"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "First, don't panic. Panic closes conversations, and what we need is an open door. Ask, out of curiosity rather than suspicion, whether they've come across it. A few ways in:"
+      ],
+      "list": [
+        "\"I read about Character.AI today. Have you heard of it?\"",
+        "\"Which characters do people talk to on it?\"",
+        "\"How do you think an AI decides what to say back?\"",
+        "\"If a character ever said something that made you uncomfortable, would you tell me?\""
+      ],
+      "after": [
+        "Talk about the difference between something that sounds like a friend and something that is one. An AI character isn't a real friend, but a child in distress doesn't always experience it that way.",
+        "You can block the app and website with parental controls; my [parental controls wizard](/wizard) walks you through it for each device."
+      ]
+    }
+  ],
+  "teachers": "Include AI companion apps such as Character.AI and Replika in staff safeguarding training and your online safety policy. If a young person talks about an AI character as though it's a real relationship, note it: it may point to loneliness or emotional vulnerability. Follow your safeguarding procedures as you would for any online harm.",
+  "faq": [
+    {
+      "q": "What is Character.AI?",
+      "a": "An app and website where people chat with AI characters made by other users, from film and game characters to completely original ones. Some characters can talk by voice."
+    },
+    {
+      "q": "Can under-18s use Character.AI?",
+      "a": "Since November 2025, under-18s can't have open-ended chats with characters. They can still use some creative features such as stories and images, and age checks aren't perfect."
+    },
+    {
+      "q": "Is Character.AI the same as ChatGPT?",
+      "a": "No. ChatGPT is a general assistant. Character.AI is built around characters and roleplay, designed to feel like a relationship, which is why it can be more emotionally risky."
+    },
+    {
+      "q": "How do I block Character.AI?",
+      "a": "Block the app in your child's device controls and the character.ai website in their browser settings. My [parental controls wizard](/wizard) shows you how on each device."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Under-25s can also call The Mix on [0808 808 4994](tel:08088084994). You are not alone.",
+  "sources": [
+    "TechCrunch, report on Character.AI ending open-ended chat for under-18s, 29 October 2025 (dates, age assurance)",
+    "Character.AI, announcement on under-18 users and age assurance, October 2025",
+    "Ofcom, open letter to online service providers on generative AI and chatbots, November 2024",
+    "Reporting on US lawsuits against Character.AI by families of teenagers, 2024 to 2025 (see the footnotes in my full article)"
+  ],
+  "pdf": "guides/CSG_Characterai.pdf",
+  "image": "CSG_Characterai",
+  "article_url": "https://www.cybersafetyguy.com/p/character-ai-child-safety-parents-guide",
+  "related": [
+    {
+      "title": "AI chatbots and children",
+      "text": "Advice, accuracy and attachment",
+      "href": "/download?file=guides/CSG_AI_chatbots_children.pdf&name=AI+Chatbots+and+Children"
+    },
+    {
+      "title": "AI girlfriends and companions",
+      "text": "Emotional dependency and isolation",
+      "href": "/download?file=guides/CSG_AI_girlfriend_companion.pdf&name=AI+Girlfriends+and+Companions"
+    },
+    {
+      "title": "AI in Your Family",
+      "text": "Free Academy pack for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/ai-for-parents/"
+    },
+    {
+      "title": "Real or AI?",
+      "text": "Free Academy pack, ages 13 to 15",
+      "href": "https://academy.cybersafetyguy.com/packs/ai-ages-13-15/"
+    }
+  ]
+}
