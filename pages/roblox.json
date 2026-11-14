@@ -1,0 +1,154 @@
+{
+  "slug": "roblox",
+  "name": "Roblox",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Is Roblox Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is Roblox safe for kids? How Roblox's age checks for chat work, the risks from strangers, scams and spending, and the parental controls to set up.",
+  "h1": "Is Roblox safe for kids?",
+  "lead": "Roblox is one of the most popular places for children to play online, and it's been one of my biggest concerns for years. Here's what it is, what changed in 2026, and the settings I'd use.",
+  "answer_question": "The short answer",
+  "answer": "It can be, with parental controls on and you involved. Roblox is mostly user-made games with chat, so strangers, scams and spending are the main risks. Since January 2026, chat needs an age check and is limited to similar ages, which helps a lot, but no system is perfect.",
+  "sections": [
+    {
+      "heading": "What is Roblox?",
+      "body": [
+        "Roblox is a free platform where children play millions of games made by other users, build their own, dress up avatars and chat with friends. It runs on phones, tablets, consoles and computers.",
+        "It's free to play, but the in-game currency, Robux, costs real money and is used for avatar items, game passes and private servers."
+      ]
+    },
+    {
+      "heading": "Roblox's age checks for chat",
+      "body": [
+        "Since early January 2026, anyone who wants to use chat on Roblox has to complete an age check first, usually a facial age estimate using the device camera. Over-13s can use ID instead. Roblox says the images are processed by a company called Persona and deleted straight afterwards.",
+        "Players are put into age groups (under 9, 9 to 12, 13 to 15, 16 to 17, 18 to 20 and 21+) and can only chat with similar ages. For example, a 12-year-old can chat with players up to 15, and nobody 16 or over can chat with them in games. Chat is off by default for under-9s unless a parent agrees after the check.",
+        "It's a welcome change. But age estimates can be wrong or fooled, and over-13s can still chat freely with \"Trusted Connections\", so keep the conversation going."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Contact with strangers",
+          "body": [
+            "Roblox is built around playing with others. Predators have used it to befriend children and then move the chat to other apps, and Roblox faces many lawsuits over this."
+          ]
+        },
+        {
+          "heading": "Scams",
+          "body": [
+            "Fake \"free Robux\" offers, trading tricks and phishing links are common, and children can lose items or account access."
+          ]
+        },
+        {
+          "heading": "Spending",
+          "body": [
+            "Robux costs real money and it's easy for children to spend a lot without realising. Illegal Roblox gambling sites have also let children bet Robux with no age checks."
+          ]
+        },
+        {
+          "heading": "Unsuitable games",
+          "body": [
+            "Games are made by users, and some are violent, scary or sexual despite the rules, including games designed for online dating."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Talking to an \"online friend\" in private, or being asked to move to another app",
+        "Wanting lots of Robux or real money, or mysterious new items",
+        "Getting very upset when asked to stop playing",
+        "Being secretive about who they play with",
+        "Being bullied, or bullying others, in games"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "subsections": [
+        {
+          "heading": "Link your account to theirs",
+          "body": [
+            "Create your own Roblox account and link it to your child's through Parental Controls. That lets you manage screen time, friends, spending and settings from your own phone."
+          ]
+        },
+        {
+          "heading": "Set the right age and content level",
+          "body": [
+            "Make sure their date of birth is correct and set the maximum content maturity for their age (Roblox labels games Minimal, Mild, Moderate or Restricted)."
+          ]
+        },
+        {
+          "heading": "Check chat and spending",
+          "body": [
+            "Review who can chat with and message them, set a monthly spending limit and turn on two-factor authentication on any payment account."
+          ]
+        },
+        {
+          "heading": "Keep talking",
+          "body": [
+            "Ask who they play with, what they're building and how a game made them feel. Show them how to block and report, and make sure they know they won't be in trouble for telling you something."
+          ]
+        }
+      ],
+      "list": [
+        "\"What's the best game you've played on Roblox this week?\"",
+        "\"Has anyone ever offered you free Robux?\"",
+        "\"What would you do if someone asked you to chat somewhere else?\""
+      ]
+    }
+  ],
+  "teachers": "Roblox comes up constantly in primary and early secondary schools. Listen for pupils mentioning online friends from games, being asked to move to other apps, or Robux gifts from people they don't know, and follow your safeguarding procedures. Talking about scams and spending fits naturally into lessons on money and online safety.",
+  "faq": [
+    {
+      "q": "What age is Roblox for?",
+      "a": "Roblox is used by all ages, including many under-13s. Its own age checks now control who can chat with whom, and parents can set the content level for each child."
+    },
+    {
+      "q": "Do children need an age check to chat on Roblox?",
+      "a": "Yes. Since January 2026, chat stays locked until a facial age estimate (or ID for over-13s) is completed. Players can then only chat with similar age groups."
+    },
+    {
+      "q": "How do I stop my child spending on Roblox?",
+      "a": "Link your account through Parental Controls and set a monthly spending limit, or set it to zero. Remove saved cards from the device's app store account too."
+    },
+    {
+      "q": "Can strangers message my child on Roblox?",
+      "a": "Much less than before. Chat is limited by age group, and outside games under-13s are restricted. Check the chat settings in Parental Controls and talk to your child about who they play with."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Under-25s can also call The Mix on [0808 808 4994](tel:08088084994). You are not alone.",
+  "sources": [
+    "Roblox, \"Roblox Requires Age Checks for Communication, Ushering in New Safety Standard\", November 2025 (age checks, age groups, chat rules)",
+    "Biometric Update, \"Roblox rolls out facial age estimation for chat access globally\", January 2026",
+    "Roblox Parental Controls help pages (account linking, spending limits, content maturity)",
+    "Hard Fork podcast, interview with Roblox CEO David Baszucki, December 2025"
+  ],
+  "pdf": "guides/CSG_Roblox.pdf",
+  "image": "CSG_Roblox",
+  "article_url": "https://www.cybersafetyguy.com/p/roblox-introduces-mandatory-age-verification",
+  "related": [
+    {
+      "title": "Roblox gambling sites",
+      "text": "My article on betting with Robux",
+      "href": "https://www.cybersafetyguy.com/p/roblox-gambling-sites-what-parents-need-to-know"
+    },
+    {
+      "title": "Online gaming and voice chat",
+      "text": "Strangers in games",
+      "href": "/download?file=guides/CSG_Online_gaming_voice_chat.pdf&name=Online+Gaming+and+Voice+Chat"
+    },
+    {
+      "title": "Don't Get Played",
+      "text": "Free Academy pack on gaming scams, ages 10 to 12",
+      "href": "https://academy.cybersafetyguy.com/packs/money-ages-10-12/"
+    },
+    {
+      "title": "Kind in the Game",
+      "text": "Free Academy pack, ages 7 to 9",
+      "href": "https://academy.cybersafetyguy.com/packs/kind-online/"
+    }
+  ]
+}
