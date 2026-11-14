@@ -1,0 +1,166 @@
+{
+  "slug": "whatsapp",
+  "name": "WhatsApp",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Is WhatsApp Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is WhatsApp safe for kids? The UK age limit, the risks in group chats, WhatsApp's new parental controls for teens, and the settings to change today.",
+  "h1": "Is WhatsApp safe for kids?",
+  "lead": "WhatsApp is how most children stay in touch with friends, family and school. It's been left out of the UK's planned under-16 social media ban, but that doesn't make it safe by default. Here's what I'd change.",
+  "answer_question": "The short answer",
+  "answer": "Mostly, with a couple of settings changed. Messages are private and encrypted, which protects your child but also means nobody moderates what's sent. The biggest risk is group chats: by default, anyone with your child's number can add them to one.",
+  "sections": [
+    {
+      "heading": "What is WhatsApp?",
+      "body": [
+        "WhatsApp is Meta's messaging app for chats, voice and video calls, groups, Status updates and Channels. It now includes Meta AI, a chatbot.",
+        "The minimum age in the UK is 13 (it was lowered from 16 in 2024). For under-13s, parents can now set up a parent-managed account in some regions."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Group adds",
+          "body": [
+            "Anyone with your child's number can add them to a group without asking, because the setting starts on Everyone. That puts them in chats with people they don't know."
+          ]
+        },
+        {
+          "heading": "Bullying in groups",
+          "body": [
+            "Group chats are where a lot of bullying happens, out of sight. Children can be excluded, removed or targeted, and it follows them home."
+          ]
+        },
+        {
+          "heading": "Harmful content",
+          "body": [
+            "Any member can share explicit images, violent videos or harmful links, and everyone in the group receives them. End-to-end encryption means WhatsApp can't see or remove them."
+          ]
+        },
+        {
+          "heading": "Disappearing messages",
+          "body": [
+            "Disappearing and view-once messages can remove evidence before anyone sees it, and give a false sense that what's sent is gone. It can still be recorded on another device."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Settings to change together",
+      "subsections": [
+        {
+          "heading": "Who can add them to groups",
+          "body": [
+            "Settings, then Privacy, then Groups. Change Everyone to My contacts."
+          ]
+        },
+        {
+          "heading": "Profile photo and Status",
+          "body": [
+            "In Settings, then Privacy, set Profile photo, About and Status to My contacts."
+          ]
+        },
+        {
+          "heading": "Disappearing messages",
+          "body": [
+            "In each chat, tap the name at the top and check whether disappearing messages are on. Turn them off where you can."
+          ]
+        },
+        {
+          "heading": "Read receipts",
+          "body": [
+            "In Settings, then Privacy, turning off Read receipts can ease the pressure to reply straight away."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "WhatsApp's parental controls",
+      "subsections": [
+        {
+          "heading": "For 13 to 17-year-olds",
+          "body": [
+            "On your teen's phone, open Settings, then Parental controls, confirm their date of birth and link to your account. You set a PIN that's needed to loosen their privacy settings, you can limit Channels, Status and Meta AI, and you're told about things like new contacts. You can't read their messages."
+          ]
+        },
+        {
+          "heading": "For under-13s",
+          "body": [
+            "Parent-managed accounts, launched in March 2026, only allow messaging and calls. You approve who can contact them and which groups they join, behind a parent PIN."
+          ]
+        }
+      ],
+      "after": [
+        "Both are rolling out gradually, so they may not be on your phone yet. Your teen has to agree to link accounts."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Being added to groups with people they don't know",
+        "Being left out of, or removed from, a group their friends are in",
+        "Checking their phone anxiously, or not wanting to go to school",
+        "Deleting chats, or being secretive about a group",
+        "Being asked for photos, or to keep a chat secret"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Look through their group list together now and then: who's the admin, and do they know everyone in it? If something upsetting happens, the advice is the same every time: don't delete it, screenshot it, tell me, and report it. And explain that Meta AI isn't the place for personal or sensitive conversations."
+      ],
+      "list": [
+        "\"Which group chats are the most fun? Are there any you'd rather not be in?\"",
+        "\"Has anyone ever added you to a group you didn't want to be in?\"",
+        "\"If something nasty gets posted in a group, what would you do?\""
+      ]
+    }
+  ],
+  "teachers": "If a pupil discloses harassment in a WhatsApp group, advise them not to delete messages and to screenshot before reporting, because WhatsApp itself keeps little. Low reporting doesn't mean low bullying: much of it happens in private group chats that staff never see.",
+  "faq": [
+    {
+      "q": "What age is WhatsApp for in the UK?",
+      "a": "13. WhatsApp lowered its minimum age in the UK and Europe from 16 to 13 in 2024."
+    },
+    {
+      "q": "How do I stop strangers adding my child to WhatsApp groups?",
+      "a": "In Settings, then Privacy, then Groups, change Everyone to My contacts."
+    },
+    {
+      "q": "Does WhatsApp have parental controls?",
+      "a": "Yes, since 2026: parental controls for 13 to 17-year-olds and parent-managed accounts for under-13s. They're rolling out gradually, and you can't read your child's messages with either."
+    },
+    {
+      "q": "Is WhatsApp included in the UK under-16 social media ban?",
+      "a": "No. The government has said messaging apps such as WhatsApp won't be included."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "WhatsApp, Parental controls page (teen controls and parent-managed accounts), accessed November 2026",
+    "TechCrunch, \"WhatsApp is launching parent-linked accounts for pre-teens\", 11 March 2026",
+    "Internet Matters, \"What is WhatsApp? A safety guide for parents\", March 2026 (UK minimum age)"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/whatsapp-group-safety-teens-parents-guide",
+  "pdf": "guides/CSG_Whatsapp.pdf",
+  "image": "CSG_Whatsapp",
+  "related": [
+    {
+      "title": "Group chats",
+      "text": "Bullying, pressure and what to do",
+      "href": "/download?file=guides/CSG_Group_chats.pdf&name=Group+Chats"
+    },
+    {
+      "title": "Raising Kind Kids Online",
+      "text": "Free Academy pack for parents on online kindness",
+      "href": "https://academy.cybersafetyguy.com/packs/kind-for-parents/"
+    },
+    {
+      "title": "Why kids don't tell parents",
+      "text": "And how to make it easier",
+      "href": "/download?file=guides/CSG_Why_kids_dont_tell_parents.pdf&name=Why+Kids+Dont+Tell+Parents"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "slug": "instagram",
+  "name": "Instagram",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Is Instagram Safe for Kids? Parents' Guide 2026",
+  "seo_description": "Is Instagram safe for kids? How Teen Accounts and the 13+ content setting work, the risks from Instants and strangers, and the supervision tools to use.",
+  "h1": "Is Instagram safe for kids?",
+  "lead": "Instagram has changed a lot for teenagers in the last two years. Teen Accounts switch on real protections, but new features keep arriving, and the latest one is under investigation by Ofcom. Here's what you need to know.",
+  "answer_question": "The short answer",
+  "answer": "Safer than it was, if your child's account is set up as a Teen Account with their real age. The defaults are good, but they rely on the age being right, and features like Instants bring new risks. Use supervision and keep talking.",
+  "sections": [
+    {
+      "heading": "What is Instagram?",
+      "body": [
+        "Instagram is Meta's photo and video app: posts, Stories, short videos called Reels, direct messages and livestreams. You need to be 13 to have an account.",
+        "Since 2024, everyone under 18 is put into a Teen Account with built-in protections."
+      ]
+    },
+    {
+      "heading": "What Teen Accounts do",
+      "subsections": [
+        {
+          "heading": "Private by default",
+          "body": [
+            "Teen accounts start private, so only approved followers see their posts. Teens can only be messaged by people they follow or are already connected to."
+          ]
+        },
+        {
+          "heading": "13+ content setting",
+          "body": [
+            "Since October 2025 in the UK, teens are put into a 13+ content setting, which Meta compares to a 13+ film rating. Teens need a parent's permission to switch to a less strict setting, and parents can choose the stricter Limited Content option."
+          ]
+        },
+        {
+          "heading": "Time and sleep",
+          "body": [
+            "Teens get reminders to leave the app after 60 minutes, and sleep mode mutes notifications overnight."
+          ]
+        },
+        {
+          "heading": "Live",
+          "body": [
+            "Under-16s can't go Live without a parent's permission."
+          ]
+        }
+      ],
+      "after": [
+        "Under-16s need a parent's permission to loosen most of these settings. They all depend on your child's date of birth being real."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Instants",
+          "body": [
+            "Launched in May 2026, Instants are photos and videos sent in direct messages that disappear once viewed. Meta says screenshots are blocked, but they can still be recorded on another device, and disappearing content can remove evidence. In October 2026 Ofcom opened its first formal investigation under the Online Safety Act into Instants."
+          ]
+        },
+        {
+          "heading": "Strangers and sextortion",
+          "body": [
+            "Groomers and sextortion gangs use Instagram to find and contact teenagers, often with fake profiles that look like someone their age."
+          ]
+        },
+        {
+          "heading": "Comparison and content",
+          "body": [
+            "Filters, likes and the Explore and Reels feeds can affect how children feel about themselves, and harmful content still gets through."
+          ]
+        },
+        {
+          "heading": "Pressure to be online",
+          "body": [
+            "Stories, notifications and the fear of missing out keep teens checking the app."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Use supervision",
+      "body": [
+        "In Instagram, go to Settings and activity, then Family Center, and invite your child. They have to accept. Then you can:"
+      ],
+      "list": [
+        "Set daily time limits and sleep times",
+        "See who they message (not what they say), who follows them and who they follow",
+        "Get notified about new followers",
+        "Approve or turn down requests to loosen their settings",
+        "Choose the Limited Content setting"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "A new follower their age who's very keen to chat privately",
+        "Being asked for photos, or to move to another app",
+        "Suddenly deleting their account or messages",
+        "Being anxious, withdrawn or upset after using their phone",
+        "Talking negatively about their looks or body",
+        "Threats, or being asked for money"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Check their account is a Teen Account with their real age, then set up supervision together. Talk about disappearing messages: once something's sent, they lose control of it. And make sure they know that if someone threatens them, they won't be in trouble for telling you."
+      ],
+      "list": [
+        "\"Who's someone you follow that makes you feel good?\"",
+        "\"Have you ever had a message from someone you didn't know?\"",
+        "\"What would you do if someone asked you to send a picture?\""
+      ]
+    },
+    {
+      "heading": "The UK under-16 plan",
+      "body": [
+        "In June 2026 the government announced it will stop social media companies providing their services to under-16s, and Instagram is one of the platforms named. It isn't law yet. The rules are due to go to Parliament in December 2026, with the ban starting from late spring 2027."
+      ]
+    }
+  ],
+  "teachers": "Remind pupils that disappearing does not mean gone, and that they should not delete messages if something goes wrong. If a pupil discloses sextortion, follow your safeguarding procedures, record their words as closely as you can, and point them to Report Remove (Childline and the IWF) to get images taken down.",
+  "faq": [
+    {
+      "q": "What age is Instagram for?",
+      "a": "You need to be 13. Everyone under 18 gets a Teen Account with extra protections."
+    },
+    {
+      "q": "What is Instagram's 13+ content setting?",
+      "a": "The default setting for teens since October 2025 in the UK. Meta compares it to a 13+ film rating. Teens need a parent's permission to change to a less strict setting."
+    },
+    {
+      "q": "Can I see my child's Instagram messages?",
+      "a": "No. Supervision shows who they message, but not the content."
+    },
+    {
+      "q": "What are Instagram Instants?",
+      "a": "Photos and videos sent in direct messages that disappear once viewed. They launched in May 2026 and Ofcom opened an investigation into them in October 2026."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Under-18s can use [Report Remove](https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/remove-nude-image-shared-online/) to get nude images taken down. You are not alone.",
+  "sources": [
+    "Meta, \"New 13+ Content Settings for Teen Accounts Expanding Globally\", June 2026, and Instagram Teen Accounts help pages",
+    "Ofcom, investigation into Meta Platforms in relation to Instagram (Instants), 6 October 2026",
+    "House of Commons Library, \"Proposals to ban social media for children\" (CBP-10468)"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/instagram-instants-ofcom-investigation-child-safety",
+  "pdf": "guides/CSG_Instagram.pdf",
+  "image": "CSG_Instagram",
+  "related": [
+    {
+      "title": "Sextortion and image-based abuse",
+      "text": "What to do if your child is targeted",
+      "href": "/download?file=guides/CSG_Sextortion.pdf&name=Sextortion+and+Image-Based+Abuse"
+    },
+    {
+      "title": "Snapchat",
+      "text": "Settings and risks for the app teens use most",
+      "href": "/guides/snapchat"
+    },
+    {
+      "title": "Social media footprint",
+      "text": "What your child's posts say about them",
+      "href": "/download?file=guides/CSG_Social_media_footprint.pdf&name=Social+Media+Footprint"
+    }
+  ]
+}

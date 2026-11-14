@@ -1,0 +1,156 @@
+{
+  "slug": "tiktok",
+  "name": "TikTok",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Is TikTok Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is TikTok safe for kids? The teen settings TikTok switches on by default, the risks from the algorithm and strangers, and how to set up Family Pairing.",
+  "h1": "Is TikTok safe for kids?",
+  "lead": "TikTok is where a lot of children spend most of their screen time. Its teen protections are better than they used to be, but the algorithm is the thing I worry about most. Here's what's on by default and what I'd set up.",
+  "answer_question": "The short answer",
+  "answer": "It's safer than it was for younger teens, but not safe by default. Under-16s can't send direct messages and their videos stay out of the For You feed, but the algorithm can still pull any child towards harmful content. Link your account with Family Pairing and keep talking about what they see.",
+  "sections": [
+    {
+      "heading": "What is TikTok?",
+      "body": [
+        "TikTok is a short video app. Its For You feed picks videos for each person based on what they watch, like and linger on, and it learns fast. Users can post videos, comment, message, watch livestreams and send gifts bought with real money.",
+        "You need to be 13 to have an account."
+      ]
+    },
+    {
+      "heading": "What TikTok switches on for teens",
+      "subsections": [
+        {
+          "heading": "All under-18s",
+          "body": [
+            "Accounts are private by default, there's a 60-minute daily screen time prompt, and teens can't host a livestream. Push notifications stop from 9pm for 13 to 15-year-olds and from 10pm for 16 and 17-year-olds."
+          ]
+        },
+        {
+          "heading": "Under-16s",
+          "body": [
+            "No direct messages at all. Their videos can't appear in the For You feed, nobody can Duet, Stitch or download them, and comments are limited to friends."
+          ]
+        }
+      ],
+      "after": [
+        "These depend on your child entering their real date of birth. A child who signed up with a false age gets none of them."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "The algorithm",
+          "body": [
+            "The feed can quickly fill up with content about appearance, dieting, self-harm or extreme views if a child lingers on it, even once. Children often don't realise how much what they watch shapes what they're shown."
+          ]
+        },
+        {
+          "heading": "Strangers",
+          "body": [
+            "Comments, livestreams and, for 16 and 17-year-olds, direct messages let strangers make contact. Groomers often start with flattery and then move the chat to another app."
+          ]
+        },
+        {
+          "heading": "Challenges and trends",
+          "body": [
+            "Dangerous challenges spread fast. Most trends are harmless, but children copy what they see, sometimes without understanding the risk."
+          ]
+        },
+        {
+          "heading": "Time and spending",
+          "body": [
+            "The endless feed is designed to keep them watching. TikTok Coins, used to send gifts on livestreams, cost real money."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Set up Family Pairing",
+      "body": [
+        "On your own phone, open TikTok, go to Profile, the menu, then Settings and privacy, then Family Pairing, and follow the steps to link with your child's account. Both of you need TikTok, and your child has to agree."
+      ],
+      "list": [
+        "Set a daily screen time limit. After it, they need a code from you to keep watching",
+        "Schedule time away, such as school hours and bedtime",
+        "Filter keywords out of their For You feed",
+        "Choose who can comment on their videos and who can message them",
+        "See who they follow, who follows them and who they've blocked"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Being secretive about who they talk to, or new \"online friends\"",
+        "Being asked to move to another app",
+        "Worrying changes in how they talk about their body, food or themselves",
+        "Copying risky challenges, or talking about them a lot",
+        "Asking for money for Coins or gifts",
+        "Losing sleep, or getting very upset when asked to stop"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Set it up with them and check their date of birth is real. Every so often, scroll their For You feed together and ask what they think of it. Technical controls can fail, so the most important thing is that your child knows they can come to you and you'll help, not punish."
+      ],
+      "list": [
+        "\"What's the funniest thing on your For You page this week?\"",
+        "\"Do you ever see stuff that makes you feel worse about yourself?\"",
+        "\"If someone you don't know messages you, what would you do?\""
+      ]
+    },
+    {
+      "heading": "The UK under-16 plan",
+      "body": [
+        "In June 2026 the government announced it will stop social media companies providing their services to under-16s, and TikTok is one of the platforms named. It isn't law yet. The rules are due to go to Parliament in December 2026, with the ban starting from late spring 2027."
+      ]
+    }
+  ],
+  "teachers": "TikTok trends move into classrooms quickly. If a dangerous challenge is circulating, talk about it calmly without showing it or naming it in a way that sends pupils looking for it. Pupils mentioning new online friends from TikTok, or being asked to move to other apps, should be followed up under your safeguarding procedures.",
+  "faq": [
+    {
+      "q": "What age is TikTok for?",
+      "a": "You need to be 13 to have an account. Under-16s get extra protections, including no direct messages."
+    },
+    {
+      "q": "Can my child's TikTok be private?",
+      "a": "Yes. Accounts for under-18s are private by default. Check it's still on in Settings and privacy, then Privacy."
+    },
+    {
+      "q": "Can I see my child's TikTok messages?",
+      "a": "No. Family Pairing lets you choose who can message them, but not read their messages. Under-16s can't use direct messages at all."
+    },
+    {
+      "q": "Is TikTok being banned for under-16s in the UK?",
+      "a": "The government has announced a ban on social media for under-16s that includes TikTok. It isn't law yet: the rules are due to go to Parliament in December 2026, with the ban starting from late spring 2027."
+    }
+  ],
+  "help": "Worried about something your child has seen or been sent? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "TikTok, Guardian's Guide and Family Pairing pages (teen default settings), accessed November 2026",
+    "House of Commons Library, \"Proposals to ban social media for children\" (CBP-10468), and Commons statement, 15 June 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/tiktok-grooming-bytedance-podcast-interview",
+  "pdf": "guides/CSG_Tiktok_and_your_child.pdf",
+  "image": "CSG_TikTok",
+  "related": [
+    {
+      "title": "Online challenges and trends",
+      "text": "What to do when a scary trend is going round",
+      "href": "/download?file=guides/CSG_Online_challenges_trends.pdf&name=Online+Challenges+and+Trends"
+    },
+    {
+      "title": "Livestreaming",
+      "text": "The risks of going live",
+      "href": "/download?file=guides/CSG_Livestreaming.pdf&name=Livestreaming"
+    },
+    {
+      "title": "Screen time and overuse",
+      "text": "Sleep, habits and balance",
+      "href": "/download?file=guides/CSG_Screen_time_device_overuse.pdf&name=Screen+Time+and+Device+Overuse"
+    }
+  ]
+}
