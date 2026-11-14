@@ -1,0 +1,158 @@
+{
+  "slug": "youtube",
+  "name": "YouTube",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Is YouTube Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is YouTube safe for kids? YouTube Kids, supervised accounts and teen supervision explained, the risks, and how to limit Shorts and set reminders.",
+  "h1": "Is YouTube safe for kids?",
+  "lead": "Almost every child watches YouTube. The good news is it has more choices for families than most apps. The trick is picking the right one for your child's age and setting it up together.",
+  "answer_question": "The short answer",
+  "answer": "It can be, if your child uses the version made for their age. Younger children are best on YouTube Kids or a supervised account; teens can be supervised too. The main risks are the recommendations, the Shorts feed and the comments.",
+  "sections": [
+    {
+      "heading": "Pick the right version",
+      "subsections": [
+        {
+          "heading": "YouTube Kids",
+          "body": [
+            "A separate app with its own content settings: Preschool (4 and under), Younger (5 to 8) and Older (9 to 12). Parents can set a timer, choose Approved content only, and block videos and channels."
+          ]
+        },
+        {
+          "heading": "Supervised account (under 13)",
+          "body": [
+            "The main YouTube app for children ready to move on, managed from your Google account. Choose Explore, Explore More or Most of YouTube, and you can pause history, block channels, set reminders and limit Shorts."
+          ]
+        },
+        {
+          "heading": "Teen account (13 and over)",
+          "body": [
+            "Teens get their own account, and you can choose to supervise it. You'll see insights about their channel activity, and you can set Take a Break and bedtime reminders and a daily limit on the Shorts feed."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Recommendations",
+          "body": [
+            "Autoplay and recommendations can lead from harmless videos to extreme, frightening or misleading ones, a step at a time."
+          ]
+        },
+        {
+          "heading": "The Shorts feed",
+          "body": [
+            "Shorts is an endless scroll of short videos, much like TikTok, and it's easy to lose an hour to it."
+          ]
+        },
+        {
+          "heading": "Comments and contact",
+          "body": [
+            "Comments under videos can be cruel or sexual, and strangers can use them to reach children who post their own videos."
+          ]
+        },
+        {
+          "heading": "Videos made for children",
+          "body": [
+            "Some videos look child-friendly but aren't, and a lot of children's content is built to sell toys, games or in-app purchases."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Set it up",
+      "body": [
+        "Start at families.youtube.com. For a teen, in YouTube go to You, then Settings, then Family Centre, and invite them. They have to accept, and either of you can end supervision later."
+      ],
+      "list": [
+        "Set a daily Shorts limit (you can set it to zero to turn the feed off)",
+        "Turn on Take a Break and bedtime reminders",
+        "Turn off autoplay for younger children",
+        "Block channels you don't want them to see",
+        "Check their own videos are private or unlisted if they post"
+      ]
+    },
+    {
+      "heading": "Age checks in the UK",
+      "body": [
+        "YouTube uses age estimation in the UK. If it thinks a signed-in user is under 18, it blocks age-restricted videos and turns on break and bedtime reminders, even if the account says they're older. Adults it gets wrong can prove their age with ID, a credit card or a selfie."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Being scared or upset after watching, or bad dreams",
+        "Repeating extreme or hateful ideas from videos",
+        "Hours lost to Shorts, or getting very upset when asked to stop",
+        "Strangers commenting on or messaging about their own videos",
+        "Asking for money for things they've seen advertised"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Match the version to the child, not the other way round, and move them up when they're ready. Watch with younger children sometimes, and ask teens to show you a channel they love. If they post their own videos, talk about comments and privacy before the first upload."
+      ],
+      "list": [
+        "\"Who's your favourite YouTuber at the moment? Why?\"",
+        "\"Have you ever watched something you wish you hadn't?\"",
+        "\"How do you feel after a long time on Shorts?\""
+      ]
+    },
+    {
+      "heading": "The UK under-16 plan",
+      "body": [
+        "In June 2026 the government announced it will stop social media companies providing their services to under-16s, and YouTube is one of the platforms named. It isn't law yet. The rules are due to go to Parliament in December 2026, with the ban starting from late spring 2027."
+      ]
+    }
+  ],
+  "teachers": "Pupils often share YouTube videos and Shorts in class and group chats. If extreme or harmful content is circulating, address the ideas without replaying the video. For pupils who post their own channels, talk about comments, privacy and not sharing their school or location.",
+  "faq": [
+    {
+      "q": "What age is YouTube for?",
+      "a": "Children need to be 13 to have their own account. Younger children can use YouTube Kids or a supervised account managed by a parent."
+    },
+    {
+      "q": "Can I limit YouTube Shorts?",
+      "a": "Yes. With a supervised child or teen account, you can set a daily limit on the Shorts feed, including zero to turn it off."
+    },
+    {
+      "q": "What's the difference between YouTube Kids and a supervised account?",
+      "a": "YouTube Kids is a separate app for younger children with a smaller range of videos. A supervised account uses the main YouTube app with content settings you choose, for children ready for more."
+    },
+    {
+      "q": "Can my teenager turn off YouTube supervision?",
+      "a": "Yes. Teen supervision needs both of you to agree, and either of you can end it, so talk about why you'd like it on."
+    }
+  ],
+  "help": "Worried about something your child has seen? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "YouTube, \"More choices for children and teenagers\" (families page), accessed November 2026",
+    "YouTube Help, \"Understanding age estimation on YouTube\", accessed November 2026",
+    "CNN and Engadget, reporting on YouTube's Shorts limits for teens, January 2026",
+    "House of Commons Library, \"Proposals to ban social media for children\" (CBP-10468)"
+  ],
+  "pdf": "guides/CSG_Youtube.pdf",
+  "image": "CSG_Youtube",
+  "related": [
+    {
+      "title": "YouTube Shorts",
+      "text": "The short video feed and its risks",
+      "href": "/download?file=guides/CSG_Youtube_shorts.pdf&name=YouTube+Shorts"
+    },
+    {
+      "title": "Screen time and overuse",
+      "text": "Sleep, habits and balance",
+      "href": "/download?file=guides/CSG_Screen_time_device_overuse.pdf&name=Screen+Time+and+Device+Overuse"
+    },
+    {
+      "title": "TikTok",
+      "text": "Teen settings and Family Pairing",
+      "href": "/guides/tiktok"
+    }
+  ]
+}

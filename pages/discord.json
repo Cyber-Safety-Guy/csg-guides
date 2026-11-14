@@ -1,0 +1,149 @@
+{
+  "slug": "discord",
+  "name": "Discord",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Is Discord Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is Discord safe for kids? How Discord's 2026 age checks and teen settings work, the risks in servers and voice chat, and how to set up Family Center.",
+  "h1": "Is Discord safe for kids?",
+  "lead": "Discord is where a lot of children who game hang out: chatting, voice calling and joining communities around the things they love. It brought in age checks and teen settings in 2026. Here's what they do and what they don't.",
+  "answer_question": "The short answer",
+  "answer": "It can be, with the teen settings in place and you involved. Discord now sorts accounts by age and gives teens extra protections, but servers are run by users, voice chat isn't monitored, and groomers do use it. Family Center shows who they talk to, not what's said.",
+  "sections": [
+    {
+      "heading": "What is Discord?",
+      "body": [
+        "Discord is a chat app built around servers: communities with text channels, voice channels and video. Some servers are small groups of friends; others are huge and public. Users can also message and call each other directly.",
+        "You need to be 13 to have an account."
+      ]
+    },
+    {
+      "heading": "Discord's age checks",
+      "body": [
+        "Since late September 2026, Discord sorts every account into adult, teen (13 to 17) or unconfirmed, mostly from account signals in the background. Discord says over 90% of people are sorted without being asked. Anyone else is asked to confirm their age with a video selfie, ID or another method, and Discord says providers must delete that data straight after."
+      ],
+      "subsections": [
+        {
+          "heading": "Teen and unconfirmed accounts get",
+          "body": [
+            "Sensitive content blurred, no access to age-restricted servers and channels, messages from people they may not know sent to a separate requests inbox, warnings before accepting friend requests from strangers, and no speaking on stage in servers."
+          ]
+        },
+        {
+          "heading": "What it doesn't cover",
+          "body": [
+            "Teens can still chat and call friends and join any server that isn't age-restricted. Age estimates can be wrong or fooled, and what's said in voice chat isn't checked."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Grooming",
+          "body": [
+            "Groomers join servers about games and interests children love, build trust in group chats and then move to private messages or calls."
+          ]
+        },
+        {
+          "heading": "Inappropriate content",
+          "body": [
+            "Servers are run by their users, and moderation varies a lot. Some share violent, sexual or extreme content."
+          ]
+        },
+        {
+          "heading": "Bullying",
+          "body": [
+            "Server chats and voice calls can turn nasty, and being kicked or excluded from a server can hurt."
+          ]
+        },
+        {
+          "heading": "Voice and video",
+          "body": [
+            "Voice chat happens live and leaves no record, so it's the hardest part of Discord to keep an eye on."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Set up Family Center",
+      "body": [
+        "On your child's Discord, open User Settings, then Family Center, and show the QR code. Scan it with Discord on your own phone and both of you confirm. You'll get a weekly summary of new friends, servers they've joined and who they've messaged or called. You won't see what was said."
+      ],
+      "list": [
+        "Check their direct message settings so only friends can message them",
+        "Leave sensitive content filters on",
+        "Talk about which servers they're in, and only join ones they trust",
+        "Show them how to block and report"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "An older \"friend\" from a server who wants to chat privately",
+        "Being asked for photos, or to move to another app",
+        "Secretive late-night voice calls",
+        "Sudden mood changes, or seeming anxious after gaming",
+        "Gifts such as Nitro or game items from people they don't know"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Ask about their servers the way you'd ask about a club: what's it for, who runs it, who do they talk to there? Keep gaming and voice chat in shared rooms for younger teens. And make sure they know they can tell you about anything that happens without losing Discord."
+      ],
+      "list": [
+        "\"Which server do you like best? What happens in there?\"",
+        "\"Has anyone you've only met on Discord asked to talk privately?\"",
+        "\"What would you do if someone sent you something horrible?\""
+      ]
+    }
+  ],
+  "teachers": "Discord comes up a lot with pupils who game. Listen for older online friends met in servers, private calls, or gifts of Nitro or game items, and follow your safeguarding procedures. Because voice chat leaves no record, a pupil's own account of what happened matters.",
+  "faq": [
+    {
+      "q": "What age is Discord for?",
+      "a": "You need to be 13. Since September 2026, accounts identified as teens get extra protections."
+    },
+    {
+      "q": "Does Discord check your age?",
+      "a": "Yes. Since late September 2026, Discord sorts accounts into adult, teen or unconfirmed, mostly automatically. Some people are asked for a video selfie, ID or another check."
+    },
+    {
+      "q": "Can parents see Discord messages?",
+      "a": "No. Family Center gives a weekly summary of new friends, servers joined and who your child has messaged or called, but not the content."
+    },
+    {
+      "q": "Is Discord voice chat safe?",
+      "a": "It's the riskiest part, because it's live and leaves no record. For younger teens, keep voice chat in shared rooms and talk about who they're calling."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
+  "sources": [
+    "Discord, \"Discord Launches Teen-by-Default Settings Globally\", 9 February 2026 (teen settings and age checks; rollout later delayed)",
+    "The Next Web and other reporting on Discord's global age checks, 22 to 27 September 2026",
+    "Discord, Family Center help pages, accessed November 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/discord-decoded",
+  "pdf": "guides/CSG_Discord.pdf",
+  "image": "CSG_Discord",
+  "related": [
+    {
+      "title": "Online gaming and voice chat",
+      "text": "Who your child is really playing with",
+      "href": "/download?file=guides/CSG_Online_gaming_voice_chat.pdf&name=Online+Gaming+and+Voice+Chat"
+    },
+    {
+      "title": "Roblox",
+      "text": "Age checks, risks and parental controls",
+      "href": "/guides/roblox"
+    },
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack on online grooming, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    }
+  ]
+}
