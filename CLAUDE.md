@@ -31,9 +31,9 @@ All pages share `style.css` and load Google Fonts. Each HTML page is self-contai
 - `isNew` — boolean, controls a "New" badge on the card
 - `link` — direct URL to the PDF (hosted at `guides.cybersafetyguy.com/guides/`)
 - `risks` — array of 3 strings shown as bullet points on the card
-- `page` (optional) — the guide's own web page, e.g. `/guides/omoggle` (a file `guides/omoggle.html`). When set, the library card opens the page and offers the PDF as a second button. Add the page to `sitemap.xml` too.
+- Guide web pages live in `pages/<slug>.json` (format and process: docs/GUIDE_PAGES.md). The build turns them into `/guides/<slug>`, links the guide's library card to the page and adds the sitemap entry, so never hand-edit `page` in guides.json.
 
-To add a new guide: add its PDF to `guides/`, add its thumbnail image to `images/`, then add a new entry to `guides.json`.
+To add a new guide: add its PDF to `guides/` (set a Title in its properties), its image to `images/`, a 560px WebP thumbnail to `images/thumbs/`, then a new entry to `guides.json`. `scripts/check_site.py` runs in every build and fails it if any of these are missing.
 
 ## Wizard content freshness
 

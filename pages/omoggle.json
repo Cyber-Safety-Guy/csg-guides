@@ -1,0 +1,163 @@
+{
+  "slug": "omoggle",
+  "name": "Omoggle",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Omoggle: What Parents Need to Know (2026)",
+  "seo_description": "What is Omoggle? A webcam site that pairs strangers and uses AI to rate their faces in 'mog battles'. The risks for children, and what I'd do as a parent.",
+  "h1": "Omoggle: what parents need to know",
+  "lead": "If your child has mentioned Omoggle, \"mogging\" or \"face battles\", this page explains what it is in plain English and what I'd do about it as a parent.",
+  "answer_question": "Is Omoggle safe for children?",
+  "answer": "No. It's random webcam chat with strangers, the same thing that made Omegle so dangerous, with an AI on top that scores faces out of 10. Omoggle's own terms say the live battles are for over-18s, but there's no real age check. Users confirm their age themselves.",
+  "sections": [
+    {
+      "heading": "What is Omoggle?",
+      "body": [
+        "The name is a mash-up of Omegle, the random video chat site that shut down in November 2023, and \"mogging\", a word from looksmaxxing culture that means outclassing someone on looks.",
+        "Here's how it works. You open the site, allow your camera and microphone, and you're paired live with a random stranger. An AI scans both faces at once, measuring things like facial symmetry, jawline and \"canthal tilt\", the angle at the outer corners of your eyes. Within seconds it declares a winner, the \"Mogger\", and a loser, the \"Mogged\".",
+        "Wins feed a ranking system borrowed from competitive gaming, with ranks running from \"Molecule\" at the bottom up to \"Chad\" and \"Slayer\" at the top. Battles are streamed live on Twitch, Kick and YouTube, and clips spread on TikTok.",
+        "On 5 May 2026 Twitch changed its rules to allow random video chat sites like Omoggle to be streamed. Almost straight away, one of its biggest streamers was paired live, in front of a huge audience, with what appeared to be a young child."
+      ]
+    },
+    {
+      "heading": "Why children are drawn to it",
+      "list": [
+        "Instant attention and a score that feels like validation",
+        "Leaderboards and ranks to climb",
+        "The thrill of meeting someone new at random",
+        "Seeing streamers they follow play it live",
+        "Feeling part of the looksmaxxing crowd their friends talk about"
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Strangers on camera",
+          "body": [
+            "This is the Omegle problem all over again. Your child doesn't know who's on the other side of that camera, and children have been groomed on sites exactly like this one."
+          ]
+        },
+        {
+          "heading": "Being judged by a number",
+          "body": [
+            "Teenagers are still working out who they are. A site that turns their worth into a score, in real time, in front of a stranger, and keeps them coming back for another go, can do real damage to self-esteem and body image. That pull to play again is designed in."
+          ]
+        },
+        {
+          "heading": "A pipeline into the manosphere",
+          "body": [
+            "The words built into Omoggle, mogging, Chad, Slayer, Molecule, come from an online culture that studies have linked to misogyny, radicalisation and poor mental health in young men. It's sold as harmless competition. It isn't."
+          ]
+        },
+        {
+          "heading": "Privacy and recordings",
+          "body": [
+            "The site uses cookies to track users and their scores, and screen recording is easy. There's no way to know whether your child's face is being saved, clipped and shared somewhere else. Stream chats can also be cruel and sexualised."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Words you might hear",
+      "terms": [
+        {
+          "term": "Mogging",
+          "meaning": "Outclassing someone on looks. \"He mogged him.\""
+        },
+        {
+          "term": "Looksmaxxing",
+          "meaning": "Trying to maximise your looks, from skincare and gym to filters and surgery."
+        },
+        {
+          "term": "PSL",
+          "meaning": "A 1 to 10 attractiveness scale used in looksmaxxing forums."
+        },
+        {
+          "term": "ELO",
+          "meaning": "A ranking score from competitive gaming that pairs you with people at your level."
+        }
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Spending a lot of time chasing a higher score",
+        "Seeming upset, anxious or \"not good enough\" after being online",
+        "New worries about their face or body, or editing photos obsessively",
+        "Pulling away from friends and family",
+        "Being secretive about who they talk to or what they're doing online",
+        "Talking about self-harm or being very harsh on themselves"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "First, don't panic. I know that's hard after reading all this. But children respond to fear by going further underground, not by coming to you. What helps here is curiosity, not alarm.",
+        "If your child mentions it, ask what they think of it. Not what they've done on it, what they think of it. You're opening a door, not interrogating them. A few ways in:"
+      ],
+      "list": [
+        "\"Have you seen people doing those face battles? What do you make of them?\"",
+        "\"Do you think an app can tell you whether someone's worth knowing?\"",
+        "\"If a friend got a really low score, would it change how you saw them?\"",
+        "\"If you ever saw something on there that upset you, would you feel OK telling me?\""
+      ],
+      "after": [
+        "You can block the site on your home router or with parental controls, and my [parental controls wizard](/wizard) walks you through it for your child's devices. But blocking is temporary. The conversation is what lasts."
+      ]
+    }
+  ],
+  "teachers": "If pupils are talking about it, staff need to know what it is, so bring it to your next safeguarding briefing. Looksmaxxing language or appearance rankings are worth a gentle conversation, not a disciplinary one. If a pupil is distressed by how they've been rated or treated, treat it as you would any other online harm and follow your safeguarding procedures.",
+  "faq": [
+    {
+      "q": "Is Omoggle the same as Omegle?",
+      "a": "No, but it works the same way: random video chat with strangers. Omegle shut down in November 2023. Omoggle adds an AI that rates faces and ranks users."
+    },
+    {
+      "q": "What age is Omoggle for?",
+      "a": "Its terms say users must be 18 or over for the live battles, but there's no proper age check, so younger children can and do get on."
+    },
+    {
+      "q": "What does \"mogged\" mean?",
+      "a": "Being out-classed on looks. On Omoggle the AI declares one person the \"Mogger\" (winner) and the other \"Mogged\" (loser)."
+    },
+    {
+      "q": "How do I block Omoggle?",
+      "a": "Block the website on your home router, or use the parental controls on your child's phone, tablet or computer. My [parental controls wizard](/wizard) gives you the steps for each device."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Under-25s can also call The Mix on [0808 808 4994](tel:08088084994). You are not alone.",
+  "sources": [
+    "Omoggle, Terms of Service (age requirement and age check), omoggle.com/tos",
+    "Dexerto, \"What is Omoggle? The AI face-rating platform taking over Twitch\", May 2026",
+    "Yahoo Entertainment, \"What Is 'Omoggle'? The PSL Scale Mogging Game Going Viral Online Explained\", May 2026 (Twitch policy change, 5 May 2026)",
+    "Cyber Safety Project, \"AI Face Rating Apps and Mog Battles: What Parents and Teachers Need to Know about Omoggle\", May 2026",
+    "Kirra Pendergast, \"Miss, Have You Heard of Omoggle?\", May 2026 (first-hand assessment of the platform)"
+  ],
+  "pdf": "guides/CSG_Omoggle.pdf",
+  "image": "CSG_Omoggle",
+  "article_url": "https://www.cybersafetyguy.com/p/have-you-heard-of-omoggle",
+  "related": [
+    {
+      "title": "Livestreaming",
+      "text": "Real-time contact with strangers",
+      "href": "/download?file=guides/CSG_Livestreaming.pdf&name=Livestreaming"
+    },
+    {
+      "title": "Chat Hour",
+      "text": "Anonymous chat with strangers",
+      "href": "/download?file=guides/CSG_Chat_hour.pdf&name=Chat+Hour"
+    },
+    {
+      "title": "How grooming starts",
+      "text": "The pattern, step by step",
+      "href": "/download?file=guides/CSG_How_grooming_starts.pdf&name=How+Online+Grooming+Actually+Starts"
+    },
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    }
+  ]
+}
