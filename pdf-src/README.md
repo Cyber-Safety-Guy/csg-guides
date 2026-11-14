@@ -1,6 +1,6 @@
 # Guide PDF sources
 
-HTML sources for guide PDFs that are made here rather than designed elsewhere. This folder is not
+HTML sources for guide PDFs. New guides: write pages/<slug>.json, add an optional sidecar in pdf-src/pages/<slug>.json (facts strip, grouping), then run `python3 pdf-src/page_pdf.py <slug>` (see its docstring). The two hand-written sources below predate the generator. This folder is not
 published (build.sh only copies the site). To change a PDF, edit its HTML, then from the repo root:
 
     pip install playwright==1.49.1 pillow && playwright install chromium

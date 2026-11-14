@@ -1,0 +1,174 @@
+{
+  "slug": "snapchat",
+  "name": "Snapchat",
+  "eyebrow": "App guide",
+  "updated": "2026-11-14",
+  "published": "2026-11-14",
+  "seo_title": "Is Snapchat Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is Snapchat safe for kids? The grooming data, the risks from disappearing messages, Find Friends and Snap Map, and the settings to check together.",
+  "h1": "Is Snapchat safe for kids?",
+  "lead": "Snapchat is the app I get asked about more than any other, and the one that turns up most in UK grooming cases. Most young people use it without harm, but here's what you need to know and the settings I'd check together.",
+  "answer_question": "The short answer",
+  "answer": "It can be used safely, but it needs settings changed and you involved. Snapchat's design makes it easy for strangers to find children and for evidence to disappear. Teen accounts are private by default and Family Center helps, but messages still vanish by default and Find Friends is still on.",
+  "sections": [
+    {
+      "heading": "What is Snapchat?",
+      "body": [
+        "Snapchat is a photo, video and messaging app. Photos and videos (Snaps) and chats disappear by default after they've been viewed. It also has Stories, a public video feed called Spotlight, a live map of friends' locations called Snap Map, and an AI chatbot called My AI.",
+        "You need to be 13 to have an account, and Snapchat says it removes under-13s when it finds them."
+      ]
+    },
+    {
+      "heading": "Why it worries me",
+      "body": [
+        "NSPCC figures from 44 UK police forces show Snapchat was involved in 40% of recorded Sexual Communication with a Child offences where the platform was known, in the year to March 2025 (2,111 offences). The year before, it was 48%. It has been the platform most used for online grooming in UK police records since the offence was created in 2017.",
+        "Snap faces lawsuits from several US states, and in March 2026 the European Commission opened a formal investigation into grooming risks, default settings and age checks on Snapchat."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Disappearing messages",
+          "body": [
+            "Messages delete after viewing by default, which can remove evidence. They can still be screenshotted, recorded or shown to others, so \"it disappears\" is never a promise."
+          ]
+        },
+        {
+          "heading": "Find Friends (Quick Add)",
+          "body": [
+            "Snapchat suggests people to add based on mutual friends and connections. A stranger with mutual friends can look like someone safe to accept."
+          ]
+        },
+        {
+          "heading": "Snap Map",
+          "body": [
+            "Location is shared with friends only by default, but anyone your child has added can see where they are. Public posts to Our Story near a place also show on the map."
+          ]
+        },
+        {
+          "heading": "My AI",
+          "body": [
+            "The built-in chatbot is available to everyone. Conversations are stored unless they're cleared, and it has been reported giving teens advice on hiding things from parents."
+          ]
+        },
+        {
+          "heading": "Pressure",
+          "body": [
+            "Streaks, Snap Score and filters can make children feel they must keep posting and keep replying, and can affect how they feel about themselves."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Settings to check together",
+      "subsections": [
+        {
+          "heading": "Who can contact them",
+          "body": [
+            "Settings, then Privacy Controls, then Contact Me. Set it to Friends, not Everyone."
+          ]
+        },
+        {
+          "heading": "Find Friends",
+          "body": [
+            "Settings, then Privacy Controls, then See Me in Quick Add. Turn it off. The app now calls the feature Find Friends, but the menu still says Quick Add."
+          ]
+        },
+        {
+          "heading": "Snap Map",
+          "body": [
+            "Pinch the camera screen to open the map, tap the settings icon at the top right and turn on Ghost Mode."
+          ]
+        },
+        {
+          "heading": "Family Center",
+          "body": [
+            "In Settings, open Family Center and invite your child. They have to accept. You'll see their friends and new friends, who they chat with, how long they spend on the app and where that time goes, but not what they say. You can also turn off My AI from here."
+          ]
+        }
+      ],
+      "after": [
+        "None of these is locked. Ghost Mode can be switched off and Find Friends turned back on, so check again now and then, and talk about why the settings matter."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Someone new giving them a lot of attention or gifts",
+        "Being asked for secrets, or for photos",
+        "Being pushed to move to a private chat or another app",
+        "Worry about losing streaks, or pressure to reply",
+        "Becoming secretive, anxious or withdrawn after using their phone",
+        "Threats, or being asked for money"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Set Snapchat up together rather than banning it outright, which tends to push it underground. Make sure your child knows they can tell you about anything that happens on it without losing their phone. And explain that disappearing messages don't really disappear."
+      ],
+      "list": [
+        "\"Who do you talk to most on Snapchat?\"",
+        "\"Has anyone you don't know ever added you?\"",
+        "\"What would you do if someone asked you for a photo or a secret?\""
+      ]
+    }
+  ],
+  "teachers": "If a child discloses contact that started or continued on Snapchat, there may be no messages left, so let them describe what happened in their own words. Report suspected grooming to CEOP (ceop.police.uk), and under-18s can use the IWF and Childline Report Remove tool to get sexual images taken down. The UK police figures work well in parent workshops and staff training.",
+  "faq": [
+    {
+      "q": "What age is Snapchat for?",
+      "a": "You need to be 13 to have an account. Snapchat says it removes accounts it finds belong to under-13s."
+    },
+    {
+      "q": "Can parents see Snapchat messages?",
+      "a": "No. Family Center shows who your child is friends with and chatting to, and how long they spend on the app, but not the content of their messages. Your child has to accept the invitation."
+    },
+    {
+      "q": "How do I stop strangers adding my child on Snapchat?",
+      "a": "In Settings, then Privacy Controls, set Contact Me to Friends and turn off See Me in Quick Add. Talk to your child about only adding people they know in real life."
+    },
+    {
+      "q": "How do I turn off Snap Map?",
+      "a": "Pinch the camera screen to open the map, tap the settings icon and turn on Ghost Mode. Your child can turn it off again, so check now and then."
+    },
+    {
+      "q": "Is Snapchat used for grooming?",
+      "a": "Yes. NSPCC figures from UK police show Snapchat was involved in 40% of recorded Sexual Communication with a Child offences where the platform was known, in the year to March 2025."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
+  "sources": [
+    "NSPCC, \"Data shows how criminals are using private messaging platforms to manipulate and groom children\", November 2025 (year to March 2025)",
+    "NSPCC, \"Online grooming crimes against children increase by 89% in six years\", November 2024 (year to March 2024)",
+    "European Commission, investigation into Snapchat under the Digital Services Act, 26 March 2026",
+    "Snapchat, Family Center parents' page, and TechCrunch, \"Snapchat gives parents new insights into teens' screen time and friends\", 22 January 2026",
+    "UK Information Commissioner's Office, My AI preliminary enforcement notice (October 2023) and closure (May 2024)"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/snapchat-child-safety-grooming-parents-guide",
+  "pdf": "guides/CSG_Snapchat.pdf",
+  "image": "CSG_Snapchat",
+  "related": [
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack on online grooming, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    },
+    {
+      "title": "Sextortion and image-based abuse",
+      "text": "What to do if your child is targeted",
+      "href": "/download?file=guides/CSG_Sextortion.pdf&name=Sextortion+and+Image-Based+Abuse"
+    },
+    {
+      "title": "How online grooming actually starts",
+      "text": "The early signs parents miss",
+      "href": "/download?file=guides/CSG_How_grooming_starts.pdf&name=How+Online+Grooming+Actually+Starts"
+    },
+    {
+      "title": "Locket Widget",
+      "text": "Another app teens use to share photos",
+      "href": "/guides/locket-widget"
+    }
+  ]
+}
