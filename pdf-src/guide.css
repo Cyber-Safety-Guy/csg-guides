@@ -1,0 +1,55 @@
+/* Shared style for one-page guide PDFs (pdf-src/). Matches the guides site tokens (assets/site.css). */
+@font-face { font-family: "Inter"; src: url("../assets/fonts/inter-var.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Space Grotesk"; src: url("../assets/fonts/space-grotesk-var.woff2") format("woff2"); font-weight: 300 700; }
+:root {
+  --navy: #06192F; --surface: #0B2440; --card: #0F2C4C; --cyan: #1FD0DC; --text: #C8DCE3; --muted: #9FB8C2;
+  --white: #fff; --amber: #D4A843; --red: #C0392B; --line: rgba(31,208,220,0.28); --tint: rgba(31,208,220,0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--navy); }
+body { width: 900px; font: 400 13.5px/1.5 "Inter", sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { padding: 28px 32px 0; }
+h1, h2, h3, .head { font-family: "Space Grotesk", "Inter", sans-serif; color: var(--white); }
+strong { color: var(--white); font-weight: 600; }
+.ink { color: var(--cyan); }
+
+/* Header */
+.top { display: grid; grid-template-columns: 1fr 300px; gap: 24px; align-items: start; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.logo { height: 72px; width: auto; display: block; margin-bottom: 14px; }
+.eyebrow { font: 600 12px/1 "Inter"; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
+h1 { font-size: 38px; line-height: 1.05; letter-spacing: -.01em; margin-bottom: 10px; }
+.lead { font-size: 14.5px; color: var(--text); max-width: 520px; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.fact b { display: block; font: 700 19px/1.15 "Space Grotesk"; color: var(--cyan); margin-bottom: 4px; }
+.fact span { font-size: 11.5px; line-height: 1.35; display: block; }
+
+/* Sections */
+section { padding: 20px 0; border-bottom: 1px solid var(--line); }
+h2 { font-size: 19px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+h2 .n { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--cyan); color: var(--navy); font-size: 15px; font-weight: 700; flex: none; }
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 15px; }
+.card h3 { font-size: 15px; margin-bottom: 6px; color: var(--cyan); }
+.card p + p { margin-top: 6px; }
+.path { display: inline; font: 500 12.5px/1.5 "Inter"; color: var(--white); background: var(--tint); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+.note { margin-top: 12px; background: var(--tint); border-left: 3px solid var(--cyan); border-radius: 0 10px 10px 0; padding: 10px 14px; font-size: 13px; }
+.note.amber { border-left-color: var(--amber); background: rgba(212,168,67,0.1); }
+ul.ticks, ul.flags, ul.qs { list-style: none; }
+ul.ticks li, ul.flags li, ul.qs li { position: relative; padding-left: 22px; margin: 5px 0; }
+ul.ticks li::before { content: "✓"; position: absolute; left: 2px; color: var(--cyan); font-weight: 700; }
+ul.flags li::before { content: "!"; position: absolute; left: 4px; top: 1px; width: 13px; height: 13px; border-radius: 50%; background: var(--amber); color: var(--navy); font: 800 10px/13px "Inter"; text-align: center; }
+ul.qs li::before { content: "“"; position: absolute; left: 3px; top: -4px; color: var(--cyan); font: 700 22px/1 "Space Grotesk"; }
+ol.steps { list-style: none; counter-reset: s; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+ol.steps li { counter-increment: s; position: relative; padding: 12px 14px 12px 50px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--cyan); color: var(--cyan); font: 700 13px/22px "Space Grotesk"; text-align: center; }
+ol.steps li b { display: block; color: var(--white); font-weight: 600; margin-bottom: 2px; }
+
+/* Footer */
+.help { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 12px; padding: 20px 0 22px; }
+.help .card h3 { color: var(--white); font-size: 14px; margin-bottom: 4px; }
+.help .num { font: 700 20px/1.2 "Space Grotesk"; color: var(--cyan); }
+.bar { background: var(--red); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 14px 32px; font: 600 14px/1.2 "Inter"; }
+.bar b { font: 700 24px/1 "Space Grotesk"; color: #fff; margin-left: 10px; }
+.meta { display: flex; justify-content: space-between; padding: 10px 32px 14px; font-size: 11px; color: var(--muted); background: var(--navy); }

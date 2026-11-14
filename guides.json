@@ -185,7 +185,7 @@
     "id": "platform-guides",
     "type": "guide",
     "title": "iPhone iPad Parental Controls",
-    "desc": "Screen Time is Apple's built-in parental controls system — no separate app needed.",
+    "desc": "Apple's built-in parental controls, redesigned for iOS 27: Ask to Buy, Ask to Browse, time allowances, contacts and Communication Safety.",
     "image": "CSG_Ios.png",
     "link": "https://guides.cybersafetyguy.com/guides/CSG_iPhone_iPad_parental_controls.pdf",
     "isNew": false,
