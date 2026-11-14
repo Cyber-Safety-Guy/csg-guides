@@ -53,3 +53,4 @@ ol.steps li b { display: block; color: var(--white); font-weight: 600; margin-bo
 .bar { background: var(--red); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 14px 32px; font: 600 14px/1.2 "Inter"; }
 .bar b { font: 700 24px/1 "Space Grotesk"; color: #fff; margin-left: 10px; }
 .meta { display: flex; justify-content: space-between; padding: 10px 32px 14px; font-size: 11px; color: var(--muted); background: var(--navy); }
+.cols2 > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }

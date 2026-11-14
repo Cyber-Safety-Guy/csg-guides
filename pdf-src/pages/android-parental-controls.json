@@ -1,0 +1,8 @@
+{"eyebrow": "Settings guide · Google Family Link",
+ "title": "Android parental controls",
+ "facts": [["Free", "Google Family Link. No subscription."],
+           ["Your phone", "Managed from your phone, iPhone or Android."],
+           ["Until 18", "Turning supervision off needs a parent's OK."],
+           ["Not iPhone", "Supervises Android and Chromebook, not iPhone."]],
+ "group": [{"title": "Key settings", "sections": ["Screen time", "Apps", "Content filters", "Location", "Purchases", "When your child turns 13"]}],
+ "source_note": "Source: Google Family Link help pages, checked November 2026"}
