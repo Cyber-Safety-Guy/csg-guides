@@ -1,0 +1,136 @@
+{
+  "slug": "why-kids-dont-tell",
+  "name": "Why kids don't tell parents",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Why Kids Don't Tell Parents About Online Harm",
+  "seo_description": "Why children don't tell parents when something goes wrong online, and how to make it easier: what to say, what not to say, and how to react when they do.",
+  "h1": "Why kids don't tell parents (and how to change that)",
+  "lead": "Every setting and filter in the world matters less than one thing: whether your child will come to you when something goes wrong. Many don't. Not because they don't love you, but because they're scared of what happens next.",
+  "answer_question": "Why don't children tell their parents?",
+  "answer": "Mostly fear: of losing their phone, of getting into trouble, of you overreacting, or of being blamed. Shame and embarrassment keep them quiet too, and offenders count on it. The fix is making telling you feel safe, long before anything happens.",
+  "sections": [
+    {
+      "heading": "The reasons children give",
+      "list": [
+        "\"You'll take my phone away\"",
+        "\"I'll be in trouble for being on that app\"",
+        "\"You'll freak out, or go to school and make it worse\"",
+        "\"It's embarrassing\"",
+        "\"It was my fault\"",
+        "\"I can sort it out myself\"",
+        "\"They said something bad would happen if I told\""
+      ]
+    },
+    {
+      "heading": "What to say",
+      "list": [
+        "\"Thank you for telling me\"",
+        "\"You're not in trouble\"",
+        "\"I believe you\"",
+        "\"This isn't your fault\"",
+        "\"We'll sort it out together\""
+      ]
+    },
+    {
+      "heading": "What to avoid",
+      "list": [
+        "\"Why did you do that?\"",
+        "\"I told you so\"",
+        "\"Give me your phone\"",
+        "\"That's it, no more internet\"",
+        "Going straight to the school or the other parents without them"
+      ]
+    },
+    {
+      "heading": "Build it before you need it",
+      "subsections": [
+        {
+          "heading": "Make a promise",
+          "body": [
+            "Tell them now: if anything ever goes wrong online, you'll help and you won't take their phone for telling you. Then keep it."
+          ]
+        },
+        {
+          "heading": "Talk little and often",
+          "body": [
+            "Short chats in the car or over tea work better than big sit-down talks. Ask about the good stuff too."
+          ]
+        },
+        {
+          "heading": "Share your own mistakes",
+          "body": [
+            "Telling them about a time you got something wrong online shows them it's normal and fixable."
+          ]
+        },
+        {
+          "heading": "Name other trusted adults",
+          "body": [
+            "Some things are easier to tell someone else. Make sure they know about a grandparent, aunt, teacher or Childline."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Signs they might be struggling",
+      "list": [
+        "Secretive about their phone, or suddenly avoiding it",
+        "Mood changes, anxiety, anger or withdrawal",
+        "Trouble sleeping, or changes in appetite",
+        "Losing interest in things they used to enjoy",
+        "Not wanting to go to school"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "When they do tell you something, your first reaction is the one they'll remember. Breathe, thank them, and listen to the whole story before you say anything else. Deal with your own fear and anger later, away from them. That one moment decides whether they come back next time."
+      ],
+      "list": [
+        "\"What would make it easier to tell me about something online?\"",
+        "\"Is there anything that's been bothering you?\"",
+        "\"If you couldn't tell me, who would you tell?\""
+      ]
+    }
+  ],
+  "teachers": "Pupils often disclose to a trusted adult at school before a parent. Respond calmly, thank them, don't promise secrecy, and follow your safeguarding procedures. Help parents understand that removing devices after a disclosure can stop children telling anyone next time.",
+  "faq": [
+    {
+      "q": "Why won't my child tell me what's happening online?",
+      "a": "Usually fear of losing their phone, getting into trouble or an overreaction, or shame. Promise you'll help, not punish."
+    },
+    {
+      "q": "Should I take my child's phone away if something bad happened?",
+      "a": "Usually not as a punishment for telling you. It teaches children not to tell next time. Make changes together instead."
+    },
+    {
+      "q": "What should I say if my child tells me something worrying?",
+      "a": "Thank them, tell them they're not in trouble and that you believe them, then work out the next steps together."
+    }
+  ],
+  "help": "If your child would rather talk to someone else, Childline is free and confidential on [0800 1111](tel:08001111), any time, and at childline.org.uk. You are not alone.",
+  "sources": [
+    "Childline, advice for young people and parents, accessed November 2026",
+    "NSPCC, talking to your child about online safety, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Why_kids_dont_tell_parents.pdf",
+  "image": "CSG_Why_Kids_Dont_Tell",
+  "related": [
+    {
+      "title": "Sextortion",
+      "text": "What it is and what to do",
+      "href": "/guides/sextortion"
+    },
+    {
+      "title": "How grooming starts",
+      "text": "The early signs to look for",
+      "href": "/guides/online-grooming"
+    },
+    {
+      "title": "Raising Kind Kids Online",
+      "text": "Free Academy pack for parents on online kindness",
+      "href": "https://academy.cybersafetyguy.com/packs/kind-for-parents/"
+    }
+  ]
+}

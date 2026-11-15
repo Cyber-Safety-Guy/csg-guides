@@ -1,0 +1,125 @@
+{
+  "slug": "sharenting",
+  "name": "Sharenting",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Sharenting: Posting Your Kids Online (2026)",
+  "seo_description": "Sharenting explained: the risks of posting photos of your children online, from location clues to AI fakes, and simple ways to share safely with family.",
+  "h1": "Sharenting: a guide to posting your children online",
+  "lead": "We share our children's lives because we're proud of them. First steps, first day at school, the funny face at breakfast. But once a photo is online, we lose control of where it goes. Here's how to keep sharing without the risks.",
+  "answer_question": "Is it safe to post photos of my children?",
+  "answer": "It can be, if you're careful about who sees them and what they show. The risks are location clues, photos being copied or misused, including by AI tools, and building a footprint your child never agreed to. Private sharing and a bit of thought before posting go a long way.",
+  "sections": [
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Location clues",
+          "body": [
+            "School uniforms, house numbers, street signs, clubs and check-ins can show where your child is and when."
+          ]
+        },
+        {
+          "heading": "Photos being copied",
+          "body": [
+            "Public photos can be saved, shared on other sites and used for fake profiles."
+          ]
+        },
+        {
+          "heading": "AI fakes",
+          "body": [
+            "Ordinary photos of children can be put through AI \"nudify\" tools to make fake sexual images. The Internet Watch Foundation has seen criminals use school and social media photos this way."
+          ]
+        },
+        {
+          "heading": "Their story, not ours",
+          "body": [
+            "Embarrassing moments, health details or tantrums can follow a child into their teens. They didn't get a say."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Share smarter",
+      "list": [
+        "Use a private account, or share in a family group chat or shared album instead",
+        "Check who can see your posts, and remove people you don't know well",
+        "Crop out uniforms, school logos, house numbers and car registrations",
+        "Turn off location tags, and post after you've left somewhere, not while you're there",
+        "Skip bath, nappy and swimming photos",
+        "Ask your child before posting once they're old enough to have a view"
+      ]
+    },
+    {
+      "heading": "A quick test before you post",
+      "list": [
+        "Would I be happy if my child posted this about me?",
+        "Would they be happy to see it when they're 16?",
+        "Does it show where they live, go to school or will be?",
+        "Who will see it, and could they share it?"
+      ]
+    },
+    {
+      "heading": "Other people's photos",
+      "body": [
+        "Ask before posting photos with other children in them, and ask family and friends to check with you before posting yours. It's fine to ask schools and clubs how they use photos, and to say no."
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Go back through your own profile with fresh eyes and archive anything you wouldn't post today. Then talk to your child about it: asking \"Can I post this?\" teaches them consent and privacy better than any lesson, and it's a habit they'll take into their own posting."
+      ],
+      "list": [
+        "\"Is it OK if I share this photo?\"",
+        "\"Is there anything I've posted about you that you'd like taken down?\"",
+        "\"Who do you think should be able to see photos of you?\""
+      ]
+    }
+  ],
+  "teachers": "Schools are part of children's footprints too. Review consent for pupil photos, avoid naming pupils alongside images, and think about whether public posts show uniforms or locations. Fewer identifiable public images means less risk of misuse.",
+  "faq": [
+    {
+      "q": "What is sharenting?",
+      "a": "Parents sharing photos, videos and details of their children online, especially on public social media."
+    },
+    {
+      "q": "Should I post my child's first day at school photo?",
+      "a": "If you do, keep it private and crop out the uniform, school name and anything that shows where you live."
+    },
+    {
+      "q": "Can photos of my child be misused by AI?",
+      "a": "Yes. AI tools can turn ordinary photos into fake images, which is why private accounts and fewer public photos help."
+    },
+    {
+      "q": "At what age should I ask my child before posting?",
+      "a": "As soon as they can have a view, often from around 4 or 5. Asking also teaches them about consent and privacy."
+    }
+  ],
+  "help": "Worried about a photo of your child being misused? Childline is free and confidential on [0800 1111](tel:08001111), any time. Childline's Report Remove tool can help get a nude image of an under-18 taken down. You are not alone.",
+  "sources": [
+    "Internet Watch Foundation, AI-generated images and sextortion of schools, 2025",
+    "Cyber Safety Guy, \"The dangers of sharenting\", March 2025"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/the-dangers-of-sharenting-protecting",
+  "pdf": "guides/CSG_Sharenting.pdf",
+  "image": "CSG_Sharenting",
+  "related": [
+    {
+      "title": "Social media footprint",
+      "text": "What your child leaves behind online",
+      "href": "/guides/social-media-footprint"
+    },
+    {
+      "title": "PimEyes",
+      "text": "The face search engine",
+      "href": "/guides/pimeyes"
+    },
+    {
+      "title": "Sextortion",
+      "text": "What it is and what to do",
+      "href": "/guides/sextortion"
+    }
+  ]
+}
