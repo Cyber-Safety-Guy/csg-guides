@@ -1,0 +1,142 @@
+{
+  "slug": "x-twitter",
+  "name": "X (Twitter)",
+  "eyebrow": "App guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Is X (Twitter) Safe for Kids? Parents' Guide",
+  "seo_description": "Is X safe for kids? What children can see on X, the Grok image scandal and Ofcom's investigation, UK age checks, and the settings to change if they use it.",
+  "h1": "Is X (Twitter) safe for kids?",
+  "lead": "X, still called Twitter by most people, is where news, arguments and trends move fastest. It's also one of the least child-friendly big platforms, and it has spent 2026 under investigation in the UK.",
+  "answer_question": "The short answer",
+  "answer": "Not for younger teens. X allows accounts from 13, but it has no parental controls, it's public by default, and it's known for explicit, violent and hateful posts. UK age checks block some adult content, but plenty else gets through.",
+  "sections": [
+    {
+      "heading": "What is X?",
+      "body": [
+        "X is a social network for short public posts, replies, videos and live news. Anyone can follow anyone, and posts are public unless an account is protected. It also has direct messages and Grok, an AI chatbot built into the app.",
+        "You need to be 13 to have an account."
+      ]
+    },
+    {
+      "heading": "Grok and Ofcom's investigation",
+      "body": [
+        "In January 2026, there were widespread reports of Grok being used on X to create sexualised images of real people from their photos, including children. Ofcom opened a formal investigation into X on 12 January 2026. In October 2026 it narrowed the case to X's duties on illegal content, after finding that age-gated porn could sometimes be reached by accounts not verified as adults and X fixed it. No decision has been made yet."
+      ]
+    },
+    {
+      "heading": "UK age checks",
+      "body": [
+        "Since July 2025, X has had to check ages in the UK under the Online Safety Act. Until it's confident a user is 18 or over, it blocks sensitive media, using signals such as account age or a selfie or ID check. Under-18s are kept in the strictest sensitive media settings. These checks cover porn and graphic media, not the arguments, bullying and extreme views in ordinary posts."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Harmful content",
+          "body": [
+            "Violent, hateful and sexual posts appear in feeds, replies and trends, and the For You feed recommends content from accounts your child doesn't follow."
+          ]
+        },
+        {
+          "heading": "Public by default",
+          "body": [
+            "Anyone can see, reply to, quote and share a public account's posts. A single post can be seen by thousands of strangers."
+          ]
+        },
+        {
+          "heading": "Pile-ons and abuse",
+          "body": [
+            "Arguments escalate fast, and children can be targeted by large numbers of people at once."
+          ]
+        },
+        {
+          "heading": "Misinformation and AI images",
+          "body": [
+            "Rumours, fake news and AI-made images spread quickly, especially during breaking news."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "If your teen uses X",
+      "body": [
+        "X has no parental controls, so set these up together in Settings, then Privacy and safety."
+      ],
+      "list": [
+        "Turn on Protect your posts, so only approved followers see them",
+        "Limit direct message requests to people they follow, or no one",
+        "Keep the sensitive media settings on",
+        "Add muted words for topics that upset them",
+        "Turn off location for posts",
+        "Show them how to block, mute and report"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Repeating extreme, hateful or conspiracy ideas",
+        "Being upset after reading replies or notifications",
+        "Messages from strangers, especially older accounts",
+        "Worry that a photo of them has been edited or shared"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "For under-16s, I'd steer them towards somewhere else. For older teens, talk about how X works: what the For You feed is for, why outrage spreads, and how to check a post before believing or sharing it. Make sure they know that AI-made images of them are not their fault, and that they can tell you."
+      ],
+      "list": [
+        "\"Who do you follow on X, and why?\"",
+        "\"How do you tell if a post is real?\"",
+        "\"What would you do if someone made a fake picture of you?\""
+      ]
+    }
+  ],
+  "teachers": "News and trends from X reach pupils through screenshots and group chats even if they don't have an account. Talk about checking sources, and treat any AI-made sexual image of a pupil as a safeguarding concern: under-18 images are illegal to make or share.",
+  "faq": [
+    {
+      "q": "What age is X for?",
+      "a": "X's minimum age is 13, but it has no parental controls and isn't designed with younger teens in mind."
+    },
+    {
+      "q": "Does X have parental controls?",
+      "a": "No. You can only help your teen set up privacy settings: protected posts, message limits and sensitive media filters."
+    },
+    {
+      "q": "Why is Ofcom investigating X?",
+      "a": "After reports that Grok was used to make sexualised images of real people, including children, Ofcom opened an investigation in January 2026. It's still going."
+    },
+    {
+      "q": "Does X check ages in the UK?",
+      "a": "Yes, since July 2025. Sensitive media is blocked until X is confident a user is an adult."
+    }
+  ],
+  "help": "Worried about an image of your child, or something they've seen? Childline is free and confidential on [0800 1111](tel:08001111), any time. Childline's Report Remove tool can help get a nude image of an under-18 taken down. You are not alone.",
+  "sources": [
+    "Ofcom, investigation into X Internet Unlimited Company (opened 12 January 2026; update 14 October 2026)",
+    "X Help Centre, \"Age assurance on X\", and reporting by RTÉ, 28 July 2025",
+    "Cyber Safety Guy, \"Grok AI and the rise of non-consensual images\", 12 January 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/grok-ai-and-the-rise-of-non-consensual",
+  "pdf": "guides/CSG_X.pdf",
+  "image": "CSG_X",
+  "related": [
+    {
+      "title": "Online challenges and trends",
+      "text": "Viral trends and how to talk about them",
+      "href": "/download?file=guides/CSG_Online_challenges_trends.pdf&name=Online+Challenges+and+Trends"
+    },
+    {
+      "title": "Sextortion",
+      "text": "What it is and what to do",
+      "href": "/download?file=guides/CSG_Sextortion.pdf&name=Sextortion"
+    },
+    {
+      "title": "Instagram",
+      "text": "Teen Accounts and supervision",
+      "href": "/guides/instagram"
+    }
+  ]
+}

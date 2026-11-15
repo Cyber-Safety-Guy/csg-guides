@@ -1,0 +1,147 @@
+{
+  "slug": "pinterest",
+  "name": "Pinterest",
+  "eyebrow": "App guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Is Pinterest Safe for Kids? Parents' Guide 2026",
+  "seo_description": "Is Pinterest safe for kids? Pinterest's teen settings explained, the risks in search and messages, and how to set a passcode on your child's settings.",
+  "h1": "Is Pinterest safe for kids?",
+  "lead": "Most parents think of Pinterest as recipes and bedroom ideas, and a lot of it is. But it's a social app too, with messages, comments and a search bar that can lead somewhere darker.",
+  "answer_question": "The short answer",
+  "answer": "It's one of the safer social apps for teens. Under-18 accounts are private, comments on their own Pins are off, and under-16s can only message mutual followers. The risks are what search and recommendations can show them, especially around body image.",
+  "sections": [
+    {
+      "heading": "What is Pinterest?",
+      "body": [
+        "Pinterest is a visual search and ideas app. People save images and videos, called Pins, to boards: outfits, art, room ideas, quotes, hairstyles. It also has messages, group chats, group boards and comments.",
+        "You need to be 13 to have an account."
+      ]
+    },
+    {
+      "heading": "Pinterest's teen settings",
+      "subsections": [
+        {
+          "heading": "Ages 13 to 15",
+          "body": [
+            "Accounts are private and can't be made public. Profiles can't be found in search, and boards and Pins are only seen by people your child invites to follow them. Messages are limited to mutual followers."
+          ]
+        },
+        {
+          "heading": "Ages 16 and 17",
+          "body": [
+            "Accounts start private but can be switched to public, and settings loosen as they get older."
+          ]
+        },
+        {
+          "heading": "All under-18s",
+          "body": [
+            "Comments on their own Pins are off, only mutual followers can add them to a group chat, and in the UK they're opted out of personalised ads."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Body image",
+          "body": [
+            "Searches for \"thinspiration\", diets, workouts or \"aesthetics\" can lead to Pins about extreme weight loss and unrealistic bodies, and the app keeps recommending more of what they look at."
+          ]
+        },
+        {
+          "heading": "Self-harm and dark moods",
+          "body": [
+            "Sad quotes and \"dark aesthetic\" boards can drift into self-harm content, even though Pinterest's rules ban it."
+          ]
+        },
+        {
+          "heading": "Links off Pinterest",
+          "body": [
+            "Pins link to other websites, and some lead to adult, scam or shopping sites."
+          ]
+        },
+        {
+          "heading": "Older accounts and comments",
+          "body": [
+            "Your child can still see and comment on public Pins, where adults can reply. A teen who lied about their age gets none of the teen protections."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Set it up together",
+      "list": [
+        "Check the date of birth on the account is right, or the teen settings won't apply",
+        "Set a parental passcode so privacy and messaging settings can't be changed without you",
+        "Look through who follows them and who they message",
+        "Tap Report on anything upsetting, and show them how to block",
+        "Turn on two-factor authentication"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Boards full of dieting, weight loss or \"perfect body\" images",
+        "Sad or dark quotes saved again and again",
+        "Messages from people they don't know offline",
+        "Comparing themselves to images, or changes in eating"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Ask them to show you their favourite board; it's an easy way into a conversation. Their boards are also a window into how they're feeling, so notice the themes, gently, without snooping."
+      ],
+      "list": [
+        "\"Which board are you most proud of?\"",
+        "\"Do you ever see Pins that make you feel bad about yourself?\"",
+        "\"Who do you chat to on Pinterest?\""
+      ]
+    }
+  ],
+  "teachers": "Pinterest is often used for school projects. Teach pupils that its images are inspiration, not facts, and watch for boards or saved images around dieting or self-harm, which can be an early sign a pupil is struggling.",
+  "faq": [
+    {
+      "q": "What age is Pinterest for?",
+      "a": "13. Under-16s get a private account that can't be made public, and all under-18 accounts start private."
+    },
+    {
+      "q": "Can strangers message my child on Pinterest?",
+      "a": "Under-16s can only message mutual followers, people they follow who follow them back. Settings loosen as teens get older."
+    },
+    {
+      "q": "Does Pinterest have parental controls?",
+      "a": "Yes, a simple one. You can set a passcode that locks your teen's privacy, data and social settings."
+    },
+    {
+      "q": "Can children see adult content on Pinterest?",
+      "a": "Pinterest bans porn, but searches can still lead to sexualised, body image or self-harm content, and Pins can link to other websites."
+    }
+  ],
+  "help": "Worried about how your child is feeling? Childline is free and confidential on [0800 1111](tel:08001111), any time. For eating worries, Beat's helpline is on [0808 801 0677](tel:08088010677). You are not alone.",
+  "sources": [
+    "Pinterest Help Centre, \"Teen safety options\", accessed November 2026",
+    "TechCrunch and Social Media Today, Pinterest teen safety updates, 2023 and 2024"
+  ],
+  "pdf": "guides/CSG_Pinterest.pdf",
+  "image": "CSG_Pinterest",
+  "related": [
+    {
+      "title": "Instagram",
+      "text": "Teen Accounts and supervision",
+      "href": "/guides/instagram"
+    },
+    {
+      "title": "TikTok",
+      "text": "Teen settings and Family Pairing",
+      "href": "/guides/tiktok"
+    },
+    {
+      "title": "Screen time and overuse",
+      "text": "Sleep, habits and balance",
+      "href": "/download?file=guides/CSG_Screen_time_device_overuse.pdf&name=Screen+Time+and+Device+Overuse"
+    }
+  ]
+}

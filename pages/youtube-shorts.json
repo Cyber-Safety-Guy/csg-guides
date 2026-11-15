@@ -1,0 +1,141 @@
+{
+  "slug": "youtube-shorts",
+  "name": "YouTube Shorts",
+  "eyebrow": "App guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "YouTube Shorts and Kids: Parent's Guide (2026)",
+  "seo_description": "Is YouTube Shorts safe for kids? How the endless Shorts feed works, the risks, and how to set a daily Shorts limit, or turn the feed off, for your child.",
+  "h1": "YouTube Shorts: a guide for parents",
+  "lead": "Shorts is YouTube's answer to TikTok: an endless feed of short videos, built into the YouTube app most children already use. It's also the one part of YouTube that parents can now switch off.",
+  "answer_question": "The short answer",
+  "answer": "Shorts carries the same risks as TikTok: an addictive feed and recommendations you don't choose. If your child has a supervised account or a supervised teen account, you can set a daily Shorts limit, including zero.",
+  "sections": [
+    {
+      "heading": "What are YouTube Shorts?",
+      "body": [
+        "Shorts are vertical videos up to three minutes long. They play one after another in a feed: swipe up and the next one starts. Anyone with an account can make them, and they appear in the YouTube app, on the website and on smart TVs.",
+        "Children need to be 13 for their own YouTube account. Younger children can use YouTube through a parent-managed supervised account."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "The endless scroll",
+          "body": [
+            "There's no natural stopping point, and each video is short enough that \"just one more\" turns into an hour. It's especially hard to put down at bedtime."
+          ]
+        },
+        {
+          "heading": "Recommendations",
+          "body": [
+            "The feed learns from what they watch and how long they linger, and can quickly fill up with extreme, frightening or body image content."
+          ]
+        },
+        {
+          "heading": "Trends and challenges",
+          "body": [
+            "Dangerous stunts, pranks and \"challenges\" spread fast in Shorts, and children may try to copy them."
+          ]
+        },
+        {
+          "heading": "Comments and posting",
+          "body": [
+            "If your child makes Shorts, strangers can comment on them, and videos of them can be shared well beyond their friends."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Set a Shorts limit",
+      "body": [
+        "For a child's supervised account, go to families.youtube.com or the Family Link app. For a teen, in YouTube go to You, then Settings, then Family Centre, and invite them to supervision. Both of you have to agree, and either of you can end it."
+      ],
+      "list": [
+        "Set a daily limit on the Shorts feed (zero turns it off)",
+        "Turn on Take a Break and bedtime reminders",
+        "Choose a content setting that fits their age",
+        "Block channels you don't want them to see",
+        "If they post, keep their videos private or unlisted"
+      ]
+    },
+    {
+      "heading": "Age checks in the UK",
+      "body": [
+        "YouTube uses age estimation in the UK. If it thinks a signed-in user is under 18, it blocks age-restricted videos and turns on break and bedtime reminders, even if the account says they're older."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Getting very upset or angry when asked to stop",
+        "Scrolling late at night, or tiredness in the day",
+        "Copying stunts or challenges they've seen",
+        "Seeming low, anxious or unhappy with their body after watching"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Sit with them for five minutes of their Shorts feed. It tells you more than any setting. Then agree on a limit together, rather than imposing one, and keep phones out of bedrooms at night."
+      ],
+      "list": [
+        "\"Show me the best Short you've seen this week.\"",
+        "\"How do you feel after a long scroll?\"",
+        "\"Have you seen a challenge that looked dangerous?\""
+      ]
+    },
+    {
+      "heading": "The UK under-16 plan",
+      "body": [
+        "The government plans to stop social media companies providing their services to under-16s, and YouTube is one of the platforms named. It isn't law yet: the rules are due to go to Parliament in December 2026, with the ban starting from late spring 2027."
+      ]
+    }
+  ],
+  "teachers": "Shorts trends often show up in the playground within days. If a dangerous challenge is circulating, talk about it calmly without showing the video or naming it in a way that sends pupils to look it up.",
+  "faq": [
+    {
+      "q": "Can I turn off YouTube Shorts?",
+      "a": "Yes, for a supervised child or teen account. Set the daily Shorts limit to zero and the Shorts feed is switched off."
+    },
+    {
+      "q": "How long are YouTube Shorts?",
+      "a": "Up to three minutes each. They play one after another, so time adds up quickly."
+    },
+    {
+      "q": "Is YouTube Shorts the same as TikTok?",
+      "a": "It works in much the same way, with an endless feed of short videos picked for each viewer. The difference is that it's built into YouTube."
+    },
+    {
+      "q": "What age is YouTube Shorts for?",
+      "a": "Children need to be 13 for their own YouTube account. Younger children can watch through a supervised account set up by a parent."
+    }
+  ],
+  "help": "Worried about something your child has seen? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "YouTube, \"More choices for children and teenagers\" (families page), accessed November 2026",
+    "YouTube Official Blog, Shorts up to three minutes, October 2024",
+    "CNN and Engadget, reporting on YouTube's Shorts limits for teens, January 2026",
+    "House of Commons Library, \"Proposals to ban social media for children\" (CBP-10468)"
+  ],
+  "pdf": "guides/CSG_Youtube_shorts.pdf",
+  "image": "CSG_YouTube_Shorts",
+  "related": [
+    {
+      "title": "YouTube",
+      "text": "YouTube Kids, supervised and teen accounts",
+      "href": "/guides/youtube"
+    },
+    {
+      "title": "TikTok",
+      "text": "Teen settings and Family Pairing",
+      "href": "/guides/tiktok"
+    },
+    {
+      "title": "Screen time and overuse",
+      "text": "Sleep, habits and balance",
+      "href": "/download?file=guides/CSG_Screen_time_device_overuse.pdf&name=Screen+Time+and+Device+Overuse"
+    }
+  ]
+}
