@@ -1,0 +1,140 @@
+{
+  "slug": "bereal",
+  "name": "BeReal",
+  "eyebrow": "App guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Is BeReal Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is BeReal safe for kids? How the daily photo app works, what its two-camera photos can give away, the pressure to post, and the settings to check.",
+  "h1": "Is BeReal safe for kids?",
+  "lead": "BeReal sells itself as the honest, no-filter app: one photo a day, taken when the app tells you to. It's calmer than most social media, but \"real\" photos can give away more than children realise.",
+  "answer_question": "The short answer",
+  "answer": "It's one of the gentler apps, if your child keeps it to real friends. Accounts are private and there are no ads aimed at under-18s, but every photo uses both cameras at once, so it can show where they are, and there are no parental controls.",
+  "sections": [
+    {
+      "heading": "What is BeReal?",
+      "body": [
+        "Once a day, at a random time, everyone gets the same notification: \"Time to BeReal\". You have two minutes to take a photo, and the app uses the front and back cameras at the same time, so friends see your face and what's in front of you. Posts can include a short video too.",
+        "Late posts are allowed but labelled as late. Friends react with RealMojis (selfie reactions), comment, and chat in RealChat. You need to be 13, and BeReal is owned by the French games company Voodoo."
+      ]
+    },
+    {
+      "heading": "What's already in place",
+      "body": [
+        "BeReal says children's accounts are private, with no public profile a stranger can search for. People need your child's phone number or username to find them, and your child has to accept them. Chat is only between friends."
+      ],
+      "list": [
+        "No targeted adverts for under-18s",
+        "No in-app purchases, loot boxes or paid tiers",
+        "Blocking and anonymous reporting from inside the app",
+        "Under-13 birth dates are stopped at sign-up"
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Location clues",
+          "body": [
+            "The back camera catches whatever's there: the house, the school gate, the bus stop, the club they go to every Tuesday. Posts can also show a location if it's turned on."
+          ]
+        },
+        {
+          "heading": "Friends of friends",
+          "body": [
+            "Each post can be shared with friends of friends, not just friends. That's people your child doesn't know seeing their face and surroundings."
+          ]
+        },
+        {
+          "heading": "Pressure to post",
+          "body": [
+            "The two-minute window and the \"late\" label push children to post straight away, wherever they are, including in class, at home in their pyjamas, or when someone else is in shot."
+          ]
+        },
+        {
+          "heading": "Friend lists that grow",
+          "body": [
+            "\"Friends only\" only works if the friends are real friends. Contact syncing and friend suggestions can fill the list with people they barely know."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Settings to check together",
+      "list": [
+        "Share each post with My Friends only, not Friends of Friends",
+        "Leave location off when posting",
+        "Turn off contact syncing so people can't find them by phone number",
+        "Go through the friends list and remove anyone they don't know offline",
+        "Show them how to block and report"
+      ],
+      "after": [
+        "BeReal has no parental controls, so these are habits to agree on rather than settings you can lock."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Anxiety about missing the notification or posting late",
+        "New \"friends\" they can't explain",
+        "Upset about who reacted, or who didn't",
+        "Posts that show your home, their school or a routine"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Look at a few of their BeReals with them and play \"what can a stranger work out from this?\" Then agree that late is fine: nobody needs to post in a changing room, at a sleepover or at the school gate."
+      ],
+      "list": [
+        "\"What's the funniest BeReal you've seen this week?\"",
+        "\"Do you know everyone on your friends list in real life?\"",
+        "\"Have you ever posted somewhere you wish you hadn't?\""
+      ]
+    }
+  ],
+  "teachers": "BeReal notifications go off for everyone at once, often during the school day. Expect photos of classrooms and other pupils, and remind pupils that the back camera can capture people who haven't agreed to be in a post.",
+  "faq": [
+    {
+      "q": "What age is BeReal for?",
+      "a": "13. BeReal stops anyone entering an under-13 birth date at sign-up, and suspends accounts reported as belonging to under-13s until ID is shown."
+    },
+    {
+      "q": "Can strangers see my child's BeReal?",
+      "a": "Not by default. Children's accounts are private, but a post shared with Friends of Friends can be seen by people your child doesn't know."
+    },
+    {
+      "q": "Does BeReal have parental controls?",
+      "a": "No. There's nothing you can lock, so set it up together and agree on who they add and what they share."
+    },
+    {
+      "q": "Does BeReal show my child's location?",
+      "a": "Only if location is turned on for a post, but the photos themselves can show where they are. That's the bigger risk."
+    }
+  ],
+  "help": "Worried about something your child has shared or seen? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "BeReal, \"Child Safety on BeReal\", November 2026",
+    "Parent Zone, \"Everything you need to know about BeReal\", June 2026",
+    "TechCrunch, BeReal replaces Discovery with Friends of Friends, 21 August 2023; Voodoo acquisition, 11 June 2024"
+  ],
+  "pdf": "guides/CSG_BeReal.pdf",
+  "image": "CSG_BeReal",
+  "related": [
+    {
+      "title": "Snapchat",
+      "text": "Snap Map, streaks and Family Center",
+      "href": "/guides/snapchat"
+    },
+    {
+      "title": "Locket Widget",
+      "text": "Photos straight to the home screen",
+      "href": "/guides/locket-widget"
+    },
+    {
+      "title": "Your social media footprint",
+      "text": "What they leave behind online",
+      "href": "/download?file=guides/CSG_Social_media_footprint.pdf&name=Social+Media+Footprint"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "slug": "kik",
+  "name": "Kik",
+  "eyebrow": "App guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Is Kik Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is Kik safe for kids? Kik is now for over-18s only, but age checks are weak. The risks of anonymous chat and public groups, and what to do if you find it.",
+  "h1": "Is Kik safe for kids?",
+  "lead": "Kik was once a teenage favourite, and it has a long history in grooming cases. It's now meant for adults only. If you find it on your child's phone, here's what you need to know.",
+  "answer_question": "The short answer",
+  "answer": "No. Kik says users must be 18 or over, and it isn't designed for children. Accounts need only a username and an email address, public groups are full of adult content, and it has no parental controls.",
+  "sections": [
+    {
+      "heading": "What is Kik?",
+      "body": [
+        "Kik is a messaging app owned by MediaLab. People sign up with a username instead of a phone number, then chat one to one, join public groups found by searching a topic or hashtag, and watch live streams where viewers can send paid donations.",
+        "Kik raised its minimum age from 13 to 18 to comply with the UK's Online Safety Act."
+      ]
+    },
+    {
+      "heading": "Why the age limit isn't enough",
+      "body": [
+        "Kik says it uses an age check provider, VerifyMy, to confirm users are over 18. But children's charities and regulators say checks are easy to get round: sign-up needs only an email address and a date of birth, and neither is checked. In September 2026 the Connecticut Attorney General opened an investigation into MediaLab over how Kik keeps children off the app."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Anonymous contact",
+          "body": [
+            "Usernames mean nobody has to say who they really are. An adult can easily pose as a teenager, and there's no phone number to trace."
+          ]
+        },
+        {
+          "heading": "Grooming",
+          "body": [
+            "Kik has come up in grooming and sextortion cases for years. Offenders use it because it's private and anonymous, and often ask children to move to it from another app."
+          ]
+        },
+        {
+          "heading": "Adult content",
+          "body": [
+            "Sexual, drug-related and other adult content is easy to find in public groups and live streams, and much of it seems to get past moderation."
+          ]
+        },
+        {
+          "heading": "Spending",
+          "body": [
+            "Live stream donations use credits bought with real money, with some bundles costing hundreds of pounds."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "If you find Kik on your child's phone",
+      "list": [
+        "Stay calm: they're more likely to tell you what's happened if they're not in trouble",
+        "Ask who they talk to on it, and how they met them",
+        "Look together at chats and groups before anything is deleted",
+        "Screenshot anything worrying, then block and report",
+        "Delete the account and the app, and explain why"
+      ],
+      "after": [
+        "If an adult has asked for photos, sent sexual messages or tried to meet up, report it to CEOP or the police straight away."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "A new online \"friend\" they won't name",
+        "Being asked to move a chat from a game or another app to Kik",
+        "Gifts, money or credits from someone online",
+        "Secrecy about their phone, or panic if you pick it up",
+        "Seeming frightened, ashamed or withdrawn"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Treat Kik on a child's phone as a reason to talk, not a reason to shout. The most important question is who asked them to download it. If the answer is someone they met online, that's the warning sign."
+      ],
+      "list": [
+        "\"How did you hear about Kik?\"",
+        "\"Has anyone asked you to chat somewhere more private?\"",
+        "\"If someone online made you feel uncomfortable, would you tell me?\""
+      ]
+    }
+  ],
+  "teachers": "If a pupil mentions Kik, ask who suggested it. A request to move from a game, social app or group chat to Kik is a recognised grooming pattern. Record it and follow your safeguarding procedures.",
+  "faq": [
+    {
+      "q": "What age is Kik for?",
+      "a": "18. Kik raised its minimum age from 13, but sign-up checks are weak and children do still use it."
+    },
+    {
+      "q": "Does Kik have parental controls?",
+      "a": "No. As an app for adults, it has no parental controls. Users can block people, report them and limit messages from strangers."
+    },
+    {
+      "q": "Why do groomers use Kik?",
+      "a": "Because accounts are anonymous, need no phone number and are easy to make, and chats happen away from the apps parents know about."
+    },
+    {
+      "q": "What should I do if my child is on Kik?",
+      "a": "Talk calmly, look at the chats together, save evidence of anything worrying, then delete the account. Report any adult asking for photos to CEOP or the police."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
+  "sources": [
+    "Parent Zone, \"What parents need to know about Kik\", 11 December 2025",
+    "Internet Matters, \"What is Kik?\" (18+ age limit and VerifyMy checks)",
+    "Connecticut Attorney General's investigation into MediaLab, reported September 2026",
+    "eSafety Commissioner (Australia), Kik guide"
+  ],
+  "pdf": "guides/CSG_Kik.pdf",
+  "image": "CSG_Kik",
+  "related": [
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack on online grooming, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    },
+    {
+      "title": "Sextortion",
+      "text": "What it is and what to do",
+      "href": "/download?file=guides/CSG_Sextortion.pdf&name=Sextortion"
+    },
+    {
+      "title": "Discord",
+      "text": "Age checks, servers and Family Center",
+      "href": "/guides/discord"
+    }
+  ]
+}

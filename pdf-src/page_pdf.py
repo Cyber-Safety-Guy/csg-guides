@@ -167,7 +167,7 @@ if __name__ == "__main__":
         if img:
             try:
                 w, h = Image.open(ROOT / "images" / f"{img}.png").size
-                if abs(h / w - 1.5) > 0.05:
+                if w > h:
                     img = None  # 16:9 title card: keep it
             except FileNotFoundError:
                 pass
