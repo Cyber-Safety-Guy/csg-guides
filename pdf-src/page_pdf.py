@@ -8,6 +8,7 @@ pdf-src/pages/<slug>.json, adds things only the PDF needs:
    "title": "Snapchat: what parents need to know",   # overrides the page h1
    "facts": [["Big text", "small text"], ...],        # 4 boxes beside the title (recommended)
    "group": [{"title": "Key settings", "sections": ["Screen time", "Apps"]}],  # merge short sections into one card grid
+   "lists": {"What to avoid": "flags"},  # force a list style by section heading: flags, ticks, or quotes (no label)
    "skip": ["Section heading"],               # leave a section out of the PDF
    "source_note": "Sources: ..."}             # footer line (default: generic)
 Output: guides/<pdf> (from the page's "pdf"), and if the guide's library image is a 2:3 poster,
@@ -44,15 +45,18 @@ def grid(cards):
     return f'<div class="{cls}">{"".join(cards)}</div>'
 
 
-def lst(items, heading=""):
+def lst(items, heading="", style=None):
     quotes = all(QUOTE.match(i.strip()) for i in items)
+    if style in ("flags", "ticks"):
+        return style, "".join(f"<li>{t(i)}</li>" for i in items)
     if quotes:
         return "qs", "".join(f"<li>{t(QUOTE.match(i.strip()).group(1))}</li>" for i in items)
     kind = "flags" if re.search(r"sign|red flag|watch", heading, re.I) else "ticks"
     return kind, "".join(f"<li>{t(i)}</li>" for i in items)
 
 
-def section_html(n, s):
+def section_html(n, s, styles=None):
+    style = (styles or {}).get(s["heading"])  # sidecar "lists": {heading: "flags" | "ticks" | "quotes"}
     out = [f'<section><h2><span class="n">{n}</span>{t(s["heading"])}</h2>']
     body, subs, items, terms = s.get("body", []), s.get("subsections", []), s.get("list", []), s.get("terms", [])
     if subs:
@@ -65,11 +69,11 @@ def section_html(n, s):
     if terms:
         out.append(grid([card(x["term"], [x["meaning"]]) for x in terms]))
     if items:
-        kind, lis = lst(items, s["heading"])
+        kind, lis = lst(items, s["heading"], style)
         if kind == "qs":
             left = card("", body) if (body and not subs and not terms) else ""
-            block = (f'<div><h3 class="head" style="font-size:15px;margin-bottom:6px">Things you could say</h3>'
-                     f'<ul class="qs">{lis}</ul></div>')
+            label = "" if style == "quotes" else '<h3 class="head" style="font-size:15px;margin-bottom:6px">Things you could say</h3>'
+            block = f'<div>{label}<ul class="qs">{lis}</ul></div>'
             out.append(f'<div class="cols2">{left}{block}</div>' if left else block)
         else:
             if body and not subs and not terms:
@@ -105,7 +109,7 @@ def build_html(slug):
             continue
         else:
             n += 1
-            parts.append(section_html(n, s))
+            parts.append(section_html(n, s, side.get("lists")))
     facts = "".join(f'<div class="fact"><b>{t(a)}</b><span>{t(b)}</span></div>' for a, b in side.get("facts", []))
     answer = (f'<div class="note" style="margin-top:16px"><strong>{t(p["answer_question"])}</strong> {t(p["answer"])}</div>'
               if p.get("answer") else "")

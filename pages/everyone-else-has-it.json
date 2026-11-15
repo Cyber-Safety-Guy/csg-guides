@@ -1,0 +1,104 @@
+{
+  "slug": "everyone-else-has-it",
+  "name": "Everyone else has it",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "\"But Everyone Else Has It!\" A Parent's Guide",
+  "seo_description": "When your child says everyone else has a phone or app: what the UK figures show, how to decide what's right for your family, and how to talk it through.",
+  "h1": "“But everyone else has it!”: a guide for parents",
+  "lead": "It's the phrase every parent hears: everyone else has a phone, everyone's on Snapchat, everyone plays it. Sometimes it's true. Often it isn't quite. Either way, it's worth a proper conversation rather than a yes or no.",
+  "answer_question": "Should I give in when my child says everyone else has it?",
+  "answer": "Not automatically. Find out what they actually want and why, check the facts, and decide what's right for your child. You're not alone in waiting: more than 100,000 UK families have signed a pledge to delay smartphones, and phones are now kept out of the school day in England.",
+  "sections": [
+    {
+      "heading": "What the figures show",
+      "body": [
+        "Ofcom found phone ownership jumps from 56% of 10-year-olds to 83% of 11-year-olds, so around the move to secondary school, \"everyone\" is closer to true. Before that, plenty of children don't have one. Most social media apps are 13+, and the UK plans to stop under-16s using social media from 2027."
+      ]
+    },
+    {
+      "heading": "What's changing in the UK",
+      "list": [
+        "Since September 2026, statutory guidance in England says pupils shouldn't have access to their phones during the school day",
+        "The government plans to stop social media companies providing their services to under-16s, with rules due in December 2026 and the ban from late spring 2027",
+        "Smartphone Free Childhood's Parent Pact, for families delaying smartphones until at least 14, passed 100,000 sign-ups in 2026"
+      ]
+    },
+    {
+      "heading": "What's really going on",
+      "list": [
+        "Fear of being left out of group chats and plans",
+        "Wanting to fit in, and not seem babyish",
+        "Wanting independence",
+        "Sometimes, just really wanting the thing"
+      ]
+    },
+    {
+      "heading": "Options between yes and no",
+      "list": [
+        "A basic phone or smartwatch for calls and messages, before a smartphone",
+        "A smartphone with parental controls and a few approved apps",
+        "Group chats on a family device, so they're not left out",
+        "Waiting a set time, then reviewing together",
+        "Teaming up with other parents in their class so they're not the only one"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Take the feeling seriously even if you say no. Being left out is real for them. Ask what they'd miss and look for ways to solve that. Then explain your reasons honestly, agree when you'll talk about it again, and talk to other parents: you'll often find \"everyone\" is waiting too."
+      ],
+      "list": [
+        "\"What would having it let you do?\"",
+        "\"Who in your class actually has it?\"",
+        "\"What would make it feel fair to you?\""
+      ]
+    }
+  ],
+  "teachers": "Pupils without phones or apps can feel excluded from group chats and plans. Help by keeping class communication off social media, and point parents to their class community: agreeing a shared approach makes it easier for every family.",
+  "faq": [
+    {
+      "q": "What age do most children get a phone in the UK?",
+      "a": "Ofcom found ownership rises from 56% of 10-year-olds to 83% of 11-year-olds, around the move to secondary school."
+    },
+    {
+      "q": "Are phones banned in schools in England?",
+      "a": "Since September 2026, statutory guidance says schools should keep pupils from accessing their phones throughout the school day."
+    },
+    {
+      "q": "What is Smartphone Free Childhood?",
+      "a": "A UK parent-led campaign. Its Parent Pact helps families in the same school agree to delay smartphones until at least 14."
+    },
+    {
+      "q": "How do I say no without my child being left out?",
+      "a": "Offer alternatives, like a basic phone or group chats on a family device, and team up with other parents."
+    }
+  ],
+  "help": "If your child is feeling left out or low, Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Ofcom, \"Younger phone owners, the rise of AI, and consumption over creation\", 21 May 2026",
+    "Department for Education, \"Mobile phones in schools\" statutory guidance (from 1 September 2026)",
+    "House of Commons Library, \"Proposals to ban social media for children\" (CBP-10468)",
+    "Smartphone Free Childhood Parent Pact, reported April 2026"
+  ],
+  "pdf": "guides/CSG_Everyone_else_has_it.pdf",
+  "image": "CSG_Everyone_else_has_it",
+  "related": [
+    {
+      "title": "The platforms your child uses",
+      "text": "A map of the apps, with a guide for each",
+      "href": "/guides/platforms-your-child-uses"
+    },
+    {
+      "title": "Apple Watch parental controls",
+      "text": "A first device without a phone",
+      "href": "/guides/apple-watch-parental-controls"
+    },
+    {
+      "title": "Screen time",
+      "text": "UK guidance and finding a balance",
+      "href": "/guides/screen-time"
+    }
+  ]
+}

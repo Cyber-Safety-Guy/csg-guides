@@ -1,0 +1,125 @@
+{
+  "slug": "social-media-footprint",
+  "name": "Social media footprint",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Your Child's Digital Footprint: Parent's Guide",
+  "seo_description": "Your child's digital footprint explained: what adds to it, how it can follow them, and how to tidy it up, from privacy settings to removing Google images.",
+  "h1": "Your child's social media footprint: a guide for parents",
+  "lead": "Everything your child posts, likes, comments on or is tagged in leaves a trace. Most of it is harmless. But some of it can stick around far longer than they'd like, and be seen by people they never meant to see it.",
+  "answer_question": "What is a digital footprint?",
+  "answer": "It's the trail of information about your child online: what they post, what others post about them, and what apps collect. It can be screenshotted, searched and copied, so the best protection is posting less, keeping accounts private and tidying up regularly.",
+  "sections": [
+    {
+      "heading": "What adds to it",
+      "list": [
+        "Posts, photos, videos, comments and likes",
+        "Photos and tags of them posted by friends, family and schools",
+        "Usernames, bios and profile pictures",
+        "Location tags and check-ins",
+        "Apps, games and competitions they've signed up to"
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "subsections": [
+        {
+          "heading": "It's hard to delete",
+          "body": [
+            "Anything can be screenshotted or saved. Deleting a post doesn't delete the copies."
+          ]
+        },
+        {
+          "heading": "It can be found",
+          "body": [
+            "A name, username or even a face can lead to old posts. Face search engines can match photos across the internet."
+          ]
+        },
+        {
+          "heading": "It can be misused",
+          "body": [
+            "Public photos can be copied for fake profiles, or put into AI tools that make fake images, including for sextortion."
+          ]
+        },
+        {
+          "heading": "It can follow them",
+          "body": [
+            "Colleges, clubs and employers may look them up, and old jokes can look very different years later."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tidy it up together",
+      "list": [
+        "Search their name and username together and see what comes up",
+        "Set accounts to private, and check who can tag them",
+        "Turn off location on posts and photos",
+        "Delete or archive old posts they wouldn't want seen",
+        "Close accounts they no longer use",
+        "Ask friends, family and clubs to remove photos your child isn't happy with"
+      ]
+    },
+    {
+      "heading": "Getting things removed",
+      "list": [
+        "Report the post to the app or site, which can remove it",
+        "Under-18s, or a parent, can ask Google to remove images of them from search results",
+        "Children have a stronger right under UK data protection law to have information about them erased",
+        "For a nude image of an under-18, use Report Remove from Childline and the IWF"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Rather than lecturing, try a simple test together: would you be happy for your teacher, your gran and a stranger to see this? And remember our own posts count too. Make it a family habit to ask before posting about each other."
+      ],
+      "list": [
+        "\"What would someone learn about you from your profile?\"",
+        "\"Is there anything online you'd like to take down?\"",
+        "\"Can I post this photo of you?\""
+      ]
+    }
+  ],
+  "teachers": "Teach pupils that screenshots last and that public profiles can be found. Review how the school publishes pupil photos and names, and help pupils who want photos of themselves removed.",
+  "faq": [
+    {
+      "q": "Can you delete your digital footprint?",
+      "a": "Not completely, because copies and screenshots can remain. You can shrink it by deleting old posts, closing unused accounts and asking for removals."
+    },
+    {
+      "q": "How do I remove photos of my child from Google?",
+      "a": "Google lets under-18s, or their parent, request removal of images of them from search results. Also ask the original site to take the photo down."
+    },
+    {
+      "q": "Do universities and employers look at social media?",
+      "a": "Some do. Encourage your child to keep accounts private and to think about how posts might look in a few years."
+    }
+  ],
+  "help": "Worried about something posted about your child? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Google Search Help, removing images of minors from search results, accessed November 2026",
+    "Information Commissioner's Office, the right to erasure, accessed November 2026",
+    "Childline and IWF, Report Remove, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Social_media_footprint.pdf",
+  "image": "CSG_Social_Media_Footprint",
+  "related": [
+    {
+      "title": "Sharenting",
+      "text": "Posting photos of your children",
+      "href": "/guides/sharenting"
+    },
+    {
+      "title": "PimEyes",
+      "text": "The face search engine",
+      "href": "/guides/pimeyes"
+    },
+    {
+      "title": "BeReal",
+      "text": "What daily photos can give away",
+      "href": "/guides/bereal"
+    }
+  ]
+}
