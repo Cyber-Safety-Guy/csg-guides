@@ -1551,7 +1551,7 @@ function buildResults() {
 
 function guideCard(tag, title, desc, file, img) {
   return `<a href="${BASE}${file}" target="_blank" rel="noopener" class="result-guide-card">
-    <img src="/images/thumbs/${String(img).replace(/\.[a-z]+$/i, '.webp')}" alt="${title}" class="guide-thumb" onerror="this.style.display='none'">
+    <img src="/images/thumbs/${String(img).replace(/\.[a-z]+$/i, '.webp')}${thumbV[img] ? '?v=' + thumbV[img] : ''}" alt="${title}" class="guide-thumb" onerror="this.style.display='none'">
     <div class="guide-info">
       <p class="guide-tag">${tag}</p>
       <h4>${title}</h4>
@@ -1645,7 +1645,7 @@ function renderGuideCard(g, highlight = false) {
   return `
     <a href="${g.link}" target="_blank" rel="noopener" class="guide-card" style="${highlightStyle}">
       <div class="card-img-wrap" style="position:relative;">
-        <img src="/images/thumbs/${g.image.replace(/\.[a-z]+$/i, '.webp')}" alt="${g.title}">
+        <img src="/images/thumbs/${g.image.replace(/\.[a-z]+$/i, '.webp')}${g.v ? '?v=' + g.v : ''}" alt="${g.title}">
         ${badge}${relevantBadge}
       </div>
       <div class="card-body"><h3>${g.title}</h3><p>${g.desc}</p></div>
@@ -1653,10 +1653,12 @@ function renderGuideCard(g, highlight = false) {
     </a>`;
 }
 
+const thumbV = {};  // image -> content hash from guides.json, so remade thumbnails skip the cache
 async function loadLibrary() {
   try {
     const res = await fetch('guides.json');
     allGuides = await res.json();
+    allGuides.forEach(g => { if (g.image && g.v) thumbV[g.image] = g.v; });
     renderLibrary(null, null); // default — show all parental guides, no highlights
   } catch(e) { console.error('Guide library load error:', e); }
 }
