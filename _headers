@@ -10,8 +10,10 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000
 
+# Guide pages and PDFs keep their addresses when updated, so cache them for an hour, not a day.
+# (Images are versioned with ?v= by the build, so they can stay cached for a day.)
 /guides/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600
 /images/*
   Cache-Control: public, max-age=86400
 /assets/fonts/*
