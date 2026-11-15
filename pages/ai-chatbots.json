@@ -1,0 +1,156 @@
+{
+  "slug": "ai-chatbots",
+  "name": "AI chatbots and children",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "AI Chatbots and Kids: A Parent's Guide (2026)",
+  "seo_description": "ChatGPT, Gemini, Meta AI and My AI: how children use AI chatbots, the risks, the new teen settings and parental controls, and what to talk about at home.",
+  "h1": "AI chatbots and children: a guide for parents",
+  "lead": "AI chatbots have gone from novelty to normal in a couple of years. Children use them for homework, ideas, advice and, increasingly, company. They're useful, but they weren't designed with children in mind.",
+  "answer_question": "Are AI chatbots safe for children?",
+  "answer": "They can be useful, with you involved. The risks are wrong answers that sound certain, harmful advice that slips past filters, and children treating a chatbot as a friend. ChatGPT and Meta now offer teen settings and parental controls, but none of them replace talking.",
+  "sections": [
+    {
+      "heading": "How many children use AI?",
+      "body": [
+        "Ofcom's May 2026 research found 56% of 8 to 17-year-olds use AI tools, rising to 66% of 16 and 17-year-olds. 11% had used AI \"as someone to talk to\" or as a friend."
+      ]
+    },
+    {
+      "heading": "The chatbots children meet",
+      "subsections": [
+        {
+          "heading": "ChatGPT",
+          "body": [
+            "For ages 13 and over, with a parent's permission under 18. Since August 2026, ChatGPT for Teens gives 13 to 17-year-olds stricter defaults, and parents can link accounts to set quiet hours and turn off voice, image making and memory. Parents can't read their teen's chats."
+          ]
+        },
+        {
+          "heading": "Meta AI",
+          "body": [
+            "Built into Instagram, WhatsApp and Messenger. Meta says it blocks romantic or sexual chat with teens, and parents can turn off their teen's chats with AI characters."
+          ]
+        },
+        {
+          "heading": "Snapchat My AI",
+          "body": [
+            "Pinned in Snapchat's chat list. Parents can turn it off through Family Center."
+          ]
+        },
+        {
+          "heading": "Gemini and others",
+          "body": [
+            "Google's Gemini, Microsoft Copilot and many smaller apps, each with different age rules and protections."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Confident but wrong",
+          "body": [
+            "Chatbots can make things up and sound completely sure. Children may not check."
+          ]
+        },
+        {
+          "heading": "Harmful answers",
+          "body": [
+            "Filters can be got round. Researchers posing as 13-year-olds in 2026 found most popular chatbots would still help with dangerous requests."
+          ]
+        },
+        {
+          "heading": "A friend that always agrees",
+          "body": [
+            "Chatbots are built to be agreeable. A child who's struggling may get reassurance instead of being pointed to a real person who can help."
+          ]
+        },
+        {
+          "heading": "Privacy",
+          "body": [
+            "What children type can be stored and used to train the AI. Personal details and photos don't belong in a chatbot."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Set it up together",
+      "list": [
+        "Check the age rules for each app they use",
+        "Link your account to their ChatGPT account and set teen controls",
+        "Turn off My AI in Snapchat Family Center if you'd rather they didn't use it",
+        "Turn off chat history or model training where you can",
+        "Agree what's fine (ideas, explaining a topic) and what isn't (doing homework for them, personal problems instead of people)"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Spending hours chatting to an AI, or preferring it to friends",
+        "Getting advice on health, food or feelings from a chatbot",
+        "Becoming secretive about AI chats",
+        "Repeating things a chatbot told them as fact"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Use a chatbot together and try to catch it out: ask it something you know the answer to. It teaches children to question AI better than any warning. And make sure they know that for anything that really matters, a person who loves them is better than a program."
+      ],
+      "list": [
+        "\"What do you use AI for?\"",
+        "\"Has a chatbot ever told you something that turned out to be wrong?\"",
+        "\"Would you ever talk to an AI about something that was worrying you?\""
+      ]
+    }
+  ],
+  "teachers": "Pupils use AI for homework whether or not it's allowed, so teach them to check its answers and cite it honestly. Watch for pupils who describe an AI as their main confidant, and follow your safeguarding procedures if a chatbot has given harmful advice.",
+  "faq": [
+    {
+      "q": "What age is ChatGPT for?",
+      "a": "13 and over, with a parent's permission for under-18s. Teens get stricter settings, and parents can link accounts."
+    },
+    {
+      "q": "Can I see my child's ChatGPT chats?",
+      "a": "No. Linked parents can change settings such as quiet hours, voice and memory, but can't read the conversations."
+    },
+    {
+      "q": "Can I turn off My AI on Snapchat?",
+      "a": "Yes. Parents can turn it off through Snapchat's Family Center."
+    },
+    {
+      "q": "Is it OK for my child to use AI for homework?",
+      "a": "For explaining topics and checking understanding, it can help. Agree that the work itself is theirs, and check the school's rules."
+    }
+  ],
+  "help": "Worried about something an AI told your child? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Ofcom, \"Younger phone owners, the rise of AI, and consumption over creation\", 21 May 2026",
+    "TechRepublic, \"ChatGPT for Teens adds new safeguards\", 24 August 2026",
+    "Meta, AI parental controls for teens, October 2025",
+    "CCDH and CNN chatbot testing, reported March 2026",
+    "Cyber Safety Guy, \"Big tech AI chatbots are not safe for children\", July 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/big-tech-ai-chatbots-not-safe-children",
+  "pdf": "guides/CSG_AI_chatbots_children.pdf",
+  "image": "CSG_AI_Chatbots_and_Children",
+  "related": [
+    {
+      "title": "AI companions",
+      "text": "AI \"girlfriends\" and friends",
+      "href": "/guides/ai-companions"
+    },
+    {
+      "title": "Character.AI",
+      "text": "What's changed for teenagers",
+      "href": "/guides/character-ai"
+    },
+    {
+      "title": "AI in Your Family",
+      "text": "Free Academy pack on AI, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/ai-for-parents/"
+    }
+  ]
+}

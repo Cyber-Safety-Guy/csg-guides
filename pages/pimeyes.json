@@ -1,0 +1,116 @@
+{
+  "slug": "pimeyes",
+  "name": "PimEyes",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "What Is PimEyes? A Parent's Guide (2026)",
+  "seo_description": "What is PimEyes? How the face search engine finds photos from one picture, what it means for your family's privacy, and how to protect your child's photos.",
+  "h1": "What is PimEyes? A guide for parents",
+  "lead": "PimEyes is a face search engine. Upload a photo of someone and it finds other pictures of that face across the internet. It's a reminder that every photo online can be traced back to a person.",
+  "answer_question": "What does PimEyes do?",
+  "answer": "It uses facial recognition to find where a face appears online, from a single photo. PimEyes says it blocks searches of children's faces, but photos of teenagers who look older, and of you, can still be found, and similar tools exist.",
+  "sections": [
+    {
+      "heading": "How PimEyes works",
+      "body": [
+        "You upload a photo of a face. PimEyes scans the images it has collected from public websites and shows matching faces, even on sites you didn't know about. Seeing where each picture came from needs a paid plan."
+      ]
+    },
+    {
+      "heading": "What about children?",
+      "body": [
+        "In October 2023 PimEyes said it would block searches of children's faces, using age detection, and that it had banned more than 200 accounts for searching for children. Age detection isn't perfect, though: older teens can look like adults, and other face search tools don't all have the same rules."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "subsections": [
+        {
+          "heading": "Photos can be traced",
+          "body": [
+            "One photo can lead someone to your social media, your child's school or club page, or an old post you forgot about."
+          ]
+        },
+        {
+          "heading": "Stalking and harassment",
+          "body": [
+            "Face search can be used to find out who someone is from a picture taken in the street or at an event."
+          ]
+        },
+        {
+          "heading": "Fake profiles and AI",
+          "body": [
+            "Found photos can be copied for fake accounts, or put into AI tools that make fake images."
+          ]
+        },
+        {
+          "heading": "Deleting isn't enough",
+          "body": [
+            "Once a photo has been copied or collected, removing your post doesn't remove every copy."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Protect your family's photos",
+      "list": [
+        "Keep children's social media accounts private, and yours too if you post them",
+        "Think twice before posting school uniforms, logos or anything that shows where they are",
+        "Ask schools and clubs how they use photos, and say no if you're not comfortable",
+        "Search for your own face to see what's out there",
+        "PimEyes has an opt-out form to ask for your face to be removed from its results"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Use PimEyes as a conversation starter with teenagers: if a stranger can find you from one photo, what would you post differently? And look at your own posting too. Most photos of young children online were put there by the adults who love them."
+      ],
+      "list": [
+        "\"Did you know a photo can be searched like a name?\"",
+        "\"What could someone work out from your profile picture?\"",
+        "\"Is there a photo of you online you'd like taken down?\""
+      ]
+    }
+  ],
+  "teachers": "Review how your school publishes pupil photos, especially with names, uniforms or locations. Criminals have used ordinary school photos to make fake images for sextortion, so fewer public images of identifiable pupils means less risk.",
+  "faq": [
+    {
+      "q": "Can PimEyes find photos of my child?",
+      "a": "PimEyes says it blocks searches of children's faces, but its age detection isn't perfect, and older teens may be treated as adults."
+    },
+    {
+      "q": "Is PimEyes legal in the UK?",
+      "a": "It's available in the UK. Privacy campaigners have raised concerns about face search engines, and you can ask PimEyes to remove your face from its results."
+    },
+    {
+      "q": "How do I remove my photos from PimEyes?",
+      "a": "Use PimEyes' opt-out form, and remove or make private the original photos where you can. Copies elsewhere may remain."
+    }
+  ],
+  "help": "Worried about a photo of your child being misused? Childline is free and confidential on [0800 1111](tel:08001111), any time. Childline's Report Remove tool can help get a nude image of an under-18 taken down. You are not alone.",
+  "sources": [
+    "The New York Times, PimEyes blocks searches of children's faces, October 2023 (reported by IAPP and others)",
+    "PimEyes, website and opt-out page, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Pimeyes.pdf",
+  "image": "CSG_Pimeyes",
+  "related": [
+    {
+      "title": "Social media footprint",
+      "text": "What your child leaves behind online",
+      "href": "/download?file=guides/CSG_Social_media_footprint.pdf&name=Social+Media+Footprint"
+    },
+    {
+      "title": "Sharenting",
+      "text": "Posting photos of your children",
+      "href": "/download?file=guides/CSG_Sharenting.pdf&name=Sharenting"
+    },
+    {
+      "title": "Sextortion",
+      "text": "What it is and what to do",
+      "href": "/guides/sextortion"
+    }
+  ]
+}
