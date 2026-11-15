@@ -1,0 +1,131 @@
+{
+  "slug": "group-chats",
+  "name": "Group chats",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Kids' Group Chats: A Parent's Guide (2026)",
+  "seo_description": "Children's group chats explained: bullying, being left out, harmful images and pressure, the settings to change on WhatsApp and Snapchat, and what to say.",
+  "h1": "Group chats: a guide for parents",
+  "lead": "Group chats are the playground now: class chats, friendship chats, team chats, all buzzing at once. Most of it is jokes and plans. But it's also where bullying, pressure and upsetting images spread fastest, often out of sight.",
+  "answer_question": "Are group chats safe for kids?",
+  "answer": "Mostly, but they're where a lot of online bullying happens. The main risks are being added to groups with strangers, being left out or targeted, and images being shared that shouldn't be. A couple of settings and a plan for what to do help a lot.",
+  "sections": [
+    {
+      "heading": "Where group chats happen",
+      "body": [
+        "WhatsApp is where most children's group chats live, followed by Snapchat, Instagram, Discord and the chat in games. Groups can be huge, and members often include friends of friends that your child has never met."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Bullying",
+          "body": [
+            "Nasty comments, screenshots shared to mock someone, or a whole group turning on one child. It follows them home and doesn't stop at bedtime."
+          ]
+        },
+        {
+          "heading": "Being left out",
+          "body": [
+            "Being removed from a group, or a second chat made without them, can hurt as much as anything said."
+          ]
+        },
+        {
+          "heading": "Harmful images",
+          "body": [
+            "Anyone in a group can share violent, sexual or upsetting content, and everyone receives it. Sharing a nude image of anyone under 18 is illegal, even between children."
+          ]
+        },
+        {
+          "heading": "Strangers and pressure",
+          "body": [
+            "Large groups bring in people your child doesn't know, and the pressure to reply, keep up and join in can be constant."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Settings to change",
+      "list": [
+        "WhatsApp: Settings, then Privacy, then Groups, and change Everyone to My contacts",
+        "Turn off read receipts to ease the pressure to reply straight away",
+        "Mute busy groups, especially overnight",
+        "Show them how to leave a group, block and report",
+        "Keep phones out of bedrooms at night"
+      ]
+    },
+    {
+      "heading": "If something goes wrong",
+      "list": [
+        "Don't delete anything: screenshot it first",
+        "Don't reply or forward it, and never pass on a nude image, even to show an adult",
+        "Leave the group if it's making them unhappy",
+        "Report it in the app, and tell the school if classmates are involved",
+        "If a nude image of your child is being shared, Childline and the IWF's Report Remove tool can help get it taken down"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Checking their phone anxiously, or jumping when it buzzes",
+        "Not wanting to go to school",
+        "Being upset after looking at their phone, or suddenly not using it",
+        "Deleting chats, or being secretive about a group"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Talk about group chats like you'd talk about the playground: who's in them, what's funny, what's not OK. Agree that if they see something cruel or upsetting, they can show you without losing their phone. And remind them that what they send in a group can be screenshotted and shared forever."
+      ],
+      "list": [
+        "\"Which group chat is the funniest?\"",
+        "\"Has anyone ever been left out or picked on in a group?\"",
+        "\"What would you do if someone shared something horrible?\""
+      ]
+    }
+  ],
+  "teachers": "Much bullying happens in group chats staff never see, so low reports don't mean low bullying. If a nude image of a pupil is being shared, don't view, copy or forward it; follow your safeguarding procedures and the UKCIS guidance on sharing nudes and semi-nudes.",
+  "faq": [
+    {
+      "q": "How do I stop strangers adding my child to WhatsApp groups?",
+      "a": "In WhatsApp, go to Settings, then Privacy, then Groups, and change Everyone to My contacts."
+    },
+    {
+      "q": "What should my child do about bullying in a group chat?",
+      "a": "Screenshot it, don't reply, leave or mute the group, and tell you. Report it in the app and to school if classmates are involved."
+    },
+    {
+      "q": "Is it illegal to share nudes in a group chat?",
+      "a": "Yes, if the person in the image is under 18, even when it's children sharing. Don't forward it. Report it, and use Report Remove to get it taken down."
+    }
+  ],
+  "help": "Worried about something in your child's group chat? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "WhatsApp Help Centre, group privacy settings, accessed November 2026",
+    "Childline and IWF, Report Remove, accessed November 2026",
+    "UKCIS, \"Sharing nudes and semi-nudes: advice for education settings\""
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/whatsapp-group-safety-teens-parents-guide",
+  "pdf": "guides/CSG_Group_chats.pdf",
+  "image": "CSG_Group_Chats",
+  "related": [
+    {
+      "title": "WhatsApp",
+      "text": "Settings and parental controls",
+      "href": "/guides/whatsapp"
+    },
+    {
+      "title": "Raising Kind Kids Online",
+      "text": "Free Academy pack for parents on online kindness",
+      "href": "https://academy.cybersafetyguy.com/packs/kind-for-parents/"
+    },
+    {
+      "title": "Snapchat",
+      "text": "Snap Map, streaks and Family Center",
+      "href": "/guides/snapchat"
+    }
+  ]
+}

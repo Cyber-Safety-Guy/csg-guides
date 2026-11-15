@@ -1,0 +1,142 @@
+{
+  "slug": "screen-time",
+  "name": "Screen time and device overuse",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "How Much Screen Time for Kids? UK Guide (2026)",
+  "seo_description": "How much screen time is too much? The UK's 2026 guidance for under-5s, signs of overuse in older children, and practical ways to find a balance at home.",
+  "h1": "Screen time and device overuse: a guide for parents",
+  "lead": "Screens are part of family life, and a lot of what children do on them is good. The worry is when screens push out sleep, play, school and people. Here's what the UK guidance says and what helps.",
+  "answer_question": "How much screen time is OK for children?",
+  "answer": "For under-5s, the UK government's 2026 guidance says avoid screens for under-2s apart from shared moments like video calls, and keep 2 to 5-year-olds to about an hour a day. For older children there's no official number: what matters is whether screens are crowding out sleep, activity and family time.",
+  "sections": [
+    {
+      "heading": "The UK guidance for under-5s",
+      "body": [
+        "In March 2026 the government published its first screen time guidance for parents of under-5s, on the Best Start in Life website."
+      ],
+      "list": [
+        "Under 2: avoid screens, except shared activities such as video calls with family",
+        "2 to 5: try to keep it to 1 hour a day, less if possible",
+        "Choose slow, simple programmes over fast, social media-style videos",
+        "No social media, and no AI toys, tools or chatbots for young children",
+        "No screens in the hour before bed, and keep bedrooms and mealtimes screen-free"
+      ]
+    },
+    {
+      "heading": "Older children and teens",
+      "body": [
+        "There's no official daily limit for over-5s. In January 2026 the Academy of Medical Royal Colleges, representing 23 UK medical bodies, warned of a \"public health emergency\" from children's unrestricted use of devices and social media. Ofcom found 8 to 14-year-olds spend the equivalent of one day a week online, and 15 to 17-year-olds two days."
+      ]
+    },
+    {
+      "heading": "What too much can affect",
+      "subsections": [
+        {
+          "heading": "Sleep",
+          "body": [
+            "Phones in bedrooms mean late-night scrolling, notifications and tired children the next day."
+          ]
+        },
+        {
+          "heading": "Mood",
+          "body": [
+            "Irritability, meltdowns when asked to stop, and low mood after long sessions."
+          ]
+        },
+        {
+          "heading": "Body",
+          "body": [
+            "Less time moving, and aches from hunching over a phone."
+          ]
+        },
+        {
+          "heading": "Everything else",
+          "body": [
+            "Homework, hobbies, friends and family time get squeezed out."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Finding a balance",
+      "list": [
+        "Look at their screen time together, without judgement",
+        "Agree times and places: no phones at meals or in bedrooms overnight",
+        "Use time limits by app category, set from your own phone",
+        "Turn off non-essential notifications",
+        "Plan things to do offline, and allow them to be bored",
+        "Lead by example: your habits shape theirs"
+      ],
+      "after": [
+        "On iPhone, use Time Allowances and Screen Time Schedule. On Android, use Google Family Link. YouTube and TikTok have their own limits too."
+      ]
+    },
+    {
+      "heading": "Signs it's become a problem",
+      "list": [
+        "Big reactions when asked to stop",
+        "Tiredness, or using devices late at night in secret",
+        "Losing interest in things they used to love",
+        "Falling behind at school, or pulling away from family and friends"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Make the rules together and write them down, so they're about the family, not a punishment. Phones charge downstairs overnight, for everyone. And notice what they're doing on screens, not just how long: an hour making music is different from an hour of scrolling."
+      ],
+      "list": [
+        "\"What do you enjoy most on your phone?\"",
+        "\"How do you feel after a long scroll?\"",
+        "\"What would be a fair rule for all of us, me included?\""
+      ]
+    }
+  ],
+  "teachers": "Tiredness in class is often a late-night phone problem. Encourage parents to keep devices out of bedrooms overnight, and point families of under-5s to the government's Best Start in Life screen time guidance.",
+  "faq": [
+    {
+      "q": "How much screen time should a 2-year-old have?",
+      "a": "UK guidance says try to keep 2 to 5-year-olds to 1 hour a day, less if possible, and avoid screens for under-2s except shared moments like video calls."
+    },
+    {
+      "q": "How much screen time is too much for a teenager?",
+      "a": "There's no official UK limit for teens. Watch whether screens are affecting sleep, mood, schoolwork and time with family and friends."
+    },
+    {
+      "q": "Should my child have their phone in their bedroom at night?",
+      "a": "It's best not to. Charging phones outside bedrooms overnight helps sleep for children and adults alike."
+    },
+    {
+      "q": "How do I set screen time limits?",
+      "a": "Use your child's device controls: Time Allowances on iPhone or Google Family Link on Android. Many apps have their own limits too."
+    }
+  ],
+  "help": "Worried about your child's wellbeing? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Best Start in Life (DfE and DHSC), screen time guidance for under-5s, 27 March 2026",
+    "Academy of Medical Royal Colleges, letter to government, reported January 2026",
+    "Ofcom, \"Younger phone owners, the rise of AI, and consumption over creation\", 21 May 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/the-medical-verdict-is-in-screen",
+  "pdf": "guides/CSG_Screen_time_device_overuse.pdf",
+  "image": "CSG_Screen_Time_Device_Overuse",
+  "related": [
+    {
+      "title": "iPhone parental controls",
+      "text": "Time allowances and schedules",
+      "href": "/guides/iphone-parental-controls"
+    },
+    {
+      "title": "Android parental controls",
+      "text": "Google Family Link, step by step",
+      "href": "/guides/android-parental-controls"
+    },
+    {
+      "title": "YouTube Shorts",
+      "text": "The Shorts feed and how to limit it",
+      "href": "/guides/youtube-shorts"
+    }
+  ]
+}
