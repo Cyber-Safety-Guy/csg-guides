@@ -4,7 +4,9 @@ Usage (repo root): python3 pdf-src/complete.py [dark|light|dyslexic ...] [--only
 
 Every guide in the book comes from its page (pages/<slug>.json) and PDF sidecar
 (pdf-src/pages/<slug>.json), the same wording as the website and the one-page PDFs.
-Output: guides/CSG_Complete_Parents_Guide_<Dark|Light|Dyslexic>.pdf
+Output: guides/CSG_Complete_Parents_Guide_<Dark|Light|Dyslexic>.pdf, plus the cover images
+(images/CSG_Complete_Parents_Guide_<Dark|Light>.png, thumbs/..._Dark.webp) and the ?v= tag on
+the cover in index.html and guides.html, so the new cover shows straight away.
 Two passes: the first finds the page each guide starts on, the second fills the contents.
 """
 import json
@@ -102,7 +104,7 @@ strong, b {{ color: var(--white); font-weight: 600; }}
 .marker {{ position: absolute; font-size: 5px; line-height: 1; color: var(--navy); white-space: nowrap; }}
 .guide, .part, .help-page {{ position: relative; }}
 .cover {{ height: 250mm; display: flex; flex-direction: column; justify-content: center; text-align: center; break-after: page; }}
-.cover img {{ height: 90px; margin: 0 auto 28px; }}
+.cover img {{ height: 150px; width: 150px; border-radius: 50%; margin: 0 auto 28px; }}
 .cover .kicker {{ color: var(--cyan); letter-spacing: .16em; text-transform: uppercase; font-weight: 600; font-size: 10pt; }}
 .cover h1 {{ font-size: 34pt; line-height: 1.05; margin: 10px 0 14px; }}
 .cover p {{ max-width: 120mm; margin: 0 auto; }}
@@ -151,7 +153,7 @@ ul.qs li::before {{ content: "“"; position: absolute; left: 2px; top: -3px; co
 .help-page .num {{ font: 700 15pt/1.2 "{th['heading']}"; color: var(--cyan); }}
 </style></head><body>
 <div class="cover">
-  <img src="{(ROOT / 'assets' / 'brand' / th['logo']).as_uri()}" alt="Cyber Safety Guy">
+  <img src="{(ROOT / 'assets' / 'brand' / 'csg-logo-photo-720.png').as_uri()}" alt="Cyber Safety Guy">
   <div class="kicker">{num} guides, one handbook · November 2026</div>
   <h1>The Complete Parent's Guide</h1>
   <p>Plain-English online safety for parents, teachers and safeguarding professionals. Every guide is checked against the latest platform changes and UK guidance.</p>
@@ -167,6 +169,7 @@ ul.qs li::before {{ content: "“"; position: absolute; left: 2px; top: -3px; co
   <div class="card"><h3>CEOP</h3><p>Report online grooming or sexual abuse of a child. ceop.police.uk</p></div>
   <div class="card"><h3>Police</h3><div class="num">999 or 101</div><p>999 if a child is in immediate danger, 101 otherwise.</p></div>
   <div class="card"><h3>Report Remove</h3><p>Childline and the IWF help under-18s get nude images taken down. childline.org.uk/report-remove</p></div>
+  <div class="card"><h3>Samaritans</h3><div class="num">116 123</div><p>Free, any time, for anyone who's struggling, including parents. samaritans.org</p></div>
   <div class="card"><h3>NSPCC helpline for adults</h3><div class="num">0808 800 5000</div><p>Advice if you're worried about a child. nspcc.org.uk</p></div>
   </div>
   <p style="margin-top:12px">Every guide in this book is also online, with sources, at guides.cybersafetyguy.com. You are not alone.</p>
@@ -216,6 +219,33 @@ def build(theme_key, only=None):
     print(f"guides/{out.name}: {len(fitz.open(out))} pages")
 
 
+def cover_images(theme_key):
+    import hashlib
+    import re
+    import fitz
+    from PIL import Image
+    name = THEMES[theme_key]["name"]
+    if name not in ("Dark", "Light"):
+        return
+    pix = fitz.open(ROOT / "guides" / f"CSG_Complete_Parents_Guide_{name}.pdf")[0].get_pixmap(dpi=200)
+    im = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+    big = im.resize((813, round(im.height * 813 / im.width)), Image.LANCZOS)
+    png = ROOT / "images" / f"CSG_Complete_Parents_Guide_{name}.png"
+    big.save(png, optimize=True)
+    if name != "Dark":
+        return
+    th = big.resize((560, round(big.height * 560 / 813)), Image.LANCZOS)
+    canvas = Image.new("RGB", (560, 840), big.getpixel((5, 5)))
+    canvas.paste(th, (0, (840 - th.height) // 2))
+    canvas.save(ROOT / "images" / "thumbs" / "CSG_Complete_Parents_Guide_Dark.webp", quality=82)
+    v = hashlib.md5(png.read_bytes()).hexdigest()[:8]
+    for page in ("index.html", "guides.html"):
+        f = ROOT / page
+        f.write_text(re.sub(r"CSG_Complete_Parents_Guide_Dark\.png(\?v=[0-9a-f]+)?\"",
+                            f'CSG_Complete_Parents_Guide_Dark.png?v={v}"', f.read_text(encoding="utf-8")), encoding="utf-8")
+    print(f"  cover images updated (v={v})")
+
+
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     only = None
@@ -224,3 +254,5 @@ if __name__ == "__main__":
         args = [a for a in args if a not in only and "," not in a]
     for key in args or list(THEMES):
         build(key, only)
+        if not only:
+            cover_images(key)
