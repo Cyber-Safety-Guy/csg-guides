@@ -34,7 +34,7 @@
     var art = el("article", { "class": "card guide" });
     var imgWrap = el("div", { "class": "guide-img" });
     if (g.image) {
-      var img = el("img", { src: "/images/thumbs/" + g.image.replace(/\.[a-z]+$/i, ".webp"), alt: "", loading: "lazy", width: "560", height: "840" });
+      var img = el("img", { src: "/images/thumbs/" + g.image.replace(/\.[a-z]+$/i, ".webp") + (g.v ? "?v=" + g.v : ""), alt: "", loading: "lazy", width: "560", height: "840" });
       imgWrap.appendChild(img);
     }
     if (g.isNew) imgWrap.appendChild(el("span", { "class": "pill pill-new" }, "New"));

@@ -19,15 +19,16 @@ def pdf_path(link):
     return m.group(1) if m else None
 
 
-def thumb(image):
-    return "/images/thumbs/" + re.sub(r"\.[a-z]+$", ".webp", image)
+def thumb(image, v=None):
+    url = "/images/thumbs/" + re.sub(r"\.[a-z]+$", ".webp", image)
+    return f"{url}?v={v}" if v else url
 
 
 def card(g):
     e = lambda s: html.escape(s or "", quote=True)
     p = pdf_path(g.get("link"))
     href = "/download?" + urlencode({"file": p, "name": g["title"]}) if p else g.get("link", "")
-    img = f'<img src="{e(thumb(g["image"]))}" alt="" loading="lazy" width="560" height="840">' if g.get("image") else ""
+    img = f'<img src="{e(thumb(g["image"], g.get("v")))}" alt="" loading="lazy" width="560" height="840">' if g.get("image") else ""
     new = '<span class="pill pill-new">New</span>' if g.get("isNew") else ""
     age = f'<div class="tags"><span class="pill">Age rating {e(g["ageRating"])}</span></div>' if g.get("ageRating") else ""
     if g.get("page"):

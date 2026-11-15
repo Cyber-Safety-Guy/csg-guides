@@ -7,6 +7,7 @@ the library link (guides.json "page") and the sitemap entry. Run by build.sh aft
 
 Usage: python3 scripts/build_pages.py _site
 """
+import hashlib
 import html
 import json
 import re
@@ -17,6 +18,13 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://guides.cybersafetyguy.com"
 SITE = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "_site"
 LINK = re.compile(r"\[([^\]]+)\]\(((?:https://|/|tel:)[^)\s]+)\)")
+
+
+def ver(rel):
+    """Short content hash for cache busting: images keep their names but get ?v=<hash>,
+    so a remade thumbnail shows at once instead of after the 24-hour cache."""
+    f = ROOT / rel
+    return hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
 
 
 def esc(s):
@@ -40,7 +48,7 @@ def plain(s):
 
 def head(p, url):
     title = f'{p["seo_title"]} | Cyber Safety Guy'
-    img = f'{BASE}/images/{p["image"]}.png' if p.get("image") else f"{BASE}/assets/brand/og-share-1200x630.png"
+    img = f'{BASE}/images/{p["image"]}.png?v={ver("images/" + p["image"] + ".png")}' if p.get("image") else f"{BASE}/assets/brand/og-share-1200x630.png"
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": p["h1"], "description": p["seo_description"], "url": url, "inLanguage": "en-GB",
          "datePublished": p.get("published", p["updated"]), "dateModified": p["updated"], "image": img,
@@ -136,7 +144,7 @@ def page_html(p):
             btns.append(f'<a class="btn btn-primary" href="/download?{esc(q)}">Download the guide (PDF)</a>')
         if p.get("article_url"):
             btns.append(f'<a class="btn btn-ghost" href="{esc(p["article_url"])}">Read my full article</a>')
-        img = (f'<img src="/images/thumbs/{esc(p["image"])}.webp" alt="Cover of the {esc(p["name"])} guide" width="560" height="840" loading="lazy">'
+        img = (f'<img src="/images/thumbs/{esc(p["image"])}.webp?v={ver("images/thumbs/" + p["image"] + ".webp")}" alt="Cover of the {esc(p["name"])} guide" width="560" height="840" loading="lazy">'
                if p.get("image") else "")
         title = f'The one-page {esc(p["name"])} guide' if p.get("pdf") else "Read more"
         text = "Print it, pin it up or send it to another parent. Free, no sign-up." if p.get("pdf") else "My full article goes deeper, with sources."
@@ -167,6 +175,8 @@ def main():
         m = re.search(r"(guides/[A-Za-z0-9_.\-]+\.pdf)$", g.get("link", ""))
         if m and m.group(1) in by_pdf:
             g["page"] = by_pdf[m.group(1)]
+        if g.get("image"):
+            g["v"] = ver("images/thumbs/" + re.sub(r"\.[a-z]+$", ".webp", g["image"]))
     gj.write_text(json.dumps(guides, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # Sitemap: one entry per page, with its updated date
