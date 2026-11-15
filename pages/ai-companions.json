@@ -1,0 +1,128 @@
+{
+  "slug": "ai-companions",
+  "name": "AI companions",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "AI Companions and Kids: A Parent's Guide (2026)",
+  "seo_description": "AI companions and AI \"girlfriends\" explained: what these apps are, why young people use them, the risks of emotional dependence, and what parents can do.",
+  "h1": "AI companions and AI \"girlfriends\": a guide for parents",
+  "lead": "AI companion apps offer a friend, partner or confidant who's always there, always kind and always agrees. For a lonely teenager, that can feel like exactly what they need. That's what worries me.",
+  "answer_question": "Are AI companions safe for children?",
+  "answer": "No, not for children, and many are 18+. They're designed to keep users talking, they can drift into romantic or sexual roleplay, and some have been linked to serious harm. A child who prefers an AI to people needs a real conversation.",
+  "sections": [
+    {
+      "heading": "What are AI companions?",
+      "body": [
+        "Chat apps where you talk to an AI character who remembers you, replies instantly and builds a \"relationship\": a friend, a girlfriend or boyfriend, a favourite fictional character. Some offer voice calls, selfies and paid upgrades. Examples include Character.AI and Replika, and AI characters inside apps like Instagram.",
+        "In Ofcom's May 2026 research, 11% of 8 to 17-year-olds had used AI \"as someone to talk to\" or as a friend."
+      ]
+    },
+    {
+      "heading": "Why young people use them",
+      "list": [
+        "Loneliness, or finding real friendships hard",
+        "Curiosity, and wanting to practise conversations or flirting",
+        "Fandom: chatting to a favourite character",
+        "Someone to talk to who won't judge, gossip or get bored"
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Emotional dependence",
+          "body": [
+            "They're built to keep you coming back. Some children start choosing the AI over friends and family."
+          ]
+        },
+        {
+          "heading": "Sexual content",
+          "body": [
+            "Many companions slide into romantic or sexual roleplay, and age checks are often a tick box."
+          ]
+        },
+        {
+          "heading": "Bad advice when it matters",
+          "body": [
+            "An AI that always agrees can reinforce dark thoughts instead of pointing to help. In the US, families have taken AI companies to court after teenagers died by suicide."
+          ]
+        },
+        {
+          "heading": "Spending and data",
+          "body": [
+            "Paid features unlock \"closer\" relationships, and children share very personal things that are stored by the company."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "What's changed",
+      "body": [
+        "Character.AI stopped open-ended chat for under-18s in November 2025. Meta has paused teens' access to its AI characters and given parents controls to turn them off. Replika and many others are 18+, but checks are easy to get round."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Talking about an AI as a real friend or partner",
+        "Pulling away from friends and family",
+        "Upset or anxious when they can't use the app",
+        "Paying for an AI app, or secrecy about one"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Don't laugh it off or ban it in a panic. Ask what they like about it; the answer usually tells you what they're missing. Explain that the AI is built to agree with them and keep them talking, while a real friend will sometimes challenge them, and will get help if they're in trouble."
+      ],
+      "list": [
+        "\"What do you talk about with it?\"",
+        "\"How do you feel when you stop chatting?\"",
+        "\"Who would you talk to if something was really wrong?\""
+      ]
+    }
+  ],
+  "teachers": "Watch for pupils who seem isolated, talk about online \"friends\" but struggle with peers, or seem emotionally dependent on their device. An AI described as a partner or best friend is a reason for a caring conversation and, where needed, a safeguarding referral.",
+  "faq": [
+    {
+      "q": "What is an AI girlfriend app?",
+      "a": "An app where you chat with an AI character set up as a romantic partner. Most are for adults, and they often include sexual roleplay."
+    },
+    {
+      "q": "What age are AI companion apps for?",
+      "a": "Many, like Replika, are 18+. Character.AI stopped open-ended chat for under-18s in November 2025. Age checks are often weak."
+    },
+    {
+      "q": "Why is my child talking to an AI friend?",
+      "a": "Often loneliness, curiosity or fandom. Ask what they get from it, without judgement, and look at what's missing offline."
+    }
+  ],
+  "help": "Worried about your child's wellbeing? Childline is free and confidential on [0800 1111](tel:08001111), any time. If you're worried about their safety right now, call 999. You are not alone.",
+  "sources": [
+    "Ofcom, \"Younger phone owners, the rise of AI, and consumption over creation\", 21 May 2026",
+    "Character.AI, under-18 changes, announced October 2025",
+    "Meta, AI parental controls for teens, October 2025; Social Media Today, 25 January 2026",
+    "Cyber Safety Guy, \"AI companions: a child safety guide for parents\", October 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/ai-companions-child-safety-parents-guide",
+  "pdf": "guides/CSG_AI_girlfriend_companion.pdf",
+  "image": "CSG_AI_Girlfriends_Companions",
+  "related": [
+    {
+      "title": "Character.AI",
+      "text": "What's changed for teenagers",
+      "href": "/guides/character-ai"
+    },
+    {
+      "title": "AI chatbots and children",
+      "text": "ChatGPT, Meta AI and the rest",
+      "href": "/guides/ai-chatbots"
+    },
+    {
+      "title": "Why kids don't tell parents",
+      "text": "And how to make it easier",
+      "href": "/download?file=guides/CSG_Why_kids_dont_tell_parents.pdf&name=Why+Kids+Dont+Tell+Parents"
+    }
+  ]
+}

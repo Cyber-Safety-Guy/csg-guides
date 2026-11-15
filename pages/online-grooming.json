@@ -1,0 +1,132 @@
+{
+  "slug": "online-grooming",
+  "name": "How online grooming starts",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "How Online Grooming Starts: Parent's Guide",
+  "seo_description": "How online grooming starts: the stages groomers follow, the apps and games where it happens, the warning signs, and what to do if you're worried.",
+  "h1": "How online grooming actually starts",
+  "lead": "Grooming rarely looks scary at the start. It looks like a new friend who's kind, funny and always there. I spent years seeing where it ends. Here's how it begins, so you can spot it early.",
+  "answer_question": "What is online grooming?",
+  "answer": "Grooming is when someone builds a relationship with a child to gain their trust so they can abuse or exploit them. Online, it usually starts with friendly contact in a game or app, moves to private chat, and relies on secrecy. UK police recorded 7,263 offences of sexual communication with a child in a single year.",
+  "sections": [
+    {
+      "heading": "The scale in the UK",
+      "body": [
+        "NSPCC figures from 44 UK police forces show 7,263 Sexual Communication with a Child offences recorded in the year to March 2025. Where the platform was known, Snapchat was used in 40% of cases, WhatsApp in 9% and Facebook and Instagram in 9%. The real number is likely higher, because much of it happens in private chats."
+      ]
+    },
+    {
+      "heading": "The stages of grooming",
+      "subsections": [
+        {
+          "heading": "1. Finding a child",
+          "body": [
+            "In games, group chats, comments and friend suggestions, looking for children who seem lonely, upset or eager for attention."
+          ]
+        },
+        {
+          "heading": "2. Building trust",
+          "body": [
+            "Compliments, shared interests, gifts like game currency, and \"you're so mature for your age\". They may pretend to be a child too."
+          ]
+        },
+        {
+          "heading": "3. Going private",
+          "body": [
+            "Moving the chat from a game or public space to Snapchat, WhatsApp or Discord, where it's harder to see."
+          ]
+        },
+        {
+          "heading": "4. Isolating",
+          "body": [
+            "\"I'm the only one who understands you.\" Turning the child against parents and friends."
+          ]
+        },
+        {
+          "heading": "5. Secrecy",
+          "body": [
+            "\"Don't tell anyone, they won't get it.\" Secrets are the warning sign that matters most."
+          ]
+        },
+        {
+          "heading": "6. Pushing boundaries",
+          "body": [
+            "Sexual talk, requests for images or to meet, often followed by threats if the child tries to stop."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "A new online friend, often older, who they're secretive about",
+        "Gifts, money or game items from someone online",
+        "Using their phone late at night, or hiding the screen",
+        "Changes in mood, sleep, or how they talk about family and friends",
+        "Sexual language or knowledge that seems beyond their age"
+      ]
+    },
+    {
+      "heading": "What to do if you're worried",
+      "list": [
+        "Stay calm, so they keep talking",
+        "Don't confront the person or delete anything",
+        "Screenshot and save messages and usernames",
+        "Report it to CEOP, or call 999 if a child is in immediate danger",
+        "Report the account to the app, then block"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Teach one rule above all: nobody who really cares about you will ask you to keep secrets from your family. Know which apps and games have chat, keep devices out of bedrooms overnight, and make sure your child knows that telling you will never get them in trouble."
+      ],
+      "list": [
+        "\"Who are your online friends? How did you meet them?\"",
+        "\"Has anyone online ever asked you to keep a secret?\"",
+        "\"If someone made you feel uncomfortable, would you tell me?\""
+      ]
+    }
+  ],
+  "teachers": "Listen for older online friends, gifts, requests to move to private apps, and secrecy. Record any concern and follow your safeguarding procedures, including referral to the police or CEOP where a child may be at risk.",
+  "faq": [
+    {
+      "q": "What are the signs of online grooming?",
+      "a": "A secretive new online friend, often older, gifts or money, late-night phone use, mood changes and a push to keep things secret."
+    },
+    {
+      "q": "Which apps do groomers use?",
+      "a": "Any app or game with chat. In UK police data, Snapchat was used most often where the platform was known, followed by WhatsApp, Facebook and Instagram."
+    },
+    {
+      "q": "How do I report online grooming?",
+      "a": "Report it to CEOP at ceop.police.uk, or call 999 if a child is in immediate danger. Keep the evidence and report the account to the app."
+    }
+  ],
+  "help": "If a child is in immediate danger, call 999. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "NSPCC, Sexual Communication with a Child offences, UK police data to March 2025 (published 2025)",
+    "CEOP Safety Centre, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_How_grooming_starts.pdf",
+  "image": "CSG_How_grooming_starts",
+  "related": [
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack on online grooming, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    },
+    {
+      "title": "Snapchat",
+      "text": "Snap Map, streaks and Family Center",
+      "href": "/guides/snapchat"
+    },
+    {
+      "title": "Sextortion",
+      "text": "What it is and what to do",
+      "href": "/guides/sextortion"
+    }
+  ]
+}

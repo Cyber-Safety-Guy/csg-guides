@@ -1,0 +1,114 @@
+{
+  "slug": "sextortion",
+  "name": "Sextortion",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "What Is Sextortion? A UK Parent's Guide (2026)",
+  "seo_description": "What is sextortion? How online blackmail of children works, why teenage boys are targeted, AI fake images, and what to do if it happens to your child.",
+  "h1": "Sextortion: a guide for parents",
+  "lead": "Sextortion is blackmail: someone threatens to share a sexual image of a child unless they pay or send more. It moves fast, it's often run by organised gangs overseas, and it's never the child's fault.",
+  "answer_question": "What should I do if my child is being sextorted?",
+  "answer": "Stay calm and tell them they're not in trouble. Don't pay, stop contact and block. Keep the evidence, report it to the police or CEOP, and use Childline's Report Remove to get images taken down. The National Crime Agency says paying doesn't make it stop.",
+  "sections": [
+    {
+      "heading": "How sextortion happens",
+      "list": [
+        "A message from someone they don't know, or from a hacked friend's account",
+        "Flattery and flirting, often from a fake profile of a girl their age",
+        "A push to move to a private app, and fast sexual chat",
+        "A request for an image, sometimes after the offender sends one first",
+        "Then the threat: pay, or the image goes to family, friends and school"
+      ]
+    },
+    {
+      "heading": "Who's targeted",
+      "body": [
+        "Anyone can be, but the National Crime Agency says boys aged 14 to 17 are particularly at risk. The Internet Watch Foundation's Report Remove service saw 394 sextortion cases from children in 2025, up 34% on the year before, and nearly all were boys."
+      ]
+    },
+    {
+      "heading": "Fake images",
+      "body": [
+        "A child doesn't have to have sent anything. Criminals now take ordinary photos, from social media or school websites, and use AI \"nudify\" tools to make fake sexual images, then use those to blackmail. The images are fake, but the fear is real, and making them of a child is illegal."
+      ]
+    },
+    {
+      "heading": "What to do",
+      "list": [
+        "Stay calm, listen and tell them it's not their fault",
+        "Don't pay. If they already have, don't pay any more",
+        "Stop contact and block, but don't delete the account or messages",
+        "Save evidence: usernames, messages, payment details",
+        "Don't forward or download the image, even to show the police",
+        "Report it to the platform, and to the police on 101 (999 if there's immediate risk) or CEOP",
+        "Use Report Remove from Childline and the IWF to get images taken down"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Sudden panic, fear or withdrawal, especially after being on their phone",
+        "Asking for money or gift cards, or unexplained payments",
+        "Deleting accounts, or suddenly not wanting to use their phone",
+        "Talk of feeling trapped, ashamed or that everything is ruined"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Talk about sextortion before it happens, especially with sons. Explain how it works, and promise that if it ever happens they can come to you and you'll help, not punish. Offenders count on shame and silence. A child who knows they won't be in trouble is much harder to blackmail."
+      ],
+      "list": [
+        "\"Have you heard of sextortion? Do people at school talk about it?\"",
+        "\"If someone online threatened you, what would you do?\"",
+        "\"Whatever happened, I'd help you. You'd never be in trouble for telling me.\""
+      ]
+    }
+  ],
+  "teachers": "Treat any disclosure as a safeguarding matter and follow the UKCIS guidance on sharing nudes and semi-nudes: don't view, copy or forward images. Reassure the pupil they're not to blame, and audit how identifiable pupil photos appear on school websites and social media.",
+  "faq": [
+    {
+      "q": "Should we pay a sextortion blackmailer?",
+      "a": "No. The National Crime Agency says paying doesn't guarantee the threats will stop, and they'll often ask for more."
+    },
+    {
+      "q": "Who do I report sextortion to?",
+      "a": "The police on 101, or 999 if there's immediate risk, or the CEOP Safety Centre. Also report the account to the app."
+    },
+    {
+      "q": "Can I get the images taken down?",
+      "a": "Yes. Childline and the Internet Watch Foundation's Report Remove tool helps under-18s get nude images removed from the internet."
+    },
+    {
+      "q": "Will my child be in trouble with the police?",
+      "a": "The police treat children who are blackmailed as victims. The priority is keeping them safe and stopping the offender."
+    }
+  ],
+  "help": "If your child is being blackmailed, call the police on 101, or 999 if they're in danger, and report to [CEOP](https://www.ceop.police.uk/). Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "National Crime Agency, sextortion advice, accessed November 2026",
+    "Internet Watch Foundation, Report Remove data 2025",
+    "Cyber Safety Guy, \"Sextortion, UK children and the deepfake threat\", September 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/sextortion-uk-children-deepfake-threat-2025-iwf-data",
+  "pdf": "guides/CSG_Sextortion.pdf",
+  "image": "CSG_Sextortion_Image_Based_Abuse",
+  "related": [
+    {
+      "title": "How grooming starts",
+      "text": "The early signs to look for",
+      "href": "/guides/online-grooming"
+    },
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack on online grooming, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    },
+    {
+      "title": "Wizz",
+      "text": "The swipe-to-chat app linked to sextortion",
+      "href": "/guides/wizz"
+    }
+  ]
+}
