@@ -1,0 +1,118 @@
+{
+  "slug": "ios-27-parental-controls",
+  "name": "iOS 27 parental controls",
+  "eyebrow": "Settings guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "iOS 27 Parental Controls: What's New (2026)",
+  "seo_description": "What's new in iOS 27 parental controls: Ask to Browse, contact approval, Communication Safety in FaceTime, time allowances, schedules and where to start.",
+  "h1": "iOS 27 parental controls: what's new",
+  "lead": "Apple rebuilt its parental controls for iOS 27. They've moved, some have new names, and a few of the best ones need switching on. Here are the changes worth five minutes of your time.",
+  "answer_question": "What changed in iOS 27?",
+  "answer": "Parental controls now live under Settings, then Family, on your own iPhone. The big new features are Ask to Browse for websites, approval for new contacts, Communication Safety that covers FaceTime and violent images, and time allowances by category.",
+  "sections": [
+    {
+      "heading": "Before you start",
+      "list": [
+        "Update your devices and your child's to iOS 27, iPadOS 27, macOS 27 or watchOS 27",
+        "On your own iPhone, go to Settings, then Family, then your child's name",
+        "Devices that can't update keep the older controls under Settings, then Screen Time"
+      ]
+    },
+    {
+      "heading": "The new controls",
+      "subsections": [
+        {
+          "heading": "Ask to Browse",
+          "body": [
+            "With Approved Websites Only, your child has to ask before visiting a new website in Safari and other supported browsers. It's on by default for under-13s, and you can choose it for teens too."
+          ]
+        },
+        {
+          "heading": "Approval for new contacts",
+          "body": [
+            "Turn on Manage Contacts and messages from someone new stay hidden until you approve them. Leave Allow Contact Editing off so your child asks before adding anyone."
+          ]
+        },
+        {
+          "heading": "Communication Safety",
+          "body": [
+            "It now steps in before your child sees nudity, gore or violence in photos and videos, in Messages and in FaceTime video calls. Apple says the checking happens on the device."
+          ]
+        },
+        {
+          "heading": "Time Allowances",
+          "body": [
+            "These replace App Limits. Set a daily budget for categories such as Games, Social Media and Entertainment, plus an overall limit."
+          ]
+        },
+        {
+          "heading": "Screen Time Schedule",
+          "body": [
+            "Choose which apps work at different times, with separate weekday and weekend routines. You can pause their device, allow unlimited use or change today's schedule in a couple of taps."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "What hasn't changed",
+      "body": [
+        "Ask to Buy still sends you a request for every download and purchase, and it's on by default for under-13s. Contact limits still only cover Apple's Phone, Messages and FaceTime: WhatsApp, Snapchat and Instagram need their own settings."
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Pick one evening, update everything, and go through the new screens with your child. Explain what you're switching on and why, and agree how they'll ask for more time or a new website. A quick yes from your phone keeps the system feeling fair."
+      ],
+      "list": [
+        "\"If a website you need is blocked, just ask and I'll check it.\"",
+        "\"Which apps do you think should have a time limit?\"",
+        "\"If you get a message from someone you don't know, show me first.\""
+      ]
+    }
+  ],
+  "teachers": "Pupils may now need a parent's approval to open new websites for homework on their own devices. School iPads managed by your IT team aren't affected by these family settings.",
+  "faq": [
+    {
+      "q": "Where are parental controls in iOS 27?",
+      "a": "On your own iPhone, under Settings, then Family, then your child's name. Older devices that can't update still use Settings, then Screen Time."
+    },
+    {
+      "q": "What is Ask to Browse?",
+      "a": "A setting that makes your child ask before visiting a new website. It's on by default for under-13s in iOS 27."
+    },
+    {
+      "q": "Does Communication Safety work in FaceTime?",
+      "a": "Yes. In iOS 27 it covers FaceTime video calls as well as Messages, and it now includes gore and violence as well as nudity."
+    },
+    {
+      "q": "What happened to App Limits?",
+      "a": "They've been replaced by Time Allowances, which set daily limits by category plus an overall daily budget."
+    }
+  ],
+  "help": "Worried about something your child has seen or been sent? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Apple Support, \"Set up parental controls to manage your child's iPhone or iPad\" (iOS 27), accessed November 2026",
+    "Apple Support, Ask to Browse and Communication Safety pages, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_iOS27.pdf",
+  "image": "CSG_iOS27",
+  "related": [
+    {
+      "title": "iPhone parental controls",
+      "text": "Every setting, step by step",
+      "href": "/guides/iphone-parental-controls"
+    },
+    {
+      "title": "Apple Watch parental controls",
+      "text": "Setting up a watch for your child",
+      "href": "/guides/apple-watch-parental-controls"
+    },
+    {
+      "title": "Parental controls wizard",
+      "text": "Settings for your child's devices and apps",
+      "href": "/wizard"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "slug": "chat-hour",
+  "name": "Chat Hour",
+  "eyebrow": "App guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Is Chat Hour Safe for Kids? Parent's Guide",
+  "seo_description": "Is Chat Hour safe for kids? What the chat site and app are, why they're rated for older users, the risks for children, and what to do if you find it.",
+  "h1": "Is Chat Hour safe for kids?",
+  "lead": "Chat Hour is one of the oldest chat sites on the internet: public chat rooms and private messages with strangers from around the world. It's built for adults, and it's no place for a child.",
+  "answer_question": "The short answer",
+  "answer": "No. Chat Hour is for meeting and chatting with strangers, including people looking for relationships. The app is rated 16+ on the App Store and 17+ on Google Play for sexual content and mature themes, there's no real age check, and it has no parental controls.",
+  "sections": [
+    {
+      "heading": "What is Chat Hour?",
+      "body": [
+        "Chat Hour has run chat rooms and social networking since 1999, on its website and in mobile apps. Users create a profile, browse other chatters in photo grids, join public rooms and send private messages. It's free, with no paid version.",
+        "People can be searched for by age, gender, sexual orientation, location and interests, and the app says it's for single or married people looking to meet others."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Strangers",
+          "body": [
+            "Everyone your child meets is a stranger, and many are adults. Anyone can claim to be any age."
+          ]
+        },
+        {
+          "heading": "Sexual content",
+          "body": [
+            "The App Store warns of frequent mature or suggestive themes and crude language, and some sexual content."
+          ]
+        },
+        {
+          "heading": "Searchable profiles",
+          "body": [
+            "Profiles can be found by age, gender and location, which makes it easy for an adult to look for young users nearby."
+          ]
+        },
+        {
+          "heading": "No safety net",
+          "body": [
+            "There's no age verification and no parental controls. Users can block and report, but that relies on a child knowing something is wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "If you find Chat Hour on your child's phone",
+      "list": [
+        "Stay calm, so they're more likely to tell you what's happened",
+        "Ask who they've talked to, and whether anyone asked to chat somewhere else",
+        "Look at messages together before anything is deleted",
+        "Screenshot anything worrying, then delete the account and app",
+        "Use Screen Time or Family Link to block apps rated over their age"
+      ],
+      "after": [
+        "If an adult has asked for photos, sent sexual messages or suggested meeting, report it to CEOP or the police."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Chatting late at night with people they won't name",
+        "An older \"friend\" from online",
+        "Gifts, money or requests to keep a chat secret",
+        "Panic or anger if you pick up their phone"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Ask what drew them to it. Children who go looking for stranger chat are often lonely, bored or curious, and that's worth talking about more than the app itself. Then explain, without shaming them, why chatting with adults they don't know isn't safe."
+      ],
+      "list": [
+        "\"How did you find Chat Hour?\"",
+        "\"Has anyone there asked you personal questions?\"",
+        "\"If someone online made you uncomfortable, would you tell me?\""
+      ]
+    }
+  ],
+  "teachers": "If a pupil mentions Chat Hour or similar stranger chat sites, ask who they've been talking to and whether anyone has asked to move the chat, send images or meet. Record it and follow your safeguarding procedures.",
+  "faq": [
+    {
+      "q": "What age is Chat Hour for?",
+      "a": "The app is rated 16+ on the App Store and 17+ on Google Play. It's designed for adults to meet each other, so it isn't suitable for children."
+    },
+    {
+      "q": "Does Chat Hour check ages?",
+      "a": "No. There's no real age verification, so adults and children can claim any age."
+    },
+    {
+      "q": "Does Chat Hour have parental controls?",
+      "a": "No. Block it with Screen Time or Family Link and the app store's age rating settings."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
+  "sources": [
+    "Apple App Store (UK), \"Chat Hour: Meet New People\" listing, accessed November 2026",
+    "Google Play content rating for Chat Hour (Mature 17+), accessed November 2026",
+    "NSPCC, \"What are chat apps?\", accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Chat_hour.pdf",
+  "image": "CSG_Chat_hour",
+  "related": [
+    {
+      "title": "Omoggle",
+      "text": "Face-rating battles with strangers",
+      "href": "/guides/omoggle"
+    },
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack on online grooming, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    },
+    {
+      "title": "How grooming starts",
+      "text": "The early signs to look for",
+      "href": "/download?file=guides/CSG_How_grooming_starts.pdf&name=How+Grooming+Starts"
+    }
+  ]
+}
