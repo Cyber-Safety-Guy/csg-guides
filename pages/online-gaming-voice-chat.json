@@ -1,0 +1,144 @@
+{
+  "slug": "online-gaming-voice-chat",
+  "name": "Online gaming and voice chat",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Online Gaming and Voice Chat: Parent's Guide",
+  "seo_description": "Is online gaming safe for kids? Voice chat with strangers, in-game spending and skins, and how to set up parental controls on Xbox, PlayStation and Switch.",
+  "h1": "Online gaming and voice chat: a guide for parents",
+  "lead": "Gaming is where a lot of children hang out with their friends now. It's social, creative and fun. It's also where they meet strangers, hear things you wouldn't want them to, and spend real money. Here's how to keep it good.",
+  "answer_question": "Is online gaming safe for kids?",
+  "answer": "It can be, if you set it up together. The main risks are voice and text chat with people they don't know, pressure to spend money, and losing track of time. Consoles and most big games let you turn chat off or limit it to friends.",
+  "sections": [
+    {
+      "heading": "Why it matters",
+      "body": [
+        "In Ofcom's May 2026 research, 55% of 8 to 17-year-olds said they at least sometimes talk to people they've only met online, and 55% use a games console to go online. Games are one of the main places those conversations start."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Strangers in voice chat",
+          "body": [
+            "Voice chat is live and leaves no record. Adults can pose as children, build trust over weeks of playing together, then move the chat to Discord, Snapchat or WhatsApp."
+          ]
+        },
+        {
+          "heading": "Abuse and swearing",
+          "body": [
+            "Open lobbies can be full of swearing, racism and bullying, especially in competitive games."
+          ]
+        },
+        {
+          "heading": "Spending",
+          "body": [
+            "Skins, battle passes, loot boxes and in-game currencies cost real money. Skins can also be traded or gambled on outside the game."
+          ]
+        },
+        {
+          "heading": "Gifts and favours",
+          "body": [
+            "Free skins, currency or help levelling up can be a way for an offender to make a child feel they owe them something."
+          ]
+        },
+        {
+          "heading": "Time",
+          "body": [
+            "Matches don't pause, friends are online late, and games are built to keep you playing."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Set up the controls",
+      "subsections": [
+        {
+          "heading": "On the console",
+          "body": [
+            "Use the free Xbox Family Settings app, the PlayStation Family app or the Nintendo Switch Parental Controls app. Each lets you limit who your child can chat with, set spending limits and play time, and block games by age rating."
+          ]
+        },
+        {
+          "heading": "In the game",
+          "body": [
+            "Many games have their own settings too. Fortnite gives under-13s a restricted account with voice chat and purchases off until a parent allows them, and Roblox only offers voice chat to age-checked users aged 13 and over."
+          ]
+        }
+      ],
+      "list": [
+        "Set chat to friends only, or off for younger children",
+        "Turn on purchase approval and a monthly spending limit",
+        "Check PEGI age ratings, and that the account's date of birth is right",
+        "Keep consoles and headsets in shared rooms for younger children"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "An older gaming \"friend\" who wants to talk privately or on another app",
+        "Gifts of skins, currency or game items from someone online",
+        "Unexplained spending, or asking for gift cards",
+        "Seeming upset, angry or withdrawn after playing",
+        "Gaming late into the night in secret"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Play with them, or at least watch. You'll learn the game, who they play with and how they talk to each other. Agree that if anyone online makes them uncomfortable, they'll come off and tell you, and that they won't lose the game for telling you."
+      ],
+      "list": [
+        "\"Who do you play with online? Do you know them in real life?\"",
+        "\"Has anyone offered you free stuff in a game?\"",
+        "\"What would you do if someone in voice chat said something horrible?\""
+      ]
+    }
+  ],
+  "teachers": "Gaming comes up often in disclosures. Listen for older online friends, gifts of in-game items, requests to move to other apps, and gambling on skins. Because voice chat leaves no record, a pupil's own account matters, so record it and follow your safeguarding procedures.",
+  "faq": [
+    {
+      "q": "How do I turn off voice chat for my child?",
+      "a": "Use your console's family app (Xbox Family Settings, PlayStation Family or Nintendo Switch Parental Controls) to limit or turn off chat, then check the game's own settings too."
+    },
+    {
+      "q": "Can strangers talk to my child on Fortnite?",
+      "a": "Under-13s get a restricted account with voice chat off until a parent allows it. For older children, set voice chat to friends or party only."
+    },
+    {
+      "q": "What is skin gambling?",
+      "a": "Using in-game items, called skins, as stakes on gambling-style websites. It's a way children can lose real money outside the game."
+    },
+    {
+      "q": "How do I stop my child spending money in games?",
+      "a": "Turn on purchase approval and set a spending limit in your console's family app, and don't save a card on their account."
+    }
+  ],
+  "help": "Worried about someone your child has met through a game? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
+  "sources": [
+    "Ofcom, \"Younger phone owners, the rise of AI, and consumption over creation\", 21 May 2026",
+    "Epic Games, Cabined Accounts and parental controls; US FTC settlement with Epic on default chat settings, December 2022",
+    "Roblox, voice chat age checks, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Online_gaming_voice_chat.pdf",
+  "image": "CSG_Online_Gaming_Voice_Chat",
+  "related": [
+    {
+      "title": "Roblox",
+      "text": "Age checks, risks and parental controls",
+      "href": "/guides/roblox"
+    },
+    {
+      "title": "Discord",
+      "text": "Age checks, servers and Family Center",
+      "href": "/guides/discord"
+    },
+    {
+      "title": "Livestreaming",
+      "text": "The rules and risks of going live",
+      "href": "/guides/livestreaming"
+    }
+  ]
+}

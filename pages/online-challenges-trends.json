@@ -1,0 +1,109 @@
+{
+  "slug": "online-challenges-trends",
+  "name": "Online challenges and trends",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Online Challenges and Kids: A Parent's Guide",
+  "seo_description": "Dangerous online challenges and viral trends explained: why children join in, why sharing warnings can backfire, and how to talk about them calmly at home.",
+  "h1": "Online challenges and trends: a guide for parents",
+  "lead": "Every few weeks there's a new one: a dance, a prank, a stunt, a \"hack\". Most are harmless fun. A few hurt children. And sometimes the scare spreads faster than the challenge itself.",
+  "answer_question": "Are online challenges dangerous?",
+  "answer": "Most aren't, but some cause real injuries, and children copy what they see. The best protection is a calm, ongoing conversation about thinking before copying, rather than panicked warnings that name the latest challenge.",
+  "sections": [
+    {
+      "heading": "Why children join in",
+      "list": [
+        "Wanting to fit in, or to be part of the joke",
+        "Likes, views and the chance of going viral",
+        "Not seeing the risk: it looks easy and fun in a 20-second clip",
+        "Dares from friends, in person or in group chats"
+      ]
+    },
+    {
+      "heading": "A real example",
+      "body": [
+        "In 2026, videos told children to microwave squishy toys to soften them. The gel inside can reach boiling point while the outside feels cool, and children in the UK and US were badly burned when the toys burst. In May 2026, Safer Schools found the how-to videos still came up in searches on TikTok, Instagram and YouTube."
+      ]
+    },
+    {
+      "heading": "Hoaxes and scare stories",
+      "body": [
+        "Some \"challenges\" are mostly scare stories. The UK Safer Internet Centre advises not sharing the names and details of harmful challenges widely, because warnings can send curious children looking for them. Government advice for schools notes children are sometimes upset by content shown to them by adults with good intentions."
+      ]
+    },
+    {
+      "heading": "What to do",
+      "list": [
+        "Talk about challenges in general, rather than naming the latest one",
+        "Ask what's going round at school, and listen",
+        "Agree a simple test: could this hurt me, someone else, or get me in trouble?",
+        "Don't search for a challenge on the apps yourself, which can boost it",
+        "Report dangerous videos in the app",
+        "Make sure they know they can tell you about anything without losing their phone"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Unexplained injuries or burns",
+        "Talking about a dare or challenge everyone is doing",
+        "Filming stunts or pranks",
+        "Upset or frightened by something they've heard is going round"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Keep it light and regular. Ask about the funniest trend this week as often as the scariest. If you hear about a frightening one, check a trusted source like the UK Safer Internet Centre before passing it on, and talk to your child without showing them the video."
+      ],
+      "list": [
+        "\"What's the latest trend at school?\"",
+        "\"Have you seen a challenge that looked dangerous?\"",
+        "\"If friends dared you to do something online, what would you do?\""
+      ]
+    }
+  ],
+  "teachers": "When a harmful challenge is circulating, follow the DfE's advice on harmful online challenges and hoaxes: check facts first, avoid naming or showing the challenge to pupils, focus on themes like peer pressure, and share calm, factual messages with parents.",
+  "faq": [
+    {
+      "q": "Should I warn my child about a dangerous challenge?",
+      "a": "Talk about risky challenges in general and how to say no. Naming a specific one can make children curious enough to look it up."
+    },
+    {
+      "q": "How do I know if a challenge is real or a hoax?",
+      "a": "Check a trusted source such as the UK Safer Internet Centre, Childnet or your child's school before sharing warnings."
+    },
+    {
+      "q": "What should I do if my child has done a dangerous challenge?",
+      "a": "Get medical help if they're hurt. Then talk calmly about why they did it, and report the video in the app."
+    }
+  ],
+  "help": "Worried about something your child has seen or done? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "UK Safer Internet Centre, advice on responding to online challenges, accessed November 2026",
+    "Department for Education, \"Harmful online challenges and online hoaxes\"",
+    "Safer Schools (Ineqe) safeguarding alert, 7 May 2026, and BBC News, 4 May 2026",
+    "Cyber Safety Guy, \"Squishy toy microwave trend\", June 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/squishy-toy-microwave-trend-uk-children-burns",
+  "pdf": "guides/CSG_Online_challenges_trends.pdf",
+  "image": "CSG_Online_Challenges_Trends",
+  "related": [
+    {
+      "title": "TikTok",
+      "text": "Teen settings and Family Pairing",
+      "href": "/guides/tiktok"
+    },
+    {
+      "title": "YouTube Shorts",
+      "text": "The Shorts feed and how to limit it",
+      "href": "/guides/youtube-shorts"
+    },
+    {
+      "title": "Group chats",
+      "text": "Bullying, pressure and what to do",
+      "href": "/guides/group-chats"
+    }
+  ]
+}
