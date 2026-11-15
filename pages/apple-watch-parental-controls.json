@@ -1,0 +1,128 @@
+{
+  "slug": "apple-watch-parental-controls",
+  "name": "Apple Watch parental controls",
+  "eyebrow": "Settings guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Apple Watch for Kids: Parental Controls (2026)",
+  "seo_description": "How to set up an Apple Watch for a child without an iPhone: what you need, Schooltime, contacts, location, Ask to Buy and Screen Time, and what to say.",
+  "h1": "How to set up an Apple Watch for your child",
+  "lead": "An Apple Watch is often a child's first connected device: calls, messages and location, without a phone full of apps. Apple's Family Setup lets you run it from your own iPhone. Here's how.",
+  "answer_question": "Can a child have an Apple Watch without an iPhone?",
+  "answer": "Yes. With Family Setup, you set up and manage your child's watch from your own iPhone. You choose who they can contact, see where they are in Find My, limit the watch during school hours and approve anything they download.",
+  "sections": [
+    {
+      "heading": "What you need",
+      "list": [
+        "An Apple Watch Series 4 or later, or an Apple Watch SE, with cellular (GPS-only watches can't be set up this way)",
+        "Your iPhone, with two-factor authentication on your Apple Account",
+        "An Apple Account for your child, in your Family Sharing group",
+        "A mobile data plan for calls and messages away from your iPhone (not needed to set it up)"
+      ]
+    },
+    {
+      "heading": "Set it up",
+      "body": [
+        "Put the watch on your child, hold it near your iPhone and choose Set Up for a Family Member. You'll be walked through each of the settings below. Later, change them in the Watch app on your iPhone: tap All Watches, then your child's watch under Family Watches."
+      ]
+    },
+    {
+      "heading": "The settings that matter",
+      "subsections": [
+        {
+          "heading": "Contacts",
+          "body": [
+            "Choose trusted people from your contacts to put on the watch, and use Screen Time to limit who they can call and message."
+          ]
+        },
+        {
+          "heading": "Schooltime",
+          "body": [
+            "Limits the watch during school hours, so it works like a plain watch in lessons. They can still make emergency calls."
+          ]
+        },
+        {
+          "heading": "Location",
+          "body": [
+            "Turn on location for Find My, so you can see where the watch is from your iPhone."
+          ]
+        },
+        {
+          "heading": "Ask to Buy and Screen Time",
+          "body": [
+            "Ask to Buy sends you a request for every download or purchase. Set a Screen Time passcode so the settings can't be changed."
+          ]
+        },
+        {
+          "heading": "Emergency details",
+          "body": [
+            "Add Emergency Contacts and a Medical ID, so the right people are called in an emergency."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Things to know",
+      "list": [
+        "Some features don't work with Family Setup, including Apple Pay with a card, Sleep, ECG and roaming abroad",
+        "Fall Detection is for users 18 and over, and heart rate alerts for 13 and over",
+        "Family Setup isn't available in every country",
+        "Walkie-Talkie, messages and calls are real-time contact, so keep the contacts list short"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "A watch is a great halfway step before a smartphone. Agree up front what it's for (keeping in touch and getting home safely) and that location sharing is about safety, not spying. Then review the contacts list together every few months."
+      ],
+      "list": [
+        "\"Who do you want on your watch?\"",
+        "\"What would you do if someone you don't know called or messaged you?\"",
+        "\"Is it OK that I can see where you are? Let's talk about when I'd look.\""
+      ]
+    }
+  ],
+  "teachers": "Many schools treat smartwatches like phones. Schooltime can make a pupil's Apple Watch work like a plain watch during the school day, which parents can set from their own iPhone.",
+  "faq": [
+    {
+      "q": "Can my child use an Apple Watch without an iPhone?",
+      "a": "Yes. Family Setup lets you set up and manage a cellular Apple Watch from your own iPhone."
+    },
+    {
+      "q": "Which Apple Watch do I need for a child?",
+      "a": "A cellular Apple Watch Series 4 or later, or a cellular Apple Watch SE. GPS-only models can't use Family Setup."
+    },
+    {
+      "q": "What is Schooltime on Apple Watch?",
+      "a": "A mode that limits the watch's features during school hours, set by a parent. Emergency calls still work."
+    },
+    {
+      "q": "Can I see where my child is with an Apple Watch?",
+      "a": "Yes, if you turn on location during setup. You'll see the watch in the Find My app on your iPhone."
+    }
+  ],
+  "help": "Worried about who's contacting your child? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Apple Support, \"Set up Apple Watch for a family member\", 27 October 2026",
+    "Apple Support, Apple Watch and iPhone compatibility, accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Apple_watch.pdf",
+  "image": "CSG_Apple_watch",
+  "related": [
+    {
+      "title": "iOS 27 parental controls",
+      "text": "What's new in Apple's parental controls",
+      "href": "/guides/ios-27-parental-controls"
+    },
+    {
+      "title": "iPhone parental controls",
+      "text": "Every setting, step by step",
+      "href": "/guides/iphone-parental-controls"
+    },
+    {
+      "title": "Parental controls wizard",
+      "text": "Settings for your child's devices and apps",
+      "href": "/wizard"
+    }
+  ]
+}

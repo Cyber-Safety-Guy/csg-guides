@@ -1,0 +1,155 @@
+{
+  "slug": "livestreaming",
+  "name": "Livestreaming",
+  "eyebrow": "Topic guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Livestreaming and Kids: A Parent's Guide (2026)",
+  "seo_description": "Livestreaming and kids: age rules for TikTok LIVE, YouTube, Instagram and Twitch, the risks of going live, and how to keep your child safe if they stream.",
+  "h1": "Livestreaming and kids: a guide for parents",
+  "lead": "Going live is a big draw for children: real-time chat, an audience and the dream of being a streamer. It's also the one place online where nothing can be taken back. Here's what the rules are and how to keep them safe.",
+  "answer_question": "Should my child livestream?",
+  "answer": "Most platforms say not alone, and not yet. TikTok only lets over-18s go live, YouTube needs an adult on camera with under-16s, and Instagram needs a parent's permission for under-16s. The risks are strangers in the chat, gifts used to pressure children, and things they can't undo.",
+  "sections": [
+    {
+      "heading": "The age rules for going live",
+      "subsections": [
+        {
+          "heading": "TikTok LIVE",
+          "body": [
+            "You must be 18 to go live, and to send or receive gifts."
+          ]
+        },
+        {
+          "heading": "YouTube",
+          "body": [
+            "Since July 2025, under-16s can only stream with an adult visibly present on camera who manages the channel. Streams that break this can lose live chat or live features."
+          ]
+        },
+        {
+          "heading": "Instagram",
+          "body": [
+            "Teens under 16 need a parent's permission, through supervision, to go Live."
+          ]
+        },
+        {
+          "heading": "Twitch",
+          "body": [
+            "Users must be 13, and under-18s may only use Twitch with a parent or guardian's supervision."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Strangers in the chat",
+          "body": [
+            "Anyone watching can type to your child in real time, and offenders look for young streamers. Requests can start innocently (\"do a twirl\", \"show your room\") and escalate."
+          ]
+        },
+        {
+          "heading": "Gifts and pressure",
+          "body": [
+            "Gifts, donations and tips can be used to flatter a child and push them to do things on camera."
+          ]
+        },
+        {
+          "heading": "It can't be undone",
+          "body": [
+            "Viewers can record or screenshot a stream. Whatever happens live can be shared anywhere, forever."
+          ]
+        },
+        {
+          "heading": "Giving too much away",
+          "body": [
+            "A school jumper, a street outside the window or a name said aloud can tell a viewer where your child is."
+          ]
+        },
+        {
+          "heading": "Watching streams",
+          "body": [
+            "Live content is hard to moderate, so children watching streams can see violence, sexual content or cruelty before anyone removes it."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "If your child streams",
+      "list": [
+        "Stream from a shared room, with an adult nearby (and on camera on YouTube for under-16s)",
+        "Plan the background: no school logos, windows, post or anything with your address",
+        "Use a username that isn't their real name",
+        "Turn on chat filters, block words and use trusted moderators",
+        "Agree they'll end the stream straight away if anyone makes them uncomfortable",
+        "Never accept gifts in exchange for doing something on camera"
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "Secret streaming, or streaming late at night",
+        "Gifts, money or in-game items from viewers",
+        "A viewer who wants to talk privately or on another app",
+        "Seeming anxious or upset after going live"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Watch a stream together, theirs or a streamer they like, and talk about the chat as well as the content. If they're desperate to stream, start with a recorded video you can check first. Live can come later, with you in the room."
+      ],
+      "list": [
+        "\"Who's your favourite streamer? What do you like about them?\"",
+        "\"What would you do if someone in the chat asked you to do something?\"",
+        "\"Could anyone work out where we live from your stream?\""
+      ]
+    }
+  ],
+  "teachers": "Pupils who stream may be exposed to adults in real time without anyone else seeing. Listen for gifts from viewers, requests to move to private chats, or a pupil being recorded while live, and follow your safeguarding procedures.",
+  "faq": [
+    {
+      "q": "What age can you go live on TikTok?",
+      "a": "18. TikTok only lets adults go LIVE, and only adults can send or receive gifts."
+    },
+    {
+      "q": "Can under-16s livestream on YouTube?",
+      "a": "Only with an adult visibly present on camera who manages the channel. That rule started in July 2025."
+    },
+    {
+      "q": "Can my teen go live on Instagram?",
+      "a": "Under-16s need a parent's permission through Instagram's supervision tools."
+    },
+    {
+      "q": "Why is livestreaming risky for children?",
+      "a": "Strangers can talk to them in real time, gifts can be used to pressure them, and anything that happens can be recorded and shared."
+    }
+  ],
+  "help": "Worried about something that happened on a stream? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
+  "sources": [
+    "YouTube, live streaming age rules (adult present for under-16s), effective 22 July 2025",
+    "Meta, Instagram Teen Accounts (parent permission for Live under 16), April 2025",
+    "TikTok, LIVE eligibility and gifting age requirements, accessed November 2026",
+    "Twitch Terms of Service (age and supervision), accessed November 2026"
+  ],
+  "pdf": "guides/CSG_Livestreaming.pdf",
+  "image": "CSG_Livestreaming",
+  "related": [
+    {
+      "title": "TikTok",
+      "text": "Teen settings and Family Pairing",
+      "href": "/guides/tiktok"
+    },
+    {
+      "title": "YouTube",
+      "text": "YouTube Kids, supervised and teen accounts",
+      "href": "/guides/youtube"
+    },
+    {
+      "title": "Online gaming and voice chat",
+      "text": "Who your child is really playing with",
+      "href": "/download?file=guides/CSG_Online_gaming_voice_chat.pdf&name=Online+Gaming+and+Voice+Chat"
+    }
+  ]
+}

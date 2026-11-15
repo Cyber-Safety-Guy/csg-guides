@@ -1,0 +1,136 @@
+{
+  "slug": "wizz",
+  "name": "Wizz",
+  "eyebrow": "App guide",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "seo_title": "Is Wizz Safe for Kids? Parent's Guide (2026)",
+  "seo_description": "Is Wizz safe for kids? How the swipe-to-chat friend app works, why it's been called Tinder for kids, the sextortion risk, and what to do if you find it.",
+  "h1": "Is Wizz safe for kids?",
+  "lead": "Wizz calls itself a way to make new friends. Teenagers swipe through profiles of strangers, match and start chatting. It's been called \"Tinder for kids\", and it has a troubling record with sextortion.",
+  "answer_question": "The short answer",
+  "answer": "No, not for children. Wizz is built to connect young people with strangers. It says it checks ages with a selfie and only matches people of a similar age, but adults have got round those checks, and it has been linked to sextortion.",
+  "sections": [
+    {
+      "heading": "What is Wizz?",
+      "body": [
+        "Wizz is a swipe-based app for meeting new people. You make a profile with photos, music and interests, swipe through people who are online, and send a chat request. Once it's accepted, you're \"friends\" and can message freely. Premium features, from about £6.49 a week, push your profile to the top.",
+        "Wizz says users must be 16, raised from 13 in late 2025 after public pressure."
+      ]
+    },
+    {
+      "heading": "Why the safety features fall short",
+      "body": [
+        "Wizz asks for a live selfie that's checked against the profile photo, and says it only matches users with others of a similar age. Researchers posing as children have still been matched with adults, and adults have made fake teen profiles. In 2024 Apple and Google briefly removed the app after reports of widespread sextortion. It's since returned."
+      ]
+    },
+    {
+      "heading": "The risks",
+      "subsections": [
+        {
+          "heading": "Strangers by design",
+          "body": [
+            "The whole app is about meeting people your child doesn't know. Many users treat it like a dating app."
+          ]
+        },
+        {
+          "heading": "Sextortion",
+          "body": [
+            "Offenders build a quick connection, ask for an image and then threaten to share it unless they're paid or sent more."
+          ]
+        },
+        {
+          "heading": "Moving to other apps",
+          "body": [
+            "Chats often move to Snapchat, Instagram or WhatsApp, away from Wizz's moderation."
+          ]
+        },
+        {
+          "heading": "Spending and location",
+          "body": [
+            "Paid boosts and coins push spending, and nearby suggestions can lead to sharing where they live or meeting up."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "If you find Wizz on your child's phone",
+      "list": [
+        "Start with a calm conversation, not a telling-off",
+        "Ask who they've met and where the chats went next",
+        "Explain sextortion in a way that fits their age",
+        "Make sure they know they won't be in trouble if something has already happened",
+        "Delete the app, and use Screen Time or Family Link to block apps by age rating"
+      ],
+      "after": [
+        "If someone is threatening your child, don't pay. Keep the evidence and report it to CEOP or the police on 101 (999 in an emergency)."
+      ]
+    },
+    {
+      "heading": "Signs something's wrong",
+      "list": [
+        "New online \"friends\" they can't explain",
+        "Secrecy about their phone, especially messaging apps",
+        "Anxiety, withdrawal or distress after time online",
+        "Asking for money, or unexplained payments or gifts",
+        "Hidden or disguised apps"
+      ]
+    },
+    {
+      "heading": "What I'd do as a parent",
+      "body": [
+        "Be honest about why you're worried: it's an app for meeting strangers, and that's not safe at their age. Listen to why they wanted it, too. If it's loneliness or wanting to fit in, that's the real conversation."
+      ],
+      "list": [
+        "\"What made you want to try Wizz?\"",
+        "\"Has anyone asked you to move to another app?\"",
+        "\"If someone threatened you online, would you tell me? You won't be in trouble.\""
+      ]
+    }
+  ],
+  "teachers": "Treat swipe-to-chat stranger apps as a safeguarding concern. Include them in online safety teaching for Year 9 and above, brief your PSHE team, and follow your child protection procedures for any disclosure of sextortion.",
+  "faq": [
+    {
+      "q": "What age is Wizz for?",
+      "a": "Wizz says users must be 16. It raised the age from 13 in late 2025, but age checks have been got round."
+    },
+    {
+      "q": "Why is Wizz called Tinder for kids?",
+      "a": "Because it works like a dating app: swipe through profiles of strangers, match and start chatting."
+    },
+    {
+      "q": "Does Wizz have parental controls?",
+      "a": "No. The only privacy option is a private profile. Block it with Screen Time or Family Link instead."
+    },
+    {
+      "q": "What should I do if my child is being blackmailed on Wizz?",
+      "a": "Stay calm, don't pay, keep the evidence and report it to CEOP or the police. Childline's Report Remove tool can help get images taken down."
+    }
+  ],
+  "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report sextortion or grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
+  "sources": [
+    "Parent Zone, \"Everything you need to know about Wizz\", 6 January 2026",
+    "NCOSE, \"Wizz, Tinder for Kids, Is Not As Safe As It Claims\", December 2025",
+    "Cyber Safety Guy, \"Wizz app: child safety guide for parents and teachers\", June 2026"
+  ],
+  "article_url": "https://www.cybersafetyguy.com/p/wizz-app-child-safety-guide-parents-teachers",
+  "pdf": "guides/CSG_Wizz.pdf",
+  "image": "CSG_Wizz",
+  "related": [
+    {
+      "title": "Sextortion",
+      "text": "What it is and what to do",
+      "href": "/download?file=guides/CSG_Sextortion.pdf&name=Sextortion"
+    },
+    {
+      "title": "The New Stranger Danger",
+      "text": "Free Academy pack on online grooming, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/grooming-for-parents/"
+    },
+    {
+      "title": "Kik",
+      "text": "Anonymous chat and why it worries me",
+      "href": "/guides/kik"
+    }
+  ]
+}
