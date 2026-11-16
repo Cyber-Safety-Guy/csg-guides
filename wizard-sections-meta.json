@@ -1,206 +1,201 @@
 {
-  "_comment": "Tracks last-verified dates and search queries for each wizard section. Update last_verified when you confirm steps are accurate. Search queries are scoped to official platform help domains added to the CSG Wizard Checker search engine.",
+  "_comment": "Sections of the parental controls wizard (wizard.html) and the official pages that back them. The monthly check on the platform VM (packs repo, tools/wizard_watch.py) compares watch_urls with last month's copy and searches news_queries; proposed changes go to the packs app for Dale to approve, then a pull request here. last_verified is set by that pull request.",
   "meta": {
-    "version": "1.1",
-    "last_full_review": "2026-05-05",
-    "review_frequency_days": 30,
-    "cse_domains": [
-      "support.apple.com/*",
-      "support.google.com/*",
-      "support.microsoft.com/*",
-      "xbox.com/*",
-      "playstation.com/*",
-      "nintendo.co.uk/*",
-      "help.instagram.com/*",
-      "values.snap.com/*",
-      "support.tiktok.com/*",
-      "faq.whatsapp.com/*",
-      "discord.com/safety/*",
-      "en.help.roblox.com/*",
-      "support.google.com/youtube/*"
-    ]
+    "version": "2.0",
+    "last_full_review": "2026-11-16",
+    "review_frequency_days": 30
   },
   "sections": [
     {
       "id": "D1",
       "label": "iPhone & iPad",
       "tool": "iOS Screen Time",
-      "last_verified": "2026-05-05",
-      "help_url": "https://support.apple.com/en-gb/105120",
-      "search_queries": [
-        "Screen Time parental controls",
-        "Screen Time Communication Limits",
-        "Screen Time Content Privacy Restrictions",
-        "Communication Safety Messages"
+      "last_verified": "2026-11-16",
+      "help_url": "https://support.apple.com/en-gb/105121",
+      "watch_urls": [
+        "https://support.apple.com/en-gb/105121",
+        "https://support.apple.com/guide/child-safety/set-up-parental-controls-kmp239668ukx/web",
+        "https://support.apple.com/guide/child-safety/set-screen-time-schedules-allowances-azgjjn208bw9/web"
+      ],
+      "news_queries": [
+        "Apple Screen Time parental controls new",
+        "iOS Family Sharing child account changes"
       ]
     },
     {
       "id": "D2",
       "label": "Android",
       "tool": "Google Family Link",
-      "last_verified": "2026-05-05",
-      "help_url": "https://support.google.com/families",
-      "search_queries": [
-        "Family Link screen time limits",
-        "Family Link app controls",
-        "Family Link location sharing",
-        "Family Link purchase approval"
+      "last_verified": "2026-11-16",
+      "help_url": "https://support.google.com/families/answer/7103340?hl=en-GB",
+      "watch_urls": [
+        "https://support.google.com/families/answer/7103340?hl=en-GB",
+        "https://support.google.com/families/answer/7101025?hl=en-GB"
+      ],
+      "news_queries": [
+        "Google Family Link new features"
       ]
     },
     {
       "id": "D3",
       "label": "Windows PC",
       "tool": "Microsoft Family Safety",
-      "last_verified": "2026-05-05",
-      "help_url": "https://support.microsoft.com/en-gb/topic/family-safety",
-      "search_queries": [
-        "Family Safety screen time",
-        "Family Safety content filters",
-        "Family Safety spending limits",
-        "Microsoft account child parental controls"
+      "last_verified": "2026-11-16",
+      "help_url": "https://support.microsoft.com/en-gb/family-safety/set-up-microsoft-family-safety",
+      "watch_urls": [
+        "https://support.microsoft.com/en-gb/family-safety/set-up-microsoft-family-safety",
+        "https://www.microsoft.com/en-gb/microsoft-365/family-safety"
+      ],
+      "news_queries": [
+        "Microsoft Family Safety changes"
       ]
     },
     {
       "id": "D4",
       "label": "Mac",
       "tool": "macOS Screen Time",
-      "last_verified": "2026-05-05",
-      "help_url": "https://support.apple.com/en-gb/guide/mac-help/mchledf09187",
-      "search_queries": [
-        "Screen Time Mac parental controls",
-        "Screen Time downtime app limits Mac",
-        "Screen Time content privacy Mac",
-        "Family Sharing Mac location"
+      "last_verified": "2026-11-16",
+      "help_url": "https://support.apple.com/en-gb/guide/mac-help/mchlbcf0dfe2/mac",
+      "watch_urls": [
+        "https://support.apple.com/en-gb/guide/mac-help/mchlbcf0dfe2/mac",
+        "https://support.apple.com/guide/child-safety/set-up-parental-controls-kmp239668ukx/web"
+      ],
+      "news_queries": [
+        "macOS Screen Time parental controls new"
       ]
     },
     {
       "id": "D5",
       "label": "Xbox",
       "tool": "Xbox Family Settings",
-      "last_verified": "2026-05-05",
-      "help_url": "https://www.xbox.com/en-GB/apps/family-settings-app",
-      "search_queries": [
-        "Xbox Family Settings screen time",
-        "Xbox parental controls content rating",
-        "Xbox Family Settings communication multiplayer",
-        "Xbox Family Settings spending"
+      "last_verified": "2026-11-16",
+      "help_url": "https://www.xbox.com/en-GB/family-hub",
+      "watch_urls": [
+        "https://www.xbox.com/en-GB/family-hub"
+      ],
+      "news_queries": [
+        "Xbox Family Settings app update"
       ]
     },
     {
       "id": "D6",
       "label": "PlayStation",
-      "tool": "PlayStation Family Management",
-      "last_verified": "2026-05-05",
-      "help_url": "https://www.playstation.com/en-gb/support/account/psn-family-management",
-      "search_queries": [
-        "PlayStation Family Management play time",
-        "PlayStation parental controls content rating",
-        "PlayStation Family Management communication",
-        "PlayStation spending controls wallet"
+      "tool": "PlayStation Family app",
+      "last_verified": "2026-11-16",
+      "help_url": "https://www.playstation.com/en-gb/ps-family-app/",
+      "watch_urls": [
+        "https://www.playstation.com/en-gb/ps-family-app/"
+      ],
+      "news_queries": [
+        "PlayStation Family app update"
       ]
     },
     {
       "id": "D7",
       "label": "Nintendo Switch",
       "tool": "Nintendo Switch Parental Controls",
-      "last_verified": "2026-05-05",
-      "help_url": "https://www.nintendo.co.uk/Hardware/Nintendo-Switch-Parental-Controls",
-      "search_queries": [
-        "Nintendo Switch Parental Controls app play time",
-        "Nintendo Switch restriction level content",
-        "Nintendo Switch online play friend codes",
-        "Nintendo eShop PIN purchase restriction"
+      "last_verified": "2026-11-16",
+      "help_url": "https://www.nintendo.com/en-gb/Support/Parental-Controls/Parental-Controls-for-Nintendo-Switch-2-and-Nintendo-Switch-Overview-FAQ-1494768.html",
+      "watch_urls": [
+        "https://www.nintendo.com/en-gb/Support/Parental-Controls/Parental-Controls-for-Nintendo-Switch-2-and-Nintendo-Switch-Overview-FAQ-1494768.html",
+        "https://www.nintendo.com/en-gb/Support/Parental-Controls/Guide-for-Parents-Guardians-Getting-Started-with-GameChat-on-Nintendo-Switch-2-2843791.html"
+      ],
+      "news_queries": [
+        "Nintendo Switch Parental Controls app update GameChat"
       ]
     },
     {
       "id": "P1",
       "label": "Instagram",
-      "tool": "Instagram Family Centre",
-      "last_verified": "2026-05-05",
-      "help_url": "https://help.instagram.com/families",
-      "search_queries": [
-        "Instagram Family Centre supervision",
-        "Instagram privacy settings messages",
-        "Instagram sensitive content control",
-        "Instagram hidden words location"
-      ]
+      "tool": "Instagram Teen Accounts and Family Centre",
+      "last_verified": "2026-11-16",
+      "help_url": "https://familycenter.meta.com/uk/instagram-safety/",
+      "watch_urls": [],
+      "news_queries": [
+        "Instagram Teen Accounts parental supervision update",
+        "Meta Family Centre Instagram new"
+      ],
+      "watch_note": "Official pages block automated reads, so the monthly check searches for official announcements instead."
     },
     {
       "id": "P2",
       "label": "Snapchat",
       "tool": "Snapchat Family Centre",
-      "last_verified": "2026-05-05",
-      "help_url": "https://values.snap.com/en-GB/privacy/transparency/family-center",
-      "search_queries": [
-        "Snapchat Family Centre parental supervision",
-        "Snapchat privacy contact me Quick Add",
-        "Snap Map Ghost Mode location",
-        "Snapchat content controls restrict"
+      "last_verified": "2026-11-16",
+      "help_url": "https://parents.snapchat.com/family-center?lang=en-GB",
+      "watch_urls": [
+        "https://parents.snapchat.com/family-center?lang=en-GB",
+        "https://help.snapchat.com/hc/en-gb/articles/7121384944788-What-is-Family-Centre"
+      ],
+      "news_queries": [
+        "Snapchat Family Centre update"
       ]
     },
     {
       "id": "P3",
       "label": "TikTok",
       "tool": "TikTok Family Pairing",
-      "last_verified": "2026-05-05",
-      "help_url": "https://support.tiktok.com/en/account-and-privacy/account-privacy-settings/family-pairing",
-      "search_queries": [
-        "TikTok Family Pairing screen time",
-        "TikTok restricted mode content",
-        "TikTok direct messages privacy under 16",
-        "TikTok coins purchases under 18"
+      "last_verified": "2026-11-16",
+      "help_url": "https://www.tiktok.com/safety/en/tools-and-guides/guardians-guide",
+      "watch_urls": [
+        "https://www.tiktok.com/safety/en/tools-and-guides/guardians-guide"
+      ],
+      "news_queries": [
+        "TikTok Family Pairing new features"
       ]
     },
     {
       "id": "P4",
       "label": "WhatsApp",
       "tool": "WhatsApp Privacy Settings",
-      "last_verified": "2026-05-05",
-      "help_url": "https://faq.whatsapp.com/general/security-and-privacy",
-      "search_queries": [
-        "WhatsApp privacy settings last seen",
-        "WhatsApp group privacy who can add",
-        "WhatsApp silence unknown callers",
-        "WhatsApp live location sharing"
-      ]
+      "last_verified": "2026-11-16",
+      "help_url": "https://faq.whatsapp.com/1726194421218271",
+      "watch_urls": [],
+      "news_queries": [
+        "WhatsApp privacy settings teens new feature",
+        "WhatsApp new feature safety"
+      ],
+      "watch_note": "Official pages block automated reads, so the monthly check searches for official announcements instead."
     },
     {
       "id": "P5",
       "label": "Discord",
-      "tool": "Discord Safety Settings",
-      "last_verified": "2026-05-05",
-      "help_url": "https://discord.com/safety/parents",
-      "search_queries": [
-        "Discord safe direct messaging privacy",
-        "Discord friend requests server members",
-        "Discord parental controls teen safety",
-        "Discord Nitro subscription"
+      "tool": "Discord Family Center",
+      "last_verified": "2026-11-16",
+      "help_url": "https://discord.com/safety-family-center",
+      "watch_urls": [
+        "https://discord.com/safety-family-center",
+        "https://discord.com/safety"
+      ],
+      "news_queries": [
+        "Discord Family Center teen safety update"
       ]
     },
     {
       "id": "P6",
       "label": "Roblox",
-      "tool": "Roblox Parental Controls",
-      "last_verified": "2026-05-05",
-      "help_url": "https://en.help.roblox.com/hc/en-us/articles/203313380",
-      "search_queries": [
-        "Roblox account restrictions privacy",
-        "Roblox parental controls PIN",
-        "Roblox communication settings chat",
-        "Roblox Robux spending limit"
+      "tool": "Roblox Parental Controls (linked parent account)",
+      "last_verified": "2026-11-16",
+      "help_url": "https://about.roblox.com/parental-controls",
+      "watch_urls": [
+        "https://about.roblox.com/parental-controls"
+      ],
+      "news_queries": [
+        "Roblox parental controls update"
       ]
     },
     {
       "id": "P7",
       "label": "YouTube",
       "tool": "YouTube Restricted Mode",
-      "last_verified": "2026-05-05",
-      "help_url": "https://support.google.com/youtube/answer/174084",
-      "search_queries": [
-        "YouTube Restricted Mode lock settings",
-        "YouTube Kids content level parental",
-        "YouTube channel comments settings",
-        "YouTube Premium subscription"
+      "last_verified": "2026-11-16",
+      "help_url": "https://support.google.com/youtube/answer/13877231?hl=en-GB",
+      "watch_urls": [
+        "https://support.google.com/youtube/answer/13877231?hl=en-GB",
+        "https://support.google.com/youtube/answer/174084?hl=en-GB"
+      ],
+      "news_queries": [
+        "YouTube supervised teen account parental controls update"
       ]
     }
   ]
