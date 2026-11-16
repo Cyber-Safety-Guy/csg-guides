@@ -9,7 +9,7 @@
   "h1": "Is Chat Hour safe for kids?",
   "lead": "Chat Hour is one of the oldest chat sites on the internet: public chat rooms and private messages with strangers from around the world. It's built for adults, and it's no place for a child.",
   "answer_question": "The short answer",
-  "answer": "No. Chat Hour is for meeting and chatting with strangers, including people looking for relationships. The app is rated 16+ on the App Store and 17+ on Google Play for sexual content and mature themes, there's no real age check, and it has no parental controls.",
+  "answer": "No. Chat Hour is for meeting and chatting with strangers, including people looking for relationships. The app is rated 16+ on the App Store and PEGI 18 on Google Play for sexual content and mature themes, there's no real age check, and it has no parental controls.",
   "sections": [
     {
       "heading": "What is Chat Hour?",
@@ -85,7 +85,7 @@
   "faq": [
     {
       "q": "What age is Chat Hour for?",
-      "a": "The app is rated 16+ on the App Store and 17+ on Google Play. It's designed for adults to meet each other, so it isn't suitable for children."
+      "a": "The app is rated 16+ on the App Store and PEGI 18 on Google Play. It's designed for adults to meet each other, so it isn't suitable for children."
     },
     {
       "q": "Does Chat Hour check ages?",
@@ -99,7 +99,7 @@
   "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. Report suspected grooming to [CEOP](https://www.ceop.police.uk/). You are not alone.",
   "sources": [
     "Apple App Store (UK), \"Chat Hour: Meet New People\" listing, accessed November 2026",
-    "Google Play content rating for Chat Hour (Mature 17+), accessed November 2026",
+    "Google Play (UK) content rating for Chat Hour (PEGI 18), accessed November 2026",
     "NSPCC, \"What are chat apps?\", accessed November 2026"
   ],
   "pdf": "guides/CSG_Chat_hour.pdf",
