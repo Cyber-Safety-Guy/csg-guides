@@ -646,48 +646,47 @@ const DEVICE_STEPS = {
   D1: { // iPhone/iPad
     C1: {
       steps:[
-        'Settings → Screen Time → Turn On Screen Time → tap <strong>This is My Child\'s iPhone</strong>',
-        'When prompted, set a <strong>Screen Time Passcode</strong> — make it different from the device passcode. Without this, your child can turn Screen Time off.',
-        'Screen Time → <strong>Downtime</strong> → toggle on → set start and end time (e.g. 9pm–7am). Only Always Allowed apps work during Downtime.',
-        'Screen Time → <strong>App Limits</strong> → Add Limit → select Social Networking or Games → set daily time limit.',
-        'Screen Time → <strong>Always Allowed</strong> → remove any apps you don\'t want accessible during Downtime.'
+        'On <strong>your</strong> iPhone: Settings → Family → your child\'s name → <strong>Screen Time</strong> → follow the prompts. Your child needs their own Apple Account in your Family Sharing group.',
+        'When asked, set a <strong>Screen Time passcode</strong> that is different from the device passcode. Without it, your child can turn Screen Time off.',
+        'Settings → Family → your child → <strong>Screen Time Schedule</strong> → turn on Schedule → Add Schedule → choose the days and times the device is paused (e.g. 9pm to 7am). On iOS 26 and earlier this is called Downtime.',
+        'Settings → Family → your child → <strong>Time Allowances</strong> → Add → set daily limits for Entertainment, Games and Social Media. On iOS 26 and earlier this is called App Limits.',
+        'Choose the apps and people that are <strong>always allowed</strong> (for example Phone and Maps) so they still work during scheduled time.'
       ],
-      tip:'The Screen Time passcode is the single most important step. Without it, a child can go to Settings → Screen Time → Turn Off Screen Time in seconds.'
+      tip:'The Screen Time passcode is the single most important step. Without it, a child can turn Screen Time off in seconds. You manage everything from your own iPhone, so you never need to take theirs.'
     },
     C2: {
       steps:[
-        'Screen Time → <strong>Content & Privacy Restrictions</strong> → toggle on.',
-        'Content Restrictions → <strong>Web Content</strong> → Limit Adult Websites (auto-filter) or Allowed Websites Only (whitelist — best for under-10s).',
-        'Content Restrictions → <strong>Apps</strong> → set maximum age rating (e.g. 9+, 12+).',
-        'Content Restrictions → <strong>Explicit Language</strong> → Don\'t Allow (limits Siri and dictation).',
-        'Content Restrictions → Music, Podcasts & News → <strong>Explicit → Off</strong>.'
+        'Settings → Family → your child → <strong>Content & Privacy Restrictions</strong> → Content Restrictions.',
+        'Apps & Websites → Restrictions → <strong>Filtering</strong> → Limit Adult Websites, or Approved Websites Only (best for under-10s). Ask to Browse is on by default for under-13s.',
+        'Set the highest App Store age rating allowed: <strong>4+, 9+, 13+, 16+ or 18+</strong>. Apps above it are hidden from the App Store.',
+        'Content Restrictions → set Music, Podcasts, Books and TV to <strong>block explicit content</strong>.'
       ],
-      tip:'Web content filters only apply to Safari. If your child uses Chrome or another browser on the device, block it via App Limits.'
+      tip:'Age-based restrictions are switched on automatically for under-18s with a Child Account, but check them: the defaults may not match your family\'s rules.'
     },
     C3: {
       steps:[
-        'Screen Time → <strong>Communication Limits</strong> → During Screen Time → Contacts Only.',
-        'During Downtime → set to <strong>Specific Contacts</strong> or No One.',
-        'Settings → Messages → <strong>Filter Unknown Senders</strong> → On (unknown numbers go to a separate tab).',
-        'Screen Time → <strong>Communication Safety</strong> → verify it is active (on by default for under-18s in a Family Sharing group — blurs nudity in Messages).'
+        'Settings → Family → your child → <strong>Allowed Contacts</strong> → During Screen Time → Contacts Only.',
+        'Turn on <strong>Manage Contacts</strong> and choose the contacts you approve. Turn off Allow Contact Editing so your child has to ask you before adding someone new. This is on by default for under-13s.',
+        'Settings → Apps → Messages → <strong>Screen Unknown Senders</strong> → On (messages from unknown numbers go to a separate list).',
+        'Settings → Family → your child → <strong>Communication Safety</strong> → check it is on. It blurs nudity in Messages and FaceTime and is on by default for under-18s.'
       ],
-      tip:'Communication Limits apply to Apple\'s apps only — Phone, Messages, FaceTime. For Instagram, Snapchat, WhatsApp and Discord, see the platform guide below.'
+      tip:'Allowed Contacts covers Apple\'s own apps: Phone, Messages and FaceTime. For Instagram, Snapchat, WhatsApp and Discord, see the platform guide below.'
     },
     C4: {
       steps:[
-        'Set up Family Sharing: Settings → your name → <strong>Family Sharing</strong> → Add Member (child\'s Apple ID).',
-        'Child\'s device → <strong>Find My</strong> → Share My Location → select parent\'s Apple ID.',
+        'Set up Family Sharing: Settings → <strong>Family</strong> → Add Member (your child\'s Apple Account).',
+        'Child\'s device → <strong>Find My</strong> → Share My Location → choose you.',
         'Settings → Privacy & Security → <strong>Location Services</strong> → review each social app → set to Never or While Using.'
       ],
-      tip:'Talk to your child before switching location on. Children who know they\'re located are more likely to speak up if something feels wrong — not less.'
+      tip:'Talk to your child before switching location on. Children who know they\'re located are more likely to speak up if something feels wrong, not less.'
     },
     C5: {
       steps:[
-        'Content & Privacy Restrictions → iTunes & App Store Purchases → <strong>In-App Purchases → Don\'t Allow</strong>.',
-        'Content & Privacy Restrictions → Installing Apps → <strong>Don\'t Allow</strong> (every new install requires your Apple ID).',
-        'Settings → your name → Payment & Shipping → set <strong>Require Password → Always</strong> for all purchases.'
+        'Settings → Family → your child → Apps & Websites → Restrictions → <strong>Ask to Buy</strong> → turn on Require Purchase Approval.',
+        'Apps & Websites → <strong>App Store</strong> → set Installing Apps and In-App Purchases to Blocked if you want a hard stop.',
+        'Don\'t add a payment card to your child\'s Apple Account, so purchases always come through your approval.'
       ],
-      tip:'Even free app downloads can lead to paid subscriptions. Setting \'Always\' for password means every download, paid or free, needs your approval.'
+      tip:'Even free downloads can lead to paid subscriptions. With Ask to Buy on, every download, paid or free, needs your OK.'
     }
   },
   D2: { // Android
@@ -695,28 +694,28 @@ const DEVICE_STEPS = {
       steps:[
         'Download <strong>Google Family Link</strong> (free) on your phone from the App Store or Google Play.',
         'Open Family Link → Get Started → link your child\'s Google account. Under-13s get a supervised account.',
-        'Family Link → child\'s name → <strong>Daily Activity</strong> → tap any app to set a daily time limit.',
-        'Tap <strong>Daily Limit</strong> → set total daily screen time cap.',
-        'Tap <strong>Bedtime</strong> → schedule hours when the device locks automatically. Set separately for school nights and weekends.',
-        'Family Link → Manage → <strong>Apps</strong> → block unapproved apps or mark Always Allowed.'
+        'Family Link → your child → <strong>Screen time</strong> → Time limits → turn on <strong>Daily limit</strong>. Use Weekly schedule to set different days.',
+        'Screen time → <strong>App limits</strong> → set a time limit for any app, or mark an app as unlimited.',
+        'Screen time → <strong>Downtime</strong> → set the hours the device locks overnight. Use <strong>School time</strong> to limit the phone during lessons (emergency calls still work).',
+        'Family Link → Controls → <strong>Apps</strong> → block any app you haven\'t approved.'
       ],
-      tip:'The default is no screen time limit at all. Setting a bedtime lock and daily cap is the most useful single action — do this before anything else.'
+      tip:'The default is no screen time limit at all. Setting Downtime and a daily limit is the most useful single action, so do this before anything else.'
     },
     C2: {
       steps:[
-        'Google Play Store → Settings → <strong>Parental Controls</strong> → set a PIN → select content rating (9+, 12+, 16+).',
-        'Family Link → Manage → <strong>Google Search</strong> → turn on SafeSearch.',
-        'Family Link → Manage → <strong>Chrome</strong> → set to approved sites only or block Chrome entirely.'
+        'Family Link → Controls → <strong>Google Play</strong> → set content ratings for apps and games (PEGI 3, 7, 12 or 16 in the UK).',
+        'Family Link → Controls → <strong>Google Search</strong> → check SafeSearch is on.',
+        'Family Link → Controls → <strong>Google Chrome</strong> → Only allow approved sites, or Try to block explicit sites.'
       ],
-      tip:'If your child uses any browser other than Chrome — Firefox, Brave, Opera — block it in Family Link Apps. Content filters don\'t apply to other browsers.'
+      tip:'If your child uses any browser other than Chrome (Firefox, Brave, Opera), block it in Family Link. Content filters don\'t apply to other browsers.'
     },
     C3: {
       steps:[
-        'Family Link → Manage → <strong>App Permissions</strong> → Contacts → revoke access for unapproved messaging apps.',
-        'Android has no built-in communication limits. Your main control is which messaging apps are installed.',
-        'Family Link → Manage → Apps → <strong>block any messaging apps</strong> you haven\'t approved.'
+        'Family Link → Controls → <strong>Contacts</strong> → choose who your child can call and text. Your child can ask to add a new contact and you approve or decline it.',
+        'Family Link → Controls → <strong>Apps</strong> → block any messaging apps you haven\'t approved.',
+        'Turn on approval for new app downloads so every new messaging app needs your OK.'
       ],
-      tip:'Approve every new app before it downloads. That single step does more than any individual platform setting.'
+      tip:'Approved contacts cover the phone\'s own calls and texts. Messaging apps like WhatsApp and Snapchat have their own settings: see the platform guide below.'
     },
     C4: {
       steps:[
@@ -727,9 +726,9 @@ const DEVICE_STEPS = {
     },
     C5: {
       steps:[
-        'Family Link → Manage → Google Play → <strong>Purchases and Downloads → Require approval</strong> for all purchases.',
-        'Child\'s device → Play Store → Profile → Settings → <strong>Purchase Authentication → Always</strong>.',
-        'Remove saved payment cards from child\'s Google account.'
+        'Family Link → Controls → <strong>Google Play</strong> → Purchases → require approval for all purchases.',
+        'Child\'s device → Play Store → Profile → Settings → <strong>Purchase authentication</strong> → For all purchases.',
+        'Remove saved payment cards from your child\'s Google account.'
       ],
       tip:'Talk to your child about what in-app purchases actually cost in real money. Many children don\'t connect spending virtual coins with spending real pounds.'
     }
@@ -763,11 +762,11 @@ const DEVICE_STEPS = {
     },
     C4: {
       steps:[
-        'Family Safety → child\'s name → <strong>Location</strong> → toggle on (requires Location Services enabled on the device).',
-        'Settings → Privacy → Location → Location Services → On → Microsoft apps can access location.',
-        'For social app location: manage at app level — see platform steps below.'
+        'Microsoft removed location sharing from Family Safety in November 2024, so there is no location tracking for Windows devices.',
+        'Settings → Privacy & security → <strong>Location</strong> → turn off location for apps that don\'t need it.',
+        'For social app location, manage it in each app: see the platform steps below.'
       ],
-      tip:'Location is only available on laptops and tablets with GPS hardware. Desktop PCs do not have location capability.'
+      tip:'If you want to know where your child is, use their phone instead: Find My on iPhone or Family Link on Android.'
     },
     C5: {
       steps:[
@@ -783,59 +782,58 @@ const DEVICE_STEPS = {
   D4: { // Mac
     C1: {
       steps:[
-        'System Settings → <strong>Screen Time</strong> → select child\'s account (if Family Sharing is set up) → turn on.',
-        'Options → <strong>Use Screen Time Passcode</strong> → set a passcode different from the Mac login password.',
-        'Screen Time → <strong>Downtime</strong> → toggle on → set hours the Mac is locked.',
-        'Screen Time → <strong>App Limits</strong> → Add Limit → select categories or specific apps → set daily time.'
+        'On your Mac: System Settings → <strong>Family</strong> → your child\'s name → Screen Time → turn on. You can also manage it from your iPhone: Settings → Family.',
+        'Set a <strong>Screen Time passcode</strong> that is different from the Mac login password.',
+        'Screen Time Schedule → turn on → set the hours the Mac is paused. On macOS 26 and earlier this is called Downtime.',
+        '<strong>Time Allowances</strong> → Add → set daily limits for categories or apps. On macOS 26 and earlier this is called App Limits.'
       ],
-      tip:'The Screen Time passcode is separate from the Mac login password. Without it, your child can go to System Settings → Screen Time and turn it off.'
+      tip:'The Screen Time passcode is separate from the Mac login password. Without it, your child can go to System Settings and turn Screen Time off.'
     },
     C2: {
       steps:[
-        'Screen Time → <strong>Content & Privacy Restrictions</strong> → toggle on.',
-        'Web Content → <strong>Limit Adult Websites</strong> or Allowed Websites Only (whitelist — best for under-10s).',
-        'Apps → set maximum age rating.',
-        'Explicit Language → Don\'t Allow. Music, Movies → Explicit → Off.',
-        'App Limits → <strong>block Chrome</strong> and other non-Safari browsers.'
+        'Family → your child → <strong>Content & Privacy Restrictions</strong> → turn on.',
+        'Websites → Limit Adult Websites, or Approved Websites Only (best for under-10s).',
+        'Set the highest App Store age rating allowed: <strong>4+, 9+, 13+, 16+ or 18+</strong>.',
+        'Set music, films and books to block <strong>explicit content</strong>.',
+        'Use Time Allowances to block Chrome and other browsers you haven\'t approved.'
       ],
-      tip:'Web content filters apply to Safari only. If your child uses Chrome on their Mac, block it via App Limits — otherwise the filter is bypassed.'
+      tip:'Web filters work best in Safari. If your child uses Chrome on their Mac, block it, otherwise the filter can be bypassed.'
     },
     C3: {
       steps:[
-        'Screen Time → <strong>Communication Limits</strong> → Contacts Only.',
-        'Applies to FaceTime and Messages on Mac.',
-        'For Discord, WhatsApp Web, Instagram — manage at platform level using the guide below.'
+        'Family → your child → <strong>Allowed Contacts</strong> → Contacts Only.',
+        'Turn on Manage Contacts so your child has to ask you before messaging someone new.',
+        'Applies to FaceTime and Messages on the Mac. For Discord, WhatsApp and Instagram, use the platform guide below.'
       ],
-      tip:'Communication Limits on Mac apply to Apple apps only. For third-party apps, platform-level settings are your main tool.'
+      tip:'Allowed Contacts on the Mac covers Apple\'s own apps only. For other apps, platform settings are your main tool.'
     },
     C4: {
       steps:[
-        'Set up Family Sharing: System Settings → your name → Family Sharing → Add Member.',
-        '<strong>Find My</strong>: child shares location with parent via findmy.apple.com.',
-        'System Settings → Privacy & Security → Location Services → review per-app for social apps.'
+        'Set up Family Sharing: System Settings → <strong>Family</strong> → Add Member.',
+        'Location usually comes from your child\'s iPhone through <strong>Find My</strong>; a MacBook signed in to their account also shows there.',
+        'System Settings → Privacy & Security → Location Services → review each social app.'
       ],
-      tip:'MacBooks with Location Services enabled will appear in Find My. iMac and Mac Mini desktop computers do not have GPS and will not show location.'
+      tip:'MacBooks with Location Services on appear in Find My. iMac and Mac mini desktops don\'t move, so location isn\'t useful for them.'
     },
     C5: {
       steps:[
-        'Screen Time → Content & Privacy Restrictions → App Store Purchases → <strong>In-App Purchases → Don\'t Allow</strong>.',
-        'Installing Apps → Don\'t Allow (every new install requires your Apple ID).',
-        'Require Password → Always for all purchases.',
-        'Family Sharing: child\'s purchase requests come to you for approval via notification.'
+        'Family → your child → <strong>Ask to Buy</strong> → turn on Require Purchase Approval.',
+        'App Store → set Installing Apps and In-App Purchases to Blocked if you want a hard stop.',
+        'Don\'t add a payment card to your child\'s Apple Account.'
       ],
-      tip:'Even free app downloads can lead to recurring subscriptions. The \'Always\' password setting means you see every single download.'
+      tip:'Even free downloads can lead to recurring subscriptions. Ask to Buy means you see every single one.'
     }
   },
   D5: { // Xbox
     C1: {
       steps:[
-        'Download <strong>Xbox Family Settings</strong> app (free) on your phone. Sign in with your Microsoft account.',
-        'In the app → add child\'s Xbox/Microsoft account.',
-        'Family Settings → child\'s name → <strong>Screen time</strong> → set daily limit.',
-        'Set <strong>different limits</strong> for school days vs weekends.',
-        'When limit is reached, your child is signed out automatically.'
+        'Download the <strong>Xbox Family Settings</strong> app (free) on your phone. Sign in with your Microsoft account.',
+        'In the app → add your child\'s Xbox/Microsoft account.',
+        'Family Settings → your child → <strong>Screen time</strong> → set a daily limit, or build a schedule with different days for school and weekends.',
+        'Set <strong>app and game limits</strong> for individual games, or block a game completely.',
+        'When time runs out your child is signed out. They can send you a request for more time.'
       ],
-      tip:'Your child\'s Xbox account must be set up as a child account under your Microsoft family. An independent adult account cannot have parental controls applied.'
+      tip:'Your child\'s Xbox account must be set up as a child account in your Microsoft family. An independent adult account can\'t have parental controls applied.'
     },
     C2: {
       steps:[
@@ -876,89 +874,86 @@ const DEVICE_STEPS = {
   D6: { // PlayStation
     C1: {
       steps:[
-        '<strong>Critical first step:</strong> Go to <strong>account.sonyinteractive.com</strong> → Family Management → Create Family → add child\'s account as a <strong>sub-account</strong>. Controls do not work on independent accounts.',
-        'Download the <strong>PlayStation App</strong> (free) on your phone.',
-        'App → Family Management → child\'s account → <strong>Play Time Settings</strong> → set daily limit and restriction hours.',
-        'Set hours when the console locks automatically.'
+        'Download the <strong>PlayStation Family</strong> app (free, iPhone and Android) and sign in with your PlayStation account. Its guided setup creates a child account in your family.',
+        'Controls only work on a child account in your family, not on an independent account.',
+        'PlayStation Family → your child → <strong>Manage Playtime</strong> → set a daily limit and the hours they can play.',
+        'Turn on notifications so you can approve or decline requests for extra time from your phone.'
       ],
-      tip:'If your child already has an independent PlayStation account, you cannot move it to a sub-account. A new child sub-account will need to be created.'
+      tip:'If your child already has an independent PlayStation account, you can\'t move it into your family. A new child account will need to be created.'
     },
     C2: {
       steps:[
-        'Family Management → child\'s account → <strong>Parental Controls</strong> → Content Rating Restriction.',
-        'Set to appropriate PEGI level.',
-        'Also restrict: PS Store content and internet browser access.'
+        'PlayStation Family → your child → <strong>Content Filters</strong> → choose the age preset.',
+        'Adjust it if needed: game ratings (PEGI), PlayStation Store content and the web browser.'
       ],
-      tip:'PEGI rating restrictions apply to new purchases and downloads. They do not remove games already in the library.'
+      tip:'Age filters apply to new purchases and downloads. They don\'t remove games already in the library.'
     },
     C3: {
       steps:[
-        'Family Management → child\'s account → Privacy Settings → <strong>Communication and User Generated Content</strong>.',
-        'Set to <strong>Restrict</strong> — prevents messaging and chat with non-friends.',
-        'Review child\'s Friends list regularly in Family Management.',
-        'Voice chat in games: Restrict setting also affects party chat.'
+        'PlayStation Family → your child → <strong>Social Interactions</strong> → restrict communication and user-generated content.',
+        'This stops messaging and chat with people who aren\'t friends, including party chat.',
+        'Review your child\'s friends list regularly.'
       ],
-      tip:'Voice chat and party chat are the main vectors for stranger contact on PlayStation. The Restrict setting is the most important control on this console.'
+      tip:'Voice chat and party chat are the main routes for stranger contact on PlayStation. Restricting communication is the most important control on this console.'
     },
     C4: {
       steps:[
-        'PlayStation consoles do not share live location data.',
-        'No action required on console for location.',
-        'Profile visibility: Family Management → Privacy Settings → set profile to Friends Only or No One.'
+        'PlayStation consoles don\'t share live location data.',
+        'No action needed on the console for location.',
+        'Profile visibility: PlayStation Family → your child → Social Interactions → set the profile to Friends Only or No One.'
       ],
-      tip:'Location risk on PlayStation is indirect — profile information, voice chat, and in-game conversations can reveal personal details. Privacy settings and communication controls are your primary protection.'
+      tip:'Location risk on PlayStation is indirect: profile information, voice chat and in-game conversations can reveal personal details. Privacy and communication settings are your main protection.'
     },
     C5: {
       steps:[
-        'Family Management → child\'s account → <strong>Spending Controls</strong> → set monthly limit.',
-        'Child must request wallet top-up from you — you receive a notification to approve.',
-        'Remove stored payment cards from child\'s PSN account.'
+        'PlayStation Family → your child → <strong>Manage Spending</strong> → set a monthly limit.',
+        'Top up your child\'s wallet from the app when you agree to a purchase.',
+        'Remove stored payment cards from your child\'s account.'
       ],
-      tip:'PlayStation Store purchases and PlayStation Plus subscriptions are separate. Check both are set to require approval.'
+      tip:'PlayStation Store purchases and PlayStation Plus subscriptions are separate. Check both.'
     }
   },
   D7: { // Nintendo Switch
     C1: {
       steps:[
-        'Download <strong>Nintendo Switch Parental Controls</strong> app (free) on your phone.',
-        'On console: System Settings → Parental Controls → Use this app → <strong>scan QR code</strong> with your phone.',
-        'In app: set <strong>Play Time Limit</strong> (daily hours).',
-        'Set <strong>Bedtime Alarm</strong> → the console displays a warning and then a lock screen.',
-        'Note: changes require the console to be physically present to re-pair if PIN is changed.'
+        'Download the <strong>Nintendo Switch Parental Controls</strong> app (free) on your phone.',
+        'On the console: System Settings → Parental Controls → follow the steps to link the app (scan the QR code or enter the code).',
+        'In the app: set a <strong>Play Time Limit</strong> (daily hours).',
+        'Choose what happens when time is up: a warning on screen, or <strong>Suspend Software</strong>, which puts the console to sleep.',
+        'Play time limits and GameChat controls can only be set in the app, not on the console.'
       ],
-      tip:'Nintendo Switch has the strongest default protections of any major console. The main risk increases when online play is enabled.'
+      tip:'Nintendo Switch has some of the strongest default protections of any console. The main risk increases when online play and chat are switched on.'
     },
     C2: {
       steps:[
-        'Parental Controls app → <strong>Restriction Level</strong> → select Child (PEGI 3), Pre-teen (PEGI 7/12), or Teen (PEGI 16).',
-        'Custom Settings → Software Rating → restrict specific PEGI levels.',
-        'Custom Settings → restrict: internet browser, local wireless, social media posting.'
+        'Parental Controls app → Restriction Level → <strong>Young Child</strong>, <strong>Child</strong> or <strong>Teen</strong>. Each sets the highest game age rating for your region.',
+        'Custom Settings → Restricted Software → allow or block individual games.',
+        'Custom Settings → restrict communicating with others. On the original Switch you can also block posting to social media.'
       ],
-      tip:'Nintendo\'s curated online environment is considerably safer than PlayStation or Xbox by default. Focus on online play controls rather than content restrictions.'
+      tip:'Nintendo\'s online environment is safer than PlayStation or Xbox by default. Focus on chat and online play rather than only content ratings.'
     },
     C3: {
       steps:[
-        'Custom Settings → <strong>Online Play → Restrict</strong> (blocks all internet multiplayer).',
-        'Custom Settings → <strong>Friend Codes → Restrict</strong> sharing (prevents strangers adding your child).',
-        'Nintendo Switch does not have built-in voice chat — voice typically runs through the Nintendo Switch Online app on a separate phone. Manage this at phone level.'
+        'Custom Settings → <strong>Communicating with others</strong> → Restrict. You can allow specific games.',
+        'Nintendo Switch 2 has built-in voice and video chat called <strong>GameChat</strong>. Under-16s can\'t use it until you approve each friend in the Parental Controls app, and video chat needs your approval each session.',
+        'Nintendo Account settings (accounts.nintendo.com) → turn off <strong>friend suggestions</strong> for your child.'
       ],
-      tip:'If your child uses Discord or another app for voice chat during gaming sessions, manage that at the phone level using the CSG Discord guide.'
+      tip:'GameChat needs a Nintendo Switch Online membership and your approval. On the original Switch, voice chat runs through the Nintendo Switch Online phone app, so manage it on the phone.'
     },
     C4: {
       steps:[
-        'Nintendo Switch does not share location data.',
-        'No action required on console for location.'
+        'Nintendo Switch doesn\'t share location data.',
+        'No action needed on the console for location.'
       ],
-      tip:'Location risk on Nintendo Switch is indirect — user profiles and online conversations can reveal personal information. Restricting friend codes is your primary control.'
+      tip:'Location risk on Nintendo Switch is indirect: profiles and online conversations, including GameChat on Switch 2, can reveal personal information. Chat approvals are your main control.'
     },
     C5: {
       steps:[
-        'Set a <strong>Parental Controls PIN</strong> in the app — all eShop purchases require this PIN on the console.',
-        'The PIN must be entered on the console for every purchase.',
-        'Nintendo eShop → Parental Controls → Restrict purchases → toggle on.',
-        'Do not store a payment card in the eShop without PIN protection active.'
+        'Spending is controlled on <strong>your Nintendo Account</strong>, not in the app: go to accounts.nintendo.com → Family Group → your child → restrict Nintendo eShop purchases.',
+        'The Parental Controls app has a shortcut to these settings.',
+        'Don\'t store a payment card on your child\'s account.'
       ],
-      tip:'The Nintendo PIN must be entered physically on the console — it cannot be bypassed remotely. This is one of the more robust purchase controls of any gaming platform.'
+      tip:'Because the limit is set on the account, it applies on any console your child signs in to.'
     }
   }
 };
@@ -966,39 +961,39 @@ const DEVICE_STEPS = {
 // ── Platform-level steps: PLATFORM_STEPS[platform][concern] ──
 const PLATFORM_STEPS = {
   P1: { // Instagram
-    intro:'Instagram has a built-in parent supervision tool called <strong>Family Centre</strong>. Set this up first: your profile → ☰ → Settings & privacy → Supervision → Invite a parent.',
+    intro:'Under-18s on Instagram get a <strong>Teen Account</strong> with stricter settings by default, and under-16s need your permission to make them less strict. Set up supervision first: your child\'s Instagram → Settings and activity → <strong>Family Centre</strong> → invite you.',
     C1: {
       steps:[
-        'Instagram → profile → ☰ → Settings & privacy → <strong>Your time on Instagram</strong> → Set daily time limit.',
-        'Turn on <strong>Remind me to take breaks</strong> → set reminder interval.',
-        'Family Centre (from your account): you can set time limits remotely from your phone.'
+        'Teen Accounts get <strong>Sleep mode</strong> (notifications muted overnight) and a reminder to leave the app after 60 minutes a day.',
+        'Family Centre (from your account): set a daily time limit and the Sleep mode hours remotely.',
+        'Profile → Settings and activity → <strong>Time management</strong> → check the daily limit your child has set.'
       ],
-      tip:'Instagram has no way to enforce a time limit — your child can dismiss the reminder. Device-level app limits (see above) are more effective.'
+      tip:'Instagram\'s own reminders can be dismissed. Device-level app limits (see above) are more effective for actual time control.'
     },
     C2: {
       steps:[
-        'Profile → Settings & privacy → <strong>Content preferences</strong> → Sensitive content control → Standard (filters more sensitive content).',
-        'Settings & privacy → <strong>Hidden words</strong> → add words to filter from comments and DMs.',
-        'Block accounts: Profile → search for account → Block → choose to block related accounts.'
+        'Teen Accounts see content inspired by <strong>13+ film ratings</strong> by default. With supervision you can choose the stricter <strong>Limited content</strong> setting.',
+        'Settings and activity → <strong>Hidden words</strong> → add words to filter from comments and message requests (on by default for teens).',
+        'Block accounts: open the profile → ⋯ → Block → choose to block other accounts they may create.'
       ],
-      tip:'Instagram\'s algorithm is not reliable enough on its own. These settings reduce exposure but do not eliminate it. Regular check-ins matter more than any setting.'
+      tip:'No setting catches everything. These reduce exposure but don\'t remove it. Regular check-ins matter more than any setting.'
     },
     C3: {
       steps:[
-        'Profile → Settings & privacy → Privacy → Messages → <strong>Who can send you messages → People you follow</strong> (prevents cold contact from strangers).',
-        'Settings & privacy → Privacy → Followers → switch to <strong>Private Account</strong>.',
-        'Settings & privacy → Privacy → <strong>Tags</strong> → Who can tag you → People you follow.',
-        'Family Centre: parent can see time spent and be alerted to new unknown contacts.'
+        'Teen Accounts can only be messaged by people they follow or are already connected to. Check it hasn\'t been changed: Settings and activity → Messages and story replies → <strong>Message controls</strong>.',
+        'Teen Accounts are <strong>private</strong> by default. Under-16s need your permission to go public.',
+        'Settings and activity → Tags and mentions → allow tags from <strong>People you follow</strong> only.',
+        'Family Centre: see who your child follows, who follows them and who they\'ve messaged in the past week (not the messages).'
       ],
-      tip:'Family Centre does not let parents read message content — it shows who your child is talking to and how long they spend on the app. This is intentional and protects your child\'s privacy while keeping you informed.'
+      tip:'Family Centre doesn\'t let you read messages. It shows who your child is talking to and how long they spend on the app, which protects their privacy while keeping you informed.'
     },
     C4: {
       steps:[
-        'When posting: <strong>never add a location tag</strong> to photos or Stories.',
-        'Phone level: Settings → Privacy → Location Services → Instagram → <strong>set to Never</strong>.',
-        'Stories: location stickers reveal where your child is in real time — discuss removing this habit.'
+        '<strong>Instagram Map</strong> (in messages) lets users share their location with friends. It\'s off by default; with supervision you\'re told if your child turns it on.',
+        'When posting: never add a location tag to photos or Stories.',
+        'Phone level: Settings → Privacy → Location Services → Instagram → set to Never.'
       ],
-      tip:'Existing posts can have location tags. Check older posts in the profile and remove any tags that reveal home, school or regular locations.'
+      tip:'Older posts can have location tags. Check the profile together and remove any that reveal home, school or regular places.'
     },
     C5: {
       steps:[
@@ -1010,58 +1005,57 @@ const PLATFORM_STEPS = {
     }
   },
   P2: { // Snapchat
-    intro:'Snapchat has a Family Centre that lets you see who your child is talking to (not message content) and manage their friend list. Set this up first: your child\'s Snapchat → ⚙️ Settings → Family Centre → Invite a parent.',
+    intro:'Snapchat\'s <strong>Family Centre</strong> shows who your child is friends with and talking to (not message content), how much time they spend on the app, and lets you set content controls. Set this up first: your child\'s Snapchat → ⚙️ Settings → Family Centre → invite you.',
     C1: {
       steps:[
-        'Snapchat has no native screen time controls.',
-        'Use <strong>device-level app limits</strong> (see above) to set a daily timer for Snapchat.',
-        'Family Centre does not include screen time management — device level is your only option here.'
+        'Snapchat has no time limit setting.',
+        'Family Centre shows the <strong>average time per day</strong> your child spent on Snapchat over the past week, and which features they use most.',
+        'Use device-level app limits (see above) to actually cap the time.'
       ],
-      tip:'Device-level limits are your only tool for Snapchat screen time. Set these in your device settings using the steps above.'
+      tip:'Family Centre tells you how long, but only device-level limits can stop the app. Use both.'
     },
     C2: {
       steps:[
-        'Family Centre → child\'s account → <strong>Content controls</strong> → Restrict sensitive content.',
-        'This limits exposure to sensitive Discover content.',
-        'Snapchat Stories and snaps from friends are not filtered by this setting.'
+        'Family Centre → <strong>Content controls</strong> → restrict sensitive content.',
+        'This limits sensitive content in Stories and Spotlight from people your child isn\'t friends with.',
+        'Family Centre → turn off <strong>My AI</strong> if you don\'t want your child chatting with Snapchat\'s AI.'
       ],
-      tip:'Content restriction applies to Discover only — not to messages, stories from friends or snaps received. The conversation is the most important safeguard for Snapchat content.'
+      tip:'Content controls don\'t filter snaps or chats from friends. The conversation is the most important safeguard for Snapchat content.'
     },
     C3: {
       steps:[
-        'Profile → ⚙️ → Privacy Controls → <strong>Contact Me → My Friends</strong> (prevents strangers snapping).',
+        'Profile → ⚙️ → Privacy Controls → <strong>Contact Me</strong> → My Friends.',
         '⚙️ → Privacy Controls → View My Story → My Friends.',
-        '⚙️ → Privacy Controls → <strong>See Me in Quick Add → toggle off</strong> (stops strangers finding your child).',
-        'Family Centre: parent can see full friend list and be alerted to new unknown contacts.'
+        '⚙️ → Privacy Controls → <strong>See Me in Quick Add</strong> → off (stops strangers finding your child).',
+        'Family Centre: see the full friend list, new friends and how they were added, and who your child messaged in the last 7 days. You can report an account straight from Family Centre.'
       ],
-      tip:'Quick Add is how most stranger contact starts on Snapchat. Turning it off is the single most important step — more than any other privacy setting.'
+      tip:'Quick Add is how most stranger contact starts on Snapchat. Turning it off is the single most important step.'
     },
     C4: {
       steps:[
-        'Open Snap Map (pinch on camera screen or swipe to Map) → ⚙️ top right → select <strong>Ghost Mode</strong>.',
-        'Ghost Mode stops your location being visible to anyone.',
-        'Even in Ghost Mode, your child can still see other people\'s locations.'
+        'Open Snap Map (swipe to Map) → ⚙️ → <strong>Ghost Mode</strong> on.',
+        'Ghost Mode stops your child\'s location being visible to friends.',
+        'If you want to see each other\'s location, Family Centre lets you share locations as a family instead.'
       ],
-      tip:'Snap Map is one of the most significant location risks for young people. Ghost Mode should be the default, not optional. Check this setting regularly — it can be changed by your child without notice.'
+      tip:'Snap Map is one of the biggest location risks for young people. Ghost Mode should be the default. Check it regularly, as your child can change it.'
     },
     C5: {
       steps:[
-        'Snapchat+ (paid subscription): ⚙️ → Snapchat+ → <strong>Cancel Subscription</strong> if active.',
-        'Manage purchases at device level — see device steps above.',
-        'Standard Snapchat has no other in-app purchases.'
+        '⚙️ → check for paid subscriptions such as <strong>Snapchat+</strong> and cancel any you didn\'t agree to.',
+        'Manage purchases at device level: see device steps above.'
       ],
-      tip:'Snapchat+ is the only paid feature on Snapchat. If your child has it active and you didn\'t approve it, check your linked payment method at device level.'
+      tip:'Snapchat\'s paid features are subscriptions. If one is active and you didn\'t approve it, check the payment method on the device.'
     }
   },
   P3: { // TikTok
     intro:'TikTok\'s Family Pairing links your account to your child\'s so you can manage settings remotely. Set this up first: parent downloads TikTok → ☰ → Settings → Family Pairing → Parent. Child: ☰ → Settings → Family Pairing → Teen → scan QR code.',
     C1: {
       steps:[
-        'Profile → ☰ → Settings → <strong>Screen Time</strong> → Daily Screen Time → set limit.',
-        'Family Pairing (from your account): Screen Time Management → toggle on → set limit remotely.',
-        'Screen Time Management also <strong>prevents your child from changing the limit</strong> without parent approval.'
+        'Under-18 accounts have a <strong>60-minute daily limit</strong> by default. After that, a passcode is needed to keep watching.',
+        'Family Pairing (from your account): Screen time → set the daily limit remotely so your child can\'t change it.',
+        'Family Pairing → <strong>Time Away</strong> → block TikTok at set times such as school, meals or bedtime. Your child can ask for more time and you decide.'
       ],
-      tip:'Family Pairing gives you remote control of the screen time limit so your child cannot override it. This is the most important reason to set up Family Pairing first.'
+      tip:'Family Pairing gives you remote control of the time limit so your child can\'t override it. This is the main reason to set it up first.'
     },
     C2: {
       steps:[
@@ -1073,13 +1067,13 @@ const PLATFORM_STEPS = {
     },
     C3: {
       steps:[
-        'Profile → Settings → Privacy → <strong>Direct Messages → No one</strong> (recommended for under-16) or Friends only.',
-        'Privacy → <strong>Suggest your account to others → toggle off</strong>.',
-        'Privacy → Who can see your followers list → Only me.',
-        'Privacy → Who can Duet / Stitch with your videos → Friends or Off.',
-        'Family Pairing: you can manage DM settings remotely from your account.'
+        'Under-16s can\'t use direct messages. For 16 and 17: Settings → Privacy → <strong>Direct messages</strong> → Friends or No one.',
+        'Privacy → Suggest your account to others → turn off.',
+        'Privacy → Who can see your following list → Only me.',
+        'Duet and Stitch are off for under-16s. For older teens: Privacy → Duet / Stitch → Friends or Off.',
+        'Family Pairing: see who your child follows and who follows them, and manage these settings remotely.'
       ],
-      tip:'Accounts under 16 have DMs turned off by default on TikTok — but age is self-reported at signup. Check this setting manually regardless of the age they entered.'
+      tip:'Teen protections depend on the age entered at sign-up. Check your child\'s settings manually, whatever age they gave.'
     },
     C4: {
       steps:[
@@ -1119,12 +1113,13 @@ const PLATFORM_STEPS = {
     },
     C3: {
       steps:[
-        'Settings → Privacy → Last Seen and Online → <strong>My Contacts</strong>.',
+        'Settings → Privacy → Last Seen and Online → My Contacts.',
         'Settings → Privacy → Profile Photo → My Contacts.',
-        'Settings → Privacy → <strong>Groups → Who can add me to groups → My Contacts</strong> (critical — stops strangers adding your child to group chats without permission).',
-        'Settings → Privacy → Calls → <strong>Silence unknown callers → On</strong>.'
+        'Settings → Privacy → <strong>Groups</strong> → My Contacts (stops strangers adding your child to group chats).',
+        'Settings → Privacy → Calls → <strong>Silence unknown callers</strong> → on.',
+        'WhatsApp <strong>usernames</strong> are rolling out, so people can message without a phone number. Agree with your child that they don\'t share their username publicly.'
       ],
-      tip:'The Groups privacy setting is the most important one. Anyone with your child\'s phone number can add them to a group chat by default. Changing this to My Contacts stops that.'
+      tip:'The Groups setting is the most important one. Anyone with your child\'s number can add them to a group by default. Changing it to My Contacts stops that.'
     },
     C4: {
       steps:[
@@ -1145,7 +1140,7 @@ const PLATFORM_STEPS = {
     }
   },
   P5: { // Discord
-    intro:'<strong>Discord has very limited parental controls</strong> — there is no Family Centre or parent supervision tool. Age verification is self-reported. The settings below reduce risk but cannot eliminate it. For children under 16, the safest approach is to discuss which servers they are in and review them together.',
+    intro:'Discord has a parent tool called <strong>Family Center</strong>, and since March 2026 every account starts with teen safety settings until an adult proves their age. Family Center gives you a weekly summary of new friends, servers joined and who your child messages or calls (not the messages). Set it up: your child\'s Discord → User Settings → Family Center → show you the QR code, then scan it from your own Discord account.',
     C1: {
       steps:[
         'Discord has no in-app screen time controls.',
@@ -1155,20 +1150,19 @@ const PLATFORM_STEPS = {
     },
     C2: {
       steps:[
-        'Settings (gear icon, bottom left) → Privacy & Safety → <strong>Safe Direct Messaging → Keep me safe</strong> (scans DMs and auto-deletes flagged content).',
-        'Settings → Privacy & Safety → <strong>Allow direct messages from server members → Off</strong>.',
-        'In any server: right-click the server name → Privacy Settings → turn off DMs from server members.'
+        'Teen default: <strong>sensitive media is blurred</strong> and can\'t be unblurred without adult age verification. Check: User Settings → Content & Social → sensitive media filters are set to Blur or Block.',
+        'Messages from people who aren\'t friends go to <strong>Message Requests</strong>, which is on by default for teens.',
+        'In any server: tap the server name → Privacy Settings → turn off direct messages from server members.'
       ],
-      tip:'Discord servers marked NSFW require age verification — but this is self-reported. A 12-year-old can click through it. The server-level DM setting is the most practical content control.'
+      tip:'Age-restricted servers and channels are blocked unless the account is verified as an adult. The server-level DM setting is still the most practical extra control.'
     },
     C3: {
       steps:[
-        'Settings → Privacy & Safety → <strong>Who can add you as a Friend → Friends of Friends</strong> or Manual (not Everyone).',
-        'Settings → Privacy & Safety → <strong>Allow direct messages from server members → Off</strong>.',
-        'Settings → Privacy & Safety → Allow friend requests from → Off (if appropriate).',
-        'Review which servers your child is in: Settings → Connections → view server list.'
+        'User Settings → Content & Social → <strong>Friend requests</strong> → turn off Everyone. Keep Friends of Friends or Server Members, as you agree.',
+        'User Settings → Content & Social → allow direct messages from server members → Off.',
+        'Review the servers your child is in: they\'re listed down the left of the app, and Family Center shows new servers each week.'
       ],
-      tip:'The servers your child is in matter more than individual privacy settings. An unmoderated server with hundreds of unknown adults is a higher risk than any individual DM setting. Know which servers they use.'
+      tip:'The servers your child is in matter more than any single setting. An unmoderated server with hundreds of unknown adults is a bigger risk than any DM setting. Know which servers they use.'
     },
     C4: {
       steps:[
@@ -1188,32 +1182,31 @@ const PLATFORM_STEPS = {
     }
   },
   P6: { // Roblox
-    intro:'Roblox has a <strong>Parental PIN system</strong> that locks settings so your child cannot change them. Set this up first: roblox.com → Settings → Security → Parental Controls → set PIN.',
+    intro:'Roblox parental controls work through a <strong>linked parent account</strong>. Everyone must complete an age check before they can chat, and under-16s get Roblox Kids (5 to 8) or Roblox Select (9 to 15), which only show games that have had extra review. Set this up first: your child\'s Roblox → Settings → <strong>Parental Controls</strong> → follow the steps to link your own account.',
     C1: {
       steps:[
-        'Roblox has no in-app screen time controls.',
-        'Use <strong>device-level app limits</strong> to set a daily time cap — see device steps above.',
-        'Monthly spend reports are available in roblox.com → Settings → Billing — but time reporting requires device level.'
+        'Parent account → <strong>Screen time</strong> → set a daily limit (available until your child is 13).',
+        'When the limit is reached, Roblox is locked until the next day.',
+        'For 13 and over, parents see screen-time insights but use device-level limits (see above) to cap time.'
       ],
-      tip:'Device-level limits are your only tool for Roblox screen time.'
+      tip:'Roblox\'s own limit only covers Roblox. Device-level limits cover everything on the device.'
     },
     C2: {
       steps:[
-        'roblox.com → Settings → Privacy → <strong>Account Restrictions → toggle On</strong>.',
-        'Account Restrictions limit your child to Roblox-curated games only (not all user-created content).',
-        'Chat filtering: under-13 accounts have a stricter automatic chat filter — verify your child\'s registered age is correct.'
+        'Under-16s are placed in <strong>Roblox Kids</strong> (5 to 8) or <strong>Roblox Select</strong> (9 to 15), which only show games with extra review.',
+        'Parent account → <strong>block or allow specific games</strong> (until 16).',
+        'Check your child\'s age is right. A linked parent can correct it once after the age check.'
       ],
-      tip:'Roblox is user-generated content at scale. Account Restrictions is the most effective single content control — but it does significantly limit the games available. Discuss this with your child before switching it on.'
+      tip:'Roblox is user-made content at huge scale. Review the games your child plays together, as well as relying on the account type.'
     },
     C3: {
       steps:[
-        'roblox.com → Settings → Privacy → <strong>Who can message me → Friends</strong> (or No one).',
-        'Settings → Privacy → <strong>Who can chat with me in experiences → Friends</strong> (or No one).',
-        'Settings → Privacy → Who can invite me to private servers → Friends.',
-        'Settings → Privacy → <strong>Who can follow me into experiences → No one</strong>.',
-        'Roblox in-game <strong>voice chat is not available</strong> to under-13 accounts by default — verify this.'
+        'Chat stays off until your child completes an <strong>age check</strong>. Under-9s also need your consent to chat at all.',
+        'Parent account → <strong>chat settings</strong> (until 16): choose who your child can chat with.',
+        'Parent account → approve or decline <strong>Trusted Friend</strong> requests and review the friend list (until 13).',
+        'Voice chat is only available to older, age-checked users. Check it is off if you haven\'t agreed to it.'
       ],
-      tip:'Roblox\'s chat filter is not foolproof — users regularly find ways around it. The friends-only communication settings reduce but do not eliminate stranger contact.'
+      tip:'Roblox\'s chat filter isn\'t foolproof, and users find ways around it. These settings reduce stranger contact but don\'t remove it.'
     },
     C4: {
       steps:[
@@ -1225,23 +1218,22 @@ const PLATFORM_STEPS = {
     },
     C5: {
       steps:[
-        'roblox.com → Settings → Billing → set a <strong>monthly Robux spending limit</strong>.',
-        'Parental PIN must be set first (see above) — this locks billing settings.',
-        'Remove payment card from Roblox account if purchases should require your approval.',
-        '<strong>Device-level purchase controls</strong> (App Store / Google Play) as a secondary barrier — see device steps above.'
+        'Parent account → set a monthly <strong>spending limit</strong> (until 13). You get spending notifications until 18.',
+        'Remove the payment card from your child\'s Roblox account if purchases should need you.',
+        'Device-level purchase controls (App Store / Google Play) are a second barrier: see device steps above.'
       ],
-      tip:'Robux is Roblox\'s virtual currency. Children often do not connect spending Robux with spending real money. A conversation about this matters as much as the settings.'
+      tip:'Robux is Roblox\'s virtual currency. Children often don\'t connect spending Robux with spending real money. A conversation about this matters as much as the settings.'
     }
   },
   P7: { // YouTube
-    intro:'If your child is <strong>under 13, use YouTube Kids</strong> instead of standard YouTube — it is a separate app with properly curated content and parental controls. The settings below apply to standard YouTube for older children.',
+    intro:'For under-13s, use <strong>YouTube Kids</strong> or a supervised YouTube account set up through Google Family Link. For teens, link a <strong>supervised teen account</strong> through Google\'s Family Centre to get time controls. The settings below also cover standard YouTube.',
     C1: {
       steps:[
-        'YouTube app → Profile → ☰ → <strong>Your time on YouTube</strong> → Set daily reminder → choose time.',
-        'For stronger limits: use <strong>device-level app timer</strong> — see device steps above.',
-        'YouTube Kids app (under 13): parent settings → <strong>Screen time timer</strong> → set daily limit.'
+        'Supervised teen account: Google Family Centre → your child → Time management → set a daily <strong>Shorts feed limit</strong> (up to 2 hours, or zero to switch Shorts off).',
+        'YouTube app → Profile → Settings → General → <strong>Remind me to take a break</strong> and bedtime reminders.',
+        'YouTube Kids app (under 13): parent settings → Timer → set a daily limit.'
       ],
-      tip:'YouTube\'s in-app reminder is dismissible — your child can ignore it. Device-level limits are more effective for actual time control.'
+      tip:'YouTube\'s own reminders can be dismissed. Device-level limits are more effective for overall time, and the Shorts limit is the best tool for endless scrolling.'
     },
     C2: {
       steps:[

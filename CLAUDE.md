@@ -37,18 +37,11 @@ To add a new guide: add its PDF to `guides/` (set a Title in its properties), it
 
 ## Wizard content freshness
 
-`wizard-sections-meta.json` tracks the last-verified date and Google Custom Search queries for each wizard section (14 sections covering devices D1–D7 and platforms P1–P7).
+`wizard-sections-meta.json` lists the 14 wizard sections (devices D1–D7, platforms P1–P7), the official help pages behind each (`watch_urls`), search phrases for official announcements (`news_queries`, used where pages block automated reads) and the date each was last verified.
 
-A GitHub Actions workflow (`.github/workflows/wizard-content-check.yml`) runs on the 1st of each month. It calls `scripts/check_wizard_content.py`, which queries the Google Custom Search API for recent news about each platform's parental controls and opens a GitHub issue if anything looks stale.
+A monthly check runs on the platform VM, not in GitHub Actions (the old Google Custom Search workflow was removed in November 2026: Google had cut off the API and the job had been reporting a false all-clear). It lives in the packs repo (`tools/wizard_watch.py`): it compares each watched page with last month's copy and, when something changed, Claude drafts wizard edits and loads them into the packs app as a "Wizard update". When Dale approves, `tools/wizard_pr.py` opens a pull request here that updates `wizard.html` and the `last_verified` dates. Dale merges it.
 
-**Required secrets** for the workflow: `GOOGLE_CSE_API_KEY`, `GOOGLE_CSE_ID`.
-
-To run the freshness check locally:
-```bash
-GOOGLE_CSE_API_KEY=... GOOGLE_CSE_ID=... DRY_RUN=true python scripts/check_wizard_content.py
-```
-
-After verifying a wizard section is still accurate, update `last_verified` to today's date in `wizard-sections-meta.json`.
+Wizard step text lives in `DEVICE_STEPS` and `PLATFORM_STEPS` in `wizard.html` (one block per section and concern, C1–C5, plus an `intro` per platform). Keep that shape: the PR tool edits those blocks.
 
 ## Design system
 
