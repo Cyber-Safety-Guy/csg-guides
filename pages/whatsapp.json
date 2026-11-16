@@ -82,7 +82,7 @@
         {
           "heading": "For 13 to 17-year-olds",
           "body": [
-            "On your teen's phone, open Settings, then Parental controls, confirm their date of birth and link to your account. You set a PIN that's needed to loosen their privacy settings, you can limit Channels, Status and Meta AI, and you're told about things like new contacts. You can't read their messages."
+            "On your teen's phone, open Settings, then Parental controls, confirm their date of birth and link to your account. You set a PIN that's needed to loosen their privacy settings, you can limit Channels, Status and Meta AI, and you can choose to be told when they join or leave a group, or when a group they're in grows large. You can't read their messages."
           ]
         },
         {
@@ -139,7 +139,7 @@
   ],
   "help": "Worried about a child right now? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
   "sources": [
-    "WhatsApp, Parental controls page (teen controls and parent-managed accounts), accessed November 2026",
+    "WhatsApp, Parental controls page (teen controls and parent-managed accounts), accessed November 2026", "WhatsApp Blog, \"New controls to help parents guide their teens on WhatsApp\", 30 September 2026",
     "TechCrunch, \"WhatsApp is launching parent-linked accounts for pre-teens\", 11 March 2026",
     "Internet Matters, \"What is WhatsApp? A safety guide for parents\", March 2026 (UK minimum age)"
   ],
