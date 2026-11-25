@@ -114,7 +114,7 @@ button, input, select, textarea { font: inherit; }
 /* ---------- Type helpers ---------- */
 .eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--accent-ink); margin: 0 0 6px; }
 .section-title { font-size: 28px; margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
-.section-title::before { content: ""; width: 22px; height: 4px; border-radius: 2px; background: var(--accent); flex: none; }
+.section-title::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
 .lead { font-size: 19px; max-width: 40rem; }
 .hand { font-family: "Caveat", cursive; font-size: 30px; color: var(--accent-ink); line-height: 1.2; margin: 0; }
 .muted { color: var(--muted); }
