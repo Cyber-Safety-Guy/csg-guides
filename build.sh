@@ -8,6 +8,11 @@
 set -euo pipefail
 rm -rf _site
 mkdir _site
+# Cloudflare clones only the latest commit; fetch the history so the sitemap can date each page.
+# If that fails the build carries on and those dates are simply left out.
+if [ "$(git rev-parse --is-shallow-repository 2>/dev/null)" = "true" ]; then
+  timeout 60 git fetch --quiet --unshallow 2>/dev/null || echo "History not fetched: site page dates left out of the sitemap"
+fi
 cp *.html guides.json sitemap.xml robots.txt CNAME .nojekyll _headers _redirects favicon* _site/
 cp -r guides images assets _site/
 python3 scripts/build_pages.py _site            # guide pages from pages/*.json, library links, sitemap
