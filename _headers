@@ -20,6 +20,9 @@
   Cache-Control: public, max-age=604800
 /assets/brand/*
   Cache-Control: public, max-age=604800
+/assets/media/*
+  Cache-Control: public, max-age=604800
+  X-Robots-Tag: noindex
 /assets/*.css
   Cache-Control: public, max-age=300
 /assets/*.js
