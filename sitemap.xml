@@ -1,50 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://guides.cybersafetyguy.com/</loc>
-  <lastmod>2026-05-12T10:56:44+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-  <loc>https://guides.cybersafetyguy.com/guides</loc>
-  <lastmod>2026-05-12T10:56:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+    <loc>https://guides.cybersafetyguy.com/</loc>
+    <priority>1.0</priority>
+  </url>
   <url>
-  <loc>https://guides.cybersafetyguy.com/wizard</loc>
-  <lastmod>2026-05-12T10:56:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-  <url>
-  <loc>https://guides.cybersafetyguy.com/csg_threat_radar</loc>
-  <lastmod>2026-05-12T10:56:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-  <url>
-  <loc>https://guides.cybersafetyguy.com/presentations</loc>
-  <lastmod>2026-05-12T10:56:44+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-  <url>
-  <loc>https://guides.cybersafetyguy.com/social</loc>
-  <lastmod>2026-05-12T10:56:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-  <url>
-  <loc>https://guides.cybersafetyguy.com/contract</loc>
-  <lastmod>2026-05-12T10:56:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-  <url>
-    <loc>https://guides.cybersafetyguy.com/conversation</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://guides.cybersafetyguy.com/guides</loc>
     <priority>0.8</priority>
   </url>
-  </urlset>
+  <url>
+    <loc>https://guides.cybersafetyguy.com/wizard</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guides.cybersafetyguy.com/csg_threat_radar</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guides.cybersafetyguy.com/presentations</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guides.cybersafetyguy.com/social</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guides.cybersafetyguy.com/contract</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guides.cybersafetyguy.com/conversation</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

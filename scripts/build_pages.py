@@ -11,6 +11,7 @@ import hashlib
 import html
 import json
 import re
+import subprocess  # nosec B404
 import sys
 from pathlib import Path
 
@@ -24,7 +25,7 @@ def ver(rel):
     """Short content hash for cache busting: images keep their names but get ?v=<hash>,
     so a remade thumbnail shows at once instead of after the 24-hour cache."""
     f = ROOT / rel
-    return hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
+    return hashlib.md5(f.read_bytes(), usedforsecurity=False).hexdigest()[:8] if f.exists() else "0"
 
 
 def esc(s):
@@ -185,8 +186,31 @@ def main():
     add = "".join(f'  <url>\n    <loc>{BASE}/guides/{p["slug"]}</loc>\n    <lastmod>{p["updated"]}</lastmod>\n    <priority>0.8</priority>\n  </url>\n'
                   for p in pages if f'{BASE}/guides/{p["slug"]}<' not in s)
     i = s.rindex("</urlset>")
-    sm.write_text(s[:i] + add + s[i:], encoding="utf-8")
+    s = s[:i] + add + s[i:]
+    # Site pages: lastmod = date of the last commit that changed the page (or guides.json, for the pages
+    # that show guide counts). Skipped when the checkout has no history, rather than guessing.
+    for loc, files in STATIC_PAGES.items():
+        d = last_changed(files)
+        if d:
+            s = s.replace(f"<loc>{BASE}{loc}</loc>\n", f"<loc>{BASE}{loc}</loc>\n    <lastmod>{d}</lastmod>\n", 1)
+    sm.write_text(s, encoding="utf-8")
     print(f"built {len(pages)} guide page(s)")
+
+
+STATIC_PAGES = {"/": ["index.html", "guides.json"], "/guides": ["guides.html", "guides.json"], "/wizard": ["wizard.html"],
+                "/csg_threat_radar": ["csg_threat_radar.html"], "/presentations": ["presentations.html"],
+                "/social": ["social.html"], "/contract": ["contract.html"], "/conversation": ["conversation.html"]}
+
+
+def last_changed(files):
+    """Fixed git commands on our own files, no outside input."""
+    try:
+        git = lambda *a: subprocess.run(["git", "-C", str(ROOT), *a], capture_output=True, text=True, timeout=20).stdout.strip()  # noqa: E731 # nosec B603 B607
+        if git("rev-parse", "--is-shallow-repository") != "false":
+            return None
+        return git("log", "-1", "--format=%cs", "--", *files) or None
+    except Exception:
+        return None
 
 
 if __name__ == "__main__":
