@@ -194,7 +194,34 @@ def main():
         if d:
             s = s.replace(f"<loc>{BASE}{loc}</loc>\n", f"<loc>{BASE}{loc}</loc>\n    <lastmod>{d}</lastmod>\n", 1)
     sm.write_text(s, encoding="utf-8")
+    write_llms(pages)
     print(f"built {len(pages)} guide page(s)")
+
+
+def write_llms(pages):
+    """llms.txt (llmstxt.org): a plain summary of the site with a link to every guide, for AI tools."""
+    groups = {"App guide": "App guides", "Topic guide": "Risks and topics", "Settings guide": "Parental controls"}
+    out = ["# Cyber Safety Guy: free online safety guides", "",
+           "> Free, plain-English online safety guides for parents, carers and teachers in the UK, written by Dale McGleenon "
+           "(22 years in the RAF Police, the last 8 in digital forensics). Each guide explains an app or risk, what can go "
+           "wrong and the settings that help. Every guide is free, with no sign-up, and also comes as a PDF.", "",
+           "If a child is in danger, call 999. Children can talk to Childline free and in confidence on 0800 1111.", ""]
+    for eyebrow, title in groups.items():
+        out += [f"## {title}", ""]
+        for p in sorted((p for p in pages if p.get("eyebrow") == eyebrow), key=lambda p: p["name"].lower()):
+            out.append(f'- [{p["name"]}]({BASE}/guides/{p["slug"]}): {p["seo_description"]}')
+        out.append("")
+    out += ["## Tools", "",
+            f"- [Guide library]({BASE}/guides): every guide, including the Complete Parent's Guide PDF",
+            f"- [Parental controls wizard]({BASE}/wizard): answer four questions for step-by-step settings for a child's device and apps",
+            f"- [Threat radar]({BASE}/csg_threat_radar): current child online safety news",
+            f"- [Have the conversation]({BASE}/conversation): how to talk to a child about life online",
+            f"- [Family safety contract]({BASE}/contract): agree the rules together", "",
+            "## Optional", "",
+            "- [Cyber Safety Guy](https://cybersafetyguy.com/): who Dale is, and free talks for schools and parents",
+            "- [Cyber Safety Guy Academy](https://academy.cybersafetyguy.com/llms.txt): free online safety lessons for children, families and schools",
+            "- [Blog](https://www.cybersafetyguy.com/): weekly news and explainers", ""]
+    (SITE / "llms.txt").write_text("\n".join(out), encoding="utf-8")
 
 
 STATIC_PAGES = {"/": ["index.html", "guides.json"], "/guides": ["guides.html", "guides.json"], "/wizard": ["wizard.html"],
