@@ -52,7 +52,10 @@ for cat in ("platform-guides", "online-risks", "parental-controls", "further-res
     s, n = re.subn(r'(<div class="guide-grid" id="grid-%s">)(</div>)' % cat, lambda m: m.group(1) + cards + m.group(2), s)
     if n != 1:
         sys.exit(f"grid-{cat} not found in {page}")
-s = s.replace('<span id="total-line">There are 37 to choose from.</span>',
-              f'<span id="total-line">There are {len(guides)} to choose from.</span>')
+# Keep every count on the page in step with guides.json (the Complete Parent's Guide counts as one guide,
+# same as the home page stats and the cybersafetyguy.com front door).
+s = re.sub(r'<span id="total-line">There are \d+ to choose from\.</span>',
+           f'<span id="total-line">There are {len(guides)} to choose from.</span>', s)
+s = re.sub(r'content="\d+ free guides to the apps', f'content="{len(guides)} free guides to the apps', s)
 open(page, "w", encoding="utf-8").write(s)
 print(f"prerendered {count} guide cards into {page}")
