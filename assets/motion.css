@@ -1,0 +1,46 @@
+/* Gentle motion for the home pages (Dale, 25 Nov 2026). Polish only: nothing here changes what is on the page.
+   Switched off for people who ask their device for reduced motion, and the page reads the same without JavaScript. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero { isolation: isolate; }
+  .hero::before { content: ""; position: absolute; z-index: 0; width: 520px; height: 520px; right: -120px; top: -160px; border-radius: 50%;
+    pointer-events: none; filter: blur(30px); background: radial-gradient(circle, rgba(31,208,220,.24), transparent 65%);
+    animation: mo-glow 16s ease-in-out infinite alternate; }
+  @keyframes mo-glow { from { transform: translate(0,0) scale(1); } to { transform: translate(-70px,50px) scale(1.18); } }
+
+  .hero-circuit g:first-of-type path { stroke-dasharray: 6 12; animation: mo-flow 14s linear infinite; }
+  .hero-circuit g:last-of-type circle { transform-box: fill-box; transform-origin: center; animation: mo-pulse 3.4s ease-in-out infinite; }
+  .hero-circuit g:last-of-type circle:nth-child(2n) { animation-delay: .9s; } .hero-circuit g:last-of-type circle:nth-child(3n) { animation-delay: 1.7s; }
+  @keyframes mo-flow { to { stroke-dashoffset: -180; } }
+  @keyframes mo-pulse { 0%,100% { transform: scale(1); opacity: .7; } 50% { transform: scale(1.9); opacity: 1; } }
+
+  .hero-copy > * { animation: mo-rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-copy > :nth-child(1) { animation-delay: .05s; } .hero-copy > :nth-child(2) { animation-delay: .15s; }
+  .hero-copy > :nth-child(3) { animation-delay: .27s; } .hero-copy > :nth-child(4) { animation-delay: .38s; } .hero-copy > :nth-child(5) { animation-delay: .5s; }
+  @keyframes mo-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .hero-art { position: relative; animation: mo-rise .9s cubic-bezier(.2,.7,.2,1) .2s both; }
+  .hero-art img { animation: mo-float 7s ease-in-out 1s infinite; }
+  .hero-art::before { content: ""; position: absolute; left: 50%; top: 50%; width: 300px; height: 300px; margin: -150px 0 0 -150px; border-radius: 50%;
+    border: 2px solid var(--accent); opacity: 0; pointer-events: none; animation: mo-ring 5.5s ease-out 1.2s infinite; }
+  @keyframes mo-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  @keyframes mo-ring { 0% { transform: scale(.85); opacity: .5; } 70%,100% { transform: scale(1.2); opacity: 0; } }
+  @media (max-width: 640px) { .hero-art::before { width: 170px; height: 170px; margin: -85px 0 0 -85px; } }
+
+  .js .mo-rv { opacity: 0; transform: translateY(20px); }
+  .js .mo-rv.mo-in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+
+  .tool, .featured, .band, .series-card, .pack-card, .stat { transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease; }
+  .tool:hover, .featured:hover, .series-card:hover, .pack-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 14px 34px -14px rgba(31,208,220,.45); }
+  .js .mo-rv.mo-in.tool:hover, .js .mo-rv.mo-in.featured:hover, .js .mo-rv.mo-in.series-card:hover, .js .mo-rv.mo-in.pack-card:hover { transition-delay: 0s; }
+  .series-art img, .pack-cover { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .series-card:hover .series-art img { transform: scale(1.08); }
+  .pack-card:hover .pack-cover { transform: scale(1.04); }
+  .pack-card { overflow: hidden; }
+  .btn { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(31,208,220,.7); }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .tool, .featured, .series-card, .pack-card { position: relative; }
+  .tool::after, .featured::after, .series-card::after, .pack-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0;
+    transition: opacity .25s ease; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(31,208,220,.14), transparent 62%); }
+  .tool:hover::after, .featured:hover::after, .series-card:hover::after, .pack-card:hover::after { opacity: 1; }
+}
