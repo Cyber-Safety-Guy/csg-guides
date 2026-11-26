@@ -4,7 +4,7 @@
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (calm || !('IntersectionObserver' in window)) return;
   document.documentElement.classList.add('js');
-  var SEL = 'main .tool, main .featured, main .band, main .card, .series-card, .pack-card, .section-head, .stat, main section > h2';
+  var SEL = 'main .tool, main .featured, main .band, main .card, .series-card, .pack-card, .section-head, .stat, main section > h2, .pres-card, .social-card, .tcard';
   var born = Date.now(), io = new IntersectionObserver(function (entries) {
     var batch = entries.filter(function (e) { return e.isIntersecting; });
     batch.forEach(function (e, k) { e.target.style.setProperty('--d', Math.min(k, 6) * 0.09 + 's'); e.target.classList.add('mo-in'); io.unobserve(e.target); });
@@ -42,13 +42,15 @@
   }
 })();
 
-/* Visual effects (Dale, 26 Nov 2026), matching cybersafetyguy.com and the Academy. See motion.css. */
+/* Visual effects (Dale, 26 Nov 2026), matching cybersafetyguy.com and the Academy. See motion.css.
+   Every page gets the reading bar and card tilt; pages with a header block (home hero, tool pages, library, 404)
+   also get the typing eyebrow, word-by-word heading, button shine, network background and parallax.
+   Guide articles and the download page keep their header still. */
 (function () {
   'use strict';
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
+  var head = document.querySelector('.hero, .tool-head, .page-head, main.nf');
 
   /* reading bar along the top */
   var bar = document.createElement('div'); bar.className = 'mo-progress'; bar.setAttribute('aria-hidden', 'true');
@@ -59,16 +61,31 @@
     requestAnimationFrame(function () {
       var max = root.scrollHeight - innerHeight;
       bar.style.setProperty('--p', max > 0 ? Math.min(scrollY / max, 1) : 0);
-      if (!calm && scrollY < hero.offsetHeight + 200) hero.style.setProperty('--sy', scrollY);
+      if (head && !calm && scrollY < head.offsetHeight + 200) head.style.setProperty('--sy', scrollY);
       ticking = false;
     });
   }
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
   if (calm) return;
 
+  /* cards tilt toward the pointer (mouse and trackpad only; cards drawn later by filters included) */
+  if (window.matchMedia('(hover: hover)').matches) {
+    var CARDS = '.tool:not(.soon), .featured, .series-card, .pack-card, .card.guide, .related a.card, .pres-card, .social-card, .tcard', last = null;
+    document.addEventListener('pointermove', function (e) {
+      var c = e.target.closest && e.target.closest(CARDS);
+      if (last && last !== c) { last.style.setProperty('--rx', '0deg'); last.style.setProperty('--ry', '0deg'); }
+      last = c; if (!c) return;
+      var r = c.getBoundingClientRect(), max = r.width > 520 ? 3 : 7;
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      c.style.setProperty('--ry', (x * max * 2).toFixed(2) + 'deg'); c.style.setProperty('--rx', (-y * max * 2).toFixed(2) + 'deg');
+    }, { passive: true });
+  }
+  if (!head) return;
+  head.classList.add('fx-head');
+
   /* eyebrow types itself out */
-  var k = hero.querySelector('.hero-copy > .eyebrow');
-  if (k) {
+  var k = head.querySelector('.eyebrow');
+  if (k && !k.children.length) {
     var full = k.textContent; k.setAttribute('aria-label', full); k.classList.add('typing');
     var txt = document.createElement('span'); txt.setAttribute('aria-hidden', 'true');
     var caret = document.createElement('span'); caret.className = 'caret'; caret.setAttribute('aria-hidden', 'true');
@@ -77,8 +94,8 @@
     (function type() { txt.textContent = full.slice(0, ++n); if (n < full.length) setTimeout(type, 45); else setTimeout(function () { caret.remove(); }, 2400); })();
   }
 
-  /* heading appears word by word (keeps the highlighted word's styling) */
-  var h1 = hero.querySelector('.hero-copy > h1');
+  /* heading appears word by word (keeps the highlighted words' styling) */
+  var h1 = head.querySelector('h1');
   if (h1) {
     var label = h1.textContent.replace(/\s+/g, ' ').trim(), i = 0, parts = [];
     Array.prototype.slice.call(h1.childNodes).forEach(function (node) {
@@ -94,9 +111,9 @@
     });
   }
 
-  /* network of drifting points behind the hero */
+  /* network of drifting points behind the header */
   var cv = document.createElement('canvas'); cv.className = 'hero-net'; cv.setAttribute('aria-hidden', 'true');
-  hero.insertBefore(cv, hero.firstChild);
+  head.insertBefore(cv, head.firstChild);
   var ctx = cv.getContext('2d'), pts = [], W = 0, H = 0, mouse = null, running = false, visible = true;
   function rgb() {
     var h = getComputedStyle(root).getPropertyValue('--accent').trim().replace('#', '');
@@ -134,22 +151,9 @@
   size(); cv.classList.add('on');
   addEventListener('resize', size);
   document.addEventListener('visibilitychange', setRun);
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; setRun(); }).observe(hero);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; setRun(); }).observe(head);
   new MutationObserver(function () { col = rgb(); }).observe(root, { attributes: true, attributeFilter: ['data-theme', 'class'] });
-  hero.addEventListener('pointermove', function (e) { var r = cv.getBoundingClientRect(); mouse = { x: e.clientX - r.left, y: e.clientY - r.top }; });
-  hero.addEventListener('pointerleave', function () { mouse = null; });
+  head.addEventListener('pointermove', function (e) { var r = cv.getBoundingClientRect(); mouse = { x: e.clientX - r.left, y: e.clientY - r.top }; });
+  head.addEventListener('pointerleave', function () { mouse = null; });
   setRun();
-
-  /* cards tilt toward the pointer (mouse and trackpad only; cards drawn later by filters included) */
-  if (window.matchMedia('(hover: hover)').matches) {
-    var CARDS = '.tool:not(.soon), .featured, .series-card, .pack-card', last = null;
-    document.addEventListener('pointermove', function (e) {
-      var c = e.target.closest && e.target.closest(CARDS);
-      if (last && last !== c) { last.style.setProperty('--rx', '0deg'); last.style.setProperty('--ry', '0deg'); }
-      last = c; if (!c) return;
-      var r = c.getBoundingClientRect(), max = r.width > 520 ? 3 : 7;
-      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      c.style.setProperty('--ry', (x * max * 2).toFixed(2) + 'deg'); c.style.setProperty('--rx', (-y * max * 2).toFixed(2) + 'deg');
-    }, { passive: true });
-  }
 })();
