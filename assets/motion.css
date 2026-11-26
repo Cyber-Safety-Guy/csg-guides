@@ -58,31 +58,42 @@
   .hero-art { translate: 0 calc(var(--sy, 0) * .14px); }
   .hero::before { translate: 0 calc(var(--sy, 0) * .4px); }
 
-  .js .hero-copy > .eyebrow.typing { animation: none; }
+  .js .eyebrow.typing { animation: none; }
   .eyebrow .caret { display: inline-block; width: 2px; height: 1em; margin-left: 3px; vertical-align: -2px; background: var(--accent); animation: mo-blink 1s steps(1) infinite; }
   @keyframes mo-blink { 50% { opacity: 0; } }
 
-  .js .hero-copy > h1.split { animation: none; }
-  .hero h1 .w { display: inline-block; opacity: 0; transform: translateY(.45em); filter: blur(6px);
+  .js h1.split { animation: none; }
+  h1.split .w { display: inline-block; opacity: 0; transform: translateY(.45em); filter: blur(6px);
     animation: mo-word .65s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(.35s + var(--i) * .1s); }
   @keyframes mo-word { to { opacity: 1; transform: none; filter: blur(0); } }
 
-  .hero .btn-primary { position: relative; overflow: hidden; }
-  .hero .btn-primary::after { content: ""; position: absolute; top: -2px; bottom: -2px; left: -60%; width: 40%; pointer-events: none;
+  .fx-head .btn-primary { position: relative; overflow: hidden; }
+  .fx-head .btn-primary::after { content: ""; position: absolute; top: -2px; bottom: -2px; left: -60%; width: 40%; pointer-events: none;
     background: linear-gradient(100deg, transparent, rgba(255,255,255,.6), transparent); transform: skewX(-20deg);
     animation: mo-shimmer 5s ease-in-out 2.2s infinite; }
   @keyframes mo-shimmer { 0% { left: -60%; } 28%, 100% { left: 130%; } }
 }
 @property --mo-ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @media (prefers-reduced-motion: no-preference) and (hover: hover) {
-  .tool:not(.soon):hover, .featured:hover, .series-card:hover, .pack-card:hover,
-  .js .mo-rv.mo-in.tool:not(.soon):hover, .js .mo-rv.mo-in.featured:hover, .js .mo-rv.mo-in.series-card:hover, .js .mo-rv.mo-in.pack-card:hover {
+  .tool:not(.soon):hover, .featured:hover, .series-card:hover, .pack-card:hover, .card.guide:hover, .related a.card:hover, .pres-card:hover, .social-card:hover, .tcard:hover,
+  .js .mo-rv.mo-in.tool:not(.soon):hover, .js .mo-rv.mo-in.featured:hover, .js .mo-rv.mo-in.series-card:hover, .js .mo-rv.mo-in.pack-card:hover,
+  .js .mo-rv.mo-in.card.guide:hover, .js .related a.mo-rv.mo-in.card:hover, .js .mo-rv.mo-in.pres-card:hover, .js .mo-rv.mo-in.social-card:hover, .js .mo-rv.mo-in.tcard:hover {
     transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px); }
-  .tool::before, .featured::before, .series-card::before, .pack-card::before { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: 2px;
+  .tool::before, .featured::before, .series-card::before, .pack-card::before, .card.guide::before, .related a.card::before, .pres-card::before, .social-card::before, .tcard::before { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: 2px;
     pointer-events: none; opacity: 0;
     background: conic-gradient(from var(--mo-ang), transparent 0 62%, var(--accent) 80%, #FFFFFF 88%, var(--accent) 94%, transparent);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
     transition: opacity .3s ease; }
-  .tool:not(.soon):hover::before, .featured:hover::before, .series-card:hover::before, .pack-card:hover::before { opacity: 1; animation: mo-trace 2.6s linear infinite; }
+  .tool:not(.soon):hover::before, .featured:hover::before, .series-card:hover::before, .pack-card:hover::before, .card.guide:hover::before, .related a.card:hover::before, .pres-card:hover::before, .social-card:hover::before, .tcard:hover::before { opacity: 1; animation: mo-trace 2.6s linear infinite; }
   @keyframes mo-trace { to { --mo-ang: 360deg; } }
+}
+
+/* Header blocks on the other pages (tool pages, library, 404) get the hero's network background (Dale, 26 Nov 2026) */
+@media (prefers-reduced-motion: no-preference) {
+  .fx-head:not(.hero) { position: relative; isolation: isolate; }
+  .fx-head:not(.hero) > :not(.hero-net) { position: relative; z-index: 1; }
+  .fx-head:not(.hero) > .hero-net { inset: -24px 0 0; height: calc(100% + 24px);
+    -webkit-mask-image: linear-gradient(90deg, transparent, rgba(0,0,0,.35) 12%, #000 55%, transparent);
+    mask-image: linear-gradient(90deg, transparent, rgba(0,0,0,.35) 12%, #000 55%, transparent); }
+  .card.guide, .related a.card, .pres-card, .social-card, .tcard { position: relative; }
 }

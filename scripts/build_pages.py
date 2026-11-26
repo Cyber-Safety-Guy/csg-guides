@@ -92,6 +92,7 @@ def head(p, url):
 <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=1)}
 </script>
+<link rel="stylesheet" href="/assets/motion.css">
 </head>
 """
 
@@ -102,7 +103,7 @@ def chrome():
     header = idx[idx.index("<body>"):idx.index("</header>") + len("</header>")]
     header = header.replace(' aria-current="page"', "").replace('<a href="/guides">', '<a href="/guides" aria-current="page">', 1)
     footer = idx[idx.index('<footer class="bottom-footer">'):idx.index("</footer>") + len("</footer>")]
-    return header + "\n", footer + "\n</body>\n</html>\n"
+    return header + "\n", footer + "\n<script src=\"/assets/motion.js\" defer></script>\n</body>\n</html>\n"
 
 
 def section(s):
