@@ -1,0 +1,114 @@
+{
+  "slug": "meta-muse",
+  "name": "Meta Muse",
+  "eyebrow": "App guide",
+  "seo_title": "Is Meta Muse Safe for Teens? Parent's Guide",
+  "seo_description": "What is Meta Muse? The UK AI agent that sends emails and shops for you, why it's 18+, the risks for teens and families, and settings to check.",
+  "h1": "Is Meta Muse safe for teens?",
+  "lead": "Muse is Meta's new AI agent, and it arrived in the UK in November 2026. It's officially for adults, but here's what it does and what I'd check at home.",
+  "answer_question": "Is Meta Muse safe for teenagers?",
+  "answer": "Meta says Muse is for over-18s only, but it doesn't describe how age is checked. It's an AI agent that uses your email and shopping accounts to do tasks, so it learns a lot about the people using it. Check teen phones, and turn off AI training if anyone at home uses it.",
+  "sections": [
+    {
+      "heading": "What is Meta Muse?",
+      "body": [
+        "Muse is a personal AI agent from Meta. Instead of only answering questions, it does jobs for you: sending emails, booking travel, filling in web forms and chasing refunds.",
+        "It's available in the UK on iPhone, Android, the web and inside WhatsApp, for people aged 18 and over. It keeps working after you close the app and comes back when it needs your approval."
+      ]
+    },
+    {
+      "heading": "The risks for families",
+      "subsections": [
+        {
+          "heading": "No age check described",
+          "body": [
+            "Meta says Muse is 18 plus but doesn't explain how that's enforced. One review site reports Google Play rates it Teen while Apple rates it 18+."
+          ]
+        },
+        {
+          "heading": "It learns a lot about you",
+          "body": [
+            "To do tasks, Muse connects to email, calendars and shopping accounts. That builds a detailed picture of a person and the people around them, and that data is stored somewhere."
+          ]
+        },
+        {
+          "heading": "Tricks aimed at AI agents",
+          "body": [
+            "Criminals can hide instructions in emails or web pages to try to fool AI agents. Meta says this, called prompt injection, remains an open problem."
+          ]
+        },
+        {
+          "heading": "AI training on by default",
+          "body": [
+            "Meta uses your Muse activity to train its AI unless you turn it off in the app's data controls."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "What parents can do",
+      "body": [
+        "Start with a conversation rather than a ban. Ask what your teenager would want an AI to do, and what they'd be happy for it to see."
+      ],
+      "list": [
+        "Check whether Muse is installed, or connected inside WhatsApp",
+        "Turn on app download approval in your phone's family settings",
+        "If anyone at home uses Muse, turn off AI training and connect as few accounts as possible",
+        "Keep your own email and shopping accounts locked, because children borrow phones"
+      ]
+    }
+  ],
+  "teachers": "If pupils mention using AI agents like Muse, talk about what personal data they're sharing and who could see it. If a pupil has been pressured or threatened after sharing information, follow your safeguarding procedures.",
+  "faq": [
+    {
+      "q": "What age is Meta Muse for?",
+      "a": "Meta says Muse is for people aged 18 and over in the UK."
+    },
+    {
+      "q": "Can teenagers use Muse through WhatsApp?",
+      "a": "Muse is available inside WhatsApp, but Meta says it's for over-18s. Check your teen's phone and settings."
+    },
+    {
+      "q": "Can Muse spend money without asking?",
+      "a": "Meta says every purchase and every email needs your approval, and Muse can't see your passwords or card details."
+    },
+    {
+      "q": "How do I turn off AI training in Muse?",
+      "a": "Meta says you can turn it off in Muse's settings, under data controls."
+    }
+  ],
+  "help": "Worried about a child? Childline is free and confidential on [0800 1111](tel:08001111), any time. You are not alone.",
+  "sources": [
+    "Meta, \"Introducing Muse in the UK: a personal AI agent you control\", 23 November 2026",
+    "Meta, \"Muse now available in the UK: Muse does the work, you stay in control\", 23 November 2026",
+    "The Independent, \"Meta launches its Muse personal agent in the UK\", 24 November 2026",
+    "MacRumors, \"Meta's Muse personal AI agent launches in the UK\", 24 November 2026"
+  ],
+  "updated": "2026-11-26",
+  "published": "2026-11-26",
+  "article_url": "https://www.cybersafetyguy.com/p/is-meta-muse-safe-for-teens",
+  "pdf": "guides/CSG_Meta_Muse.pdf",
+  "image": "CSG_Meta_Muse",
+  "related": [
+    {
+      "title": "AI chatbots and children",
+      "text": "What children use AI for, and where the risks sit",
+      "href": "/guides/ai-chatbots"
+    },
+    {
+      "title": "AI companions",
+      "text": "Why AI 'friends' can be risky for young people",
+      "href": "/guides/ai-companions"
+    },
+    {
+      "title": "Sextortion and image-based abuse",
+      "text": "What to do if your child is targeted",
+      "href": "/guides/sextortion"
+    },
+    {
+      "title": "Understanding AI",
+      "text": "Free Academy pack on AI, for parents",
+      "href": "https://academy.cybersafetyguy.com/packs/ai-for-parents/"
+    }
+  ]
+}
