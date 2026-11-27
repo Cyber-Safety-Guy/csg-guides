@@ -317,6 +317,21 @@
     ]
   },
   {
+    "id": "platform-guides",
+    "type": "guide",
+    "title": "Meta Muse",
+    "desc": "Meta's new AI agent that uses your email and shopping accounts. What it does, the age rule and what to check.",
+    "image": "CSG_Meta_Muse.png",
+    "link": "https://guides.cybersafetyguy.com/guides/CSG_Meta_Muse.pdf",
+    "isNew": true,
+    "ageRating": "18+ (no age checks described)",
+    "risks": [
+      "Access to email and shopping accounts",
+      "AI training on by default",
+      "No age check described"
+    ]
+  },
+  {
     "id": "online-risks",
     "type": "guide",
     "title": "AI \"Girlfriends\" / Companions",
